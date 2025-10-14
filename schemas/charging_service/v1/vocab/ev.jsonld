@@ -289,30 +289,6 @@
       "schema:rangeIncludes": "schema:Integer"
     },
     {
-      "@id": "ev:trackingId",
-      "@type": "rdf:Property",
-      "rdfs:label": "Tracking ID",
-      "rdfs:comment": "Provider tracking identifier for the session.",
-      "schema:domainIncludes": "schema:Order",
-      "schema:rangeIncludes": "schema:Text"
-    },
-    {
-      "@id": "ev:trackingUrl",
-      "@type": "rdf:Property",
-      "rdfs:label": "Tracking URL",
-      "rdfs:comment": "Live session dashboard URL.",
-      "schema:domainIncludes": "schema:Order",
-      "schema:rangeIncludes": "schema:URL"
-    },
-    {
-      "@id": "ev:trackingStatus",
-      "@type": "rdf:Property",
-      "rdfs:label": "Tracking status",
-      "rdfs:comment": "Current tracking state (ACTIVE, INACTIVE).",
-      "schema:domainIncludes": "schema:Order",
-      "schema:rangeIncludes": "schema:Text"
-    },
-    {
       "@id": "ev:operatorCode",
       "@type": "rdf:Property",
       "rdfs:label": "Operator code",

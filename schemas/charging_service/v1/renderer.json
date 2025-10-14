@@ -1,0 +1,236 @@
+{
+  "$id": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/renderer.json",
+  "title": "Renderer hints for EV Charging — Charging Service (v1)",
+  "version": "1.0.0",
+  "description": "UI rendering hints and HTML templates for discovery listings, offer chips, and session status cards. Uses minimal fields for bulk search responses and richer templates for detail views.",
+  "dataPaths": {
+    "item": {
+      "name": "beckn:descriptor.name",
+      "gps": "beckn:availableAt[0].gps",
+      "attributes": "beckn:itemAttributes",
+      "category": "beckn:itemAttributes.category",
+      "connectorType": "beckn:itemAttributes.connectorType",
+      "maxPowerKW": "beckn:itemAttributes.maxPowerKW",
+      "socketCount": "beckn:itemAttributes.socketCount",
+      "stationStatus": "beckn:itemAttributes.stationStatus",
+      "amenityFeature": "beckn:itemAttributes.amenityFeature",
+      "parkingType": "beckn:itemAttributes.parkingType",
+      "tariffModel": "beckn:itemAttributes.tariffModel",
+      "image": "beckn:itemAttributes.image",
+      "url": "beckn:itemAttributes.url"
+    },
+    "offer": {
+      "id": "beckn:id",
+      "priceCurrency": "beckn:offerAttributes.priceSpecification.priceCurrency",
+      "price": "beckn:offerAttributes.priceSpecification.price",
+      "unitText": "beckn:offerAttributes.priceSpecification.unitText",
+      "idleFeePolicy": "beckn:offerAttributes.idleFeePolicy",
+      "paymentAccepted": "beckn:offerAttributes.paymentAccepted",
+      "validThrough": "beckn:validity.end"
+    },
+    "session": {
+      "reservationId": "message.order.fulfillments[0].attributes.reservationId",
+      "status": "message.order.fulfillments[0].attributes.sessionStatus",
+      "kwh": "message.order.fulfillments[0].attributes.kwh",
+      "totalIncl": "message.order.fulfillments[0].attributes.totalCost.inclVat",
+      "currency": "message.order.fulfillments[0].attributes.currency",
+      "lastUpdated": "message.order.fulfillments[0].attributes.lastUpdated",
+      "startTime": "message.order.fulfillments[0].start.time.timestamp",
+      "endTime": "message.order.fulfillments[0].end.time.timestamp",
+      "trackingUrl": "message.order.fulfillments[0].attributes.trackingUrl"
+    }
+  },
+
+  "formatters": {
+    "powerKW": { "suffix": " kW", "decimals": 0 },
+    "price": { "decimals": 2, "thousands": true },
+    "kwh": { "suffix": " kWh", "decimals": 2 },
+    "statusBadge": {
+      "map": {
+        "Available": "success",
+        "Occupied": "warning",
+        "OutOfService": "error",
+        "ACTIVE": "info",
+        "COMPLETED": "success",
+        "PENDING": "muted",
+        "INTERRUPTED": "error"
+      }
+    },
+    "icons": {
+      "category": {
+        "AC_Slow": "bolt-slow",
+        "AC_Fast": "bolt",
+        "DC_Fast": "bolt-fast",
+        "DC_Ultra": "bolt-ultra"
+      },
+      "connector": {
+        "CCS2": "plug-ccs2",
+        "Type2": "plug-type2",
+        "CHAdeMO": "plug-chademo",
+        "GB_T": "plug-gbt"
+      },
+      "amenities": {
+        "Restaurant": "fork-knife",
+        "Restroom": "toilet",
+        "Wi-Fi": "wifi",
+        "Cafe": "cup-hot"
+      }
+    }
+  },
+
+  "listViews": {
+    "itemCardMinimal": {
+      "fields": [
+        "item.name",
+        "item.category",
+        "item.connectorType",
+        "item.maxPowerKW",
+        "item.socketCount",
+        "item.stationStatus",
+        "offer.price",
+        "offer.priceCurrency",
+        "offer.unitText",
+        "item.amenityFeature"
+      ],
+      "html": "<div class='ev-card'>\
+  <div class='ev-card__header'>\
+    <div class='ev-card__title'>{{item.name}}</div>\
+    <div class='ev-card__status ev-badge ev-badge--{{format.statusBadge item.stationStatus}}'>{{item.stationStatus}}</div>\
+  </div>\
+  <div class='ev-card__meta'>\
+    <span class='ev-chip'><i class='i {{format.icons.category[item.category]}}'></i>{{item.category}}</span>\
+    <span class='ev-chip'><i class='i {{format.icons.connector[item.connectorType]}}'></i>{{item.connectorType}}</span>\
+    <span class='ev-chip'>⚡ {{format.powerKW item.maxPowerKW}}</span>\
+    <span class='ev-chip'>🔌 x{{item.socketCount}}</span>\
+  </div>\
+  {{#if offer.paymentAccepted}}
+    <div class='ev-offer__pay'>\
+      {{#each offer.paymentAccepted}}<span class='ev-tag'>{{this}}</span>{{/each}}\
+    </div>\
+  {{/if}}
+  <div class='ev-card__amenities'>\
+    {{#each item.amenityFeature}}<span class='ev-tag'><i class='i {{format.icons.amenities[this]}}'></i>{{this}}</span>{{/each}}\
+  </div>\
+</div>"
+    },
+
+    "mapPinMinimal": {
+      "fields": ["item.gps", "item.name", "offer.price", "offer.priceCurrency"],
+      "html": "<div class='ev-pin'>\
+  <div class='ev-pin__title'>{{item.name}}</div>\
+  <div class='ev-pin__price'>{{offer.priceCurrency}} {{format.price offer.price}} / {{offer.unitText}}</div>\
+</div>"
+    }
+  },
+
+  "detailViews": {
+    "itemDetail": {
+      "fields": [
+        "item.name", "item.image", "item.url", "item.category", "item.connectorType",
+        "item.maxPowerKW", "item.socketCount", "item.stationStatus", "item.parkingType",
+        "item.tariffModel", "item.amenityFeature", "item.attributes"
+      ],
+      "html": "<div class='ev-detail'>\
+  <div class='ev-detail__hero' style='background-image:url({{item.image}})'>\
+    <div class='ev-detail__title'>{{item.name}}</div>\
+  </div>\
+  <div class='ev-detail__body'>\
+    <div class='ev-detail__left'>\
+      <div class='ev-specs'>\
+        <div><strong>Category:</strong> {{item.category}}</div>\
+        <div><strong>Connector:</strong> {{item.connectorType}}</div>\
+        <div><strong>Max Power:</strong> {{format.powerKW item.maxPowerKW}}</div>\
+        <div><strong>Sockets:</strong> {{item.socketCount}}</div>\
+        <div><strong>Status:</strong> <span class='ev-badge ev-badge--{{format.statusBadge item.stationStatus}}'>{{item.stationStatus}}</span></div>\
+        <div><strong>Parking:</strong> {{item.parkingType}}</div>\
+        <div><strong>Tariff:</strong> {{item.tariffModel}}</div>\
+      </div>\
+      <div class='ev-amenities'>\
+        <strong>Amenities:</strong> {{#each item.amenityFeature}}<span class='ev-tag'>{{this}}</span>{{/each}}\
+      </div>\
+      <div class='ev-links'>\
+        {{#if item.url}}<a class='ev-button' href='{{item.url}}' target='_blank' rel='noopener'>View Site</a>{{/if}}\
+      </div>\
+    </div>\
+  </div>\
+</div>"
+    },
+
+    "offerChip": {
+      "fields": [
+        "offer.priceCurrency", "offer.price", "offer.unitText", "offer.idleFeePolicy", "offer.validThrough"
+      ],
+      "html": "<div class='ev-offer'>\
+  <span class='ev-offer__price'>{{offer.priceCurrency}} {{format.price offer.price}} / {{offer.unitText}}</span>\
+  {{#if offer.idleFeePolicy}}<span class='ev-offer__idle'>• {{offer.idleFeePolicy}}</span>{{/if}}\
+  {{#if offer.validThrough}}<span class='ev-offer__valid'>• valid till {{offer.validThrough}}</span>{{/if}}\
+</div>"
+    }
+  },
+
+  "statusViews": {
+    "sessionStatusCard": {
+      "fields": [
+        "session.reservationId",
+        "session.status",
+        "session.kwh",
+        "session.totalIncl",
+        "session.currency",
+        "session.lastUpdated",
+        "session.startTime",
+        "session.endTime",
+        "session.trackingUrl"
+      ],
+      "html": "<div class='ev-session'>\
+  <div class='ev-session__row'>\
+    <div class='ev-session__title'>Reservation {{session.reservationId}}</div>\
+    <div class='ev-badge ev-badge--{{format.statusBadge session.status}}'>{{session.status}}</div>\
+  </div>\
+  <div class='ev-session__row'>\
+    <div><strong>Energy:</strong> {{format.kwh session.kwh}}</div>\
+    <div><strong>Total:</strong> {{session.currency}} {{format.price session.totalIncl}}</div>\
+  </div>\
+  <div class='ev-session__row'>\
+    <div><strong>Start:</strong> {{session.startTime}}</div>\
+    {{#if session.endTime}}<div><strong>End:</strong> {{session.endTime}}</div>{{/if}}\
+  </div>\
+  <div class='ev-session__row'>\
+    {{#if session.trackingUrl}}<a class='ev-button' href='{{session.trackingUrl}}' target='_blank' rel='noopener'>Open Live Tracking</a>{{/if}}\
+    <div class='ev-session__ts'>Updated: {{session.lastUpdated}}</div>\
+  </div>\
+</div>"
+    }
+  },
+
+  "tables": {
+    "itemListColumns": [
+      { "title": "Station", "path": "item.name", "width": 280 },
+      { "title": "Cat.", "path": "item.category", "width": 90 },
+      { "title": "Conn.", "path": "item.connectorType", "width": 100 },
+      { "title": "kW", "path": "item.maxPowerKW", "width": 70, "align": "right" },
+      { "title": "Sockets", "path": "item.socketCount", "width": 80, "align": "right" },
+      { "title": "Status", "path": "item.stationStatus", "width": 110 },
+      { "title": "Price", "path": "offer.price", "width": 110, "format": "price" },
+      { "title": "Unit", "path": "offer.unitText", "width": 80 },
+      { "title": "Amenities", "path": "item.amenityFeature", "width": 200, "join": ", " }
+    ]
+  },
+
+  "cssSuggestions": [
+    ".ev-card{border:1px solid #e5e7eb;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px;background:#fff}",
+    ".ev-card__header{display:flex;justify-content:space-between;align-items:center}",
+    ".ev-card__title{font-size:16px;font-weight:600}",
+    ".ev-badge{padding:2px 8px;border-radius:999px;font-size:12px;line-height:18px;background:#eef2ff;color:#3730a3}",
+    ".ev-badge--success{background:#ecfdf5;color:#065f46}.ev-badge--warning{background:#fffbeb;color:#92400e}.ev-badge--error{background:#fef2f2;color:#991b1b}.ev-badge--info{background:#eff6ff;color:#1e40af}.ev-badge--muted{background:#f3f4f6;color:#374151}",
+    ".ev-chip{background:#f3f4f6;border-radius:999px;padding:2px 8px;margin-right:6px;font-size:12px}",
+    ".ev-price{font-size:18px;font-weight:700}",
+    ".ev-tag{background:#eef2ff;border-radius:8px;padding:2px 6px;margin-right:6px;margin-bottom:4px;display:inline-block}",
+    ".ev-detail__hero{height:180px;background-size:cover;background-position:center;border-radius:14px;margin-bottom:12px}",
+    ".ev-detail__title{background:rgba(0,0,0,.5);color:#fff;display:inline-block;padding:6px 10px;border-radius:8px;margin:10px}",
+    ".ev-offer{display:flex;gap:6px;align-items:center;font-size:14px}",
+    ".ev-session{border:1px solid #e5e7eb;border-radius:14px;padding:12px;background:#fff;display:flex;flex-direction:column;gap:8px}",
+    ".ev-session__row{display:flex;justify-content:space-between;align-items:center}"
+  ],
+
+  "notes": "Templates assume a Mustache/Handlebars-like renderer. Replace {{format.X}} helpers with your UI framework equivalents. Minimal fields are aligned to profile.json/operational_hints.bulk_search.minimal_*_fields."
+}

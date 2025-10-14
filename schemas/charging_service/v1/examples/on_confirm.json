@@ -1,0 +1,95 @@
+{
+  "context": {
+    "domain": "ONDC:EV.CHARGING",
+    "action": "on_confirm",
+    "bpp_id": "cpo.ecopower.example",
+    "bpp_uri": "https://cpo.ecopower.example/bpp",
+    "country": "IND",
+    "city": "std:080",
+    "transaction_id": "f9d1e7f3-5f1a-4d23-9f10-31b72c0b0c01",
+    "message_id": "c0d9f3e0-3b9a-4d29-8d3c-2b7b2c1e1e02",
+    "timestamp": "2025-10-14T07:40:10Z",
+    "ttl": "PT30S",
+    "schema_context": [
+      "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "order": {
+      "id": "ORD-20251014-0001",
+      "provider": { "id": "PROV-ECOPWR" },
+      "items": [
+        {
+          "id": "ITEM-BTM-DC60",
+          "quantity": { "selected": { "count": 1 } },
+          "offers": [{ "id": "OFF-BTM-DC60-KWH" }]
+        }
+      ],
+      "billing": {
+        "name": "Srilekha Raj",
+        "email": "srilekha@example.com",
+        "phone": "+91-90000-22222"
+      },
+      "payments": [
+        {
+          "id": "PAY-001",
+          "collected_by": "BAP",
+          "status": "NOT-PAID",
+          "type": "PRE-FULFILLMENT",
+          "params": { "currency": "INR", "amount": 0 }
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "FUL-1",
+          "type": "SERVICE",
+          "state": { "descriptor": { "code": "Scheduled" } },
+          "start": { "time": { "timestamp": "2025-10-14T08:00:00Z" } },
+          "end":   { "time": { "timestamp": "2025-10-14T08:45:00Z" } },
+          "customer": { "person": { "name": "Srilekha Raj" } },
+          "agent": { "name": "EcoPower BTM Hub" },
+          "contact": { "phone": "+91-90000-11111" },
+          "location": {
+            "gps": "12.9153,77.6104",
+            "address": {
+              "name": "EcoPower BTM Hub",
+              "city": "Bengaluru",
+              "state": "KA",
+              "country": "IND",
+              "area_code": "560076"
+            }
+          },
+          "attributes": {
+            "@context": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld",
+            "@type": "ChargingSessionAttributes",
+            "sessionStatus": "PENDING",
+            "authorizationMode": "APP_QR",
+            "authorizationOtpHint": "Enter last 4 digits",
+            "connectorType": "CCS2",
+            "maxPowerKW": 60,
+            "meteredEnergyKWh": 0,
+            "meteredDurationMinutes": 0,
+            "chargingPeriods": [],
+            "totalCost": { "exclVat": 0, "inclVat": 0 },
+            "lastUpdated": "2025-10-14T07:40:10Z",
+            "reservationId": "RESV-984532",
+            "gracePeriodMinutes": 10,
+            "trackingId": "TRK-984532",
+            "trackingUrl": "https://cpo.example.org/session/RESV-984532",
+            "trackingStatus": "ACTIVE"
+          }
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": 0.0 },
+        "breakup": [
+          {
+            "title": "Reservation Hold",
+            "price": { "currency": "INR", "value": 0.0 }
+          }
+        ]
+      },
+      "state": "Created"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "context": {
+    "domain": "ONDC:EV.CHARGING",
+    "action": "on_status",
+    "bpp_id": "cpo.ecopower.example",
+    "bpp_uri": "https://cpo.ecopower.example/bpp",
+    "country": "IND",
+    "city": "std:080",
+    "transaction_id": "f9d1e7f3-5f1a-4d23-9f10-31b72c0b0c01",
+    "message_id": "a7b3c9de-4480-423e-9f73-991ac7a9ac03",
+    "timestamp": "2025-10-14T08:20:00Z",
+    "ttl": "PT30S",
+    "schema_context": [
+      "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "order": {
+      "id": "ORD-20251014-0001",
+      "state": "In-Progress",
+      "fulfillments": [
+        {
+          "id": "FUL-1",
+          "state": { "descriptor": { "code": "In-Progress" } },
+          "start": { "time": { "timestamp": "2025-10-14T08:05:00Z" } },
+          "customer": { "person": { "name": "Srilekha Raj" } },
+          "attributes": {
+            "@context": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld",
+            "@type": "ChargingSessionAttributes",
+            "sessionStatus": "ACTIVE",
+            "authorizationMode": "APP_QR",
+            "connectorType": "CCS2",
+            "maxPowerKW": 60,
+            "meteredEnergyKWh": 12.4,
+            "meteredDurationMinutes": 28,
+            "chargingPeriods": [
+              {
+                "startDateTime": "2025-10-14T08:05:00Z",
+                "dimensions": [
+                  { "dimensionType": "POWER", "volume": 58.7 },
+                  { "dimensionType": "ENERGY", "volume": 5.8 }
+                ]
+              },
+              {
+                "startDateTime": "2025-10-14T08:15:00Z",
+                "dimensions": [
+                  { "dimensionType": "POWER", "volume": 52.3 },
+                  { "dimensionType": "ENERGY", "volume": 6.6 }
+                ]
+              }
+            ],
+            "totalCost": { "exclVat": 223.2, "inclVat": 263.4 },
+            "lastUpdated": "2025-10-14T08:20:00Z",
+            "reservationId": "RESV-984532",
+            "trackingId": "TRK-984532",
+            "trackingUrl": "https://cpo.example.org/session/RESV-984532",
+            "trackingStatus": "ACTIVE"
+          }
+        }
+      ]
+    }
+  }
+}

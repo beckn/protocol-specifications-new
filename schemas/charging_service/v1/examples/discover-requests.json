@@ -1,0 +1,201 @@
+{
+  "discover_requests": [
+    {
+      "title": "EV charging within a circular boundary",
+      "description": "Find stations within 10 km of the user’s point.",
+      "example": {
+        "context": {
+          "version": "2.0.0",
+          "action": "discover",
+          "timestamp": "2025-10-14T07:00:00Z",
+          "message_id": "MSG-CIRC-001",
+          "transaction_id": "TRX-CIRC-001",
+          "bap_id": "app.example.com",
+          "bap_uri": "https://app.example.com/bap",
+          "ttl": "PT30S",
+          "schema_context": [
+            "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+          ]
+        },
+        "message": {
+          "spatial": [
+            {
+              "op": "s_dwithin",
+              "targets": "$['beckn:availableAt'][*]['geo']",
+              "geometry": { "type": "Point", "coordinates": [77.5900, 12.9400] },
+              "distanceMeters": 10000
+            }
+          ],
+          "pagination": { "page": 1, "limit": 10 }
+        }
+      }
+    },
+    {
+      "title": "EV charging along a route",
+      "description": "Find stations within 5 km of the Bengaluru→Mysuru corridor.",
+      "example": {
+        "context": {
+          "version": "2.0.0",
+          "action": "discover",
+          "timestamp": "2025-10-14T07:02:00Z",
+          "message_id": "MSG-ROUTE-002",
+          "transaction_id": "TRX-ROUTE-002",
+          "bap_id": "app.example.com",
+          "bap_uri": "https://app.example.com/bap",
+          "ttl": "PT30S",
+          "schema_context": [
+            "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+          ]
+        },
+        "message": {
+          "spatial": [
+            {
+              "op": "s_dwithin",
+              "targets": "$['beckn:availableAt'][*]['geo']",
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [77.5946, 12.9716],
+                  [76.6394, 12.2958]
+                ]
+              },
+              "distanceMeters": 5000
+            }
+          ],
+          "pagination": { "page": 1, "limit": 20 }
+        }
+      }
+    },
+    {
+      "title": "EV charging within circle + connector filters",
+      "description": "Limit to CCS2 connectors with ≥50 kW within 10 km.",
+      "example": {
+        "context": {
+          "version": "2.0.0",
+          "action": "discover",
+          "timestamp": "2025-10-14T07:04:00Z",
+          "message_id": "MSG-CONN-003",
+          "transaction_id": "TRX-CONN-003",
+          "bap_id": "app.example.com",
+          "bap_uri": "https://app.example.com/bap",
+          "ttl": "PT30S",
+          "schema_context": [
+            "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+          ]
+        },
+        "message": {
+          "filters": "$[?(@['beckn:itemAttributes']['ev:connectorType']=='CCS2' && @['beckn:itemAttributes']['ev:maxPowerKW']>=50)]",
+          "spatial": [
+            {
+              "op": "s_dwithin",
+              "targets": "$['beckn:availableAt'][*]['geo']",
+              "geometry": { "type": "Point", "coordinates": [77.5900, 12.9400] },
+              "distanceMeters": 10000
+            }
+          ],
+          "pagination": { "page": 1, "limit": 10 }
+        }
+      }
+    },
+    {
+      "title": "EV charging within circle + vehicle spec filters",
+      "description": "User requires CCS2 and ≥60 kW within 8 km of a point.",
+      "example": {
+        "context": {
+          "version": "2.0.0",
+          "action": "discover",
+          "timestamp": "2025-10-14T07:06:00Z",
+          "message_id": "MSG-VEH-004",
+          "transaction_id": "TRX-VEH-004",
+          "bap_id": "app.example.com",
+          "bap_uri": "https://app.example.com/bap",
+          "ttl": "PT30S",
+          "schema_context": [
+            "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+          ]
+        },
+        "message": {
+          "filters": "$[?(@['beckn:itemAttributes']['ev:connectorType']=='CCS2' && @['beckn:itemAttributes']['ev:maxPowerKW']>=60)]",
+          "spatial": [
+            {
+              "op": "s_dwithin",
+              "targets": "$['beckn:availableAt'][*]['geo']",
+              "geometry": { "type": "Point", "coordinates": [77.6000, 12.9500] },
+              "distanceMeters": 8000
+            }
+          ],
+          "pagination": { "page": 1, "limit": 10 }
+        }
+      }
+    },
+    {
+      "title": "EV charging by specific CPO",
+      "description": "Filter items to those offered by a specific provider/operator.",
+      "example": {
+        "context": {
+          "version": "2.0.0",
+          "action": "discover",
+          "timestamp": "2025-10-14T07:08:00Z",
+          "message_id": "MSG-CPO-005",
+          "transaction_id": "TRX-CPO-005",
+          "bap_id": "app.example.com",
+          "bap_uri": "https://app.example.com/bap",
+          "ttl": "PT30S",
+          "schema_context": [
+            "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+          ]
+        },
+        "message": {
+\          "filters": "$[?(@['beckn:provider']['beckn:id']=='PROV-ECOPWR')]",
+          "pagination": { "page": 1, "limit": 20 }
+        }
+      }
+    },
+    {
+      "title": "View single charging station by Item id",
+      "description": "Fetch details for one station using its Item identifier.",
+      "example": {
+        "context": {
+          "version": "2.0.0",
+          "action": "discover",
+          "timestamp": "2025-10-14T07:10:00Z",
+          "message_id": "MSG-ITEM-006",
+          "transaction_id": "TRX-ITEM-006",
+          "bap_id": "app.example.com",
+          "bap_uri": "https://app.example.com/bap",
+          "ttl": "PT30S",
+          "schema_context": [
+            "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+          ]
+        },
+        "message": {
+          "filters": "$[?(@['beckn:id']=='ITEM-BTM-DC60')]",
+          "pagination": { "page": 1, "limit": 1 }
+        }
+      }
+    },
+    {
+      "title": "Fetch specific EVSE on-site by EVSE id",
+      "description": "Find a particular connector/EVSE at the site using its public EVSE identifier.",
+      "example": {
+        "context": {
+          "version": "2.0.0",
+          "action": "discover",
+          "timestamp": "2025-10-14T07:12:00Z",
+          "message_id": "MSG-EVSE-007",
+          "transaction_id": "TRX-EVSE-007",
+          "bap_id": "app.example.com",
+          "bap_uri": "https://app.example.com/bap",
+          "ttl": "PT30S",
+          "schema_context": [
+            "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+          ]
+        },
+        "message": {
+          "filters": "$[?(@['beckn:itemAttributes']['ev:evseId']=='IN*ECO*BTM*01*CCS2*A')]",
+          "pagination": { "page": 1, "limit": 1 }
+        }
+      }
+    }
+  ]
+}

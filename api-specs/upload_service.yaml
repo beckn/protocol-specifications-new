@@ -1,0 +1,226 @@
+openapi: 3.0.3
+info:
+  title: Beckn Catalog Upload API
+  description: |
+    Asynchronous catalog ingestion for the Discovery Service.
+
+    Pattern:
+      - Client (uploader) POSTs to **/catalog/upload** → receives **AckResponse** (ACK/NACK).
+      - Discovery Service later POSTs to **/on_catalog_upload** on the uploader's callback URL with processing results → uploader ACKs.
+
+    This file **reuses** core schemas from the Discovery API (Catalog, Item, Provider, DomainAttributes, TimePeriod, AckResponse, DiscoveryContext).
+    Replace **DISCOVERY_SPEC_URL** below with the absolute URL of your Discovery API YAML.
+  version: 1.0.0
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://staging-api.becknprotocol.io
+    description: Staging
+  - url: http://localhost:8081
+    description: Local upload service
+
+# NOTE: Set this to the raw URL of your Discovery API YAML (the one we’ve been editing).
+# Example (replace with your actual path/branch):
+#   DISCOVERY_SPEC_URL: https://raw.githubusercontent.com/sanketika-labs/beckn-schema/refs/heads/main/becknv2-schema/api-specs/discover-api-openapi-attr.yaml
+x-spec-refs:
+  DISCOVERY_SPEC_URL: https://raw.githubusercontent.com/abhimail/beckn/refs/heads/main/protocol-enhancements/discover.yaml
+
+paths:
+  /beckn/v2/catalog/upload:
+    post:
+      summary: Upload one or more catalogs for indexing
+      description: |
+        Uploader submits catalogs to be indexed. Returns **ACK** immediately if accepted for processing.
+        The detailed per-catalog processing result arrives later via **/on_catalog_upload**.
+      operationId: uploadCatalogs
+      tags: [Catalog Upload]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CatalogUploadRequest'
+            examples:
+              upload_basic:
+                summary: Minimal upload
+                value:
+                  context:
+                    version: "2.0.0"
+                    action: "catalog_upload"
+                    timestamp: "2025-09-01T10:30:00+05:30"
+                    message_id: "u-req-123"
+                    transaction_id: "u-txn-123"
+                    bap_id: "uploader.example.com"
+                    bap_uri: "https://uploader.example.com/callbacks"  # where /on_catalog_upload is exposed
+                    ttl: "PT30S"
+                  catalogs:
+                    - "@context": "https://becknprotocol.io/schemas/core/v1/Catalog/schema-context.jsonld"
+                      "@type": "beckn:Catalog"
+                      "beckn:id": "catalog-001"
+                      "beckn:descriptor": { "@type": "beckn:Descriptor", "schema:name": "Uploader Test Catalog" }
+                      "beckn:items": []
+      responses:
+        '200':
+          description: ACK of receiving the catalog upload request
+          content:
+            application/json:
+              schema:
+                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+        '400':
+          description: Bad request (validation failed before enqueue)
+          content:
+            application/json:
+              schema:
+                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+
+  /beckn/v2/catalog/on_upload:
+    post:
+      summary: Callback with catalog upload processing results
+      description: |
+        Discovery Service calls back with per-catalog processing results (accepted/rejected, errors, derived stats).
+        The receiver should respond with an **AckResponse**.
+      operationId: onCatalogUpload
+      tags: [Catalog Upload]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CatalogUploadResponse'
+            examples:
+              results_basic:
+                summary: Example processing results
+                value:
+                  context:
+                    version: "2.0.0"
+                    action: "on_catalog_upload"
+                    timestamp: "2025-09-01T10:31:05+05:30"
+                    message_id: "u-resp-123"
+                    transaction_id: "u-txn-123"
+                    bpp_id: "discovery-indexer.example.com"
+                    bpp_uri: "https://discovery-indexer.example.com"
+                    ttl: "PT30S"
+                  results:
+                    - catalog_id: "catalog-001"
+                      status: "ACCEPTED"
+                      item_count: 42
+                      warnings:
+                        - code: "NON_NORMALIZED_BRAND"
+                          message: "Some brand values were normalized"
+                    - catalog_id: "catalog-002"
+                      status: "REJECTED"
+                      error:
+                        code: "INVALID_ITEM"
+                        message: "Invalid item payload at index 3"
+                        paths: "catalogs[1].items[3]"
+      responses:
+        '200':
+          description: ACK of receiving the on_catalog_upload callback
+          content:
+            application/json:
+              schema:
+                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+
+components:
+  schemas:
+
+    # ---------- Envelopes ----------
+    CatalogUploadRequest:
+      type: object
+      required: [context, catalogs]
+      properties:
+        context:
+          allOf:
+            - $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/DiscoveryContext'
+            - type: object
+              properties:
+                action:
+                  type: string
+                  enum: [catalog_upload]
+        catalogs:
+          type: array
+          items:
+            $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/Catalog'
+          minItems: 1
+      description: |
+        Upload request envelope.
+        *context.version* MUST indicate the supported protocol version (e.g., "2.0.0").
+
+    CatalogUploadResponse:
+      type: object
+      required: [context, results]
+      properties:
+        context:
+          allOf:
+            - $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/DiscoveryContext'
+            - type: object
+              properties:
+                action:
+                  type: string
+                  enum: [on_catalog_upload]
+        results:
+          type: array
+          description: Per-catalog processing results
+          items:
+            $ref: '#/components/schemas/CatalogProcessingResult'
+
+    # ---------- Result model ----------
+    CatalogProcessingResult:
+      type: object
+      required: [catalog_id, status]
+      properties:
+        catalog_id:
+          type: string
+          description: The "beckn:id" of the submitted catalog
+        status:
+          type: string
+          enum: [ACCEPTED, REJECTED, PARTIAL]
+          description: Final processing outcome for this catalog
+        item_count:
+          type: integer
+          minimum: 0
+          description: Number of items indexed (when accepted/partial)
+        warnings:
+          type: array
+          description: Non-fatal issues encountered
+          items:
+            $ref: '#/components/schemas/ProcessingNotice'
+        error:
+          $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/Error'
+
+    ProcessingNotice:
+      type: object
+      required: [code, message]
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
+          additionalProperties: true
+
+  # (No local examples here; feel free to add and/or externalize like we did in the Discovery API.)

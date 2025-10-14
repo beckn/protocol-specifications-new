@@ -1,0 +1,86 @@
+{
+  "context": {
+    "domain": "ONDC:EV.CHARGING",
+    "action": "on_status",
+    "bpp_id": "cpo.ecopower.example",
+    "bpp_uri": "https://cpo.ecopower.example/bpp",
+    "country": "IND",
+    "city": "std:080",
+    "transaction_id": "f9d1e7f3-5f1a-4d23-9f10-31b72c0b0c01",
+    "message_id": "b9a13e00-7a86-4af1-8c06-e2ef34d2b205",
+    "timestamp": "2025-10-14T08:47:10Z",
+    "ttl": "PT30S",
+    "schema_context": [
+      "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "order": {
+      "id": "ORD-20251014-0001",
+      "state": "Completed",
+      "fulfillments": [
+        {
+          "id": "FUL-1",
+          "state": { "descriptor": { "code": "Completed" } },
+          "start": { "time": { "timestamp": "2025-10-14T08:05:00Z" } },
+          "end":   { "time": { "timestamp": "2025-10-14T08:47:00Z" } },
+          "attributes": {
+            "@context": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld",
+            "@type": "ChargingSessionAttributes",
+            "sessionStatus": "COMPLETED",
+            "authorizationMode": "APP_QR",
+            "connectorType": "CCS2",
+            "maxPowerKW": 60,
+            "meteredEnergyKWh": 18.9,
+            "meteredDurationMinutes": 42,
+            "chargingPeriods": [
+              {
+                "startDateTime": "2025-10-14T08:05:00Z",
+                "dimensions": [
+                  { "dimensionType": "POWER", "volume": 58.7 },
+                  { "dimensionType": "ENERGY", "volume": 5.8 }
+                ]
+              },
+              {
+                "startDateTime": "2025-10-14T08:15:00Z",
+                "dimensions": [
+                  { "dimensionType": "POWER", "volume": 52.3 },
+                  { "dimensionType": "ENERGY", "volume": 6.6 }
+                ]
+              },
+              {
+                "startDateTime": "2025-10-14T08:25:00Z",
+                "dimensions": [
+                  { "dimensionType": "POWER", "volume": 44.1 },
+                  { "dimensionType": "ENERGY", "volume": 6.5 }
+                ]
+              }
+            ],
+            "totalCost": { "exclVat": 340.2, "inclVat": 401.4 },
+            "lastUpdated": "2025-10-14T08:47:10Z",
+            "reservationId": "RESV-984532",
+            "trackingId": "TRK-984532",
+            "trackingUrl": "https://cpo.example.org/session/RESV-984532",
+            "trackingStatus": "INACTIVE"
+          }
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": 401.4 },
+        "breakup": [
+          { "title": "Energy (18.9 kWh)", "price": { "currency": "INR", "value": 340.2 } },
+          { "title": "GST (18%)", "price": { "currency": "INR", "value": 61.2 } }
+        ]
+      },
+      "payments": [
+        {
+          "id": "PAY-001",
+          "status": "PAID",
+          "type": "POST-FULFILLMENT",
+          "collected_by": "BPP",
+          "params": { "currency": "INR", "amount": 401.4 }
+        }
+      ]
+    }
+  }
+}

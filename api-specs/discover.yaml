@@ -281,9 +281,19 @@ components:
               description: Free text search query for items
               example: "gaming laptop premium tech"
             filters:
-              type: string
-              description: JSONPath expression for filtering items (RFC 9535)
-              example: "$[?(@.rating.value >= 4.0 && @.electronic.brand.name == 'Premium Tech')]"
+              type: object
+              description: Filter criteria for items
+              properties:
+                type:
+                  type: string
+                  enum: [jsonpath, cql2, xpath, sql]
+                  default: jsonpath
+                  description: Type of filter expression
+                query:
+                  type: string
+                  description: Filter query based on the specified type
+                  example: "$[?(@.rating.value >= 4.0 && @.electronic.brand.name == 'Premium Tech')]"
+              required: [type, query]
             spatial:
               type: array
               description: Optional array of spatial constraints (CQL2-JSON semantics).
@@ -982,7 +992,9 @@ components:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
         message:
           text_search: "gaming laptop premium tech"
-          filters: "$[?(@.rating.value >= 4 && @.electronic.brand.name == 'Premium Tech')]"
+          filters:
+            type: "jsonpath"
+            query: "$[?(@.rating.value >= 4 && @.electronic.brand.name == 'Premium Tech')]"
           pagination: { page: 1, limit: 20 }
 
     discover_natural_language:
@@ -1019,7 +1031,9 @@ components:
             - "https://example.org/schema/items/v1/GroceryItem/schema-context.jsonld"
         message:
           text_search: "organic apples fresh"
-          filters: "$[?(@.grocery.organicCertification ~ 'USDA Organic')]"
+          filters:
+            type: "jsonpath"
+            query: "$[?(@.grocery.organicCertification ~ 'USDA Organic')]"
           pagination: { page: 1, limit: 10 }
 
     discover_combined_search:
@@ -1038,7 +1052,9 @@ components:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
         message:
           text_search: "gaming laptop"
-          filters: "$[?(@.electronic.price['schema:price'] <= 2000 && @.electronic.brand.name == 'Premium Tech')]"
+          filters:
+            type: "jsonpath"
+            query: "$[?(@.electronic.price['schema:price'] <= 2000 && @.electronic.brand.name == 'Premium Tech')]"
           pagination: { page: 1, limit: 15 }
 
     discover_multi_schema_search:
@@ -1058,7 +1074,9 @@ components:
             - "https://example.org/schema/items/v1/GroceryItem/schema-context.jsonld"
         message:
           text_search: "premium tech and organic food"
-          filters: "$[?(@.rating.value >= 4 && (@.electronic.brand.name == 'Premium Tech' || @.grocery.organicCertification ~ 'USDA Organic'))]"
+          filters:
+            type: "jsonpath"
+            query: "$[?(@.rating.value >= 4 && (@.electronic.brand.name == 'Premium Tech' || @.grocery.organicCertification ~ 'USDA Organic'))]"
           pagination: { page: 1, limit: 25 }
 
     # ---------- /on_discover callback (DiscoverResponse) examples ----------

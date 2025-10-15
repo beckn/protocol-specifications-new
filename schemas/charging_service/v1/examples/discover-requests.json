@@ -84,7 +84,7 @@
           ]
         },
         "message": {
-          "filters": "$[?(@['beckn:itemAttributes']['ev:connectorType']=='CCS2' && @['beckn:itemAttributes']['ev:maxPowerKW']>=50)]",
+          "filters": { "type": "jsonpath", "query": "$[?(@['beckn:itemAttributes']['ev:connectorType']=='CCS2' && @['beckn:itemAttributes']['ev:maxPowerKW']>=50)]" },
           "spatial": [
             {
               "op": "s_dwithin",
@@ -115,7 +115,7 @@
           ]
         },
         "message": {
-          "filters": "$[?(@['beckn:itemAttributes']['ev:connectorType']=='CCS2' && @['beckn:itemAttributes']['ev:maxPowerKW']>=60)]",
+          "filters": { "type": "jsonpath", "query": "$[?(@['beckn:itemAttributes']['ev:connectorType']=='CCS2' && @['beckn:itemAttributes']['ev:maxPowerKW']>=60)]" },
           "spatial": [
             {
               "op": "s_dwithin",
@@ -146,7 +146,7 @@
           ]
         },
         "message": {
-\          "filters": "$[?(@['beckn:provider']['beckn:id']=='PROV-ECOPWR')]",
+          "filters": { "type": "jsonpath", "query": "$[?(@['beckn:provider']['beckn:id']=='PROV-ECOPWR')]" },
           "pagination": { "page": 1, "limit": 20 }
         }
       }
@@ -169,7 +169,7 @@
           ]
         },
         "message": {
-          "filters": "$[?(@['beckn:id']=='ITEM-BTM-DC60')]",
+          "filters": { "type": "jsonpath", "query": "$[?(@['beckn:id']=='ITEM-BTM-DC60')]" },
           "pagination": { "page": 1, "limit": 1 }
         }
       }
@@ -192,7 +192,7 @@
           ]
         },
         "message": {
-          "filters": "$[?(@['beckn:itemAttributes']['ev:evseId']=='IN*ECO*BTM*01*CCS2*A')]",
+          "filters": { "type": "jsonpath", "query": "$[?(@['beckn:itemAttributes']['ev:evseId']=='IN*ECO*BTM*01*CCS2*A')]" },
           "pagination": { "page": 1, "limit": 1 }
         }
       }

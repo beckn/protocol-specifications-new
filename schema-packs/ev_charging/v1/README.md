@@ -8,13 +8,13 @@ Attach these schemas as follows:
 
 | **Attribute Schema** | **Attach To** | **Purpose** |
 | --- | --- | --- |
-| ChargingServiceAttributes | Item.attributes | Technical and contextual details of a charging connector or station - e.g., connector type, power capacity, socket count, reservation capability, and amenities. |
+| ChargingService | Item.attributes | Technical and contextual details of a charging connector or station - e.g., connector type, power capacity, socket count, reservation capability, and amenities. |
 | --- | --- | --- |
-| ChargingOfferAttributes | Offer.attributes | Tariff details beyond core price fields - e.g., per-kWh or time-based pricing, idle fee policies, buyer-finder fees, and accepted payment methods. |
+| ChargingOffer | Offer.attributes | Tariff details beyond core price fields - e.g., per-kWh or time-based pricing, idle fee policies, buyer-finder fees, and accepted payment methods. |
 | --- | --- | --- |
-| ChargingSessionAttributes | Order.fulfillments\[\].attributes | Real-time or completed charging session data - energy consumed, session duration, total cost, telemetry intervals, and tracking links. |
+| ChargingSession | Order.fulfillments\[\].attributes | Real-time or completed charging session data - energy consumed, session duration, total cost, telemetry intervals, and tracking links. |
 | --- | --- | --- |
-| ChargingProviderAttributes | Provider.attributes | Operator identifiers, statutory registrations, and extended contact details for the charging provider. |
+| ChargingPointOperator | Provider.attributes | Operator identifiers, statutory registrations, and extended contact details for the charging provider. |
 | --- | --- | --- |
 
 

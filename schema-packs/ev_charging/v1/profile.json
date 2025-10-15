@@ -7,20 +7,20 @@
   "additionalProperties": false,
   "$comment": "JSON-LD context: ./context.jsonld ; EV vocab: ./vocab/ev.jsonld",
   "properties": {
-    "ChargingServiceAttributes": {
-      "$ref": "./attributes.yaml#/components/schemas/ChargingServiceAttributes"
+    "ChargingService": {
+      "$ref": "./attributes.yaml#/components/schemas/ChargingService"
     },
-    "ChargingOfferAttributes": {
-      "$ref": "./attributes.yaml#/components/schemas/ChargingOfferAttributes"
+    "ChargingOffer": {
+      "$ref": "./attributes.yaml#/components/schemas/ChargingOffer"
     },
-    "ChargingSessionAttributes": {
-      "$ref": "./attributes.yaml#/components/schemas/ChargingSessionAttributes"
+    "ChargingSession": {
+      "$ref": "./attributes.yaml#/components/schemas/ChargingSession"
     },
-    "ChargingProviderAttributes": {
-      "$ref": "./attributes.yaml#/components/schemas/ChargingProviderAttributes"
+    "ChargingProvider": {
+      "$ref": "./attributes.yaml#/components/schemas/ChargingProvider"
     }
   },
-  "required": ["ChargingServiceAttributes"],
+  "required": ["ChargingService"],
 
   "operational_hints": {
     "indexHints": {
@@ -113,7 +113,7 @@
     },
 
     "attribute_pack_minimums": {
-      "ChargingServiceAttributes_minimal": [
+      "ChargingService_minimal": [
         "category",
         "connectorType",
         "maxPowerKW",
@@ -123,7 +123,7 @@
         "serviceLocation.geo",
         "tariffModel"
       ],
-      "ChargingOfferAttributes_minimal": [
+      "ChargingOffer_minimal": [
         "priceSpecification.price",
         "priceSpecification.priceCurrency",
         "priceSpecification.unitText",
@@ -131,7 +131,7 @@
         "idleFeePolicy",
         "validThrough"
       ],
-      "ChargingSessionAttributes_minimal": [
+      "ChargingSession_minimal": [
         "reservationId",
         "sessionStatus",
         "kwh",

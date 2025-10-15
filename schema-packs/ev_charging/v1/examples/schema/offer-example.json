@@ -1,6 +1,6 @@
 {
   "@context": "../context.jsonld",
-  "@type": "ChargingOfferAttributes",
+  "@type": "ChargingOffer",
   "priceSpecification": {
     "price": 18.0,
     "priceCurrency": "INR",

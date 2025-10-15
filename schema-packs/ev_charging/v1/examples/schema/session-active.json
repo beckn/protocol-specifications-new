@@ -1,6 +1,6 @@
 {
   "@context": "../context.jsonld",
-  "@type": "ChargingSessionAttributes",
+  "@type": "ChargingSession",
   "sessionStatus": "ACTIVE",
   "authorizationMode": "APP_QR",
   "connectorType": "CCS2",

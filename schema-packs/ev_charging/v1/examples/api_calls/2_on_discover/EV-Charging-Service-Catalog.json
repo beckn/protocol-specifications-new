@@ -50,7 +50,7 @@
               ],
               "itemAttributes": {
                 "@context": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld",
-                "@type": "ChargingServiceAttributes",
+                "@type": "ChargingService",
                 "connectorType": "CCS2",
                 "maxPowerKW": 60,
                 "minPowerKW": 5,
@@ -87,7 +87,7 @@
                   "validity": { "end": "2025-12-31T18:30:00Z" },
                   "offerAttributes": {
                     "@context": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld",
-                    "@type": "ChargingOfferAttributes",
+                    "@type": "ChargingOffer",
                     "priceSpecification": {
                       "price": 18.0,
                       "priceCurrency": "INR",

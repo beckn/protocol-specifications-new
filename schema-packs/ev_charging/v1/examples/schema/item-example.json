@@ -1,6 +1,6 @@
 {
   "@context": "../context.jsonld",
-  "@type": "ChargingServiceAttributes",
+  "@type": "ChargingService",
   "connectorType": "CCS2",
   "maxPowerKW": 60,
   "minPowerKW": 5,

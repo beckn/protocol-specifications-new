@@ -1,0 +1,27 @@
+{
+  "context": {
+    "version": "2.0.0",
+    "action": "discover",
+    "timestamp": "2025-10-14T07:04:00Z",
+    "message_id": "MSG-CONN-003",
+    "transaction_id": "TRX-CONN-003",
+    "bap_id": "app.example.com",
+    "bap_uri": "https://app.example.com/bap",
+    "ttl": "PT30S",
+    "schema_context": [
+      "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "filters": "$[?(@['beckn:itemAttributes']['ev:connectorType']=='CCS2' && @['beckn:itemAttributes']['ev:maxPowerKW']>=50)]",
+    "spatial": [
+      {
+        "op": "s_dwithin",
+        "targets": "$['beckn:availableAt'][*]['geo']",
+        "geometry": { "type": "Point", "coordinates": [77.5900, 12.9400] },
+        "distanceMeters": 10000
+      }
+    ],
+    "pagination": { "page": 1, "limit": 10 }
+  }
+}

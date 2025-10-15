@@ -1,6 +1,6 @@
 {
   "@context": "../context.jsonld",
-  "@type": "ChargingSessionAttributes",
+  "@type": "ChargingSession",
   "sessionStatus": "PENDING",
   "authorizationMode": "APP_QR",
   "authorizationOtpHint": "Enter last 4 digits",

@@ -1,0 +1,32 @@
+{
+  "discover_requests": [
+    {
+      "title": "EV charging within a circular boundary",
+      "description": "Find stations within 10 km of the user’s point."
+    },
+    {
+      "title": "EV charging along a route",
+      "description": "Find stations within 5 km of the Bengaluru→Mysuru corridor."
+    },
+    {
+      "title": "EV charging within circle + connector filters",
+      "description": "Limit to CCS2 connectors with ≥50 kW within 10 km."
+    },
+    {
+      "title": "EV charging within circle + vehicle spec filters",
+      "description": "User requires CCS2 and ≥60 kW within 8 km of a point."
+    },
+    {
+      "title": "EV charging by specific CPO",
+      "description": "Filter items to those offered by a specific provider/operator."
+    },
+    {
+      "title": "View single charging station by Item id",
+      "description": "Fetch details for one station using its Item identifier."
+    },
+    {
+      "title": "Fetch specific EVSE on-site by EVSE id",
+      "description": "Find a particular connector/EVSE at the site using its public EVSE identifier."
+    }
+  ]
+}

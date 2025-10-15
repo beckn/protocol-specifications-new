@@ -17,9 +17,9 @@ info:
 components:
   schemas:
     ########################################################################
-    # ITEM.ATTRIBUTES — ChargingServiceAttributes (pruned; EV-specific only)
+    # ITEM.ATTRIBUTES — ChargingService (pruned; EV-specific only)
     ########################################################################
-    ChargingServiceAttributes:
+    ChargingService:
       type: object
       additionalProperties: false
       required:
@@ -28,7 +28,7 @@ components:
         - socketCount
       x-jsonld:
         "@context": ./context.jsonld
-        "@type": ChargingServiceAttributes
+        "@type": ChargingService
       properties:
 
         # EV-specific technicals
@@ -163,15 +163,15 @@ components:
           x-jsonld: { "@id": stationStatus }
 
     ########################################################################
-    # OFFER.ATTRIBUTES — ChargingOfferAttributes (pruned; EV/commercial bits)
+    # OFFER.ATTRIBUTES — ChargingOffer (pruned; EV/commercial bits)
     ########################################################################
-    ChargingOfferAttributes:
+    ChargingOffer:
       type: object
       additionalProperties: false
       required: [priceSpecification]
       x-jsonld:
         "@context": ./context.jsonld
-        "@type": ChargingOfferAttributes
+        "@type": ChargingOffer
       properties:
 
         # Detailed pricing basis (Offer has a price snapshot separately)
@@ -238,14 +238,14 @@ components:
           x-jsonld: { "@id": idleFeePolicy }
 
     ########################################################################
-    # ORDER/FULFILLMENT.ATTRIBUTES — ChargingSessionAttributes (pruned)
+    # ORDER/FULFILLMENT.ATTRIBUTES — ChargingSession (pruned)
     ########################################################################
-    ChargingSessionAttributes:
+    ChargingSession:
       type: object
       additionalProperties: false
       x-jsonld:
         "@context": ./context.jsonld
-        "@type": ChargingSessionAttributes
+        "@type": ChargingSession
       properties:
 
         # Session state & authorization (EV-specific)
@@ -392,14 +392,14 @@ components:
           x-jsonld: { "@id": trackingStatus }
 
     ########################################################################
-    # PROVIDER.ATTRIBUTES — ChargingProviderAttributes (unchanged/minimal)
+    # PROVIDER.ATTRIBUTES — ChargingPointOperator (unchanged/minimal)
     ########################################################################
-    ChargingProviderAttributes:
+    ChargingPointOperator:
       type: object
       additionalProperties: false
       x-jsonld:
         "@context": ./context.jsonld
-        "@type": ChargingProviderAttributes
+        "@type": ChargingPointOperator
       properties:
         operatorName:
           type: string

@@ -1,0 +1,22 @@
+{
+    "context": {
+        "version": "2.0.0",
+        "action": "discover",
+        "timestamp": "2025-10-14T07:08:00Z",
+        "message_id": "MSG-CPO-005",
+        "transaction_id": "TRX-CPO-005",
+        "bap_id": "app.example.com",
+        "bap_uri": "https://app.example.com/bap",
+        "ttl": "PT30S",
+        "schema_context": [
+            "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+        ]
+    },
+    "message": {
+        "filters": "$[?(@['beckn:provider']['beckn:id']=='PROV-ECOPWR')]",
+        "pagination": {
+            "page": 1,
+            "limit": 20
+        }
+    }
+}

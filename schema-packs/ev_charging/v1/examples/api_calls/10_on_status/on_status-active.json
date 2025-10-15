@@ -11,7 +11,7 @@
     "timestamp": "2025-10-14T08:20:00Z",
     "ttl": "PT30S",
     "schema_context": [
-      "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+      "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/context.jsonld"
     ]
   },
   "message": {
@@ -25,7 +25,7 @@
           "start": { "time": { "timestamp": "2025-10-14T08:05:00Z" } },
           "customer": { "person": { "name": "Srilekha Raj" } },
           "attributes": {
-            "@context": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld",
+            "@context": "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/context.jsonld",
             "@type": "ChargingSession",
             "sessionStatus": "ACTIVE",
             "authorizationMode": "APP_QR",

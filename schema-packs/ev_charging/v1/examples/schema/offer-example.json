@@ -1,12 +1,10 @@
 {
-  "@context": "../context.jsonld",
-  "@type": "ChargingOffer",
   "priceSpecification": {
     "price": 18.0,
     "priceCurrency": "INR",
     "unitText": "kWh"
   },
-  "paymentAccepted": ["UPI", "Card", "Wallet"],
+  "paymentAccepted": "UPI, Card, Wallet",
   "tariffModel": "PER_KWH",
   "buyerFinderFee": {
     "feeType": "PERCENTAGE",

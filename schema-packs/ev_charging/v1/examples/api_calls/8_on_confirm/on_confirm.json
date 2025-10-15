@@ -11,7 +11,7 @@
     "timestamp": "2025-10-14T07:40:10Z",
     "ttl": "PT30S",
     "schema_context": [
-      "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+      "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/context.jsonld"
     ]
   },
   "message": {
@@ -60,7 +60,7 @@
             }
           },
           "attributes": {
-            "@context": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld",
+            "@context": "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/context.jsonld",
             "@type": "ChargingSessionAttributes",
             "sessionStatus": "PENDING",
             "authorizationMode": "APP_QR",

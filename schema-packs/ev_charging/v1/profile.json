@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/profile.json",
+  "$id": "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/profile.json",
   "title": "EV Charging — Charging Service Attribute Pack (v1)",
   "description": "Bundle of attribute schemas for EV charging: Item (ChargingService), Offer, Session (Order/Fulfillment), and Provider. Uses ./context.jsonld for JSON-LD mappings and ./vocab/ev.(jsonld|yaml) for ev: terms.",
   "type": "object",
@@ -107,7 +107,7 @@
         "beckn:itemAttributes.maxPowerKW.desc"
       ],
       "schema_context": [
-        "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+        "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/context.jsonld"
       ],
       "examples_alignment": "Examples in ./examples and composed API samples map fields to these hints one-to-one."
     },

@@ -6,13 +6,12 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "ev": "./vocab/ev#",
-    "evp": "../../charging_service/v1#",
-
+    
     /* ---- Core class mappings ---- */
-    "ChargingServiceAttributes": "evp:ChargingServiceAttributes",
-    "ChargingOfferAttributes": "evp:ChargingOfferAttributes",
-    "ChargingSessionAttributes": "evp:ChargingSessionAttributes",
-    "ChargingProviderAttributes": "evp:ChargingProviderAttributes",
+    "ChargingService": "ev:ChargingService",
+    "ChargingOffer": "ev:ChargingOffer",
+    "ChargingSession": "ev:ChargingSession",
+    "ChargingProvider": "ev:ChargingProvider",
 
     /* ---- Shared schema.org properties ---- */
     "name": "schema:name",
@@ -75,9 +74,9 @@
   },
 
   "@graph": [
-    { "@id": "evp:ChargingServiceAttributes", "owl:equivalentClass": "schema:Service" },
-    { "@id": "evp:ChargingOfferAttributes", "owl:equivalentClass": "schema:Offer" },
-    { "@id": "evp:ChargingSessionAttributes", "owl:equivalentClass": "schema:Order" },
-    { "@id": "evp:ChargingProviderAttributes", "owl:equivalentClass": "schema:Organization" }
+    { "@id": "evp:ChargingService", "owl:equivalentClass": "schema:Service" },
+    { "@id": "evp:ChargingOffer", "owl:equivalentClass": "schema:Offer" },
+    { "@id": "evp:ChargingSession", "owl:equivalentClass": "schema:Order" },
+    { "@id": "evp:ChargingProvider", "owl:equivalentClass": "schema:Organization" }
   ]
 }

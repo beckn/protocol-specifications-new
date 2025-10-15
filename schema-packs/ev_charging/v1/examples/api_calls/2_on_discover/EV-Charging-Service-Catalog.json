@@ -11,7 +11,7 @@
     "timestamp": "2025-10-14T07:30:05Z",
     "ttl": "PT30S",
     "schema_context": [
-      "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+      "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/context.jsonld"
     ]
   },
   "message": {
@@ -49,7 +49,7 @@
                 { "refLocation": "LOC-BTM" }
               ],
               "itemAttributes": {
-                "@context": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld",
+                "@context": "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/context.jsonld",
                 "@type": "ChargingService",
                 "connectorType": "CCS2",
                 "maxPowerKW": 60,
@@ -86,7 +86,7 @@
                   "price": { "currency": "INR", "value": 18.0 },
                   "validity": { "end": "2025-12-31T18:30:00Z" },
                   "offerAttributes": {
-                    "@context": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld",
+                    "@context": "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/context.jsonld",
                     "@type": "ChargingOffer",
                     "priceSpecification": {
                       "price": 18.0,

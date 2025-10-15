@@ -1,6 +1,4 @@
 {
-  "@context": "../context.jsonld",
-  "@type": "ChargingPointOperator",
   "operatorName": "EcoPower Charging Pvt Ltd",
   "operatorCode": "ECOPOWER",
   "identifier": "urn:epc:provider:ecopower",

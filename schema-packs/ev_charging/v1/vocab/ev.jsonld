@@ -335,6 +335,30 @@
       "rdfs:comment": "Vehicle model recorded for the session.",
       "schema:domainIncludes": ["schema:Vehicle", "schema:Order"],
       "schema:rangeIncludes": "schema:Text"
-    }
+    },
+    {
+      "@id": "ev:ChargingService",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Charging Service Attributes",
+      "rdfs:comment": "Attribute bag for Item.attributes in EV charging."
+    },
+    {
+      "@id": "ev:ChargingOffer",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Charging Offer Attributes",
+      "rdfs:comment": "Attribute bag for Offer.attributes in EV charging."
+    },
+    {
+      "@id": "ev:ChargingSession",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Charging Session Attributes",
+      "rdfs:comment": "Attribute bag for Order/Fulfillment attributes (session telemetry)."
+    },
+    {
+      "@id": "ev:ChargingProvider",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Charging Provider Attributes",
+      "rdfs:comment": "Attribute bag for Provider.attributes (operator identifiers, etc.)."
+    }   
   ]
 }

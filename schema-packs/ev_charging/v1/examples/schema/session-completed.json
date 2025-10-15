@@ -1,6 +1,4 @@
 {
-  "@context": "../context.jsonld",
-  "@type": "ChargingSession",
   "sessionStatus": "COMPLETED",
   "authorizationMode": "APP_QR",
   "connectorType": "CCS2",
@@ -30,10 +28,7 @@
       ]
     }
   ],
-  "totalCost": {
-    "exclVat": 340.2,
-    "inclVat": 401.4
-  },
+  "totalCost": { "exclVat": 340.2, "inclVat": 401.4 },
   "lastUpdated": "2025-10-14T08:47:00Z",
   "reservationId": "RESV-984532",
   "gracePeriodMinutes": 10,

@@ -14,7 +14,7 @@ Attach these schemas as follows:
 | --- | --- | --- |
 | ChargingSession | Order.fulfillments\[\].attributes | Real-time or completed charging session data - energy consumed, session duration, total cost, telemetry intervals, and tracking links. |
 | --- | --- | --- |
-| ChargingPointOperator | Provider.attributes | Operator identifiers, statutory registrations, and extended contact details for the charging provider. |
+| ChargingProvider | Provider.attributes | Operator identifiers, statutory registrations, and extended contact details for the charging provider. |
 | --- | --- | --- |
 
 
@@ -56,8 +56,6 @@ This supports both local development and public hosting.
 | **renderer.json** | Defines rendering templates (HTML + JSON data paths) for discovery cards, offer chips, and session status views used in UI implementations. |
 | --- | --- |
 | **rules/** | **TBD** - will contain Spectral rules and JSON Schema (AJV) shims for automated validation. |
-| --- | --- |
-| **enums/** | **TBD** - will include canonical unit maps and normalization/default policies. |
 | --- | --- |
 | **tools/** | **TBD** - jq and helper scripts for transformations or legacy migrations. |
 | --- | --- |

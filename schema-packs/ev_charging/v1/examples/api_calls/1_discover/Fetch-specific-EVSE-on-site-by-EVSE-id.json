@@ -9,7 +9,7 @@
     "bap_uri": "https://app.example.com/bap",
     "ttl": "PT30S",
     "schema_context": [
-      "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+      "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/context.jsonld"
     ]
   },
   "message": {

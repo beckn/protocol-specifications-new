@@ -1,12 +1,12 @@
 openapi: 3.0.3
 info:
-  title: Beckn Catalog Upload API
+  title: Beckn Catalog Publish API
   description: |
     Asynchronous catalog ingestion for the Discovery Service.
 
     Pattern:
-      - Client (uploader) POSTs to **/catalog/upload** → receives **AckResponse** (ACK/NACK).
-      - Discovery Service later POSTs to **/on_catalog_upload** on the uploader's callback URL with processing results → uploader ACKs.
+      - Client (BPP) POSTs to **/catalog/publish** → receives **AckResponse** (ACK/NACK).
+      - Discovery Service later POSTs to **/on_catalog_publish** on the BPP's callback URL with processing results → BPP ACKs.
 
     This file **reuses** core schemas from the Discovery API (Catalog, Item, Provider, DomainAttributes, TimePeriod, AckResponse, DiscoveryContext).
     Replace **DISCOVERY_SPEC_URL** below with the absolute URL of your Discovery API YAML.
@@ -22,7 +22,7 @@ servers:
   - url: https://staging-api.becknprotocol.io
     description: Staging
   - url: http://localhost:8081
-    description: Local upload service
+    description: Local publish service
 
 # NOTE: Set this to the raw URL of your Discovery API YAML (the one we’ve been editing).
 # Example (replace with your actual path/branch):
@@ -31,42 +31,42 @@ x-spec-refs:
   DISCOVERY_SPEC_URL: https://raw.githubusercontent.com/abhimail/beckn/refs/heads/main/protocol-enhancements/discover.yaml
 
 paths:
-  /beckn/v2/catalog/upload:
+  /beckn/v2/catalog/publish:
     post:
-      summary: Upload one or more catalogs for indexing
+      summary: Publish one or more catalogs for indexing
       description: |
-        Uploader submits catalogs to be indexed. Returns **ACK** immediately if accepted for processing.
-        The detailed per-catalog processing result arrives later via **/on_catalog_upload**.
-      operationId: uploadCatalogs
-      tags: [Catalog Upload]
+        BPP submits catalogs to be indexed. Returns **ACK** immediately if accepted for processing.
+        The detailed per-catalog processing result arrives later via **/on_catalog_publish**.
+      operationId: publishCatalogs
+      tags: [Catalog Publish]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CatalogUploadRequest'
+              $ref: '#/components/schemas/CatalogPublishRequest'
             examples:
-              upload_basic:
-                summary: Minimal upload
+              publish_basic:
+                summary: Minimal publish
                 value:
                   context:
                     version: "2.0.0"
-                    action: "catalog_upload"
+                    action: "catalog_publish"
                     timestamp: "2025-09-01T10:30:00+05:30"
                     message_id: "u-req-123"
                     transaction_id: "u-txn-123"
-                    bap_id: "uploader.example.com"
-                    bap_uri: "https://uploader.example.com/callbacks"  # where /on_catalog_upload is exposed
+                    bap_id: "bpp.example.com"
+                    bap_uri: "https://bpp.example.com/callbacks"  # where /on_catalog_publish is exposed
                     ttl: "PT30S"
                   catalogs:
                     - "@context": "https://becknprotocol.io/schemas/core/v1/Catalog/schema-context.jsonld"
                       "@type": "beckn:Catalog"
                       "beckn:id": "catalog-001"
-                      "beckn:descriptor": { "@type": "beckn:Descriptor", "schema:name": "Uploader Test Catalog" }
+                      "beckn:descriptor": { "@type": "beckn:Descriptor", "schema:name": "BPP Test Catalog" }
                       "beckn:items": []
       responses:
         '200':
-          description: ACK of receiving the catalog upload request
+          description: ACK of receiving the catalog publish request
           content:
             application/json:
               schema:
@@ -84,27 +84,27 @@ paths:
               schema:
                 $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
 
-  /beckn/v2/catalog/on_upload:
+  /beckn/v2/catalog/on_publish:
     post:
-      summary: Callback with catalog upload processing results
+      summary: Callback with catalog publish processing results
       description: |
         Discovery Service calls back with per-catalog processing results (accepted/rejected, errors, derived stats).
         The receiver should respond with an **AckResponse**.
-      operationId: onCatalogUpload
-      tags: [Catalog Upload]
+      operationId: onCatalogPublish
+      tags: [Catalog Publish]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CatalogUploadResponse'
+              $ref: '#/components/schemas/CatalogPublishResponse'
             examples:
               results_basic:
                 summary: Example processing results
                 value:
                   context:
                     version: "2.0.0"
-                    action: "on_catalog_upload"
+                    action: "on_catalog_publish"
                     timestamp: "2025-09-01T10:31:05+05:30"
                     message_id: "u-resp-123"
                     transaction_id: "u-txn-123"
@@ -126,7 +126,7 @@ paths:
                         paths: "catalogs[1].items[3]"
       responses:
         '200':
-          description: ACK of receiving the on_catalog_upload callback
+          description: ACK of receiving the on_catalog_publish callback
           content:
             application/json:
               schema:
@@ -148,7 +148,7 @@ components:
   schemas:
 
     # ---------- Envelopes ----------
-    CatalogUploadRequest:
+    CatalogPublishRequest:
       type: object
       required: [context, catalogs]
       properties:
@@ -159,17 +159,17 @@ components:
               properties:
                 action:
                   type: string
-                  enum: [catalog_upload]
+                  enum: [catalog_publish]
         catalogs:
           type: array
           items:
             $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/Catalog'
           minItems: 1
       description: |
-        Upload request envelope.
+        Catalog Publish request envelope.
         *context.version* MUST indicate the supported protocol version (e.g., "2.0.0").
 
-    CatalogUploadResponse:
+    CatalogPublishResponse:
       type: object
       required: [context, results]
       properties:
@@ -180,7 +180,7 @@ components:
               properties:
                 action:
                   type: string
-                  enum: [on_catalog_upload]
+                  enum: [on_catalog_publish]
         results:
           type: array
           description: Per-catalog processing results

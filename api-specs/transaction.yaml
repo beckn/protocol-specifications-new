@@ -9,7 +9,7 @@ x-spec-refs:
   DISCOVERY_SPEC_URL: https://raw.githubusercontent.com/abhimail/beckn/refs/heads/main/protocol-enhancements/discover.yaml    
 
 paths:
-  /select:
+  /beckn/select:
     post:
       summary: "Buyer selects items/offers \u2014 returns priced order"
       requestBody:
@@ -64,7 +64,7 @@ paths:
               examples:
                 server_error:
                   $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
-  /on_select:
+  /beckn/on_select:
     post:
       summary: Provider returns priced order (quote)
       requestBody:
@@ -120,7 +120,7 @@ paths:
                 server_error:
                   $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
   
-  /get_offer:
+  /beckn/get_offer:
     post:
       summary: Compute/prune final offers for a given selection of items and/or offers (no Order envelope)
       description: >
@@ -208,7 +208,7 @@ paths:
                 server_error:
                   $ref: "{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error"
 
-  /on_get_offer:
+  /beckn/on_get_offer:
     post:
       summary: Provider returns computed offers for the selection
       description: >
@@ -267,7 +267,7 @@ paths:
                 server_error:
                   $ref: "{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error"  
   
-  /init:
+  /beckn/init:
     post:
       summary: Initialize order (party details, fulfillment mode, payment intent)
       requestBody:
@@ -322,7 +322,7 @@ paths:
               examples:
                 server_error:
                   $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
-  /on_init:
+  /beckn/on_init:
     post:
       summary: Provider echoes initialized order (with refs populated)
       requestBody:
@@ -377,7 +377,7 @@ paths:
               examples:
                 server_error:
                   $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
-  /confirm:
+  /beckn/confirm:
     post:
       summary: Confirm order (final selections; payment/fulfillment committed)
       requestBody:
@@ -432,7 +432,7 @@ paths:
               examples:
                 server_error:
                   $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
-  /on_confirm:
+  /beckn/on_confirm:
     post:
       summary: Provider returns confirmed order
       requestBody:
@@ -487,7 +487,7 @@ paths:
               examples:
                 server_error:
                   $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
-  /status:
+  /beckn/status:
     post:
       summary: Fetch order status by id
       requestBody:
@@ -549,7 +549,7 @@ paths:
               examples:
                 server_error:
                   $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
-  /on_status:
+  /beckn/on_status:
     post:
       summary: Provider returns current order (or tracking via fulfillment packs)
       requestBody:
@@ -606,7 +606,7 @@ paths:
               examples:
                 server_error:
                   $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
-  /update:
+  /beckn/update:
     post:
       summary: Request order mutation (replace, cancel line, address change, etc.)
       requestBody:
@@ -661,7 +661,7 @@ paths:
               examples:
                 server_error:
                   $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
-  /on_update:
+  /beckn/on_update:
     post:
       summary: Provider returns mutated order
       requestBody:
@@ -716,7 +716,7 @@ paths:
               examples:
                 server_error:
                   $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
-  /cancel:
+  /beckn/cancel:
     post:
       summary: Request to cancel an order
       requestBody:
@@ -778,7 +778,7 @@ paths:
               examples:
                 server_error:
                   $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
-  /on_cancel:
+  /beckn/on_cancel:
     post:
       summary: Provider returns cancelled order (may reflect refund/payment update
         via PaymentRef)

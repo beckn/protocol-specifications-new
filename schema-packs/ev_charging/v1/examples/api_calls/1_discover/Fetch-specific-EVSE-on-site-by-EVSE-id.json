@@ -1,5 +1,6 @@
 {
   "context": {
+    "domain": "beckn:ev-charging:ncn",
     "version": "2.0.0",
     "action": "discover",
     "timestamp": "2025-10-14T07:12:00Z",

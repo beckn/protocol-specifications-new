@@ -1,6 +1,6 @@
 {
   "context": {
-    "domain": "ONDC:EV.CHARGING",
+    "domain": "beckn:ev-charging:ncn",
     "action": "on_status",
     "bpp_id": "cpo.ecopower.example",
     "bpp_uri": "https://cpo.ecopower.example/bpp",
@@ -23,7 +23,7 @@
           "id": "FUL-1",
           "state": { "descriptor": { "code": "In-Progress" } },
           "start": { "time": { "timestamp": "2025-10-14T08:05:00Z" } },
-          "customer": { "person": { "name": "Srilekha Raj" } },
+          "customer": { "person": { "name": "Adam" } },
           "attributes": {
             "@context": "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/context.jsonld",
             "@type": "ChargingSession",

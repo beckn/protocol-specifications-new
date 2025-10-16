@@ -1,0 +1,142 @@
+{
+    "context": {
+        "domain": "beckn:ev-charging:ncn",
+        "action": "select",
+        "bpp_id": "cpo.ecopower.example",
+        "bpp_uri": "https://cpo.ecopower.example/bpp",
+        "country": "IND",
+        "city": "std:080",
+        "transaction_id": "f9d1e7f3-5f1a-4d23-9f10-31b72c0b0c01",
+        "message_id": "c0d9f3e0-3b9a-4d29-8d3c-2b7b2c1e1e02",
+        "timestamp": "2025-10-14T07:40:10Z",
+        "ttl": "PT30S",
+        "schema_context": [
+            "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld"
+        ]
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "PROV-ECOPWR"
+            },
+            "items": [
+                {
+                    "id": "ITEM-BTM-DC60",
+                    "descriptor": {
+                        "name": "DC Fast Charger — 60 kW (CCS2)",
+                        "images": [
+                            {
+                                "url": "https://img.ecopower.example/btm-ccs2.jpg"
+                            }
+                        ]
+                    },
+                    "category": "DC_Fast",
+                    "availableAt": [
+                        {
+                            "refLocation": "LOC-BTM"
+                        }
+                    ],
+                    "itemAttributes": {
+                        "@context": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld",
+                        "@type": "ChargingService",
+                        "connectorType": "CCS2",
+                        "maxPowerKW": 60,
+                        "minPowerKW": 5,
+                        "socketCount": 2,
+                        "reservationSupported": true,
+                        "paymentAccepted": [
+                            "UPI",
+                            "Card"
+                        ],
+                        "serviceLocation": {
+                            "gps": "12.9153,77.6104",
+                            "address": {
+                                "name": "EcoPower BTM Hub",
+                                "locality": "100 Ft Rd",
+                                "city": "Bengaluru",
+                                "state": "KA",
+                                "country": "IND",
+                                "area_code": "560076"
+                            }
+                        },
+                        "amenityFeature": [
+                            "Restaurant",
+                            "Restroom",
+                            "Wi-Fi"
+                        ],
+                        "ocppId": "IN-ECO-BTM-01",
+                        "evseId": "IN*ECO*BTM*01*CCS2*A",
+                        "roamingNetwork": "GreenRoam",
+                        "parkingType": "Mall",
+                        "connectorId": "CCS2-A",
+                        "powerType": "DC",
+                        "connectorFormat": "CABLE",
+                        "chargingSpeed": "FAST",
+                        "stationStatus": "Available"
+                    },
+                    "offers": [
+                        {
+                            "id": "OFF-BTM-DC60-KWH",
+                            "descriptor": {
+                                "name": "Per-kWh Tariff"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": 18.0
+                            },
+                            "validity": {
+                                "end": "2025-12-31T18:30:00Z"
+                            },
+                            "offerAttributes": {
+                                "@context": "https://schemas.example.org/profiles/ev-charging/charging_service/v1/context.jsonld",
+                                "@type": "ChargingOffer",
+                                "priceSpecification": {
+                                    "price": 18.0,
+                                    "priceCurrency": "INR",
+                                    "unitText": "kWh"
+                                },
+                                "paymentAccepted": [
+                                    "UPI",
+                                    "Card",
+                                    "Wallet"
+                                ],
+                                "tariffModel": "PER_KWH",
+                                "buyerFinderFee": {
+                                    "feeType": "PERCENTAGE",
+                                    "feeValue": 2.5
+                                },
+                                "idleFeePolicy": "₹2/min after 10 min post-charge"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "name": "Adam",
+                "email": "adam@example.com",
+                "phone": "+91-90000-22222"
+            },
+            "fulfillments": [
+                {
+                    "id": "FUL-1",
+                    "type": "CHARGING",
+                    "start": {
+                        "time": {
+                            "timestamp": "2025-10-14T08:00:00Z"
+                        }
+                    },
+                    "end": {
+                        "time": {
+                            "timestamp": "2025-10-14T08:45:00Z"
+                        }
+                    },
+                    "customer": {
+                        "person": {
+                            "name": "Adam"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

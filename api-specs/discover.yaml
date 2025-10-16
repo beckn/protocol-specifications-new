@@ -258,6 +258,163 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /beckn/get_offer:
+    post:
+      summary: Compute/prune final offers for a given selection of items and/or offers (no Order envelope)
+      description: >
+        Client (BAP) submits a selection of items and/or offers. The BPP computes applicable, priced offers
+        and returns them asynchronously via /on_get_offer. This is semantically similar to /select, but
+        avoids the Order wrapper to keep the intent clear: "give me offers for these choices".
+      operationId: getOffer
+      tags: [Discovery]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [context, message]
+              properties:
+                context:
+                  allOf:
+                    - $ref: "#/components/schemas/DiscoveryContext"
+                    - type: object
+                      properties: { action: { const: "get_offer" } }
+                message:
+                  type: object
+                  required: [selection]
+                  properties:
+                    # The selection may be a set of items, a set of offers, or both.
+                    selection:
+                      type: object
+                      properties:
+                        items:
+                          type: array
+                          minItems: 1
+                          items:
+                            type: object
+                            required: [beckn:id]
+                            properties:
+                              beckn:id:
+                                $ref: "#/components/schemas/Item/properties/beckn:id"
+                              quantity:
+                                type: number
+                                description: Optional requested quantity for this item
+                        offers:
+                          type: array
+                          minItems: 1
+                          items:
+                            type: object
+                            required: [beckn:id]
+                            properties:
+                              beckn:id:
+                                $ref: "#/components/schemas/Offer/properties/beckn:id"
+                      anyOf:
+                        - required: [items]
+                        - required: [offers]
+                    # Optional scoping hints (kept open; networks can define attribute packs if needed)
+                    provider:
+                      $ref: "#/components/schemas/Provider/properties/beckn:id"
+                    constraints:
+                      type: object
+                      description: Optional constraints (e.g., fulfillment mode/slots, region, eligibility). Extend via attribute packs as needed.
+                      additionalProperties: true
+            examples:
+              get_offer_request:
+                $ref: '#/components/examples/get_offer_request'
+      responses:
+        "200":
+          description: ACK — request received (validation passed)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AckResponse'
+              examples:
+                success_ack:
+                  $ref: '#/components/examples/ack_success'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AckResponse'
+              examples:
+                bad_request:
+                  $ref: '#/components/examples/ack_bad_request'
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AckResponse'
+              examples:
+                server_error:
+                  $ref: '#/components/examples/ack_server_error'
+
+  /beckn/on_get_offer:
+    post:
+      summary: Provider returns computed offers for the selection
+      description: >
+        BPP responds with the final set of offers applicable to the submitted selection. Each Offer must
+        reference the base items via beckn:items (schema:itemOffered). Additional pricing/eligibility details
+        can be carried in offerAttributes packs.
+      operationId: onGetOffer
+      tags: [Discovery]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [context, message]
+              properties:
+                context:
+                  allOf:
+                    - $ref: "#/components/schemas/DiscoveryContext"
+                    - type: object
+                      properties: { action: { const: "on_get_offer" } }
+                message:
+                  type: object
+                  required: [offers]
+                  properties:
+                    # Full Offer objects are returned (not just ids) so clients can render price/terms immediately.
+                    offers:
+                      type: array
+                      minItems: 1
+                      items:
+                        $ref: "#/components/schemas/Offer"
+            examples:
+              on_get_offer_response:
+                $ref: '#/components/examples/on_get_offer_response'
+      responses:
+        "200":
+          description: ACK — response received
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AckResponse'
+              examples:
+                success_ack:
+                  $ref: '#/components/examples/ack_success'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AckResponse'
+              examples:
+                bad_request:
+                  $ref: '#/components/examples/ack_bad_request'
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AckResponse'
+              examples:
+                server_error:
+                  $ref: '#/components/examples/ack_server_error'
+
 components:
   schemas:
     DiscoverRequest:
@@ -1368,3 +1525,69 @@ components:
                     "beckn:descriptor":
                       "@type": "beckn:Descriptor"
                       "schema:name": "Premium Tech Store"
+
+    # ---------- /get_offer request examples ----------
+    get_offer_request:
+      summary: Get offer request for selected items
+      value:
+        context:
+          version: "2.0.0"
+          action: "get_offer"
+          timestamp: "2024-04-10T16:10:50+05:30"
+          message_id: "6d7e8f90-a1b2-43c4-95d6-e7f8091a2b3c"
+          transaction_id: "7e8f90a1-b2c3-44d5-96e7-f8091a2b3c4d"
+          bap_id: "bap.example.com"
+          bap_uri: "https://bap.example.com"
+          ttl: "PT30S"
+        message:
+          selection:
+            items:
+              - beckn:id: "laptop-item-001"
+                quantity: 1
+              - beckn:id: "headphones-item-001"
+                quantity: 2
+          provider: "tech-store-001"
+          constraints:
+            deliveryMode: "HOME_DELIVERY"
+            region: "Bengaluru"
+
+    # ---------- /on_get_offer response examples ----------
+    on_get_offer_response:
+      summary: Provider returns computed offers
+      value:
+        context:
+          version: "2.0.0"
+          action: "on_get_offer"
+          timestamp: "2024-04-10T16:10:50+05:30"
+          message_id: "8f90a1b2-c3d4-45e6-97f8-091a2b3c4d5e"
+          transaction_id: "9f0a1b2c-d3e4-46f7-98a9-102b3c4d5e6f"
+          bpp_id: "bpp.example.com"
+          bpp_uri: "https://bpp.example.com"
+          ttl: "PT30S"
+        message:
+          offers:
+            - "@context": "https://becknprotocol.io/schemas/core/v1/Offer/schema-context.jsonld"
+              "@type": "beckn:Offer"
+              "beckn:id": "offer-laptop-headphones-bundle-001"
+              "beckn:descriptor":
+                "@type": "beckn:Descriptor"
+                "schema:name": "Gaming Laptop + Headphones Bundle"
+                "beckn:shortDesc": "Premium gaming setup with laptop and noise-cancelling headphones"
+              "beckn:provider": "tech-store-001"
+              "beckn:items": ["laptop-item-001", "headphones-item-001"]
+              "beckn:price":
+                currency: "USD"
+                value: 1899.99
+                components:
+                  - type: "UNIT"
+                    value: 1999.99
+                    currency: "USD"
+                    description: "Base price"
+                  - type: "DISCOUNT"
+                    value: 100.00
+                    currency: "USD"
+                    description: "Bundle discount"
+              "beckn:validity":
+                "@type": "beckn:TimePeriod"
+                "schema:startDate": "2024-04-10T00:00:00Z"
+                "schema:endDate": "2024-04-30T23:59:59Z"

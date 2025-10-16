@@ -13,7 +13,10 @@
     ]
   },
   "message": {
-    "filters": "$[?(@['beckn:itemAttributes']['ev:connectorType']=='CCS2' && @['beckn:itemAttributes']['ev:maxPowerKW']>=60)]",
+    "filters": {
+      "type": "jsonpath",
+      "expression": "$[?(@['beckn:itemAttributes']['ev:connectorType']=='CCS2' && @['beckn:itemAttributes']['ev:maxPowerKW']>=60)]"
+    },
     "spatial": [
       {
         "op": "s_dwithin",

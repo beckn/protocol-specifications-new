@@ -13,7 +13,10 @@
     ]
   },
   "message": {
-    "filters": "$[?(@['beckn:id']=='ITEM-BTM-DC60')]",
+    "filters": {
+      "type": "jsonpath",
+      "expression": "$[?(@['beckn:id']=='ITEM-BTM-DC60')]"
+    },
     "pagination": {
       "page": 1,
       "limit": 1

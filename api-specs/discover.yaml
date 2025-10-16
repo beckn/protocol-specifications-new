@@ -286,14 +286,14 @@ components:
               properties:
                 type:
                   type: string
-                  enum: [jsonpath, cql2, xpath, sql]
+                  enum: [jsonpath]
                   default: jsonpath
                   description: Type of filter expression
-                query:
+                expression:
                   type: string
-                  description: Filter query based on the specified type
+                  description: Filter expression based on the specified type
                   example: "$[?(@.rating.value >= 4.0 && @.electronic.brand.name == 'Premium Tech')]"
-              required: [type, query]
+              required: [type, expression]
             spatial:
               type: array
               description: Optional array of spatial constraints (CQL2-JSON semantics).
@@ -994,7 +994,7 @@ components:
           text_search: "gaming laptop premium tech"
           filters:
             type: "jsonpath"
-            query: "$[?(@.rating.value >= 4 && @.electronic.brand.name == 'Premium Tech')]"
+            expression: "$[?(@.rating.value >= 4 && @.electronic.brand.name == 'Premium Tech')]"
           pagination: { page: 1, limit: 20 }
 
     discover_natural_language:
@@ -1033,7 +1033,7 @@ components:
           text_search: "organic apples fresh"
           filters:
             type: "jsonpath"
-            query: "$[?(@.grocery.organicCertification ~ 'USDA Organic')]"
+            expression: "$[?(@.grocery.organicCertification ~ 'USDA Organic')]"
           pagination: { page: 1, limit: 10 }
 
     discover_combined_search:
@@ -1054,7 +1054,7 @@ components:
           text_search: "gaming laptop"
           filters:
             type: "jsonpath"
-            query: "$[?(@.electronic.price['schema:price'] <= 2000 && @.electronic.brand.name == 'Premium Tech')]"
+            expression: "$[?(@.electronic.price['schema:price'] <= 2000 && @.electronic.brand.name == 'Premium Tech')]"
           pagination: { page: 1, limit: 15 }
 
     discover_multi_schema_search:
@@ -1076,7 +1076,7 @@ components:
           text_search: "premium tech and organic food"
           filters:
             type: "jsonpath"
-            query: "$[?(@.rating.value >= 4 && (@.electronic.brand.name == 'Premium Tech' || @.grocery.organicCertification ~ 'USDA Organic'))]"
+            expression: "$[?(@.rating.value >= 4 && (@.electronic.brand.name == 'Premium Tech' || @.grocery.organicCertification ~ 'USDA Organic'))]"
           pagination: { page: 1, limit: 25 }
 
     # ---------- /on_discover callback (DiscoverResponse) examples ----------

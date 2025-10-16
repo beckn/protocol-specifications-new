@@ -259,7 +259,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 
   /beckn/get_offer:
-    post:
+    get:
       summary: Compute/prune final offers for a given selection of items and/or offers (no Order envelope)
       description: >
         Client (BAP) submits a selection of items and/or offers. The BPP computes applicable, priced offers
@@ -324,12 +324,16 @@ paths:
                 $ref: '#/components/examples/get_offer_request'
       responses:
         "200":
-          description: ACK — request received (validation passed)
+          description: ACK — received the get offer request (validation passed) or GetOfferResponse
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AckResponse'
+                oneOf:
+                  - $ref: '#/components/schemas/AckResponse'
+                  - $ref: '#/components/schemas/GetOfferResponse'
               examples:
+                get_offer_response:
+                  $ref: '#/components/examples/on_get_offer_response'
                 success_ack:
                   $ref: '#/components/examples/ack_success'
         "400":
@@ -365,24 +369,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required: [context, message]
-              properties:
-                context:
-                  allOf:
-                    - $ref: "#/components/schemas/DiscoveryContext"
-                    - type: object
-                      properties: { action: { const: "on_get_offer" } }
-                message:
-                  type: object
-                  required: [offers]
-                  properties:
-                    # Full Offer objects are returned (not just ids) so clients can render price/terms immediately.
-                    offers:
-                      type: array
-                      minItems: 1
-                      items:
-                        $ref: "#/components/schemas/Offer"
+              $ref: '#/components/schemas/GetOfferResponse'
             examples:
               on_get_offer_response:
                 $ref: '#/components/examples/on_get_offer_response'
@@ -483,6 +470,29 @@ components:
               description: Array of catalogs containing items
               items:
                 $ref: '#/components/schemas/Catalog'
+
+    GetOfferResponse:
+      type: object
+      required: [context, message]
+      properties:
+        context:
+          allOf:
+            - $ref: '#/components/schemas/DiscoveryContext'
+            - type: object
+              properties:
+                action:
+                  type: string
+                  enum: [on_get_offer]
+        message:
+          type: object
+          required: [offers]
+          properties:
+            offers:
+              type: array
+              minItems: 1
+              description: Array of computed offers for the selected items
+              items:
+                $ref: '#/components/schemas/Offer'
 
     DiscoveryContext:
       allOf:

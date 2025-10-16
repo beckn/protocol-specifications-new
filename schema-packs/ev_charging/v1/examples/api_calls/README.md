@@ -1,5 +1,11 @@
 # EV Charging API Call Examples
 
+<style>
+  table { width: 100%; border-collapse: collapse; }
+  table th:nth-child(1), table td:nth-child(1) { width: 80%; }
+  table th:nth-child(2), table td:nth-child(2) { width: 20%; }
+</style>
+
 This directory contains JSON examples of API calls for the EV Charging schema (v1). Examples are grouped by endpoint.
 
 ## discover

@@ -17,7 +17,6 @@
     "filters": {
       "type": "jsonpath",
       "expression": "$[?(@['beckn:itemAttributes']['ev:evseId']=='IN*ECO*BTM*01*CCS2*A')]"
-    },
-    "pagination": { "page": 1, "limit": 1 }
+    }
   }
 }

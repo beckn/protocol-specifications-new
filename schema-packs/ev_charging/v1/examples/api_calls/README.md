@@ -87,16 +87,16 @@ In these examples, we show how an EV user manages a live charging session.
 
 | Use Case                                                                               | link to example JSON |
 |----------------------------------------------------------------------------------------|----------------------|
-| Request where an EV user starts a charging session                                     | [EV-user-starts-charging-session.json](11_update/EV-user-starts-charging-session.json) |
-| Request where an EV user stops a charging session                                      | [EV-user-stops-charging-session.json](11_update/EV-user-stops-charging-session.json) |
+| Request where an EV user requests CPO to start a charging session                                     | [EV-user-requests-CPO-to-start-charging-session.json](11_update/EV-user-requests-CPO-to-start-charging-session.json) |
+| Request where an EV user requests CPO to stop the charging session                                      | [EV-user-requests-CPO-to-stop-charging-session.json](11_update/EV-user-requests-CPO-to-stop-charging-session.json) |
 
 ## on_update
 In these examples, we show how the CPO responds to live session management.
 
 | Use Case                                                                               | link to example JSON |
 |----------------------------------------------------------------------------------------|----------------------|
-| CPO response when starting a charging session                                         | [CPO-starts-charging-session.json](12_on_update/CPO-starts-charging-session.json) |
-| CPO response when stopping the charging session                                       | [CPO-stops-charging-session.json](12_on_update/CPO-stops-charging-session.json) |
+| CPO response when starting a charging session                                         | [CPO-confirms-start-of-charging-session.json](12_on_update/CPO-confirms-start-of-charging-session.json) |
+| CPO response when stopping the charging session                                       | [CPO-confirms-stop-of-charging-session.json](12_on_update/CPO-confirms-stop-of-charging-session.json) |
 
 ## cancel
 In these examples, we show how an EV user cancels reservations or sessions.
@@ -111,7 +111,8 @@ In these examples, we show how the CPO responds to cancellation requests.
 
 | Use Case                                                                               | link to example JSON |
 |----------------------------------------------------------------------------------------|----------------------|
-| CPO response cancelling a charging session reservation                                  | [CPO-cancels-charging-session-reservation.json](14_on_cancel/CPO-cancels-charging-session-reservation.json) |
+| CPO confirms cancellation of a charging session                                  | [CPO-cancels-charging-session.json](14_on_cancel/CPO-cancels-charging-session.json) |
+| CPO confirms cancellation of charging slot reservation                                  | [CPO-cancels-charging-slot-reservation.json](14_on_cancel/CPO-cancels-charging-slot-reservation.json) |
 
 ## track
 In these examples, we show how an EV user tracks a live charging session in real-time.

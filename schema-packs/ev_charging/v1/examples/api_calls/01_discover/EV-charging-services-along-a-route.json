@@ -33,10 +33,6 @@
                 },
                 "distanceMeters": 5000
             }
-        ],
-        "pagination": {
-            "page": 1,
-            "limit": 20
-        }
+        ]
     }
 }

@@ -142,7 +142,7 @@ paths:
         - Accept: text/html → Returns browser-friendly HTML page (default)
         - Accept: application/json → Returns structured JSON data in same format as structured query API
 
-        Supports complex filtering via URL-encoded JSONPath expressions and pagination objects.
+        Supports complex filtering via URL-encoded JSONPath expressions.
         Generic search across all entity types (items, providers, catalogs) based on filter criteria.
       operationId: browserSearch
       tags: [Browser Search]
@@ -170,15 +170,6 @@ paths:
           examples:
             sample:
               value: "%24%5B%3F%28%40.price%20%3C%3D%201000%20%26%26%20%40.brand%20%3D%3D%20%27Premium%20Tech%27%29%5D"
-        - name: pagination
-          in: query
-          required: false
-          schema:
-            type: string
-          description: URL-encoded pagination object
-          examples:
-            sample:
-              value: "%7B%22page%22%3A1%2C%22limit%22%3A20%7D"
       responses:
         '200':
           description: Successful search response
@@ -299,8 +290,10 @@ components:
               description: Optional array of spatial constraints (CQL2-JSON semantics).
               items:
                 $ref: '#/components/schemas/SpatialConstraint'
-            pagination:
-              $ref: '#/components/schemas/Pagination'
+            
+            media_search:
+             $ref: '#/components/schemas/MediaSearch'
+
           anyOf:
             - required: [text_search]
             - required: [filters]
@@ -578,23 +571,107 @@ components:
               addressRegion: "Karnataka"
               postalCode: "560001"
               addressCountry: "IN"
-
-
-    Pagination:
+      
+    MediaSearch:
       type: object
+      description: >
+        Container for multimodal search inputs and configuration.
+        Supports searching through **images, audio notes, and videos**
+        alongside text, filters, and spatial predicates.
+        For GET, this object should be JSON-encoded and URL-escaped.
       properties:
-        page:
-          type: integer
-          minimum: 1
-          description: Page number for pagination
-          example: 1
-        limit:
-          type: integer
-          minimum: 1
-          maximum: 100
-          description: Number of items per page
-          example: 20
+        media:
+          type: array
+          description: >
+            One or more references to **images, audio notes, or videos** supplied
+            as part of a multimodal search. Each entry references a media resource
+            accessible via HTTPS or data URI.
+          items:
+            $ref: '#/components/schemas/MediaInput'
+          example:
+            - id: "snap-1"
+              type: image
+              url: "https://cdn.example.com/user/snaps/ccs2-cable.jpg"
+              contentType: "image/jpeg"
+        options:
+          $ref: '#/components/schemas/MediaSearchOptions'
+          description: >
+            Options controlling how the discovery engine interprets the supplied media —
+            e.g., whether to perform OCR/ASR, semantic similarity, or object detection.
+      additionalProperties: false
+      example:
+        media:
+          - id: "snap-1"
+            type: image
+            url: "https://cdn.example.com/user/snaps/ccs2-cable.jpg"
+            contentType: "image/jpeg"
+        options:
+          goals: ["visual-object-detect", "text-from-image"]
+          augment_text_search: true
 
+
+    MediaInput:
+      type: object
+      description: Reference to an image, audio clip, or video used for multimodal search.
+      required: [type, url]
+      properties:
+        id:
+          type: string
+          description: Client-supplied identifier for this media input.
+        type:
+          type: string
+          enum: [image, audio, video]
+          description: Media category.
+        url:
+          type: string
+          format: uri
+          description: HTTPS URL or data URI pointing to the media resource.
+        contentType:
+          type: string
+          description: MIME type, e.g., image/jpeg, audio/mpeg, video/mp4.
+        textHint:
+          type: string
+          description: Optional pre-extracted text (OCR/ASR) for search augmentation.
+        language:
+          type: string
+          description: Language code (BCP-47) of `textHint` or spoken audio.
+        startMs:
+          type: integer
+          description: Optional start offset in milliseconds (for audio/video segments).
+        endMs:
+          type: integer
+          description: Optional end offset in milliseconds (for audio/video segments).
+      additionalProperties: false
+
+    MediaSearchOptions:
+      type: object
+      description: How the discovery engine should use the provided media inputs.
+      properties:
+        goals:
+          type: array
+          description: >
+            Desired processing goals for the media.
+          items:
+            type: string
+            enum:
+              - visual-similarity        # find visually similar items
+              - visual-object-detect     # detect object classes within image/video
+              - text-from-image          # extract text (OCR)
+              - text-from-audio          # extract text (ASR)
+              - semantic-audio-match     # audio embedding similarity
+              - semantic-video-match     # video scene/keyframe similarity
+        augment_text_search:
+          type: boolean
+          default: true
+          description: >
+            Whether to append extracted text from OCR/ASR to `text_search`.
+        restrict_results_to_media_proximity:
+          type: boolean
+          default: false
+          description: >
+            Restrict results to spatial proximity of media-derived coordinates
+            (e.g., EXIF GPS tags).
+      additionalProperties: false
     
     AckResponse:
       type: object
@@ -699,6 +776,10 @@ components:
           example: true
         "beckn:rating":
           $ref: '#/components/schemas/Rating'
+        "beckn:isActive":
+          type: boolean
+          description: Whether the item is active
+          default: true
         "beckn:networkId":
           type: array
           items:
@@ -995,7 +1076,6 @@ components:
           filters:
             type: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && @.electronic.brand.name == 'Premium Tech')]"
-          pagination: { page: 1, limit: 20 }
 
     discover_natural_language:
       summary: Natural-language discover (electronics)
@@ -1013,7 +1093,6 @@ components:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
         message:
           text_search: "Looking for a premium gaming laptop under $2000 near San Francisco"
-          pagination: { page: 1, limit: 20 }
 
     discover_grocery_search:
       summary: Structured discover (grocery)
@@ -1034,7 +1113,6 @@ components:
           filters:
             type: "jsonpath"
             expression: "$[?(@.grocery.organicCertification ~ 'USDA Organic')]"
-          pagination: { page: 1, limit: 10 }
 
     discover_combined_search:
       summary: Combined text + filters
@@ -1055,7 +1133,6 @@ components:
           filters:
             type: "jsonpath"
             expression: "$[?(@.electronic.price['schema:price'] <= 2000 && @.electronic.brand.name == 'Premium Tech')]"
-          pagination: { page: 1, limit: 15 }
 
     discover_multi_schema_search:
       summary: Multi-schema discover (electronics + grocery)
@@ -1077,7 +1154,6 @@ components:
           filters:
             type: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && (@.electronic.brand.name == 'Premium Tech' || @.grocery.organicCertification ~ 'USDA Organic'))]"
-          pagination: { page: 1, limit: 25 }
 
     # ---------- /on_discover callback (DiscoverResponse) examples ----------
     on_discover_electronics_catalog:

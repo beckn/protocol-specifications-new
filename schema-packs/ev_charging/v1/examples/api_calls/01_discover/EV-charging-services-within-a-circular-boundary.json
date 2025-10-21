@@ -17,10 +17,6 @@
         "filters": {
             "type": "jsonpath",
             "expression": "$[?(@['beckn:provider']['beckn:id']=='PROV-ECOPWR')]"
-        },
-        "pagination": {
-            "page": 1,
-            "limit": 20
         }
     }
 }

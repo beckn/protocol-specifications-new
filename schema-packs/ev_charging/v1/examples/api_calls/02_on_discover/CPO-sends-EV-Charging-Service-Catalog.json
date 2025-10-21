@@ -48,6 +48,7 @@
               "availableAt": [
                 { "refLocation": "LOC-BTM" }
               ],
+              "isActive": true,
               "itemAttributes": {
                 "@context": "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/context.jsonld",
                 "@type": "ChargingService",

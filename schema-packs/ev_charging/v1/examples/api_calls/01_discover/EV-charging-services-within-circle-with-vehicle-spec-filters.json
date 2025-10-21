@@ -25,7 +25,6 @@
         "geometry": { "type": "Point", "coordinates": [77.6000, 12.9500] },
         "distanceMeters": 8000
       }
-    ],
-    "pagination": { "page": 1, "limit": 10 }
+    ]
   }
 }

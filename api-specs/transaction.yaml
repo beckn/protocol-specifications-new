@@ -6,7 +6,7 @@ info:
     Transaction API s with Core Offer + Order with stable fields, JSON-LD mapping to schema.org, and attachment points for Attribute Packs (offerAttributes, orderAttributes, itemAttributes).
 
 x-spec-refs:
-  DISCOVERY_SPEC_URL: https://raw.githubusercontent.com/abhimail/beckn/refs/heads/main/protocol-enhancements/discover.yaml    
+  DISCOVERY_SPEC_URL: ./discover.yaml    
 
 paths:
   /beckn/select:
@@ -38,32 +38,12 @@ paths:
                       $ref: '#/components/schemas/Order'
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
+
   /beckn/on_select:
     post:
       summary: Provider returns priced order (quote)
@@ -93,32 +73,11 @@ paths:
                       $ref: '#/components/schemas/Order'
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
   
   /beckn/get_offer:
     post:
@@ -180,33 +139,12 @@ paths:
                       description: Optional constraints (e.g., fulfillment mode/slots, region, eligibility). Extend via attribute packs as needed.
                       additionalProperties: true
       responses:
-        "200":
-          description: ACK — request received (validation passed)
-          content:
-            application/json:
-              schema:
-                $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse"
-              examples:
-                success_ack:
-                  $ref: "{DISCOVERY_SPEC_URL}#/components/examples/ack_success"
-        "400":
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse"
-              examples:
-                bad_request:
-                  $ref: "{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request"
-        "500":
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse"
-              examples:
-                server_error:
-                  $ref: "{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error"
+        '200':
+          $ref: '#/components/responses/Ack200'
+        '400':
+          $ref: '#/components/responses/Ack400'
+        '500':
+          $ref: '#/components/responses/Ack500'
 
   /beckn/on_get_offer:
     post:
@@ -239,33 +177,12 @@ paths:
                       items:
                         $ref: "#/components/schemas/Offer"
       responses:
-        "200":
-          description: ACK — response received
-          content:
-            application/json:
-              schema:
-                $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse"
-              examples:
-                success_ack:
-                  $ref: "{DISCOVERY_SPEC_URL}#/components/examples/ack_success"
-        "400":
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse"
-              examples:
-                bad_request:
-                  $ref: "{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request"
-        "500":
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse"
-              examples:
-                server_error:
-                  $ref: "{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error"  
+        '200':
+          $ref: '#/components/responses/Ack200'
+        '400':
+          $ref: '#/components/responses/Ack400'
+        '500':
+          $ref: '#/components/responses/Ack500'
   
   /beckn/init:
     post:
@@ -296,32 +213,12 @@ paths:
                       $ref: '#/components/schemas/Order'
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
+
   /beckn/on_init:
     post:
       summary: Provider echoes initialized order (with refs populated)
@@ -351,32 +248,12 @@ paths:
                       $ref: '#/components/schemas/Order'
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
+
   /beckn/confirm:
     post:
       summary: Confirm order (final selections; payment/fulfillment committed)
@@ -406,32 +283,12 @@ paths:
                       $ref: '#/components/schemas/Order'
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
+
   /beckn/on_confirm:
     post:
       summary: Provider returns confirmed order
@@ -461,32 +318,12 @@ paths:
                       $ref: '#/components/schemas/Order'
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
+
   /beckn/status:
     post:
       summary: Fetch order status by id
@@ -523,32 +360,12 @@ paths:
                       - $ref: '#/components/schemas/Order'
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
+
   /beckn/on_status:
     post:
       summary: Provider returns current order (or tracking via fulfillment packs)
@@ -580,32 +397,12 @@ paths:
                   - required: []
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
+
   /beckn/update:
     post:
       summary: Request order mutation (replace, cancel line, address change, etc.)
@@ -635,32 +432,12 @@ paths:
                       $ref: '#/components/schemas/Order'
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
+
   /beckn/on_update:
     post:
       summary: Provider returns mutated order
@@ -690,32 +467,12 @@ paths:
                       $ref: '#/components/schemas/Order'
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
+
   /beckn/cancel:
     post:
       summary: Request to cancel an order
@@ -752,32 +509,12 @@ paths:
                       - $ref: '#/components/schemas/Order'
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
+          
   /beckn/on_cancel:
     post:
       summary: Provider returns cancelled order (may reflect refund/payment update
@@ -808,32 +545,220 @@ paths:
                       $ref: '#/components/schemas/Order'
       responses:
         '200':
-          description: "ACK \u2014 request received (validation passed)"
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                success_ack:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+          $ref: '#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
+
+  /beckn/support:
+    post:
+      summary: Request support details for an entity (order/item/provider/etc.)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [context, message]
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/TransactionContext'
+                    - type: object
+                      properties:
+                        action:
+                          const: support
+                message:
+                  type: object
+                  required: [ref_id]
+                  properties:
+                    ref_id:
+                      type: string
+                      description: ID of the entity for which support is requested (order/item/fulfillment/provider/agent).  # legacy kept minimal
+                    ref_type:
+                      type: string
+                      description: Optional hint to help route support.
+                      enum: [order, fulfillment, item, provider, agent, other]
+      responses:
+        '200':
+          $ref: '#/components/responses/Ack200'
+        '400':
+          $ref: '#/components/responses/Ack400'
+        '500':
+          $ref: '#/components/responses/Ack500'
+
+  /beckn/on_support:
+    post:
+      summary: Provider returns support details
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [context, message]
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/TransactionContext'
+                    - type: object
+                      properties:
+                        action:
+                          const: on_support
+                message:
+                  type: object
+                  required: [support]
+                  properties:
+                    support:
+                      $ref: '#/components/schemas/SupportInfo'
+      responses:
+        '200':
+          $ref: '#/components/responses/Ack200'
+        '400':
+          $ref: '#/components/responses/Ack400'
+        '500':
+          $ref: '#/components/responses/Ack500'
+
+  /beckn/track:
+    post:
+      summary: Request tracking handle/link for an active order/fulfillment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [context, message]
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/TransactionContext'
+                    - type: object
+                      properties:
+                        action:
+                          const: track
+                message:
+                  type: object
+                  required: [order_id]
+                  properties:
+                    order_id:
+                      type: string
+                      description: Identifier of the order being tracked.
+                    fulfillment_id:
+                      type: string
+                      description: Optional fulfillment leg to track (if multiple).
+                    mode_hint:
+                      type: string
+                      description: Optional delivery mode for the tracking handle.
+                      enum: [link_only, deep_link, webhook, ws_handle]
+      responses:
+        '200':
+          $ref: '#/components/responses/Ack200'
+        '400':
+          $ref: '#/components/responses/Ack400'
+        '500':
+          $ref: '#/components/responses/Ack500'
+
+  /beckn/on_track:
+    post:
+      summary: Provider returns tracking handle/link and status
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [context, message]
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/TransactionContext'
+                    - type: object
+                      properties:
+                        action:
+                          const: on_track
+                message:
+                  type: object
+                  required: [tracking]
+                  properties:
+                    tracking:
+                      $ref: '#/components/schemas/Tracking'
+      responses:
+        '200':
+          $ref: '#/components/responses/Ack200'
+        '400':
+          $ref: '#/components/responses/Ack400'
+        '500':
+          $ref: '#/components/responses/Ack500'
+
+  /beckn/rating:
+    post:
+      summary: Submit a rating (optionally with feedback) for an entity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [context, message]
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/TransactionContext'
+                    - type: object
+                      properties:
+                        action:
+                          const: rating
+                message:
+                  $ref: '#/components/schemas/RatingInput'
+      responses:
+        '200':
+          $ref: '#/components/responses/Ack200'
+        '400':
+          $ref: '#/components/responses/Ack400'
+        '500':
+          $ref: '#/components/responses/Ack500'
+
+  /beckn/on_rating:
+    post:
+      summary: Provider acknowledges/returns rating receipt (optional aggregate snapshot)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [context, message]
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/TransactionContext'
+                    - type: object
+                      properties:
+                        action:
+                          const: on_rating
+                message:
+                  type: object
+                  properties:
+                    received:
+                      type: boolean
+                      default: true
+                    aggregate:
+                      type: object
+                      description: Optional current aggregate rating snapshot.
+                      properties:
+                        count: { type: integer, minimum: 0 }
+                        value: { type: number, minimum: 0 }
+                        best:  { type: number, minimum: 0 }
+                        worst: { type: number, minimum: 0 }
+      responses:
+        '200':
+          $ref: '#/components/responses/Ack200'
+        '400':
+          $ref: '#/components/responses/Ack400'
+        '500':
+          $ref: '#/components/responses/Ack500'
 
 
 components:
@@ -1184,3 +1109,149 @@ components:
             # party/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…)
             # party/kyc.v1 (jurisdictional compliance fields)
             # party/preferences.v1 (delivery preferences, accessibility needs, etc.)
+
+    SupportInfo:
+      type: object
+      description: >
+        Canonical support contact for an entity, mapped to schema.org ContactPoint.
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+          description: Name of the support organization or contact.
+        phone:
+          type: string
+          description: Telephone number.
+        email:
+          type: string
+          format: email
+          description: Support email address.
+        url:
+          type: string
+          format: uri
+          description: Webpage or chat endpoint for support.
+        hours:
+          type: string
+          description: Human-readable support hours (local time).
+        channels:
+          type: array
+          description: Available support channels.
+          items:
+            type: string
+            enum: [phone, email, web, chat, whatsapp, in_app, other]
+      example:
+        name: "Acme Support"
+        phone: "+91-80-1234-5678"
+        email: "support@acme.example"
+        url: "https://acme.example/support"
+        hours: "Mon–Sat 09:00–20:00 IST"
+        channels: ["web", "phone", "email"]
+      x-jsonld:
+        '@type': 'schema:ContactPoint'
+        'schema:contactType': '"Customer Support"'
+        'schema:telephone': '$.phone'
+        'schema:email': '$.email'
+        'schema:url': '$.url'
+        'schema:name': '$.name'
+        'schema:hoursAvailable': '$.hours'
+
+    Tracking:
+      type: object
+      description: >
+        Non-streaming tracking handle per legacy semantics (url/transport/status).
+      additionalProperties: false
+      properties:
+        tl_method:
+          type: string
+          enum: [http/get, http/post, http/redirect, ws/handle, custom]
+          description: Transport/method used to access the tracking handle.  # mirrors legacy tl_method concept
+        url:
+          type: string
+          format: uri
+          description: Link/handle to off-network tracking UI or endpoint.
+        status:
+          type: string
+          enum: [active, disabled, completed]
+        expires_at:
+          type: string
+          format: date-time
+          description: ISO 8601 expiry timestamp for the tracking handle.
+      required: [tl_method, url, status]
+      example:
+        tl_method: "http/get"
+        url: "https://track.bpp.example?order_id=ORD-123"
+        status: "active"
+        expires_at: "2025-10-16T18:30:00Z"
+      x-jsonld:
+        '@type': 'schema:TrackAction'
+        'schema:target':    '$.url'           # URL to track → EntryPoint(target)
+        'schema:deliveryMethod': '$.tl_method' # best-effort mapping
+        'schema:actionStatus': '$.status'
+
+    RatingInput:
+      type: object
+      additionalProperties: false
+      required: [id, value]
+      properties:
+        id:
+          type: string
+          description: Target entity ID being rated (order/item/fulfillment/provider/agent).
+        value:
+          type: number
+          description: Numeric rating value (legacy usually 1–5).  # remains permissive
+          minimum: 0
+        best:
+          type: number
+          description: Maximum of the rating scale (default 5 if omitted).
+        worst:
+          type: number
+          description: Minimum of the rating scale (default 1 or 0 if omitted).
+        category:
+          type: string
+          description: What is being rated.
+          enum: [order, item, fulfillment, provider, agent, other]
+        feedback:
+          type: object
+          additionalProperties: false
+          properties:
+            comments: { type: string }
+            tags:
+              type: array
+              items: { type: string }
+      x-jsonld:
+        '@type': 'schema:Rating'
+        'schema:itemReviewed': '$.id'
+        'schema:ratingValue':  '$.value'
+        'schema:bestRating':   '$.best'
+        'schema:worstRating':  '$.worst'            
+
+  responses:
+    Ack200:
+      description: "ACK — request received (validation passed)"
+      content:
+        application/json:
+          schema:
+            $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+          examples:
+            success_ack:
+              $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+
+    Ack400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+          examples:
+            bad_request:
+              $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+
+    Ack500:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+          examples:
+            server_error:
+              $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'

@@ -79,10 +79,10 @@ components:
           example: ["UPI", "Card", "Wallet"]
           x-jsonld: { "@id": paymentAccepted }
 
-        # Location: REUSE Beckn Location (discover.yaml) via $ref
+        # Location: REUSE Beckn Location (core.yaml) via $ref
         serviceLocation:
           allOf:
-            - $ref: "https://raw.githubusercontent.com/abhimail/beckn/refs/heads/main/protocol-enhancements/discover.yaml#/components/schemas/Location"
+            - $ref: "../../core/v2/core.yaml#/components/schemas/Location"
             - type: object
               description: Location of the charging site (reuses Beckn Location).
               x-jsonld: { "@id": serviceLocation }

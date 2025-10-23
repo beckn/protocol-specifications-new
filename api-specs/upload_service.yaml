@@ -66,23 +66,11 @@ paths:
                       "beckn:items": []
       responses:
         '200':
-          description: ACK of receiving the catalog publish request
-          content:
-            application/json:
-              schema:
-                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
+          $ref: './transaction.yaml#/components/responses/Ack200'
         '400':
-          description: Bad request (validation failed before enqueue)
-          content:
-            application/json:
-              schema:
-                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
+          $ref: './transaction.yaml#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
+          $ref: './transaction.yaml#/components/responses/Ack500'
 
   /beckn/v2/catalog/on_publish:
     post:
@@ -126,23 +114,11 @@ paths:
                         paths: "catalogs[1].items[3]"
       responses:
         '200':
-          description: ACK of receiving the on_catalog_publish callback
-          content:
-            application/json:
-              schema:
-                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
+          $ref: './transaction.yaml#/components/responses/Ack200'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
+          $ref: './transaction.yaml#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
+          $ref: './transaction.yaml#/components/responses/Ack500'
 
 components:
   schemas:

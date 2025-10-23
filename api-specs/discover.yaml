@@ -68,23 +68,9 @@ paths:
                 success_ack:
                   $ref: '#/components/examples/ack_success'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '#/components/examples/ack_bad_request'
+          $ref: './transaction.yaml#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '#/components/examples/ack_server_error'
+          $ref: './transaction.yaml#/components/responses/Ack500'
 
   /beckn/on_discover:
     post:
@@ -115,23 +101,9 @@ paths:
                 success_ack:
                   $ref: '#/components/examples/ack_success'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '#/components/examples/ack_bad_request'
+          $ref: './transaction.yaml#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '#/components/examples/ack_server_error'
+          $ref: './transaction.yaml#/components/responses/Ack500'
 
   /beckn/discover/browser-search:
     get:

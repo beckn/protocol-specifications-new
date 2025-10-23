@@ -70,19 +70,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
         '400':
           description: Bad request (validation failed before enqueue)
           content:
             application/json:
               schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
 
   /beckn/v2/catalog/on_publish:
     post:
@@ -130,19 +130,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
         '400':
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
 
 components:
   schemas:
@@ -154,7 +154,7 @@ components:
       properties:
         context:
           allOf:
-            - $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/DiscoveryContext'
+            - $ref: './discover.yaml#/components/schemas/DiscoveryContext'
             - type: object
               properties:
                 action:
@@ -163,7 +163,7 @@ components:
         catalogs:
           type: array
           items:
-            $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/Catalog'
+            $ref: '../schema/core/v2/core.yaml#/components/schemas/Catalog'
           minItems: 1
       description: |
         Catalog Publish request envelope.
@@ -175,7 +175,7 @@ components:
       properties:
         context:
           allOf:
-            - $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/DiscoveryContext'
+            - $ref: './discover.yaml#/components/schemas/DiscoveryContext'
             - type: object
               properties:
                 action:
@@ -209,7 +209,7 @@ components:
           items:
             $ref: '#/components/schemas/ProcessingNotice'
         error:
-          $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/Error'
+          $ref: '../schema/core/v2/core.yaml#/components/schemas/Error'
 
     ProcessingNotice:
       type: object

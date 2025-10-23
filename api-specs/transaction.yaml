@@ -822,7 +822,7 @@ components:
           x-jsonld: { "@id": "schema:orderNumber" }
 
         beckn:seller:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/Provider/properties/beckn:id"
+          $ref: "../schema/core/v2/core.yaml#/components/schemas/Provider/properties/beckn:id"
           x-jsonld: { "@id": "schema:seller" }
 
         beckn:buyer:
@@ -837,12 +837,12 @@ components:
 
         beckn:acceptedOffers:
           type: array
-          items: { $ref: '{DISCOVERY_SPEC_URL}#components/schemas/Offer/properties/beckn:id' }
+          items: { $ref: '../schema/core/v2/core.yaml#/components/schemas/Offer/properties/beckn:id' }
           description: Offers accepted at order-level (optional if captured per line)
           x-jsonld: { "@id": "schema:acceptedOffer" }
 
         beckn:totals:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/PriceSpecification"
+          $ref: "../schema/core/v2/core.yaml#/components/schemas/PriceSpecification"
           description: Order totals snapshot (derivable from lines; optional)
           x-jsonld: { "@id": "schema:priceSpecification" }
 
@@ -862,7 +862,7 @@ components:
           x-jsonld: { "@id": "schema:ParcelDelivery|schema:Reservation" }
 
         beckn:orderAttributes:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/Attributes"
+          $ref: "../schema/core/v2/core.yaml#/components/schemas/Attributes"
           description: Order-level Attribute Pack (vertical/regulatory specifics)
 
     OrderItem:
@@ -873,21 +873,21 @@ components:
           type: string
           description: Unique line id within order
         beckn:orderedItem:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/Item/properties/beckn:id"
+          $ref: "../schema/core/v2/core.yaml#/components/schemas/Item/properties/beckn:id"
           x-jsonld: { "@id": "schema:orderedItem" }
         beckn:acceptedOffer:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/Offer/properties/beckn:id"
+          $ref: "../schema/core/v2/core.yaml#/components/schemas/Offer/properties/beckn:id"
           description: Offer applied to this line (if different from order-level)
           x-jsonld: { "@id": "schema:acceptedOffer" }
         beckn:quantity:
           type: number
           x-jsonld: { "@id": "schema:orderQuantity" }
         beckn:price:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/PriceSpecification"
+          $ref: "../schema/core/v2/core.yaml#/components/schemas/PriceSpecification"
           description: Line price composition (unit/tax/delivery/discount)
           x-jsonld: { "@id": "schema:priceSpecification" }
         beckn:orderItemAttributes:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/Attributes"
+          $ref: "../schema/core/v2/core.yaml#/components/schemas/Attributes"
           description: Line-level Attribute Pack (options, substitutions, ESG, etc.)
 
     # --------------------------------
@@ -926,7 +926,7 @@ components:
           nullable: true
           x-jsonld: { "@id": "schema:paymentDueDate" }
         beckn:payee:
-          $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/Provider/properties/beckn:id"
+          $ref: "../schema/core/v2/core.yaml#/components/schemas/Provider/properties/beckn:id"
           description: Seller / issuer of the invoice
           x-jsonld: { "@id": "schema:provider" }
         beckn:payer:
@@ -934,11 +934,11 @@ components:
           description: Buyer being invoiced
           x-jsonld: { "@id": "schema:customer" }
         beckn:totals:
-          $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/PriceSpecification"
+          $ref: "../schema/core/v2/core.yaml#/components/schemas/PriceSpecification"
           description: Invoice grand totals (tax/shipping/discount components inside)
           x-jsonld: { "@id": "schema:priceSpecification" }
         beckn:invoiceAttributes:
-          $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/Attributes"
+          $ref: "../schema/core/v2/core.yaml#/components/schemas/Attributes"
           description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc. 
 
     # ---------------------------------
@@ -1231,27 +1231,27 @@ components:
       content:
         application/json:
           schema:
-            $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+            $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
           examples:
             success_ack:
-              $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+              $ref: './discover.yaml#/components/examples/ack_success'
 
     Ack400:
       description: Bad request
       content:
         application/json:
           schema:
-            $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+            $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
           examples:
             bad_request:
-              $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+              $ref: './discover.yaml#/components/examples/ack_bad_request'
 
     Ack500:
       description: Internal server error
       content:
         application/json:
           schema:
-            $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+            $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
           examples:
             server_error:
-              $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+              $ref: './discover.yaml#/components/examples/ack_server_error'

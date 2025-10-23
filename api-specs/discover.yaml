@@ -58,7 +58,7 @@ paths:
             application/json:
               schema:
                 oneOf:
-                  - $ref: '#/components/schemas/AckResponse'
+                  - $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
                   - $ref: '#/components/schemas/DiscoverResponse'
               examples:
                 discover_electronics_catalog:
@@ -68,23 +68,9 @@ paths:
                 success_ack:
                   $ref: '#/components/examples/ack_success'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
 
   /beckn/on_discover:
     post:
@@ -110,28 +96,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AckResponse'
+                $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
               examples:
                 success_ack:
                   $ref: '#/components/examples/ack_success'
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AckResponse'
-              examples:
-                bad_request:
-                  $ref: '#/components/examples/ack_bad_request'
+          $ref: '#/components/responses/Ack400'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AckResponse'
-              examples:
-                server_error:
-                  $ref: '#/components/examples/ack_server_error'
+          $ref: '#/components/responses/Ack500'
 
   /beckn/discover/browser-search:
     get:
@@ -142,7 +114,7 @@ paths:
         - Accept: text/html → Returns browser-friendly HTML page (default)
         - Accept: application/json → Returns structured JSON data in same format as structured query API
 
-        Supports complex filtering via URL-encoded JSONPath expressions and pagination objects.
+        Supports complex filtering via URL-encoded JSONPath expressions.
         Generic search across all entity types (items, providers, catalogs) based on filter criteria.
       operationId: browserSearch
       tags: [Browser Search]
@@ -170,15 +142,6 @@ paths:
           examples:
             sample:
               value: "%24%5B%3F%28%40.price%20%3C%3D%201000%20%26%26%20%40.brand%20%3D%3D%20%27Premium%20Tech%27%29%5D"
-        - name: pagination
-          in: query
-          required: false
-          schema:
-            type: string
-          description: URL-encoded pagination object
-          examples:
-            sample:
-              value: "%7B%22page%22%3A1%2C%22limit%22%3A20%7D"
       responses:
         '200':
           description: Successful search response
@@ -258,6 +221,111 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /beckn/discover/offer:
+    post:
+      summary: Compute/prune final offers for a given selection of items and/or offers (no Order envelope)
+      description: >
+        Client (BAP) submits a selection of items and/or offers. The BPP computes applicable, priced offers
+        and returns them asynchronously via /beckn/on_discover/offer. This is semantically similar to /select, but
+        avoids the Order wrapper to keep the intent clear: "give me offers for these choices".
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [context, message]
+              properties:
+                context:
+                  allOf:
+                    - $ref: "#/components/schemas/DiscoveryContext"
+                    - type: object
+                      properties: { action: { const: "discover_offer" } }
+                message:
+                  type: object
+                  required: [selection]
+                  properties:
+                    # The selection may be a set of items, a set of offers, or both.
+                    selection:
+                      type: object
+                      properties:
+                        items:
+                          type: array
+                          minItems: 1
+                          items:
+                            type: object
+                            required: [beckn:id]
+                            properties:
+                              beckn:id:
+                                $ref: "../schema/core/v2/core.yaml#/components/schemas/Item/properties/beckn:id"
+                              quantity:
+                                type: number
+                                description: Optional requested quantity for this item
+                        offers:
+                          type: array
+                          minItems: 1
+                          items:
+                            type: object
+                            required: [beckn:id]
+                            properties:
+                              beckn:id:
+                                $ref: "../schema/core/v2/core.yaml#/components/schemas/Offer/properties/beckn:id"
+                      anyOf:
+                        - required: [items]
+                        - required: [offers]
+                    # Optional scoping hints (kept open; networks can define attribute packs if needed)
+                    provider:
+                      $ref: "../schema/core/v2/core.yaml#/components/schemas/Provider/properties/beckn:id"
+                    constraints:
+                      type: object
+                      description: Optional constraints (e.g., fulfillment mode/slots, region, eligibility). Extend via attribute packs as needed.
+                      additionalProperties: true
+      responses:
+        '200':
+          $ref: '#/components/responses/Ack200'
+        '400':
+          $ref: '#/components/responses/Ack400'
+        '500':
+          $ref: '#/components/responses/Ack500'
+
+  /beckn/on_discover/offer:
+    post:
+      summary: Provider returns computed offers for the selection
+      description: >
+        BPP responds with the final set of offers applicable to the submitted selection. Each Offer must
+        reference the base items via beckn:items (schema:itemOffered). Additional pricing/eligibility details
+        can be carried in offerAttributes packs.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [context, message]
+              properties:
+                context:
+                  allOf:
+                    - $ref: "#/components/schemas/DiscoveryContext"
+                    - type: object
+                      properties: { action: { const: "on_discover_offer" } }
+                message:
+                  type: object
+                  required: [offers]
+                  properties:
+                    # Full Offer objects are returned (not just ids) so clients can render price/terms immediately.
+                    offers:
+                      type: array
+                      minItems: 1
+                      items:
+                        $ref: "../schema/core/v2/core.yaml#/components/schemas/Offer"
+      responses:
+        '200':
+          $ref: '#/components/responses/Ack200'
+        '400':
+          $ref: '#/components/responses/Ack400'
+        '500':
+          $ref: '#/components/responses/Ack500'
+
 components:
   schemas:
     DiscoverRequest:
@@ -299,8 +367,10 @@ components:
               description: Optional array of spatial constraints (CQL2-JSON semantics).
               items:
                 $ref: '#/components/schemas/SpatialConstraint'
-            pagination:
-              $ref: '#/components/schemas/Pagination'
+            
+            media_search:
+             $ref: '#/components/schemas/MediaSearch'
+
           anyOf:
             - required: [text_search]
             - required: [filters]
@@ -342,130 +412,13 @@ components:
 
     
     GeoJSONGeometry:
-      type: object
-      description: >
-        **GeoJSON geometry** per RFC 7946. Coordinates are in **EPSG:4326 (WGS-84)**
-        and MUST follow **[longitude, latitude, (altitude?)]** order.
-
-        Supported types:
-        - Point, LineString, Polygon
-        - MultiPoint, MultiLineString, MultiPolygon
-        - GeometryCollection (uses `geometries` instead of `coordinates`)
-
-        Notes:
-        - For rectangles, use a Polygon with a single linear ring where the first
-          and last positions are identical.
-        - Circles are **not native** to GeoJSON. For circular searches, use
-          `SpatialConstraint` with `op: s_dwithin` and a Point + `distanceMeters`,
-          or approximate the circle as a Polygon.
-        - Optional `bbox` is `[west, south, east, north]` in degrees.
-
-      required: [type]
-      properties:
-        type:
-          type: string
-          enum:
-            - Point
-            - LineString
-            - Polygon
-            - MultiPoint
-            - MultiLineString
-            - MultiPolygon
-            - GeometryCollection
-        coordinates:
-          type: array
-          description: >
-            Coordinates per RFC 7946 for all types **except** GeometryCollection.
-            Order is **[lon, lat, (alt)]**. For Polygons, this is an array of
-            linear rings; each ring is an array of positions.
-        geometries:
-          type: array
-          description: >
-            Member geometries when `type` is **GeometryCollection**.
-          items:
-            $ref: '#/components/schemas/GeoJSONGeometry'
-        bbox:
-          type: array
-          description: Optional bounding box `[west, south, east, north]` in degrees.
-          minItems: 4
-          maxItems: 4
-      additionalProperties: true
-      examples:
-        point:
-          value:
-            type: Point
-            coordinates: [77.5946, 12.9716]
-        polygon_rectangle:
-          value:
-            type: Polygon
-            coordinates:
-              - [[77.6100, 12.9200], [77.6400, 12.9200], [77.6400, 12.9500], [77.6100, 12.9500], [77.6100, 12.9200]]
-        geometry_collection:
-          value:
-            type: GeometryCollection
-            geometries:
-              - { type: Point, coordinates: [77.60, 12.95] }
-              - { type: LineString, coordinates: [[77.60, 12.95], [77.62, 12.97]] }
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/GeoJSONGeometry'
 
     Address:
-      type: object
-      description: >
-        **Postal address** aligned with schema.org `PostalAddress`. Use for human-readable
-        addresses. Geometry lives in `Location.geo` as GeoJSON.
-      properties:
-        streetAddress:
-          type: string
-          description: Street address (building name/number and street).
-          example: "123 Tech Street"
-        extendedAddress:
-          type: string
-          description: Address extension (apt/suite/floor, C/O).
-          example: "Apt 4B"
-        addressLocality:
-          type: string
-          description: City/locality.
-          example: "Bengaluru"
-        addressRegion:
-          type: string
-          description: State/region/province.
-          example: "Karnataka"
-        postalCode:
-          type: string
-          description: Postal/ZIP code.
-          example: "560001"
-        addressCountry:
-          type: string
-          description: Country name or ISO-3166-1 alpha-2 code.
-          example: "IN"
-      additionalProperties: false
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Address'
 
     Location:
-      type: object
-      description: >
-        A **place** represented by **GeoJSON geometry** (Point/Polygon/Multi*) and optional
-        human-readable `address`. This unifies all Beckn location fields into a single,
-        widely-adopted representation (GeoJSON).
-      properties:
-        geo:
-          $ref: '#/components/schemas/GeoJSONGeometry'
-        address:
-          oneOf:
-            - type: string
-            - $ref: '#/components/schemas/Address'
-          description: Optional human-readable address for the same place/area.
-      required: [geo]
-      additionalProperties: false
-      examples:
-        site_point:
-          value:
-            geo: { type: Point, coordinates: [77.5946, 12.9716] }
-            address: "MG Road, Bengaluru"
-        service_area:
-          value:
-            geo:
-              type: Polygon
-              coordinates:
-                - [[77.6100, 12.9200], [77.6400, 12.9200], [77.6400, 12.9500], [77.6100, 12.9500], [77.6100, 12.9200]]
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Location'
 
     SpatialConstraint:
       type: object
@@ -578,401 +531,149 @@ components:
               addressRegion: "Karnataka"
               postalCode: "560001"
               addressCountry: "IN"
-
-
-    Pagination:
-      type: object
-      properties:
-        page:
-          type: integer
-          minimum: 1
-          description: Page number for pagination
-          example: 1
-        limit:
-          type: integer
-          minimum: 1
-          maximum: 100
-          description: Number of items per page
-          example: 20
-
-    
-    AckResponse:
-      type: object
-      additionalProperties: false
-      properties:
-        transaction_id:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-        ack_status:
-          type: string
-          enum: [ACK, NACK]
-        error:
-          $ref: '#/components/schemas/Error'
-      required: [transaction_id, timestamp, ack_status]
-      allOf:
-        - if:
-            properties:
-              ack_status:
-                const: NACK
-            required: [ack_status]
-          then:
-            required: [error]
-        - if:
-            properties:
-              ack_status:
-                const: ACK
-            required: [ack_status]
-          then:
-            not:
-              required: [error]
-
-    Catalog:
-      type: object
-      required: ["@context", "@type", "beckn:id", "beckn:descriptor", "beckn:items"]
-      additionalProperties: false
-      properties:
-        "@context":
-          type: string
-          format: uri
-          description: JSON-LD context URI for the core Catalog schema
-          enum: ["https://becknprotocol.io/schemas/core/v1/Catalog/schema-context.jsonld"]
-        "@type":
-          type: string
-          description: Type of the catalog
-          example: "beckn:Catalog"
-        "beckn:id":
-          type: string
-          description: Unique identifier for the catalog
-          example: "catalog-electronics-001"
-        "beckn:descriptor":
-          $ref: '#/components/schemas/Descriptor'
-        "beckn:providerId":
-          type: string
-          description: Reference to the provider that owns this catalog
-          example: "tech-store-001"
-        "beckn:validity":
-          $ref: '#/components/schemas/TimePeriod'
-        beckn:items:  # semantic entities
-          type: array
-          description: >
-            Array of beckn core Item entities in this catalog, returned directly without
-            ItemResult wrapper for improved performance and simplified response structure
-          items: { $ref: "#/components/schemas/Item" }
-        beckn:offers: # commercial wrappers referencing items
-          type: array
-          items: { $ref: "#/components/schemas/Offer" }
-
-    Item:
-      type: object
-      required: ["@context", "@type", "beckn:id", "beckn:descriptor", "beckn:provider", "beckn:itemAttributes"]
-      additionalProperties: false
-      properties:
-        "@context":
-          type: string
-          format: uri
-          description: JSON-LD context URI for the core Item schema
-          enum: ["https://becknprotocol.io/schemas/core/v1/Item/schema-context.jsonld"]
-        "@type":
-          type: string
-          description: Type of the core item
-          enum: ["beckn:Item"]
-        "beckn:id":
-          type: string
-          description: Unique identifier for the item
-          example: "gaming-laptop-001"
-        "beckn:descriptor":
-          $ref: '#/components/schemas/Descriptor'
-        "beckn:category":
-          $ref: '#/components/schemas/CategoryCode'
-        "beckn:availableAt":
-          type: array
-          items:
-            $ref: '#/components/schemas/Location'
-          description: Physical locations where the item is available
-        "beckn:availabilityWindow":
-          $ref: '#/components/schemas/TimePeriod'
-        "beckn:rateable":
-          type: boolean
-          description: Whether the item can be rated by customers
-          example: true
-        "beckn:rating":
-          $ref: '#/components/schemas/Rating'
-        "beckn:networkId":
-          type: array
-          items:
-            type: string
-          description: Array of network identifiers for the BAP (Beckn App Provider) that offers this item
-          example: ["bap.net/electronics", "bap.net/tech"]
-        "beckn:provider":
-          $ref: '#/components/schemas/Provider'
-        "beckn:itemAttributes":
-          $ref: '#/components/schemas/Attributes'
-
-    Offer:
-      type: object
-      additionalProperties: false
-      required:
-        - "@context"
-        - "@type"
-        - beckn:id
-        - beckn:descriptor
-        - beckn:provider
-        - beckn:items
-      properties:
-        "@context":
-          type: string
-          format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Offer/schema-context.jsonld"
-        "@type":
-          type: string
-          enum: ["beckn:Offer"]
-          x-jsonld: { "@id": "schema:Offer" }
-
-        beckn:id:
-          type: string
-          description: Unique id for this offer
-          x-jsonld: { "@id": "schema:identifier" }
-
-        beckn:descriptor:
-          $ref: "#/components/schemas/Descriptor"
-
-        beckn:provider:
-          $ref: "#/components/schemas/Provider/properties/beckn:id"
-          description: Seller / provider of this offer
-          x-jsonld: { "@id": "schema:seller" }
-
-        # Single source of truth for base item(s)
-        beckn:items:
-          type: array
-          minItems: 1
-          items: { $ref: "#/components/schemas/Item/properties/beckn:id" }
-          description: Base item(s) the offer applies to (single or bundle)
-          x-jsonld: { "@id": "schema:itemOffered" }
-
-        # Optional extras
-        beckn:addOns:
-          type: array
-          items: { $ref: "#/components/schemas/Offer/properties/beckn:id" }
-          description: Optional extra Offers that can be attached (e.g., warranty, gift wrap)
-          x-jsonld: { "@id": "schema:addOn" }
-
-        beckn:addOnItems:
-          type: array
-          items: { $ref: "#/components/schemas/Item/properties/beckn:id" }
-          description: Optional extras modeled as items (e.g., toppings, accessories)
-          x-jsonld: { "@id": "schema:addOn" }
-
-        beckn:validity:
-          $ref: "#/components/schemas/TimePeriod"
-          description: Offer validity window
-          x-jsonld: { "@id": "schema:availabilityStarts|schema:availabilityEnds" }
-
-        beckn:price:
-          $ref: "#/components/schemas/PriceSpecification"
-          description: Price snapshot; detailed models can live in offerAttributes
-          x-jsonld: { "@id": "schema:priceSpecification" }
-
-        beckn:eligibility:
-          $ref: "#/components/schemas/Eligibility"
-          description: Optional eligibility (regions, quantities, audiences)
-          x-jsonld: { "@id": "schema:eligibleRegion|schema:eligibleQuantity|schema:eligibleCustomerType" }
-
-        beckn:offerAttributes:
-          $ref: "#/components/schemas/Attributes"
-          description: Attribute Pack attachment (pricing models, discounts, rail terms, etc.)          
-              
-    Attributes:
+      
+    MediaSearch:
       type: object
       description: >
-        JSON-LD aware bag for domain-specific attributes of an Item.
-        MUST include @context (URI) and @type (compact or full IRI).
-        Any additional properties are allowed and interpreted per the provided JSON-LD context.
-      required: ["@context", "@type"]
-      minProperties: 2
-      additionalProperties: true
+        Container for multimodal search inputs and configuration.
+        Supports searching through **images, audio notes, and videos**
+        alongside text, filters, and spatial predicates.
+        For GET, this object should be JSON-encoded and URL-escaped.
       properties:
-        "@context":
+        media:
+          type: array
+          description: >
+            One or more references to **images, audio notes, or videos** supplied
+            as part of a multimodal search. Each entry references a media resource
+            accessible via HTTPS or data URI.
+          items:
+            $ref: '#/components/schemas/MediaInput'
+          example:
+            - id: "snap-1"
+              type: image
+              url: "https://cdn.example.com/user/snaps/ccs2-cable.jpg"
+              contentType: "image/jpeg"
+        options:
+          $ref: '#/components/schemas/MediaSearchOptions'
+          description: >
+            Options controlling how the discovery engine interprets the supplied media —
+            e.g., whether to perform OCR/ASR, semantic similarity, or object detection.
+      additionalProperties: false
+      example:
+        media:
+          - id: "snap-1"
+            type: image
+            url: "https://cdn.example.com/user/snaps/ccs2-cable.jpg"
+            contentType: "image/jpeg"
+        options:
+          goals: ["visual-object-detect", "text-from-image"]
+          augment_text_search: true
+
+
+    MediaInput:
+      type: object
+      description: Reference to an image, audio clip, or video used for multimodal search.
+      required: [type, url]
+      properties:
+        id:
+          type: string
+          description: Client-supplied identifier for this media input.
+        type:
+          type: string
+          enum: [image, audio, video]
+          description: Media category.
+        url:
           type: string
           format: uri
-          description: JSON-LD context URI for the specific domain schema (e.g., ElectronicItem)
-          example: "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
-        "@type":
+          description: HTTPS URL or data URI pointing to the media resource.
+        contentType:
           type: string
-          description: JSON-LD type within the domain schema
-          example: "beckn:ElectronicItem"              
+          description: MIME type, e.g., image/jpeg, audio/mpeg, video/mp4.
+        textHint:
+          type: string
+          description: Optional pre-extracted text (OCR/ASR) for search augmentation.
+        language:
+          type: string
+          description: Language code (BCP-47) of `textHint` or spoken audio.
+        startMs:
+          type: integer
+          description: Optional start offset in milliseconds (for audio/video segments).
+        endMs:
+          type: integer
+          description: Optional end offset in milliseconds (for audio/video segments).
+      additionalProperties: false
+
+    MediaSearchOptions:
+      type: object
+      description: How the discovery engine should use the provided media inputs.
+      properties:
+        goals:
+          type: array
+          description: >
+            Desired processing goals for the media.
+          items:
+            type: string
+            enum:
+              - visual-similarity        # find visually similar items
+              - visual-object-detect     # detect object classes within image/video
+              - text-from-image          # extract text (OCR)
+              - text-from-audio          # extract text (ASR)
+              - semantic-audio-match     # audio embedding similarity
+              - semantic-video-match     # video scene/keyframe similarity
+        augment_text_search:
+          type: boolean
+          default: true
+          description: >
+            Whether to append extracted text from OCR/ASR to `text_search`.
+        restrict_results_to_media_proximity:
+          type: boolean
+          default: false
+          description: >
+            Restrict results to spatial proximity of media-derived coordinates
+            (e.g., EXIF GPS tags).
+      additionalProperties: false
+    
+    AckResponse:
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
+
+    Catalog:
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Catalog'
+
+    Item:
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Item'
+
+    Offer:
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Offer'
+              
+    Attributes:
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Attributes'
 
     Provider:
-      type: object
-      required: ["beckn:id", "beckn:descriptor"]
-      additionalProperties: false
-      properties:
-        "beckn:id":
-          type: string
-          description: Unique identifier for the provider
-          example: "tech-store-001"
-        "beckn:descriptor":
-          $ref: '#/components/schemas/Descriptor'
-        "beckn:validity":
-          $ref: '#/components/schemas/TimePeriod'
-        "beckn:locations":
-          type: array
-          items:
-            $ref: '#/components/schemas/Location'
-          description: Physical locations where the provider operates
-        "beckn:rateable":
-          type: boolean
-          description: Whether the provider can be rated by customers
-          example: true
-        "beckn:rating":
-          $ref: '#/components/schemas/Rating'
-        "beckn:providerAttributes":
-          $ref: '#/components/schemas/Attributes'
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Provider'
 
     PriceSpecification:
-      type: object
-      additionalProperties: true
-      properties:
-        currency: { type: string, description: ISO 4217 code }
-        value:    { type: number, description: Total value for this spec node }
-        components:
-          type: array
-          description: Optional components (tax, shipping, discount, fee, surcharge)
-          items:
-            type: object
-            properties:
-              type: { type: string, enum: ["UNIT","TAX","DELIVERY","DISCOUNT","FEE","SURCHARGE"] }
-              value: { type: number }
-              currency: { type: string }
-              description: { type: string }
-      x-jsonld: { "@id": "schema:PriceSpecification" }
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/PriceSpecification'
       
     Eligibility:
-      type: object
-      properties:
-        eligibleRegion: { type: string }
-        eligibleQuantity:
-          type: object
-          properties:
-            min: { type: number }
-            max: { type: number }
-      x-jsonld: { "@id": "schema:DefinedRegion|schema:QuantitativeValue" }
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Eligibility'
       
-    
     Descriptor:
-      type: object
-      required: ["@type"]
-      properties:
-        "@type":
-          type: string
-          enum: ["beckn:Descriptor"]
-          description: Type of the descriptor
-          example: "beckn:Descriptor"
-        "schema:name":
-          type: string
-          description: Name of the item
-          example: "Premium Gaming Laptop Pro"
-        "beckn:shortDesc":
-          type: string
-          description: Short description of the item
-          example: "High-performance gaming laptop with RTX graphics"
-        "beckn:longDesc":
-          type: string
-          description: Detailed description of the item
-          example: "Powerful gaming laptop with NVIDIA RTX graphics, fast SSD storage, and high-refresh display"
-        "schema:image":
-          type: array
-          items: { type: string, format: uri }
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Descriptor'
 
     CategoryCode:
-      type: object
-      required: ["@type", "schema:codeValue"]
-      properties:
-        "@type":
-          type: string
-          enum: ["schema:CategoryCode"]
-          description: Type of the category code
-          example: "schema:CategoryCode"
-        "schema:codeValue":
-          type: string
-          description: Category code value
-          example: "electronics"
-        "schema:name":
-          type: string
-          description: Category name
-          example: "Electronics"
-        "schema:description":
-          type: string
-          description: Category description
-          example: "Electronic devices and equipment"
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/CategoryCode'
 
     TimePeriod:
-      type: object
-      description: Time window with date-time precision for availability/validity
-      required: ["@type"]
-      properties:
-        "@type":
-          type: string
-          description: JSON-LD type for a date-time period
-          example: "beckn:TimePeriod"
-        "schema:startDate":
-          type: string
-          format: date-time
-          description: Start instant (inclusive)
-          example: "2025-01-27T09:00:00Z"
-        "schema:endDate":
-          type: string
-          format: date-time
-          description: End instant (exclusive or inclusive per domain semantics)
-          example: "2025-12-31T23:59:59Z"
-      anyOf:
-        - required: ["schema:startDate"]
-        - required: ["schema:endDate"]
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/TimePeriod'
 
     Rating:
-      type: object
-      required: ["@type"]
-      properties:
-        "@type":
-          type: string
-          enum: ["beckn:Rating"]
-          description: Type of the rating
-          example: "beckn:Rating"
-        "beckn:ratingValue":
-          type: number
-          minimum: 0
-          maximum: 5
-          description: Rating value (0-5)
-          example: 4.8
-        "beckn:ratingCount":
-          type: integer
-          minimum: 0
-          description: Number of ratings
-          example: 1250
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Rating'
 
     ErrorResponse:
-      type: object
-      required: [error]
-      properties:
-        error:
-          $ref: '#/components/schemas/Error'
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/ErrorResponse'
 
     Error:
-      type: object
-      required: [code, message]
-      properties:
-        code:
-          type: string
-          description: Error code
-          example: "INVALID_SCHEMA_FIELD"
-        message:
-          type: string
-          description: Human-readable error message
-          example: "Field 'electronic:invalidField' not found in ElectronicItem schema"
-        details:
-          type: object
-          description: Additional error details
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Error'
           
   examples:
     # ---------- /discover request examples ----------
@@ -995,7 +696,6 @@ components:
           filters:
             type: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && @.electronic.brand.name == 'Premium Tech')]"
-          pagination: { page: 1, limit: 20 }
 
     discover_natural_language:
       summary: Natural-language discover (electronics)
@@ -1013,7 +713,6 @@ components:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
         message:
           text_search: "Looking for a premium gaming laptop under $2000 near San Francisco"
-          pagination: { page: 1, limit: 20 }
 
     discover_grocery_search:
       summary: Structured discover (grocery)
@@ -1034,7 +733,6 @@ components:
           filters:
             type: "jsonpath"
             expression: "$[?(@.grocery.organicCertification ~ 'USDA Organic')]"
-          pagination: { page: 1, limit: 10 }
 
     discover_combined_search:
       summary: Combined text + filters
@@ -1055,7 +753,6 @@ components:
           filters:
             type: "jsonpath"
             expression: "$[?(@.electronic.price['schema:price'] <= 2000 && @.electronic.brand.name == 'Premium Tech')]"
-          pagination: { page: 1, limit: 15 }
 
     discover_multi_schema_search:
       summary: Multi-schema discover (electronics + grocery)
@@ -1077,7 +774,6 @@ components:
           filters:
             type: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && (@.electronic.brand.name == 'Premium Tech' || @.grocery.organicCertification ~ 'USDA Organic'))]"
-          pagination: { page: 1, limit: 25 }
 
     # ---------- /on_discover callback (DiscoverResponse) examples ----------
     on_discover_electronics_catalog:
@@ -1368,3 +1064,34 @@ components:
                     "beckn:descriptor":
                       "@type": "beckn:Descriptor"
                       "schema:name": "Premium Tech Store"
+
+  responses:
+    Ack200:
+      description: "ACK — request received (validation passed)"
+      content:
+        application/json:
+          schema:
+            $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
+          examples:
+            success_ack:
+              $ref: '#/components/examples/ack_success'
+
+    Ack400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
+          examples:
+            bad_request:
+              $ref: '#/components/examples/ack_bad_request'
+
+    Ack500:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
+          examples:
+            server_error:
+              $ref: '#/components/examples/ack_server_error'

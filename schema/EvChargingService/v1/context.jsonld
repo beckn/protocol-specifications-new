@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "beckn": "./vocab.jsonld#",
+    
+    "ChargingService": "beckn:ChargingService",
+    "ChargingOffer": "beckn:ChargingOffer",
+    "ChargingSession": "beckn:ChargingSession",
+    "ChargingProvider": "beckn:ChargingProvider",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "price": "schema:price",
+    "priceCurrency": "schema:priceCurrency",
+    "startTime": "schema:startTime",
+    "endTime": "schema:endTime",
+    "orderStatus": "schema:orderStatus",
+    "serviceLocation": "schema:serviceLocation",
+    "geo": "schema:geo",
+    "latitude": "schema:latitude",
+    "longitude": "schema:longitude",
+    "paymentAccepted": "schema:paymentAccepted",
+    "image": "schema:image",
+    "url": "schema:url",
+    "sameAs": "schema:sameAs",
+    "identifier": "schema:identifier",
+    "areaServed": "schema:areaServed",
+    "category": "schema:category",
+
+    "connectorId": "beckn:connectorId",
+    "connectorType": "beckn:connectorType",
+    "powerType": "beckn:powerType",
+    "connectorFormat": "beckn:connectorFormat",
+    "chargingSpeed": "beckn:chargingSpeed",
+    "stationStatus": "beckn:stationStatus",
+    "idleFeePolicy": "beckn:idleFeePolicy",
+
+    "authorizationMode": "beckn:authorizationMode",
+    "authorizationOtpHint": "beckn:authorizationOtpHint",
+
+    "trackingId": "beckn:trackingId",
+    "trackingUrl": "beckn:trackingUrl",
+    "trackingStatus": "beckn:trackingStatus",
+
+    "kwh": "beckn:kwh",
+    "chargingPeriods": "beckn:chargingPeriods",
+    "dimensions": "beckn:dimensions",
+    "dimensionType": "beckn:dimensionType",
+    "volume": "beckn:volume",
+    "totalCost": "beckn:totalCost",
+    "exclVat": "beckn:exclVat",
+    "inclVat": "beckn:inclVat",
+    "lastUpdated": "schema:dateModified",
+
+    "vehicleMake": "beckn:vehicleMake",
+    "vehicleModel": "beckn:vehicleModel",
+    "sessionStatus": "beckn:sessionStatus",
+
+    "buyerFinderFee": "beckn:buyerFinderFee",
+    "feeType": "beckn:feeType",
+    "feeValue": "beckn:feeValue",
+
+    "reservationId": "beckn:reservationId",
+    "gracePeriodMinutes": "beckn:gracePeriodMinutes",
+    "ratingOverall": "beckn:ratingOverall",
+    "ratingAmenities": "beckn:ratingAmenities"
+  },
+
+  "@graph": [
+    { "@id": "beckn:ChargingService", "owl:equivalentClass": "schema:Service" },
+    { "@id": "beckn:ChargingOffer", "owl:equivalentClass": "schema:Offer" },
+    { "@id": "beckn:ChargingSession", "owl:equivalentClass": "schema:Order" },
+    { "@id": "beckn:ChargingProvider", "owl:equivalentClass": "schema:Organization" }
+  ]
+}

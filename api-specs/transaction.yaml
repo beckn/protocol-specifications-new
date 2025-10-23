@@ -35,7 +35,7 @@ paths:
                   - order
                   properties:
                     order:
-                      $ref: '#/components/schemas/Order'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -70,7 +70,7 @@ paths:
                   - order
                   properties:
                     order:
-                      $ref: '#/components/schemas/Order'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -79,110 +79,6 @@ paths:
         '500':
           $ref: '#/components/responses/Ack500'
   
-  /beckn/get_offer:
-    post:
-      summary: Compute/prune final offers for a given selection of items and/or offers (no Order envelope)
-      description: >
-        Client (BAP) submits a selection of items and/or offers. The BPP computes applicable, priced offers
-        and returns them asynchronously via /on_get_offer. This is semantically similar to /select, but
-        avoids the Order wrapper to keep the intent clear: "give me offers for these choices".
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [context, message]
-              properties:
-                context:
-                  allOf:
-                    - $ref: "#/components/schemas/TransactionContext"
-                    - type: object
-                      properties: { action: { const: "get_offer" } }
-                message:
-                  type: object
-                  required: [selection]
-                  properties:
-                    # The selection may be a set of items, a set of offers, or both.
-                    selection:
-                      type: object
-                      properties:
-                        items:
-                          type: array
-                          minItems: 1
-                          items:
-                            type: object
-                            required: [beckn:id]
-                            properties:
-                              beckn:id:
-                                $ref: "#/components/schemas/Item/properties/beckn:id"
-                              quantity:
-                                type: number
-                                description: Optional requested quantity for this item
-                        offers:
-                          type: array
-                          minItems: 1
-                          items:
-                            type: object
-                            required: [beckn:id]
-                            properties:
-                              beckn:id:
-                                $ref: "#/components/schemas/Offer/properties/beckn:id"
-                      anyOf:
-                        - required: [items]
-                        - required: [offers]
-                    # Optional scoping hints (kept open; networks can define attribute packs if needed)
-                    provider:
-                      $ref: "#/components/schemas/Provider/properties/beckn:id"
-                    constraints:
-                      type: object
-                      description: Optional constraints (e.g., fulfillment mode/slots, region, eligibility). Extend via attribute packs as needed.
-                      additionalProperties: true
-      responses:
-        '200':
-          $ref: '#/components/responses/Ack200'
-        '400':
-          $ref: '#/components/responses/Ack400'
-        '500':
-          $ref: '#/components/responses/Ack500'
-
-  /beckn/on_get_offer:
-    post:
-      summary: Provider returns computed offers for the selection
-      description: >
-        BPP responds with the final set of offers applicable to the submitted selection. Each Offer must
-        reference the base items via beckn:items (schema:itemOffered). Additional pricing/eligibility details
-        can be carried in offerAttributes packs.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [context, message]
-              properties:
-                context:
-                  allOf:
-                    - $ref: "#/components/schemas/TransactionContext"
-                    - type: object
-                      properties: { action: { const: "on_get_offer" } }
-                message:
-                  type: object
-                  required: [offers]
-                  properties:
-                    # Full Offer objects are returned (not just ids) so clients can render price/terms immediately.
-                    offers:
-                      type: array
-                      minItems: 1
-                      items:
-                        $ref: "#/components/schemas/Offer"
-      responses:
-        '200':
-          $ref: '#/components/responses/Ack200'
-        '400':
-          $ref: '#/components/responses/Ack400'
-        '500':
-          $ref: '#/components/responses/Ack500'
   
   /beckn/init:
     post:
@@ -210,7 +106,7 @@ paths:
                   - order
                   properties:
                     order:
-                      $ref: '#/components/schemas/Order'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -245,7 +141,7 @@ paths:
                   - order
                   properties:
                     order:
-                      $ref: '#/components/schemas/Order'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -280,7 +176,7 @@ paths:
                   - order
                   properties:
                     order:
-                      $ref: '#/components/schemas/Order'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -315,7 +211,7 @@ paths:
                   - order
                   properties:
                     order:
-                      $ref: '#/components/schemas/Order'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -356,8 +252,8 @@ paths:
                         - beckn:id
                         properties:
                           beckn:id:
-                            $ref: '#/components/schemas/Order/properties/beckn:id'
-                      - $ref: '#/components/schemas/Order'
+                            $ref: '../schema/core/v2/core.yaml#/components/schemas/Order/properties/beckn:id'
+                      - $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -390,7 +286,7 @@ paths:
                   type: object
                   properties:
                     order:
-                      $ref: '#/components/schemas/Order'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
                   anyOf:
                   - required:
                     - order
@@ -429,7 +325,7 @@ paths:
                   - order
                   properties:
                     order:
-                      $ref: '#/components/schemas/Order'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -464,7 +360,7 @@ paths:
                   - order
                   properties:
                     order:
-                      $ref: '#/components/schemas/Order'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -505,8 +401,8 @@ paths:
                         - beckn:id
                         properties:
                           beckn:id:
-                            $ref: '#/components/schemas/Order/properties/beckn:id'
-                      - $ref: '#/components/schemas/Order'
+                            $ref: '../schema/core/v2/core.yaml#/components/schemas/Order/properties/beckn:id'
+                      - $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -542,7 +438,7 @@ paths:
                   - order
                   properties:
                     order:
-                      $ref: '#/components/schemas/Order'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -611,7 +507,7 @@ paths:
                   required: [support]
                   properties:
                     support:
-                      $ref: '#/components/schemas/SupportInfo'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/SupportInfo'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -683,7 +579,7 @@ paths:
                   required: [tracking]
                   properties:
                     tracking:
-                      $ref: '#/components/schemas/Tracking'
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Tracking'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -711,7 +607,7 @@ paths:
                         action:
                           const: rating
                 message:
-                  $ref: '#/components/schemas/RatingInput'
+                  $ref: '../schema/core/v2/core.yaml#/components/schemas/RatingInput'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -784,446 +680,37 @@ components:
               description: Optional JSON-LD context URLs relevant to the items/offers in this transaction
 
     # --------------------------------
-    # ORDER (core)
+    # Core schemas (referenced from core.yaml)
     # --------------------------------
     Order:
-      type: object
-      additionalProperties: false
-      required:
-        - "@context"
-        - "@type"
-        - beckn:id
-        - beckn:state
-        - beckn:seller
-        - beckn:buyer
-        - beckn:orderItems
-      properties:
-        "@context":
-          type: string
-          format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Order/schema-context.jsonld"
-        "@type":
-          type: string
-          enum: ["beckn:Order"]
-          x-jsonld: { "@id": "schema:Order" }
-
-        beckn:id:
-          type: string
-          x-jsonld: { "@id": "schema:identifier" }
-
-        beckn:state:
-          type: string
-          description: Order status/state
-          x-jsonld: { "@id": "schema:orderStatus" }
-
-        beckn:orderNumber:
-          type: string
-          description: Human-visible order number
-          x-jsonld: { "@id": "schema:orderNumber" }
-
-        beckn:seller:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/Provider/properties/beckn:id"
-          x-jsonld: { "@id": "schema:seller" }
-
-        beckn:buyer:
-          $ref: "#/components/schemas/Party/properties/beckn:id"
-          x-jsonld: { "@id": "schema:customer" }
-
-        beckn:orderItems:
-          type: array
-          minItems: 1
-          items: { $ref: "#/components/schemas/OrderItem" }
-          x-jsonld: { "@id": "schema:orderItem" }
-
-        beckn:acceptedOffers:
-          type: array
-          items: { $ref: '{DISCOVERY_SPEC_URL}#components/schemas/Offer/properties/beckn:id' }
-          description: Offers accepted at order-level (optional if captured per line)
-          x-jsonld: { "@id": "schema:acceptedOffer" }
-
-        beckn:totals:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/PriceSpecification"
-          description: Order totals snapshot (derivable from lines; optional)
-          x-jsonld: { "@id": "schema:priceSpecification" }
-
-        beckn:billing:
-          $ref: '#/components/schemas/Invoice/properties/beckn:id'
-          description: Invoice reference/summary
-          x-jsonld: { "@id": "schema:Invoice" }
-
-        beckn:payment:
-          $ref: "#/components/schemas/Payment/properties/beckn:id"
-          description: Method/status; rail-specific payloads go to packs
-          x-jsonld: { "@id": "schema:PaymentMethod|schema:PaymentStatusType" }
-
-        beckn:fulfillment:
-          $ref: "#/components/schemas/Fulfillment/properties/beckn:id"
-          description: Parcel delivery or reservation summary
-          x-jsonld: { "@id": "schema:ParcelDelivery|schema:Reservation" }
-
-        beckn:orderAttributes:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/Attributes"
-          description: Order-level Attribute Pack (vertical/regulatory specifics)
-
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Order'
+    
     OrderItem:
-      type: object
-      required: ["beckn:lineId","beckn:orderedItem","beckn:quantity"]
-      properties:
-        beckn:lineId:
-          type: string
-          description: Unique line id within order
-        beckn:orderedItem:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/Item/properties/beckn:id"
-          x-jsonld: { "@id": "schema:orderedItem" }
-        beckn:acceptedOffer:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/Offer/properties/beckn:id"
-          description: Offer applied to this line (if different from order-level)
-          x-jsonld: { "@id": "schema:acceptedOffer" }
-        beckn:quantity:
-          type: number
-          x-jsonld: { "@id": "schema:orderQuantity" }
-        beckn:price:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/PriceSpecification"
-          description: Line price composition (unit/tax/delivery/discount)
-          x-jsonld: { "@id": "schema:priceSpecification" }
-        beckn:orderItemAttributes:
-          $ref: "{DISCOVERY_SPEC_URL}#components/schemas/Attributes"
-          description: Line-level Attribute Pack (options, substitutions, ESG, etc.)
-
-    # --------------------------------
-    # Shared refs
-    # --------------------------------
-
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/OrderItem'
+    
     Invoice:
-      type: object
-      additionalProperties: false
-      required: ["@context","@type","beckn:id","beckn:number","beckn:issueDate","beckn:totals","beckn:payee","beckn:payer"]
-      # A commercial document snapshot for billing/tax. Rich tax regimes go in attribute packs.
-      properties:
-        "@context":
-          type: string
-          format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Invoice/schema-context.jsonld"
-        "@type":
-          type: string
-          enum: ["beckn:Invoice"]
-          x-jsonld: { "@id": "schema:Invoice" }
-        beckn:id:
-          type: string
-          description: Stable invoice identifier (system id)
-          x-jsonld: { "@id": "schema:identifier" }
-        beckn:number:
-          type: string
-          description: Human-visible invoice number
-          x-jsonld: { "@id": "schema:confirmationNumber" } # schema.org commonly uses confirmationNumber on docs/tickets
-        beckn:issueDate:
-          type: string
-          format: date
-          x-jsonld: { "@id": "schema:dateIssued" }
-        beckn:dueDate:
-          type: string
-          format: date
-          nullable: true
-          x-jsonld: { "@id": "schema:paymentDueDate" }
-        beckn:payee:
-          $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/Provider/properties/beckn:id"
-          description: Seller / issuer of the invoice
-          x-jsonld: { "@id": "schema:provider" }
-        beckn:payer:
-          $ref: "#/components/schemas/Party/properties/beckn:id"
-          description: Buyer being invoiced
-          x-jsonld: { "@id": "schema:customer" }
-        beckn:totals:
-          $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/PriceSpecification"
-          description: Invoice grand totals (tax/shipping/discount components inside)
-          x-jsonld: { "@id": "schema:priceSpecification" }
-        beckn:invoiceAttributes:
-          $ref: "{DISCOVERY_SPEC_URL}#/components/schemas/Attributes"
-          description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc. 
-
-    # ---------------------------------
-    # FULFILLMENT (core)
-    # ---------------------------------
-    # A single polymorphic envelope with 'type' indicating the mode. The FULL details
-    # for each mode are expected to come from fulfillment attribute packs (logistics, reservation, digital).
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Invoice'
+    
     Fulfillment:
-      type: object
-      additionalProperties: false
-      required: ["@context","@type","beckn:id","beckn:mode"]
-      properties:
-        "@context":
-          type: string
-          format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Fulfillment/schema-context.jsonld"
-        "@type":
-          type: string
-          enum: ["beckn:Fulfillment"]
-          x-jsonld: { "@id": "schema:Thing" } # Fulfillment is Beckn-native; specific packs map to ParcelDelivery/Reservation/etc.
-        beckn:id:
-          type: string
-          description: Fulfillment identifier
-          x-jsonld: { "@id": "schema:identifier" }
-        # Optional minimal status/links that are mode-agnostic. Rich details live in packs.
-        beckn:status:
-          type: string
-          description: Network-defined status code (e.g., OutForDelivery, ReadyForPickup, Confirmed)
-          x-jsonld: { "@id": "schema:orderStatus" } # closest general status anchor
-        trackingAction:
-          $ref: '#/components/schemas/TrackAction'
-          description: >
-            Tracking entrypoint for this fulfillment, modeled as schema.org TrackAction.
-            Use target.url for a clickable tracking URL; may also include deliveryMethod.
-          x-jsonld:
-            '@type': 'schema:TrackAction'
-        beckn:deliveryAttributes:
-          $ref: "#/components/schemas/Attributes"
-          description: > 
-            Attribute Pack for the chosen mode: 
-            # DELIVERY: endpoints, slot windows, route & events → map to schema:ParcelDelivery / schema:DeliveryEvent
-            # PICKUP: pickupPlace, counter codes, time windows → map to schema:Place + schema:openingHoursSpecification
-            # RESERVATION: reservationStatus, reservedTicket → map to schema:Reservation
-            # DIGITAL: contentUrl/license/expiry → map to schema:DataDownload/schema:MediaObject
-
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Fulfillment'
+    
     TrackAction:
-      type: object
-      description: Minimal schema.org TrackAction for clickable tracking.
-      x-jsonld:
-        '@type': 'schema:TrackAction'
-      properties:
-        target:
-          type: object
-          description: schema.org EntryPoint
-          x-jsonld:
-            '@type': 'schema:EntryPoint'
-          properties:
-            url:
-              type: string
-              format: uri
-              description: Tracking page URL
-              x-jsonld:
-                '@id': 'schema:url'
-          additionalProperties: true
-        deliveryMethod:
-          type: string
-          enum: ["DELIVERY","PICKUP","RESERVATION","DIGITAL"]
-          description: |
-            DELIVERY    → last-mile / parcel logistics
-            PICKUP      → customer collects from a place
-            RESERVATION → entitlement/booking is fulfilled (tickets, seats, appointments)
-            DIGITAL     → digital good / license access
-          x-jsonld:
-            '@id': 'schema:deliveryMethod'    
-        reservationId:
-          type: string
-          description: Unique identifier for the reservation (schema.org Reservation.reservationId).
-          x-jsonld:
-            '@id': 'schema:reservationId'
-      additionalProperties: true            
-
-    # -----------------------------
-    # PAYMENT (core)
-    # -----------------------------
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/TrackAction'
+    
     Payment:
-      type: object
-      additionalProperties: false
-      required: ["@context","@type","beckn:id","beckn:method","beckn:status"]
-      # Core payment semantics: rail + status + references. Rail payloads live in payment packs (UPI/Card/BNPL/Wallet).
-      properties:
-        "@context":
-          type: string
-          format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Payment/schema-context.jsonld"
-        "@type":
-          type: string
-          enum: ["beckn:Payment"]
-          x-jsonld: { "@id": "schema:Thing" } # specific aspects map to PaymentMethod/PaymentStatusType
-        beckn:id:
-          type: string
-          description: Payment record identifier
-          x-jsonld: { "@id": "schema:identifier" }
-        beckn:method:
-          type: string
-          description: Rail/method code (e.g., CARD, UPI, BNPL, WALLET)
-          x-jsonld: { "@id": "schema:paymentMethod" }
-        beckn:status:
-          type: string
-          description: Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)
-          x-jsonld: { "@id": "schema:paymentStatus" } # schema:PaymentStatusType vocabulary
-        beckn:amount:
-          type: object
-          description: Amount associated with this payment action
-          properties:
-            currency: { type: string, x-jsonld: { "@id": "schema:priceCurrency" } }
-            value:    { type: number, x-jsonld: { "@id": "schema:price" } }
-        beckn:txnRef:
-          type: string
-          description: PSP/gateway/bank transaction reference
-          x-jsonld: { "@id": "schema:transactionNumber" }
-        beckn:paidAt:
-          type: string
-          format: date-time
-          nullable: true
-          description: When the last terminal event (capture/refund) happened
-          x-jsonld: { "@id": "schema:paymentDueDate" } # closest temporal anchor for payment events
-        beckn:paymentAttributes:
-          $ref: "#/components/schemas/Attributes"
-          description: > 
-            Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)
-
-    # -----------------------------
-    # PARTY (core)
-    # -----------------------------
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Payment'
+    
     Party:
-      type: object
-      additionalProperties: false
-      required: ["@context","@type","beckn:id"]
-      # A minimal entity that can represent either a Person or an Organization.
-      # Full identity, contact, or KYC details are supplied via party attribute packs.
-      properties:
-        "@context":
-          type: string
-          format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Party/schema-context.jsonld"
-        "@type":
-          type: string
-          enum: ["beckn:Party"]
-          x-jsonld: { "@id": "schema:Thing" } # resolved through @role into schema:Person or schema:Organization
-        beckn:id:
-          type: string
-          description: Unique identifier for this party (personId or orgId in legacy schema)
-          x-jsonld: { "@id": "schema:identifier" }
-        beckn:role:
-          type: string
-          enum: ["BUYER","SELLER","INTERMEDIARY","PAYER","PAYEE","FULFILLER"]
-          description: The functional role of this party in the transaction.
-          x-jsonld: { "@id": "schema:roleName" }
-        beckn:displayName:
-          type: string
-          description: Human-readable display name
-          x-jsonld: { "@id": "schema:name" }
-        beckn:partyAttributes:
-          $ref: "#/components/schemas/Attributes"
-          description: > 
-            Attribute Pack reference for richer identity:
-            # party/identity.v1 (contact details: email, phone, address)
-            # party/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…)
-            # party/kyc.v1 (jurisdictional compliance fields)
-            # party/preferences.v1 (delivery preferences, accessibility needs, etc.)
-
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Party'
+    
     SupportInfo:
-      type: object
-      description: >
-        Canonical support contact for an entity, mapped to schema.org ContactPoint.
-      additionalProperties: false
-      properties:
-        name:
-          type: string
-          description: Name of the support organization or contact.
-        phone:
-          type: string
-          description: Telephone number.
-        email:
-          type: string
-          format: email
-          description: Support email address.
-        url:
-          type: string
-          format: uri
-          description: Webpage or chat endpoint for support.
-        hours:
-          type: string
-          description: Human-readable support hours (local time).
-        channels:
-          type: array
-          description: Available support channels.
-          items:
-            type: string
-            enum: [phone, email, web, chat, whatsapp, in_app, other]
-      example:
-        name: "Acme Support"
-        phone: "+91-80-1234-5678"
-        email: "support@acme.example"
-        url: "https://acme.example/support"
-        hours: "Mon–Sat 09:00–20:00 IST"
-        channels: ["web", "phone", "email"]
-      x-jsonld:
-        '@type': 'schema:ContactPoint'
-        'schema:contactType': '"Customer Support"'
-        'schema:telephone': '$.phone'
-        'schema:email': '$.email'
-        'schema:url': '$.url'
-        'schema:name': '$.name'
-        'schema:hoursAvailable': '$.hours'
-
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/SupportInfo'
+    
     Tracking:
-      type: object
-      description: >
-        Non-streaming tracking handle per legacy semantics (url/transport/status).
-      additionalProperties: false
-      properties:
-        tl_method:
-          type: string
-          enum: [http/get, http/post, http/redirect, ws/handle, custom]
-          description: Transport/method used to access the tracking handle.  # mirrors legacy tl_method concept
-        url:
-          type: string
-          format: uri
-          description: Link/handle to off-network tracking UI or endpoint.
-        status:
-          type: string
-          enum: [active, disabled, completed]
-        expires_at:
-          type: string
-          format: date-time
-          description: ISO 8601 expiry timestamp for the tracking handle.
-      required: [tl_method, url, status]
-      example:
-        tl_method: "http/get"
-        url: "https://track.bpp.example?order_id=ORD-123"
-        status: "active"
-        expires_at: "2025-10-16T18:30:00Z"
-      x-jsonld:
-        '@type': 'schema:TrackAction'
-        'schema:target':    '$.url'           # URL to track → EntryPoint(target)
-        'schema:deliveryMethod': '$.tl_method' # best-effort mapping
-        'schema:actionStatus': '$.status'
-
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/Tracking'
+    
     RatingInput:
-      type: object
-      additionalProperties: false
-      required: [id, value]
-      properties:
-        id:
-          type: string
-          description: Target entity ID being rated (order/item/fulfillment/provider/agent).
-        value:
-          type: number
-          description: Numeric rating value (legacy usually 1–5).  # remains permissive
-          minimum: 0
-        best:
-          type: number
-          description: Maximum of the rating scale (default 5 if omitted).
-        worst:
-          type: number
-          description: Minimum of the rating scale (default 1 or 0 if omitted).
-        category:
-          type: string
-          description: What is being rated.
-          enum: [order, item, fulfillment, provider, agent, other]
-        feedback:
-          type: object
-          additionalProperties: false
-          properties:
-            comments: { type: string }
-            tags:
-              type: array
-              items: { type: string }
-      x-jsonld:
-        '@type': 'schema:Rating'
-        'schema:itemReviewed': '$.id'
-        'schema:ratingValue':  '$.value'
-        'schema:bestRating':   '$.best'
-        'schema:worstRating':  '$.worst'            
+      $ref: '../schema/core/v2/core.yaml#/components/schemas/RatingInput'            
 
   responses:
     Ack200:
@@ -1231,27 +718,27 @@ components:
       content:
         application/json:
           schema:
-            $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+            $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
           examples:
             success_ack:
-              $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_success'
+              $ref: './discover.yaml#/components/examples/ack_success'
 
     Ack400:
       description: Bad request
       content:
         application/json:
           schema:
-            $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+            $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
           examples:
             bad_request:
-              $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_bad_request'
+              $ref: './discover.yaml#/components/examples/ack_bad_request'
 
     Ack500:
       description: Internal server error
       content:
         application/json:
           schema:
-            $ref: '{DISCOVERY_SPEC_URL}#/components/schemas/AckResponse'
+            $ref: '../schema/core/v2/core.yaml#/components/schemas/AckResponse'
           examples:
             server_error:
-              $ref: '{DISCOVERY_SPEC_URL}#/components/examples/ack_server_error'
+              $ref: './discover.yaml#/components/examples/ack_server_error'

@@ -18,11 +18,14 @@ schema/
         ├── 🎨 renderer.json        # UI rendering templates
         ├── 📚 vocab.jsonld         # Use-case vocabulary
         ├── 📖 README.md            # Documentation
-        └── 📁 examples/
-            └── 📁 schema/
-                ├── 📄 item-example.json
-                ├── 📄 offer-example.json
-                └── 📄 provider-attributes-example.json
+        ├── 📁 examples/
+        │   └── 📁 schema/
+        │       ├── 📄 item-example.json
+        │       ├── 📄 offer-example.json
+        │       └── 📄 provider-attributes-example.json
+        ├── 📁 migrations/          # Scripts to migrate from existing schema to new schema
+        ├── 📁 validations/         # Scripts to validate the schema with actual data
+        └── 📁 tests/               # Scripts to test the schema changes
 ```
 
 ### 📋 File Descriptions
@@ -40,6 +43,12 @@ schema/
 | 📚 **vocab.jsonld** | Local vocabulary for use-case specific terms in JSON-LD format with RDFS definitions and semantic relationships. |
 | | |
 | 📁 **examples/** | Contains working examples showing each attribute type in the context of Beckn discover and transaction flows. |
+| | |
+| 📁 **migrations/** | Scripts to migrate from existing schema to new schema versions, including data transformation utilities. |
+| | |
+| 📁 **validations/** | Scripts to validate the schema with actual data, including compliance checks and data integrity tests. |
+| | |
+| 📁 **tests/** | Scripts to test schema changes, including unit tests, integration tests, and regression tests. |
 
 ### 🗺️ Local Namespace Mapping
 

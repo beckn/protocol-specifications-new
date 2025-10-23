@@ -22,8 +22,9 @@ Attach these schemas as follows:
 
 - **Aligned with Beckn Core  
     **Uses canonical Beckn schemas for common objects and reuses canonical components from:
-  - [discover.yaml](https://raw.githubusercontent.com/abhimail/beckn/refs/heads/main/protocol-enhancements/discover.yaml) - Location, Address, GeoJSONGeometry
-  - [transaction.yaml](https://raw.githubusercontent.com/abhimail/beckn/refs/heads/main/protocol-enhancements/transaction.yaml) - Order, Offer, Fulfillment, Payment, Context
+  - [core.yaml](../core/v2/core.yaml) - Catalog, Item, Offer, Provider, Attributes, Location, Address, GeoJSONGeometry
+  - [discover.yaml](../../api-specs/discover.yaml) - Discovery API endpoints and request/response schemas
+  - [transaction.yaml](../../api-specs/transaction.yaml) - Transaction API endpoints and Order, Fulfillment, Payment schemas
 - **Adds EV semantics only  
     **Introduces domain-specific elements such as connectors, power ratings, roaming networks, charging periods, and session telemetry.
 - **Designed for interoperability  
@@ -31,15 +32,15 @@ Attach these schemas as follows:
 
 ## **🗺️ Local Namespace Mapping**
 
-The ev namespace is mapped **locally**:
+The beckn namespace is mapped **locally**:
 
-{ "ev": "./vacab/ev#" }
+{ "beckn": "./vocab.jsonld#" }
 
-Vocabulary files live in v1/vocab/ and use this same local mapping.
+Vocabulary files live in v1/vocab.jsonld and use this same local mapping.
 
-When publishing, replace ./ev# with an absolute URL, e.g.:
+When publishing, replace ./vocab.jsonld# with an absolute URL, e.g.:
 
-<https://schemas.example.org/ev#>
+<https://schemas.example.org/ev-charging/v1/vocab.jsonld#>
 
 This supports both local development and public hosting.
 
@@ -47,21 +48,17 @@ This supports both local development and public hosting.
 
 | **File / Folder** | **Purpose** |
 | --- | --- |
-| **context.jsonld** | Maps all properties to schema.org and local ev: IRIs. Defines semantic equivalences (e.g., serviceLocation ≡ beckn:availableAt). |
+| **context.jsonld** | Maps all properties to schema.org and local beckn: IRIs. Defines semantic equivalences (e.g., serviceLocation ≡ beckn:availableAt). |
 | --- | --- |
-| **attributes.yaml** | OpenAPI 3.1.1 attribute schemas for ChargingService, ChargingOffer, ChargingSession, and ChargingProvider, each annotated with x-jsonld. Reuses canonical Beckn components (e.g., Locationvia \$ref). |
+| **attributes.yaml** | OpenAPI 3.1.1 attribute schemas for ChargingService, ChargingOffer, ChargingSession, and ChargingProvider, each annotated with x-jsonld. Reuses canonical Beckn components (e.g., Location via \$ref). |
 | --- | --- |
 | **profile.json** | Lists included schemas, operational/index hints, minimal attributes for discovery, and privacy guidance for implementers. |
 | --- | --- |
 | **renderer.json** | Defines rendering templates (HTML + JSON data paths) for discovery cards, offer chips, and session status views used in UI implementations. |
 | --- | --- |
-| **rules/** | **TBD** - will contain Spectral rules and JSON Schema (AJV) shims for automated validation. |
-| --- | --- |
-| **tools/** | **TBD** - jq and helper scripts for transformations or legacy migrations. |
+| **vocab.jsonld** | Local vocabulary for EV domain terms (connectorType, chargingSpeed, ocppId, etc.) in JSON-LD format with RDFS definitions and semantic relationships. |
 | --- | --- |
 | **examples/** | Contains working examples showing each attribute type in the context of Beckn discover and transaction flows. |
-| --- | --- |
-| **vocab/** | Local vocabulary for EV domain terms (connectorType, chargingSpeed, ocppId, etc.) in YAML and JSON-LD formats. |
 | --- | --- |
 
 

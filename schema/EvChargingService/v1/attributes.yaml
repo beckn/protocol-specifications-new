@@ -87,14 +87,15 @@ components:
               description: Location of the charging site (reuses Beckn Location).
               x-jsonld: { "@id": serviceLocation }
           example:
-            gps: "12.9153,77.6104"
+            geo:
+              type: "Point"
+              coordinates: [77.6104, 12.9153]
             address:
-              name: "EcoPower BTM Hub"
-              locality: "100 Ft Rd"
-              city: "Bengaluru"
-              state: "KA"
-              country: "IND"
-              area_code: "560076"
+              streetAddress: "EcoPower BTM Hub, 100 Ft Rd"
+              addressLocality: "Bengaluru"
+              addressRegion: "Karnataka"
+              postalCode: "560076"
+              addressCountry: "IN"
 
         amenityFeature:
           type: array

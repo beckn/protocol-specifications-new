@@ -242,7 +242,7 @@ components:
       additionalProperties: true
       properties:
         currency: { type: string, description: ISO 4217 code }
-        value:    { type: number, description: Total value for this spec node }
+        price:    { type: number, description: Total price for this price specification }
         eligibleQuantity:
           unitText:
             type: string

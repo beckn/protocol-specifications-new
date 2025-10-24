@@ -169,6 +169,22 @@ components:
           description: Optional eligibility (regions, quantities, audiences)
           x-jsonld: { "@id": "schema:eligibleRegion|schema:eligibleQuantity|schema:eligibleCustomerType" }
 
+        beckn:acceptedPaymentMethod:
+          type: array
+          items:
+            type: string
+            enum: ["UPI", "Card", "Wallet", "NetBanking", "Cash"]
+          description: Payment methods accepted for this offer
+          example: ["UPI", "Card", "Wallet"]
+          x-jsonld: { "@id": "schema:acceptedPaymentMethod" }
+
+        beckn:itemCondition:
+          type: string
+          enum: ["NEW", "USED", "REFURBISHED", "DAMAGED"]
+          description: Condition of the item being offered
+          example: "NEW"
+          x-jsonld: { "@id": "schema:itemCondition" }
+
         beckn:offerAttributes:
           $ref: "#/components/schemas/Attributes"
           description: Attribute Pack attachment (pricing models, discounts, rail terms, etc.)          
@@ -226,6 +242,31 @@ components:
       properties:
         currency: { type: string, description: ISO 4217 code }
         value:    { type: number, description: Total value for this spec node }
+        unitText:
+          type: string
+          description: Unit for the quoted price (e.g., kWh, minute, hour, month)
+          example: "kWh"
+          x-jsonld: { "@id": "schema:unitText" }
+        referenceQuantity:
+          type: object
+          description: Quantity-based pricing specification
+          properties:
+            minValue:
+              type: number
+              minimum: 0
+              description: Minimum quantity for this price
+              x-jsonld: { "@id": "schema:minValue" }
+            maxValue:
+              type: number
+              minimum: 0
+              description: Maximum quantity for this price
+              x-jsonld: { "@id": "schema:maxValue" }
+            unitCode:
+              type: string
+              description: Unit code for the quantity (e.g., KWH, MIN, H, MON)
+              example: "KWH"
+              x-jsonld: { "@id": "schema:unitCode" }
+          x-jsonld: { "@id": "schema:referenceQuantity" }
         components:
           type: array
           description: Optional components (tax, shipping, discount, fee, surcharge)

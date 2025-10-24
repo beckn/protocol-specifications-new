@@ -175,38 +175,8 @@ components:
         "@type": ChargingOffer
       properties:
 
-        # Detailed pricing basis (Offer has a price snapshot separately)
-        priceSpecification:
-          type: object
-          description: Detailed pricing basis (separate from Offer.price snapshot).
-          x-jsonld: { "@id": priceSpecification }
-          additionalProperties: false
-          properties:
-            price:
-              type: number
-              minimum: 0
-              description: Numeric price for the unit below.
-              example: 18.0
-              x-jsonld: { "@id": price }
-            priceCurrency:
-              type: string
-              description: ISO 4217 currency code.
-              example: "INR"
-              x-jsonld: { "@id": priceCurrency }
-            unitText:
-              type: string
-              enum: ["kWh", "minute", "hour", "month"]
-              description: Unit for the quoted price.
-              example: "kWh"
-              x-jsonld: { "@id": unitText }
-          required: [price, priceCurrency, unitText]
-
-        # EV/commercial semantics not covered by core Offer
-        paymentAccepted:
-          type: string
-          description: Human-readable accepted payment rails for this offer.
-          example: "UPI, Card, Wallet"
-          x-jsonld: { "@id": paymentAccepted }
+        # Note: priceSpecification and paymentAccepted have been moved to core Offer schema
+        # Use beckn:price (with unitText and referenceQuantity) and beckn:acceptedPaymentMethod instead
 
         tariffModel:
           type: string

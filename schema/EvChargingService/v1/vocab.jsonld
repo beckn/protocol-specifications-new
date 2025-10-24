@@ -27,10 +27,10 @@
       "rdfs:comment": "A charging session for an electric vehicle"
     },
     {
-      "@id": "beckn:ChargingProvider",
+      "@id": "beckn:ChargingPointOperator",
       "@type": "rdfs:Class",
-      "rdfs:label": "EV Charging Provider",
-      "rdfs:comment": "A provider of electric vehicle charging services"
+      "rdfs:label": "EV Charging Point Operator",
+      "rdfs:comment": "A charging point operator providing electric vehicle charging services"
     },
     {
       "@id": "beckn:connectorType",
@@ -77,7 +77,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "Payment accepted",
       "rdfs:comment": "Accepted payment methods (e.g., UPI, Card, Wallet).",
-      "rdfs:domain": ["beckn:ChargingService", "beckn:ChargingOffer"],
+      "rdfs:domain": "beckn:ChargingService",
       "schema:rangeIncludes": "schema:Text"
     },
     {
@@ -317,6 +317,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "Operator code",
       "rdfs:comment": "Short operator code used in roaming/indexes.",
+      "rdfs:domain": "beckn:ChargingPointOperator",
       "schema:rangeIncludes": "schema:Text"
     },
     {
@@ -324,6 +325,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "GST Number",
       "rdfs:comment": "Tax identifier (India).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
       "schema:rangeIncludes": "schema:Text"
     },
     {
@@ -331,6 +333,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "CIN",
       "rdfs:comment": "Corporate Identification Number (India).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
       "schema:rangeIncludes": "schema:Text"
     },
     {
@@ -338,6 +341,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "MSME ID",
       "rdfs:comment": "MSME registration identifier (India).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
       "schema:rangeIncludes": "schema:Text"
     },
     {
@@ -379,38 +383,6 @@
       "rdfs:comment": "Whether live tracking is currently active.",
       "rdfs:domain": "beckn:ChargingSession",
       "schema:rangeIncludes": "schema:Text"
-    },
-    {
-      "@id": "beckn:priceSpecification",
-      "@type": "rdf:Property",
-      "rdfs:label": "Price specification",
-      "rdfs:comment": "Detailed pricing basis for the charging offer.",
-      "rdfs:domain": "beckn:ChargingOffer",
-      "schema:rangeIncludes": "schema:PriceSpecification"
-    },
-    {
-      "@id": "beckn:gstNumber",
-      "@type": "rdf:Property",
-      "rdfs:label": "GST Number",
-      "rdfs:comment": "Tax identifier (India).",
-      "rdfs:domain": "beckn:ChargingProvider",
-      "schema:rangeIncludes": "schema:Text"
-    },
-    {
-      "@id": "beckn:cin",
-      "@type": "rdf:Property",
-      "rdfs:label": "CIN",
-      "rdfs:comment": "Corporate Identification Number (India).",
-      "rdfs:domain": "beckn:ChargingProvider",
-      "schema:rangeIncludes": "schema:Text"
-    },
-    {
-      "@id": "beckn:msme",
-      "@type": "rdf:Property",
-      "rdfs:label": "MSME ID",
-      "rdfs:comment": "MSME registration identifier (India).",
-      "rdfs:domain": "beckn:ChargingProvider",
-      "schema:rangeIncludes": "schema:Text"
-    }   
+    }
   ]
 }

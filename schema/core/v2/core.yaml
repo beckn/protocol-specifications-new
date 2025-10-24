@@ -164,10 +164,11 @@ components:
           description: Price snapshot; detailed models can live in offerAttributes
           x-jsonld: { "@id": "schema:priceSpecification" }
 
-        beckn:eligibility:
-          $ref: "#/components/schemas/Eligibility"
-          description: Optional eligibility (regions, quantities, audiences)
-          x-jsonld: { "@id": "schema:eligibleRegion|schema:eligibleQuantity|schema:eligibleCustomerType" }
+        beckn:eligibleRegion: 
+          type: array
+          items:
+            $ref: '#/components/schemas/Location'
+          description: Regions where the offer is eligible
 
         beckn:acceptedPaymentMethod:
           type: array
@@ -242,31 +243,33 @@ components:
       properties:
         currency: { type: string, description: ISO 4217 code }
         value:    { type: number, description: Total value for this spec node }
-        unitText:
-          type: string
-          description: Unit for the quoted price (e.g., kWh, minute, hour, month)
-          example: "kWh"
-          x-jsonld: { "@id": "schema:unitText" }
-        referenceQuantity:
-          type: object
-          description: Quantity-based pricing specification
-          properties:
-            minValue:
-              type: number
-              minimum: 0
-              description: Minimum quantity for this price
-              x-jsonld: { "@id": "schema:minValue" }
-            maxValue:
-              type: number
-              minimum: 0
-              description: Maximum quantity for this price
-              x-jsonld: { "@id": "schema:maxValue" }
-            unitCode:
-              type: string
-              description: Unit code for the quantity (e.g., KWH, MIN, H, MON)
-              example: "KWH"
-              x-jsonld: { "@id": "schema:unitCode" }
-          x-jsonld: { "@id": "schema:referenceQuantity" }
+        eligibleQuantity:
+          unitText:
+            type: string
+            description: Unit for the quoted price (e.g., kWh, minute, hour, month)
+            example: "kWh"
+            x-jsonld: { "@id": "schema:unitText" }
+          unitCode:
+            type: string
+            description: Unit code for the quoted price (e.g., KWH, MIN, H, MON)
+            example: "KWH"
+            x-jsonld: { "@id": "schema:unitCode" }
+          unitQuantity:
+            type: number
+            description: Quantity of the unit
+            example: 1
+            x-jsonld: { "@id": "schema:Number" }
+          minQuantity:
+            type: number
+            description: Minimum quantity for this price
+            example: 1
+            x-jsonld: { "@id": "schema:Number" }
+          maxQuantity:
+            type: number
+            description: Maximum quantity for this price
+            example: 100
+            x-jsonld: { "@id": "schema:Number" }
+        x-jsonld: { "@id": "schema:eligibleQuantity" }
         components:
           type: array
           description: Optional components (tax, shipping, discount, fee, surcharge)
@@ -278,17 +281,6 @@ components:
               currency: { type: string }
               description: { type: string }
       x-jsonld: { "@id": "schema:PriceSpecification" }
-      
-    Eligibility:
-      type: object
-      properties:
-        eligibleRegion: { type: string }
-        eligibleQuantity:
-          type: object
-          properties:
-            min: { type: number }
-            max: { type: number }
-      x-jsonld: { "@id": "schema:DefinedRegion|schema:QuantitativeValue" }
       
     Descriptor:
       type: object

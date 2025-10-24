@@ -174,7 +174,6 @@ components:
           type: array
           items:
             type: string
-            enum: ["UPI", "Card", "Wallet", "NetBanking", "Cash"]
           description: Payment methods accepted for this offer
           example: ["UPI", "Card", "Wallet"]
           x-jsonld: { "@id": "schema:acceptedPaymentMethod" }

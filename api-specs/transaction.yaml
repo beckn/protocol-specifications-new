@@ -648,6 +648,9 @@ paths:
                         value: { type: number, minimum: 0 }
                         best:  { type: number, minimum: 0 }
                         worst: { type: number, minimum: 0 }
+                    feedbackForm:
+                      $ref: '../schema/core/v2/core.yaml#/components/schemas/Form'
+                      description: Optional feedback form for additional detailed feedback collection
       responses:
         '200':
           $ref: '#/components/responses/Ack200'

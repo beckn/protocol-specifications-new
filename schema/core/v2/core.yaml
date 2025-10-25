@@ -244,7 +244,7 @@ components:
       additionalProperties: true
       properties:
         currency: { type: string, description: ISO 4217 code }
-        price:    { type: number, description: Total price for this price specification }
+        value:    { type: number, description: Total value for this price specification }
         applicableQuantity:
           type: object
           properties:

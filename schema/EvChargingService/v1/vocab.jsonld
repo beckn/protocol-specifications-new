@@ -73,10 +73,10 @@
       "schema:rangeIncludes": "schema:Boolean"
     },
     {
-      "@id": "beckn:paymentAccepted",
+      "@id": "beckn:acceptedPaymentMethod",
       "@type": "rdf:Property",
-      "rdfs:label": "Payment accepted",
-      "rdfs:comment": "Accepted payment methods (e.g., UPI, Card, Wallet).",
+      "rdfs:label": "Accepted payment method",
+      "rdfs:comment": "Accepted payment methods using schema.org payment method types (e.g., schema:UPI, schema:CreditCard, schema:Wallet).",
       "rdfs:domain": "beckn:ChargingService",
       "schema:rangeIncludes": "schema:Text"
     },
@@ -383,6 +383,78 @@
       "rdfs:comment": "Whether live tracking is currently active.",
       "rdfs:domain": "beckn:ChargingSession",
       "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:lastUpdated",
+      "@type": "rdf:Property",
+      "rdfs:label": "Last updated",
+      "rdfs:comment": "Last telemetry/billing update timestamp (UTC).",
+      "rdfs:domain": "beckn:ChargingSession",
+      "schema:rangeIncludes": "schema:DateTime"
+    },
+    {
+      "@id": "beckn:startDateTime",
+      "@type": "rdf:Property",
+      "rdfs:label": "Start date time",
+      "rdfs:comment": "Interval start time (UTC) for charging periods.",
+      "rdfs:domain": "beckn:ChargingSession",
+      "schema:rangeIncludes": "schema:DateTime"
+    },
+    {
+      "@id": "beckn:dimensions",
+      "@type": "rdf:Property",
+      "rdfs:label": "Dimensions",
+      "rdfs:comment": "Array of telemetry dimensions for charging periods.",
+      "rdfs:domain": "beckn:ChargingSession",
+      "schema:rangeIncludes": "schema:ItemList"
+    },
+    {
+      "@id": "beckn:operatorName",
+      "@type": "rdf:Property",
+      "rdfs:label": "Operator name",
+      "rdfs:comment": "Operating company name (display).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:identifier",
+      "@type": "rdf:Property",
+      "rdfs:label": "Identifier",
+      "rdfs:comment": "Provider identifier (URN/URL/code).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:label": "Same as",
+      "rdfs:comment": "Canonical reference (e.g., website, registry entry).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
+      "schema:rangeIncludes": "schema:URL"
+    },
+    {
+      "@id": "beckn:supportEmail",
+      "@type": "rdf:Property",
+      "rdfs:label": "Support email",
+      "rdfs:comment": "Support email (if not provided in core Provider).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
+      "schema:rangeIncludes": "schema:EmailAddress"
+    },
+    {
+      "@id": "beckn:supportPhone",
+      "@type": "rdf:Property",
+      "rdfs:label": "Support phone",
+      "rdfs:comment": "Support phone (if not provided in core Provider).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:operatorContact",
+      "@type": "rdf:Property",
+      "rdfs:label": "Operator contact",
+      "rdfs:comment": "Free-form contact blob for ops (last resort).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
+      "schema:rangeIncludes": "schema:ContactPoint"
     }
   ]
 }

@@ -68,16 +68,16 @@ components:
           description: Whether advance reservations are supported.
           x-jsonld: { "@id": reservationSupported }
 
-        paymentAccepted:
+        acceptedPaymentMethod:
           type: array
-          description: Accepted payment methods for this offer.
+          description: Accepted payment methods for this offer using schema.org payment method types.
           items:
             type: string
-            enum: [UPI, Card, Wallet, NetBanking, Cash]
+            enum: [schema:UPI, schema:CreditCard, schema:DebitCard, schema:Wallet, schema:BankTransfer, schema:Cash, schema:GooglePay, schema:ApplePay, schema:BNPL]
           minItems: 1
           uniqueItems: true
-          example: ["UPI", "Card", "Wallet"]
-          x-jsonld: { "@id": paymentAccepted }
+          example: ["schema:UPI", "schema:CreditCard", "schema:Wallet"]
+          x-jsonld: { "@id": acceptedPaymentMethod }
 
         # Location: REUSE Beckn Location (core.yaml) via $ref
         serviceLocation:

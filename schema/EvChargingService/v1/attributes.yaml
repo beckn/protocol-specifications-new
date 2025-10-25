@@ -175,9 +175,6 @@ components:
         "@type": ChargingOffer
       properties:
 
-        # Note: priceSpecification and paymentAccepted have been moved to core Offer schema
-        # Use beckn:price (with unitText and referenceQuantity) and beckn:acceptedPaymentMethod instead
-
         tariffModel:
           type: string
           enum: [PER_KWH, PER_MINUTE, SUBSCRIPTION, TIME_OF_DAY]

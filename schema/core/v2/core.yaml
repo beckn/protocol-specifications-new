@@ -603,7 +603,7 @@ components:
         beckn:orderStatus:
           type: string
           description: Order status/state
-          x-jsonld: { "@id": "schema:orderStatus" }
+          x-jsonld: { "@id": "schema:OrderStatus" }
 
         beckn:orderNumber:
           type: string
@@ -665,7 +665,7 @@ components:
           $ref: "#/components/schemas/Item/properties/beckn:id"
           x-jsonld: { "@id": "schema:orderedItem" }
         beckn:acceptedOffer:
-          $ref: "#/components/schemas/Offer/properties/beckn:id"
+          $ref: "#/components/schemas/Offer"
           description: Offer applied to this line (if different from order-level)
           x-jsonld: { "@id": "schema:acceptedOffer" }
         beckn:quantity:
@@ -831,8 +831,35 @@ components:
           description: Payment record identifier
           x-jsonld: { "@id": "schema:identifier" }
         beckn:method:
-          type: string
-          description: Rail/method code (e.g., CARD, UPI, BNPL, WALLET)
+          type: object
+          description: Payment method details with schema.org compliance
+          required: ["type"]
+          properties:
+            type:
+              type: string
+              description: Schema.org payment method type
+              enum: ["schema:CreditCard", "schema:DebitCard", "schema:Cash", "schema:BankTransfer", "schema:GooglePay", "schema:ApplePay", "schema:UPI", "schema:Wallet", "schema:BNPL"]
+              example: "schema:BankTransfer"
+              x-jsonld: { "@id": "schema:paymentMethod" }
+            details:
+              type: array
+              description: Payment method specific details as key-value pairs
+              items:
+                type: object
+                required: ["name", "value"]
+                properties:
+                  name:
+                    type: string
+                    description: Payment method detail field name
+                    example: "bankCode"
+                  value:
+                    type: string
+                    description: Payment method detail value
+                    example: "HDFC000123"
+              example: [
+                {"name": "bankCode", "value": "HDFC000123"},
+                {"name": "accountNumber", "value": "1131324242424"}
+              ]
           x-jsonld: { "@id": "schema:paymentMethod" }
         beckn:status:
           type: string
@@ -844,6 +871,12 @@ components:
           properties:
             currency: { type: string, x-jsonld: { "@id": "schema:priceCurrency" } }
             value:    { type: number, x-jsonld: { "@id": "schema:price" } }
+        beckn:paymentURL:
+          type: string
+          format: uri
+          description: URL for payment processing/redirection
+          example: "https://payments.example.com/pay?transaction_id=123&amount=100"
+          x-jsonld: { "@id": "schema:url" }
         beckn:txnRef:
           type: string
           description: PSP/gateway/bank transaction reference
@@ -854,6 +887,18 @@ components:
           nullable: true
           description: When the last terminal event (capture/refund) happened
           x-jsonld: { "@id": "schema:paymentDueDate" } # closest temporal anchor for payment events
+        beckn:acceptedPaymentMethods:
+          type: array
+          items:
+            type: string
+          description: Payment methods accepted for this payment
+          example: ["UPI", "CARD", "WALLET", "BANK-TRANSFER"]
+          x-jsonld: { "@id": "schema:acceptedPaymentMethod" }
+        beckn:beneficiary:
+          type: string
+          description: Who will be the beneficiary or recipient of the payment
+          example: "BPP"
+          x-jsonld: { "@id": "schema:beneficiary" }
         beckn:paymentAttributes:
           $ref: "#/components/schemas/Attributes"
           description: > 

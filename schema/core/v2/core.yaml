@@ -830,37 +830,6 @@ components:
           type: string
           description: Payment record identifier
           x-jsonld: { "@id": "schema:identifier" }
-        beckn:method:
-          type: object
-          description: Payment method details with schema.org compliance
-          required: ["type"]
-          properties:
-            type:
-              type: string
-              description: Schema.org payment method type
-              enum: ["schema:CreditCard", "schema:DebitCard", "schema:Cash", "schema:BankTransfer", "schema:GooglePay", "schema:ApplePay", "schema:UPI", "schema:Wallet", "schema:BNPL"]
-              example: "schema:BankTransfer"
-              x-jsonld: { "@id": "schema:paymentMethod" }
-            details:
-              type: array
-              description: Payment method specific details as key-value pairs
-              items:
-                type: object
-                required: ["name", "value"]
-                properties:
-                  name:
-                    type: string
-                    description: Payment method detail field name
-                    example: "bankCode"
-                  value:
-                    type: string
-                    description: Payment method detail value
-                    example: "HDFC000123"
-              example: [
-                {"name": "bankCode", "value": "HDFC000123"},
-                {"name": "accountNumber", "value": "1131324242424"}
-              ]
-          x-jsonld: { "@id": "schema:paymentMethod" }
         beckn:status:
           type: string
           description: Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)

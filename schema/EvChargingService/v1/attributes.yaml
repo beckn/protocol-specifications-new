@@ -68,16 +68,16 @@ components:
           description: Whether advance reservations are supported.
           x-jsonld: { "@id": reservationSupported }
 
-        paymentAccepted:
+        acceptedPaymentMethod:
           type: array
-          description: Accepted payment methods for this offer.
+          description: Accepted payment methods for this offer using schema.org payment method types.
           items:
             type: string
-            enum: [UPI, Card, Wallet, NetBanking, Cash]
+            enum: [UPI, CreditCard, DebitCard, Wallet, BankTransfer, Cash, ApplePay]
           minItems: 1
           uniqueItems: true
-          example: ["UPI", "Card", "Wallet"]
-          x-jsonld: { "@id": paymentAccepted }
+          example: ["UPI", "CreditCard", "Wallet"]
+          x-jsonld: { "@id": acceptedPaymentMethod }
 
         # Location: REUSE Beckn Location (core.yaml) via $ref
         serviceLocation:
@@ -174,39 +174,6 @@ components:
         "@context": ./context.jsonld
         "@type": ChargingOffer
       properties:
-
-        # Detailed pricing basis (Offer has a price snapshot separately)
-        priceSpecification:
-          type: object
-          description: Detailed pricing basis (separate from Offer.price snapshot).
-          x-jsonld: { "@id": priceSpecification }
-          additionalProperties: false
-          properties:
-            price:
-              type: number
-              minimum: 0
-              description: Numeric price for the unit below.
-              example: 18.0
-              x-jsonld: { "@id": price }
-            priceCurrency:
-              type: string
-              description: ISO 4217 currency code.
-              example: "INR"
-              x-jsonld: { "@id": priceCurrency }
-            unitText:
-              type: string
-              enum: ["kWh", "minute", "hour", "month"]
-              description: Unit for the quoted price.
-              example: "kWh"
-              x-jsonld: { "@id": unitText }
-          required: [price, priceCurrency, unitText]
-
-        # EV/commercial semantics not covered by core Offer
-        paymentAccepted:
-          type: string
-          description: Human-readable accepted payment rails for this offer.
-          example: "UPI, Card, Wallet"
-          x-jsonld: { "@id": paymentAccepted }
 
         tariffModel:
           type: string

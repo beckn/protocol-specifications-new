@@ -27,10 +27,10 @@
       "rdfs:comment": "A charging session for an electric vehicle"
     },
     {
-      "@id": "beckn:ChargingProvider",
+      "@id": "beckn:ChargingPointOperator",
       "@type": "rdfs:Class",
-      "rdfs:label": "EV Charging Provider",
-      "rdfs:comment": "A provider of electric vehicle charging services"
+      "rdfs:label": "EV Charging Point Operator",
+      "rdfs:comment": "A charging point operator providing electric vehicle charging services"
     },
     {
       "@id": "beckn:connectorType",
@@ -73,11 +73,11 @@
       "schema:rangeIncludes": "schema:Boolean"
     },
     {
-      "@id": "beckn:paymentAccepted",
+      "@id": "beckn:acceptedPaymentMethod",
       "@type": "rdf:Property",
-      "rdfs:label": "Payment accepted",
-      "rdfs:comment": "Accepted payment methods (e.g., UPI, Card, Wallet).",
-      "rdfs:domain": ["beckn:ChargingService", "beckn:ChargingOffer"],
+      "rdfs:label": "Accepted payment method",
+      "rdfs:comment": "Accepted payment methods using schema.org payment method types (e.g., UPI, CreditCard, Wallet).",
+      "rdfs:domain": "beckn:ChargingService",
       "schema:rangeIncludes": "schema:Text"
     },
     {
@@ -317,6 +317,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "Operator code",
       "rdfs:comment": "Short operator code used in roaming/indexes.",
+      "rdfs:domain": "beckn:ChargingPointOperator",
       "schema:rangeIncludes": "schema:Text"
     },
     {
@@ -324,6 +325,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "GST Number",
       "rdfs:comment": "Tax identifier (India).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
       "schema:rangeIncludes": "schema:Text"
     },
     {
@@ -331,6 +333,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "CIN",
       "rdfs:comment": "Corporate Identification Number (India).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
       "schema:rangeIncludes": "schema:Text"
     },
     {
@@ -338,6 +341,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "MSME ID",
       "rdfs:comment": "MSME registration identifier (India).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
       "schema:rangeIncludes": "schema:Text"
     },
     {
@@ -381,36 +385,76 @@
       "schema:rangeIncludes": "schema:Text"
     },
     {
-      "@id": "beckn:priceSpecification",
+      "@id": "beckn:lastUpdated",
       "@type": "rdf:Property",
-      "rdfs:label": "Price specification",
-      "rdfs:comment": "Detailed pricing basis for the charging offer.",
-      "rdfs:domain": "beckn:ChargingOffer",
-      "schema:rangeIncludes": "schema:PriceSpecification"
+      "rdfs:label": "Last updated",
+      "rdfs:comment": "Last telemetry/billing update timestamp (UTC).",
+      "rdfs:domain": "beckn:ChargingSession",
+      "schema:rangeIncludes": "schema:DateTime"
     },
     {
-      "@id": "beckn:gstNumber",
+      "@id": "beckn:startDateTime",
       "@type": "rdf:Property",
-      "rdfs:label": "GST Number",
-      "rdfs:comment": "Tax identifier (India).",
-      "rdfs:domain": "beckn:ChargingProvider",
+      "rdfs:label": "Start date time",
+      "rdfs:comment": "Interval start time (UTC) for charging periods.",
+      "rdfs:domain": "beckn:ChargingSession",
+      "schema:rangeIncludes": "schema:DateTime"
+    },
+    {
+      "@id": "beckn:dimensions",
+      "@type": "rdf:Property",
+      "rdfs:label": "Dimensions",
+      "rdfs:comment": "Array of telemetry dimensions for charging periods.",
+      "rdfs:domain": "beckn:ChargingSession",
+      "schema:rangeIncludes": "schema:ItemList"
+    },
+    {
+      "@id": "beckn:operatorName",
+      "@type": "rdf:Property",
+      "rdfs:label": "Operator name",
+      "rdfs:comment": "Operating company name (display).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
       "schema:rangeIncludes": "schema:Text"
     },
     {
-      "@id": "beckn:cin",
+      "@id": "beckn:identifier",
       "@type": "rdf:Property",
-      "rdfs:label": "CIN",
-      "rdfs:comment": "Corporate Identification Number (India).",
-      "rdfs:domain": "beckn:ChargingProvider",
+      "rdfs:label": "Identifier",
+      "rdfs:comment": "Provider identifier (URN/URL/code).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
       "schema:rangeIncludes": "schema:Text"
     },
     {
-      "@id": "beckn:msme",
+      "@id": "beckn:sameAs",
       "@type": "rdf:Property",
-      "rdfs:label": "MSME ID",
-      "rdfs:comment": "MSME registration identifier (India).",
-      "rdfs:domain": "beckn:ChargingProvider",
+      "rdfs:label": "Same as",
+      "rdfs:comment": "Canonical reference (e.g., website, registry entry).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
+      "schema:rangeIncludes": "schema:URL"
+    },
+    {
+      "@id": "beckn:supportEmail",
+      "@type": "rdf:Property",
+      "rdfs:label": "Support email",
+      "rdfs:comment": "Support email (if not provided in core Provider).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
+      "schema:rangeIncludes": "schema:EmailAddress"
+    },
+    {
+      "@id": "beckn:supportPhone",
+      "@type": "rdf:Property",
+      "rdfs:label": "Support phone",
+      "rdfs:comment": "Support phone (if not provided in core Provider).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
       "schema:rangeIncludes": "schema:Text"
-    }   
+    },
+    {
+      "@id": "beckn:operatorContact",
+      "@type": "rdf:Property",
+      "rdfs:label": "Operator contact",
+      "rdfs:comment": "Free-form contact blob for ops (last resort).",
+      "rdfs:domain": "beckn:ChargingPointOperator",
+      "schema:rangeIncludes": "schema:ContactPoint"
+    }
   ]
 }

@@ -78,7 +78,10 @@ components:
             $ref: '#/components/schemas/Location'
           description: Physical locations where the item is available
         "beckn:availabilityWindow":
-          $ref: '#/components/schemas/TimePeriod'
+          type: array
+          items:
+            $ref: '#/components/schemas/TimePeriod'
+          description: Time periods when the item is available
         "beckn:rateable":
           type: boolean
           description: Whether the item can be rated by customers
@@ -164,10 +167,26 @@ components:
           description: Price snapshot; detailed models can live in offerAttributes
           x-jsonld: { "@id": "schema:priceSpecification" }
 
-        beckn:eligibility:
-          $ref: "#/components/schemas/Eligibility"
-          description: Optional eligibility (regions, quantities, audiences)
-          x-jsonld: { "@id": "schema:eligibleRegion|schema:eligibleQuantity|schema:eligibleCustomerType" }
+        beckn:eligibleRegion: 
+          type: array
+          items:
+            $ref: '#/components/schemas/Location'
+          description: Regions where the offer is eligible
+
+        beckn:acceptedPaymentMethod:
+          type: array
+          items:
+            type: string
+          description: Payment methods accepted for this offer
+          example: ["UPI", "Card", "Wallet"]
+          x-jsonld: { "@id": "schema:acceptedPaymentMethod" }
+
+        beckn:itemCondition:
+          type: string
+          enum: ["NEW", "USED", "REFURBISHED", "DAMAGED"]
+          description: Condition of the item being offered
+          example: "NEW"
+          x-jsonld: { "@id": "schema:itemCondition" }
 
         beckn:offerAttributes:
           $ref: "#/components/schemas/Attributes"
@@ -225,7 +244,36 @@ components:
       additionalProperties: true
       properties:
         currency: { type: string, description: ISO 4217 code }
-        value:    { type: number, description: Total value for this spec node }
+        value:    { type: number, description: Total value for this price specification }
+        applicableQuantity:
+          type: object
+          properties:
+            unitText: { type: string, description: Unit for the quoted price (e.g., kWh, minute, hour, month) }
+            type: string
+            description: Unit for the quoted price (e.g., kWh, minute, hour, month)
+            example: "kWh"
+            x-jsonld: { "@id": "schema:unitText" }
+            unitCode:
+              type: string
+              description: Unit code for the quoted price (e.g., KWH, MIN, H, MON)
+              example: "KWH"
+              x-jsonld: { "@id": "schema:unitCode" }
+            unitQuantity:
+              type: number
+              description: Quantity of the unit
+              example: 1
+              x-jsonld: { "@id": "schema:Number" }
+            minQuantity:
+              type: number
+              description: Minimum quantity for this price
+              example: 1
+              x-jsonld: { "@id": "schema:Number" }
+            maxQuantity:
+              type: number
+              description: Maximum quantity for this price
+              example: 100
+              x-jsonld: { "@id": "schema:Number" }
+        x-jsonld: { "@id": "schema:eligibleQuantity" }
         components:
           type: array
           description: Optional components (tax, shipping, discount, fee, surcharge)
@@ -237,17 +285,6 @@ components:
               currency: { type: string }
               description: { type: string }
       x-jsonld: { "@id": "schema:PriceSpecification" }
-      
-    Eligibility:
-      type: object
-      properties:
-        eligibleRegion: { type: string }
-        eligibleQuantity:
-          type: object
-          properties:
-            min: { type: number }
-            max: { type: number }
-      x-jsonld: { "@id": "schema:DefinedRegion|schema:QuantitativeValue" }
       
     Descriptor:
       type: object
@@ -315,9 +352,20 @@ components:
           format: date-time
           description: End instant (exclusive or inclusive per domain semantics)
           example: "2025-12-31T23:59:59Z"
+        "schema:startTime":
+          type: string
+          format: time
+          description: Start time of the time period
+          example: "09:00:00"
+        "schema:endTime":
+          type: string
+          format: time
+          description: End time of the time period
+          example: "22:00:00"
       anyOf:
         - required: ["schema:startDate"]
         - required: ["schema:endDate"]
+        - required: ["schema:startTime", "schema:endTime"]
 
     Rating:
       type: object
@@ -552,10 +600,10 @@ components:
           type: string
           x-jsonld: { "@id": "schema:identifier" }
 
-        beckn:state:
+        beckn:orderStatus:
           type: string
           description: Order status/state
-          x-jsonld: { "@id": "schema:orderStatus" }
+          x-jsonld: { "@id": "schema:OrderStatus" }
 
         beckn:orderNumber:
           type: string
@@ -567,7 +615,7 @@ components:
           x-jsonld: { "@id": "schema:seller" }
 
         beckn:buyer:
-          $ref: "#/components/schemas/Party/properties/beckn:id"
+          $ref: "#/components/schemas/Buyer/properties/beckn:id"
           x-jsonld: { "@id": "schema:customer" }
 
         beckn:orderItems:
@@ -578,27 +626,27 @@ components:
 
         beckn:acceptedOffers:
           type: array
-          items: { $ref: "#/components/schemas/Offer/properties/beckn:id" }
+          items: { $ref: "#/components/schemas/Offer" }
           description: Offers accepted at order-level (optional if captured per line)
           x-jsonld: { "@id": "schema:acceptedOffer" }
 
-        beckn:totals:
+        beckn:orderValue:
           $ref: "#/components/schemas/PriceSpecification"
           description: Order totals snapshot (derivable from lines; optional)
           x-jsonld: { "@id": "schema:priceSpecification" }
 
-        beckn:billing:
+        beckn:invoice:
           $ref: '#/components/schemas/Invoice/properties/beckn:id'
           description: Invoice reference/summary
           x-jsonld: { "@id": "schema:Invoice" }
 
         beckn:payment:
-          $ref: "#/components/schemas/Payment/properties/beckn:id"
+          $ref: "#/components/schemas/Payment"
           description: Method/status; rail-specific payloads go to packs
           x-jsonld: { "@id": "schema:PaymentMethod|schema:PaymentStatusType" }
 
         beckn:fulfillment:
-          $ref: "#/components/schemas/Fulfillment/properties/beckn:id"
+          $ref: "#/components/schemas/Fulfillment"
           description: Parcel delivery or reservation summary
           x-jsonld: { "@id": "schema:ParcelDelivery|schema:Reservation" }
 
@@ -617,7 +665,7 @@ components:
           $ref: "#/components/schemas/Item/properties/beckn:id"
           x-jsonld: { "@id": "schema:orderedItem" }
         beckn:acceptedOffer:
-          $ref: "#/components/schemas/Offer/properties/beckn:id"
+          $ref: "#/components/schemas/Offer"
           description: Offer applied to this line (if different from order-level)
           x-jsonld: { "@id": "schema:acceptedOffer" }
         beckn:quantity:
@@ -782,10 +830,6 @@ components:
           type: string
           description: Payment record identifier
           x-jsonld: { "@id": "schema:identifier" }
-        beckn:method:
-          type: string
-          description: Rail/method code (e.g., CARD, UPI, BNPL, WALLET)
-          x-jsonld: { "@id": "schema:paymentMethod" }
         beckn:status:
           type: string
           description: Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)
@@ -796,6 +840,12 @@ components:
           properties:
             currency: { type: string, x-jsonld: { "@id": "schema:priceCurrency" } }
             value:    { type: number, x-jsonld: { "@id": "schema:price" } }
+        beckn:paymentURL:
+          type: string
+          format: uri
+          description: URL for payment processing/redirection
+          example: "https://payments.example.com/pay?transaction_id=123&amount=100"
+          x-jsonld: { "@id": "schema:url" }
         beckn:txnRef:
           type: string
           description: PSP/gateway/bank transaction reference
@@ -806,15 +856,27 @@ components:
           nullable: true
           description: When the last terminal event (capture/refund) happened
           x-jsonld: { "@id": "schema:paymentDueDate" } # closest temporal anchor for payment events
+        beckn:acceptedPaymentMethods:
+          type: array
+          items:
+            type: string
+          description: Payment methods accepted for this payment
+          example: ["UPI", "CARD", "WALLET", "BANK-TRANSFER"]
+          x-jsonld: { "@id": "schema:acceptedPaymentMethod" }
+        beckn:beneficiary:
+          type: string
+          description: Who will be the beneficiary or recipient of the payment
+          example: "BPP"
+          x-jsonld: { "@id": "schema:beneficiary" }
         beckn:paymentAttributes:
           $ref: "#/components/schemas/Attributes"
           description: > 
             Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)
 
     # -----------------------------
-    # PARTY (core)
+    # Buyer (core)
     # -----------------------------
-    Party:
+    Buyer:
       type: object
       additionalProperties: false
       required: ["@context","@type","beckn:id"]
@@ -842,6 +904,10 @@ components:
           type: string
           description: Human-readable display name
           x-jsonld: { "@id": "schema:name" }
+        beckn:taxID:
+          type: string
+          description: Tax identifier for the buyer.
+          x-jsonld: { "@id": "schema:taxID" }
         beckn:partyAttributes:
           $ref: "#/components/schemas/Attributes"
           description: > 
@@ -965,3 +1031,26 @@ components:
         'schema:ratingValue':  '$.value'
         'schema:bestRating':   '$.best'
         'schema:worstRating':  '$.worst'
+    
+    Form:
+      description: Describes a form
+      type: object
+      properties:
+        url:
+          description: The URL from where the form can be fetched. The content fetched from the url must be processed as per the mime_type specified in this object. Once fetched, the rendering platform can choosed to render the form as-is as an embeddable element; or process it further to blend with the theme of the application. In case the interface is non-visual, the the render can process the form data and reproduce it as per the standard specified in the form.
+          type: string
+          format: uri
+        data:
+          description: The form submission data
+          type: object
+          additionalProperties:
+            type: string
+        mime_type:
+          description: This field indicates the nature and format of the form received by querying the url. MIME types are defined and standardized in IETF's RFC 6838.
+          type: string
+          enum:
+            - text/html
+            - application/xml
+        submission_id:
+          type: string
+          format: uuid

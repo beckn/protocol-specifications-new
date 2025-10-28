@@ -76,7 +76,7 @@
       "@id": "beckn:acceptedPaymentMethod",
       "@type": "rdf:Property",
       "rdfs:label": "Accepted payment method",
-      "rdfs:comment": "Accepted payment methods using schema.org payment method types (e.g., schema:UPI, schema:CreditCard, schema:Wallet).",
+      "rdfs:comment": "Accepted payment methods using schema.org payment method types (e.g., UPI, CreditCard, Wallet).",
       "rdfs:domain": "beckn:ChargingService",
       "schema:rangeIncludes": "schema:Text"
     },

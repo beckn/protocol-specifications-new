@@ -73,10 +73,10 @@ components:
           description: Accepted payment methods for this offer using schema.org payment method types.
           items:
             type: string
-            enum: [schema:UPI, schema:CreditCard, schema:DebitCard, schema:Wallet, schema:BankTransfer, schema:Cash, schema:GooglePay, schema:ApplePay, schema:BNPL]
+            enum: [UPI, CreditCard, DebitCard, Wallet, BankTransfer, Cash, ApplePay]
           minItems: 1
           uniqueItems: true
-          example: ["schema:UPI", "schema:CreditCard", "schema:Wallet"]
+          example: ["UPI", "CreditCard", "Wallet"]
           x-jsonld: { "@id": acceptedPaymentMethod }
 
         # Location: REUSE Beckn Location (core.yaml) via $ref

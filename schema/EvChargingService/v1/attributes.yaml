@@ -265,33 +265,43 @@ components:
           x-jsonld: { "@id": meteredDurationMinutes }
 
         # OCPI-like interval telemetry
-        chargingPeriods:
+        chargingTelemetry:
           type: array
-          description: OCPI-like intervals with telemetry dimensions.
+          description: OCPI-like intervals with telemetry metrics.
           items:
             type: object
             additionalProperties: false
             properties:
-              startDateTime:
+              eventTime:
                 type: string
                 format: date-time
-                description: Interval start (UTC).
+                description: Telemetry event timestamp (UTC).
                 x-jsonld: { "@id": "schema:startTime" }
-              dimensions:
+              metrics:
                 type: array
+                description: Array of telemetry metrics using schema.org QuantitativeValue.
                 items:
                   type: object
                   additionalProperties: false
                   properties:
-                    dimensionType:
+                    name:
                       type: string
                       enum: [ENERGY, POWER, CURRENT, VOLTAGE, STATE_OF_CHARGE]
-                      description: Measured dimension type.
-                      x-jsonld: { "@id": dimensionType }
-                    volume:
+                      description: Name of the telemetry metric.
+                      example: "ENERGY"
+                      x-jsonld: { "@id": "schema:name" }
+                    value:
                       type: number
-                      description: Measured value for the dimension.
-                      x-jsonld: { "@id": volume }
+                      description: Numeric value of the metric.
+                      example: 5.8
+                      x-jsonld: { "@id": "schema:value" }
+                    unitCode:
+                      type: string
+                      description: Unit code for the metric value. Valid codes - ENERGY uses KW, POWER uses KWH, CURRENT uses AMP, VOLTAGE uses VLT, STATE_OF_CHARGE uses PERCENTAGE.
+                      example: "KWH"
+                      x-jsonld: { "@id": "schema:unitCode" }
+                  required: [name, value, unitCode]
+                  x-jsonld: { "@id": "schema:QuantitativeValue" }
 
         # Billing summary specific to the session (Offer/Payment carry snapshots)
         totalCost:

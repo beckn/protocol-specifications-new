@@ -249,28 +249,28 @@
       "schema:rangeIncludes": "schema:Number"
     },
     {
-      "@id": "beckn:chargingPeriods",
+      "@id": "beckn:chargingTelemetry",
       "@type": "rdf:Property",
-      "rdfs:label": "Charging periods",
-      "rdfs:comment": "List of charging intervals with telemetry dimensions (OCPI-style).",
+      "rdfs:label": "Charging telemetry",
+      "rdfs:comment": "List of charging intervals with telemetry metrics (OCPI-style).",
       "rdfs:domain": "beckn:ChargingSession",
       "schema:rangeIncludes": "schema:ItemList"
     },
     {
-      "@id": "beckn:dimensionType",
+      "@id": "beckn:eventTime",
       "@type": "rdf:Property",
-      "rdfs:label": "Dimension type",
-      "rdfs:comment": "Type of telemetry dimension (ENERGY, POWER, CURRENT, VOLTAGE, STATE_OF_CHARGE).",
+      "rdfs:label": "Event time",
+      "rdfs:comment": "Telemetry event timestamp (UTC).",
       "rdfs:domain": "beckn:ChargingSession",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "schema:DateTime"
     },
     {
-      "@id": "beckn:volume",
+      "@id": "beckn:metrics",
       "@type": "rdf:Property",
-      "rdfs:label": "Dimension value",
-      "rdfs:comment": "Numeric value for the dimension (units depend on the type).",
+      "rdfs:label": "Metrics",
+      "rdfs:comment": "Array of telemetry metrics using schema.org QuantitativeValue (name, value, unitCode).",
       "rdfs:domain": "beckn:ChargingSession",
-      "schema:rangeIncludes": "schema:Number"
+      "schema:rangeIncludes": ["schema:QuantitativeValue", "schema:ItemList"]
     },
     {
       "@id": "beckn:totalCost",

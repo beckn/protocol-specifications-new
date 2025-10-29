@@ -719,7 +719,7 @@ components:
           description: Seller / issuer of the invoice
           x-jsonld: { "@id": "schema:provider" }
         beckn:payer:
-          $ref: "#/components/schemas/Party/properties/beckn:id"
+          $ref: "#/components/schemas/Buyer/properties/beckn:id"
           description: Buyer being invoiced
           x-jsonld: { "@id": "schema:customer" }
         beckn:totals:

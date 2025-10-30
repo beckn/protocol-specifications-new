@@ -126,7 +126,7 @@ components:
     # ---------- Envelopes ----------
     CatalogPublishRequest:
       type: object
-      required: [context, catalogs]
+      required: [context, message]
       properties:
         context:
           allOf:
@@ -138,6 +138,7 @@ components:
                   enum: [catalog_publish]
         message:
           type: object
+          required: [catalogs]
           properties:
             catalogs:
               type: array

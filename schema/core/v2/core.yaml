@@ -286,6 +286,17 @@ components:
               description: { type: string }
       x-jsonld: { "@id": "schema:PriceSpecification" }
       
+    Eligibility:
+      type: object
+      properties:
+        eligibleRegion: { type: string }
+        eligibleQuantity:
+          type: object
+          properties:
+            min: { type: number }
+            max: { type: number }
+      x-jsonld: { "@id": "schema:DefinedRegion|schema:QuantitativeValue" }
+
     Descriptor:
       type: object
       required: ["@type"]

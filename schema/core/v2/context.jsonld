@@ -29,6 +29,8 @@
     "Rating": "beckn:Rating",
     "Form": "beckn:Form",
 
+    "Eligibility": "beckn:Eligibility",
+
     "name": "schema:name",
     "description": "schema:description",
     "price": "schema:price",
@@ -39,7 +41,9 @@
     "endDate": "schema:endDate",
     "startTime": "schema:startTime",
     "endTime": "schema:endTime",
-    "identifier": "schema:identifier"
+    "identifier": "schema:identifier",
+    "eligibleRegion": "schema:eligibleRegion",
+    "eligibleQuantity": "schema:eligibleQuantity"
   },
   "@graph": [
     { "@id": "beckn:Catalog", "owl:equivalentClass": "schema:ProductCollection" },

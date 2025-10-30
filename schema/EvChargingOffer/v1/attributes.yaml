@@ -1,0 +1,55 @@
+openapi: 3.1.1
+info:
+  title: EV Charging — Charging Offer Attributes (v1)
+  version: 1.0.0
+  x-profile-id: profiles/ev-charging/ev_charging/v1/charging-offer
+  description: >
+    Attribute schemas for charging offers (Offer.attributes).
+    These attributes are attached to Offer.attributes to provide tariff details beyond 
+    core price fields including per-kWh or time-based pricing, idle fee policies, 
+    buyer-finder fees, and accepted payment methods.
+
+components:
+  schemas:
+    ########################################################################
+    # OFFER.ATTRIBUTES — ChargingOffer (pruned; EV/commercial bits)
+    ########################################################################
+    ChargingOffer:
+      type: object
+      additionalProperties: false
+      required: [priceSpecification]
+      x-jsonld:
+        "@context": ./context.jsonld
+        "@type": ChargingOffer
+      properties:
+
+        tariffModel:
+          type: string
+          enum: [PER_KWH, PER_MINUTE, SUBSCRIPTION, TIME_OF_DAY]
+          description: Tariff model classification used by the provider.
+          example: "PER_KWH"
+          x-jsonld: { "@id": tariffModel }
+
+        buyerFinderFee:
+          type: object
+          description: Commission payable by provider to the BAP for this offer.
+          x-jsonld: { "@id": buyerFinderFee }
+          additionalProperties: false
+          properties:
+            feeType:
+              type: string
+              enum: [PERCENTAGE, AMOUNT]
+              example: "PERCENTAGE"
+              x-jsonld: { "@id": feeType }
+            feeValue:
+              type: number
+              minimum: 0
+              example: 2.5
+              x-jsonld: { "@id": feeValue }
+
+        idleFeePolicy:
+          type: string
+          description: Human-readable policy for post-charge idle fees.
+          example: "₹2/min after 10 min post-charge"
+          x-jsonld: { "@id": idleFeePolicy }
+

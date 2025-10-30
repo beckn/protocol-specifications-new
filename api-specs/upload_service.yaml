@@ -136,11 +136,15 @@ components:
                 action:
                   type: string
                   enum: [catalog_publish]
-        catalogs:
-          type: array
-          items:
-            $ref: '../schema/core/v2/core.yaml#/components/schemas/Catalog'
-          minItems: 1
+        message:
+          type: object
+          properties:
+            catalogs:
+              type: array
+              description: Array of catalogs containing items
+              items:
+                $ref: '../schema/core/v2/core.yaml#/components/schemas/Catalog'
+              minItems: 1
       description: |
         Catalog Publish request envelope.
         *context.version* MUST indicate the supported protocol version (e.g., "2.0.0").
@@ -157,11 +161,14 @@ components:
                 action:
                   type: string
                   enum: [on_catalog_publish]
-        results:
-          type: array
-          description: Per-catalog processing results
-          items:
-            $ref: '#/components/schemas/CatalogProcessingResult'
+        message:
+          type: object
+          properties:
+            results:
+              type: array
+              description: Per-catalog processing results
+              items:
+                $ref: '#/components/schemas/CatalogProcessingResult'
 
     # ---------- Result model ----------
     CatalogProcessingResult:

@@ -23,7 +23,7 @@ components:
           type: string
           format: uri
           description: JSON-LD context URI for the core Catalog schema
-          enum: ["https://becknprotocol.io/schemas/core/v1/Catalog/schema-context.jsonld"]
+          enum: ["https://github.com/beckn/protocol-specifications-new/tree/draft/schema/core/v2/context.jsonld"]
         "@type":
           type: string
           description: Type of the catalog
@@ -59,7 +59,7 @@ components:
           type: string
           format: uri
           description: JSON-LD context URI for the core Item schema
-          enum: ["https://becknprotocol.io/schemas/core/v1/Item/schema-context.jsonld"]
+          enum: ["https://github.com/beckn/protocol-specifications-new/tree/draft/schema/core/v2/context.jsonld"]
         "@type":
           type: string
           description: Type of the core item
@@ -117,7 +117,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Offer/schema-context.jsonld"
+          example: "https://github.com/beckn/protocol-specifications-new/tree/draft/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Offer"]
@@ -590,7 +590,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Order/schema-context.jsonld"
+          example: "https://github.com/beckn/protocol-specifications-new/tree/draft/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Order"]
@@ -692,7 +692,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Invoice/schema-context.jsonld"
+          example: "https://github.com/beckn/protocol-specifications-new/tree/draft/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Invoice"]
@@ -743,7 +743,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Fulfillment/schema-context.jsonld"
+          example: "https://github.com/beckn/protocol-specifications-new/tree/draft/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Fulfillment"]
@@ -821,7 +821,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Payment/schema-context.jsonld"
+          example: "https://github.com/beckn/protocol-specifications-new/tree/draft/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Payment"]
@@ -881,24 +881,24 @@ components:
       additionalProperties: false
       required: ["@context","@type","beckn:id"]
       # A minimal entity that can represent either a Person or an Organization.
-      # Full identity, contact, or KYC details are supplied via party attribute packs.
+      # Full identity, contact, or KYC details are supplied via buyer attribute packs.
       properties:
         "@context":
           type: string
           format: uri
-          example: "https://becknprotocol.io/schemas/core/v1/Party/schema-context.jsonld"
+          example: "https://github.com/beckn/protocol-specifications-new/tree/draft/schema/core/v2/context.jsonld"
         "@type":
           type: string
-          enum: ["beckn:Party"]
+          enum: ["beckn:Buyer"]
           x-jsonld: { "@id": "schema:Thing" } # resolved through @role into schema:Person or schema:Organization
         beckn:id:
           type: string
-          description: Unique identifier for this party (personId or orgId in legacy schema)
+          description: Unique identifier for the buyer (personId or orgId in legacy schema)
           x-jsonld: { "@id": "schema:identifier" }
         beckn:role:
           type: string
           enum: ["BUYER","SELLER","INTERMEDIARY","PAYER","PAYEE","FULFILLER"]
-          description: The functional role of this party in the transaction.
+          description: The functional role of the buyer in the transaction.
           x-jsonld: { "@id": "schema:roleName" }
         beckn:displayName:
           type: string
@@ -908,14 +908,14 @@ components:
           type: string
           description: Tax identifier for the buyer.
           x-jsonld: { "@id": "schema:taxID" }
-        beckn:partyAttributes:
+        beckn:buyerAttributes:
           $ref: "#/components/schemas/Attributes"
           description: > 
             Attribute Pack reference for richer identity:
-            # party/identity.v1 (contact details: email, phone, address)
-            # party/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…)
-            # party/kyc.v1 (jurisdictional compliance fields)
-            # party/preferences.v1 (delivery preferences, accessibility needs, etc.)
+            # buyer/identity.v1 (contact details: email, phone, address)
+            # buyer/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…)
+            # buyer/kyc.v1 (jurisdictional compliance fields)
+            # buyer/preferences.v1 (delivery preferences, accessibility needs, etc.)
 
     SupportInfo:
       type: object

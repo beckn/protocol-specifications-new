@@ -1,0 +1,55 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "beckn": "./vocab.jsonld#",
+
+    "Catalog": "beckn:Catalog",
+    "Item": "beckn:Item",
+    "Offer": "beckn:Offer",
+    "Provider": "beckn:Provider",
+    "Descriptor": "beckn:Descriptor",
+    "CategoryCode": "schema:CategoryCode",
+    "TimePeriod": "beckn:TimePeriod",
+    "Order": "beckn:Order",
+    "OrderItem": "beckn:OrderItem",
+    "Fulfillment": "beckn:Fulfillment",
+    "Payment": "beckn:Payment",
+    "Invoice": "beckn:Invoice",
+    "Buyer": "beckn:Buyer",
+    "SupportInfo": "beckn:SupportInfo",
+    "Tracking": "beckn:Tracking",
+    "Location": "beckn:Location",
+    "Address": "beckn:Address",
+    "GeoJSONGeometry": "beckn:GeoJSONGeometry",
+    "Rating": "beckn:Rating",
+    "Form": "beckn:Form",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "price": "schema:price",
+    "priceCurrency": "schema:priceCurrency",
+    "availabilityStarts": "schema:availabilityStarts",
+    "availabilityEnds": "schema:availabilityEnds",
+    "startDate": "schema:startDate",
+    "endDate": "schema:endDate",
+    "startTime": "schema:startTime",
+    "endTime": "schema:endTime",
+    "identifier": "schema:identifier"
+  },
+  "@graph": [
+    { "@id": "beckn:Catalog", "owl:equivalentClass": "schema:ProductCollection" },
+    { "@id": "beckn:Item", "owl:equivalentClass": "schema:Product" },
+    { "@id": "beckn:Offer", "owl:equivalentClass": "schema:Offer" },
+    { "@id": "beckn:Provider", "owl:equivalentClass": "schema:Organization" },
+    { "@id": "beckn:Order", "owl:equivalentClass": "schema:Order" },
+    { "@id": "beckn:Fulfillment", "owl:equivalentClass": "schema:ParcelDelivery" },
+    { "@id": "beckn:Payment", "owl:equivalentClass": "schema:Payment" }
+  ]
+}
+
+

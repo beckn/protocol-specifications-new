@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "beckn": "./vocab.jsonld#",
+    
+    "ChargingSession": "beckn:ChargingSession",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "price": "schema:price",
+    "priceCurrency": "schema:priceCurrency",
+    "startTime": "schema:startTime",
+    "endTime": "schema:endTime",
+    "orderStatus": "schema:orderStatus",
+    "lastUpdated": "schema:dateModified",
+
+    "sessionStatus": "beckn:sessionStatus",
+    "authorizationMode": "beckn:authorizationMode",
+    "authorizationOtpHint": "beckn:authorizationOtpHint",
+    "connectorType": "beckn:connectorType",
+    "maxPowerKW": "beckn:maxPowerKW",
+    "meteredEnergyKWh": "beckn:meteredEnergyKWh",
+    "meteredDurationMinutes": "beckn:meteredDurationMinutes",
+    "chargingTelemetry": "beckn:chargingTelemetry",
+    "totalCost": "beckn:totalCost",
+    "exclVat": "beckn:exclVat",
+    "inclVat": "beckn:inclVat",
+    "reservationId": "beckn:reservationId",
+    "gracePeriodMinutes": "beckn:gracePeriodMinutes",
+    "vehicleMake": "beckn:vehicleMake",
+    "vehicleModel": "beckn:vehicleModel",
+    "trackingId": "beckn:trackingId",
+    "trackingUrl": "beckn:trackingUrl",
+    "trackingStatus": "beckn:trackingStatus"
+  },
+
+  "@graph": []
+}
+

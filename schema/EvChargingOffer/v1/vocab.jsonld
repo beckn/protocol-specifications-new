@@ -1,0 +1,59 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "./#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:ChargingOffer",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EV Charging Offer",
+      "rdfs:comment": "An offer specification for electric vehicle charging"
+    },
+    {
+      "@id": "beckn:tariffModel",
+      "@type": "rdf:Property",
+      "rdfs:label": "Tariff model",
+      "rdfs:comment": "Charging tariff basis: PER_KWH, PER_MINUTE, SUBSCRIPTION, TIME_OF_DAY.",
+      "rdfs:domain": "beckn:ChargingOffer",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:idleFeePolicy",
+      "@type": "rdf:Property",
+      "rdfs:label": "Idle fee policy",
+      "rdfs:comment": "Human-readable policy for post-charge idle fees associated with an offer.",
+      "rdfs:domain": "beckn:ChargingOffer",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:buyerFinderFee",
+      "@type": "rdf:Property",
+      "rdfs:label": "Buyer finder fee",
+      "rdfs:comment": "Commission payable (percentage or absolute) associated with an offer/order.",
+      "rdfs:domain": "beckn:ChargingOffer",
+      "schema:rangeIncludes": "schema:PriceSpecification"
+    },
+    {
+      "@id": "beckn:feeType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Fee type",
+      "rdfs:comment": "Fee type (PERCENTAGE or AMOUNT) for buyer finder fee.",
+      "rdfs:domain": "beckn:ChargingOffer",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:feeValue",
+      "@type": "rdf:Property",
+      "rdfs:label": "Fee value",
+      "rdfs:comment": "Numeric fee value (interpreted per fee type).",
+      "rdfs:domain": "beckn:ChargingOffer",
+      "schema:rangeIncludes": "schema:Number"
+    }
+  ]
+}
+

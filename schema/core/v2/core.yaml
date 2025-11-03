@@ -100,6 +100,8 @@ components:
           example: ["bap.net/electronics", "bap.net/tech"]
         "beckn:provider":
           $ref: '#/components/schemas/Provider'
+        beckn:acceptedPaymentMethod:
+          $ref: '#/components/schemas/AcceptedPaymentMethod'
         "beckn:itemAttributes":
           $ref: '#/components/schemas/Attributes'
 
@@ -174,12 +176,7 @@ components:
           description: Regions where the offer is eligible
 
         beckn:acceptedPaymentMethod:
-          type: array
-          items:
-            type: string
-          description: Payment methods accepted for this offer
-          example: ["UPI", "Card", "Wallet"]
-          x-jsonld: { "@id": "schema:acceptedPaymentMethod" }
+          $ref: '#/components/schemas/AcceptedPaymentMethod'
 
         beckn:itemCondition:
           type: string
@@ -211,6 +208,15 @@ components:
           type: string
           description: JSON-LD type within the domain schema
           example: "beckn:ElectronicItem"              
+
+    AcceptedPaymentMethod:
+      type: array
+      description: Payment methods accepted for this offer
+      items:
+        type: string
+        enum: ["UPI", "CreditCard", "DebitCard", "Wallet", "BankTransfer", "Cash", "ApplePay"]
+      example: ["UPI", "Card", "Wallet"]
+      x-jsonld: { "@id": "beckn:acceptedPaymentMethod" }
 
     Provider:
       type: object
@@ -462,6 +468,9 @@ components:
         human-readable `address`. This unifies all Beckn location fields into a single,
         widely-adopted representation (GeoJSON).
       properties:
+        "@type":
+          type: string
+          enum: ["beckn:Location"]
         geo:
           $ref: '#/components/schemas/GeoJSONGeometry'
         address:
@@ -867,13 +876,8 @@ components:
           nullable: true
           description: When the last terminal event (capture/refund) happened
           x-jsonld: { "@id": "schema:paymentDueDate" } # closest temporal anchor for payment events
-        beckn:acceptedPaymentMethods:
-          type: array
-          items:
-            type: string
-          description: Payment methods accepted for this payment
-          example: ["UPI", "CARD", "WALLET", "BANK-TRANSFER"]
-          x-jsonld: { "@id": "schema:acceptedPaymentMethod" }
+        beckn:acceptedPaymentMethod:
+          $ref: '#/components/schemas/AcceptedPaymentMethod'
         beckn:beneficiary:
           type: string
           description: Who will be the beneficiary or recipient of the payment

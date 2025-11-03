@@ -54,14 +54,7 @@
       "rdfs:domain": "beckn:ChargingService",
       "schema:rangeIncludes": "schema:Boolean"
     },
-    {
-      "@id": "beckn:acceptedPaymentMethod",
-      "@type": "rdf:Property",
-      "rdfs:label": "Accepted payment method",
-      "rdfs:comment": "Accepted payment methods using schema.org payment method types (e.g., UPI, CreditCard, Wallet).",
-      "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Text"
-    },
+
     {
       "@id": "beckn:serviceLocation",
       "@type": "rdf:Property",

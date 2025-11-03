@@ -1388,8 +1388,8 @@ components:
       $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/TrackAction'
     Payment:
       $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Payment'
-    Party:
-      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Party'
+    Buyer:
+      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Buyer'
     SupportInfo:
       $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/SupportInfo'
     Tracking:

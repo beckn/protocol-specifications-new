@@ -1086,6 +1086,8 @@ components:
           anyOf:
             - required: [text_search]
             - required: [filters]
+            - required: [spatial]
+            - required: [filters, spatial]
     DiscoverResponse:
       type: object
       required: [context, message]

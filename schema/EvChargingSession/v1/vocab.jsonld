@@ -149,38 +149,6 @@
       "rdfs:comment": "Vehicle model recorded for the session.",
       "rdfs:domain": "beckn:ChargingSession",
       "schema:rangeIncludes": "schema:Text"
-    },
-    {
-      "@id": "beckn:trackingId",
-      "@type": "rdf:Property",
-      "rdfs:label": "Tracking ID",
-      "rdfs:comment": "Provider tracking identifier for this session.",
-      "rdfs:domain": "beckn:ChargingSession",
-      "schema:rangeIncludes": "schema:Text"
-    },
-    {
-      "@id": "beckn:trackingUrl",
-      "@type": "rdf:Property",
-      "rdfs:label": "Tracking URL",
-      "rdfs:comment": "Live session dashboard URL.",
-      "rdfs:domain": "beckn:ChargingSession",
-      "schema:rangeIncludes": "schema:URL"
-    },
-    {
-      "@id": "beckn:trackingStatus",
-      "@type": "rdf:Property",
-      "rdfs:label": "Tracking status",
-      "rdfs:comment": "Whether live tracking is currently active.",
-      "rdfs:domain": "beckn:ChargingSession",
-      "schema:rangeIncludes": "schema:Text"
-    },
-    {
-      "@id": "beckn:lastUpdated",
-      "@type": "rdf:Property",
-      "rdfs:label": "Last updated",
-      "rdfs:comment": "Last telemetry/billing update timestamp (UTC).",
-      "rdfs:domain": "beckn:ChargingSession",
-      "schema:rangeIncludes": "schema:DateTime"
     }
   ]
 }

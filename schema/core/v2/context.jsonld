@@ -30,6 +30,8 @@
     "Form": "beckn:Form",
 
     "Eligibility": "beckn:Eligibility",
+    "Attributes": "beckn:Attributes",
+    "TrackAction": "beckn:TrackAction",
 
     "name": "schema:name",
     "description": "schema:description",

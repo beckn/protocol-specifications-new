@@ -156,22 +156,3 @@ components:
           example: "Nexon EV"
           x-jsonld: { "@id": vehicleModel }
 
-        # Tracking
-        trackingId:
-          type: string
-          description: Provider tracking identifier for this session.
-          example: "TRK-984532"
-          x-jsonld: { "@id": trackingId }
-        trackingUrl:
-          type: string
-          format: uri
-          description: Live session dashboard URL.
-          example: "https://cpo.example.org/session/RESV-984532"
-          x-jsonld: { "@id": trackingUrl }
-        trackingStatus:
-          type: string
-          enum: [ACTIVE, INACTIVE]
-          description: Whether live tracking is currently active.
-          example: "ACTIVE"
-          x-jsonld: { "@id": trackingStatus }
-

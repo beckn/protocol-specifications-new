@@ -54,7 +54,6 @@
       "rdfs:domain": "beckn:ChargingService",
       "schema:rangeIncludes": "schema:Boolean"
     },
-
     {
       "@id": "beckn:serviceLocation",
       "@type": "rdf:Property",

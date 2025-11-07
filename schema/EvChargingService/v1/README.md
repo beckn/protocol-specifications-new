@@ -1,6 +1,6 @@
-# EV Charging — Charging Service Attribute Pack (v1)
+# EV Charging — Charging Service Definition Bundle (v1)
 
-This pack defines **EV-specific attribute extensions only** (no Beckn core objects).
+This bundle defines **EV-specific attribute extensions only** (no Beckn core objects).
 
 It reuses core Beckn schemas for Item, Offer, Order/Fulfillment, and Provider, and adds only **domain-specific attributes**relevant to electric-vehicle charging.
 
@@ -56,7 +56,7 @@ This supports both local development and public hosting.
 | **examples/** | Contains working examples showing each attribute type (ChargingService, ChargingOffer, ChargingSession, ChargingPointOperator) in the context of Beckn discover and transaction flows. |
 | --- | --- |
 
-**Note:** This directory contains the ChargingService-specific attributes (v1). Other related attribute packs are available as standalone folders:
+**Note:** This directory contains the ChargingService-specific attributes (v1). Other related attribute bundles are available as standalone folders:
 - `../../EvChargingOffer/v1/` - ChargingOffer attributes (Offer.attributes)
 - `../../EvChargingSession/v1/` - ChargingSession attributes (Order/Fulfillment.attributes)  
 - `../../EvChargingPointOperator/v1/` - ChargingPointOperator attributes (Provider.attributes)
@@ -65,4 +65,4 @@ This supports both local development and public hosting.
 ## 🏷️ Tags
 `ev-charging, mobility, energy, transport, electric-vehicle, sustainability, item, offer, order, fulfillment, provider, location, geo, discovery, reservation, session, connector, power, ocpp, ocpi, open-standards, beckn, json-ld, schema.org, openapi, ocpi, ocpp, iso-15118, schema-geoshape, iso4217`
 
-These tags help implementers and schema registries discover and classify this attribute pack quickly.
+These tags help implementers and schema registries discover and classify this attribute bundle quickly.

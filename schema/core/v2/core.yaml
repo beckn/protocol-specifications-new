@@ -600,7 +600,7 @@ components:
         - "@context"
         - "@type"
         - beckn:id
-        - beckn:state
+        - beckn:orderStatus
         - beckn:seller
         - beckn:buyer
         - beckn:orderItems
@@ -756,7 +756,12 @@ components:
     Fulfillment:
       type: object
       additionalProperties: false
-      required: ["@context","@type","beckn:id","beckn:mode"]
+      required: [
+        "@context",
+        "@type",
+        "beckn:id",
+        "beckn:mode"
+      ]
       properties:
         "@context":
           type: string
@@ -774,7 +779,17 @@ components:
         beckn:status:
           type: string
           description: Network-defined status code (e.g., OutForDelivery, ReadyForPickup, Confirmed)
+          enum: ["PENDING","CONFIRMED","COMPLETED","CANCELLED","QUOTED"]
           x-jsonld: { "@id": "schema:orderStatus" } # closest general status anchor
+        beckn:mode:
+          type: string
+          enum: ["DELIVERY","PICKUP","RESERVATION","DIGITAL"]
+          description: |
+            DELIVERY    → last-mile / parcel logistics
+            PICKUP      → customer collects from a place
+            RESERVATION → entitlement/booking is fulfilled (tickets, seats, appointments)
+            DIGITAL     → digital good / license access
+          x-jsonld: { "@id": "beckn:mode" }
         trackingAction:
           $ref: '#/components/schemas/TrackAction'
           description: >
@@ -785,7 +800,7 @@ components:
         beckn:deliveryAttributes:
           $ref: "#/components/schemas/Attributes"
           description: > 
-            Attribute Pack for the chosen mode: 
+            Bundle of attributes for the chosen mode: 
             # DELIVERY: endpoints, slot windows, route & events → map to schema:ParcelDelivery / schema:DeliveryEvent
             # PICKUP: pickupPlace, counter codes, time windows → map to schema:Place + schema:openingHoursSpecification
             # RESERVATION: reservationStatus, reservedTicket → map to schema:Reservation

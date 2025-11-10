@@ -91,7 +91,9 @@ components:
 
         amenityFeature:
           type: array
-          items: { type: string }
+        items:
+          type: string
+          enum: ["Restaurant", "Restroom", "Wi-Fi", "Parking"]
           description: Nearby amenities (e.g., Restaurant, Restroom, Wi-Fi).
           example: ["Restaurant", "Restroom"]
           x-jsonld: { "@id": amenityFeature }

@@ -35,7 +35,27 @@
     "vehicleModel": "beckn:vehicleModel",
     "trackingId": "beckn:trackingId",
     "trackingUrl": "beckn:trackingUrl",
-    "trackingStatus": "beckn:trackingStatus"
+    "trackingStatus": "beckn:trackingStatus",
+
+    "SessionStatusPending": "beckn:SessionStatusPending",
+    "SessionStatusActive": "beckn:SessionStatusActive",
+    "SessionStatusCompleted": "beckn:SessionStatusCompleted",
+    "SessionStatusInterrupted": "beckn:SessionStatusInterrupted",
+
+    "AuthorizationModeAppQr": "beckn:AuthorizationModeAppQr",
+    "AuthorizationModeRfid": "beckn:AuthorizationModeRfid",
+    "AuthorizationModeOtp": "beckn:AuthorizationModeOtp",
+
+    "ConnectorTypeCCS2": "beckn:ConnectorTypeCCS2",
+    "ConnectorTypeType2": "beckn:ConnectorTypeType2",
+    "ConnectorTypeCHAdeMO": "beckn:ConnectorTypeCHAdeMO",
+    "ConnectorTypeGBT": "beckn:ConnectorTypeGBT",
+
+    "TelemetryMetricEnergy": "beckn:TelemetryMetricEnergy",
+    "TelemetryMetricPower": "beckn:TelemetryMetricPower",
+    "TelemetryMetricCurrent": "beckn:TelemetryMetricCurrent",
+    "TelemetryMetricVoltage": "beckn:TelemetryMetricVoltage",
+    "TelemetryMetricStateOfCharge": "beckn:TelemetryMetricStateOfCharge"
   },
 
   "@graph": []

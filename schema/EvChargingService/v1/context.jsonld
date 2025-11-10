@@ -33,7 +33,41 @@
     "powerType": "beckn:powerType",
     "connectorFormat": "beckn:connectorFormat",
     "chargingSpeed": "beckn:chargingSpeed",
-    "stationStatus": "beckn:stationStatus"
+    "stationStatus": "beckn:stationStatus",
+
+    "AmenityRestaurant": "beckn:AmenityRestaurant",
+    "AmenityRestroom": "beckn:AmenityRestroom",
+    "AmenityWiFi": "beckn:AmenityWiFi",
+    "AmenityParking": "beckn:AmenityParking",
+
+    "ConnectorTypeCCS2": "beckn:ConnectorTypeCCS2",
+    "ConnectorTypeType2": "beckn:ConnectorTypeType2",
+    "ConnectorTypeCHAdeMO": "beckn:ConnectorTypeCHAdeMO",
+    "ConnectorTypeGBT": "beckn:ConnectorTypeGBT",
+
+    "PowerTypeACSinglePhase": "beckn:PowerTypeACSinglePhase",
+    "PowerTypeAC3Phase": "beckn:PowerTypeAC3Phase",
+    "PowerTypeDC": "beckn:PowerTypeDC",
+
+    "ConnectorFormatSocket": "beckn:ConnectorFormatSocket",
+    "ConnectorFormatCable": "beckn:ConnectorFormatCable",
+
+    "ChargingSpeedSlow": "beckn:ChargingSpeedSlow",
+    "ChargingSpeedNormal": "beckn:ChargingSpeedNormal",
+    "ChargingSpeedFast": "beckn:ChargingSpeedFast",
+    "ChargingSpeedUltraFast": "beckn:ChargingSpeedUltraFast",
+
+    "ParkingTypeOnStreet": "beckn:ParkingTypeOnStreet",
+    "ParkingTypeOffStreet": "beckn:ParkingTypeOffStreet",
+    "ParkingTypeBasement": "beckn:ParkingTypeBasement",
+    "ParkingTypeMall": "beckn:ParkingTypeMall",
+    "ParkingTypeFuelStation": "beckn:ParkingTypeFuelStation",
+    "ParkingTypeOffice": "beckn:ParkingTypeOffice",
+    "ParkingTypeHotel": "beckn:ParkingTypeHotel",
+
+    "StationStatusAvailable": "beckn:StationStatusAvailable",
+    "StationStatusOccupied": "beckn:StationStatusOccupied",
+    "StationStatusOutOfService": "beckn:StationStatusOutOfService"
   },
 
   "@graph": []

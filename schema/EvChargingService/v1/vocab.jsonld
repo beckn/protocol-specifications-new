@@ -66,7 +66,7 @@
       "@id": "beckn:amenityFeature",
       "@type": "rdf:Property",
       "rdfs:label": "Amenity feature",
-      "rdfs:comment": "Nearby amenities such as Restaurant, Restroom, Wi-Fi.",
+      "rdfs:comment": "Nearby amenities such as Restaurant, Restroom, Wi-Fi, Parking.",
       "rdfs:domain": "beckn:ChargingService",
       "schema:rangeIncludes": "schema:Text"
     },
@@ -141,6 +141,204 @@
       "rdfs:comment": "Real-time availability status of the station or connector.",
       "rdfs:domain": "beckn:ChargingService",
       "schema:rangeIncludes": "schema:Text"
+    },
+
+    {
+      "@id": "beckn:AmenityRestaurant",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "Restaurant",
+      "schema:termCode": "Restaurant",
+      "schema:inDefinedTermSet": "beckn:amenityFeature"
+    },
+    {
+      "@id": "beckn:AmenityRestroom",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "Restroom",
+      "schema:termCode": "Restroom",
+      "schema:inDefinedTermSet": "beckn:amenityFeature"
+    },
+    {
+      "@id": "beckn:AmenityWiFi",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "Wi-Fi",
+      "schema:termCode": "Wi-Fi",
+      "schema:alternateName": "WiFi",
+      "schema:inDefinedTermSet": "beckn:amenityFeature"
+    },
+    {
+      "@id": "beckn:AmenityParking",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "Parking",
+      "schema:termCode": "Parking",
+      "schema:inDefinedTermSet": "beckn:amenityFeature"
+    },
+    {
+      "@id": "beckn:ConnectorTypeCCS2",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "CCS2",
+      "schema:termCode": "CCS2",
+      "schema:inDefinedTermSet": "beckn:connectorType"
+    },
+    {
+      "@id": "beckn:ConnectorTypeType2",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "Type2",
+      "schema:termCode": "Type2",
+      "schema:inDefinedTermSet": "beckn:connectorType"
+    },
+    {
+      "@id": "beckn:ConnectorTypeCHAdeMO",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "CHAdeMO",
+      "schema:termCode": "CHAdeMO",
+      "schema:inDefinedTermSet": "beckn:connectorType"
+    },
+    {
+      "@id": "beckn:ConnectorTypeGBT",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "GB/T",
+      "schema:termCode": "GB_T",
+      "schema:alternateName": "GB-T",
+      "schema:inDefinedTermSet": "beckn:connectorType"
+    },
+    {
+      "@id": "beckn:PowerTypeACSinglePhase",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "AC_SINGLE_PHASE",
+      "schema:termCode": "AC_SINGLE_PHASE",
+      "schema:inDefinedTermSet": "beckn:powerType"
+    },
+    {
+      "@id": "beckn:PowerTypeAC3Phase",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "AC_3_PHASE",
+      "schema:termCode": "AC_3_PHASE",
+      "schema:alternateName": "AC_THREE_PHASE",
+      "schema:inDefinedTermSet": "beckn:powerType"
+    },
+    {
+      "@id": "beckn:PowerTypeDC",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "DC",
+      "schema:termCode": "DC",
+      "schema:inDefinedTermSet": "beckn:powerType"
+    },
+    {
+      "@id": "beckn:ConnectorFormatSocket",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "SOCKET",
+      "schema:termCode": "SOCKET",
+      "schema:inDefinedTermSet": "beckn:connectorFormat"
+    },
+    {
+      "@id": "beckn:ConnectorFormatCable",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "CABLE",
+      "schema:termCode": "CABLE",
+      "schema:inDefinedTermSet": "beckn:connectorFormat"
+    },
+    {
+      "@id": "beckn:ChargingSpeedSlow",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "SLOW",
+      "schema:termCode": "SLOW",
+      "schema:inDefinedTermSet": "beckn:chargingSpeed"
+    },
+    {
+      "@id": "beckn:ChargingSpeedNormal",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "NORMAL",
+      "schema:termCode": "NORMAL",
+      "schema:inDefinedTermSet": "beckn:chargingSpeed"
+    },
+    {
+      "@id": "beckn:ChargingSpeedFast",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "FAST",
+      "schema:termCode": "FAST",
+      "schema:inDefinedTermSet": "beckn:chargingSpeed"
+    },
+    {
+      "@id": "beckn:ChargingSpeedUltraFast",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "ULTRAFAST",
+      "schema:termCode": "ULTRAFAST",
+      "schema:alternateName": "Ultra Fast",
+      "schema:inDefinedTermSet": "beckn:chargingSpeed"
+    },
+    {
+      "@id": "beckn:ParkingTypeOnStreet",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "OnStreet",
+      "schema:termCode": "OnStreet",
+      "schema:alternateName": "On Street",
+      "schema:inDefinedTermSet": "beckn:parkingType"
+    },
+    {
+      "@id": "beckn:ParkingTypeOffStreet",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "OffStreet",
+      "schema:termCode": "OffStreet",
+      "schema:alternateName": "Off Street",
+      "schema:inDefinedTermSet": "beckn:parkingType"
+    },
+    {
+      "@id": "beckn:ParkingTypeBasement",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "Basement",
+      "schema:termCode": "Basement",
+      "schema:inDefinedTermSet": "beckn:parkingType"
+    },
+    {
+      "@id": "beckn:ParkingTypeMall",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "Mall",
+      "schema:termCode": "Mall",
+      "schema:inDefinedTermSet": "beckn:parkingType"
+    },
+    {
+      "@id": "beckn:ParkingTypeFuelStation",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "FuelStation",
+      "schema:termCode": "FuelStation",
+      "schema:alternateName": "Fuel Station",
+      "schema:inDefinedTermSet": "beckn:parkingType"
+    },
+    {
+      "@id": "beckn:ParkingTypeOffice",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "Office",
+      "schema:termCode": "Office",
+      "schema:inDefinedTermSet": "beckn:parkingType"
+    },
+    {
+      "@id": "beckn:ParkingTypeHotel",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "Hotel",
+      "schema:termCode": "Hotel",
+      "schema:inDefinedTermSet": "beckn:parkingType"
+    },
+    {
+      "@id": "beckn:StationStatusAvailable",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "Available",
+      "schema:termCode": "Available",
+      "schema:inDefinedTermSet": "beckn:stationStatus"
+    },
+    {
+      "@id": "beckn:StationStatusOccupied",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "Occupied",
+      "schema:termCode": "Occupied",
+      "schema:inDefinedTermSet": "beckn:stationStatus"
+    },
+    {
+      "@id": "beckn:StationStatusOutOfService",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "OutOfService",
+      "schema:termCode": "OutOfService",
+      "schema:alternateName": "Out Of Service",
+      "schema:inDefinedTermSet": "beckn:stationStatus"
     }
   ]
 }

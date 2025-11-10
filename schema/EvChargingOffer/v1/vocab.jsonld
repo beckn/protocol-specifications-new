@@ -20,7 +20,13 @@
       "rdfs:label": "Tariff model",
       "rdfs:comment": "Charging tariff basis: PER_KWH, PER_MINUTE, SUBSCRIPTION, TIME_OF_DAY.",
       "rdfs:domain": "beckn:ChargingOffer",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "schema:Text",
+      "schema:definedTermIncludes": [
+        "beckn:TariffModelPerKwh",
+        "beckn:TariffModelPerMinute",
+        "beckn:TariffModelSubscription",
+        "beckn:TariffModelTimeOfDay"
+      ]
     },
     {
       "@id": "beckn:idleFeePolicy",
@@ -44,7 +50,11 @@
       "rdfs:label": "Fee type",
       "rdfs:comment": "Fee type (PERCENTAGE or AMOUNT) for buyer finder fee.",
       "rdfs:domain": "beckn:ChargingOffer",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "schema:Text",
+      "schema:definedTermIncludes": [
+        "beckn:FeeTypePercentage",
+        "beckn:FeeTypeAmount"
+      ]
     },
     {
       "@id": "beckn:feeValue",
@@ -53,6 +63,51 @@
       "rdfs:comment": "Numeric fee value (interpreted per fee type).",
       "rdfs:domain": "beckn:ChargingOffer",
       "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "beckn:TariffModelPerKwh",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "PER_KWH",
+      "schema:termCode": "PER_KWH",
+      "schema:alternateName": "PER-KWH",
+      "schema:inDefinedTermSet": "beckn:tariffModel"
+    },
+    {
+      "@id": "beckn:TariffModelPerMinute",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "PER_MINUTE",
+      "schema:termCode": "PER_MINUTE",
+      "schema:alternateName": "PER-MINUTE",
+      "schema:inDefinedTermSet": "beckn:tariffModel"
+    },
+    {
+      "@id": "beckn:TariffModelSubscription",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "SUBSCRIPTION",
+      "schema:termCode": "SUBSCRIPTION",
+      "schema:inDefinedTermSet": "beckn:tariffModel"
+    },
+    {
+      "@id": "beckn:TariffModelTimeOfDay",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "TIME_OF_DAY",
+      "schema:termCode": "TIME_OF_DAY",
+      "schema:alternateName": "TIME-OF-DAY",
+      "schema:inDefinedTermSet": "beckn:tariffModel"
+    },
+    {
+      "@id": "beckn:FeeTypePercentage",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "PERCENTAGE",
+      "schema:termCode": "PERCENTAGE",
+      "schema:inDefinedTermSet": "beckn:feeType"
+    },
+    {
+      "@id": "beckn:FeeTypeAmount",
+      "@type": "schema:DefinedTerm",
+      "schema:name": "AMOUNT",
+      "schema:termCode": "AMOUNT",
+      "schema:inDefinedTermSet": "beckn:feeType"
     }
   ]
 }

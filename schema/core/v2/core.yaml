@@ -40,6 +40,10 @@ components:
           example: "tech-store-001"
         "beckn:validity":
           $ref: '#/components/schemas/TimePeriod'
+        "beckn:isActive":
+          type: boolean
+          description: Whether the catalog is active
+          default: true
         beckn:items:  # semantic entities
           type: array
           description: >
@@ -122,20 +126,16 @@ components:
           type: string
           enum: ["beckn:Offer"]
           x-jsonld: { "@id": "schema:Offer" }
-
         beckn:id:
           type: string
           description: Unique id for this offer
           x-jsonld: { "@id": "schema:identifier" }
-
         beckn:descriptor:
           $ref: "#/components/schemas/Descriptor"
-
         beckn:provider:
           $ref: "#/components/schemas/Provider/properties/beckn:id"
           description: Seller / provider of this offer
           x-jsonld: { "@id": "schema:seller" }
-
         # Single source of truth for base item(s)
         beckn:items:
           type: array
@@ -143,39 +143,36 @@ components:
           items: { $ref: "#/components/schemas/Item/properties/beckn:id" }
           description: Base item(s) the offer applies to (single or bundle)
           x-jsonld: { "@id": "schema:itemOffered" }
-
         # Optional extras
         beckn:addOns:
           type: array
           items: { $ref: "#/components/schemas/Offer/properties/beckn:id" }
           description: Optional extra Offers that can be attached (e.g., warranty, gift wrap)
           x-jsonld: { "@id": "schema:addOn" }
-
         beckn:addOnItems:
           type: array
           items: { $ref: "#/components/schemas/Item/properties/beckn:id" }
           description: Optional extras modeled as items (e.g., toppings, accessories)
           x-jsonld: { "@id": "schema:addOn" }
-
+        beckn:isActive:
+          type: boolean
+          description: Whether the offer is active
+          default: true
         beckn:validity:
           $ref: "#/components/schemas/TimePeriod"
           description: Offer validity window
           x-jsonld: { "@id": "schema:availabilityStarts|schema:availabilityEnds" }
-
         beckn:price:
           $ref: "#/components/schemas/PriceSpecification"
           description: Price snapshot; detailed models can live in offerAttributes
           x-jsonld: { "@id": "schema:priceSpecification" }
-
         beckn:eligibleRegion: 
           type: array
           items:
             $ref: '#/components/schemas/Location'
           description: Regions where the offer is eligible
-
         beckn:acceptedPaymentMethod:
           $ref: '#/components/schemas/AcceptedPaymentMethod'
-
         beckn:offerAttributes:
           $ref: "#/components/schemas/Attributes"
           description: Attribute Pack attachment (pricing models, discounts, rail terms, etc.)          

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The **EnergyTradeDelivery** schema extends the core Beckn `Fulfillment` entity to track the physical transfer of energy between source and target in P2P energy trading systems. This schema handles recurring or continuous fulfillment scenarios tied to a single contract, tracking delivery status, meter readings, and telemetry data.
+The **EnergyTradeDelivery** schema composes with the core Beckn `Fulfillment` entity to track the physical transfer of energy between source and target in P2P energy trading systems. This schema handles recurring or continuous fulfillment scenarios tied to a single contract, tracking delivery status, meter readings, and telemetry data.
 
 ### Use Cases
 
@@ -43,9 +43,9 @@ The **EnergyTradeDelivery** schema extends the core Beckn `Fulfillment` entity t
 | `settlementCycleId` | string | No | Associated settlement cycle identifier | Links this delivery to a specific settlement cycle in the contract. Used for billing reconciliation and payment processing. |
 | `lastUpdated` | date-time | No | Last delivery update timestamp (UTC) | Timestamp of the most recent delivery update. Updated as meter readings and telemetry arrive. Used for change tracking and real-time monitoring. |
 
-## Schema Extension Point
+## Schema Composition Point
 
-This schema extends: `core/v2/core.yaml#Fulfillment.attributes`
+This schema composes with: `core/v2/core.yaml#Fulfillment.attributes`
 
 ## Example Usage
 

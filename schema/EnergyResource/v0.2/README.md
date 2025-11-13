@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The **EnergyResource** schema extends the core Beckn `Item` entity to represent tradable energy resources in Peer-to-Peer (P2P) energy trading systems. This schema defines the characteristics of energy being traded, including source type, delivery mode, certification status, and availability details.
+The **EnergyResource** schema composes with the core Beckn `Item` entity to represent tradable energy resources in Peer-to-Peer (P2P) energy trading systems. This schema defines the characteristics of energy being traded, including source type, delivery mode, certification status, and availability details.
 
 ### Use Cases
 
@@ -38,9 +38,9 @@ The **EnergyResource** schema extends the core Beckn `Item` entity to represent 
 | `sourceVerification.certificates` | array&lt;uri&gt; | No | Array of certificate references (URLs or identifiers) | Links to certification documents (e.g., solar panel certificates, green energy certificates). Used for verification and compliance. |
 | `productionAsynchronous` | boolean | No | Whether production and trade may be asynchronous (before, during, or after the transaction). Default: false | Indicates if energy production can occur independently of the trade transaction timing. Supports scenarios where energy is stored and traded later, or produced on-demand. |
 
-## Schema Extension Point
+## Schema Composition Point
 
-This schema extends: `core/v2/core.yaml#Item.itemAttributes`
+This schema composes with: `core/v2/core.yaml#Item.itemAttributes`
 
 ## Example Usage
 

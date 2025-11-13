@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The **EnergyTradeContract** schema extends the core Beckn `Order` entity to represent commercial agreements for energy transactions in P2P energy trading systems. This schema decouples trade from fulfillment, allowing generator, transmitter, and consumer to operate independently of the contract.
+The **EnergyTradeContract** schema composes with the core Beckn `Order` entity to represent commercial agreements for energy transactions in P2P energy trading systems. This schema decouples trade from fulfillment, allowing generator, transmitter, and consumer to operate independently of the contract.
 
 ### Use Cases
 
@@ -61,9 +61,9 @@ The **EnergyTradeContract** schema extends the core Beckn `Order` entity to repr
 | `wheelingCharges.description` | string | No | Description of wheeling charges | Human-readable description (e.g., Fixed wheeling charges for grid transmission). |
 | `lastUpdated` | date-time | No | Last contract update timestamp (UTC) | Timestamp of the most recent contract modification. Used for change tracking and audit purposes. |
 
-## Schema Extension Point
+## Schema Composition Point
 
-This schema extends: `core/v2/core.yaml#Order.orderAttributes`
+This schema composes with: `core/v2/core.yaml#Order.orderAttributes`
 
 ## Example Usage
 

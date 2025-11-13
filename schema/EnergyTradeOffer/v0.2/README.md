@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The **EnergyTradeOffer** schema extends the core Beckn `Offer` entity to represent available trade offers for energy resources in P2P energy trading systems. This schema defines pricing models, settlement types, wheeling charges, and availability details for energy trading offers.
+The **EnergyTradeOffer** schema composes with the core Beckn `Offer` entity to represent available trade offers for energy resources in P2P energy trading systems. This schema defines pricing models, settlement types, wheeling charges, and availability details for energy trading offers.
 
 ### Use Cases
 
@@ -42,9 +42,9 @@ The **EnergyTradeOffer** schema extends the core Beckn `Offer` entity to represe
 | `timeOfDayRates[].rate` | number | No | Price per kWh for this time range | The energy price during this time period. |
 | `timeOfDayRates[].currency` | string | No | Currency code (ISO 4217) | Currency for the rate (e.g., USD). |
 
-## Schema Extension Point
+## Schema Composition Point
 
-This schema extends: `core/v2/core.yaml#Offer.offerAttributes`
+This schema composes with: `core/v2/core.yaml#Offer.offerAttributes`
 
 ## Example Usage
 

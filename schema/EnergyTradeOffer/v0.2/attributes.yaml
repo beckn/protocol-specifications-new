@@ -1,0 +1,131 @@
+openapi: 3.1.1
+info:
+  title: Energy Trade — Trade Offer Attributes (v0.2)
+  version: 0.2.0
+  x-profile-id: profiles/energy-trade/energy_trade/v0.2/trade-offer
+  description: >
+    Attribute schemas for energy trade offers (Offer.attributes).
+    These attributes are attached to Offer.offerAttributes to provide pricing models,
+    settlement types, wheeling charges, and availability details for P2P energy trading offers.
+
+components:
+  schemas:
+    ########################################################################
+    # OFFER.ATTRIBUTES — EnergyTradeOffer (P2P Energy Trading)
+    ########################################################################
+    EnergyTradeOffer:
+      type: object
+      additionalProperties: false
+      required: [pricingModel]
+      x-jsonld:
+        "@context": ./context.jsonld
+        "@type": EnergyTradeOffer
+      properties:
+
+        pricingModel:
+          type: string
+          enum: [PER_KWH, TIME_OF_DAY, SUBSCRIPTION, FIXED]
+          description: Pricing model classification used for the energy trade offer.
+          example: "PER_KWH"
+          x-jsonld: { "@id": pricingModel }
+
+        settlementType:
+          type: string
+          enum: [REAL_TIME, HOURLY, DAILY, WEEKLY, MONTHLY]
+          description: Settlement frequency for the energy trade. Determines when payments are processed.
+          example: "DAILY"
+          x-jsonld: { "@id": settlementType }
+
+        wheelingCharges:
+          type: object
+          description: Utility wheeling charges (fixed charges for delivery intermediaries like PG&E). Reflected as billing line item.
+          x-jsonld: { "@id": wheelingCharges }
+          additionalProperties: false
+          properties:
+            amount:
+              type: number
+              minimum: 0
+              description: Wheeling charge amount.
+              example: 2.5
+              x-jsonld: { "@id": "schema:amount" }
+            currency:
+              type: string
+              description: Currency code (ISO 4217).
+              example: "USD"
+              x-jsonld: { "@id": "schema:currency" }
+            description:
+              type: string
+              description: Description of the wheeling charge.
+              example: "PG&E Grid Services wheeling charge"
+              x-jsonld: { "@id": "schema:description" }
+
+        minimumQuantity:
+          type: number
+          minimum: 0
+          description: Minimum tradable energy quantity in kilowatt-hours (kWh).
+          example: 1.0
+          x-jsonld: { "@id": minimumQuantity }
+
+        maximumQuantity:
+          type: number
+          minimum: 0
+          description: Maximum tradable energy quantity in kilowatt-hours (kWh).
+          example: 100.0
+          x-jsonld: { "@id": maximumQuantity }
+
+        validityWindow:
+          type: object
+          description: Time window when the offer is valid.
+          x-jsonld: { "@id": validityWindow }
+          additionalProperties: false
+          properties:
+            start:
+              type: string
+              format: date-time
+              description: Offer validity start time (ISO 8601).
+              example: "2024-10-04T00:00:00Z"
+              x-jsonld: { "@id": "schema:startTime" }
+            end:
+              type: string
+              format: date-time
+              description: Offer validity end time (ISO 8601).
+              example: "2024-10-04T23:59:59Z"
+              x-jsonld: { "@id": "schema:endTime" }
+
+        timeOfDayRates:
+          type: array
+          description: Time-of-day pricing rates (applicable when pricingModel is TIME_OF_DAY).
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              timeRange:
+                type: object
+                description: Time range for this rate.
+                additionalProperties: false
+                properties:
+                  start:
+                    type: string
+                    format: time
+                    description: Start time (HH:MM format).
+                    example: "09:00"
+                    x-jsonld: { "@id": "schema:startTime" }
+                  end:
+                    type: string
+                    format: time
+                    description: End time (HH:MM format).
+                    example: "17:00"
+                    x-jsonld: { "@id": "schema:endTime" }
+              rate:
+                type: number
+                minimum: 0
+                description: Price per kWh for this time range.
+                example: 0.15
+                x-jsonld: { "@id": "schema:price" }
+              currency:
+                type: string
+                description: Currency code (ISO 4217).
+                example: "USD"
+                x-jsonld: { "@id": "schema:priceCurrency" }
+          x-jsonld: { "@id": timeOfDayRates }
+

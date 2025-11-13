@@ -1,0 +1,188 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/EnergyTradeDelivery/v0.2/#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:EnergyTradeDelivery",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Energy Trade Delivery",
+      "rdfs:comment": "Represents the physical transfer of energy between source and target, extending the core Fulfillment entity."
+    },
+    {
+      "@id": "beckn:deliveryStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "Delivery status",
+      "rdfs:comment": "Delivery status for the energy transfer (PENDING, IN_PROGRESS, COMPLETED, FAILED).",
+      "rdfs:domain": "beckn:EnergyTradeDelivery",
+      "schema:rangeIncludes": "beckn:DeliveryStatus",
+      "owl:equivalentProperty": "beckn:fulfillmentStatus"
+    },
+    {
+      "@id": "beckn:deliveryMode",
+      "@type": "rdf:Property",
+      "rdfs:label": "Delivery mode",
+      "rdfs:comment": "Mode of energy delivery for this fulfillment cycle (EV_CHARGING, BATTERY_SWAP, V2G, GRID_INJECTION).",
+      "rdfs:domain": "beckn:EnergyTradeDelivery",
+      "schema:rangeIncludes": "beckn:DeliveryMode"
+    },
+    {
+      "@id": "beckn:deliveredQuantity",
+      "@type": "rdf:Property",
+      "rdfs:label": "Delivered quantity",
+      "rdfs:comment": "Quantity delivered in this fulfillment cycle in kilowatt-hours (kWh).",
+      "rdfs:domain": "beckn:EnergyTradeDelivery",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "beckn:meterReadings",
+      "@type": "rdf:Property",
+      "rdfs:label": "Meter readings",
+      "rdfs:comment": "Array of meter readings during delivery tracking energy flow from source to target.",
+      "rdfs:domain": "beckn:EnergyTradeDelivery",
+      "schema:rangeIncludes": "schema:ItemList"
+    },
+    {
+      "@id": "beckn:sourceReading",
+      "@type": "rdf:Property",
+      "rdfs:label": "Source reading",
+      "rdfs:comment": "Source meter reading at a specific timestamp (kWh).",
+      "rdfs:domain": "beckn:EnergyTradeDelivery",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "beckn:targetReading",
+      "@type": "rdf:Property",
+      "rdfs:label": "Target reading",
+      "rdfs:comment": "Target meter reading at a specific timestamp (kWh).",
+      "rdfs:domain": "beckn:EnergyTradeDelivery",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "beckn:energyFlow",
+      "@type": "rdf:Property",
+      "rdfs:label": "Energy flow",
+      "rdfs:comment": "Calculated energy flow between meter readings (kWh). Positive indicates delivery to target.",
+      "rdfs:domain": "beckn:EnergyTradeDelivery",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "beckn:telemetry",
+      "@type": "rdf:Property",
+      "rdfs:label": "Telemetry",
+      "rdfs:comment": "Energy flow telemetry data during delivery.",
+      "rdfs:domain": "beckn:EnergyTradeDelivery",
+      "schema:rangeIncludes": "schema:ItemList"
+    },
+    {
+      "@id": "beckn:settlementCycleId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Settlement cycle ID",
+      "rdfs:comment": "Associated settlement cycle identifier linking delivery to settlement for billing.",
+      "rdfs:domain": "beckn:EnergyTradeDelivery",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:DeliveryStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Delivery Status",
+      "rdfs:comment": "Enumeration of delivery statuses for energy trade fulfillment.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:DeliveryStatusPending" },
+        { "@id": "beckn:DeliveryStatusInProgress" },
+        { "@id": "beckn:DeliveryStatusCompleted" },
+        { "@id": "beckn:DeliveryStatusFailed" }
+      ]
+    },
+    {
+      "@id": "beckn:DeliveryStatusPending",
+      "@type": ["beckn:DeliveryStatus", "schema:Enumeration"],
+      "schema:name": "PENDING",
+      "schema:identifier": "PENDING"
+    },
+    {
+      "@id": "beckn:DeliveryStatusInProgress",
+      "@type": ["beckn:DeliveryStatus", "schema:Enumeration"],
+      "schema:name": "IN_PROGRESS",
+      "schema:identifier": "IN_PROGRESS",
+      "schema:alternateName": "IN-PROGRESS"
+    },
+    {
+      "@id": "beckn:DeliveryStatusCompleted",
+      "@type": ["beckn:DeliveryStatus", "schema:Enumeration"],
+      "schema:name": "COMPLETED",
+      "schema:identifier": "COMPLETED"
+    },
+    {
+      "@id": "beckn:DeliveryStatusFailed",
+      "@type": ["beckn:DeliveryStatus", "schema:Enumeration"],
+      "schema:name": "FAILED",
+      "schema:identifier": "FAILED"
+    },
+    {
+      "@id": "beckn:TelemetryMetric",
+      "@type": "schema:Enumeration",
+      "schema:name": "Telemetry Metric",
+      "rdfs:comment": "Enumeration of telemetry metric names used in energy trade delivery telemetry.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:TelemetryMetricEnergy" },
+        { "@id": "beckn:TelemetryMetricPower" },
+        { "@id": "beckn:TelemetryMetricFlowRate" },
+        { "@id": "beckn:TelemetryMetricVoltage" },
+        { "@id": "beckn:TelemetryMetricCurrent" },
+        { "@id": "beckn:TelemetryMetricFrequency" },
+        { "@id": "beckn:TelemetryMetricPowerQuality" }
+      ]
+    },
+    {
+      "@id": "beckn:TelemetryMetricEnergy",
+      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
+      "schema:name": "ENERGY",
+      "schema:identifier": "ENERGY"
+    },
+    {
+      "@id": "beckn:TelemetryMetricPower",
+      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
+      "schema:name": "POWER",
+      "schema:identifier": "POWER"
+    },
+    {
+      "@id": "beckn:TelemetryMetricFlowRate",
+      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
+      "schema:name": "FLOW_RATE",
+      "schema:identifier": "FLOW_RATE",
+      "schema:alternateName": "FLOW-RATE"
+    },
+    {
+      "@id": "beckn:TelemetryMetricVoltage",
+      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
+      "schema:name": "VOLTAGE",
+      "schema:identifier": "VOLTAGE"
+    },
+    {
+      "@id": "beckn:TelemetryMetricCurrent",
+      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
+      "schema:name": "CURRENT",
+      "schema:identifier": "CURRENT"
+    },
+    {
+      "@id": "beckn:TelemetryMetricFrequency",
+      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
+      "schema:name": "FREQUENCY",
+      "schema:identifier": "FREQUENCY"
+    },
+    {
+      "@id": "beckn:TelemetryMetricPowerQuality",
+      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
+      "schema:name": "POWER_QUALITY",
+      "schema:identifier": "POWER_QUALITY",
+      "schema:alternateName": "POWER-QUALITY"
+    }
+  ]
+}
+

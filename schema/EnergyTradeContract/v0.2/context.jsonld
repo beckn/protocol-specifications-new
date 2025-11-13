@@ -1,0 +1,65 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "beckn": "./vocab.jsonld#",
+    
+    "EnergyTradeContract": "beckn:EnergyTradeContract",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "price": "schema:price",
+    "priceCurrency": "schema:priceCurrency",
+    "startTime": "schema:startTime",
+    "endTime": "schema:endTime",
+    "orderStatus": "schema:orderStatus",
+    "lastUpdated": "schema:dateModified",
+    "amount": "schema:amount",
+    "currency": "schema:currency",
+
+    "contractStatus": {
+      "@id": "beckn:contractStatus",
+      "@type": "@id"
+    },
+    "sourceMeterId": "beckn:sourceMeterId",
+    "targetMeterId": "beckn:targetMeterId",
+    "inverterId": "beckn:inverterId",
+    "contractedQuantity": "beckn:contractedQuantity",
+    "sourceType": {
+      "@id": "beckn:sourceType",
+      "@type": "@id"
+    },
+    "certification": "beckn:certification",
+    "settlementCycles": "beckn:settlementCycles",
+    "billingCycles": "beckn:billingCycles",
+    "wheelingCharges": "beckn:wheelingCharges",
+    "cycleId": "beckn:cycleId",
+    "lineItems": "beckn:lineItems",
+    "status": "beckn:status",
+    "certificates": "beckn:certificates",
+    "totalAmount": "schema:amount",
+
+    "PENDING": "beckn:ContractStatusPending",
+    "ACTIVE": "beckn:ContractStatusActive",
+    "COMPLETED": "beckn:ContractStatusCompleted",
+    "TERMINATED": "beckn:ContractStatusTerminated",
+
+    "SETTLED": "beckn:SettlementCycleStatusSettled",
+    "FAILED": "beckn:SettlementCycleStatusFailed",
+
+    "PAID": "beckn:BillingCycleStatusPaid",
+    "OVERDUE": "beckn:BillingCycleStatusOverdue",
+
+    "SOLAR": "beckn:SourceTypeSolar",
+    "BATTERY": "beckn:SourceTypeBattery",
+    "GRID": "beckn:SourceTypeGrid",
+    "HYBRID": "beckn:SourceTypeHybrid",
+    "RENEWABLE": "beckn:SourceTypeRenewable"
+  },
+
+  "@graph": []
+}
+

@@ -310,69 +310,89 @@
         "beckn:Item",
         "beckn:Payment"
       ],
-      "schema:rangeIncludes": "schema:Text",
-      "schema:definedTermIncludes": [
-        "beckn:UPI",
-        "beckn:CREDIT_CARD",
-        "beckn:DEBIT_CARD",
-        "beckn:WALLET",
-        "beckn:BANK_TRANSFER",
-        "beckn:CASH",
-        "beckn:APPLE_PAY"
+      "schema:rangeIncludes": "beckn:AcceptedPaymentMethod"
+    },
+    {
+      "@id": "beckn:AcceptedPaymentMethod",
+      "@type": "schema:Enumeration",
+      "schema:name": "Accepted Payment Method",
+      "rdfs:comment": "Enumeration of payment methods supported across core entities.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:UPI" },
+        { "@id": "beckn:CREDIT_CARD" },
+        { "@id": "beckn:DEBIT_CARD" },
+        { "@id": "beckn:WALLET" },
+        { "@id": "beckn:BANK_TRANSFER" },
+        { "@id": "beckn:CASH" },
+        { "@id": "beckn:APPLE_PAY" }
       ]
     },
     {
       "@id": "beckn:UPI",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
       "schema:name": "UPI",
-      "schema:termCode": "UPI",
-      "schema:inDefinedTermSet": "beckn:acceptedPaymentMethod"
+      "schema:identifier": "UPI"
     },
     {
       "@id": "beckn:CREDIT_CARD",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
       "schema:name": "CREDIT_CARD",
-      "schema:termCode": "CREDIT_CARD",
-      "schema:alternateName": "CREDIT-CARD",
-      "schema:inDefinedTermSet": "beckn:acceptedPaymentMethod"
+      "schema:identifier": "CREDIT_CARD",
+      "schema:alternateName": "CREDIT-CARD"
     },
     {
       "@id": "beckn:DEBIT_CARD",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
       "schema:name": "DEBIT_CARD",
-      "schema:termCode": "DEBIT_CARD",
-      "schema:alternateName": "DEBIT-CARD",
-      "schema:inDefinedTermSet": "beckn:acceptedPaymentMethod"
+      "schema:identifier": "DEBIT_CARD",
+      "schema:alternateName": "DEBIT-CARD"
     },
     {
       "@id": "beckn:WALLET",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
       "schema:name": "WALLET",
-      "schema:termCode": "WALLET",
-      "schema:inDefinedTermSet": "beckn:acceptedPaymentMethod"
+      "schema:identifier": "WALLET"
     },
     {
       "@id": "beckn:BANK_TRANSFER",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
       "schema:name": "BANK_TRANSFER",
-      "schema:termCode": "BANK_TRANSFER",
-      "schema:alternateName": "BANK-TRANSFER",
-      "schema:inDefinedTermSet": "beckn:acceptedPaymentMethod"
+      "schema:identifier": "BANK_TRANSFER",
+      "schema:alternateName": "BANK-TRANSFER"
     },
     {
       "@id": "beckn:CASH",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
       "schema:name": "CASH",
-      "schema:termCode": "CASH",
-      "schema:inDefinedTermSet": "beckn:acceptedPaymentMethod"
+      "schema:identifier": "CASH"
     },
     {
       "@id": "beckn:APPLE_PAY",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
       "schema:name": "APPLE_PAY",
-      "schema:termCode": "APPLE_PAY",
-      "schema:alternateName": "APPLE-PAY",
-      "schema:inDefinedTermSet": "beckn:acceptedPaymentMethod"
+      "schema:identifier": "APPLE_PAY",
+      "schema:alternateName": "APPLE-PAY"
     },
     {
       "@id": "beckn:fulfillment",
@@ -510,27 +530,8 @@
       "rdfs:label": "Payment status",
       "rdfs:comment": "Lifecycle status for a payment (Pending, Authorized, Captured, Failed, Refunded, etc.).",
       "rdfs:domain": "beckn:Payment",
-      "schema:rangeIncludes": "schema:Text",
-      "owl:equivalentProperty": "schema:paymentStatus",
-      "schema:definedTermIncludes": [
-        "beckn:PaymentInitiated",
-        "beckn:PaymentPending",
-        "beckn:PaymentAuthorized",
-        "beckn:PaymentCaptured",
-        "beckn:PaymentCompleted",
-        "beckn:PaymentFailed",
-        "beckn:PaymentCancelled",
-        "beckn:PaymentRefunded",
-        "beckn:PaymentPartiallyRefunded",
-        "beckn:PaymentChargeback",
-        "beckn:PaymentDisputed",
-        "beckn:PaymentExpired",
-        "beckn:PaymentReversed",
-        "beckn:PaymentVoided",
-        "beckn:PaymentSettled",
-        "beckn:PaymentOnHold",
-        "beckn:PaymentAdjusted"
-      ]
+      "schema:rangeIncludes": "beckn:PaymentStatus",
+      "owl:equivalentProperty": "schema:paymentStatus"
     },
     {
       "@id": "beckn:trackingStatus",
@@ -538,156 +539,227 @@
       "rdfs:label": "Tracking status",
       "rdfs:comment": "Status value for a tracking handle (active, disabled, completed).",
       "rdfs:domain": "beckn:Tracking",
-      "schema:rangeIncludes": "schema:Text",
-      "owl:equivalentProperty": "schema:actionStatus",
-      "schema:definedTermIncludes": [
-        "beckn:TrackingActive",
-        "beckn:TrackingDisabled",
-        "beckn:TrackingCompleted"
+      "schema:rangeIncludes": "beckn:TrackingStatus",
+      "owl:equivalentProperty": "schema:actionStatus"
+    },
+    {
+      "@id": "beckn:TrackingStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Tracking Status",
+      "rdfs:comment": "Enumeration of tracking lifecycle statuses for fulfillment handles.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:TrackingActive" },
+        { "@id": "beckn:TrackingDisabled" },
+        { "@id": "beckn:TrackingCompleted" }
       ]
     },
     {
       "@id": "beckn:TrackingActive",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:TrackingStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "ACTIVE",
-      "schema:termCode": "ACTIVE",
-      "schema:inDefinedTermSet": "beckn:trackingStatus"
+      "schema:identifier": "ACTIVE"
     },
     {
       "@id": "beckn:TrackingDisabled",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:TrackingStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "DISABLED",
-      "schema:termCode": "DISABLED",
-      "schema:inDefinedTermSet": "beckn:trackingStatus"
+      "schema:identifier": "DISABLED"
     },
     {
       "@id": "beckn:TrackingCompleted",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:TrackingStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "COMPLETED",
-      "schema:termCode": "COMPLETED",
-      "schema:inDefinedTermSet": "beckn:trackingStatus"
+      "schema:identifier": "COMPLETED"
+    },
+    {
+      "@id": "beckn:PaymentStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Payment Status",
+      "rdfs:comment": "Enumeration of payment processing statuses used across the network.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:PaymentInitiated" },
+        { "@id": "beckn:PaymentPending" },
+        { "@id": "beckn:PaymentAuthorized" },
+        { "@id": "beckn:PaymentCaptured" },
+        { "@id": "beckn:PaymentCompleted" },
+        { "@id": "beckn:PaymentFailed" },
+        { "@id": "beckn:PaymentCancelled" },
+        { "@id": "beckn:PaymentRefunded" },
+        { "@id": "beckn:PaymentPartiallyRefunded" },
+        { "@id": "beckn:PaymentChargeback" },
+        { "@id": "beckn:PaymentDisputed" },
+        { "@id": "beckn:PaymentExpired" },
+        { "@id": "beckn:PaymentReversed" },
+        { "@id": "beckn:PaymentVoided" },
+        { "@id": "beckn:PaymentSettled" },
+        { "@id": "beckn:PaymentOnHold" },
+        { "@id": "beckn:PaymentAdjusted" }
+      ]
     },
     {
       "@id": "beckn:PaymentInitiated",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "INITIATED",
-      "schema:termCode": "INITIATED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "INITIATED"
     },
     {
       "@id": "beckn:PaymentPending",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "PENDING",
-      "schema:termCode": "PENDING",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "PENDING"
     },
     {
       "@id": "beckn:PaymentAuthorized",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "AUTHORIZED",
-      "schema:termCode": "AUTHORIZED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "AUTHORIZED"
     },
     {
       "@id": "beckn:PaymentCaptured",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "CAPTURED",
-      "schema:termCode": "CAPTURED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "CAPTURED"
     },
     {
       "@id": "beckn:PaymentCompleted",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "COMPLETED",
-      "schema:termCode": "COMPLETED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "COMPLETED"
     },
     {
       "@id": "beckn:PaymentFailed",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "FAILED",
-      "schema:termCode": "FAILED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "FAILED"
     },
     {
       "@id": "beckn:PaymentCancelled",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "CANCELLED",
-      "schema:termCode": "CANCELLED",
-      "schema:alternateName": "CANCELED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "CANCELLED",
+      "schema:alternateName": "CANCELED"
     },
     {
       "@id": "beckn:PaymentRefunded",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "REFUNDED",
-      "schema:termCode": "REFUNDED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "REFUNDED"
     },
     {
       "@id": "beckn:PaymentPartiallyRefunded",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "PARTIALLY_REFUNDED",
-      "schema:termCode": "PARTIALLY_REFUNDED",
-      "schema:alternateName": "PARTIALLY-REFUNDED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "PARTIALLY_REFUNDED",
+      "schema:alternateName": "PARTIALLY-REFUNDED"
     },
     {
       "@id": "beckn:PaymentChargeback",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "CHARGEBACK",
-      "schema:termCode": "CHARGEBACK",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "CHARGEBACK"
     },
     {
       "@id": "beckn:PaymentDisputed",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "DISPUTED",
-      "schema:termCode": "DISPUTED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "DISPUTED"
     },
     {
       "@id": "beckn:PaymentExpired",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "EXPIRED",
-      "schema:termCode": "EXPIRED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "EXPIRED"
     },
     {
       "@id": "beckn:PaymentReversed",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "REVERSED",
-      "schema:termCode": "REVERSED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "REVERSED"
     },
     {
       "@id": "beckn:PaymentVoided",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "VOIDED",
-      "schema:termCode": "VOIDED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "VOIDED"
     },
     {
       "@id": "beckn:PaymentSettled",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "SETTLED",
-      "schema:termCode": "SETTLED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "SETTLED"
     },
     {
       "@id": "beckn:PaymentOnHold",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "ON_HOLD",
-      "schema:termCode": "ON_HOLD",
-      "schema:alternateName": "ON-HOLD",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "ON_HOLD",
+      "schema:alternateName": "ON-HOLD"
     },
     {
       "@id": "beckn:PaymentAdjusted",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "ADJUSTED",
-      "schema:termCode": "ADJUSTED",
-      "schema:inDefinedTermSet": "beckn:paymentStatus"
+      "schema:identifier": "ADJUSTED"
     },
     {
       "@id": "beckn:currency",
@@ -839,89 +911,133 @@
       "schema:rangeIncludes": "schema:PriceSpecification"
     },
     {
+      "@id": "beckn:OrderStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Order Status",
+      "rdfs:comment": "Enumeration of order lifecycle statuses.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:OrderCreated" },
+        { "@id": "beckn:OrderPending" },
+        { "@id": "beckn:OrderConfirmed" },
+        { "@id": "beckn:OrderInProgress" },
+        { "@id": "beckn:OrderPartiallyFulfilled" },
+        { "@id": "beckn:OrderCompleted" },
+        { "@id": "beckn:OrderCancelled" },
+        { "@id": "beckn:OrderRejected" },
+        { "@id": "beckn:OrderFailed" },
+        { "@id": "beckn:OrderReturned" },
+        { "@id": "beckn:OrderRefunded" },
+        { "@id": "beckn:OrderOnHold" }
+      ]
+    },
+    {
       "@id": "beckn:OrderCreated",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "CREATED",
-      "schema:termCode": "CREATED",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "CREATED"
     },
     {
       "@id": "beckn:OrderPending",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "PENDING",
-      "schema:termCode": "PENDING",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "PENDING"
     },
     {
       "@id": "beckn:OrderConfirmed",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "CONFIRMED",
-      "schema:termCode": "CONFIRMED",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "CONFIRMED"
     },
     {
       "@id": "beckn:OrderInProgress",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "INPROGRESS",
-      "schema:termCode": "INPROGRESS",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "INPROGRESS"
     },
     {
       "@id": "beckn:OrderPartiallyFulfilled",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "PARTIALLYFULFILLED",
-      "schema:termCode": "PARTIALLYFULFILLED",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "PARTIALLYFULFILLED"
     },
     {
       "@id": "beckn:OrderCompleted",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "COMPLETED",
-      "schema:termCode": "COMPLETED",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "COMPLETED"
     },
     {
       "@id": "beckn:OrderCancelled",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "CANCELLED",
-      "schema:termCode": "CANCELLED",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "CANCELLED"
     },
     {
       "@id": "beckn:OrderRejected",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "REJECTED",
-      "schema:termCode": "REJECTED",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "REJECTED"
     },
     {
       "@id": "beckn:OrderFailed",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "FAILED",
-      "schema:termCode": "FAILED",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "FAILED"
     },
     {
       "@id": "beckn:OrderReturned",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "RETURNED",
-      "schema:termCode": "RETURNED",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "RETURNED"
     },
     {
       "@id": "beckn:OrderRefunded",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "REFUNDED",
-      "schema:termCode": "REFUNDED",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "REFUNDED"
     },
     {
       "@id": "beckn:OrderOnHold",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "ONHOLD",
-      "schema:termCode": "ONHOLD",
-      "schema:alternateName": "ON-HOLD",
-      "schema:inDefinedTermSet": "beckn:orderStatus"
+      "schema:identifier": "ONHOLD",
+      "schema:alternateName": "ON-HOLD"
     },
     {
       "@id": "beckn:buyer",
@@ -937,21 +1053,7 @@
       "rdfs:label": "Order status",
       "rdfs:comment": "Order status/state.",
       "rdfs:domain": "beckn:Order",
-      "schema:rangeIncludes": "schema:Text",
-      "schema:definedTermIncludes": [
-        "beckn:OrderCreated",
-        "beckn:OrderPending",
-        "beckn:OrderConfirmed",
-        "beckn:OrderInProgress",
-        "beckn:OrderPartiallyFulfilled",
-        "beckn:OrderCompleted",
-        "beckn:OrderCancelled",
-        "beckn:OrderRejected",
-        "beckn:OrderFailed",
-        "beckn:OrderReturned",
-        "beckn:OrderRefunded",
-        "beckn:OrderOnHold"
-      ]
+      "schema:rangeIncludes": "beckn:OrderStatus"
     },
     {
       "@id": "beckn:orderNumber",
@@ -1342,11 +1444,7 @@
       "rdfs:label": "Beneficiary",
       "rdfs:comment": "Beneficiary/recipient of the payment.",
       "rdfs:domain": "beckn:Payment",
-      "schema:rangeIncludes": "schema:Text",
-      "schema:definedTermIncludes": [
-        "beckn:BPP",
-        "beckn:BAP"
-      ]
+      "schema:rangeIncludes": "beckn:Beneficiary"
     },
     {
       "@id": "beckn:paymentAttributes",
@@ -1357,18 +1455,32 @@
       "schema:rangeIncludes": "beckn:Attributes"
     },
     {
+      "@id": "beckn:Beneficiary",
+      "@type": "schema:Enumeration",
+      "schema:name": "Beneficiary",
+      "rdfs:comment": "Enumeration of parties who can receive a payment in the Beckn network.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:BPP" },
+        { "@id": "beckn:BAP" }
+      ]
+    },
+    {
       "@id": "beckn:BPP",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:Beneficiary",
+        "schema:Enumeration"
+      ],
       "schema:name": "BPP",
-      "schema:termCode": "BPP",
-      "schema:inDefinedTermSet": "beckn:beneficiary"
+      "schema:identifier": "BPP"
     },
     {
       "@id": "beckn:BAP",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:Beneficiary",
+        "schema:Enumeration"
+      ],
       "schema:name": "BAP",
-      "schema:termCode": "BAP",
-      "schema:inDefinedTermSet": "beckn:beneficiary"
+      "schema:identifier": "BAP"
     },
     {
       "@id": "beckn:role",
@@ -1434,16 +1546,7 @@
       "rdfs:domain": "beckn:SupportInfo",
       "schema:rangeIncludes": [
         "schema:ItemList",
-        "schema:Text"
-      ],
-      "schema:definedTermIncludes": [
-        "beckn:SupportChannelPhone",
-        "beckn:SupportChannelEmail",
-        "beckn:SupportChannelWeb",
-        "beckn:SupportChannelChat",
-        "beckn:SupportChannelWhatsApp",
-        "beckn:SupportChannelInApp",
-        "beckn:SupportChannelOther"
+        "beckn:SupportChannel"
       ]
     },
     {
@@ -1463,55 +1566,84 @@
       "schema:rangeIncludes": "schema:DateTime"
     },
     {
+      "@id": "beckn:SupportChannel",
+      "@type": "schema:Enumeration",
+      "schema:name": "Support Channel",
+      "rdfs:comment": "Enumeration of supported customer service channels.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:SupportChannelPhone" },
+        { "@id": "beckn:SupportChannelEmail" },
+        { "@id": "beckn:SupportChannelWeb" },
+        { "@id": "beckn:SupportChannelChat" },
+        { "@id": "beckn:SupportChannelWhatsApp" },
+        { "@id": "beckn:SupportChannelInApp" },
+        { "@id": "beckn:SupportChannelOther" }
+      ]
+    },
+    {
       "@id": "beckn:SupportChannelPhone",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
       "schema:name": "PHONE",
-      "schema:termCode": "PHONE",
-      "schema:inDefinedTermSet": "beckn:channels"
+      "schema:identifier": "PHONE"
     },
     {
       "@id": "beckn:SupportChannelEmail",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
       "schema:name": "EMAIL",
-      "schema:termCode": "EMAIL",
-      "schema:inDefinedTermSet": "beckn:channels"
+      "schema:identifier": "EMAIL"
     },
     {
       "@id": "beckn:SupportChannelWeb",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
       "schema:name": "WEB",
-      "schema:termCode": "WEB",
-      "schema:inDefinedTermSet": "beckn:channels"
+      "schema:identifier": "WEB"
     },
     {
       "@id": "beckn:SupportChannelChat",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
       "schema:name": "CHAT",
-      "schema:termCode": "CHAT",
-      "schema:inDefinedTermSet": "beckn:channels"
+      "schema:identifier": "CHAT"
     },
     {
       "@id": "beckn:SupportChannelWhatsApp",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
       "schema:name": "WHATSAPP",
-      "schema:termCode": "WHATSAPP",
-      "schema:alternateName": "WHATS_APP",
-      "schema:inDefinedTermSet": "beckn:channels"
+      "schema:identifier": "WHATSAPP",
+      "schema:alternateName": "WHATS_APP"
     },
     {
       "@id": "beckn:SupportChannelInApp",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
       "schema:name": "IN_APP",
-      "schema:termCode": "IN_APP",
-      "schema:alternateName": "IN-APP",
-      "schema:inDefinedTermSet": "beckn:channels"
+      "schema:identifier": "IN_APP",
+      "schema:alternateName": "IN-APP"
     },
     {
       "@id": "beckn:SupportChannelOther",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
       "schema:name": "OTHER",
-      "schema:termCode": "OTHER",
-      "schema:inDefinedTermSet": "beckn:channels"
+      "schema:identifier": "OTHER"
     },
     {
       "@id": "beckn:shortDesc",

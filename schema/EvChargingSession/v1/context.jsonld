@@ -18,10 +18,19 @@
     "orderStatus": "schema:orderStatus",
     "lastUpdated": "schema:dateModified",
 
-    "sessionStatus": "beckn:sessionStatus",
-    "authorizationMode": "beckn:authorizationMode",
+    "sessionStatus": {
+      "@id": "beckn:sessionStatus",
+      "@type": "@id"
+    },
+    "authorizationMode": {
+      "@id": "beckn:authorizationMode",
+      "@type": "@id"
+    },
     "authorizationOtpHint": "beckn:authorizationOtpHint",
-    "connectorType": "beckn:connectorType",
+    "connectorType": {
+      "@id": "beckn:connectorType",
+      "@type": "@id"
+    },
     "maxPowerKW": "beckn:maxPowerKW",
     "meteredEnergyKWh": "beckn:meteredEnergyKWh",
     "meteredDurationMinutes": "beckn:meteredDurationMinutes",
@@ -37,25 +46,29 @@
     "trackingUrl": "beckn:trackingUrl",
     "trackingStatus": "beckn:trackingStatus",
 
-    "SessionStatusPending": "beckn:SessionStatusPending",
-    "SessionStatusActive": "beckn:SessionStatusActive",
-    "SessionStatusCompleted": "beckn:SessionStatusCompleted",
-    "SessionStatusInterrupted": "beckn:SessionStatusInterrupted",
+    "PENDING": "beckn:SessionStatusPending",
+    "ACTIVE": "beckn:SessionStatusActive",
+    "COMPLETED": "beckn:SessionStatusCompleted",
+    "INTERRUPTED": "beckn:SessionStatusInterrupted",
 
-    "AuthorizationModeAppQr": "beckn:AuthorizationModeAppQr",
-    "AuthorizationModeRfid": "beckn:AuthorizationModeRfid",
-    "AuthorizationModeOtp": "beckn:AuthorizationModeOtp",
+    "APP_QR": "beckn:AuthorizationModeAppQr",
+    "APP-QR": "beckn:AuthorizationModeAppQr",
+    "RFID": "beckn:AuthorizationModeRfid",
+    "OTP": "beckn:AuthorizationModeOtp",
 
-    "ConnectorTypeCCS2": "beckn:ConnectorTypeCCS2",
-    "ConnectorTypeType2": "beckn:ConnectorTypeType2",
-    "ConnectorTypeCHAdeMO": "beckn:ConnectorTypeCHAdeMO",
-    "ConnectorTypeGBT": "beckn:ConnectorTypeGBT",
+    "CCS2": "beckn:ConnectorTypeCCS2",
+    "Type2": "beckn:ConnectorTypeType2",
+    "CHAdeMO": "beckn:ConnectorTypeCHAdeMO",
+    "GB_T": "beckn:ConnectorTypeGBT",
+    "GB/T": "beckn:ConnectorTypeGBT",
+    "GB-T": "beckn:ConnectorTypeGBT",
 
-    "TelemetryMetricEnergy": "beckn:TelemetryMetricEnergy",
-    "TelemetryMetricPower": "beckn:TelemetryMetricPower",
-    "TelemetryMetricCurrent": "beckn:TelemetryMetricCurrent",
-    "TelemetryMetricVoltage": "beckn:TelemetryMetricVoltage",
-    "TelemetryMetricStateOfCharge": "beckn:TelemetryMetricStateOfCharge"
+    "ENERGY": "beckn:TelemetryMetricEnergy",
+    "POWER": "beckn:TelemetryMetricPower",
+    "CURRENT": "beckn:TelemetryMetricCurrent",
+    "VOLTAGE": "beckn:TelemetryMetricVoltage",
+    "STATE_OF_CHARGE": "beckn:TelemetryMetricStateOfCharge",
+    "SOC": "beckn:TelemetryMetricStateOfCharge"
   },
 
   "@graph": []

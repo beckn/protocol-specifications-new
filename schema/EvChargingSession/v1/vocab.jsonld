@@ -20,14 +20,8 @@
       "rdfs:label": "Session status",
       "rdfs:comment": "High-level charging session state (PENDING, ACTIVE, COMPLETED, INTERRUPTED).",
       "rdfs:domain": "beckn:ChargingSession",
-      "schema:rangeIncludes": "schema:Text",
-      "owl:equivalentProperty": "beckn:fulfillmentStatus",
-      "schema:definedTermIncludes": [
-        "beckn:SessionStatusPending",
-        "beckn:SessionStatusActive",
-        "beckn:SessionStatusCompleted",
-        "beckn:SessionStatusInterrupted"
-      ]
+      "schema:rangeIncludes": "beckn:SessionStatus",
+      "owl:equivalentProperty": "beckn:fulfillmentStatus"
     },
     {
       "@id": "beckn:authorizationMode",
@@ -35,7 +29,7 @@
       "rdfs:label": "Authorization mode",
       "rdfs:comment": "Mode used to authorize/start the session (APP_QR, RFID, OTP).",
       "rdfs:domain": "beckn:ChargingSession",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:AuthorizationMode"
     },
     {
       "@id": "beckn:authorizationOtpHint",
@@ -51,7 +45,7 @@
       "rdfs:label": "Connector type",
       "rdfs:comment": "Physical connector type supported by the EVSE/charger (e.g., CCS2, Type2, CHAdeMO, GB/T).",
       "rdfs:domain": "beckn:ChargingSession",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:ConnectorType"
     },
     {
       "@id": "beckn:maxPowerKW",
@@ -159,119 +153,199 @@
     },
 
     {
+      "@id": "beckn:SessionStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Session Status",
+      "rdfs:comment": "Enumeration of supported charging session lifecycle states.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:SessionStatusPending" },
+        { "@id": "beckn:SessionStatusActive" },
+        { "@id": "beckn:SessionStatusCompleted" },
+        { "@id": "beckn:SessionStatusInterrupted" }
+      ]
+    },
+    {
       "@id": "beckn:SessionStatusPending",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:SessionStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "PENDING",
-      "schema:termCode": "PENDING",
-      "schema:inDefinedTermSet": "beckn:sessionStatus"
+      "schema:identifier": "PENDING"
     },
     {
       "@id": "beckn:SessionStatusActive",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:SessionStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "ACTIVE",
-      "schema:termCode": "ACTIVE",
-      "schema:inDefinedTermSet": "beckn:sessionStatus"
+      "schema:identifier": "ACTIVE"
     },
     {
       "@id": "beckn:SessionStatusCompleted",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:SessionStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "COMPLETED",
-      "schema:termCode": "COMPLETED",
-      "schema:inDefinedTermSet": "beckn:sessionStatus"
+      "schema:identifier": "COMPLETED"
     },
     {
       "@id": "beckn:SessionStatusInterrupted",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:SessionStatus",
+        "schema:Enumeration"
+      ],
       "schema:name": "INTERRUPTED",
-      "schema:termCode": "INTERRUPTED",
-      "schema:inDefinedTermSet": "beckn:sessionStatus"
+      "schema:identifier": "INTERRUPTED"
+    },
+    {
+      "@id": "beckn:AuthorizationMode",
+      "@type": "schema:Enumeration",
+      "schema:name": "Authorization Mode",
+      "rdfs:comment": "Enumeration of user authorization modes for initiating a charging session.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:AuthorizationModeAppQr" },
+        { "@id": "beckn:AuthorizationModeRfid" },
+        { "@id": "beckn:AuthorizationModeOtp" }
+      ]
     },
     {
       "@id": "beckn:AuthorizationModeAppQr",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:AuthorizationMode",
+        "schema:Enumeration"
+      ],
       "schema:name": "APP_QR",
-      "schema:termCode": "APP_QR",
-      "schema:alternateName": "APP-QR",
-      "schema:inDefinedTermSet": "beckn:authorizationMode"
+      "schema:identifier": "APP_QR",
+      "schema:alternateName": "APP-QR"
     },
     {
       "@id": "beckn:AuthorizationModeRfid",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:AuthorizationMode",
+        "schema:Enumeration"
+      ],
       "schema:name": "RFID",
-      "schema:termCode": "RFID",
-      "schema:inDefinedTermSet": "beckn:authorizationMode"
+      "schema:identifier": "RFID"
     },
     {
       "@id": "beckn:AuthorizationModeOtp",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:AuthorizationMode",
+        "schema:Enumeration"
+      ],
       "schema:name": "OTP",
-      "schema:termCode": "OTP",
-      "schema:inDefinedTermSet": "beckn:authorizationMode"
+      "schema:identifier": "OTP"
+    },
+    {
+      "@id": "beckn:ConnectorType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Connector Type",
+      "rdfs:comment": "Enumeration of electric vehicle connector interface types.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ConnectorTypeCCS2" },
+        { "@id": "beckn:ConnectorTypeType2" },
+        { "@id": "beckn:ConnectorTypeCHAdeMO" },
+        { "@id": "beckn:ConnectorTypeGBT" }
+      ]
     },
     {
       "@id": "beckn:ConnectorTypeCCS2",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:ConnectorType",
+        "schema:Enumeration"
+      ],
       "schema:name": "CCS2",
-      "schema:termCode": "CCS2",
-      "schema:inDefinedTermSet": "beckn:connectorType"
+      "schema:identifier": "CCS2"
     },
     {
       "@id": "beckn:ConnectorTypeType2",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:ConnectorType",
+        "schema:Enumeration"
+      ],
       "schema:name": "Type2",
-      "schema:termCode": "Type2",
-      "schema:inDefinedTermSet": "beckn:connectorType"
+      "schema:identifier": "Type2"
     },
     {
       "@id": "beckn:ConnectorTypeCHAdeMO",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:ConnectorType",
+        "schema:Enumeration"
+      ],
       "schema:name": "CHAdeMO",
-      "schema:termCode": "CHAdeMO",
-      "schema:inDefinedTermSet": "beckn:connectorType"
+      "schema:identifier": "CHAdeMO"
     },
     {
       "@id": "beckn:ConnectorTypeGBT",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:ConnectorType",
+        "schema:Enumeration"
+      ],
       "schema:name": "GB/T",
-      "schema:termCode": "GB_T",
-      "schema:alternateName": "GB-T",
-      "schema:inDefinedTermSet": "beckn:connectorType"
+      "schema:identifier": "GB_T",
+      "schema:alternateName": "GB-T"
+    },
+    {
+      "@id": "beckn:TelemetryMetric",
+      "@type": "schema:Enumeration",
+      "schema:name": "Telemetry Metric",
+      "rdfs:comment": "Enumeration of telemetry metric names used in session telemetry.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:TelemetryMetricEnergy" },
+        { "@id": "beckn:TelemetryMetricPower" },
+        { "@id": "beckn:TelemetryMetricCurrent" },
+        { "@id": "beckn:TelemetryMetricVoltage" },
+        { "@id": "beckn:TelemetryMetricStateOfCharge" }
+      ]
     },
     {
       "@id": "beckn:TelemetryMetricEnergy",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:TelemetryMetric",
+        "schema:Enumeration"
+      ],
       "schema:name": "ENERGY",
-      "schema:termCode": "ENERGY",
-      "schema:inDefinedTermSet": "beckn:metrics"
+      "schema:identifier": "ENERGY"
     },
     {
       "@id": "beckn:TelemetryMetricPower",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:TelemetryMetric",
+        "schema:Enumeration"
+      ],
       "schema:name": "POWER",
-      "schema:termCode": "POWER",
-      "schema:inDefinedTermSet": "beckn:metrics"
+      "schema:identifier": "POWER"
     },
     {
       "@id": "beckn:TelemetryMetricCurrent",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:TelemetryMetric",
+        "schema:Enumeration"
+      ],
       "schema:name": "CURRENT",
-      "schema:termCode": "CURRENT",
-      "schema:inDefinedTermSet": "beckn:metrics"
+      "schema:identifier": "CURRENT"
     },
     {
       "@id": "beckn:TelemetryMetricVoltage",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:TelemetryMetric",
+        "schema:Enumeration"
+      ],
       "schema:name": "VOLTAGE",
-      "schema:termCode": "VOLTAGE",
-      "schema:inDefinedTermSet": "beckn:metrics"
+      "schema:identifier": "VOLTAGE"
     },
     {
       "@id": "beckn:TelemetryMetricStateOfCharge",
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "beckn:TelemetryMetric",
+        "schema:Enumeration"
+      ],
       "schema:name": "STATE_OF_CHARGE",
-      "schema:termCode": "STATE_OF_CHARGE",
-      "schema:alternateName": "SOC",
-      "schema:inDefinedTermSet": "beckn:metrics"
+      "schema:identifier": "STATE_OF_CHARGE",
+      "schema:alternateName": "SOC"
     }
   ]
 }

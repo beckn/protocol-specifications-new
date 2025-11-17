@@ -233,6 +233,37 @@ components:
         "beckn:providerAttributes":
           $ref: '#/components/schemas/Attributes'
 
+    Quantity:
+      type: object
+      additionalProperties: false
+      properties:
+        unitText:
+          type: string
+          description: Unit for the quoted price (e.g., kWh, minute, hour, month)
+          example: "kWh"
+          x-jsonld: { "@id": "schema:unitText" }
+        unitCode:
+          type: string
+          description: Unit code for the quoted price (e.g., KWH, MIN, H, MON)
+          example: "KWH"
+          x-jsonld: { "@id": "schema:unitCode" }
+        unitQuantity:
+          type: number
+          description: Quantity of the unit
+          example: 1
+          x-jsonld: { "@id": "schema:Number" }
+        minQuantity:
+          type: number
+          description: Minimum quantity for this price
+          example: 1
+          x-jsonld: { "@id": "schema:Number" }
+        maxQuantity:
+          type: number
+          description: Maximum quantity for this price
+          example: 100
+          x-jsonld: { "@id": "schema:Number" }
+      x-jsonld: { "@id": "schema:QuantitativeValue" }
+
     PriceSpecification:
       type: object
       additionalProperties: true
@@ -240,34 +271,8 @@ components:
         currency: { type: string, description: ISO 4217 code }
         value:    { type: number, description: Total value for this price specification }
         applicableQuantity:
-          type: object
-          properties:
-            unitText:
-              type: string
-              description: Unit for the quoted price (e.g., kWh, minute, hour, month)
-              example: "kWh"
-              x-jsonld: { "@id": "schema:unitText" }
-            unitCode:
-              type: string
-              description: Unit code for the quoted price (e.g., KWH, MIN, H, MON)
-              example: "KWH"
-              x-jsonld: { "@id": "schema:unitCode" }
-            unitQuantity:
-              type: number
-              description: Quantity of the unit
-              example: 1
-              x-jsonld: { "@id": "schema:Number" }
-            minQuantity:
-              type: number
-              description: Minimum quantity for this price
-              example: 1
-              x-jsonld: { "@id": "schema:Number" }
-            maxQuantity:
-              type: number
-              description: Maximum quantity for this price
-              example: 100
-              x-jsonld: { "@id": "schema:Number" }
-        x-jsonld: { "@id": "schema:eligibleQuantity" }
+          $ref: '#/components/schemas/Quantity'
+          x-jsonld: { "@id": "schema:eligibleQuantity" }
         components:
           type: array
           description: Optional components (tax, shipping, discount, fee, surcharge)
@@ -678,8 +683,8 @@ components:
           description: Offer applied to this line (if different from order-level)
           x-jsonld: { "@id": "schema:acceptedOffer" }
         beckn:quantity:
-          type: number
-          x-jsonld: { "@id": "schema:orderQuantity" }
+          $ref: "#/components/schemas/Quantity"
+          x-jsonld: { "@id": "beckn:quantity" }
         beckn:price:
           $ref: "#/components/schemas/PriceSpecification"
           description: Line price composition (unit/tax/delivery/discount)
@@ -1023,14 +1028,14 @@ components:
         id:
           type: string
           description: Target entity ID being rated (order/item/fulfillment/provider/agent).
-        value:
+        ratingValue:
           type: number
           description: Numeric rating value (legacy usually 1–5).  # remains permissive
           minimum: 0
-        best:
+        bestRating:
           type: number
           description: Maximum of the rating scale (default 5 if omitted).
-        worst:
+        worstRating:
           type: number
           description: Minimum of the rating scale (default 1 or 0 if omitted).
         category:

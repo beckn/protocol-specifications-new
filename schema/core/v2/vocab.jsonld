@@ -63,6 +63,13 @@
       "rdfs:comment": "Structured price snapshot including currency, value and optional components."
     },
     {
+      "@id": "beckn:Quantity",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Quantity",
+      "rdfs:comment": "A quantitative value specifying units, codes, and quantity constraints.",
+      "schema:rangeIncludes": "schema:QuantitativeValue"
+    },
+    {
       "@id": "beckn:Buyer",
       "@type": "rdfs:Class",
       "rdfs:label": "Buyer",
@@ -271,7 +278,7 @@
       "rdfs:comment": "Numeric value captured in the price specification.",
       "rdfs:domain": [
         "beckn:PriceSpecification",
-        "schema:QuantitativeValue"
+        "beckn:Quantity"
       ],
       "schema:rangeIncludes": "schema:Number",
       "owl:equivalentProperty": "schema:price"
@@ -282,7 +289,7 @@
       "rdfs:label": "Minimum quantity",
       "rdfs:comment": "Minimum quantity threshold for which the price applies.",
       "rdfs:domain": [
-        "schema:QuantitativeValue",
+        "beckn:Quantity",
         "beckn:PriceSpecification"
       ],
       "schema:rangeIncludes": "schema:Number",
@@ -294,7 +301,7 @@
       "rdfs:label": "Maximum quantity",
       "rdfs:comment": "Maximum quantity threshold for which the price applies.",
       "rdfs:domain": [
-        "schema:QuantitativeValue",
+        "beckn:Quantity",
         "beckn:PriceSpecification"
       ],
       "schema:rangeIncludes": "schema:Number",
@@ -776,7 +783,7 @@
       "rdfs:label": "Applicable quantity",
       "rdfs:comment": "Quantity context for which the quoted price applies.",
       "rdfs:domain": "beckn:PriceSpecification",
-      "schema:rangeIncludes": "schema:QuantitativeValue",
+      "schema:rangeIncludes": "beckn:Quantity",
       "owl:equivalentProperty": "schema:eligibleQuantity"
     },
     {
@@ -795,7 +802,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "Unit text",
       "rdfs:comment": "Human-readable unit for a quantitative value.",
-      "rdfs:domain": "schema:QuantitativeValue",
+      "rdfs:domain": "beckn:Quantity",
       "schema:rangeIncludes": "schema:Text",
       "owl:equivalentProperty": "schema:unitText"
     },
@@ -804,7 +811,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "Unit code",
       "rdfs:comment": "Code (UN/CEFACT, ISO) representing the measurement unit.",
-      "rdfs:domain": "schema:QuantitativeValue",
+      "rdfs:domain": "beckn:Quantity",
       "schema:rangeIncludes": "schema:Text",
       "owl:equivalentProperty": "schema:unitCode"
     },
@@ -813,7 +820,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "Unit quantity",
       "rdfs:comment": "Quantity of the referenced measurement unit.",
-      "rdfs:domain": "schema:QuantitativeValue",
+      "rdfs:domain": "beckn:Quantity",
       "schema:rangeIncludes": "schema:Number",
       "owl:equivalentProperty": "schema:value"
     },
@@ -847,7 +854,7 @@
       "rdfs:label": "Eligible quantity",
       "rdfs:comment": "Quantity constraints (min/max) for which the offer is eligible.",
       "rdfs:domain": "beckn:Offer",
-      "schema:rangeIncludes": "schema:QuantitativeValue"
+      "schema:rangeIncludes": "beckn:Quantity"
     },
     {
       "@id": "beckn:addOns",
@@ -1332,7 +1339,7 @@
       "rdfs:label": "Quantity",
       "rdfs:comment": "Ordered quantity for this line.",
       "rdfs:domain": "beckn:OrderItem",
-      "schema:rangeIncludes": "schema:Number"
+      "schema:rangeIncludes": "beckn:Quantity"
     },
     {
       "@id": "beckn:orderItemAttributes",

@@ -49,6 +49,13 @@ This schema composes with: `core/v2/core.yaml#Fulfillment.attributes`
 
 ## Example Usage
 
+See complete examples in:
+- **Schema Example**: `../../EnergyResource/v0.2/examples/schema/fulfillment-example.json`
+- **Transaction Flow Examples**: `../../EnergyResource/v0.2/examples/flows/` (status response)
+- **Implementation Guide**: `../../../docs/EnergyTrading_implementation_guide.md`
+
+### Quick Example
+
 ```json
 {
   "@context": "./context.jsonld",

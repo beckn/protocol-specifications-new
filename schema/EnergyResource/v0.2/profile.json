@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/profiles/energy-trade/energy_trade/v0.2/profile.json",
+  "title": "Energy Trade — P2P Energy Trading Attribute Pack (v0.2)",
+  "description": "Bundle of attribute schemas for P2P energy trading: Item (EnergyResource), Offer (EnergyTradeOffer), Order (EnergyTradeContract), and Fulfillment (EnergyTradeDelivery). Uses ./context.jsonld for JSON-LD mappings and ./vocab.jsonld for energy trade terms.",
+  "type": "object",
+  "additionalProperties": false,
+  "$comment": "JSON-LD context: ./context.jsonld ; Energy Trade vocab: ./vocab.jsonld",
+  "properties": {
+    "EnergyResource": {
+      "$ref": "./attributes.yaml#/components/schemas/EnergyResource"
+    },
+    "EnergyTradeOffer": {
+      "$ref": "../EnergyTradeOffer/v0.2/attributes.yaml#/components/schemas/EnergyTradeOffer"
+    },
+    "EnergyTradeContract": {
+      "$ref": "../EnergyTradeContract/v0.2/attributes.yaml#/components/schemas/EnergyTradeContract"
+    },
+    "EnergyTradeDelivery": {
+      "$ref": "../EnergyTradeDelivery/v0.2/attributes.yaml#/components/schemas/EnergyTradeDelivery"
+    }
+  },
+  "required": ["EnergyResource"],
+
+  "operational_hints": {
+    "indexHints": [
+      "beckn:id",
+      "beckn:descriptor.schema:name",
+      "beckn:descriptor.beckn:shortDesc",
+      "beckn:descriptor.beckn:longDesc",
+      "beckn:availableAt",
+      "beckn:itemAttributes.sourceType",
+      "beckn:itemAttributes.deliveryMode",
+      "beckn:itemAttributes.certificationStatus",
+      "beckn:itemAttributes.meterId",
+      "beckn:itemAttributes.inverterId",
+      "beckn:itemAttributes.availableQuantity",
+      "beckn:itemAttributes.productionWindow.start",
+      "beckn:itemAttributes.productionWindow.end",
+      "beckn:itemAttributes.sourceVerification.verified",
+      "beckn:offerAttributes.pricingModel",
+      "beckn:offerAttributes.settlementType",
+      "beckn:offerAttributes.wheelingCharges.amount",
+      "beckn:offerAttributes.wheelingCharges.currency",
+      "beckn:offerAttributes.minimumQuantity",
+      "beckn:offerAttributes.maximumQuantity",
+      "beckn:offerAttributes.validityWindow.start",
+      "beckn:offerAttributes.validityWindow.end",
+      "beckn:orderAttributes.contractStatus",
+      "beckn:orderAttributes.sourceMeterId",
+      "beckn:orderAttributes.targetMeterId",
+      "beckn:orderAttributes.contractedQuantity",
+      "beckn:orderAttributes.tradeStartTime",
+      "beckn:orderAttributes.tradeEndTime",
+      "beckn:orderAttributes.sourceType",
+      "beckn:orderAttributes.settlementCycles[].status",
+      "beckn:orderAttributes.billingCycles[].status",
+      "beckn:orderAttributes.billingCycles[].totalAmount",
+      "beckn:fulfillment.attributes.deliveryStatus",
+      "beckn:fulfillment.attributes.deliveryMode",
+      "beckn:fulfillment.attributes.deliveredQuantity",
+      "beckn:fulfillment.attributes.deliveryStartTime",
+      "beckn:fulfillment.attributes.deliveryEndTime",
+      "beckn:fulfillment.attributes.settlementCycleId"
+    ],
+
+    "piiHints": {
+      "fields": [
+        "message.order.billing.name",
+        "message.order.billing.email",
+        "message.order.billing.phone",
+        "message.order.billing.address",
+        "message.order.payments[].params.*",
+        "message.order.fulfillments[].contact.phone",
+        "message.order.fulfillments[].contact.email",
+        "beckn:orderAttributes.sourceMeterId",
+        "beckn:orderAttributes.targetMeterId",
+        "beckn:itemAttributes.meterId",
+        "beckn:fulfillment.attributes.meterReadings[].sourceReading",
+        "beckn:fulfillment.attributes.meterReadings[].targetReading"
+      ],
+      "treatment": "Do not index; redact in logs; encrypt at rest where stored. Meter IDs are sensitive identifiers and should be treated as PII.",
+      "notes": "Energy Trading PII includes billing information, payment details, meter identifiers, and meter readings. Discovery and catalog payloads generally contain no PII; PII appears post-transaction (init/confirm/status). Meter IDs are used for discovery but should be handled securely."
+    },
+
+    "api_response_config": {
+      "description": "Configuration for API response field sets - defines what fields to return for different use cases",
+      "max_items_per_page": 1000,
+      "max_offers_per_item": 5,
+      "minimal_fields": {
+        "item_attributes": [
+          "beckn:id",
+          "beckn:descriptor.schema:name",
+          "beckn:descriptor.beckn:shortDesc",
+          "beckn:availableAt",
+          "beckn:itemAttributes.sourceType",
+          "beckn:itemAttributes.deliveryMode",
+          "beckn:itemAttributes.certificationStatus",
+          "beckn:itemAttributes.availableQuantity",
+          "beckn:itemAttributes.productionWindow.start",
+          "beckn:itemAttributes.productionWindow.end"
+        ],
+        "offer_attributes": [
+          "beckn:id",
+          "beckn:price.currency",
+          "beckn:price.value",
+          "beckn:offerAttributes.pricingModel",
+          "beckn:offerAttributes.settlementType",
+          "beckn:offerAttributes.wheelingCharges.amount",
+          "beckn:offerAttributes.wheelingCharges.currency",
+          "beckn:offerAttributes.minimumQuantity",
+          "beckn:offerAttributes.maximumQuantity",
+          "beckn:offerAttributes.validityWindow.start",
+          "beckn:offerAttributes.validityWindow.end"
+        ],
+        "order_attributes": [
+          "beckn:id",
+          "beckn:orderAttributes.contractStatus",
+          "beckn:orderAttributes.contractedQuantity",
+          "beckn:orderAttributes.tradeStartTime",
+          "beckn:orderAttributes.tradeEndTime",
+          "beckn:orderAttributes.sourceType",
+          "beckn:orderAttributes.settlementCycles[].status",
+          "beckn:orderAttributes.billingCycles[].status"
+        ],
+        "fulfillment_attributes": [
+          "beckn:fulfillment.attributes.deliveryStatus",
+          "beckn:fulfillment.attributes.deliveryMode",
+          "beckn:fulfillment.attributes.deliveredQuantity",
+          "beckn:fulfillment.attributes.deliveryStartTime",
+          "beckn:fulfillment.attributes.deliveryEndTime",
+          "beckn:fulfillment.attributes.settlementCycleId"
+        ]
+      },
+      "notes": "Minimal fields are returned for list/search APIs; full attributes are included only on detail views or when explicitly requested via query parameters. Meter IDs are excluded from minimal fields for privacy."
+    },
+
+    "discover": {
+      "supported_filters": [
+        "text_search",
+        "jsonpath_filters"
+      ],
+      "default_sort": [
+        "distance.asc",
+        "beckn:offerAttributes.wheelingCharges.amount.asc",
+        "beckn:itemAttributes.availableQuantity.desc",
+        "beckn:itemAttributes.productionWindow.start.asc"
+      ],
+      "recommended_filters": [
+        "beckn:itemAttributes.sourceType",
+        "beckn:itemAttributes.deliveryMode",
+        "beckn:itemAttributes.certificationStatus",
+        "beckn:itemAttributes.availableQuantity",
+        "beckn:itemAttributes.productionWindow.start",
+        "beckn:itemAttributes.productionWindow.end",
+        "beckn:offerAttributes.pricingModel",
+        "beckn:offerAttributes.settlementType"
+      ]
+    },
+
+    "settlement": {
+      "description": "Settlement cycle configuration for energy trading",
+      "supported_settlement_types": [
+        "REAL_TIME",
+        "HOURLY",
+        "DAILY",
+        "WEEKLY",
+        "MONTHLY"
+      ],
+      "default_settlement_type": "DAILY",
+      "settlement_window_hours": 24,
+      "notes": "Settlement cycles are managed in EnergyTradeContract.settlementCycles. Each cycle tracks status (PENDING, SETTLED, FAILED) and amount."
+    },
+
+    "billing": {
+      "description": "Billing cycle configuration for energy trading",
+      "supported_billing_status": [
+        "PENDING",
+        "PAID",
+        "OVERDUE"
+      ],
+      "billing_line_items": [
+        "Energy Cost",
+        "Wheeling Charges",
+        "Taxes",
+        "Fees"
+      ],
+      "notes": "Billing cycles are managed in EnergyTradeContract.billingCycles. Each cycle includes line items for energy cost and wheeling charges."
+    }
+  }
+}
+

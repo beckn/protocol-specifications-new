@@ -51,8 +51,9 @@ components:
           x-jsonld: { "@id": "schema:startTime" }
 
         deliveryEndTime:
-          type: string
+          type: [string, "null"]
           format: date-time
+          nullable: true
           description: Delivery end timestamp (ISO 8601). Null if delivery is in progress.
           example: "2024-10-04T18:00:00Z"
           x-jsonld: { "@id": "schema:endTime" }

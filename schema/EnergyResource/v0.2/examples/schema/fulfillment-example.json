@@ -1,0 +1,64 @@
+{
+  "@context": "../EnergyTradeDelivery/v0.2/context.jsonld",
+  "@type": "EnergyTradeDelivery",
+  "deliveryStatus": "IN_PROGRESS",
+  "deliveryMode": "GRID_INJECTION",
+  "deliveredQuantity": 9.8,
+  "deliveryStartTime": "2024-10-04T10:00:00Z",
+  "deliveryEndTime": null,
+  "meterReadings": [
+    {
+      "timestamp": "2024-10-04T10:00:00Z",
+      "sourceReading": 1000.0,
+      "targetReading": 990.0,
+      "energyFlow": 10.0
+    },
+    {
+      "timestamp": "2024-10-04T12:00:00Z",
+      "sourceReading": 1000.5,
+      "targetReading": 990.3,
+      "energyFlow": 10.2
+    },
+    {
+      "timestamp": "2024-10-04T14:00:00Z",
+      "sourceReading": 1001.0,
+      "targetReading": 990.8,
+      "energyFlow": 10.2
+    }
+  ],
+  "telemetry": [
+    {
+      "eventTime": "2024-10-04T12:00:00Z",
+      "metrics": [
+        {
+          "name": "ENERGY",
+          "value": 5.8,
+          "unitCode": "KWH"
+        },
+        {
+          "name": "POWER",
+          "value": 2.5,
+          "unitCode": "KW"
+        },
+        {
+          "name": "VOLTAGE",
+          "value": 240.0,
+          "unitCode": "VLT"
+        },
+        {
+          "name": "CURRENT",
+          "value": 10.4,
+          "unitCode": "AMP"
+        },
+        {
+          "name": "FREQUENCY",
+          "value": 60.0,
+          "unitCode": "HZ"
+        }
+      ]
+    }
+  ],
+  "settlementCycleId": "settle-2024-10-04-001",
+  "lastUpdated": "2024-10-04T15:30:00Z"
+}
+

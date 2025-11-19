@@ -1,0 +1,36 @@
+{
+  "@context": "../EnergyTradeOffer/v0.2/context.jsonld",
+  "@type": "EnergyTradeOffer",
+  "pricingModel": "PER_KWH",
+  "settlementType": "DAILY",
+  "wheelingCharges": {
+    "amount": 2.5,
+    "currency": "USD",
+    "description": "PG&E Grid Services wheeling charge"
+  },
+  "minimumQuantity": 1.0,
+  "maximumQuantity": 100.0,
+  "validityWindow": {
+    "start": "2024-10-04T00:00:00Z",
+    "end": "2024-10-04T23:59:59Z"
+  },
+  "timeOfDayRates": [
+    {
+      "timeRange": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "rate": 0.15,
+      "currency": "USD"
+    },
+    {
+      "timeRange": {
+        "start": "17:00",
+        "end": "22:00"
+      },
+      "rate": 0.20,
+      "currency": "USD"
+    }
+  ]
+}
+

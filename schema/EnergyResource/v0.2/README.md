@@ -26,7 +26,7 @@ The **EnergyResource** schema composes with the core Beckn `Item` entity to repr
 | `sourceType` | enum | No | Type of energy source: SOLAR, BATTERY, GRID, HYBRID, RENEWABLE | Filter discovery by energy source type. Source verification occurs at onboarding but can change post-onboarding (e.g., switching from solar to diesel). Source type influences price but not workflow. |
 | `deliveryMode` | enum | No | Mode of energy delivery: EV_CHARGING, BATTERY_SWAP, V2G, GRID_INJECTION | Match consumer requirements with available delivery methods. Used as discovery filter to find compatible energy resources. |
 | `certificationStatus` | string | No | Carbon offset or green energy certification status (e.g., "Carbon Offset Certified", "Green Energy Certified") | Display certification information to consumers who prioritize green energy. Used for compliance and marketing purposes. |
-| `meterId` | string | No | Source meter identifier in DER address format (der://meter/{id}) | Unique identification of the energy source meter. Used for discovery and fulfillment tracking. Enables meter-based discovery where provider names are irrelevant. |
+| `meterId` | string | No | Source meter identifier using IEEE 2030.5 mRID (meter Resource ID) | Unique identification of the energy source meter. Used for discovery and fulfillment tracking. Enables meter-based discovery where provider names are irrelevant. Format: plain identifier (e.g., `"100200300"`), not `der://` format. |
 | `inverterId` | string | No | Inverter identifier serving as consistent interface between source and grid | Provides stable reference point even if energy source changes. The inverter remains constant and serves as the interface between source and grid infrastructure. |
 | `availableQuantity` | number | No | Available energy quantity in kilowatt-hours (kWh) | Indicates how much energy is currently available for trading. Used in discovery to match consumer quantity requirements. |
 | `productionWindow` | object | No | Time window when energy is produced or available for trading | Defines when energy is available. Contains start and end timestamps (ISO 8601). Used to match consumer time requirements with producer availability. |
@@ -44,6 +44,13 @@ This schema composes with: `core/v2/core.yaml#Item.itemAttributes`
 
 ## Example Usage
 
+See complete examples in:
+- **Schema Example**: `examples/schema/item-example.json`
+- **Transaction Flow Examples**: `examples/flows/` (discover, select, init, confirm, status)
+- **Implementation Guide**: `../../docs/EnergyTrading_implementation_guide.md`
+
+### Quick Example
+
 ```json
 {
   "@context": "./context.jsonld",
@@ -51,7 +58,7 @@ This schema composes with: `core/v2/core.yaml#Item.itemAttributes`
   "sourceType": "SOLAR",
   "deliveryMode": "GRID_INJECTION",
   "certificationStatus": "Carbon Offset Certified",
-  "meterId": "der://meter/100200300",
+  "meterId": "100200300",
   "inverterId": "inv-12345",
   "availableQuantity": 30.5,
   "productionWindow": {
@@ -66,4 +73,6 @@ This schema composes with: `core/v2/core.yaml#Item.itemAttributes`
   "productionAsynchronous": true
 }
 ```
+
+**Note**: Meter ID uses IEEE 2030.5 mRID format (`100200300`), not the legacy `der://meter/100200300` format.
 

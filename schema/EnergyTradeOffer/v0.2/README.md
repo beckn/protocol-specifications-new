@@ -48,6 +48,13 @@ This schema composes with: `core/v2/core.yaml#Offer.offerAttributes`
 
 ## Example Usage
 
+See complete examples in:
+- **Schema Example**: `../../EnergyResource/v0.2/examples/schema/offer-example.json`
+- **Transaction Flow Examples**: `../../EnergyResource/v0.2/examples/flows/` (discover, select, init, confirm, status)
+- **Implementation Guide**: `../../../docs/EnergyTrading_implementation_guide.md`
+
+### Quick Example
+
 ```json
 {
   "@context": "./context.jsonld",

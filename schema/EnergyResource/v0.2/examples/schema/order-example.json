@@ -1,0 +1,63 @@
+{
+  "@context": "../EnergyTradeContract/v0.2/context.jsonld",
+  "@type": "EnergyTradeContract",
+  "contractStatus": "ACTIVE",
+  "sourceMeterId": "100200300",
+  "targetMeterId": "98765456",
+  "inverterId": "inv-12345",
+  "contractedQuantity": 10.0,
+  "tradeStartTime": "2024-10-04T10:00:00Z",
+  "tradeEndTime": "2024-10-04T18:00:00Z",
+  "sourceType": "SOLAR",
+  "certification": {
+    "status": "Carbon Offset Certified",
+    "certificates": [
+      "https://example.com/certs/solar-panel-cert.pdf"
+    ]
+  },
+  "settlementCycles": [
+    {
+      "cycleId": "settle-2024-10-04-001",
+      "startTime": "2024-10-04T00:00:00Z",
+      "endTime": "2024-10-04T23:59:59Z",
+      "status": "SETTLED",
+      "amount": 50.0,
+      "currency": "USD"
+    }
+  ],
+  "billingCycles": [
+    {
+      "cycleId": "bill-2024-10-001",
+      "startTime": "2024-10-01T00:00:00Z",
+      "endTime": "2024-10-31T23:59:59Z",
+      "status": "PAID",
+      "totalAmount": 150.0,
+      "currency": "USD",
+      "lineItems": [
+        {
+          "title": "Energy Cost",
+          "amount": 100.0,
+          "currency": "USD"
+        },
+        {
+          "title": "Wheeling Charges",
+          "amount": 2.5,
+          "currency": "USD"
+        },
+        {
+          "title": "Taxes",
+          "amount": 47.5,
+          "currency": "USD"
+        }
+      ]
+    }
+  ],
+  "wheelingCharges": {
+    "utilityName": "PG&E Grid Services",
+    "amount": 2.5,
+    "currency": "USD",
+    "description": "Fixed wheeling charges for grid transmission"
+  },
+  "lastUpdated": "2024-10-04T15:30:00Z"
+}
+

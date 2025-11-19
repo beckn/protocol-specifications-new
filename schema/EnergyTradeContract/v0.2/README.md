@@ -26,8 +26,8 @@ The **EnergyTradeContract** schema composes with the core Beckn `Order` entity t
 | Attribute | Type | Required | Description | Use Case |
 |-----------|------|----------|-------------|----------|
 | `contractStatus` | enum | No | Contract lifecycle status: PENDING, ACTIVE, COMPLETED, TERMINATED | Tracks the current state of the contract. Decouples trade from fulfillment - generator, transmitter, and consumer operate independently. |
-| `sourceMeterId` | string | No | Source meter identifier in DER address format (der://meter/{id}) | Identifies the energy generator's meter. Used for tracking energy flow and settlement calculations. |
-| `targetMeterId` | string | No | Target/consumer meter identifier in DER address format (der://meter/{id}) | Identifies the energy consumer's meter. Used for tracking energy delivery and billing. |
+| `sourceMeterId` | string | No | Source meter identifier using IEEE 2030.5 mRID (meter Resource ID) | Identifies the energy generator's meter. Used for tracking energy flow and settlement calculations. Format: plain identifier (e.g., `"100200300"`), not `der://` format. |
+| `targetMeterId` | string | No | Target/consumer meter identifier using IEEE 2030.5 mRID (meter Resource ID) | Identifies the energy consumer's meter. Used for tracking energy delivery and billing. Format: plain identifier (e.g., `"98765456"`), not `der://` format. |
 | `inverterId` | string | No | Inverter identifier serving as consistent interface between source and grid | Provides stable reference point. Remains constant even if source changes. The inverter serves as the consistent interface between source and grid infrastructure. |
 | `contractedQuantity` | number | No | Contracted energy quantity in kilowatt-hours (kWh) | The agreed-upon energy quantity for the contract. Used for tracking fulfillment against contract terms. |
 | `tradeStartTime` | date-time | No | Contract start time (ISO 8601) | When the contract becomes effective. Used for billing and settlement period calculations. |
@@ -67,13 +67,20 @@ This schema composes with: `core/v2/core.yaml#Order.orderAttributes`
 
 ## Example Usage
 
+See complete examples in:
+- **Schema Example**: `../../EnergyResource/v0.2/examples/schema/order-example.json`
+- **Transaction Flow Examples**: `../../EnergyResource/v0.2/examples/flows/` (init, confirm, status)
+- **Implementation Guide**: `../../../docs/EnergyTrading_implementation_guide.md`
+
+### Quick Example
+
 ```json
 {
   "@context": "./context.jsonld",
   "@type": "EnergyTradeContract",
   "contractStatus": "ACTIVE",
-  "sourceMeterId": "der://meter/100200300",
-  "targetMeterId": "der://meter/98765456",
+  "sourceMeterId": "100200300",
+  "targetMeterId": "98765456",
   "inverterId": "inv-12345",
   "contractedQuantity": 10.0,
   "tradeStartTime": "2024-10-04T10:00:00Z",
@@ -119,4 +126,6 @@ This schema composes with: `core/v2/core.yaml#Order.orderAttributes`
   "lastUpdated": "2024-10-04T15:30:00Z"
 }
 ```
+
+**Note**: Meter IDs use IEEE 2030.5 mRID format (`100200300`, `98765456`), not the legacy `der://` format.
 

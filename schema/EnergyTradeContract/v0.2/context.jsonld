@@ -6,6 +6,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "beckn": "./vocab.jsonld#",
+    "ieee": "https://schemas.ieee.org/2030.5/",
     
     "EnergyTradeContract": "beckn:EnergyTradeContract",
 
@@ -24,8 +25,8 @@
       "@id": "beckn:contractStatus",
       "@type": "@id"
     },
-    "sourceMeterId": "beckn:sourceMeterId",
-    "targetMeterId": "beckn:targetMeterId",
+    "sourceMeterId": "ieee:mRID",
+    "targetMeterId": "ieee:mRID",
     "inverterId": "beckn:inverterId",
     "contractedQuantity": "beckn:contractedQuantity",
     "sourceType": {

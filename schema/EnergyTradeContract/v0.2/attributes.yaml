@@ -31,15 +31,15 @@ components:
 
         sourceMeterId:
           type: string
-          description: Source meter identifier in DER address format (der://meter/{id}). Identifies the energy generator.
-          example: "der://meter/100200300"
-          x-jsonld: { "@id": sourceMeterId }
+          description: Source meter identifier using IEEE 2030.5 mRID (meter Resource ID). Identifies the energy generator.
+          example: "100200300"
+          x-jsonld: { "@id": "ieee:mRID" }
 
         targetMeterId:
           type: string
-          description: Target/consumer meter identifier in DER address format (der://meter/{id}). Identifies the energy consumer.
-          example: "der://meter/98765456"
-          x-jsonld: { "@id": targetMeterId }
+          description: Target/consumer meter identifier using IEEE 2030.5 mRID (meter Resource ID). Identifies the energy consumer.
+          example: "98765456"
+          x-jsonld: { "@id": "ieee:mRID" }
 
         inverterId:
           type: string

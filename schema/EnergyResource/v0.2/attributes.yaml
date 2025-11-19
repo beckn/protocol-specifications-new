@@ -44,9 +44,9 @@ components:
 
         meterId:
           type: string
-          description: Source meter identifier in DER address format (der://meter/{id}). Used for discovery and fulfillment tracking.
-          example: "der://meter/100200300"
-          x-jsonld: { "@id": meterId }
+          description: Source meter identifier using IEEE 2030.5 mRID (meter Resource ID). Used for discovery and fulfillment tracking.
+          example: "100200300"
+          x-jsonld: { "@id": "ieee:mRID" }
 
         inverterId:
           type: string

@@ -6,6 +6,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "beckn": "./vocab.jsonld#",
+    "ieee": "https://schemas.ieee.org/2030.5/",
     
     "EnergyResource": "beckn:EnergyResource",
 
@@ -25,7 +26,7 @@
       "@type": "@id"
     },
     "certificationStatus": "beckn:certificationStatus",
-    "meterId": "beckn:meterId",
+    "meterId": "ieee:mRID",
     "inverterId": "beckn:inverterId",
     "availableQuantity": "beckn:availableQuantity",
     "productionWindow": "beckn:productionWindow",

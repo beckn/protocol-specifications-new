@@ -6,15 +6,65 @@ This implementation guide provides comprehensive instructions for implementing P
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Architecture Overview](#architecture-overview)
-3. [Schema Overview](#schema-overview)
-4. [Transaction Flows](#transaction-flows)
-5. [Field Mapping Reference](#field-mapping-reference)
-6. [Integration Patterns](#integration-patterns)
-7. [Best Practices](#best-practices)
-8. [Migration from v1](#migration-from-v1)
-9. [Examples](#examples)
+- [P2P Energy Trading Implementation Guide](#p2p-energy-trading-implementation-guide)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+    - [What is P2P Energy Trading?](#what-is-p2p-energy-trading)
+    - [Beckn Protocol v2 for Energy Trading](#beckn-protocol-v2-for-energy-trading)
+  - [Architecture Overview](#architecture-overview)
+    - [v2 Composable Schema Architecture](#v2-composable-schema-architecture)
+    - [Schema Composition Points](#schema-composition-points)
+    - [Key Differences from v1](#key-differences-from-v1)
+    - [v1 to v2 Quick Reference](#v1-to-v2-quick-reference)
+      - [Discover/Search Request](#discoversearch-request)
+      - [Item Attributes](#item-attributes)
+      - [Order Attributes](#order-attributes)
+      - [Fulfillment Stops](#fulfillment-stops)
+  - [Schema Overview](#schema-overview)
+    - [EnergyResource (Item.itemAttributes)](#energyresource-itemitemattributes)
+    - [EnergyTradeOffer (Offer.offerAttributes)](#energytradeoffer-offerofferattributes)
+    - [EnergyTradeContract (Order.orderAttributes)](#energytradecontract-orderorderattributes)
+    - [EnergyTradeDelivery (Fulfillment.attributes)](#energytradedelivery-fulfillmentattributes)
+  - [Transaction Flows](#transaction-flows)
+    - [1. Discover Flow](#1-discover-flow)
+    - [2. Select Flow](#2-select-flow)
+    - [3. Init Flow](#3-init-flow)
+    - [4. Confirm Flow](#4-confirm-flow)
+    - [5. Status Flow](#5-status-flow)
+  - [Field Mapping Reference](#field-mapping-reference)
+    - [v1 to v2 Field Mapping](#v1-to-v2-field-mapping)
+    - [Meter ID Format Migration](#meter-id-format-migration)
+  - [Integration Patterns](#integration-patterns)
+    - [1. Attaching Attributes to Core Objects](#1-attaching-attributes-to-core-objects)
+    - [2. JSON-LD Context Usage](#2-json-ld-context-usage)
+    - [3. Discovery Filtering](#3-discovery-filtering)
+  - [Best Practices](#best-practices)
+    - [1. Discovery Optimization](#1-discovery-optimization)
+    - [2. Meter ID Handling](#2-meter-id-handling)
+    - [3. Settlement Cycle Management](#3-settlement-cycle-management)
+    - [4. Meter Readings](#4-meter-readings)
+    - [5. Telemetry Data](#5-telemetry-data)
+    - [6. Error Handling](#6-error-handling)
+  - [Migration from v1](#migration-from-v1)
+    - [Key Changes](#key-changes)
+    - [Migration Checklist](#migration-checklist)
+    - [Example Migration](#example-migration)
+  - [Examples](#examples)
+    - [Complete Examples](#complete-examples)
+    - [Example Scenarios](#example-scenarios)
+  - [Additional Resources](#additional-resources)
+  - [Support](#support)
+
+Table of contents and section auto-numbering was done using [Markdown-All-In-One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) vscode extension. Specifically `Markdown All in One: Create Table of Contents` and `Markdown All in One: Add/Update section numbers` commands accessible via vs code command pallete.
+
+Example jsons were imported directly from source of truth elsewhere in this repo inline by inserting the pattern below within all json expand blocks, and running this [script](/scripts/embed_example_json.py), e.g. `python3 scripts/embed_example_json.py path_to_markdown_file.md`.
+
+```
+<details><summary><a href="/path_to_file_from_root">txt_with_json_keyword</a></summary>
+
+</details>
+``` 
 
 ---
 
@@ -389,7 +439,7 @@ For developers familiar with v1, here's a quick mapping guide:
 - **Note**: v2 does not support `intent` object. All search parameters are expressed via JSONPath filters.
 
 <details>
-<summary><a href="../examples/discover-request.json">Request Example</a></summary>
+<summary><a href="./examples/discover-request.json">Request Example</a></summary>
 
 ```json
 {
@@ -424,42 +474,111 @@ For developers familiar with v1, here's a quick mapping guide:
     }
   }
 }
+
+
 ```
 </details>
 
 <details>
-<summary><a href="../examples/discover-response.json">Response Example</a></summary>
+<summary><a href="./examples/discover-response.json">Response Example</a></summary>
+
 ```json
 {
-  "context": {...},
+  "context": {
+    "version": "2.0.0",
+    "action": "on_discover",
+    "timestamp": "2024-10-04T10:00:05Z",
+    "message_id": "msg-on-discover-001",
+    "transaction_id": "txn-energy-001",
+    "bap_id": "bap.energy-consumer.com",
+    "bap_uri": "https://bap.energy-consumer.com",
+    "bpp_id": "bpp.energy-provider.com",
+    "bpp_uri": "https://bpp.energy-provider.com",
+    "ttl": "PT30S",
+    "domain": "energy-trade"
+  },
   "message": {
     "catalogs": [
       {
         "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
         "@type": "beckn:Catalog",
+        "beckn:id": "catalog-energy-001",
+        "beckn:descriptor": {
+          "@type": "beckn:Descriptor",
+          "schema:name": "Solar Energy Trading Catalog"
+        },
         "beckn:items": [
           {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
             "beckn:id": "energy-resource-solar-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Solar Energy - 30.5 kWh",
+              "beckn:shortDesc": "Carbon Offset Certified Solar Energy",
+              "beckn:longDesc": "High-quality solar energy from verified source with carbon offset certification"
+            },
+            "beckn:provider": {
+              "@type": "beckn:Provider",
+              "beckn:id": "provider-solar-farm-001"
+            },
             "beckn:itemAttributes": {
               "@context": "./context.jsonld",
               "@type": "EnergyResource",
               "sourceType": "SOLAR",
               "deliveryMode": "GRID_INJECTION",
+              "certificationStatus": "Carbon Offset Certified",
               "meterId": "100200300",
-              "availableQuantity": 30.5
+              "inverterId": "inv-12345",
+              "availableQuantity": 30.5,
+              "productionWindow": {
+                "start": "2024-10-04T10:00:00Z",
+                "end": "2024-10-04T18:00:00Z"
+              },
+              "sourceVerification": {
+                "verified": true,
+                "verificationDate": "2024-09-01T00:00:00Z",
+                "certificates": [
+                  "https://example.com/certs/solar-panel-cert.pdf"
+                ]
+              },
+              "productionAsynchronous": true
             }
           }
         ],
         "beckn:offers": [
           {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Offer",
             "beckn:id": "offer-energy-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Daily Settlement Solar Energy Offer"
+            },
+            "beckn:provider": "provider-solar-farm-001",
+            "beckn:items": ["energy-resource-solar-001"],
+            "beckn:price": {
+              "@type": "schema:PriceSpecification",
+              "schema:price": 0.15,
+              "schema:priceCurrency": "USD",
+              "schema:unitText": "kWh"
+            },
             "beckn:offerAttributes": {
               "@context": "../EnergyTradeOffer/v0.2/context.jsonld",
               "@type": "EnergyTradeOffer",
               "pricingModel": "PER_KWH",
-              "settlementType": "DAILY"
+              "settlementType": "DAILY",
+              "wheelingCharges": {
+                "amount": 2.5,
+                "currency": "USD",
+                "description": "PG&E Grid Services wheeling charge"
+              },
+              "minimumQuantity": 1.0,
+              "maximumQuantity": 100.0,
+              "validityWindow": {
+                "start": "2024-10-04T00:00:00Z",
+                "end": "2024-10-04T23:59:59Z"
+              }
             }
           }
         ]
@@ -467,6 +586,8 @@ For developers familiar with v1, here's a quick mapping guide:
     ]
   }
 }
+
+
 ```
 </details>
 
@@ -486,25 +607,41 @@ For developers familiar with v1, here's a quick mapping guide:
 **Endpoint**: `POST /beckn/select`
 
 <details>
-<summary><a href="../examples/select-request.json">Request Example</a></summary>
+<summary><a href="./examples/select-request.json">Request Example</a></summary>
 
 ```json
 {
   "context": {
+    "version": "2.0.0",
     "action": "select",
-    ...
+    "timestamp": "2024-10-04T10:15:00Z",
+    "message_id": "msg-select-001",
+    "transaction_id": "txn-energy-001",
+    "bap_id": "bap.energy-consumer.com",
+    "bap_uri": "https://bap.energy-consumer.com",
+    "bpp_id": "bpp.energy-provider.com",
+    "bpp_uri": "https://bpp.energy-provider.com",
+    "ttl": "PT30S",
+    "domain": "energy-trade"
   },
   "message": {
     "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
       "@type": "beckn:Order",
+      "beckn:id": "order-energy-001",
       "beckn:items": [
         {
           "beckn:id": "energy-resource-solar-001",
-          "quantity": { "count": 10.0, "unit": "kWh" }
+          "quantity": {
+            "count": 10.0,
+            "unit": "kWh"
+          }
         }
       ],
       "beckn:offers": [
-        { "beckn:id": "offer-energy-001" }
+        {
+          "beckn:id": "offer-energy-001"
+        }
       ],
       "beckn:provider": {
         "beckn:id": "provider-solar-farm-001"
@@ -512,41 +649,85 @@ For developers familiar with v1, here's a quick mapping guide:
     }
   }
 }
+
+
 ```
 </details>
 
 <details>
-<summary><a href="../examples/select-response.json">Response Example</a></summary>
+<summary><a href="./examples/select-response.json">Response Example</a></summary>
+
 ```json
 {
   "context": {
+    "version": "2.0.0",
     "action": "on_select",
-    ...
+    "timestamp": "2024-10-04T10:15:05Z",
+    "message_id": "msg-on-select-001",
+    "transaction_id": "txn-energy-001",
+    "bap_id": "bap.energy-consumer.com",
+    "bap_uri": "https://bap.energy-consumer.com",
+    "bpp_id": "bpp.energy-provider.com",
+    "bpp_uri": "https://bpp.energy-provider.com",
+    "ttl": "PT30S",
+    "domain": "energy-trade"
   },
   "message": {
     "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
       "@type": "beckn:Order",
+      "beckn:id": "order-energy-001",
+      "beckn:items": [
+        {
+          "beckn:id": "energy-resource-solar-001",
+          "quantity": {
+            "count": 10.0,
+            "unit": "kWh"
+          }
+        }
+      ],
+      "beckn:offers": [
+        {
+          "beckn:id": "offer-energy-001"
+        }
+      ],
+      "beckn:provider": {
+        "beckn:id": "provider-solar-farm-001"
+      },
       "beckn:quote": {
         "@type": "beckn:Quotation",
         "beckn:price": {
+          "@type": "schema:PriceSpecification",
           "schema:price": 1.5,
           "schema:priceCurrency": "USD",
           "schema:unitText": "kWh"
         },
         "beckn:breakup": [
           {
+            "@type": "beckn:Breakup",
             "beckn:title": "Energy Cost (10 kWh @ $0.15/kWh)",
-            "beckn:price": { "schema:price": 1.5, "schema:priceCurrency": "USD" }
+            "beckn:price": {
+              "@type": "schema:PriceSpecification",
+              "schema:price": 1.5,
+              "schema:priceCurrency": "USD"
+            }
           },
           {
+            "@type": "beckn:Breakup",
             "beckn:title": "Wheeling Charges",
-            "beckn:price": { "schema:price": 2.5, "schema:priceCurrency": "USD" }
+            "beckn:price": {
+              "@type": "schema:PriceSpecification",
+              "schema:price": 2.5,
+              "schema:priceCurrency": "USD"
+            }
           }
         ]
       }
     }
   }
 }
+
+
 ```
 </details>
 
@@ -567,19 +748,45 @@ For developers familiar with v1, here's a quick mapping guide:
 - v1 `Order.attributes.*` → v2 `Order.orderAttributes.*` (path change)
 
 <details>
-<summary><a href="../examples/init-request.json">Request Example</a></summary>
+<summary><a href="./examples/init-request.json">Request Example</a></summary>
 
 ```json
 {
   "context": {
+    "version": "2.0.0",
     "action": "init",
-    ...
+    "timestamp": "2024-10-04T10:20:00Z",
+    "message_id": "msg-init-001",
+    "transaction_id": "txn-energy-001",
+    "bap_id": "bap.energy-consumer.com",
+    "bap_uri": "https://bap.energy-consumer.com",
+    "bpp_id": "bpp.energy-provider.com",
+    "bpp_uri": "https://bpp.energy-provider.com",
+    "ttl": "PT30S",
+    "domain": "energy-trade"
   },
   "message": {
     "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
       "@type": "beckn:Order",
-      "beckn:items": [...],
-      "beckn:offers": [...],
+      "beckn:id": "order-energy-001",
+      "beckn:items": [
+        {
+          "beckn:id": "energy-resource-solar-001",
+          "quantity": {
+            "count": 10.0,
+            "unit": "kWh"
+          }
+        }
+      ],
+      "beckn:offers": [
+        {
+          "beckn:id": "offer-energy-001"
+        }
+      ],
+      "beckn:provider": {
+        "beckn:id": "provider-solar-farm-001"
+      },
       "beckn:fulfillments": [
         {
           "@type": "beckn:Fulfillment",
@@ -624,6 +831,7 @@ For developers familiar with v1, here's a quick mapping guide:
       "beckn:payments": [
         {
           "@type": "beckn:Payment",
+          "beckn:id": "payment-energy-001",
           "beckn:type": "ON-FULFILLMENT",
           "beckn:status": "NOT-PAID",
           "beckn:collected_by": "BPP"
@@ -632,25 +840,93 @@ For developers familiar with v1, here's a quick mapping guide:
       "beckn:billing": {
         "@type": "beckn:Billing",
         "beckn:name": "Energy Consumer",
-        "beckn:email": "consumer@example.com"
+        "beckn:email": "consumer@example.com",
+        "beckn:phone": "+1-555-0100"
       }
     }
   }
 }
+
+
 ```
 </details>
 
 <details>
-<summary><a href="../examples/init-response.json">Response Example</a></summary>
+<summary><a href="./examples/init-response.json">Response Example</a></summary>
+
 ```json
 {
   "context": {
+    "version": "2.0.0",
     "action": "on_init",
-    ...
+    "timestamp": "2024-10-04T10:20:05Z",
+    "message_id": "msg-on-init-001",
+    "transaction_id": "txn-energy-001",
+    "bap_id": "bap.energy-consumer.com",
+    "bap_uri": "https://bap.energy-consumer.com",
+    "bpp_id": "bpp.energy-provider.com",
+    "bpp_uri": "https://bpp.energy-provider.com",
+    "ttl": "PT30S",
+    "domain": "energy-trade"
   },
   "message": {
     "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
       "@type": "beckn:Order",
+      "beckn:id": "order-energy-001",
+      "beckn:items": [
+        {
+          "beckn:id": "energy-resource-solar-001",
+          "quantity": {
+            "count": 10.0,
+            "unit": "kWh"
+          }
+        }
+      ],
+      "beckn:offers": [
+        {
+          "beckn:id": "offer-energy-001"
+        }
+      ],
+      "beckn:provider": {
+        "beckn:id": "provider-solar-farm-001"
+      },
+      "beckn:fulfillments": [
+        {
+          "@type": "beckn:Fulfillment",
+          "beckn:id": "fulfillment-energy-001",
+          "beckn:type": "ENERGY_DELIVERY",
+          "beckn:stops": [
+            {
+              "@type": "beckn:Stop",
+              "beckn:id": "stop-start-001",
+              "beckn:type": "START",
+              "beckn:location": {
+                "@type": "beckn:Location",
+                "beckn:address": "100200300"
+              }
+            },
+            {
+              "@type": "beckn:Stop",
+              "beckn:id": "stop-end-001",
+              "beckn:type": "END",
+              "beckn:location": {
+                "@type": "beckn:Location",
+                "beckn:address": "98765456"
+              }
+            }
+          ]
+        }
+      ],
+      "beckn:payments": [
+        {
+          "@type": "beckn:Payment",
+          "beckn:id": "payment-energy-001",
+          "beckn:type": "ON-FULFILLMENT",
+          "beckn:status": "NOT-PAID",
+          "beckn:collected_by": "BPP"
+        }
+      ],
       "beckn:orderAttributes": {
         "@context": "../EnergyTradeContract/v0.2/context.jsonld",
         "@type": "EnergyTradeContract",
@@ -661,11 +937,19 @@ For developers familiar with v1, here's a quick mapping guide:
         "contractedQuantity": 10.0,
         "tradeStartTime": "2024-10-04T10:00:00Z",
         "tradeEndTime": "2024-10-04T18:00:00Z",
-        "sourceType": "SOLAR"
+        "sourceType": "SOLAR",
+        "certification": {
+          "status": "Carbon Offset Certified",
+          "certificates": [
+            "https://example.com/certs/solar-panel-cert.pdf"
+          ]
+        }
       }
     }
   }
 }
+
+
 ```
 </details>
 
@@ -682,46 +966,149 @@ For developers familiar with v1, here's a quick mapping guide:
 **Endpoint**: `POST /beckn/confirm`
 
 <details>
-<summary><a href="../examples/confirm-request.json">Request Example</a></summary>
+<summary><a href="./examples/confirm-request.json">Request Example</a></summary>
 
 ```json
 {
   "context": {
+    "version": "2.0.0",
     "action": "confirm",
-    ...
+    "timestamp": "2024-10-04T10:25:00Z",
+    "message_id": "msg-confirm-001",
+    "transaction_id": "txn-energy-001",
+    "bap_id": "bap.energy-consumer.com",
+    "bap_uri": "https://bap.energy-consumer.com",
+    "bpp_id": "bpp.energy-provider.com",
+    "bpp_uri": "https://bpp.energy-provider.com",
+    "ttl": "PT30S",
+    "domain": "energy-trade"
   },
   "message": {
     "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
       "@type": "beckn:Order",
       "beckn:id": "order-energy-001",
-      "beckn:items": [...],
-      "beckn:offers": [...],
-      "beckn:fulfillments": [...],
-      "beckn:payments": [...]
+      "beckn:items": [
+        {
+          "beckn:id": "energy-resource-solar-001",
+          "quantity": {
+            "count": 10.0,
+            "unit": "kWh"
+          }
+        }
+      ],
+      "beckn:offers": [
+        {
+          "beckn:id": "offer-energy-001"
+        }
+      ],
+      "beckn:provider": {
+        "beckn:id": "provider-solar-farm-001"
+      },
+      "beckn:fulfillments": [
+        {
+          "@type": "beckn:Fulfillment",
+          "beckn:id": "fulfillment-energy-001",
+          "beckn:type": "ENERGY_DELIVERY"
+        }
+      ],
+      "beckn:payments": [
+        {
+          "@type": "beckn:Payment",
+          "beckn:id": "payment-energy-001",
+          "beckn:type": "ON-FULFILLMENT",
+          "beckn:status": "NOT-PAID",
+          "beckn:collected_by": "BPP"
+        }
+      ]
     }
   }
 }
+
+
 ```
 </details>
 
 <details>
-<summary><a href="../examples/confirm-response.json">Response Example</a></summary>
+<summary><a href="./examples/confirm-response.json">Response Example</a></summary>
+
 ```json
 {
   "context": {
+    "version": "2.0.0",
     "action": "on_confirm",
-    ...
+    "timestamp": "2024-10-04T10:25:05Z",
+    "message_id": "msg-on-confirm-001",
+    "transaction_id": "txn-energy-001",
+    "bap_id": "bap.energy-consumer.com",
+    "bap_uri": "https://bap.energy-consumer.com",
+    "bpp_id": "bpp.energy-provider.com",
+    "bpp_uri": "https://bpp.energy-provider.com",
+    "ttl": "PT30S",
+    "domain": "energy-trade"
   },
   "message": {
     "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
       "@type": "beckn:Order",
+      "beckn:id": "order-energy-001",
+      "beckn:items": [
+        {
+          "beckn:id": "energy-resource-solar-001",
+          "quantity": {
+            "count": 10.0,
+            "unit": "kWh"
+          }
+        }
+      ],
+      "beckn:offers": [
+        {
+          "beckn:id": "offer-energy-001"
+        }
+      ],
+      "beckn:provider": {
+        "beckn:id": "provider-solar-farm-001"
+      },
+      "beckn:fulfillments": [
+        {
+          "@type": "beckn:Fulfillment",
+          "beckn:id": "fulfillment-energy-001",
+          "beckn:type": "ENERGY_DELIVERY",
+          "beckn:state": {
+            "@type": "beckn:State",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "PENDING"
+            }
+          }
+        }
+      ],
+      "beckn:payments": [
+        {
+          "@type": "beckn:Payment",
+          "beckn:id": "payment-energy-001",
+          "beckn:type": "ON-FULFILLMENT",
+          "beckn:status": "NOT-PAID",
+          "beckn:collected_by": "BPP"
+        }
+      ],
       "beckn:orderAttributes": {
         "@context": "../EnergyTradeContract/v0.2/context.jsonld",
         "@type": "EnergyTradeContract",
         "contractStatus": "ACTIVE",
         "sourceMeterId": "100200300",
         "targetMeterId": "98765456",
+        "inverterId": "inv-12345",
         "contractedQuantity": 10.0,
+        "tradeStartTime": "2024-10-04T10:00:00Z",
+        "tradeEndTime": "2024-10-04T18:00:00Z",
+        "sourceType": "SOLAR",
+        "certification": {
+          "status": "Carbon Offset Certified",
+          "certificates": [
+            "https://example.com/certs/solar-panel-cert.pdf"
+          ]
+        },
         "settlementCycles": [
           {
             "cycleId": "settle-2024-10-04-001",
@@ -736,6 +1123,8 @@ For developers familiar with v1, here's a quick mapping guide:
     }
   }
 }
+
+
 ```
 </details>
 
@@ -751,55 +1140,113 @@ For developers familiar with v1, here's a quick mapping guide:
 **Endpoint**: `POST /beckn/status`
 
 <details>
-<summary><a href="../examples/status-request.json">Request Example</a></summary>
+<summary><a href="./examples/status-request.json">Request Example</a></summary>
 
 ```json
 {
   "context": {
+    "version": "2.0.0",
     "action": "status",
-    ...
+    "timestamp": "2024-10-04T15:00:00Z",
+    "message_id": "msg-status-001",
+    "transaction_id": "txn-energy-001",
+    "bap_id": "bap.energy-consumer.com",
+    "bap_uri": "https://bap.energy-consumer.com",
+    "bpp_id": "bpp.energy-provider.com",
+    "bpp_uri": "https://bpp.energy-provider.com",
+    "ttl": "PT30S",
+    "domain": "energy-trade"
   },
   "message": {
     "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
       "@type": "beckn:Order",
       "beckn:id": "order-energy-001"
     }
   }
 }
+
+
 ```
 </details>
 
 <details>
-<summary><a href="../examples/status-response.json">Response Example</a></summary>
+<summary><a href="./examples/status-response.json">Response Example</a></summary>
+
 ```json
 {
   "context": {
+    "version": "2.0.0",
     "action": "on_status",
-    ...
+    "timestamp": "2024-10-04T15:00:05Z",
+    "message_id": "msg-on-status-001",
+    "transaction_id": "txn-energy-001",
+    "bap_id": "bap.energy-consumer.com",
+    "bap_uri": "https://bap.energy-consumer.com",
+    "bpp_id": "bpp.energy-provider.com",
+    "bpp_uri": "https://bpp.energy-provider.com",
+    "ttl": "PT30S",
+    "domain": "energy-trade"
   },
   "message": {
     "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
       "@type": "beckn:Order",
-      "beckn:orderAttributes": {
-        "@context": "../EnergyTradeContract/v0.2/context.jsonld",
-        "@type": "EnergyTradeContract",
-        "contractStatus": "ACTIVE",
-        "settlementCycles": [...]
+      "beckn:id": "order-energy-001",
+      "beckn:items": [
+        {
+          "beckn:id": "energy-resource-solar-001",
+          "quantity": {
+            "count": 10.0,
+            "unit": "kWh"
+          }
+        }
+      ],
+      "beckn:offers": [
+        {
+          "beckn:id": "offer-energy-001"
+        }
+      ],
+      "beckn:provider": {
+        "beckn:id": "provider-solar-farm-001"
       },
       "beckn:fulfillments": [
         {
           "@type": "beckn:Fulfillment",
+          "beckn:id": "fulfillment-energy-001",
+          "beckn:type": "ENERGY_DELIVERY",
+          "beckn:state": {
+            "@type": "beckn:State",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "IN_PROGRESS"
+            }
+          },
           "beckn:attributes": {
             "@context": "../EnergyTradeDelivery/v0.2/context.jsonld",
             "@type": "EnergyTradeDelivery",
             "deliveryStatus": "IN_PROGRESS",
             "deliveryMode": "GRID_INJECTION",
             "deliveredQuantity": 9.8,
+            "deliveryStartTime": "2024-10-04T10:00:00Z",
+            "deliveryEndTime": null,
             "meterReadings": [
+              {
+                "timestamp": "2024-10-04T10:00:00Z",
+                "sourceReading": 1000.0,
+                "targetReading": 990.0,
+                "energyFlow": 10.0
+              },
               {
                 "timestamp": "2024-10-04T12:00:00Z",
                 "sourceReading": 1000.5,
                 "targetReading": 990.3,
+                "energyFlow": 10.2
+              },
+              {
+                "timestamp": "2024-10-04T14:00:00Z",
+                "sourceReading": 1001.0,
+                "targetReading": 990.8,
                 "energyFlow": 10.2
               }
             ],
@@ -816,17 +1263,63 @@ For developers familiar with v1, here's a quick mapping guide:
                     "name": "POWER",
                     "value": 2.5,
                     "unitCode": "KW"
+                  },
+                  {
+                    "name": "VOLTAGE",
+                    "value": 240.0,
+                    "unitCode": "VLT"
                   }
                 ]
               }
             ],
-            "settlementCycleId": "settle-2024-10-04-001"
+            "settlementCycleId": "settle-2024-10-04-001",
+            "lastUpdated": "2024-10-04T15:30:00Z"
           }
         }
-      ]
+      ],
+      "beckn:payments": [
+        {
+          "@type": "beckn:Payment",
+          "beckn:id": "payment-energy-001",
+          "beckn:type": "ON-FULFILLMENT",
+          "beckn:status": "NOT-PAID",
+          "beckn:collected_by": "BPP"
+        }
+      ],
+      "beckn:orderAttributes": {
+        "@context": "../EnergyTradeContract/v0.2/context.jsonld",
+        "@type": "EnergyTradeContract",
+        "contractStatus": "ACTIVE",
+        "sourceMeterId": "100200300",
+        "targetMeterId": "98765456",
+        "inverterId": "inv-12345",
+        "contractedQuantity": 10.0,
+        "tradeStartTime": "2024-10-04T10:00:00Z",
+        "tradeEndTime": "2024-10-04T18:00:00Z",
+        "sourceType": "SOLAR",
+        "certification": {
+          "status": "Carbon Offset Certified",
+          "certificates": [
+            "https://example.com/certs/solar-panel-cert.pdf"
+          ]
+        },
+        "settlementCycles": [
+          {
+            "cycleId": "settle-2024-10-04-001",
+            "startTime": "2024-10-04T00:00:00Z",
+            "endTime": "2024-10-04T23:59:59Z",
+            "status": "PENDING",
+            "amount": 0.0,
+            "currency": "USD"
+          }
+        ],
+        "lastUpdated": "2024-10-04T15:30:00Z"
+      }
     }
   }
 }
+
+
 ```
 </details>
 

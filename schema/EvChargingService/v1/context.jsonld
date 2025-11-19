@@ -6,6 +6,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "beckn": "./vocab.jsonld#",
+    "ocpp": "https://schemas.ocpp.org/2.0.1/",
     
     "ChargingService": "beckn:ChargingService",
 
@@ -29,7 +30,7 @@
     "category": "schema:category",
 
     "connectorId": "beckn:connectorId",
-    "connectorType": "beckn:connectorType",
+    "connectorType": "ocpp:ConnectorEnumType",
     "powerType": "beckn:powerType",
     "connectorFormat": "beckn:connectorFormat",
     "chargingSpeed": "beckn:chargingSpeed",

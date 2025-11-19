@@ -2,7 +2,7 @@
   "sessionStatus": "PENDING",
   "authorizationMode": "APP_QR",
   "authorizationOtpHint": "Enter last 4 digits",
-  "connectorType": "CCS2",
+  "connectorType": "cCCS2",
   "maxPowerKW": 60,
   "meteredEnergyKWh": 0,
   "meteredDurationMinutes": 0,

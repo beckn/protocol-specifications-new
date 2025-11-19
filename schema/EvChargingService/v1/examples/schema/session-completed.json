@@ -1,7 +1,7 @@
 {
   "sessionStatus": "COMPLETED",
   "authorizationMode": "APP_QR",
-  "connectorType": "CCS2",
+  "connectorType": "cCCS2",
   "maxPowerKW": 60,
   "meteredEnergyKWh": 18.9,
   "meteredDurationMinutes": 42,

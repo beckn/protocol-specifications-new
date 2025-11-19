@@ -6,6 +6,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "beckn": "./vocab.jsonld#",
+    "ocpp": "https://schemas.ocpp.org/2.0.1/",
     
     "ChargingSession": "beckn:ChargingSession",
 
@@ -21,7 +22,7 @@
     "sessionStatus": "beckn:sessionStatus",
     "authorizationMode": "beckn:authorizationMode",
     "authorizationOtpHint": "beckn:authorizationOtpHint",
-    "connectorType": "beckn:connectorType",
+    "connectorType": "ocpp:ConnectorEnumType",
     "maxPowerKW": "beckn:maxPowerKW",
     "meteredEnergyKWh": "beckn:meteredEnergyKWh",
     "meteredDurationMinutes": "beckn:meteredDurationMinutes",

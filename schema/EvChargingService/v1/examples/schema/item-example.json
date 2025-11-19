@@ -1,5 +1,5 @@
 {
-  "connectorType": "CCS2",
+  "connectorType": "cCCS2",
   "maxPowerKW": 60,
   "minPowerKW": 5,
   "socketCount": 2,

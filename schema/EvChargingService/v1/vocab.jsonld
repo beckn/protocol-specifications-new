@@ -15,14 +15,6 @@
       "rdfs:comment": "A service that provides electric vehicle charging capabilities"
     },
     {
-      "@id": "beckn:connectorType",
-      "@type": "rdf:Property",
-      "rdfs:label": "Connector type",
-      "rdfs:comment": "Physical connector type supported by the EVSE/charger (e.g., CCS2, Type2, CHAdeMO, GB/T).",
-      "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Text"
-    },
-    {
       "@id": "beckn:maxPowerKW",
       "@type": "rdf:Property",
       "rdfs:label": "Maximum power (kW)",

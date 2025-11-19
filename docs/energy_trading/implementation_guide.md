@@ -388,7 +388,9 @@ For developers familiar with v1, here's a quick mapping guide:
 - v1 `message.intent.fulfillment.stops[].time.range.end` → v2 `message.filters.expression` (JSONPath filter on `productionWindow.end`)
 - **Note**: v2 does not support `intent` object. All search parameters are expressed via JSONPath filters.
 
-**Request Example**:
+<details>
+<summary><a href="../examples/discover-request.json">Request Example</a></summary>
+
 ```json
 {
   "context": {
@@ -423,8 +425,10 @@ For developers familiar with v1, here's a quick mapping guide:
   }
 }
 ```
+</details>
 
-**Response Example**:
+<details>
+<summary><a href="../examples/discover-response.json">Response Example</a></summary>
 ```json
 {
   "context": {...},
@@ -464,6 +468,7 @@ For developers familiar with v1, here's a quick mapping guide:
   }
 }
 ```
+</details>
 
 **Key Points**:
 - **No Intent Object**: v2 does not support `intent` object in discover requests. All search parameters are expressed via JSONPath filters.
@@ -480,7 +485,9 @@ For developers familiar with v1, here's a quick mapping guide:
 
 **Endpoint**: `POST /beckn/select`
 
-**Request Example**:
+<details>
+<summary><a href="../examples/select-request.json">Request Example</a></summary>
+
 ```json
 {
   "context": {
@@ -506,8 +513,10 @@ For developers familiar with v1, here's a quick mapping guide:
   }
 }
 ```
+</details>
 
-**Response Example**:
+<details>
+<summary><a href="../examples/select-response.json">Response Example</a></summary>
 ```json
 {
   "context": {
@@ -539,6 +548,7 @@ For developers familiar with v1, here's a quick mapping guide:
   }
 }
 ```
+</details>
 
 **Key Points**:
 - Select items by `beckn:id` and specify quantity
@@ -556,7 +566,9 @@ For developers familiar with v1, here's a quick mapping guide:
 - v1 `Order.fulfillments[].stops[].location.address` (der:// format) → v2 `Order.fulfillments[].stops[].location.address` (IEEE mRID format)
 - v1 `Order.attributes.*` → v2 `Order.orderAttributes.*` (path change)
 
-**Request Example**:
+<details>
+<summary><a href="../examples/init-request.json">Request Example</a></summary>
+
 ```json
 {
   "context": {
@@ -626,8 +638,10 @@ For developers familiar with v1, here's a quick mapping guide:
   }
 }
 ```
+</details>
 
-**Response Example**:
+<details>
+<summary><a href="../examples/init-response.json">Response Example</a></summary>
 ```json
 {
   "context": {
@@ -653,6 +667,7 @@ For developers familiar with v1, here's a quick mapping guide:
   }
 }
 ```
+</details>
 
 **Key Points**:
 - **Fulfillment Stops**: Must include START and END stops (same as v1)
@@ -666,7 +681,9 @@ For developers familiar with v1, here's a quick mapping guide:
 
 **Endpoint**: `POST /beckn/confirm`
 
-**Request Example**:
+<details>
+<summary><a href="../examples/confirm-request.json">Request Example</a></summary>
+
 ```json
 {
   "context": {
@@ -685,8 +702,10 @@ For developers familiar with v1, here's a quick mapping guide:
   }
 }
 ```
+</details>
 
-**Response Example**:
+<details>
+<summary><a href="../examples/confirm-response.json">Response Example</a></summary>
 ```json
 {
   "context": {
@@ -718,6 +737,7 @@ For developers familiar with v1, here's a quick mapping guide:
   }
 }
 ```
+</details>
 
 **Key Points**:
 - Contract status changes from PENDING to ACTIVE
@@ -730,7 +750,9 @@ For developers familiar with v1, here's a quick mapping guide:
 
 **Endpoint**: `POST /beckn/status`
 
-**Request Example**:
+<details>
+<summary><a href="../examples/status-request.json">Request Example</a></summary>
+
 ```json
 {
   "context": {
@@ -745,8 +767,10 @@ For developers familiar with v1, here's a quick mapping guide:
   }
 }
 ```
+</details>
 
-**Response Example**:
+<details>
+<summary><a href="../examples/status-response.json">Response Example</a></summary>
 ```json
 {
   "context": {
@@ -804,6 +828,7 @@ For developers familiar with v1, here's a quick mapping guide:
   }
 }
 ```
+</details>
 
 **Key Points**:
 - Response includes EnergyTradeContract attributes (contract status)
@@ -979,14 +1004,14 @@ Use JSONPath filters to search by energy attributes:
 
 ### Migration Checklist
 
-- [ ] Update attribute paths (`attributes.*` → `itemAttributes.*`, etc.)
-- [ ] Convert meter IDs from `der://` format to IEEE mRID
-- [ ] Replace `Tag.value` with direct attribute fields
-- [ ] Add JSON-LD context to all attribute objects
-- [ ] Update discovery filters to use new attribute paths
-- [ ] Update validation logic for new schema structure
-- [ ] Test all transaction flows
-- [ ] Update documentation
+- Update attribute paths (`attributes.*` → `itemAttributes.*`, etc.)
+- Convert meter IDs from `der://` format to IEEE mRID
+- Replace `Tag.value` with direct attribute fields
+- Add JSON-LD context to all attribute objects
+- Update discovery filters to use new attribute paths
+- Update validation logic for new schema structure
+- Test all transaction flows
+- Update documentation
 
 ### Example Migration
 
@@ -1031,12 +1056,13 @@ All examples are available in:
   - `order-example.json` - EnergyTradeContract
   - `fulfillment-example.json` - EnergyTradeDelivery
 
-- **Transaction Flow Examples**: `schema/EnergyResource/v0.2/examples/flows/`
-  - `discover-request.json` / `discover-response.json`
-  - `select-request.json` / `select-response.json`
-  - `init-request.json` / `init-response.json`
-  - `confirm-request.json` / `confirm-response.json`
-  - `status-request.json` / `status-response.json`
+- **Transaction Flow Examples**: [`../examples/`](../examples)
+  - [`discover-request.json`](../examples/discover-request.json) / [`discover-response.json`](../examples/discover-response.json)
+  - [`select-request.json`](../examples/select-request.json) / [`select-response.json`](../examples/select-response.json)
+  - [`init-request.json`](../examples/`init-request.json) / [`init-response.json`](../examples/init-response.json)
+  - [`confirm-request.json`](../examples/confirm-request.json) / [`confirm-response.json`](../examples/confirm-response.json)
+  - [`status-request.json`](../examples/status-request.json) / [`status-response.json`](../examples/status-response.json)
+
 
 ### Example Scenarios
 

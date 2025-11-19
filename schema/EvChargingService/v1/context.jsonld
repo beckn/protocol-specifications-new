@@ -58,10 +58,14 @@
       "@type": "@id"
     },
 
+    "RESTAURANT": "beckn:AmenityRestaurant",
     "Restaurant": "beckn:AmenityRestaurant",
+    "RESTROOM": "beckn:AmenityRestroom",
     "Restroom": "beckn:AmenityRestroom",
+    "WI-FI": "beckn:AmenityWiFi",
     "Wi-Fi": "beckn:AmenityWiFi",
     "WiFi": "beckn:AmenityWiFi",
+    "PARKING": "beckn:AmenityParking",
     "Parking": "beckn:AmenityParking",
 
     "CCS2": "beckn:ConnectorTypeCCS2",

@@ -161,8 +161,9 @@
         "beckn:AmenityFeature",
         "schema:Enumeration"
       ],
-      "schema:name": "Restaurant",
-      "schema:identifier": "Restaurant"
+      "schema:name": "RESTAURANT",
+      "schema:identifier": "RESTAURANT",
+      "schema:alternateName": "Restaurant"
     },
     {
       "@id": "beckn:AmenityRestroom",
@@ -170,8 +171,9 @@
         "beckn:AmenityFeature",
         "schema:Enumeration"
       ],
-      "schema:name": "Restroom",
-      "schema:identifier": "Restroom"
+      "schema:name": "RESTROOM",
+      "schema:identifier": "RESTROOM",
+      "schema:alternateName": "Restroom"
     },
     {
       "@id": "beckn:AmenityWiFi",
@@ -179,9 +181,9 @@
         "beckn:AmenityFeature",
         "schema:Enumeration"
       ],
-      "schema:name": "Wi-Fi",
-      "schema:identifier": "Wi-Fi",
-      "schema:alternateName": "WiFi"
+      "schema:name": "WI-FI",
+      "schema:identifier": "WI-FI",
+      "schema:alternateName": ["Wi-Fi", "WiFi"]
     },
     {
       "@id": "beckn:AmenityParking",
@@ -189,8 +191,9 @@
         "beckn:AmenityFeature",
         "schema:Enumeration"
       ],
-      "schema:name": "Parking",
-      "schema:identifier": "Parking"
+      "schema:name": "PARKING",
+      "schema:identifier": "PARKING",
+      "schema:alternateName": "Parking"
     },
     {
       "@id": "beckn:ConnectorType",

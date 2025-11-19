@@ -93,9 +93,9 @@ components:
           type: array
         items:
           type: string
-          enum: ["Restaurant", "Restroom", "Wi-Fi", "Parking"]
+          enum: ["RESTAURANT", "RESTROOM", "WI-FI", "PARKING"]
           description: Nearby amenities (e.g., Restaurant, Restroom, Wi-Fi).
-          example: ["Restaurant", "Restroom"]
+          example: ["RESTAURANT", "RESTROOM"]
           x-jsonld: { "@id": amenityFeature }
 
         ocppId:

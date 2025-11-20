@@ -1023,7 +1023,7 @@ components:
     RatingInput:
       type: object
       additionalProperties: false
-      required: [id, value]
+      required: [id, ratingValue]
       properties:
         id:
           type: string

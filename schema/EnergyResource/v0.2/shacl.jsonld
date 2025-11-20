@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "sh": "http://www.w3.org/ns/shacl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "vocab": "./vocab.jsonld/"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:EnergyResource",
+      "@type": "sh:NodeShape",
+      "sh:targetClass": "beckn:EnergyResource",
+      "sh:name": "EnergyResource",
+      "sh:property": [
+        {
+          "sh:path": "beckn:sourceType",
+          "sh:name": "sourceType",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:in": [
+            "SOLAR",
+            "BATTERY",
+            "GRID",
+            "HYBRID",
+            "RENEWABLE"
+          ]
+        },
+        {
+          "sh:path": "beckn:deliveryMode",
+          "sh:name": "deliveryMode",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:in": [
+            "EV_CHARGING",
+            "BATTERY_SWAP",
+            "V2G",
+            "GRID_INJECTION"
+          ]
+        },
+        {
+          "sh:path": "beckn:certificationStatus",
+          "sh:name": "certificationStatus",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "sh:path": "ieee:mRID",
+          "sh:name": "meterId",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "sh:path": "beckn:inverterId",
+          "sh:name": "inverterId",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "sh:path": "beckn:availableQuantity",
+          "sh:name": "availableQuantity",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:minInclusive": 0
+        },
+        {
+          "sh:path": "beckn:productionWindow",
+          "sh:name": "productionWindow",
+          "sh:nodeKind": "sh:IRIOrLiteral"
+        },
+        {
+          "sh:path": "beckn:sourceVerification",
+          "sh:name": "sourceVerification",
+          "sh:nodeKind": "sh:IRIOrLiteral"
+        },
+        {
+          "sh:path": "beckn:productionAsynchronous",
+          "sh:name": "productionAsynchronous",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+        }
+      ]
+    }
+  ]
+}

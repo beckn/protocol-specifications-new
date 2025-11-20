@@ -1,0 +1,71 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "sh": "http://www.w3.org/ns/shacl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "vocab": "./vocab.jsonld/"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:EnergyTradeOffer",
+      "@type": "sh:NodeShape",
+      "sh:targetClass": "beckn:EnergyTradeOffer",
+      "sh:name": "EnergyTradeOffer",
+      "sh:property": [
+        {
+          "sh:path": "beckn:pricingModel",
+          "sh:name": "pricingModel",
+          "sh:minCount": 1,
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:in": [
+            "PER_KWH",
+            "TIME_OF_DAY",
+            "SUBSCRIPTION",
+            "FIXED"
+          ]
+        },
+        {
+          "sh:path": "beckn:settlementType",
+          "sh:name": "settlementType",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:in": [
+            "REAL_TIME",
+            "HOURLY",
+            "DAILY",
+            "WEEKLY",
+            "MONTHLY"
+          ]
+        },
+        {
+          "sh:path": "beckn:wheelingCharges",
+          "sh:name": "wheelingCharges",
+          "sh:nodeKind": "sh:IRIOrLiteral"
+        },
+        {
+          "sh:path": "beckn:minimumQuantity",
+          "sh:name": "minimumQuantity",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:minInclusive": 0
+        },
+        {
+          "sh:path": "beckn:maximumQuantity",
+          "sh:name": "maximumQuantity",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:minInclusive": 0
+        },
+        {
+          "sh:path": "beckn:validityWindow",
+          "sh:name": "validityWindow",
+          "sh:nodeKind": "sh:IRIOrLiteral"
+        },
+        {
+          "sh:path": "beckn:timeOfDayRates",
+          "sh:name": "timeOfDayRates",
+          "sh:nodeKind": "sh:IRIOrLiteral"
+        }
+      ]
+    }
+  ]
+}

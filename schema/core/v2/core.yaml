@@ -629,7 +629,7 @@ components:
           x-jsonld: { "@id": "schema:seller" }
 
         beckn:buyer:
-          $ref: "#/components/schemas/Buyer/properties/beckn:id"
+          $ref: "#/components/schemas/Buyer"
           x-jsonld: { "@id": "schema:customer" }
 
         beckn:orderItems:

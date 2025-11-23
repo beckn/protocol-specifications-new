@@ -189,7 +189,27 @@ def convert_property(prop_name: str, prop_def: dict, required_fields: list,
         if ref.startswith('#/components/schemas/'):
             ref_name = ref.split('/')[-1]
             ref_iri = get_schema_iri(ref_name, vocab_base, context, use_curie)
-            prop_shape['sh:class'] = ref_iri
+            
+            # Look up the referenced schema to check for enum values
+            if ref_name in all_schemas:
+                ref_schema = all_schemas[ref_name]
+                
+                # If the referenced schema has enum values, add sh:in
+                if 'enum' in ref_schema:
+                    enum_values = ref_schema['enum']
+                    prop_shape['sh:in'] = enum_values
+                
+                # If the referenced schema has a type, add datatype
+                ref_type = ref_schema.get('type')
+                if ref_type in type_map:
+                    prop_shape['sh:datatype'] = type_map[ref_type]
+                
+                # Only add sh:class if it's an object type (not a simple enum type)
+                if ref_type == 'object':
+                    prop_shape['sh:class'] = ref_iri
+            else:
+                # Fallback: if schema not found, just use sh:class
+                prop_shape['sh:class'] = ref_iri
         return prop_shape
     
     # Handle type

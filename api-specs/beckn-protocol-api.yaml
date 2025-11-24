@@ -697,6 +697,23 @@ paths:
                           properties:
                             beckn:id:
                               $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Order/properties/beckn:id'
+                            beckn:orderItems:
+                              type: array
+                              minItems: 1
+                              items:
+                                oneOf:
+                                  - type: object
+                                    required:
+                                      - beckn:orderedItem
+                                    properties:
+                                      beckn:orderedItem:
+                                        $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Item/properties/beckn:id'
+                                      beckn:lineId:
+                                        type: string
+                                        description: Unique line id within order
+                                      beckn:quantity:
+                                        $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Quantity'
+                                  - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/OrderItem'
                         - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Order'
       responses:
         '200':
@@ -826,14 +843,25 @@ paths:
                           const: track
                 message:
                   type: object
-                  required: [order_id]
+                  required:
+                    - order
                   properties:
-                    order_id:
-                      type: string
-                      description: Identifier of the order being tracked.
-                    fulfillment_id:
-                      type: string
-                      description: Optional fulfillment leg to track (if multiple).
+                    order:
+                      oneOf:
+                        - type: object
+                          required:
+                            - beckn:id
+                          properties:
+                            beckn:id:
+                              $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Order/properties/beckn:id'
+                            fulfillment:
+                              oneOf:
+                                - type: object
+                                  properties:
+                                    beckn:id:
+                                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Fulfillment/properties/beckn:id'
+                                - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Fulfillment'
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Order'
                     mode_hint:
                       type: string
                       description: Optional delivery mode for the tracking handle.

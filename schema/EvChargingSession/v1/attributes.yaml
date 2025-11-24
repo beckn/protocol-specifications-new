@@ -48,27 +48,36 @@ components:
           enum:
             - cCCS1
             - cCCS2
+            - cChaoJi
             - cG105
+            - cGBT-DC
+            - cLECCS
+            - cMCS
+            - cNACS
+            - cNACS-CCS1
+            - cCCS1-NACS
             - cTesla
             - cType1
             - cType2
+            - cUltraChaoJi
             - s309-1P-16A
             - s309-1P-32A
             - s309-3P-16A
             - s309-3P-32A
             - sBS1361
             - sCEE-7-7
+            - sType1
             - sType2
             - sType3
+            - wInductive
+            - wResonant
             - Other1PhMax16A
             - Other1PhOver16A
             - Other3Ph
             - Pan
-            - wInductive
-            - wResonant
             - Undetermined
             - Unknown
-          description: Connector used for this session (OCPP 2.0.1 ConnectorEnumType).
+          description: Connector used for this session (OCPP 2.1.0 ConnectorEnumType).
           example: cCCS2
           x-jsonld: { "@id": connectorType }
         maxPowerKW:

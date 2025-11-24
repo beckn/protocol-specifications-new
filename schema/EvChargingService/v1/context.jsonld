@@ -71,10 +71,10 @@
 
     "CCS2": "ocpp:cCCS2",
     "Type2": "ocpp:cType2",
-    "CHAdeMO": "ocpp:cChaoJi",
-    "GB_T": "ocpp.cGBT-DC",
-    "GB/T": "ocpp.cGBT-DC",
-    "GB-T": "ocpp.cGBT-DC",
+    "CHAdeMO": "ocpp:cG105",
+    "GB_T": "ocpp:cGBT-DC",
+    "GB/T": "ocpp:cGBT-DC",
+    "GB-T": "ocpp:cGBT-DC",
 
     "AC_SINGLE_PHASE": "beckn:PowerTypeACSinglePhase",
     "AC_3_PHASE": "beckn:PowerTypeAC3Phase",

@@ -345,7 +345,14 @@ def get_vocab_base(context_path: Optional[Path], base_iri: Optional[str], spec_p
         if part.startswith('ocpi'):
             return "https://schemas.ocpi.org/2.2/"
         elif part.startswith('ocpp'):
-            return "https://schemas.ocpp.org/2.0.1/"
+            # Extract version from path
+            for p in parts:
+                if p.startswith('2.') or p.startswith('1.'):
+                    version = p
+            if version:
+                return f"https://schemas.ocpp.org/{version}/"
+            else:
+                raise ValueError(f"Could not determine version from path: {parts}")
         elif part.startswith('Energy') or part.startswith('EvCharging'):
             schema_name = part  # Keep original case
         elif part.startswith('v') and '.' in part:

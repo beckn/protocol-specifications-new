@@ -1,0 +1,6850 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ocpp": "https://schemas.ocpp.org/2.0.1/",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "ocpp:CustomDataType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CustomDataType",
+      "rdfs:comment": "This class does not get 'AdditionalProperties = false' in the schema generation, so it can be extended with arbitrary JSON properties to allow adding custom data."
+    },
+    {
+      "@id": "ocpp:HashAlgorithmEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "HashAlgorithmEnumType",
+      "rdfs:comment": "Used algorithms for the hashes provided.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:SHA256"
+        },
+        {
+          "@id": "ocpp:SHA384"
+        },
+        {
+          "@id": "ocpp:SHA512"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:SHA256",
+      "@type": [
+        "ocpp:HashAlgorithmEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SHA256",
+      "schema:identifier": "SHA256"
+    },
+    {
+      "@id": "ocpp:SHA384",
+      "@type": [
+        "ocpp:HashAlgorithmEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SHA384",
+      "schema:identifier": "SHA384"
+    },
+    {
+      "@id": "ocpp:SHA512",
+      "@type": [
+        "ocpp:HashAlgorithmEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SHA512",
+      "schema:identifier": "SHA512"
+    },
+    {
+      "@id": "ocpp:IdTokenEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "IdTokenEnumType",
+      "rdfs:comment": "Enumeration of possible idToken types.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Central"
+        },
+        {
+          "@id": "ocpp:eMAID"
+        },
+        {
+          "@id": "ocpp:ISO14443"
+        },
+        {
+          "@id": "ocpp:ISO15693"
+        },
+        {
+          "@id": "ocpp:KeyCode"
+        },
+        {
+          "@id": "ocpp:Local"
+        },
+        {
+          "@id": "ocpp:MacAddress"
+        },
+        {
+          "@id": "ocpp:NoAuthorization"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Central",
+      "@type": [
+        "ocpp:IdTokenEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Central",
+      "schema:identifier": "Central"
+    },
+    {
+      "@id": "ocpp:eMAID",
+      "@type": [
+        "ocpp:IdTokenEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "eMAID",
+      "schema:identifier": "eMAID"
+    },
+    {
+      "@id": "ocpp:ISO14443",
+      "@type": [
+        "ocpp:IdTokenEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ISO14443",
+      "schema:identifier": "ISO14443"
+    },
+    {
+      "@id": "ocpp:ISO15693",
+      "@type": [
+        "ocpp:IdTokenEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ISO15693",
+      "schema:identifier": "ISO15693"
+    },
+    {
+      "@id": "ocpp:KeyCode",
+      "@type": [
+        "ocpp:IdTokenEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "KeyCode",
+      "schema:identifier": "KeyCode"
+    },
+    {
+      "@id": "ocpp:Local",
+      "@type": [
+        "ocpp:IdTokenEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Local",
+      "schema:identifier": "Local"
+    },
+    {
+      "@id": "ocpp:MacAddress",
+      "@type": [
+        "ocpp:IdTokenEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "MacAddress",
+      "schema:identifier": "MacAddress"
+    },
+    {
+      "@id": "ocpp:NoAuthorization",
+      "@type": [
+        "ocpp:IdTokenEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NoAuthorization",
+      "schema:identifier": "NoAuthorization"
+    },
+    {
+      "@id": "ocpp:AdditionalInfoType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "AdditionalInfoType",
+      "rdfs:comment": "Contains a case insensitive identifier to use for the authorization and the type of authorization to support multiple forms of identifiers.\r\n"
+    },
+    {
+      "@id": "ocpp:IdTokenType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "IdTokenType",
+      "rdfs:comment": "Contains a case insensitive identifier to use for the authorization and the type of authorization to support multiple forms of identifiers.\r\n"
+    },
+    {
+      "@id": "ocpp:OCSPRequestDataType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "OCSPRequestDataType"
+    },
+    {
+      "@id": "ocpp:AuthorizeRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "AuthorizeRequestPayload"
+    },
+    {
+      "@id": "ocpp:AuthorizationStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "AuthorizationStatusEnumType",
+      "rdfs:comment": "ID_ Token. Status. Authorization_ Status\r\nurn:x-oca:ocpp:uid:1:569372\r\nCurrent status of the ID Token.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Blocked"
+        },
+        {
+          "@id": "ocpp:ConcurrentTx"
+        },
+        {
+          "@id": "ocpp:Expired"
+        },
+        {
+          "@id": "ocpp:Invalid"
+        },
+        {
+          "@id": "ocpp:NoCredit"
+        },
+        {
+          "@id": "ocpp:NotAllowedTypeEVSE"
+        },
+        {
+          "@id": "ocpp:NotAtThisLocation"
+        },
+        {
+          "@id": "ocpp:NotAtThisTime"
+        },
+        {
+          "@id": "ocpp:Unknown"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:AuthorizationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Blocked",
+      "@type": [
+        "ocpp:AuthorizationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Blocked",
+      "schema:identifier": "Blocked"
+    },
+    {
+      "@id": "ocpp:ConcurrentTx",
+      "@type": [
+        "ocpp:AuthorizationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ConcurrentTx",
+      "schema:identifier": "ConcurrentTx"
+    },
+    {
+      "@id": "ocpp:Expired",
+      "@type": [
+        "ocpp:AuthorizationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Expired",
+      "schema:identifier": "Expired"
+    },
+    {
+      "@id": "ocpp:Invalid",
+      "@type": [
+        "ocpp:AuthorizationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Invalid",
+      "schema:identifier": "Invalid"
+    },
+    {
+      "@id": "ocpp:NoCredit",
+      "@type": [
+        "ocpp:AuthorizationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NoCredit",
+      "schema:identifier": "NoCredit"
+    },
+    {
+      "@id": "ocpp:NotAllowedTypeEVSE",
+      "@type": [
+        "ocpp:AuthorizationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotAllowedTypeEVSE",
+      "schema:identifier": "NotAllowedTypeEVSE"
+    },
+    {
+      "@id": "ocpp:NotAtThisLocation",
+      "@type": [
+        "ocpp:AuthorizationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotAtThisLocation",
+      "schema:identifier": "NotAtThisLocation"
+    },
+    {
+      "@id": "ocpp:NotAtThisTime",
+      "@type": [
+        "ocpp:AuthorizationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotAtThisTime",
+      "schema:identifier": "NotAtThisTime"
+    },
+    {
+      "@id": "ocpp:Unknown",
+      "@type": [
+        "ocpp:AuthorizationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Unknown",
+      "schema:identifier": "Unknown"
+    },
+    {
+      "@id": "ocpp:AuthorizeCertificateStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "AuthorizeCertificateStatusEnumType",
+      "rdfs:comment": "Certificate status information. \r\n- if all certificates are valid: return 'Accepted'.\r\n- if one of the certificates was revoked, return 'CertificateRevoked'.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:SignatureError"
+        },
+        {
+          "@id": "ocpp:CertificateExpired"
+        },
+        {
+          "@id": "ocpp:CertificateRevoked"
+        },
+        {
+          "@id": "ocpp:NoCertificateAvailable"
+        },
+        {
+          "@id": "ocpp:CertChainError"
+        },
+        {
+          "@id": "ocpp:ContractCancelled"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:AuthorizeCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:SignatureError",
+      "@type": [
+        "ocpp:AuthorizeCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SignatureError",
+      "schema:identifier": "SignatureError"
+    },
+    {
+      "@id": "ocpp:CertificateExpired",
+      "@type": [
+        "ocpp:AuthorizeCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CertificateExpired",
+      "schema:identifier": "CertificateExpired"
+    },
+    {
+      "@id": "ocpp:CertificateRevoked",
+      "@type": [
+        "ocpp:AuthorizeCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CertificateRevoked",
+      "schema:identifier": "CertificateRevoked"
+    },
+    {
+      "@id": "ocpp:NoCertificateAvailable",
+      "@type": [
+        "ocpp:AuthorizeCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NoCertificateAvailable",
+      "schema:identifier": "NoCertificateAvailable"
+    },
+    {
+      "@id": "ocpp:CertChainError",
+      "@type": [
+        "ocpp:AuthorizeCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CertChainError",
+      "schema:identifier": "CertChainError"
+    },
+    {
+      "@id": "ocpp:ContractCancelled",
+      "@type": [
+        "ocpp:AuthorizeCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ContractCancelled",
+      "schema:identifier": "ContractCancelled"
+    },
+    {
+      "@id": "ocpp:MessageFormatEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "MessageFormatEnumType",
+      "rdfs:comment": "Message_ Content. Format. Message_ Format_ Code\r\nurn:x-enexis:ecdm:uid:1:570848\r\nFormat of the message.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:ASCII"
+        },
+        {
+          "@id": "ocpp:HTML"
+        },
+        {
+          "@id": "ocpp:URI"
+        },
+        {
+          "@id": "ocpp:UTF8"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:ASCII",
+      "@type": [
+        "ocpp:MessageFormatEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ASCII",
+      "schema:identifier": "ASCII"
+    },
+    {
+      "@id": "ocpp:HTML",
+      "@type": [
+        "ocpp:MessageFormatEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "HTML",
+      "schema:identifier": "HTML"
+    },
+    {
+      "@id": "ocpp:URI",
+      "@type": [
+        "ocpp:MessageFormatEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "URI",
+      "schema:identifier": "URI"
+    },
+    {
+      "@id": "ocpp:UTF8",
+      "@type": [
+        "ocpp:MessageFormatEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UTF8",
+      "schema:identifier": "UTF8"
+    },
+    {
+      "@id": "ocpp:IdTokenInfoType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "IdTokenInfoType",
+      "rdfs:comment": "ID_ Token\r\nurn:x-oca:ocpp:uid:2:233247\r\nContains status information about an identifier.\r\nIt is advised to not stop charging for a token that expires during charging, as ExpiryDate is only used for caching purposes. If ExpiryDate is not given, the status has no end date.\r\n"
+    },
+    {
+      "@id": "ocpp:MessageContentType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MessageContentType",
+      "rdfs:comment": "Message_ Content\r\nurn:x-enexis:ecdm:uid:2:234490\r\nContains message details, for a message to be displayed on a Charging Station.\r\n\r\n"
+    },
+    {
+      "@id": "ocpp:AuthorizeResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "AuthorizeResponsePayload"
+    },
+    {
+      "@id": "ocpp:BootReasonEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "BootReasonEnumType",
+      "rdfs:comment": "This contains the reason for sending this message to the CSMS.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:ApplicationReset"
+        },
+        {
+          "@id": "ocpp:FirmwareUpdate"
+        },
+        {
+          "@id": "ocpp:LocalReset"
+        },
+        {
+          "@id": "ocpp:PowerUp"
+        },
+        {
+          "@id": "ocpp:RemoteReset"
+        },
+        {
+          "@id": "ocpp:ScheduledReset"
+        },
+        {
+          "@id": "ocpp:Triggered"
+        },
+        {
+          "@id": "ocpp:Unknown"
+        },
+        {
+          "@id": "ocpp:Watchdog"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:ApplicationReset",
+      "@type": [
+        "ocpp:BootReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ApplicationReset",
+      "schema:identifier": "ApplicationReset"
+    },
+    {
+      "@id": "ocpp:FirmwareUpdate",
+      "@type": [
+        "ocpp:BootReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "FirmwareUpdate",
+      "schema:identifier": "FirmwareUpdate"
+    },
+    {
+      "@id": "ocpp:LocalReset",
+      "@type": [
+        "ocpp:BootReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "LocalReset",
+      "schema:identifier": "LocalReset"
+    },
+    {
+      "@id": "ocpp:PowerUp",
+      "@type": [
+        "ocpp:BootReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PowerUp",
+      "schema:identifier": "PowerUp"
+    },
+    {
+      "@id": "ocpp:RemoteReset",
+      "@type": [
+        "ocpp:BootReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RemoteReset",
+      "schema:identifier": "RemoteReset"
+    },
+    {
+      "@id": "ocpp:ScheduledReset",
+      "@type": [
+        "ocpp:BootReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ScheduledReset",
+      "schema:identifier": "ScheduledReset"
+    },
+    {
+      "@id": "ocpp:Triggered",
+      "@type": [
+        "ocpp:BootReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Triggered",
+      "schema:identifier": "Triggered"
+    },
+    {
+      "@id": "ocpp:Unknown",
+      "@type": [
+        "ocpp:BootReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Unknown",
+      "schema:identifier": "Unknown"
+    },
+    {
+      "@id": "ocpp:Watchdog",
+      "@type": [
+        "ocpp:BootReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Watchdog",
+      "schema:identifier": "Watchdog"
+    },
+    {
+      "@id": "ocpp:ChargingStationType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ChargingStationType",
+      "rdfs:comment": "Charge_ Point\r\nurn:x-oca:ocpp:uid:2:233122\r\nThe physical system where an Electrical Vehicle (EV) can be charged.\r\n"
+    },
+    {
+      "@id": "ocpp:ModemType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ModemType",
+      "rdfs:comment": "Wireless_ Communication_ Module\r\nurn:x-oca:ocpp:uid:2:233306\r\nDefines parameters required for initiating and maintaining wireless communication with other devices.\r\n"
+    },
+    {
+      "@id": "ocpp:BootNotificationRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "BootNotificationRequestPayload"
+    },
+    {
+      "@id": "ocpp:RegistrationStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "RegistrationStatusEnumType",
+      "rdfs:comment": "This contains whether the Charging Station has been registered\r\nwithin the CSMS.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Pending"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:RegistrationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Pending",
+      "@type": [
+        "ocpp:RegistrationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Pending",
+      "schema:identifier": "Pending"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:RegistrationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:StatusInfoType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "StatusInfoType",
+      "rdfs:comment": "Element providing more information about the status.\r\n"
+    },
+    {
+      "@id": "ocpp:BootNotificationResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "BootNotificationResponsePayload"
+    },
+    {
+      "@id": "ocpp:CancelReservationRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CancelReservationRequestPayload"
+    },
+    {
+      "@id": "ocpp:CancelReservationStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "CancelReservationStatusEnumType",
+      "rdfs:comment": "This indicates the success or failure of the canceling of a reservation by CSMS.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:CancelReservationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:CancelReservationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:CancelReservationResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CancelReservationResponsePayload"
+    },
+    {
+      "@id": "ocpp:CertificateSigningUseEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "CertificateSigningUseEnumType",
+      "rdfs:comment": "Indicates the type of certificate that is to be signed. When omitted the certificate is to be used for both the 15118 connection (if implemented) and the Charging Station to CSMS connection.\r\n\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:ChargingStationCertificate"
+        },
+        {
+          "@id": "ocpp:V2GCertificate"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:ChargingStationCertificate",
+      "@type": [
+        "ocpp:CertificateSigningUseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ChargingStationCertificate",
+      "schema:identifier": "ChargingStationCertificate"
+    },
+    {
+      "@id": "ocpp:V2GCertificate",
+      "@type": [
+        "ocpp:CertificateSigningUseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "V2GCertificate",
+      "schema:identifier": "V2GCertificate"
+    },
+    {
+      "@id": "ocpp:CertificateSignedRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CertificateSignedRequestPayload"
+    },
+    {
+      "@id": "ocpp:CertificateSignedStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "CertificateSignedStatusEnumType",
+      "rdfs:comment": "Returns whether certificate signing has been accepted, otherwise rejected.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:CertificateSignedStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:CertificateSignedStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:CertificateSignedResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CertificateSignedResponsePayload"
+    },
+    {
+      "@id": "ocpp:OperationalStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "OperationalStatusEnumType",
+      "rdfs:comment": "This contains the type of availability change that the Charging Station should perform.\r\n\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Inoperative"
+        },
+        {
+          "@id": "ocpp:Operative"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Inoperative",
+      "@type": [
+        "ocpp:OperationalStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Inoperative",
+      "schema:identifier": "Inoperative"
+    },
+    {
+      "@id": "ocpp:Operative",
+      "@type": [
+        "ocpp:OperationalStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Operative",
+      "schema:identifier": "Operative"
+    },
+    {
+      "@id": "ocpp:EVSEType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EVSEType",
+      "rdfs:comment": "EVSE\r\nurn:x-oca:ocpp:uid:2:233123\r\nElectric Vehicle Supply Equipment\r\n"
+    },
+    {
+      "@id": "ocpp:ChangeAvailabilityRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ChangeAvailabilityRequestPayload"
+    },
+    {
+      "@id": "ocpp:ChangeAvailabilityStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ChangeAvailabilityStatusEnumType",
+      "rdfs:comment": "This indicates whether the Charging Station is able to perform the availability change.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:Scheduled"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:ChangeAvailabilityStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:ChangeAvailabilityStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:Scheduled",
+      "@type": [
+        "ocpp:ChangeAvailabilityStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Scheduled",
+      "schema:identifier": "Scheduled"
+    },
+    {
+      "@id": "ocpp:ChangeAvailabilityResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ChangeAvailabilityResponsePayload"
+    },
+    {
+      "@id": "ocpp:ClearCacheRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearCacheRequestPayload"
+    },
+    {
+      "@id": "ocpp:ClearCacheStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ClearCacheStatusEnumType",
+      "rdfs:comment": "Accepted if the Charging Station has executed the request, otherwise rejected.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:ClearCacheStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:ClearCacheStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:ClearCacheResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearCacheResponsePayload"
+    },
+    {
+      "@id": "ocpp:ChargingProfilePurposeEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ChargingProfilePurposeEnumType",
+      "rdfs:comment": "Charging_ Profile. Charging_ Profile_ Purpose. Charging_ Profile_ Purpose_ Code\r\nurn:x-oca:ocpp:uid:1:569231\r\nDefines the purpose of the schedule transferred by this profile\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:ChargingStationExternalConstraints"
+        },
+        {
+          "@id": "ocpp:ChargingStationMaxProfile"
+        },
+        {
+          "@id": "ocpp:TxDefaultProfile"
+        },
+        {
+          "@id": "ocpp:TxProfile"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:ChargingStationExternalConstraints",
+      "@type": [
+        "ocpp:ChargingProfilePurposeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ChargingStationExternalConstraints",
+      "schema:identifier": "ChargingStationExternalConstraints"
+    },
+    {
+      "@id": "ocpp:ChargingStationMaxProfile",
+      "@type": [
+        "ocpp:ChargingProfilePurposeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ChargingStationMaxProfile",
+      "schema:identifier": "ChargingStationMaxProfile"
+    },
+    {
+      "@id": "ocpp:TxDefaultProfile",
+      "@type": [
+        "ocpp:ChargingProfilePurposeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "TxDefaultProfile",
+      "schema:identifier": "TxDefaultProfile"
+    },
+    {
+      "@id": "ocpp:TxProfile",
+      "@type": [
+        "ocpp:ChargingProfilePurposeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "TxProfile",
+      "schema:identifier": "TxProfile"
+    },
+    {
+      "@id": "ocpp:ClearChargingProfileType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearChargingProfileType",
+      "rdfs:comment": "Charging_ Profile\r\nurn:x-oca:ocpp:uid:2:233255\r\nA ChargingProfile consists of a ChargingSchedule, describing the amount of power or current that can be delivered per time interval.\r\n"
+    },
+    {
+      "@id": "ocpp:ClearChargingProfileRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearChargingProfileRequestPayload"
+    },
+    {
+      "@id": "ocpp:ClearChargingProfileStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ClearChargingProfileStatusEnumType",
+      "rdfs:comment": "Indicates if the Charging Station was able to execute the request.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Unknown"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:ClearChargingProfileStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Unknown",
+      "@type": [
+        "ocpp:ClearChargingProfileStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Unknown",
+      "schema:identifier": "Unknown"
+    },
+    {
+      "@id": "ocpp:ClearChargingProfileResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearChargingProfileResponsePayload"
+    },
+    {
+      "@id": "ocpp:ClearDisplayMessageRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearDisplayMessageRequestPayload"
+    },
+    {
+      "@id": "ocpp:ClearMessageStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ClearMessageStatusEnumType",
+      "rdfs:comment": "Returns whether the Charging Station has been able to remove the message.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Unknown"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:ClearMessageStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Unknown",
+      "@type": [
+        "ocpp:ClearMessageStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Unknown",
+      "schema:identifier": "Unknown"
+    },
+    {
+      "@id": "ocpp:ClearDisplayMessageResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearDisplayMessageResponsePayload"
+    },
+    {
+      "@id": "ocpp:ClearVariableMonitoringRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearVariableMonitoringRequestPayload"
+    },
+    {
+      "@id": "ocpp:ClearMonitoringStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ClearMonitoringStatusEnumType",
+      "rdfs:comment": "Result of the clear request for this monitor, identified by its Id.\r\n\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:NotFound"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:ClearMonitoringStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:ClearMonitoringStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:NotFound",
+      "@type": [
+        "ocpp:ClearMonitoringStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotFound",
+      "schema:identifier": "NotFound"
+    },
+    {
+      "@id": "ocpp:ClearMonitoringResultType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearMonitoringResultType"
+    },
+    {
+      "@id": "ocpp:ClearVariableMonitoringResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearVariableMonitoringResponsePayload"
+    },
+    {
+      "@id": "ocpp:ChargingLimitSourceEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ChargingLimitSourceEnumType",
+      "rdfs:comment": "Source that has installed this charging profile.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:EMS"
+        },
+        {
+          "@id": "ocpp:Other"
+        },
+        {
+          "@id": "ocpp:SO"
+        },
+        {
+          "@id": "ocpp:CSO"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:EMS",
+      "@type": [
+        "ocpp:ChargingLimitSourceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EMS",
+      "schema:identifier": "EMS"
+    },
+    {
+      "@id": "ocpp:Other",
+      "@type": [
+        "ocpp:ChargingLimitSourceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Other",
+      "schema:identifier": "Other"
+    },
+    {
+      "@id": "ocpp:SO",
+      "@type": [
+        "ocpp:ChargingLimitSourceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SO",
+      "schema:identifier": "SO"
+    },
+    {
+      "@id": "ocpp:CSO",
+      "@type": [
+        "ocpp:ChargingLimitSourceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CSO",
+      "schema:identifier": "CSO"
+    },
+    {
+      "@id": "ocpp:ClearedChargingLimitRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearedChargingLimitRequestPayload"
+    },
+    {
+      "@id": "ocpp:ClearedChargingLimitResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClearedChargingLimitResponsePayload"
+    },
+    {
+      "@id": "ocpp:CostUpdatedRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CostUpdatedRequestPayload"
+    },
+    {
+      "@id": "ocpp:CostUpdatedResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CostUpdatedResponsePayload"
+    },
+    {
+      "@id": "ocpp:CertificateHashDataType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CertificateHashDataType"
+    },
+    {
+      "@id": "ocpp:CustomerInformationRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CustomerInformationRequestPayload"
+    },
+    {
+      "@id": "ocpp:CustomerInformationStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "CustomerInformationStatusEnumType",
+      "rdfs:comment": "Indicates whether the request was accepted.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:Invalid"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:CustomerInformationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:CustomerInformationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:Invalid",
+      "@type": [
+        "ocpp:CustomerInformationStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Invalid",
+      "schema:identifier": "Invalid"
+    },
+    {
+      "@id": "ocpp:CustomerInformationResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CustomerInformationResponsePayload"
+    },
+    {
+      "@id": "ocpp:DataTransferRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DataTransferRequestPayload"
+    },
+    {
+      "@id": "ocpp:DataTransferStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "DataTransferStatusEnumType",
+      "rdfs:comment": "This indicates the success or failure of the data transfer.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:UnknownMessageId"
+        },
+        {
+          "@id": "ocpp:UnknownVendorId"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:DataTransferStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:DataTransferStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:UnknownMessageId",
+      "@type": [
+        "ocpp:DataTransferStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnknownMessageId",
+      "schema:identifier": "UnknownMessageId"
+    },
+    {
+      "@id": "ocpp:UnknownVendorId",
+      "@type": [
+        "ocpp:DataTransferStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnknownVendorId",
+      "schema:identifier": "UnknownVendorId"
+    },
+    {
+      "@id": "ocpp:DataTransferResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DataTransferResponsePayload"
+    },
+    {
+      "@id": "ocpp:DeleteCertificateRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DeleteCertificateRequestPayload"
+    },
+    {
+      "@id": "ocpp:DeleteCertificateStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "DeleteCertificateStatusEnumType",
+      "rdfs:comment": "Charging Station indicates if it can process the request.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Failed"
+        },
+        {
+          "@id": "ocpp:NotFound"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:DeleteCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Failed",
+      "@type": [
+        "ocpp:DeleteCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Failed",
+      "schema:identifier": "Failed"
+    },
+    {
+      "@id": "ocpp:NotFound",
+      "@type": [
+        "ocpp:DeleteCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotFound",
+      "schema:identifier": "NotFound"
+    },
+    {
+      "@id": "ocpp:DeleteCertificateResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DeleteCertificateResponsePayload"
+    },
+    {
+      "@id": "ocpp:FirmwareStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "FirmwareStatusEnumType",
+      "rdfs:comment": "This contains the progress status of the firmware installation.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Downloaded"
+        },
+        {
+          "@id": "ocpp:DownloadFailed"
+        },
+        {
+          "@id": "ocpp:Downloading"
+        },
+        {
+          "@id": "ocpp:DownloadScheduled"
+        },
+        {
+          "@id": "ocpp:DownloadPaused"
+        },
+        {
+          "@id": "ocpp:Idle"
+        },
+        {
+          "@id": "ocpp:InstallationFailed"
+        },
+        {
+          "@id": "ocpp:Installing"
+        },
+        {
+          "@id": "ocpp:Installed"
+        },
+        {
+          "@id": "ocpp:InstallRebooting"
+        },
+        {
+          "@id": "ocpp:InstallScheduled"
+        },
+        {
+          "@id": "ocpp:InstallVerificationFailed"
+        },
+        {
+          "@id": "ocpp:InvalidSignature"
+        },
+        {
+          "@id": "ocpp:SignatureVerified"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Downloaded",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Downloaded",
+      "schema:identifier": "Downloaded"
+    },
+    {
+      "@id": "ocpp:DownloadFailed",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DownloadFailed",
+      "schema:identifier": "DownloadFailed"
+    },
+    {
+      "@id": "ocpp:Downloading",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Downloading",
+      "schema:identifier": "Downloading"
+    },
+    {
+      "@id": "ocpp:DownloadScheduled",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DownloadScheduled",
+      "schema:identifier": "DownloadScheduled"
+    },
+    {
+      "@id": "ocpp:DownloadPaused",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DownloadPaused",
+      "schema:identifier": "DownloadPaused"
+    },
+    {
+      "@id": "ocpp:Idle",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Idle",
+      "schema:identifier": "Idle"
+    },
+    {
+      "@id": "ocpp:InstallationFailed",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "InstallationFailed",
+      "schema:identifier": "InstallationFailed"
+    },
+    {
+      "@id": "ocpp:Installing",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Installing",
+      "schema:identifier": "Installing"
+    },
+    {
+      "@id": "ocpp:Installed",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Installed",
+      "schema:identifier": "Installed"
+    },
+    {
+      "@id": "ocpp:InstallRebooting",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "InstallRebooting",
+      "schema:identifier": "InstallRebooting"
+    },
+    {
+      "@id": "ocpp:InstallScheduled",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "InstallScheduled",
+      "schema:identifier": "InstallScheduled"
+    },
+    {
+      "@id": "ocpp:InstallVerificationFailed",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "InstallVerificationFailed",
+      "schema:identifier": "InstallVerificationFailed"
+    },
+    {
+      "@id": "ocpp:InvalidSignature",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "InvalidSignature",
+      "schema:identifier": "InvalidSignature"
+    },
+    {
+      "@id": "ocpp:SignatureVerified",
+      "@type": [
+        "ocpp:FirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SignatureVerified",
+      "schema:identifier": "SignatureVerified"
+    },
+    {
+      "@id": "ocpp:FirmwareStatusNotificationRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FirmwareStatusNotificationRequestPayload"
+    },
+    {
+      "@id": "ocpp:FirmwareStatusNotificationResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FirmwareStatusNotificationResponsePayload"
+    },
+    {
+      "@id": "ocpp:CertificateActionEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "CertificateActionEnumType",
+      "rdfs:comment": "Defines whether certificate needs to be installed or updated.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Install"
+        },
+        {
+          "@id": "ocpp:Update"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Install",
+      "@type": [
+        "ocpp:CertificateActionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Install",
+      "schema:identifier": "Install"
+    },
+    {
+      "@id": "ocpp:Update",
+      "@type": [
+        "ocpp:CertificateActionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Update",
+      "schema:identifier": "Update"
+    },
+    {
+      "@id": "ocpp:Get15118EVCertificateRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Get15118EVCertificateRequestPayload"
+    },
+    {
+      "@id": "ocpp:Iso15118EVCertificateStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Iso15118EVCertificateStatusEnumType",
+      "rdfs:comment": "Indicates whether the message was processed properly.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Failed"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:Iso15118EVCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Failed",
+      "@type": [
+        "ocpp:Iso15118EVCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Failed",
+      "schema:identifier": "Failed"
+    },
+    {
+      "@id": "ocpp:Get15118EVCertificateResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Get15118EVCertificateResponsePayload"
+    },
+    {
+      "@id": "ocpp:ReportBaseEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ReportBaseEnumType",
+      "rdfs:comment": "This field specifies the report base.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:ConfigurationInventory"
+        },
+        {
+          "@id": "ocpp:FullInventory"
+        },
+        {
+          "@id": "ocpp:SummaryInventory"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:ConfigurationInventory",
+      "@type": [
+        "ocpp:ReportBaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ConfigurationInventory",
+      "schema:identifier": "ConfigurationInventory"
+    },
+    {
+      "@id": "ocpp:FullInventory",
+      "@type": [
+        "ocpp:ReportBaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "FullInventory",
+      "schema:identifier": "FullInventory"
+    },
+    {
+      "@id": "ocpp:SummaryInventory",
+      "@type": [
+        "ocpp:ReportBaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SummaryInventory",
+      "schema:identifier": "SummaryInventory"
+    },
+    {
+      "@id": "ocpp:GetBaseReportRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetBaseReportRequestPayload"
+    },
+    {
+      "@id": "ocpp:GenericDeviceModelStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "GenericDeviceModelStatusEnumType",
+      "rdfs:comment": "Indicates whether the Charging Station was able to accept the request.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:NotSupported"
+        },
+        {
+          "@id": "ocpp:EmptyResultSet"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:GenericDeviceModelStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:GenericDeviceModelStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:NotSupported",
+      "@type": [
+        "ocpp:GenericDeviceModelStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotSupported",
+      "schema:identifier": "NotSupported"
+    },
+    {
+      "@id": "ocpp:EmptyResultSet",
+      "@type": [
+        "ocpp:GenericDeviceModelStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EmptyResultSet",
+      "schema:identifier": "EmptyResultSet"
+    },
+    {
+      "@id": "ocpp:GetBaseReportResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetBaseReportResponsePayload"
+    },
+    {
+      "@id": "ocpp:GetCertificateStatusRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetCertificateStatusRequestPayload"
+    },
+    {
+      "@id": "ocpp:GetCertificateStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "GetCertificateStatusEnumType",
+      "rdfs:comment": "This indicates whether the charging station was able to retrieve the OCSP certificate status.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Failed"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:GetCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Failed",
+      "@type": [
+        "ocpp:GetCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Failed",
+      "schema:identifier": "Failed"
+    },
+    {
+      "@id": "ocpp:GetCertificateStatusResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetCertificateStatusResponsePayload"
+    },
+    {
+      "@id": "ocpp:ChargingProfileCriterionType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ChargingProfileCriterionType",
+      "rdfs:comment": "Charging_ Profile\r\nurn:x-oca:ocpp:uid:2:233255\r\nA ChargingProfile consists of ChargingSchedule, describing the amount of power or current that can be delivered per time interval.\r\n"
+    },
+    {
+      "@id": "ocpp:GetChargingProfilesRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetChargingProfilesRequestPayload"
+    },
+    {
+      "@id": "ocpp:GetChargingProfileStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "GetChargingProfileStatusEnumType",
+      "rdfs:comment": "This indicates whether the Charging Station is able to process this request and will send &lt;&lt;reportchargingprofilesrequest, ReportChargingProfilesRequest&gt;&gt; messages.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:NoProfiles"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:GetChargingProfileStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:NoProfiles",
+      "@type": [
+        "ocpp:GetChargingProfileStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NoProfiles",
+      "schema:identifier": "NoProfiles"
+    },
+    {
+      "@id": "ocpp:GetChargingProfilesResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetChargingProfilesResponsePayload"
+    },
+    {
+      "@id": "ocpp:ChargingRateUnitEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ChargingRateUnitEnumType",
+      "rdfs:comment": "Charging_ Schedule. Charging_ Rate_ Unit. Charging_ Rate_ Unit_ Code\r\nurn:x-oca:ocpp:uid:1:569238\r\nThe unit of measure Limit is expressed in.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:W"
+        },
+        {
+          "@id": "ocpp:A"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:W",
+      "@type": [
+        "ocpp:ChargingRateUnitEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "W",
+      "schema:identifier": "W"
+    },
+    {
+      "@id": "ocpp:A",
+      "@type": [
+        "ocpp:ChargingRateUnitEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "A",
+      "schema:identifier": "A"
+    },
+    {
+      "@id": "ocpp:GetCompositeScheduleRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetCompositeScheduleRequestPayload"
+    },
+    {
+      "@id": "ocpp:GenericStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "GenericStatusEnumType",
+      "rdfs:comment": "Specifies whether the CSMS can process the request.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:GenericStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:GenericStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:ChargingSchedulePeriodType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ChargingSchedulePeriodType",
+      "rdfs:comment": "Charging_ Schedule_ Period\r\nurn:x-oca:ocpp:uid:2:233257\r\nCharging schedule period structure defines a time period in a charging schedule.\r\n"
+    },
+    {
+      "@id": "ocpp:CompositeScheduleType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CompositeScheduleType",
+      "rdfs:comment": "Composite_ Schedule\r\nurn:x-oca:ocpp:uid:2:233362\r\n"
+    },
+    {
+      "@id": "ocpp:GetCompositeScheduleResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetCompositeScheduleResponsePayload"
+    },
+    {
+      "@id": "ocpp:MessagePriorityEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "MessagePriorityEnumType",
+      "rdfs:comment": "Message_ Info. Priority. Message_ Priority_ Code\r\nurn:x-enexis:ecdm:uid:1:569253\r\nWith what priority should this message be shown\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:AlwaysFront"
+        },
+        {
+          "@id": "ocpp:InFront"
+        },
+        {
+          "@id": "ocpp:NormalCycle"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:AlwaysFront",
+      "@type": [
+        "ocpp:MessagePriorityEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AlwaysFront",
+      "schema:identifier": "AlwaysFront"
+    },
+    {
+      "@id": "ocpp:InFront",
+      "@type": [
+        "ocpp:MessagePriorityEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "InFront",
+      "schema:identifier": "InFront"
+    },
+    {
+      "@id": "ocpp:NormalCycle",
+      "@type": [
+        "ocpp:MessagePriorityEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NormalCycle",
+      "schema:identifier": "NormalCycle"
+    },
+    {
+      "@id": "ocpp:MessageStateEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "MessageStateEnumType",
+      "rdfs:comment": "Message_ Info. State. Message_ State_ Code\r\nurn:x-enexis:ecdm:uid:1:569254\r\nDuring what state should this message be shown. When omitted this message should be shown in any state of the Charging Station.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Charging"
+        },
+        {
+          "@id": "ocpp:Faulted"
+        },
+        {
+          "@id": "ocpp:Idle"
+        },
+        {
+          "@id": "ocpp:Unavailable"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Charging",
+      "@type": [
+        "ocpp:MessageStateEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Charging",
+      "schema:identifier": "Charging"
+    },
+    {
+      "@id": "ocpp:Faulted",
+      "@type": [
+        "ocpp:MessageStateEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Faulted",
+      "schema:identifier": "Faulted"
+    },
+    {
+      "@id": "ocpp:Idle",
+      "@type": [
+        "ocpp:MessageStateEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Idle",
+      "schema:identifier": "Idle"
+    },
+    {
+      "@id": "ocpp:Unavailable",
+      "@type": [
+        "ocpp:MessageStateEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Unavailable",
+      "schema:identifier": "Unavailable"
+    },
+    {
+      "@id": "ocpp:GetDisplayMessagesRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetDisplayMessagesRequestPayload"
+    },
+    {
+      "@id": "ocpp:GetDisplayMessagesStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "GetDisplayMessagesStatusEnumType",
+      "rdfs:comment": "Indicates if the Charging Station has Display Messages that match the request criteria in the &lt;&lt;getdisplaymessagesrequest,GetDisplayMessagesRequest&gt;&gt;\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Unknown"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:GetDisplayMessagesStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Unknown",
+      "@type": [
+        "ocpp:GetDisplayMessagesStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Unknown",
+      "schema:identifier": "Unknown"
+    },
+    {
+      "@id": "ocpp:GetDisplayMessagesResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetDisplayMessagesResponsePayload"
+    },
+    {
+      "@id": "ocpp:GetCertificateIdUseEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "GetCertificateIdUseEnumType",
+      "rdfs:comment": "Indicates the type of the requested certificate(s).\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:V2GRootCertificate"
+        },
+        {
+          "@id": "ocpp:MORootCertificate"
+        },
+        {
+          "@id": "ocpp:CSMSRootCertificate"
+        },
+        {
+          "@id": "ocpp:V2GCertificateChain"
+        },
+        {
+          "@id": "ocpp:ManufacturerRootCertificate"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:V2GRootCertificate",
+      "@type": [
+        "ocpp:GetCertificateIdUseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "V2GRootCertificate",
+      "schema:identifier": "V2GRootCertificate"
+    },
+    {
+      "@id": "ocpp:MORootCertificate",
+      "@type": [
+        "ocpp:GetCertificateIdUseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "MORootCertificate",
+      "schema:identifier": "MORootCertificate"
+    },
+    {
+      "@id": "ocpp:CSMSRootCertificate",
+      "@type": [
+        "ocpp:GetCertificateIdUseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CSMSRootCertificate",
+      "schema:identifier": "CSMSRootCertificate"
+    },
+    {
+      "@id": "ocpp:V2GCertificateChain",
+      "@type": [
+        "ocpp:GetCertificateIdUseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "V2GCertificateChain",
+      "schema:identifier": "V2GCertificateChain"
+    },
+    {
+      "@id": "ocpp:ManufacturerRootCertificate",
+      "@type": [
+        "ocpp:GetCertificateIdUseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ManufacturerRootCertificate",
+      "schema:identifier": "ManufacturerRootCertificate"
+    },
+    {
+      "@id": "ocpp:GetInstalledCertificateIdsRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetInstalledCertificateIdsRequestPayload"
+    },
+    {
+      "@id": "ocpp:GetInstalledCertificateStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "GetInstalledCertificateStatusEnumType",
+      "rdfs:comment": "Charging Station indicates if it can process the request.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:NotFound"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:GetInstalledCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:NotFound",
+      "@type": [
+        "ocpp:GetInstalledCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotFound",
+      "schema:identifier": "NotFound"
+    },
+    {
+      "@id": "ocpp:CertificateHashDataChainType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CertificateHashDataChainType"
+    },
+    {
+      "@id": "ocpp:GetInstalledCertificateIdsResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetInstalledCertificateIdsResponsePayload"
+    },
+    {
+      "@id": "ocpp:GetLocalListVersionRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetLocalListVersionRequestPayload"
+    },
+    {
+      "@id": "ocpp:GetLocalListVersionResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetLocalListVersionResponsePayload"
+    },
+    {
+      "@id": "ocpp:LogEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "LogEnumType",
+      "rdfs:comment": "This contains the type of log file that the Charging Station\r\nshould send.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:DiagnosticsLog"
+        },
+        {
+          "@id": "ocpp:SecurityLog"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:DiagnosticsLog",
+      "@type": [
+        "ocpp:LogEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DiagnosticsLog",
+      "schema:identifier": "DiagnosticsLog"
+    },
+    {
+      "@id": "ocpp:SecurityLog",
+      "@type": [
+        "ocpp:LogEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SecurityLog",
+      "schema:identifier": "SecurityLog"
+    },
+    {
+      "@id": "ocpp:LogParametersType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LogParametersType",
+      "rdfs:comment": "Log\r\nurn:x-enexis:ecdm:uid:2:233373\r\nGeneric class for the configuration of logging entries.\r\n"
+    },
+    {
+      "@id": "ocpp:GetLogRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetLogRequestPayload"
+    },
+    {
+      "@id": "ocpp:LogStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "LogStatusEnumType",
+      "rdfs:comment": "This field indicates whether the Charging Station was able to accept the request.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:AcceptedCanceled"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:LogStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:LogStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:AcceptedCanceled",
+      "@type": [
+        "ocpp:LogStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AcceptedCanceled",
+      "schema:identifier": "AcceptedCanceled"
+    },
+    {
+      "@id": "ocpp:GetLogResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetLogResponsePayload"
+    },
+    {
+      "@id": "ocpp:MonitoringCriterionEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "MonitoringCriterionEnumType",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:ThresholdMonitoring"
+        },
+        {
+          "@id": "ocpp:DeltaMonitoring"
+        },
+        {
+          "@id": "ocpp:PeriodicMonitoring"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:ThresholdMonitoring",
+      "@type": [
+        "ocpp:MonitoringCriterionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ThresholdMonitoring",
+      "schema:identifier": "ThresholdMonitoring"
+    },
+    {
+      "@id": "ocpp:DeltaMonitoring",
+      "@type": [
+        "ocpp:MonitoringCriterionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DeltaMonitoring",
+      "schema:identifier": "DeltaMonitoring"
+    },
+    {
+      "@id": "ocpp:PeriodicMonitoring",
+      "@type": [
+        "ocpp:MonitoringCriterionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PeriodicMonitoring",
+      "schema:identifier": "PeriodicMonitoring"
+    },
+    {
+      "@id": "ocpp:ComponentType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ComponentType",
+      "rdfs:comment": "A physical or logical component\r\n"
+    },
+    {
+      "@id": "ocpp:ComponentVariableType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ComponentVariableType",
+      "rdfs:comment": "Class to report components, variables and variable attributes and characteristics.\r\n"
+    },
+    {
+      "@id": "ocpp:VariableType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "VariableType",
+      "rdfs:comment": "Reference key to a component-variable.\r\n"
+    },
+    {
+      "@id": "ocpp:GetMonitoringReportRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetMonitoringReportRequestPayload"
+    },
+    {
+      "@id": "ocpp:GetMonitoringReportResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetMonitoringReportResponsePayload"
+    },
+    {
+      "@id": "ocpp:ComponentCriterionEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ComponentCriterionEnumType",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Active"
+        },
+        {
+          "@id": "ocpp:Available"
+        },
+        {
+          "@id": "ocpp:Enabled"
+        },
+        {
+          "@id": "ocpp:Problem"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Active",
+      "@type": [
+        "ocpp:ComponentCriterionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Active",
+      "schema:identifier": "Active"
+    },
+    {
+      "@id": "ocpp:Available",
+      "@type": [
+        "ocpp:ComponentCriterionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Available",
+      "schema:identifier": "Available"
+    },
+    {
+      "@id": "ocpp:Enabled",
+      "@type": [
+        "ocpp:ComponentCriterionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Enabled",
+      "schema:identifier": "Enabled"
+    },
+    {
+      "@id": "ocpp:Problem",
+      "@type": [
+        "ocpp:ComponentCriterionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Problem",
+      "schema:identifier": "Problem"
+    },
+    {
+      "@id": "ocpp:GetReportRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetReportRequestPayload"
+    },
+    {
+      "@id": "ocpp:GetReportResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetReportResponsePayload"
+    },
+    {
+      "@id": "ocpp:GetTransactionStatusRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetTransactionStatusRequestPayload"
+    },
+    {
+      "@id": "ocpp:GetTransactionStatusResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetTransactionStatusResponsePayload"
+    },
+    {
+      "@id": "ocpp:AttributeEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "AttributeEnumType",
+      "rdfs:comment": "Type of attribute: Actual, Target, MinSet, MaxSet. Default is Actual when omitted.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Actual"
+        },
+        {
+          "@id": "ocpp:Target"
+        },
+        {
+          "@id": "ocpp:MinSet"
+        },
+        {
+          "@id": "ocpp:MaxSet"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Actual",
+      "@type": [
+        "ocpp:AttributeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Actual",
+      "schema:identifier": "Actual"
+    },
+    {
+      "@id": "ocpp:Target",
+      "@type": [
+        "ocpp:AttributeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Target",
+      "schema:identifier": "Target"
+    },
+    {
+      "@id": "ocpp:MinSet",
+      "@type": [
+        "ocpp:AttributeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "MinSet",
+      "schema:identifier": "MinSet"
+    },
+    {
+      "@id": "ocpp:MaxSet",
+      "@type": [
+        "ocpp:AttributeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "MaxSet",
+      "schema:identifier": "MaxSet"
+    },
+    {
+      "@id": "ocpp:GetVariableDataType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetVariableDataType",
+      "rdfs:comment": "Class to hold parameters for GetVariables request.\r\n"
+    },
+    {
+      "@id": "ocpp:GetVariablesRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetVariablesRequestPayload"
+    },
+    {
+      "@id": "ocpp:GetVariableStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "GetVariableStatusEnumType",
+      "rdfs:comment": "Result status of getting the variable.\r\n\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:UnknownComponent"
+        },
+        {
+          "@id": "ocpp:UnknownVariable"
+        },
+        {
+          "@id": "ocpp:NotSupportedAttributeType"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:GetVariableStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:GetVariableStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:UnknownComponent",
+      "@type": [
+        "ocpp:GetVariableStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnknownComponent",
+      "schema:identifier": "UnknownComponent"
+    },
+    {
+      "@id": "ocpp:UnknownVariable",
+      "@type": [
+        "ocpp:GetVariableStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnknownVariable",
+      "schema:identifier": "UnknownVariable"
+    },
+    {
+      "@id": "ocpp:NotSupportedAttributeType",
+      "@type": [
+        "ocpp:GetVariableStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotSupportedAttributeType",
+      "schema:identifier": "NotSupportedAttributeType"
+    },
+    {
+      "@id": "ocpp:GetVariableResultType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetVariableResultType",
+      "rdfs:comment": "Class to hold results of GetVariables request.\r\n"
+    },
+    {
+      "@id": "ocpp:GetVariablesResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GetVariablesResponsePayload"
+    },
+    {
+      "@id": "ocpp:HeartbeatRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "HeartbeatRequestPayload"
+    },
+    {
+      "@id": "ocpp:HeartbeatResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "HeartbeatResponsePayload"
+    },
+    {
+      "@id": "ocpp:InstallCertificateUseEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "InstallCertificateUseEnumType",
+      "rdfs:comment": "Indicates the certificate type that is sent.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:V2GRootCertificate"
+        },
+        {
+          "@id": "ocpp:MORootCertificate"
+        },
+        {
+          "@id": "ocpp:CSMSRootCertificate"
+        },
+        {
+          "@id": "ocpp:ManufacturerRootCertificate"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:V2GRootCertificate",
+      "@type": [
+        "ocpp:InstallCertificateUseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "V2GRootCertificate",
+      "schema:identifier": "V2GRootCertificate"
+    },
+    {
+      "@id": "ocpp:MORootCertificate",
+      "@type": [
+        "ocpp:InstallCertificateUseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "MORootCertificate",
+      "schema:identifier": "MORootCertificate"
+    },
+    {
+      "@id": "ocpp:CSMSRootCertificate",
+      "@type": [
+        "ocpp:InstallCertificateUseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CSMSRootCertificate",
+      "schema:identifier": "CSMSRootCertificate"
+    },
+    {
+      "@id": "ocpp:ManufacturerRootCertificate",
+      "@type": [
+        "ocpp:InstallCertificateUseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ManufacturerRootCertificate",
+      "schema:identifier": "ManufacturerRootCertificate"
+    },
+    {
+      "@id": "ocpp:InstallCertificateRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "InstallCertificateRequestPayload"
+    },
+    {
+      "@id": "ocpp:InstallCertificateStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "InstallCertificateStatusEnumType",
+      "rdfs:comment": "Charging Station indicates if installation was successful.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:Failed"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:InstallCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:InstallCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:Failed",
+      "@type": [
+        "ocpp:InstallCertificateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Failed",
+      "schema:identifier": "Failed"
+    },
+    {
+      "@id": "ocpp:InstallCertificateResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "InstallCertificateResponsePayload"
+    },
+    {
+      "@id": "ocpp:UploadLogStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "UploadLogStatusEnumType",
+      "rdfs:comment": "This contains the status of the log upload.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:BadMessage"
+        },
+        {
+          "@id": "ocpp:Idle"
+        },
+        {
+          "@id": "ocpp:NotSupportedOperation"
+        },
+        {
+          "@id": "ocpp:PermissionDenied"
+        },
+        {
+          "@id": "ocpp:Uploaded"
+        },
+        {
+          "@id": "ocpp:UploadFailure"
+        },
+        {
+          "@id": "ocpp:Uploading"
+        },
+        {
+          "@id": "ocpp:AcceptedCanceled"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:BadMessage",
+      "@type": [
+        "ocpp:UploadLogStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "BadMessage",
+      "schema:identifier": "BadMessage"
+    },
+    {
+      "@id": "ocpp:Idle",
+      "@type": [
+        "ocpp:UploadLogStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Idle",
+      "schema:identifier": "Idle"
+    },
+    {
+      "@id": "ocpp:NotSupportedOperation",
+      "@type": [
+        "ocpp:UploadLogStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotSupportedOperation",
+      "schema:identifier": "NotSupportedOperation"
+    },
+    {
+      "@id": "ocpp:PermissionDenied",
+      "@type": [
+        "ocpp:UploadLogStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PermissionDenied",
+      "schema:identifier": "PermissionDenied"
+    },
+    {
+      "@id": "ocpp:Uploaded",
+      "@type": [
+        "ocpp:UploadLogStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Uploaded",
+      "schema:identifier": "Uploaded"
+    },
+    {
+      "@id": "ocpp:UploadFailure",
+      "@type": [
+        "ocpp:UploadLogStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UploadFailure",
+      "schema:identifier": "UploadFailure"
+    },
+    {
+      "@id": "ocpp:Uploading",
+      "@type": [
+        "ocpp:UploadLogStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Uploading",
+      "schema:identifier": "Uploading"
+    },
+    {
+      "@id": "ocpp:AcceptedCanceled",
+      "@type": [
+        "ocpp:UploadLogStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AcceptedCanceled",
+      "schema:identifier": "AcceptedCanceled"
+    },
+    {
+      "@id": "ocpp:LogStatusNotificationRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LogStatusNotificationRequestPayload"
+    },
+    {
+      "@id": "ocpp:LogStatusNotificationResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LogStatusNotificationResponsePayload"
+    },
+    {
+      "@id": "ocpp:LocationEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "LocationEnumType",
+      "rdfs:comment": "Sampled_ Value. Location. Location_ Code\r\nurn:x-oca:ocpp:uid:1:569265\r\nIndicates where the measured value has been sampled. Default =  \"Outlet\"\r\n\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Body"
+        },
+        {
+          "@id": "ocpp:Cable"
+        },
+        {
+          "@id": "ocpp:EV"
+        },
+        {
+          "@id": "ocpp:Inlet"
+        },
+        {
+          "@id": "ocpp:Outlet"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Body",
+      "@type": [
+        "ocpp:LocationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Body",
+      "schema:identifier": "Body"
+    },
+    {
+      "@id": "ocpp:Cable",
+      "@type": [
+        "ocpp:LocationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Cable",
+      "schema:identifier": "Cable"
+    },
+    {
+      "@id": "ocpp:EV",
+      "@type": [
+        "ocpp:LocationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EV",
+      "schema:identifier": "EV"
+    },
+    {
+      "@id": "ocpp:Inlet",
+      "@type": [
+        "ocpp:LocationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Inlet",
+      "schema:identifier": "Inlet"
+    },
+    {
+      "@id": "ocpp:Outlet",
+      "@type": [
+        "ocpp:LocationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Outlet",
+      "schema:identifier": "Outlet"
+    },
+    {
+      "@id": "ocpp:MeasurandEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "MeasurandEnumType",
+      "rdfs:comment": "Sampled_ Value. Measurand. Measurand_ Code\r\nurn:x-oca:ocpp:uid:1:569263\r\nType of measurement. Default = \"Energy.Active.Import.Register\"\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Current.Export"
+        },
+        {
+          "@id": "ocpp:Current.Import"
+        },
+        {
+          "@id": "ocpp:Current.Offered"
+        },
+        {
+          "@id": "ocpp:Energy.Active.Export.Register"
+        },
+        {
+          "@id": "ocpp:Energy.Active.Import.Register"
+        },
+        {
+          "@id": "ocpp:Energy.Reactive.Export.Register"
+        },
+        {
+          "@id": "ocpp:Energy.Reactive.Import.Register"
+        },
+        {
+          "@id": "ocpp:Energy.Active.Export.Interval"
+        },
+        {
+          "@id": "ocpp:Energy.Active.Import.Interval"
+        },
+        {
+          "@id": "ocpp:Energy.Active.Net"
+        },
+        {
+          "@id": "ocpp:Energy.Reactive.Export.Interval"
+        },
+        {
+          "@id": "ocpp:Energy.Reactive.Import.Interval"
+        },
+        {
+          "@id": "ocpp:Energy.Reactive.Net"
+        },
+        {
+          "@id": "ocpp:Energy.Apparent.Net"
+        },
+        {
+          "@id": "ocpp:Energy.Apparent.Import"
+        },
+        {
+          "@id": "ocpp:Energy.Apparent.Export"
+        },
+        {
+          "@id": "ocpp:Frequency"
+        },
+        {
+          "@id": "ocpp:Power.Active.Export"
+        },
+        {
+          "@id": "ocpp:Power.Active.Import"
+        },
+        {
+          "@id": "ocpp:Power.Factor"
+        },
+        {
+          "@id": "ocpp:Power.Offered"
+        },
+        {
+          "@id": "ocpp:Power.Reactive.Export"
+        },
+        {
+          "@id": "ocpp:Power.Reactive.Import"
+        },
+        {
+          "@id": "ocpp:SoC"
+        },
+        {
+          "@id": "ocpp:Voltage"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Current.Export",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Current.Export",
+      "schema:identifier": "Current.Export"
+    },
+    {
+      "@id": "ocpp:Current.Import",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Current.Import",
+      "schema:identifier": "Current.Import"
+    },
+    {
+      "@id": "ocpp:Current.Offered",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Current.Offered",
+      "schema:identifier": "Current.Offered"
+    },
+    {
+      "@id": "ocpp:Energy.Active.Export.Register",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Active.Export.Register",
+      "schema:identifier": "Energy.Active.Export.Register"
+    },
+    {
+      "@id": "ocpp:Energy.Active.Import.Register",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Active.Import.Register",
+      "schema:identifier": "Energy.Active.Import.Register"
+    },
+    {
+      "@id": "ocpp:Energy.Reactive.Export.Register",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Reactive.Export.Register",
+      "schema:identifier": "Energy.Reactive.Export.Register"
+    },
+    {
+      "@id": "ocpp:Energy.Reactive.Import.Register",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Reactive.Import.Register",
+      "schema:identifier": "Energy.Reactive.Import.Register"
+    },
+    {
+      "@id": "ocpp:Energy.Active.Export.Interval",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Active.Export.Interval",
+      "schema:identifier": "Energy.Active.Export.Interval"
+    },
+    {
+      "@id": "ocpp:Energy.Active.Import.Interval",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Active.Import.Interval",
+      "schema:identifier": "Energy.Active.Import.Interval"
+    },
+    {
+      "@id": "ocpp:Energy.Active.Net",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Active.Net",
+      "schema:identifier": "Energy.Active.Net"
+    },
+    {
+      "@id": "ocpp:Energy.Reactive.Export.Interval",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Reactive.Export.Interval",
+      "schema:identifier": "Energy.Reactive.Export.Interval"
+    },
+    {
+      "@id": "ocpp:Energy.Reactive.Import.Interval",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Reactive.Import.Interval",
+      "schema:identifier": "Energy.Reactive.Import.Interval"
+    },
+    {
+      "@id": "ocpp:Energy.Reactive.Net",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Reactive.Net",
+      "schema:identifier": "Energy.Reactive.Net"
+    },
+    {
+      "@id": "ocpp:Energy.Apparent.Net",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Apparent.Net",
+      "schema:identifier": "Energy.Apparent.Net"
+    },
+    {
+      "@id": "ocpp:Energy.Apparent.Import",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Apparent.Import",
+      "schema:identifier": "Energy.Apparent.Import"
+    },
+    {
+      "@id": "ocpp:Energy.Apparent.Export",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Energy.Apparent.Export",
+      "schema:identifier": "Energy.Apparent.Export"
+    },
+    {
+      "@id": "ocpp:Frequency",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Frequency",
+      "schema:identifier": "Frequency"
+    },
+    {
+      "@id": "ocpp:Power.Active.Export",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Power.Active.Export",
+      "schema:identifier": "Power.Active.Export"
+    },
+    {
+      "@id": "ocpp:Power.Active.Import",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Power.Active.Import",
+      "schema:identifier": "Power.Active.Import"
+    },
+    {
+      "@id": "ocpp:Power.Factor",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Power.Factor",
+      "schema:identifier": "Power.Factor"
+    },
+    {
+      "@id": "ocpp:Power.Offered",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Power.Offered",
+      "schema:identifier": "Power.Offered"
+    },
+    {
+      "@id": "ocpp:Power.Reactive.Export",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Power.Reactive.Export",
+      "schema:identifier": "Power.Reactive.Export"
+    },
+    {
+      "@id": "ocpp:Power.Reactive.Import",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Power.Reactive.Import",
+      "schema:identifier": "Power.Reactive.Import"
+    },
+    {
+      "@id": "ocpp:SoC",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SoC",
+      "schema:identifier": "SoC"
+    },
+    {
+      "@id": "ocpp:Voltage",
+      "@type": [
+        "ocpp:MeasurandEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Voltage",
+      "schema:identifier": "Voltage"
+    },
+    {
+      "@id": "ocpp:PhaseEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "PhaseEnumType",
+      "rdfs:comment": "Sampled_ Value. Phase. Phase_ Code\r\nurn:x-oca:ocpp:uid:1:569264\r\nIndicates how the measured value is to be interpreted. For instance between L1 and neutral (L1-N) Please note that not all values of phase are applicable to all Measurands. When phase is absent, the measured value is interpreted as an overall value.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:L1"
+        },
+        {
+          "@id": "ocpp:L2"
+        },
+        {
+          "@id": "ocpp:L3"
+        },
+        {
+          "@id": "ocpp:N"
+        },
+        {
+          "@id": "ocpp:L1-N"
+        },
+        {
+          "@id": "ocpp:L2-N"
+        },
+        {
+          "@id": "ocpp:L3-N"
+        },
+        {
+          "@id": "ocpp:L1-L2"
+        },
+        {
+          "@id": "ocpp:L2-L3"
+        },
+        {
+          "@id": "ocpp:L3-L1"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:L1",
+      "@type": [
+        "ocpp:PhaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "L1",
+      "schema:identifier": "L1"
+    },
+    {
+      "@id": "ocpp:L2",
+      "@type": [
+        "ocpp:PhaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "L2",
+      "schema:identifier": "L2"
+    },
+    {
+      "@id": "ocpp:L3",
+      "@type": [
+        "ocpp:PhaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "L3",
+      "schema:identifier": "L3"
+    },
+    {
+      "@id": "ocpp:N",
+      "@type": [
+        "ocpp:PhaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "N",
+      "schema:identifier": "N"
+    },
+    {
+      "@id": "ocpp:L1-N",
+      "@type": [
+        "ocpp:PhaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "L1-N",
+      "schema:identifier": "L1-N"
+    },
+    {
+      "@id": "ocpp:L2-N",
+      "@type": [
+        "ocpp:PhaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "L2-N",
+      "schema:identifier": "L2-N"
+    },
+    {
+      "@id": "ocpp:L3-N",
+      "@type": [
+        "ocpp:PhaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "L3-N",
+      "schema:identifier": "L3-N"
+    },
+    {
+      "@id": "ocpp:L1-L2",
+      "@type": [
+        "ocpp:PhaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "L1-L2",
+      "schema:identifier": "L1-L2"
+    },
+    {
+      "@id": "ocpp:L2-L3",
+      "@type": [
+        "ocpp:PhaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "L2-L3",
+      "schema:identifier": "L2-L3"
+    },
+    {
+      "@id": "ocpp:L3-L1",
+      "@type": [
+        "ocpp:PhaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "L3-L1",
+      "schema:identifier": "L3-L1"
+    },
+    {
+      "@id": "ocpp:ReadingContextEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ReadingContextEnumType",
+      "rdfs:comment": "Sampled_ Value. Context. Reading_ Context_ Code\r\nurn:x-oca:ocpp:uid:1:569261\r\nType of detail value: start, end or sample. Default = \"Sample.Periodic\"\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Interruption.Begin"
+        },
+        {
+          "@id": "ocpp:Interruption.End"
+        },
+        {
+          "@id": "ocpp:Other"
+        },
+        {
+          "@id": "ocpp:Sample.Clock"
+        },
+        {
+          "@id": "ocpp:Sample.Periodic"
+        },
+        {
+          "@id": "ocpp:Transaction.Begin"
+        },
+        {
+          "@id": "ocpp:Transaction.End"
+        },
+        {
+          "@id": "ocpp:Trigger"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Interruption.Begin",
+      "@type": [
+        "ocpp:ReadingContextEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Interruption.Begin",
+      "schema:identifier": "Interruption.Begin"
+    },
+    {
+      "@id": "ocpp:Interruption.End",
+      "@type": [
+        "ocpp:ReadingContextEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Interruption.End",
+      "schema:identifier": "Interruption.End"
+    },
+    {
+      "@id": "ocpp:Other",
+      "@type": [
+        "ocpp:ReadingContextEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Other",
+      "schema:identifier": "Other"
+    },
+    {
+      "@id": "ocpp:Sample.Clock",
+      "@type": [
+        "ocpp:ReadingContextEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Sample.Clock",
+      "schema:identifier": "Sample.Clock"
+    },
+    {
+      "@id": "ocpp:Sample.Periodic",
+      "@type": [
+        "ocpp:ReadingContextEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Sample.Periodic",
+      "schema:identifier": "Sample.Periodic"
+    },
+    {
+      "@id": "ocpp:Transaction.Begin",
+      "@type": [
+        "ocpp:ReadingContextEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Transaction.Begin",
+      "schema:identifier": "Transaction.Begin"
+    },
+    {
+      "@id": "ocpp:Transaction.End",
+      "@type": [
+        "ocpp:ReadingContextEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Transaction.End",
+      "schema:identifier": "Transaction.End"
+    },
+    {
+      "@id": "ocpp:Trigger",
+      "@type": [
+        "ocpp:ReadingContextEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Trigger",
+      "schema:identifier": "Trigger"
+    },
+    {
+      "@id": "ocpp:MeterValueType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MeterValueType",
+      "rdfs:comment": "Meter_ Value\r\nurn:x-oca:ocpp:uid:2:233265\r\nCollection of one or more sampled values in MeterValuesRequest and TransactionEvent. All sampled values in a MeterValue are sampled at the same point in time.\r\n"
+    },
+    {
+      "@id": "ocpp:SampledValueType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SampledValueType",
+      "rdfs:comment": "Sampled_ Value\r\nurn:x-oca:ocpp:uid:2:233266\r\nSingle sampled value in MeterValues. Each value can be accompanied by optional fields.\r\n\r\nTo save on mobile data usage, default values of all of the optional fields are such that. The value without any additional fields will be interpreted, as a register reading of active import energy in Wh (Watt-hour) units.\r\n"
+    },
+    {
+      "@id": "ocpp:SignedMeterValueType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SignedMeterValueType",
+      "rdfs:comment": "Represent a signed version of the meter value.\r\n"
+    },
+    {
+      "@id": "ocpp:UnitOfMeasureType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UnitOfMeasureType",
+      "rdfs:comment": "Represents a UnitOfMeasure with a multiplier\r\n"
+    },
+    {
+      "@id": "ocpp:MeterValuesRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MeterValuesRequestPayload"
+    },
+    {
+      "@id": "ocpp:MeterValuesResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MeterValuesResponsePayload"
+    },
+    {
+      "@id": "ocpp:CostKindEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "CostKindEnumType",
+      "rdfs:comment": "Cost. Cost_ Kind. Cost_ Kind_ Code\r\nurn:x-oca:ocpp:uid:1:569243\r\nThe kind of cost referred to in the message element amount\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:CarbonDioxideEmission"
+        },
+        {
+          "@id": "ocpp:RelativePricePercentage"
+        },
+        {
+          "@id": "ocpp:RenewableGenerationPercentage"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:CarbonDioxideEmission",
+      "@type": [
+        "ocpp:CostKindEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CarbonDioxideEmission",
+      "schema:identifier": "CarbonDioxideEmission"
+    },
+    {
+      "@id": "ocpp:RelativePricePercentage",
+      "@type": [
+        "ocpp:CostKindEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RelativePricePercentage",
+      "schema:identifier": "RelativePricePercentage"
+    },
+    {
+      "@id": "ocpp:RenewableGenerationPercentage",
+      "@type": [
+        "ocpp:CostKindEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RenewableGenerationPercentage",
+      "schema:identifier": "RenewableGenerationPercentage"
+    },
+    {
+      "@id": "ocpp:ChargingLimitType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ChargingLimitType",
+      "rdfs:comment": "Charging_ Limit\r\nurn:x-enexis:ecdm:uid:2:234489\r\n"
+    },
+    {
+      "@id": "ocpp:ChargingScheduleType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ChargingScheduleType",
+      "rdfs:comment": "Charging_ Schedule\r\nurn:x-oca:ocpp:uid:2:233256\r\nCharging schedule structure defines a list of charging periods, as used in: GetCompositeSchedule.conf and ChargingProfile. \r\n"
+    },
+    {
+      "@id": "ocpp:ConsumptionCostType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ConsumptionCostType",
+      "rdfs:comment": "Consumption_ Cost\r\nurn:x-oca:ocpp:uid:2:233259\r\n"
+    },
+    {
+      "@id": "ocpp:CostType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CostType",
+      "rdfs:comment": "Cost\r\nurn:x-oca:ocpp:uid:2:233258\r\n"
+    },
+    {
+      "@id": "ocpp:RelativeTimeIntervalType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RelativeTimeIntervalType",
+      "rdfs:comment": "Relative_ Timer_ Interval\r\nurn:x-oca:ocpp:uid:2:233270\r\n"
+    },
+    {
+      "@id": "ocpp:SalesTariffEntryType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SalesTariffEntryType",
+      "rdfs:comment": "Sales_ Tariff_ Entry\r\nurn:x-oca:ocpp:uid:2:233271\r\n"
+    },
+    {
+      "@id": "ocpp:SalesTariffType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SalesTariffType",
+      "rdfs:comment": "Sales_ Tariff\r\nurn:x-oca:ocpp:uid:2:233272\r\nNOTE: This dataType is based on dataTypes from &lt;&lt;ref-ISOIEC15118-2,ISO 15118-2&gt;&gt;.\r\n"
+    },
+    {
+      "@id": "ocpp:NotifyChargingLimitRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyChargingLimitRequestPayload"
+    },
+    {
+      "@id": "ocpp:NotifyChargingLimitResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyChargingLimitResponsePayload"
+    },
+    {
+      "@id": "ocpp:NotifyCustomerInformationRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyCustomerInformationRequestPayload"
+    },
+    {
+      "@id": "ocpp:NotifyCustomerInformationResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyCustomerInformationResponsePayload"
+    },
+    {
+      "@id": "ocpp:MessageInfoType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MessageInfoType",
+      "rdfs:comment": "Message_ Info\r\nurn:x-enexis:ecdm:uid:2:233264\r\nContains message details, for a message to be displayed on a Charging Station.\r\n"
+    },
+    {
+      "@id": "ocpp:NotifyDisplayMessagesRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyDisplayMessagesRequestPayload"
+    },
+    {
+      "@id": "ocpp:NotifyDisplayMessagesResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyDisplayMessagesResponsePayload"
+    },
+    {
+      "@id": "ocpp:EnergyTransferModeEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "EnergyTransferModeEnumType",
+      "rdfs:comment": "Charging_ Needs. Requested. Energy_ Transfer_ Mode_ Code\r\nurn:x-oca:ocpp:uid:1:569209\r\nMode of energy transfer requested by the EV.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:DC"
+        },
+        {
+          "@id": "ocpp:AC_single_phase"
+        },
+        {
+          "@id": "ocpp:AC_two_phase"
+        },
+        {
+          "@id": "ocpp:AC_three_phase"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:DC",
+      "@type": [
+        "ocpp:EnergyTransferModeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DC",
+      "schema:identifier": "DC"
+    },
+    {
+      "@id": "ocpp:AC_single_phase",
+      "@type": [
+        "ocpp:EnergyTransferModeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AC_single_phase",
+      "schema:identifier": "AC_single_phase"
+    },
+    {
+      "@id": "ocpp:AC_two_phase",
+      "@type": [
+        "ocpp:EnergyTransferModeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AC_two_phase",
+      "schema:identifier": "AC_two_phase"
+    },
+    {
+      "@id": "ocpp:AC_three_phase",
+      "@type": [
+        "ocpp:EnergyTransferModeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AC_three_phase",
+      "schema:identifier": "AC_three_phase"
+    },
+    {
+      "@id": "ocpp:ACChargingParametersType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ACChargingParametersType",
+      "rdfs:comment": "AC_ Charging_ Parameters\r\nurn:x-oca:ocpp:uid:2:233250\r\nEV AC charging parameters.\r\n\r\n"
+    },
+    {
+      "@id": "ocpp:ChargingNeedsType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ChargingNeedsType",
+      "rdfs:comment": "Charging_ Needs\r\nurn:x-oca:ocpp:uid:2:233249\r\n"
+    },
+    {
+      "@id": "ocpp:DCChargingParametersType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DCChargingParametersType",
+      "rdfs:comment": "DC_ Charging_ Parameters\r\nurn:x-oca:ocpp:uid:2:233251\r\nEV DC charging parameters\r\n\r\n\r\n"
+    },
+    {
+      "@id": "ocpp:NotifyEVChargingNeedsRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyEVChargingNeedsRequestPayload"
+    },
+    {
+      "@id": "ocpp:NotifyEVChargingNeedsStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "NotifyEVChargingNeedsStatusEnumType",
+      "rdfs:comment": "Returns whether the CSMS has been able to process the message successfully. It does not imply that the evChargingNeeds can be met with the current charging profile.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:Processing"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:NotifyEVChargingNeedsStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:NotifyEVChargingNeedsStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:Processing",
+      "@type": [
+        "ocpp:NotifyEVChargingNeedsStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Processing",
+      "schema:identifier": "Processing"
+    },
+    {
+      "@id": "ocpp:NotifyEVChargingNeedsResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyEVChargingNeedsResponsePayload"
+    },
+    {
+      "@id": "ocpp:NotifyEVChargingScheduleRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyEVChargingScheduleRequestPayload"
+    },
+    {
+      "@id": "ocpp:NotifyEVChargingScheduleResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyEVChargingScheduleResponsePayload"
+    },
+    {
+      "@id": "ocpp:EventNotificationEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "EventNotificationEnumType",
+      "rdfs:comment": "Specifies the event notification type of the message.\r\n\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:HardWiredNotification"
+        },
+        {
+          "@id": "ocpp:HardWiredMonitor"
+        },
+        {
+          "@id": "ocpp:PreconfiguredMonitor"
+        },
+        {
+          "@id": "ocpp:CustomMonitor"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:HardWiredNotification",
+      "@type": [
+        "ocpp:EventNotificationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "HardWiredNotification",
+      "schema:identifier": "HardWiredNotification"
+    },
+    {
+      "@id": "ocpp:HardWiredMonitor",
+      "@type": [
+        "ocpp:EventNotificationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "HardWiredMonitor",
+      "schema:identifier": "HardWiredMonitor"
+    },
+    {
+      "@id": "ocpp:PreconfiguredMonitor",
+      "@type": [
+        "ocpp:EventNotificationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PreconfiguredMonitor",
+      "schema:identifier": "PreconfiguredMonitor"
+    },
+    {
+      "@id": "ocpp:CustomMonitor",
+      "@type": [
+        "ocpp:EventNotificationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CustomMonitor",
+      "schema:identifier": "CustomMonitor"
+    },
+    {
+      "@id": "ocpp:EventTriggerEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "EventTriggerEnumType",
+      "rdfs:comment": "Type of monitor that triggered this event, e.g. exceeding a threshold value.\r\n\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Alerting"
+        },
+        {
+          "@id": "ocpp:Delta"
+        },
+        {
+          "@id": "ocpp:Periodic"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Alerting",
+      "@type": [
+        "ocpp:EventTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Alerting",
+      "schema:identifier": "Alerting"
+    },
+    {
+      "@id": "ocpp:Delta",
+      "@type": [
+        "ocpp:EventTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Delta",
+      "schema:identifier": "Delta"
+    },
+    {
+      "@id": "ocpp:Periodic",
+      "@type": [
+        "ocpp:EventTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Periodic",
+      "schema:identifier": "Periodic"
+    },
+    {
+      "@id": "ocpp:EventDataType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EventDataType",
+      "rdfs:comment": "Class to report an event notification for a component-variable.\r\n"
+    },
+    {
+      "@id": "ocpp:NotifyEventRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyEventRequestPayload"
+    },
+    {
+      "@id": "ocpp:NotifyEventResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyEventResponsePayload"
+    },
+    {
+      "@id": "ocpp:MonitorEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "MonitorEnumType",
+      "rdfs:comment": "The type of this monitor, e.g. a threshold, delta or periodic monitor. \r\n\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:UpperThreshold"
+        },
+        {
+          "@id": "ocpp:LowerThreshold"
+        },
+        {
+          "@id": "ocpp:Delta"
+        },
+        {
+          "@id": "ocpp:Periodic"
+        },
+        {
+          "@id": "ocpp:PeriodicClockAligned"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:UpperThreshold",
+      "@type": [
+        "ocpp:MonitorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UpperThreshold",
+      "schema:identifier": "UpperThreshold"
+    },
+    {
+      "@id": "ocpp:LowerThreshold",
+      "@type": [
+        "ocpp:MonitorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "LowerThreshold",
+      "schema:identifier": "LowerThreshold"
+    },
+    {
+      "@id": "ocpp:Delta",
+      "@type": [
+        "ocpp:MonitorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Delta",
+      "schema:identifier": "Delta"
+    },
+    {
+      "@id": "ocpp:Periodic",
+      "@type": [
+        "ocpp:MonitorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Periodic",
+      "schema:identifier": "Periodic"
+    },
+    {
+      "@id": "ocpp:PeriodicClockAligned",
+      "@type": [
+        "ocpp:MonitorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PeriodicClockAligned",
+      "schema:identifier": "PeriodicClockAligned"
+    },
+    {
+      "@id": "ocpp:MonitoringDataType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MonitoringDataType",
+      "rdfs:comment": "Class to hold parameters of SetVariableMonitoring request.\r\n"
+    },
+    {
+      "@id": "ocpp:VariableMonitoringType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "VariableMonitoringType",
+      "rdfs:comment": "A monitoring setting for a variable.\r\n"
+    },
+    {
+      "@id": "ocpp:NotifyMonitoringReportRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyMonitoringReportRequestPayload"
+    },
+    {
+      "@id": "ocpp:NotifyMonitoringReportResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyMonitoringReportResponsePayload"
+    },
+    {
+      "@id": "ocpp:DataEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "DataEnumType",
+      "rdfs:comment": "Data type of this variable.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:string"
+        },
+        {
+          "@id": "ocpp:decimal"
+        },
+        {
+          "@id": "ocpp:integer"
+        },
+        {
+          "@id": "ocpp:dateTime"
+        },
+        {
+          "@id": "ocpp:boolean"
+        },
+        {
+          "@id": "ocpp:OptionList"
+        },
+        {
+          "@id": "ocpp:SequenceList"
+        },
+        {
+          "@id": "ocpp:MemberList"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:string",
+      "@type": [
+        "ocpp:DataEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "string",
+      "schema:identifier": "string"
+    },
+    {
+      "@id": "ocpp:decimal",
+      "@type": [
+        "ocpp:DataEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "decimal",
+      "schema:identifier": "decimal"
+    },
+    {
+      "@id": "ocpp:integer",
+      "@type": [
+        "ocpp:DataEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "integer",
+      "schema:identifier": "integer"
+    },
+    {
+      "@id": "ocpp:dateTime",
+      "@type": [
+        "ocpp:DataEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "dateTime",
+      "schema:identifier": "dateTime"
+    },
+    {
+      "@id": "ocpp:boolean",
+      "@type": [
+        "ocpp:DataEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "boolean",
+      "schema:identifier": "boolean"
+    },
+    {
+      "@id": "ocpp:OptionList",
+      "@type": [
+        "ocpp:DataEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OptionList",
+      "schema:identifier": "OptionList"
+    },
+    {
+      "@id": "ocpp:SequenceList",
+      "@type": [
+        "ocpp:DataEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SequenceList",
+      "schema:identifier": "SequenceList"
+    },
+    {
+      "@id": "ocpp:MemberList",
+      "@type": [
+        "ocpp:DataEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "MemberList",
+      "schema:identifier": "MemberList"
+    },
+    {
+      "@id": "ocpp:MutabilityEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "MutabilityEnumType",
+      "rdfs:comment": "Defines the mutability of this attribute. Default is ReadWrite when omitted.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:ReadOnly"
+        },
+        {
+          "@id": "ocpp:WriteOnly"
+        },
+        {
+          "@id": "ocpp:ReadWrite"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:ReadOnly",
+      "@type": [
+        "ocpp:MutabilityEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ReadOnly",
+      "schema:identifier": "ReadOnly"
+    },
+    {
+      "@id": "ocpp:WriteOnly",
+      "@type": [
+        "ocpp:MutabilityEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "WriteOnly",
+      "schema:identifier": "WriteOnly"
+    },
+    {
+      "@id": "ocpp:ReadWrite",
+      "@type": [
+        "ocpp:MutabilityEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ReadWrite",
+      "schema:identifier": "ReadWrite"
+    },
+    {
+      "@id": "ocpp:ReportDataType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReportDataType",
+      "rdfs:comment": "Class to report components, variables and variable attributes and characteristics.\r\n"
+    },
+    {
+      "@id": "ocpp:VariableAttributeType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "VariableAttributeType",
+      "rdfs:comment": "Attribute data of a variable.\r\n"
+    },
+    {
+      "@id": "ocpp:VariableCharacteristicsType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "VariableCharacteristicsType",
+      "rdfs:comment": "Fixed read-only parameters of a variable.\r\n"
+    },
+    {
+      "@id": "ocpp:NotifyReportRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyReportRequestPayload"
+    },
+    {
+      "@id": "ocpp:NotifyReportResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotifyReportResponsePayload"
+    },
+    {
+      "@id": "ocpp:PublishFirmwareRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PublishFirmwareRequestPayload"
+    },
+    {
+      "@id": "ocpp:PublishFirmwareResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PublishFirmwareResponsePayload"
+    },
+    {
+      "@id": "ocpp:PublishFirmwareStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "PublishFirmwareStatusEnumType",
+      "rdfs:comment": "This contains the progress status of the publishfirmware\r\ninstallation.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Idle"
+        },
+        {
+          "@id": "ocpp:DownloadScheduled"
+        },
+        {
+          "@id": "ocpp:Downloading"
+        },
+        {
+          "@id": "ocpp:Downloaded"
+        },
+        {
+          "@id": "ocpp:Published"
+        },
+        {
+          "@id": "ocpp:DownloadFailed"
+        },
+        {
+          "@id": "ocpp:DownloadPaused"
+        },
+        {
+          "@id": "ocpp:InvalidChecksum"
+        },
+        {
+          "@id": "ocpp:ChecksumVerified"
+        },
+        {
+          "@id": "ocpp:PublishFailed"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Idle",
+      "@type": [
+        "ocpp:PublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Idle",
+      "schema:identifier": "Idle"
+    },
+    {
+      "@id": "ocpp:DownloadScheduled",
+      "@type": [
+        "ocpp:PublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DownloadScheduled",
+      "schema:identifier": "DownloadScheduled"
+    },
+    {
+      "@id": "ocpp:Downloading",
+      "@type": [
+        "ocpp:PublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Downloading",
+      "schema:identifier": "Downloading"
+    },
+    {
+      "@id": "ocpp:Downloaded",
+      "@type": [
+        "ocpp:PublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Downloaded",
+      "schema:identifier": "Downloaded"
+    },
+    {
+      "@id": "ocpp:Published",
+      "@type": [
+        "ocpp:PublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Published",
+      "schema:identifier": "Published"
+    },
+    {
+      "@id": "ocpp:DownloadFailed",
+      "@type": [
+        "ocpp:PublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DownloadFailed",
+      "schema:identifier": "DownloadFailed"
+    },
+    {
+      "@id": "ocpp:DownloadPaused",
+      "@type": [
+        "ocpp:PublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DownloadPaused",
+      "schema:identifier": "DownloadPaused"
+    },
+    {
+      "@id": "ocpp:InvalidChecksum",
+      "@type": [
+        "ocpp:PublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "InvalidChecksum",
+      "schema:identifier": "InvalidChecksum"
+    },
+    {
+      "@id": "ocpp:ChecksumVerified",
+      "@type": [
+        "ocpp:PublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ChecksumVerified",
+      "schema:identifier": "ChecksumVerified"
+    },
+    {
+      "@id": "ocpp:PublishFailed",
+      "@type": [
+        "ocpp:PublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PublishFailed",
+      "schema:identifier": "PublishFailed"
+    },
+    {
+      "@id": "ocpp:PublishFirmwareStatusNotificationRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PublishFirmwareStatusNotificationRequestPayload"
+    },
+    {
+      "@id": "ocpp:PublishFirmwareStatusNotificationResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PublishFirmwareStatusNotificationResponsePayload"
+    },
+    {
+      "@id": "ocpp:ChargingProfileKindEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ChargingProfileKindEnumType",
+      "rdfs:comment": "Charging_ Profile. Charging_ Profile_ Kind. Charging_ Profile_ Kind_ Code\r\nurn:x-oca:ocpp:uid:1:569232\r\nIndicates the kind of schedule.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Absolute"
+        },
+        {
+          "@id": "ocpp:Recurring"
+        },
+        {
+          "@id": "ocpp:Relative"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Absolute",
+      "@type": [
+        "ocpp:ChargingProfileKindEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Absolute",
+      "schema:identifier": "Absolute"
+    },
+    {
+      "@id": "ocpp:Recurring",
+      "@type": [
+        "ocpp:ChargingProfileKindEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Recurring",
+      "schema:identifier": "Recurring"
+    },
+    {
+      "@id": "ocpp:Relative",
+      "@type": [
+        "ocpp:ChargingProfileKindEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Relative",
+      "schema:identifier": "Relative"
+    },
+    {
+      "@id": "ocpp:RecurrencyKindEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "RecurrencyKindEnumType",
+      "rdfs:comment": "Charging_ Profile. Recurrency_ Kind. Recurrency_ Kind_ Code\r\nurn:x-oca:ocpp:uid:1:569233\r\nIndicates the start point of a recurrence.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Daily"
+        },
+        {
+          "@id": "ocpp:Weekly"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Daily",
+      "@type": [
+        "ocpp:RecurrencyKindEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Daily",
+      "schema:identifier": "Daily"
+    },
+    {
+      "@id": "ocpp:Weekly",
+      "@type": [
+        "ocpp:RecurrencyKindEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Weekly",
+      "schema:identifier": "Weekly"
+    },
+    {
+      "@id": "ocpp:ChargingProfileType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ChargingProfileType",
+      "rdfs:comment": "Charging_ Profile\r\nurn:x-oca:ocpp:uid:2:233255\r\nA ChargingProfile consists of ChargingSchedule, describing the amount of power or current that can be delivered per time interval.\r\n"
+    },
+    {
+      "@id": "ocpp:ReportChargingProfilesRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReportChargingProfilesRequestPayload"
+    },
+    {
+      "@id": "ocpp:ReportChargingProfilesResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReportChargingProfilesResponsePayload"
+    },
+    {
+      "@id": "ocpp:RequestStartTransactionRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RequestStartTransactionRequestPayload"
+    },
+    {
+      "@id": "ocpp:RequestStartStopStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "RequestStartStopStatusEnumType",
+      "rdfs:comment": "Status indicating whether Charging Station accepts the request to stop a transaction.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:RequestStartStopStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:RequestStartStopStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:RequestStartTransactionResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RequestStartTransactionResponsePayload"
+    },
+    {
+      "@id": "ocpp:RequestStopTransactionRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RequestStopTransactionRequestPayload"
+    },
+    {
+      "@id": "ocpp:RequestStopTransactionResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RequestStopTransactionResponsePayload"
+    },
+    {
+      "@id": "ocpp:ReservationUpdateStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ReservationUpdateStatusEnumType",
+      "rdfs:comment": "The updated reservation status.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Expired"
+        },
+        {
+          "@id": "ocpp:Removed"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Expired",
+      "@type": [
+        "ocpp:ReservationUpdateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Expired",
+      "schema:identifier": "Expired"
+    },
+    {
+      "@id": "ocpp:Removed",
+      "@type": [
+        "ocpp:ReservationUpdateStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Removed",
+      "schema:identifier": "Removed"
+    },
+    {
+      "@id": "ocpp:ReservationStatusUpdateRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReservationStatusUpdateRequestPayload"
+    },
+    {
+      "@id": "ocpp:ReservationStatusUpdateResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReservationStatusUpdateResponsePayload"
+    },
+    {
+      "@id": "ocpp:ConnectorEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ConnectorEnumType",
+      "rdfs:comment": "This field specifies the connector type.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:cCCS1"
+        },
+        {
+          "@id": "ocpp:cCCS2"
+        },
+        {
+          "@id": "ocpp:cG105"
+        },
+        {
+          "@id": "ocpp:cTesla"
+        },
+        {
+          "@id": "ocpp:cType1"
+        },
+        {
+          "@id": "ocpp:cType2"
+        },
+        {
+          "@id": "ocpp:s309-1P-16A"
+        },
+        {
+          "@id": "ocpp:s309-1P-32A"
+        },
+        {
+          "@id": "ocpp:s309-3P-16A"
+        },
+        {
+          "@id": "ocpp:s309-3P-32A"
+        },
+        {
+          "@id": "ocpp:sBS1361"
+        },
+        {
+          "@id": "ocpp:sCEE-7-7"
+        },
+        {
+          "@id": "ocpp:sType2"
+        },
+        {
+          "@id": "ocpp:sType3"
+        },
+        {
+          "@id": "ocpp:Other1PhMax16A"
+        },
+        {
+          "@id": "ocpp:Other1PhOver16A"
+        },
+        {
+          "@id": "ocpp:Other3Ph"
+        },
+        {
+          "@id": "ocpp:Pan"
+        },
+        {
+          "@id": "ocpp:wInductive"
+        },
+        {
+          "@id": "ocpp:wResonant"
+        },
+        {
+          "@id": "ocpp:Undetermined"
+        },
+        {
+          "@id": "ocpp:Unknown"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:cCCS1",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "cCCS1",
+      "schema:identifier": "cCCS1"
+    },
+    {
+      "@id": "ocpp:cCCS2",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "cCCS2",
+      "schema:identifier": "cCCS2"
+    },
+    {
+      "@id": "ocpp:cG105",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "cG105",
+      "schema:identifier": "cG105"
+    },
+    {
+      "@id": "ocpp:cTesla",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "cTesla",
+      "schema:identifier": "cTesla"
+    },
+    {
+      "@id": "ocpp:cType1",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "cType1",
+      "schema:identifier": "cType1"
+    },
+    {
+      "@id": "ocpp:cType2",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "cType2",
+      "schema:identifier": "cType2"
+    },
+    {
+      "@id": "ocpp:s309-1P-16A",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "s309-1P-16A",
+      "schema:identifier": "s309-1P-16A"
+    },
+    {
+      "@id": "ocpp:s309-1P-32A",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "s309-1P-32A",
+      "schema:identifier": "s309-1P-32A"
+    },
+    {
+      "@id": "ocpp:s309-3P-16A",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "s309-3P-16A",
+      "schema:identifier": "s309-3P-16A"
+    },
+    {
+      "@id": "ocpp:s309-3P-32A",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "s309-3P-32A",
+      "schema:identifier": "s309-3P-32A"
+    },
+    {
+      "@id": "ocpp:sBS1361",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "sBS1361",
+      "schema:identifier": "sBS1361"
+    },
+    {
+      "@id": "ocpp:sCEE-7-7",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "sCEE-7-7",
+      "schema:identifier": "sCEE-7-7"
+    },
+    {
+      "@id": "ocpp:sType2",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "sType2",
+      "schema:identifier": "sType2"
+    },
+    {
+      "@id": "ocpp:sType3",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "sType3",
+      "schema:identifier": "sType3"
+    },
+    {
+      "@id": "ocpp:Other1PhMax16A",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Other1PhMax16A",
+      "schema:identifier": "Other1PhMax16A"
+    },
+    {
+      "@id": "ocpp:Other1PhOver16A",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Other1PhOver16A",
+      "schema:identifier": "Other1PhOver16A"
+    },
+    {
+      "@id": "ocpp:Other3Ph",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Other3Ph",
+      "schema:identifier": "Other3Ph"
+    },
+    {
+      "@id": "ocpp:Pan",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Pan",
+      "schema:identifier": "Pan"
+    },
+    {
+      "@id": "ocpp:wInductive",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "wInductive",
+      "schema:identifier": "wInductive"
+    },
+    {
+      "@id": "ocpp:wResonant",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "wResonant",
+      "schema:identifier": "wResonant"
+    },
+    {
+      "@id": "ocpp:Undetermined",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Undetermined",
+      "schema:identifier": "Undetermined"
+    },
+    {
+      "@id": "ocpp:Unknown",
+      "@type": [
+        "ocpp:ConnectorEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Unknown",
+      "schema:identifier": "Unknown"
+    },
+    {
+      "@id": "ocpp:ReserveNowRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReserveNowRequestPayload"
+    },
+    {
+      "@id": "ocpp:ReserveNowStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ReserveNowStatusEnumType",
+      "rdfs:comment": "This indicates the success or failure of the reservation.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Faulted"
+        },
+        {
+          "@id": "ocpp:Occupied"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:Unavailable"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:ReserveNowStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Faulted",
+      "@type": [
+        "ocpp:ReserveNowStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Faulted",
+      "schema:identifier": "Faulted"
+    },
+    {
+      "@id": "ocpp:Occupied",
+      "@type": [
+        "ocpp:ReserveNowStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Occupied",
+      "schema:identifier": "Occupied"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:ReserveNowStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:Unavailable",
+      "@type": [
+        "ocpp:ReserveNowStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Unavailable",
+      "schema:identifier": "Unavailable"
+    },
+    {
+      "@id": "ocpp:ReserveNowResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReserveNowResponsePayload"
+    },
+    {
+      "@id": "ocpp:ResetEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ResetEnumType",
+      "rdfs:comment": "This contains the type of reset that the Charging Station or EVSE should perform.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Immediate"
+        },
+        {
+          "@id": "ocpp:OnIdle"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Immediate",
+      "@type": [
+        "ocpp:ResetEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Immediate",
+      "schema:identifier": "Immediate"
+    },
+    {
+      "@id": "ocpp:OnIdle",
+      "@type": [
+        "ocpp:ResetEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OnIdle",
+      "schema:identifier": "OnIdle"
+    },
+    {
+      "@id": "ocpp:ResetRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ResetRequestPayload"
+    },
+    {
+      "@id": "ocpp:ResetStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ResetStatusEnumType",
+      "rdfs:comment": "This indicates whether the Charging Station is able to perform the reset.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:Scheduled"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:ResetStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:ResetStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:Scheduled",
+      "@type": [
+        "ocpp:ResetStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Scheduled",
+      "schema:identifier": "Scheduled"
+    },
+    {
+      "@id": "ocpp:ResetResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ResetResponsePayload"
+    },
+    {
+      "@id": "ocpp:SecurityEventNotificationRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SecurityEventNotificationRequestPayload"
+    },
+    {
+      "@id": "ocpp:SecurityEventNotificationResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SecurityEventNotificationResponsePayload"
+    },
+    {
+      "@id": "ocpp:UpdateEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "UpdateEnumType",
+      "rdfs:comment": "This contains the type of update (full or differential) of this request.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Differential"
+        },
+        {
+          "@id": "ocpp:Full"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Differential",
+      "@type": [
+        "ocpp:UpdateEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Differential",
+      "schema:identifier": "Differential"
+    },
+    {
+      "@id": "ocpp:Full",
+      "@type": [
+        "ocpp:UpdateEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Full",
+      "schema:identifier": "Full"
+    },
+    {
+      "@id": "ocpp:AuthorizationData",
+      "@type": "rdfs:Class",
+      "rdfs:label": "AuthorizationData",
+      "rdfs:comment": "Contains the identifier to use for authorization.\r\n"
+    },
+    {
+      "@id": "ocpp:SendLocalListRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SendLocalListRequestPayload"
+    },
+    {
+      "@id": "ocpp:SendLocalListStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "SendLocalListStatusEnumType",
+      "rdfs:comment": "This indicates whether the Charging Station has successfully received and applied the update of the Local Authorization List.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Failed"
+        },
+        {
+          "@id": "ocpp:VersionMismatch"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:SendLocalListStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Failed",
+      "@type": [
+        "ocpp:SendLocalListStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Failed",
+      "schema:identifier": "Failed"
+    },
+    {
+      "@id": "ocpp:VersionMismatch",
+      "@type": [
+        "ocpp:SendLocalListStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "VersionMismatch",
+      "schema:identifier": "VersionMismatch"
+    },
+    {
+      "@id": "ocpp:SendLocalListResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SendLocalListResponsePayload"
+    },
+    {
+      "@id": "ocpp:SetChargingProfileRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetChargingProfileRequestPayload"
+    },
+    {
+      "@id": "ocpp:ChargingProfileStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ChargingProfileStatusEnumType",
+      "rdfs:comment": "Returns whether the Charging Station has been able to process the message successfully. This does not guarantee the schedule will be followed to the letter. There might be other constraints the Charging Station may need to take into account.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:ChargingProfileStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:ChargingProfileStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:SetChargingProfileResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetChargingProfileResponsePayload"
+    },
+    {
+      "@id": "ocpp:SetDisplayMessageRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetDisplayMessageRequestPayload"
+    },
+    {
+      "@id": "ocpp:DisplayMessageStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "DisplayMessageStatusEnumType",
+      "rdfs:comment": "This indicates whether the Charging Station is able to display the message.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:NotSupportedMessageFormat"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:NotSupportedPriority"
+        },
+        {
+          "@id": "ocpp:NotSupportedState"
+        },
+        {
+          "@id": "ocpp:UnknownTransaction"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:DisplayMessageStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:NotSupportedMessageFormat",
+      "@type": [
+        "ocpp:DisplayMessageStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotSupportedMessageFormat",
+      "schema:identifier": "NotSupportedMessageFormat"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:DisplayMessageStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:NotSupportedPriority",
+      "@type": [
+        "ocpp:DisplayMessageStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotSupportedPriority",
+      "schema:identifier": "NotSupportedPriority"
+    },
+    {
+      "@id": "ocpp:NotSupportedState",
+      "@type": [
+        "ocpp:DisplayMessageStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotSupportedState",
+      "schema:identifier": "NotSupportedState"
+    },
+    {
+      "@id": "ocpp:UnknownTransaction",
+      "@type": [
+        "ocpp:DisplayMessageStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnknownTransaction",
+      "schema:identifier": "UnknownTransaction"
+    },
+    {
+      "@id": "ocpp:SetDisplayMessageResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetDisplayMessageResponsePayload"
+    },
+    {
+      "@id": "ocpp:MonitoringBaseEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "MonitoringBaseEnumType",
+      "rdfs:comment": "Specify which monitoring base will be set\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:All"
+        },
+        {
+          "@id": "ocpp:FactoryDefault"
+        },
+        {
+          "@id": "ocpp:HardWiredOnly"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:All",
+      "@type": [
+        "ocpp:MonitoringBaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "All",
+      "schema:identifier": "All"
+    },
+    {
+      "@id": "ocpp:FactoryDefault",
+      "@type": [
+        "ocpp:MonitoringBaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "FactoryDefault",
+      "schema:identifier": "FactoryDefault"
+    },
+    {
+      "@id": "ocpp:HardWiredOnly",
+      "@type": [
+        "ocpp:MonitoringBaseEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "HardWiredOnly",
+      "schema:identifier": "HardWiredOnly"
+    },
+    {
+      "@id": "ocpp:SetMonitoringBaseRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetMonitoringBaseRequestPayload"
+    },
+    {
+      "@id": "ocpp:SetMonitoringBaseResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetMonitoringBaseResponsePayload"
+    },
+    {
+      "@id": "ocpp:SetMonitoringLevelRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetMonitoringLevelRequestPayload"
+    },
+    {
+      "@id": "ocpp:SetMonitoringLevelResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetMonitoringLevelResponsePayload"
+    },
+    {
+      "@id": "ocpp:APNAuthenticationEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "APNAuthenticationEnumType",
+      "rdfs:comment": "APN. APN_ Authentication. APN_ Authentication_ Code\r\nurn:x-oca:ocpp:uid:1:568828\r\nAuthentication method.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:CHAP"
+        },
+        {
+          "@id": "ocpp:NONE"
+        },
+        {
+          "@id": "ocpp:PAP"
+        },
+        {
+          "@id": "ocpp:AUTO"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:CHAP",
+      "@type": [
+        "ocpp:APNAuthenticationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CHAP",
+      "schema:identifier": "CHAP"
+    },
+    {
+      "@id": "ocpp:NONE",
+      "@type": [
+        "ocpp:APNAuthenticationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NONE",
+      "schema:identifier": "NONE"
+    },
+    {
+      "@id": "ocpp:PAP",
+      "@type": [
+        "ocpp:APNAuthenticationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PAP",
+      "schema:identifier": "PAP"
+    },
+    {
+      "@id": "ocpp:AUTO",
+      "@type": [
+        "ocpp:APNAuthenticationEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AUTO",
+      "schema:identifier": "AUTO"
+    },
+    {
+      "@id": "ocpp:OCPPInterfaceEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "OCPPInterfaceEnumType",
+      "rdfs:comment": "Applicable Network Interface.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Wired0"
+        },
+        {
+          "@id": "ocpp:Wired1"
+        },
+        {
+          "@id": "ocpp:Wired2"
+        },
+        {
+          "@id": "ocpp:Wired3"
+        },
+        {
+          "@id": "ocpp:Wireless0"
+        },
+        {
+          "@id": "ocpp:Wireless1"
+        },
+        {
+          "@id": "ocpp:Wireless2"
+        },
+        {
+          "@id": "ocpp:Wireless3"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Wired0",
+      "@type": [
+        "ocpp:OCPPInterfaceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Wired0",
+      "schema:identifier": "Wired0"
+    },
+    {
+      "@id": "ocpp:Wired1",
+      "@type": [
+        "ocpp:OCPPInterfaceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Wired1",
+      "schema:identifier": "Wired1"
+    },
+    {
+      "@id": "ocpp:Wired2",
+      "@type": [
+        "ocpp:OCPPInterfaceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Wired2",
+      "schema:identifier": "Wired2"
+    },
+    {
+      "@id": "ocpp:Wired3",
+      "@type": [
+        "ocpp:OCPPInterfaceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Wired3",
+      "schema:identifier": "Wired3"
+    },
+    {
+      "@id": "ocpp:Wireless0",
+      "@type": [
+        "ocpp:OCPPInterfaceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Wireless0",
+      "schema:identifier": "Wireless0"
+    },
+    {
+      "@id": "ocpp:Wireless1",
+      "@type": [
+        "ocpp:OCPPInterfaceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Wireless1",
+      "schema:identifier": "Wireless1"
+    },
+    {
+      "@id": "ocpp:Wireless2",
+      "@type": [
+        "ocpp:OCPPInterfaceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Wireless2",
+      "schema:identifier": "Wireless2"
+    },
+    {
+      "@id": "ocpp:Wireless3",
+      "@type": [
+        "ocpp:OCPPInterfaceEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Wireless3",
+      "schema:identifier": "Wireless3"
+    },
+    {
+      "@id": "ocpp:OCPPTransportEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "OCPPTransportEnumType",
+      "rdfs:comment": "Communication_ Function. OCPP_ Transport. OCPP_ Transport_ Code\r\nurn:x-oca:ocpp:uid:1:569356\r\nDefines the transport protocol (e.g. SOAP or JSON). Note: SOAP is not supported in OCPP 2.0, but is supported by other versions of OCPP.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:JSON"
+        },
+        {
+          "@id": "ocpp:SOAP"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:JSON",
+      "@type": [
+        "ocpp:OCPPTransportEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "JSON",
+      "schema:identifier": "JSON"
+    },
+    {
+      "@id": "ocpp:SOAP",
+      "@type": [
+        "ocpp:OCPPTransportEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SOAP",
+      "schema:identifier": "SOAP"
+    },
+    {
+      "@id": "ocpp:OCPPVersionEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "OCPPVersionEnumType",
+      "rdfs:comment": "Communication_ Function. OCPP_ Version. OCPP_ Version_ Code\r\nurn:x-oca:ocpp:uid:1:569355\r\nDefines the OCPP version used for this communication function.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:OCPP12"
+        },
+        {
+          "@id": "ocpp:OCPP15"
+        },
+        {
+          "@id": "ocpp:OCPP16"
+        },
+        {
+          "@id": "ocpp:OCPP20"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:OCPP12",
+      "@type": [
+        "ocpp:OCPPVersionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OCPP12",
+      "schema:identifier": "OCPP12"
+    },
+    {
+      "@id": "ocpp:OCPP15",
+      "@type": [
+        "ocpp:OCPPVersionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OCPP15",
+      "schema:identifier": "OCPP15"
+    },
+    {
+      "@id": "ocpp:OCPP16",
+      "@type": [
+        "ocpp:OCPPVersionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OCPP16",
+      "schema:identifier": "OCPP16"
+    },
+    {
+      "@id": "ocpp:OCPP20",
+      "@type": [
+        "ocpp:OCPPVersionEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OCPP20",
+      "schema:identifier": "OCPP20"
+    },
+    {
+      "@id": "ocpp:VPNEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "VPNEnumType",
+      "rdfs:comment": "VPN. Type. VPN_ Code\r\nurn:x-oca:ocpp:uid:1:569277\r\nType of VPN\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:IKEv2"
+        },
+        {
+          "@id": "ocpp:IPSec"
+        },
+        {
+          "@id": "ocpp:L2TP"
+        },
+        {
+          "@id": "ocpp:PPTP"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:IKEv2",
+      "@type": [
+        "ocpp:VPNEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "IKEv2",
+      "schema:identifier": "IKEv2"
+    },
+    {
+      "@id": "ocpp:IPSec",
+      "@type": [
+        "ocpp:VPNEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "IPSec",
+      "schema:identifier": "IPSec"
+    },
+    {
+      "@id": "ocpp:L2TP",
+      "@type": [
+        "ocpp:VPNEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "L2TP",
+      "schema:identifier": "L2TP"
+    },
+    {
+      "@id": "ocpp:PPTP",
+      "@type": [
+        "ocpp:VPNEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PPTP",
+      "schema:identifier": "PPTP"
+    },
+    {
+      "@id": "ocpp:APNType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "APNType",
+      "rdfs:comment": "APN\r\nurn:x-oca:ocpp:uid:2:233134\r\nCollection of configuration data needed to make a data-connection over a cellular network.\r\n\r\nNOTE: When asking a GSM modem to dial in, it is possible to specify which mobile operator should be used. This can be done with the mobile country code (MCC) in combination with a mobile network code (MNC). Example: If your preferred network is Vodafone Netherlands, the MCC=204 and the MNC=04 which means the key PreferredNetwork = 20404 Some modems allows to specify a preferred network, which means, if this network is not available, a different network is used. If you specify UseOnlyPreferredNetwork and this network is not available, the modem will not dial in.\r\n"
+    },
+    {
+      "@id": "ocpp:NetworkConnectionProfileType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NetworkConnectionProfileType",
+      "rdfs:comment": "Communication_ Function\r\nurn:x-oca:ocpp:uid:2:233304\r\nThe NetworkConnectionProfile defines the functional and technical parameters of a communication link.\r\n"
+    },
+    {
+      "@id": "ocpp:VPNType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "VPNType",
+      "rdfs:comment": "VPN\r\nurn:x-oca:ocpp:uid:2:233268\r\nVPN Configuration settings\r\n"
+    },
+    {
+      "@id": "ocpp:SetNetworkProfileRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetNetworkProfileRequestPayload"
+    },
+    {
+      "@id": "ocpp:SetNetworkProfileStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "SetNetworkProfileStatusEnumType",
+      "rdfs:comment": "Result of operation.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:Failed"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:SetNetworkProfileStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:SetNetworkProfileStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:Failed",
+      "@type": [
+        "ocpp:SetNetworkProfileStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Failed",
+      "schema:identifier": "Failed"
+    },
+    {
+      "@id": "ocpp:SetNetworkProfileResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetNetworkProfileResponsePayload"
+    },
+    {
+      "@id": "ocpp:SetMonitoringDataType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetMonitoringDataType",
+      "rdfs:comment": "Class to hold parameters of SetVariableMonitoring request.\r\n"
+    },
+    {
+      "@id": "ocpp:SetVariableMonitoringRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetVariableMonitoringRequestPayload"
+    },
+    {
+      "@id": "ocpp:SetMonitoringStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "SetMonitoringStatusEnumType",
+      "rdfs:comment": "Status is OK if a value could be returned. Otherwise this will indicate the reason why a value could not be returned.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:UnknownComponent"
+        },
+        {
+          "@id": "ocpp:UnknownVariable"
+        },
+        {
+          "@id": "ocpp:UnsupportedMonitorType"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:Duplicate"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:SetMonitoringStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:UnknownComponent",
+      "@type": [
+        "ocpp:SetMonitoringStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnknownComponent",
+      "schema:identifier": "UnknownComponent"
+    },
+    {
+      "@id": "ocpp:UnknownVariable",
+      "@type": [
+        "ocpp:SetMonitoringStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnknownVariable",
+      "schema:identifier": "UnknownVariable"
+    },
+    {
+      "@id": "ocpp:UnsupportedMonitorType",
+      "@type": [
+        "ocpp:SetMonitoringStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnsupportedMonitorType",
+      "schema:identifier": "UnsupportedMonitorType"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:SetMonitoringStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:Duplicate",
+      "@type": [
+        "ocpp:SetMonitoringStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Duplicate",
+      "schema:identifier": "Duplicate"
+    },
+    {
+      "@id": "ocpp:SetMonitoringResultType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetMonitoringResultType",
+      "rdfs:comment": "Class to hold result of SetVariableMonitoring request.\r\n"
+    },
+    {
+      "@id": "ocpp:SetVariableMonitoringResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetVariableMonitoringResponsePayload"
+    },
+    {
+      "@id": "ocpp:SetVariableDataType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetVariableDataType"
+    },
+    {
+      "@id": "ocpp:SetVariablesRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetVariablesRequestPayload"
+    },
+    {
+      "@id": "ocpp:SetVariableStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "SetVariableStatusEnumType",
+      "rdfs:comment": "Result status of setting the variable.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:UnknownComponent"
+        },
+        {
+          "@id": "ocpp:UnknownVariable"
+        },
+        {
+          "@id": "ocpp:NotSupportedAttributeType"
+        },
+        {
+          "@id": "ocpp:RebootRequired"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:SetVariableStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:SetVariableStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:UnknownComponent",
+      "@type": [
+        "ocpp:SetVariableStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnknownComponent",
+      "schema:identifier": "UnknownComponent"
+    },
+    {
+      "@id": "ocpp:UnknownVariable",
+      "@type": [
+        "ocpp:SetVariableStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnknownVariable",
+      "schema:identifier": "UnknownVariable"
+    },
+    {
+      "@id": "ocpp:NotSupportedAttributeType",
+      "@type": [
+        "ocpp:SetVariableStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotSupportedAttributeType",
+      "schema:identifier": "NotSupportedAttributeType"
+    },
+    {
+      "@id": "ocpp:RebootRequired",
+      "@type": [
+        "ocpp:SetVariableStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RebootRequired",
+      "schema:identifier": "RebootRequired"
+    },
+    {
+      "@id": "ocpp:SetVariableResultType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetVariableResultType"
+    },
+    {
+      "@id": "ocpp:SetVariablesResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetVariablesResponsePayload"
+    },
+    {
+      "@id": "ocpp:SignCertificateRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SignCertificateRequestPayload"
+    },
+    {
+      "@id": "ocpp:SignCertificateResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SignCertificateResponsePayload"
+    },
+    {
+      "@id": "ocpp:ConnectorStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ConnectorStatusEnumType",
+      "rdfs:comment": "This contains the current status of the Connector.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Available"
+        },
+        {
+          "@id": "ocpp:Occupied"
+        },
+        {
+          "@id": "ocpp:Reserved"
+        },
+        {
+          "@id": "ocpp:Unavailable"
+        },
+        {
+          "@id": "ocpp:Faulted"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Available",
+      "@type": [
+        "ocpp:ConnectorStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Available",
+      "schema:identifier": "Available"
+    },
+    {
+      "@id": "ocpp:Occupied",
+      "@type": [
+        "ocpp:ConnectorStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Occupied",
+      "schema:identifier": "Occupied"
+    },
+    {
+      "@id": "ocpp:Reserved",
+      "@type": [
+        "ocpp:ConnectorStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Reserved",
+      "schema:identifier": "Reserved"
+    },
+    {
+      "@id": "ocpp:Unavailable",
+      "@type": [
+        "ocpp:ConnectorStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Unavailable",
+      "schema:identifier": "Unavailable"
+    },
+    {
+      "@id": "ocpp:Faulted",
+      "@type": [
+        "ocpp:ConnectorStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Faulted",
+      "schema:identifier": "Faulted"
+    },
+    {
+      "@id": "ocpp:StatusNotificationRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "StatusNotificationRequestPayload"
+    },
+    {
+      "@id": "ocpp:StatusNotificationResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "StatusNotificationResponsePayload"
+    },
+    {
+      "@id": "ocpp:ChargingStateEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ChargingStateEnumType",
+      "rdfs:comment": "Transaction. State. Transaction_ State_ Code\r\nurn:x-oca:ocpp:uid:1:569419\r\nCurrent charging state, is required when state\r\nhas changed.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Charging"
+        },
+        {
+          "@id": "ocpp:EVConnected"
+        },
+        {
+          "@id": "ocpp:SuspendedEV"
+        },
+        {
+          "@id": "ocpp:SuspendedEVSE"
+        },
+        {
+          "@id": "ocpp:Idle"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Charging",
+      "@type": [
+        "ocpp:ChargingStateEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Charging",
+      "schema:identifier": "Charging"
+    },
+    {
+      "@id": "ocpp:EVConnected",
+      "@type": [
+        "ocpp:ChargingStateEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EVConnected",
+      "schema:identifier": "EVConnected"
+    },
+    {
+      "@id": "ocpp:SuspendedEV",
+      "@type": [
+        "ocpp:ChargingStateEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SuspendedEV",
+      "schema:identifier": "SuspendedEV"
+    },
+    {
+      "@id": "ocpp:SuspendedEVSE",
+      "@type": [
+        "ocpp:ChargingStateEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SuspendedEVSE",
+      "schema:identifier": "SuspendedEVSE"
+    },
+    {
+      "@id": "ocpp:Idle",
+      "@type": [
+        "ocpp:ChargingStateEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Idle",
+      "schema:identifier": "Idle"
+    },
+    {
+      "@id": "ocpp:ReasonEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "ReasonEnumType",
+      "rdfs:comment": "Transaction. Stopped_ Reason. EOT_ Reason_ Code\r\nurn:x-oca:ocpp:uid:1:569413\r\nThis contains the reason why the transaction was stopped. MAY only be omitted when Reason is \"Local\".\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:DeAuthorized"
+        },
+        {
+          "@id": "ocpp:EmergencyStop"
+        },
+        {
+          "@id": "ocpp:EnergyLimitReached"
+        },
+        {
+          "@id": "ocpp:EVDisconnected"
+        },
+        {
+          "@id": "ocpp:GroundFault"
+        },
+        {
+          "@id": "ocpp:ImmediateReset"
+        },
+        {
+          "@id": "ocpp:Local"
+        },
+        {
+          "@id": "ocpp:LocalOutOfCredit"
+        },
+        {
+          "@id": "ocpp:MasterPass"
+        },
+        {
+          "@id": "ocpp:Other"
+        },
+        {
+          "@id": "ocpp:OvercurrentFault"
+        },
+        {
+          "@id": "ocpp:PowerLoss"
+        },
+        {
+          "@id": "ocpp:PowerQuality"
+        },
+        {
+          "@id": "ocpp:Reboot"
+        },
+        {
+          "@id": "ocpp:Remote"
+        },
+        {
+          "@id": "ocpp:SOCLimitReached"
+        },
+        {
+          "@id": "ocpp:StoppedByEV"
+        },
+        {
+          "@id": "ocpp:TimeLimitReached"
+        },
+        {
+          "@id": "ocpp:Timeout"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:DeAuthorized",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DeAuthorized",
+      "schema:identifier": "DeAuthorized"
+    },
+    {
+      "@id": "ocpp:EmergencyStop",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EmergencyStop",
+      "schema:identifier": "EmergencyStop"
+    },
+    {
+      "@id": "ocpp:EnergyLimitReached",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EnergyLimitReached",
+      "schema:identifier": "EnergyLimitReached"
+    },
+    {
+      "@id": "ocpp:EVDisconnected",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EVDisconnected",
+      "schema:identifier": "EVDisconnected"
+    },
+    {
+      "@id": "ocpp:GroundFault",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "GroundFault",
+      "schema:identifier": "GroundFault"
+    },
+    {
+      "@id": "ocpp:ImmediateReset",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ImmediateReset",
+      "schema:identifier": "ImmediateReset"
+    },
+    {
+      "@id": "ocpp:Local",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Local",
+      "schema:identifier": "Local"
+    },
+    {
+      "@id": "ocpp:LocalOutOfCredit",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "LocalOutOfCredit",
+      "schema:identifier": "LocalOutOfCredit"
+    },
+    {
+      "@id": "ocpp:MasterPass",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "MasterPass",
+      "schema:identifier": "MasterPass"
+    },
+    {
+      "@id": "ocpp:Other",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Other",
+      "schema:identifier": "Other"
+    },
+    {
+      "@id": "ocpp:OvercurrentFault",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OvercurrentFault",
+      "schema:identifier": "OvercurrentFault"
+    },
+    {
+      "@id": "ocpp:PowerLoss",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PowerLoss",
+      "schema:identifier": "PowerLoss"
+    },
+    {
+      "@id": "ocpp:PowerQuality",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PowerQuality",
+      "schema:identifier": "PowerQuality"
+    },
+    {
+      "@id": "ocpp:Reboot",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Reboot",
+      "schema:identifier": "Reboot"
+    },
+    {
+      "@id": "ocpp:Remote",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Remote",
+      "schema:identifier": "Remote"
+    },
+    {
+      "@id": "ocpp:SOCLimitReached",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SOCLimitReached",
+      "schema:identifier": "SOCLimitReached"
+    },
+    {
+      "@id": "ocpp:StoppedByEV",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "StoppedByEV",
+      "schema:identifier": "StoppedByEV"
+    },
+    {
+      "@id": "ocpp:TimeLimitReached",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "TimeLimitReached",
+      "schema:identifier": "TimeLimitReached"
+    },
+    {
+      "@id": "ocpp:Timeout",
+      "@type": [
+        "ocpp:ReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Timeout",
+      "schema:identifier": "Timeout"
+    },
+    {
+      "@id": "ocpp:TransactionEventEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "TransactionEventEnumType",
+      "rdfs:comment": "This contains the type of this event.\r\nThe first TransactionEvent of a transaction SHALL contain: \"Started\" The last TransactionEvent of a transaction SHALL contain: \"Ended\" All others SHALL contain: \"Updated\"\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Ended"
+        },
+        {
+          "@id": "ocpp:Started"
+        },
+        {
+          "@id": "ocpp:Updated"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Ended",
+      "@type": [
+        "ocpp:TransactionEventEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Ended",
+      "schema:identifier": "Ended"
+    },
+    {
+      "@id": "ocpp:Started",
+      "@type": [
+        "ocpp:TransactionEventEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Started",
+      "schema:identifier": "Started"
+    },
+    {
+      "@id": "ocpp:Updated",
+      "@type": [
+        "ocpp:TransactionEventEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Updated",
+      "schema:identifier": "Updated"
+    },
+    {
+      "@id": "ocpp:TriggerReasonEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "TriggerReasonEnumType",
+      "rdfs:comment": "Reason the Charging Station sends this message to the CSMS\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Authorized"
+        },
+        {
+          "@id": "ocpp:CablePluggedIn"
+        },
+        {
+          "@id": "ocpp:ChargingRateChanged"
+        },
+        {
+          "@id": "ocpp:ChargingStateChanged"
+        },
+        {
+          "@id": "ocpp:Deauthorized"
+        },
+        {
+          "@id": "ocpp:EnergyLimitReached"
+        },
+        {
+          "@id": "ocpp:EVCommunicationLost"
+        },
+        {
+          "@id": "ocpp:EVConnectTimeout"
+        },
+        {
+          "@id": "ocpp:MeterValueClock"
+        },
+        {
+          "@id": "ocpp:MeterValuePeriodic"
+        },
+        {
+          "@id": "ocpp:TimeLimitReached"
+        },
+        {
+          "@id": "ocpp:Trigger"
+        },
+        {
+          "@id": "ocpp:UnlockCommand"
+        },
+        {
+          "@id": "ocpp:StopAuthorized"
+        },
+        {
+          "@id": "ocpp:EVDeparted"
+        },
+        {
+          "@id": "ocpp:EVDetected"
+        },
+        {
+          "@id": "ocpp:RemoteStop"
+        },
+        {
+          "@id": "ocpp:RemoteStart"
+        },
+        {
+          "@id": "ocpp:AbnormalCondition"
+        },
+        {
+          "@id": "ocpp:SignedDataReceived"
+        },
+        {
+          "@id": "ocpp:ResetCommand"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Authorized",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Authorized",
+      "schema:identifier": "Authorized"
+    },
+    {
+      "@id": "ocpp:CablePluggedIn",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CablePluggedIn",
+      "schema:identifier": "CablePluggedIn"
+    },
+    {
+      "@id": "ocpp:ChargingRateChanged",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ChargingRateChanged",
+      "schema:identifier": "ChargingRateChanged"
+    },
+    {
+      "@id": "ocpp:ChargingStateChanged",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ChargingStateChanged",
+      "schema:identifier": "ChargingStateChanged"
+    },
+    {
+      "@id": "ocpp:Deauthorized",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Deauthorized",
+      "schema:identifier": "Deauthorized"
+    },
+    {
+      "@id": "ocpp:EnergyLimitReached",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EnergyLimitReached",
+      "schema:identifier": "EnergyLimitReached"
+    },
+    {
+      "@id": "ocpp:EVCommunicationLost",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EVCommunicationLost",
+      "schema:identifier": "EVCommunicationLost"
+    },
+    {
+      "@id": "ocpp:EVConnectTimeout",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EVConnectTimeout",
+      "schema:identifier": "EVConnectTimeout"
+    },
+    {
+      "@id": "ocpp:MeterValueClock",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "MeterValueClock",
+      "schema:identifier": "MeterValueClock"
+    },
+    {
+      "@id": "ocpp:MeterValuePeriodic",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "MeterValuePeriodic",
+      "schema:identifier": "MeterValuePeriodic"
+    },
+    {
+      "@id": "ocpp:TimeLimitReached",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "TimeLimitReached",
+      "schema:identifier": "TimeLimitReached"
+    },
+    {
+      "@id": "ocpp:Trigger",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Trigger",
+      "schema:identifier": "Trigger"
+    },
+    {
+      "@id": "ocpp:UnlockCommand",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnlockCommand",
+      "schema:identifier": "UnlockCommand"
+    },
+    {
+      "@id": "ocpp:StopAuthorized",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "StopAuthorized",
+      "schema:identifier": "StopAuthorized"
+    },
+    {
+      "@id": "ocpp:EVDeparted",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EVDeparted",
+      "schema:identifier": "EVDeparted"
+    },
+    {
+      "@id": "ocpp:EVDetected",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EVDetected",
+      "schema:identifier": "EVDetected"
+    },
+    {
+      "@id": "ocpp:RemoteStop",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RemoteStop",
+      "schema:identifier": "RemoteStop"
+    },
+    {
+      "@id": "ocpp:RemoteStart",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RemoteStart",
+      "schema:identifier": "RemoteStart"
+    },
+    {
+      "@id": "ocpp:AbnormalCondition",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AbnormalCondition",
+      "schema:identifier": "AbnormalCondition"
+    },
+    {
+      "@id": "ocpp:SignedDataReceived",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SignedDataReceived",
+      "schema:identifier": "SignedDataReceived"
+    },
+    {
+      "@id": "ocpp:ResetCommand",
+      "@type": [
+        "ocpp:TriggerReasonEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ResetCommand",
+      "schema:identifier": "ResetCommand"
+    },
+    {
+      "@id": "ocpp:TransactionType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TransactionType",
+      "rdfs:comment": "Transaction\r\nurn:x-oca:ocpp:uid:2:233318\r\n"
+    },
+    {
+      "@id": "ocpp:TransactionEventRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TransactionEventRequestPayload"
+    },
+    {
+      "@id": "ocpp:TransactionEventResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TransactionEventResponsePayload"
+    },
+    {
+      "@id": "ocpp:MessageTriggerEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "MessageTriggerEnumType",
+      "rdfs:comment": "Type of message to be triggered.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:BootNotification"
+        },
+        {
+          "@id": "ocpp:LogStatusNotification"
+        },
+        {
+          "@id": "ocpp:FirmwareStatusNotification"
+        },
+        {
+          "@id": "ocpp:Heartbeat"
+        },
+        {
+          "@id": "ocpp:MeterValues"
+        },
+        {
+          "@id": "ocpp:SignChargingStationCertificate"
+        },
+        {
+          "@id": "ocpp:SignV2GCertificate"
+        },
+        {
+          "@id": "ocpp:StatusNotification"
+        },
+        {
+          "@id": "ocpp:TransactionEvent"
+        },
+        {
+          "@id": "ocpp:SignCombinedCertificate"
+        },
+        {
+          "@id": "ocpp:PublishFirmwareStatusNotification"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:BootNotification",
+      "@type": [
+        "ocpp:MessageTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "BootNotification",
+      "schema:identifier": "BootNotification"
+    },
+    {
+      "@id": "ocpp:LogStatusNotification",
+      "@type": [
+        "ocpp:MessageTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "LogStatusNotification",
+      "schema:identifier": "LogStatusNotification"
+    },
+    {
+      "@id": "ocpp:FirmwareStatusNotification",
+      "@type": [
+        "ocpp:MessageTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "FirmwareStatusNotification",
+      "schema:identifier": "FirmwareStatusNotification"
+    },
+    {
+      "@id": "ocpp:Heartbeat",
+      "@type": [
+        "ocpp:MessageTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Heartbeat",
+      "schema:identifier": "Heartbeat"
+    },
+    {
+      "@id": "ocpp:MeterValues",
+      "@type": [
+        "ocpp:MessageTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "MeterValues",
+      "schema:identifier": "MeterValues"
+    },
+    {
+      "@id": "ocpp:SignChargingStationCertificate",
+      "@type": [
+        "ocpp:MessageTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SignChargingStationCertificate",
+      "schema:identifier": "SignChargingStationCertificate"
+    },
+    {
+      "@id": "ocpp:SignV2GCertificate",
+      "@type": [
+        "ocpp:MessageTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SignV2GCertificate",
+      "schema:identifier": "SignV2GCertificate"
+    },
+    {
+      "@id": "ocpp:StatusNotification",
+      "@type": [
+        "ocpp:MessageTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "StatusNotification",
+      "schema:identifier": "StatusNotification"
+    },
+    {
+      "@id": "ocpp:TransactionEvent",
+      "@type": [
+        "ocpp:MessageTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "TransactionEvent",
+      "schema:identifier": "TransactionEvent"
+    },
+    {
+      "@id": "ocpp:SignCombinedCertificate",
+      "@type": [
+        "ocpp:MessageTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SignCombinedCertificate",
+      "schema:identifier": "SignCombinedCertificate"
+    },
+    {
+      "@id": "ocpp:PublishFirmwareStatusNotification",
+      "@type": [
+        "ocpp:MessageTriggerEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PublishFirmwareStatusNotification",
+      "schema:identifier": "PublishFirmwareStatusNotification"
+    },
+    {
+      "@id": "ocpp:TriggerMessageRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TriggerMessageRequestPayload"
+    },
+    {
+      "@id": "ocpp:TriggerMessageStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "TriggerMessageStatusEnumType",
+      "rdfs:comment": "Indicates whether the Charging Station will send the requested notification or not.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:NotImplemented"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:TriggerMessageStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:TriggerMessageStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:NotImplemented",
+      "@type": [
+        "ocpp:TriggerMessageStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NotImplemented",
+      "schema:identifier": "NotImplemented"
+    },
+    {
+      "@id": "ocpp:TriggerMessageResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TriggerMessageResponsePayload"
+    },
+    {
+      "@id": "ocpp:UnlockConnectorRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UnlockConnectorRequestPayload"
+    },
+    {
+      "@id": "ocpp:UnlockStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "UnlockStatusEnumType",
+      "rdfs:comment": "This indicates whether the Charging Station has unlocked the connector.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Unlocked"
+        },
+        {
+          "@id": "ocpp:UnlockFailed"
+        },
+        {
+          "@id": "ocpp:OngoingAuthorizedTransaction"
+        },
+        {
+          "@id": "ocpp:UnknownConnector"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Unlocked",
+      "@type": [
+        "ocpp:UnlockStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Unlocked",
+      "schema:identifier": "Unlocked"
+    },
+    {
+      "@id": "ocpp:UnlockFailed",
+      "@type": [
+        "ocpp:UnlockStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnlockFailed",
+      "schema:identifier": "UnlockFailed"
+    },
+    {
+      "@id": "ocpp:OngoingAuthorizedTransaction",
+      "@type": [
+        "ocpp:UnlockStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OngoingAuthorizedTransaction",
+      "schema:identifier": "OngoingAuthorizedTransaction"
+    },
+    {
+      "@id": "ocpp:UnknownConnector",
+      "@type": [
+        "ocpp:UnlockStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UnknownConnector",
+      "schema:identifier": "UnknownConnector"
+    },
+    {
+      "@id": "ocpp:UnlockConnectorResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UnlockConnectorResponsePayload"
+    },
+    {
+      "@id": "ocpp:UnpublishFirmwareRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UnpublishFirmwareRequestPayload"
+    },
+    {
+      "@id": "ocpp:UnpublishFirmwareStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "UnpublishFirmwareStatusEnumType",
+      "rdfs:comment": "Indicates whether the Local Controller succeeded in unpublishing the firmware.\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:DownloadOngoing"
+        },
+        {
+          "@id": "ocpp:NoFirmware"
+        },
+        {
+          "@id": "ocpp:Unpublished"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:DownloadOngoing",
+      "@type": [
+        "ocpp:UnpublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DownloadOngoing",
+      "schema:identifier": "DownloadOngoing"
+    },
+    {
+      "@id": "ocpp:NoFirmware",
+      "@type": [
+        "ocpp:UnpublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NoFirmware",
+      "schema:identifier": "NoFirmware"
+    },
+    {
+      "@id": "ocpp:Unpublished",
+      "@type": [
+        "ocpp:UnpublishFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Unpublished",
+      "schema:identifier": "Unpublished"
+    },
+    {
+      "@id": "ocpp:UnpublishFirmwareResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UnpublishFirmwareResponsePayload"
+    },
+    {
+      "@id": "ocpp:FirmwareType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FirmwareType",
+      "rdfs:comment": "Firmware\r\nurn:x-enexis:ecdm:uid:2:233291\r\nRepresents a copy of the firmware that can be loaded/updated on the Charging Station.\r\n"
+    },
+    {
+      "@id": "ocpp:UpdateFirmwareRequestPayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UpdateFirmwareRequestPayload"
+    },
+    {
+      "@id": "ocpp:UpdateFirmwareStatusEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "UpdateFirmwareStatusEnumType",
+      "rdfs:comment": "This field indicates whether the Charging Station was able to accept the request.\r\n\r\n",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "ocpp:Accepted"
+        },
+        {
+          "@id": "ocpp:Rejected"
+        },
+        {
+          "@id": "ocpp:AcceptedCanceled"
+        },
+        {
+          "@id": "ocpp:InvalidCertificate"
+        },
+        {
+          "@id": "ocpp:RevokedCertificate"
+        }
+      ]
+    },
+    {
+      "@id": "ocpp:Accepted",
+      "@type": [
+        "ocpp:UpdateFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Accepted",
+      "schema:identifier": "Accepted"
+    },
+    {
+      "@id": "ocpp:Rejected",
+      "@type": [
+        "ocpp:UpdateFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Rejected",
+      "schema:identifier": "Rejected"
+    },
+    {
+      "@id": "ocpp:AcceptedCanceled",
+      "@type": [
+        "ocpp:UpdateFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AcceptedCanceled",
+      "schema:identifier": "AcceptedCanceled"
+    },
+    {
+      "@id": "ocpp:InvalidCertificate",
+      "@type": [
+        "ocpp:UpdateFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "InvalidCertificate",
+      "schema:identifier": "InvalidCertificate"
+    },
+    {
+      "@id": "ocpp:RevokedCertificate",
+      "@type": [
+        "ocpp:UpdateFirmwareStatusEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RevokedCertificate",
+      "schema:identifier": "RevokedCertificate"
+    },
+    {
+      "@id": "ocpp:UpdateFirmwareResponsePayload",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UpdateFirmwareResponsePayload"
+    }
+  ]
+}

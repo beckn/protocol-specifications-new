@@ -126,7 +126,7 @@ def generate_vocab(spec_path: Path, base_iri: Optional[str] = None,
     graph = []
     enum_types = {}  # Track enum types and their values
     
-    # First pass: collect all enum types
+    # First pass: collect all enum types from top-level schemas
     for schema_name, schema_def in schemas.items():
         if schema_def.get('type') == 'string' and 'enum' in schema_def:
             enum_values = schema_def.get('enum', [])
@@ -136,7 +136,27 @@ def generate_vocab(spec_path: Path, base_iri: Optional[str] = None,
                 'schema': schema_def
             }
     
-    # Second pass: generate vocabulary entries
+    # Also collect enum types from properties within object schemas
+    # (e.g., Connector.connector_standard -> ConnectorStandardEnumType)
+    for schema_name, schema_def in schemas.items():
+        if schema_def.get('type') == 'object' and 'properties' in schema_def:
+            for prop_name, prop_def in schema_def.get('properties', {}).items():
+                if prop_def.get('type') == 'string' and 'enum' in prop_def:
+                    # Create enum type name from property (e.g., connector_standard -> ConnectorStandardEnumType)
+                    enum_type_name = ''.join(word.capitalize() for word in prop_name.split('_')) + 'EnumType'
+                    enum_values = prop_def.get('enum', [])
+                    
+                    # Only add if not already exists (prefer top-level schema if it exists)
+                    if enum_type_name not in enum_types:
+                        enum_types[enum_type_name] = {
+                            'values': enum_values,
+                            'description': prop_def.get('description', f'Enumeration for {prop_name}'),
+                            'schema': prop_def,
+                            'property_name': prop_name,
+                            'parent_schema': schema_name
+                        }
+    
+    # Second pass: generate vocabulary entries for schemas
     for schema_name, schema_def in schemas.items():
         schema_id = get_schema_id(schema_name, prefix)
         
@@ -199,6 +219,53 @@ def generate_vocab(spec_path: Path, base_iri: Optional[str] = None,
                 class_entry["rdfs:comment"] = description
             
             graph.append(class_entry)
+    
+    # Third pass: generate vocabulary entries for enum types found in properties
+    for enum_type_name, enum_info in enum_types.items():
+        # Skip if already processed as a top-level schema
+        if enum_type_name in schemas:
+            continue
+        
+        schema_id = get_schema_id(enum_type_name, prefix)
+        enum_values = enum_info['values']
+        description = enum_info['description']
+        
+        # Create enum type entry
+        enum_type_entry = {
+            "@id": schema_id,
+            "@type": "schema:Enumeration",
+            "schema:name": enum_type_name,
+        }
+        
+        if description:
+            enum_type_entry["rdfs:comment"] = description
+        
+        # Add enum members
+        enum_members = []
+        for enum_value in enum_values:
+            enum_value_id = get_enum_value_id(enum_type_name, enum_value, prefix)
+            enum_members.append({"@id": enum_value_id})
+        
+        if enum_members:
+            enum_type_entry["schema:hasEnumerationMember"] = enum_members
+        
+        graph.append(enum_type_entry)
+        
+        # Create individual enum value entries
+        for enum_value in enum_values:
+            enum_value_id = get_enum_value_id(enum_type_name, enum_value, prefix)
+            
+            enum_value_entry = {
+                "@id": enum_value_id,
+                "@type": [
+                    schema_id,  # The enum type
+                    "schema:Enumeration"
+                ],
+                "schema:name": enum_value,
+                "schema:identifier": enum_value
+            }
+            
+            graph.append(enum_value_entry)
     
     # Create vocab document with prefix mapping in context
     vocab_doc = {

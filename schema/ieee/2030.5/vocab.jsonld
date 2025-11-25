@@ -1,0 +1,1392 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "vocab": "https://schemas.2030.5/",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "vocab:DeviceCapability",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DeviceCapability",
+      "rdfs:comment": "Returned by the URI provided by DNS-SD, to allow clients to find the URIs to the resources in which they are interested."
+    },
+    {
+      "@id": "vocab:AbstractDevice",
+      "@type": "rdfs:Class",
+      "rdfs:label": "AbstractDevice",
+      "rdfs:comment": "The EndDevice providing the resources available within the DeviceCapabilities."
+    },
+    {
+      "@id": "vocab:DeviceStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DeviceStatus",
+      "rdfs:comment": "Status of device"
+    },
+    {
+      "@id": "vocab:EndDevice",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EndDevice",
+      "rdfs:comment": "Asset container that performs one or more end device functions. Contains information about individual devices in the network."
+    },
+    {
+      "@id": "vocab:EndDeviceList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EndDeviceList",
+      "rdfs:comment": "A List element to hold EndDevice objects."
+    },
+    {
+      "@id": "vocab:Registration",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Registration",
+      "rdfs:comment": "Registration represents an authorization to access the resources on a host."
+    },
+    {
+      "@id": "vocab:SelfDevice",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SelfDevice",
+      "rdfs:comment": "The EndDevice providing the resources available within the DeviceCapabilities."
+    },
+    {
+      "@id": "vocab:Temperature",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Temperature",
+      "rdfs:comment": "Specification of a temperature."
+    },
+    {
+      "@id": "vocab:FunctionSetAssignmentsBase",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FunctionSetAssignmentsBase",
+      "rdfs:comment": "Defines a collection of function set instances that are to be used by one or more devices as indicated by the EndDevice object(s) of the server."
+    },
+    {
+      "@id": "vocab:FunctionSetAssignments",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FunctionSetAssignments",
+      "rdfs:comment": "Provides an identifiable, subscribable collection of resources for a particular device to consume."
+    },
+    {
+      "@id": "vocab:FunctionSetAssignmentsList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FunctionSetAssignmentsList",
+      "rdfs:comment": "A List element to hold FunctionSetAssignments objects."
+    },
+    {
+      "@id": "vocab:Condition",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Condition",
+      "rdfs:comment": "Indicates a condition that must be satisfied for the Notification to be triggered."
+    },
+    {
+      "@id": "vocab:SubscriptionBase",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SubscriptionBase",
+      "rdfs:comment": "Holds the information related to a client subscription to receive updates to a resource automatically. The actual resources may be passed in the Notification by specifying a specific xsi:type for the Resource and passing the full representation."
+    },
+    {
+      "@id": "vocab:Subscription",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Subscription",
+      "rdfs:comment": "Holds the information related to a client subscription to receive updates to a resource automatically."
+    },
+    {
+      "@id": "vocab:SubscriptionList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SubscriptionList",
+      "rdfs:comment": "A List element to hold Subscription objects."
+    },
+    {
+      "@id": "vocab:Notification",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Notification",
+      "rdfs:comment": "Holds the information related to a client subscription to receive updates to a resource automatically. The actual resources may be passed in the Notification by specifying a specific xsi:type for the Resource and passing the full representation."
+    },
+    {
+      "@id": "vocab:NotificationList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotificationList",
+      "rdfs:comment": "A List element to hold Notification objects."
+    },
+    {
+      "@id": "vocab:AppliedTargetReduction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "AppliedTargetReduction",
+      "rdfs:comment": "Specifies the value of the TargetReduction applied by the device."
+    },
+    {
+      "@id": "vocab:DrResponse",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DrResponse",
+      "rdfs:comment": "A response to a Demand Response Load Control (EndDeviceControl) message."
+    },
+    {
+      "@id": "vocab:Response",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Response",
+      "rdfs:comment": "The Response object is the generic response data repository which is extended for specific function sets."
+    },
+    {
+      "@id": "vocab:ResponseList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ResponseList",
+      "rdfs:comment": "A List element to hold Response objects."
+    },
+    {
+      "@id": "vocab:ResponseSet",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ResponseSet",
+      "rdfs:comment": "A container for a ResponseList."
+    },
+    {
+      "@id": "vocab:ResponseSetList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ResponseSetList",
+      "rdfs:comment": "A List element to hold ResponseSet objects."
+    },
+    {
+      "@id": "vocab:Time",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Time",
+      "rdfs:comment": "Contains the representation of time, constantly updated."
+    },
+    {
+      "@id": "vocab:DeviceInformation",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DeviceInformation",
+      "rdfs:comment": "Contains identification and other information about the device that changes very infrequently, typically only when updates are applied, if ever."
+    },
+    {
+      "@id": "vocab:DRLCCapabilities",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DRLCCapabilities",
+      "rdfs:comment": "Contains information about the static capabilities of the device, to allow service providers to know what types of functions are supported, what the normal operating ranges and limits are, and other similar information, in order to provide better suggestions of applicable programs to receive the maximum benefit."
+    },
+    {
+      "@id": "vocab:SupportedLocale",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SupportedLocale",
+      "rdfs:comment": "Specifies a locale that is supported"
+    },
+    {
+      "@id": "vocab:SupportedLocaleList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SupportedLocaleList",
+      "rdfs:comment": "A List element to hold SupportedLocale objects."
+    },
+    {
+      "@id": "vocab:PowerStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PowerStatus",
+      "rdfs:comment": "Contains the status of the device's power sources"
+    },
+    {
+      "@id": "vocab:PEVInfo",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PEVInfo",
+      "rdfs:comment": "Contains attributes that can be exposed by PEVs and other devices that have charging requirements."
+    },
+    {
+      "@id": "vocab:IEEE_802_15_4",
+      "@type": "rdfs:Class",
+      "rdfs:label": "IEEE_802_15_4",
+      "rdfs:comment": "Contains 802.15.4 link layer specific attributes."
+    },
+    {
+      "@id": "vocab:IPAddr",
+      "@type": "rdfs:Class",
+      "rdfs:label": "IPAddr",
+      "rdfs:comment": "An Internet Protocol address object."
+    },
+    {
+      "@id": "vocab:IPAddrList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "IPAddrList",
+      "rdfs:comment": "List of IPAddr instances."
+    },
+    {
+      "@id": "vocab:IPInterface",
+      "@type": "rdfs:Class",
+      "rdfs:label": "IPInterface",
+      "rdfs:comment": "Specific IPInterface resource.  This resource may be thought of as network status information for a specific network (IP) layer interface."
+    },
+    {
+      "@id": "vocab:IPInterfaceList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "IPInterfaceList",
+      "rdfs:comment": "List of IPInterface instances."
+    },
+    {
+      "@id": "vocab:LLInterface",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LLInterface",
+      "rdfs:comment": "A link-layer interface object."
+    },
+    {
+      "@id": "vocab:LLInterfaceList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LLInterfaceList",
+      "rdfs:comment": "List of LLInterface instances."
+    },
+    {
+      "@id": "vocab:loWPAN",
+      "@type": "rdfs:Class",
+      "rdfs:label": "loWPAN",
+      "rdfs:comment": "Contains information specific to 6LoWPAN."
+    },
+    {
+      "@id": "vocab:Neighbor",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Neighbor",
+      "rdfs:comment": "Contains 802.15.4 link layer specific attributes."
+    },
+    {
+      "@id": "vocab:NeighborList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NeighborList",
+      "rdfs:comment": "List of 15.4 neighbors."
+    },
+    {
+      "@id": "vocab:RPLInstance",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RPLInstance",
+      "rdfs:comment": "Specific RPLInstance resource.  This resource may be thought of as network status information for a specific RPL instance associated with IPInterface."
+    },
+    {
+      "@id": "vocab:RPLInstanceList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RPLInstanceList",
+      "rdfs:comment": "List of RPLInstances associated with the IPinterface."
+    },
+    {
+      "@id": "vocab:RPLSourceRoutes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RPLSourceRoutes",
+      "rdfs:comment": "A RPL source routes object."
+    },
+    {
+      "@id": "vocab:RPLSourceRoutesList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RPLSourceRoutesList",
+      "rdfs:comment": "List or RPL source routes if the hosting device is the DODAGroot"
+    },
+    {
+      "@id": "vocab:LogEvent",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LogEvent",
+      "rdfs:comment": "A time stamped instance of a significant event detected by the device."
+    },
+    {
+      "@id": "vocab:LogEventList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LogEventList",
+      "rdfs:comment": "A List element to hold LogEvent objects."
+    },
+    {
+      "@id": "vocab:Configuration",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Configuration",
+      "rdfs:comment": "This resource contains various settings to control the operation of the device"
+    },
+    {
+      "@id": "vocab:PowerConfiguration",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PowerConfiguration",
+      "rdfs:comment": "Contains configuration related to the device's power sources"
+    },
+    {
+      "@id": "vocab:PriceResponseCfg",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PriceResponseCfg",
+      "rdfs:comment": "Configuration data that specifies how price responsive devices SHOULD respond to price changes while acting upon a given RateComponent."
+    },
+    {
+      "@id": "vocab:PriceResponseCfgList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PriceResponseCfgList",
+      "rdfs:comment": "A List element to hold PriceResponseCfg objects."
+    },
+    {
+      "@id": "vocab:TimeConfiguration",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TimeConfiguration",
+      "rdfs:comment": "Contains attributes related to the configuration of the time service."
+    },
+    {
+      "@id": "vocab:File",
+      "@type": "rdfs:Class",
+      "rdfs:label": "File",
+      "rdfs:comment": "This resource contains various meta-data describing a file's characteristics.  The meta-data provides general file information and also is used to support filtered queries of file lists"
+    },
+    {
+      "@id": "vocab:FileList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FileList",
+      "rdfs:comment": "A List element to hold File objects."
+    },
+    {
+      "@id": "vocab:FileStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FileStatus",
+      "rdfs:comment": "This object provides status of device file load and activation operations."
+    },
+    {
+      "@id": "vocab:LoadShedAvailabilityList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LoadShedAvailabilityList",
+      "rdfs:comment": "A List element to hold LoadShedAvailability objects."
+    },
+    {
+      "@id": "vocab:ApplianceLoadReduction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ApplianceLoadReduction",
+      "rdfs:comment": "The ApplianceLoadReduction object is used by a Demand Response service provider to provide signals for ENERGY STAR compliant appliances. See the definition of ApplianceLoadReductionType for more information."
+    },
+    {
+      "@id": "vocab:DemandResponseProgram",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DemandResponseProgram",
+      "rdfs:comment": "Demand response program."
+    },
+    {
+      "@id": "vocab:DemandResponseProgramList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DemandResponseProgramList",
+      "rdfs:comment": "A List element to hold DemandResponseProgram objects."
+    },
+    {
+      "@id": "vocab:DutyCycle",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DutyCycle",
+      "rdfs:comment": "Duty cycle control is a device specific issue and is managed by the device.  The duty cycle of the device under control should span the shortest practical time period in accordance with the nature of the device under control and the intent of the request for demand reduction.  The default factory setting SHOULD be three minutes for each 10% of duty cycle.  This indicates that the default time period over which a duty cycle is applied is 30 minutes, meaning a 10% duty cycle would cause a device to be ON for 3 minutes.   The “off state” SHALL precede the “on state”."
+    },
+    {
+      "@id": "vocab:EndDeviceControl",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EndDeviceControl",
+      "rdfs:comment": "Instructs an EndDevice to perform a specified action."
+    },
+    {
+      "@id": "vocab:EndDeviceControlList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EndDeviceControlList",
+      "rdfs:comment": "A List element to hold EndDeviceControl objects."
+    },
+    {
+      "@id": "vocab:LoadShedAvailability",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LoadShedAvailability",
+      "rdfs:comment": "Indicates current consumption status and ability to shed load."
+    },
+    {
+      "@id": "vocab:Offset",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Offset",
+      "rdfs:comment": "If a temperature offset is sent that causes the heating or cooling temperature set point to exceed the limit boundaries that are programmed into the device, the device SHALL respond by setting the temperature at the limit.\nIf an EDC is being targeted at multiple devices or to a device that controls multiple devices (e.g., EMS), it can provide multiple Offset types within one EDC. For events with multiple Offset types, a client SHALL select the Offset that best fits their operating function. \nAlternatively, an event with a single Offset type can be targeted at an EMS in order to request a percentage load reduction on the average energy usage of the entire premise. An EMS SHOULD use the Metering function set to determine the initial load in the premise, reduce energy consumption by controlling devices at its disposal, and at the conclusion of the event, once again use the Metering function set to determine if the desired load reduction was achieved."
+    },
+    {
+      "@id": "vocab:SetPoint",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SetPoint",
+      "rdfs:comment": "The SetPoint object is used to apply specific temperature set points to a temperature control device. The values of the heatingSetpoint and coolingSetpoint attributes SHALL be calculated as follows:\nCooling/Heating Temperature Set Point / 100 = temperature in degrees Celsius where -273.15°C &lt;= temperature &lt;= 327.67°C, corresponding to a Cooling and/or Heating Temperature Set Point. The maximum resolution this format allows is 0.01°C. \nThe field not present in a Response indicates that this field has not been used by the end device. \nIf a temperature is sent that exceeds the temperature limit boundaries that are programmed into the device, the device SHALL respond by setting the temperature at the limit."
+    },
+    {
+      "@id": "vocab:TargetReduction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TargetReduction",
+      "rdfs:comment": "The TargetReduction object is used by a Demand Response service provider to provide a RECOMMENDED threshold that a device/premises should maintain its consumption below. For example, a service provider can provide a RECOMMENDED threshold of some kWh for a 3-hour event. This means that the device/premises would maintain its consumption below the specified limit for the specified period."
+    },
+    {
+      "@id": "vocab:MeterReading",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MeterReading",
+      "rdfs:comment": "Set of values obtained from the meter."
+    },
+    {
+      "@id": "vocab:MeterReadingList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MeterReadingList",
+      "rdfs:comment": "A List element to hold MeterReading objects."
+    },
+    {
+      "@id": "vocab:Reading",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Reading",
+      "rdfs:comment": "Specific value measured by a meter or other asset."
+    },
+    {
+      "@id": "vocab:ReadingList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReadingList",
+      "rdfs:comment": "A List element to hold Reading objects."
+    },
+    {
+      "@id": "vocab:ReadingSet",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReadingSet",
+      "rdfs:comment": "A set of Readings of the ReadingType indicated by the parent MeterReading."
+    },
+    {
+      "@id": "vocab:ReadingSetList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReadingSetList",
+      "rdfs:comment": "A List element to hold ReadingSet objects."
+    },
+    {
+      "@id": "vocab:ReadingType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReadingType",
+      "rdfs:comment": "Type of data conveyed by a specific Reading. See IEC 61968 Part 9 Annex C for full definitions of these values."
+    },
+    {
+      "@id": "vocab:UsagePoint",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UsagePoint",
+      "rdfs:comment": "Logical point on a network at which consumption or production is either physically measured (e.g. metered) or estimated (e.g. unmetered street lights)."
+    },
+    {
+      "@id": "vocab:UsagePointList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UsagePointList",
+      "rdfs:comment": "A List element to hold UsagePoint objects."
+    },
+    {
+      "@id": "vocab:ConsumptionTariffInterval",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ConsumptionTariffInterval",
+      "rdfs:comment": "One of a sequence of thresholds defined in terms of consumption quantity of a service such as electricity, water, gas, etc. It defines the steps or blocks in a step tariff structure, where startValue simultaneously defines the entry value of this step and the closing value of the previous step. Where consumption is greater than startValue, it falls within this block and where consumption is less than or equal to startValue, it falls within one of the previous blocks."
+    },
+    {
+      "@id": "vocab:ConsumptionTariffIntervalList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ConsumptionTariffIntervalList",
+      "rdfs:comment": "A List element to hold ConsumptionTariffInterval objects."
+    },
+    {
+      "@id": "vocab:EnvironmentalCost",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EnvironmentalCost",
+      "rdfs:comment": "Provides alternative or secondary price information for the relevant RateComponent. Supports jurisdictions that seek to convey the environmental price per unit of the specified commodity not expressed in currency.\n\nImplementers and consumers can use this attribute to prioritize operations of their HAN devices (e.g., PEV charging during times of high availability of renewable electricity resources)."
+    },
+    {
+      "@id": "vocab:RateComponent",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RateComponent",
+      "rdfs:comment": "Specifies the applicable charges for a single component of the rate, which could be generation price or consumption price, for example."
+    },
+    {
+      "@id": "vocab:RateComponentList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RateComponentList",
+      "rdfs:comment": "A List element to hold RateComponent objects."
+    },
+    {
+      "@id": "vocab:TariffProfile",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TariffProfile",
+      "rdfs:comment": "A schedule of charges; structure that allows the definition of tariff structures such as step (block) and time of use (tier) when used in conjunction with TimeTariffInterval and ConsumptionTariffInterval."
+    },
+    {
+      "@id": "vocab:TariffProfileList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TariffProfileList",
+      "rdfs:comment": "A List element to hold TariffProfile objects."
+    },
+    {
+      "@id": "vocab:TimeTariffInterval",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TimeTariffInterval",
+      "rdfs:comment": "Describes the time-differentiated portion of the RateComponent, if applicable, and provides the ability to specify multiple time intervals, each with its own consumption-based components and other attributes."
+    },
+    {
+      "@id": "vocab:TimeTariffIntervalList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TimeTariffIntervalList",
+      "rdfs:comment": "A List element to hold TimeTariffInterval objects."
+    },
+    {
+      "@id": "vocab:MessagingProgram",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MessagingProgram",
+      "rdfs:comment": "Provides a container for collections of text messages."
+    },
+    {
+      "@id": "vocab:MessagingProgramList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MessagingProgramList",
+      "rdfs:comment": "A List element to hold MessagingProgram objects."
+    },
+    {
+      "@id": "vocab:TextMessage",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TextMessage",
+      "rdfs:comment": "Text message such as a notification."
+    },
+    {
+      "@id": "vocab:TextMessageList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TextMessageList",
+      "rdfs:comment": "A List element to hold TextMessage objects."
+    },
+    {
+      "@id": "vocab:BillingPeriod",
+      "@type": "rdfs:Class",
+      "rdfs:label": "BillingPeriod",
+      "rdfs:comment": "A Billing Period relates to the period of time on which a customer is billed.  As an example the billing period interval for a particular customer might be 31 days starting on July 1, 2011. The start date and interval can change on each billing period. There may also be multiple billing periods related to a customer agreement to support different tariff structures."
+    },
+    {
+      "@id": "vocab:BillingPeriodList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "BillingPeriodList",
+      "rdfs:comment": "A List element to hold BillingPeriod objects."
+    },
+    {
+      "@id": "vocab:BillingMeterReadingBase",
+      "@type": "rdfs:Class",
+      "rdfs:label": "BillingMeterReadingBase",
+      "rdfs:comment": "Contains historical, target, and projection readings of various types, possibly associated with charges."
+    },
+    {
+      "@id": "vocab:BillingReading",
+      "@type": "rdfs:Class",
+      "rdfs:label": "BillingReading",
+      "rdfs:comment": "Data captured at regular intervals of time. Interval data could be captured as incremental data, absolute data, or relative data. The source for the data is usually a tariff quantity or an engineering quantity. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min. However, consumption aggregations can also be represented with this class."
+    },
+    {
+      "@id": "vocab:BillingReadingList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "BillingReadingList",
+      "rdfs:comment": "A List element to hold BillingReading objects."
+    },
+    {
+      "@id": "vocab:BillingReadingSet",
+      "@type": "rdfs:Class",
+      "rdfs:label": "BillingReadingSet",
+      "rdfs:comment": "Time sequence of readings of the same reading type."
+    },
+    {
+      "@id": "vocab:BillingReadingSetList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "BillingReadingSetList",
+      "rdfs:comment": "A List element to hold BillingReadingSet objects."
+    },
+    {
+      "@id": "vocab:Charge",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Charge",
+      "rdfs:comment": "Charges contain charges on a customer bill.  These could be items like taxes, levies, surcharges, rebates, or others.  This is meant to allow the HAN device to retrieve enough information to be able to reconstruct an estimate of what the total bill would look like. \n\nProviders can provide line item billing, including multiple charge kinds (e.g. taxes, surcharges) at whatever granularity desired, using as many Charges as desired during a billing period. There can also be any number of Charges associated with different ReadingTypes to distinguish between TOU tiers, consumption blocks, or demand charges."
+    },
+    {
+      "@id": "vocab:CustomerAccount",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CustomerAccount",
+      "rdfs:comment": "Assignment of a group of products and services purchased by the Customer through a CustomerAgreement, used as a mechanism for customer billing and payment. It contains common information from the various types of CustomerAgreements to create billings (invoices) for a Customer and receive payment."
+    },
+    {
+      "@id": "vocab:CustomerAccountList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CustomerAccountList",
+      "rdfs:comment": "A List element to hold CustomerAccount objects."
+    },
+    {
+      "@id": "vocab:CustomerAgreement",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CustomerAgreement",
+      "rdfs:comment": "Agreement between the customer and the service supplier to pay for service at a specific service location. It records certain billing information about the type of service provided at the service location and is used during charge creation to determine the type of service."
+    },
+    {
+      "@id": "vocab:CustomerAgreementList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CustomerAgreementList",
+      "rdfs:comment": "A List element to hold CustomerAgreement objects."
+    },
+    {
+      "@id": "vocab:HistoricalReadingList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "HistoricalReadingList",
+      "rdfs:comment": "A List element to hold HistoricalReading objects."
+    },
+    {
+      "@id": "vocab:ProjectionReadingList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ProjectionReadingList",
+      "rdfs:comment": "A List element to hold ProjectionReading objects."
+    },
+    {
+      "@id": "vocab:TargetReadingList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TargetReadingList",
+      "rdfs:comment": "A List element to hold TargetReading objects."
+    },
+    {
+      "@id": "vocab:ServiceSupplier",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ServiceSupplier",
+      "rdfs:comment": "Organisation that provides services to Customers."
+    },
+    {
+      "@id": "vocab:ServiceSupplierList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ServiceSupplierList",
+      "rdfs:comment": "A List element to hold ServiceSupplier objects."
+    },
+    {
+      "@id": "vocab:AccountBalance",
+      "@type": "rdfs:Class",
+      "rdfs:label": "AccountBalance",
+      "rdfs:comment": "AccountBalance contains the regular credit and emergency credit balance for this given service or commodity prepay instance. It may also contain status information concerning the balance data."
+    },
+    {
+      "@id": "vocab:AccountingUnit",
+      "@type": "rdfs:Class",
+      "rdfs:label": "AccountingUnit",
+      "rdfs:comment": "Unit for accounting; use either 'energyUnit' or 'currencyUnit' to specify the unit for 'value'."
+    },
+    {
+      "@id": "vocab:CreditRegister",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CreditRegister",
+      "rdfs:comment": "CreditRegister instances define a credit-modifying transaction. Typically this would be a credit-adding transaction, but may be a subtracting transaction (perhaps in response to an out-of-band debt signal)."
+    },
+    {
+      "@id": "vocab:CreditRegisterList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CreditRegisterList",
+      "rdfs:comment": "A List element to hold CreditRegister objects."
+    },
+    {
+      "@id": "vocab:Prepayment",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Prepayment",
+      "rdfs:comment": "Prepayment (inherited from CIM SDPAccountingFunction)"
+    },
+    {
+      "@id": "vocab:PrepaymentList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PrepaymentList",
+      "rdfs:comment": "A List element to hold Prepayment objects."
+    },
+    {
+      "@id": "vocab:PrepayOperationStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PrepayOperationStatus",
+      "rdfs:comment": "PrepayOperationStatus describes the status of the service or commodity being conditionally controlled by the Prepayment function set."
+    },
+    {
+      "@id": "vocab:ServiceChange",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ServiceChange",
+      "rdfs:comment": "Specifies a change to the service status."
+    },
+    {
+      "@id": "vocab:SupplyInterruptionOverride",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SupplyInterruptionOverride",
+      "rdfs:comment": "SupplyInterruptionOverride: There may be periods of time when social, regulatory or other concerns mean that service should not be interrupted, even when available credit has been exhausted. Each Prepayment instance links to a List of SupplyInterruptionOverride instances. Each SupplyInterruptionOverride defines a contiguous period of time during which supply SHALL NOT be interrupted."
+    },
+    {
+      "@id": "vocab:SupplyInterruptionOverrideList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SupplyInterruptionOverrideList",
+      "rdfs:comment": "A List element to hold SupplyInterruptionOverride objects."
+    },
+    {
+      "@id": "vocab:CreditTypeChange",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CreditTypeChange",
+      "rdfs:comment": "Specifies a change to the credit type."
+    },
+    {
+      "@id": "vocab:RequestStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RequestStatus",
+      "rdfs:comment": "The RequestStatus object is used to indicate the current status of a Flow Reservation Request."
+    },
+    {
+      "@id": "vocab:FlowReservationRequest",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FlowReservationRequest",
+      "rdfs:comment": "Used to request flow transactions. Client EndDevices submit a request for charging or discharging from the server. The server creates an associated FlowReservationResponse containing the charging parameters and interval to provide a lower aggregated demand at the premises, or within a larger part of the distribution system."
+    },
+    {
+      "@id": "vocab:FlowReservationRequestList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FlowReservationRequestList",
+      "rdfs:comment": "A List element to hold FlowReservationRequest objects."
+    },
+    {
+      "@id": "vocab:FlowReservationResponse",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FlowReservationResponse",
+      "rdfs:comment": "The server may modify the charging or discharging parameters and interval to provide a lower aggregated demand at the premises, or within a larger part of the distribution system."
+    },
+    {
+      "@id": "vocab:FlowReservationResponseList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FlowReservationResponseList",
+      "rdfs:comment": "A List element to hold FlowReservationResponse objects."
+    },
+    {
+      "@id": "vocab:DefaultDERControl",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DefaultDERControl",
+      "rdfs:comment": "Contains control mode information to be used if no active DERControl is found."
+    },
+    {
+      "@id": "vocab:FreqDroopType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FreqDroopType",
+      "rdfs:comment": "Type for Frequency-Droop (Frequency-Watt) operation."
+    },
+    {
+      "@id": "vocab:DER",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DER",
+      "rdfs:comment": "Contains links to DER resources."
+    },
+    {
+      "@id": "vocab:DERList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERList",
+      "rdfs:comment": "A List element to hold DER objects."
+    },
+    {
+      "@id": "vocab:DERSettings",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERSettings",
+      "rdfs:comment": "Distributed energy resource settings"
+    },
+    {
+      "@id": "vocab:DERAvailability",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERAvailability",
+      "rdfs:comment": "Indicates current reserve generation status"
+    },
+    {
+      "@id": "vocab:DERCapability",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERCapability",
+      "rdfs:comment": "Distributed energy resource type and nameplate ratings."
+    },
+    {
+      "@id": "vocab:DERControlBase",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERControlBase",
+      "rdfs:comment": "Distributed Energy Resource (DER) control values."
+    },
+    {
+      "@id": "vocab:DERControl",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERControl",
+      "rdfs:comment": "Distributed Energy Resource (DER) time/event-based control."
+    },
+    {
+      "@id": "vocab:DERControlList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERControlList",
+      "rdfs:comment": "A List element to hold DERControl objects."
+    },
+    {
+      "@id": "vocab:DERCurve",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERCurve",
+      "rdfs:comment": "DER related curves such as Volt-Var mode curves. Relationship between an independent variable (X-axis) and a dependent variable (Y-axis)."
+    },
+    {
+      "@id": "vocab:DERCurveList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERCurveList",
+      "rdfs:comment": "A List element to hold DERCurve objects."
+    },
+    {
+      "@id": "vocab:CurveData",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CurveData",
+      "rdfs:comment": "Data point values for defining a curve or schedule"
+    },
+    {
+      "@id": "vocab:DERProgram",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERProgram",
+      "rdfs:comment": "Distributed Energy Resource program."
+    },
+    {
+      "@id": "vocab:DERProgramList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERProgramList",
+      "rdfs:comment": "A List element to hold DERProgram objects."
+    },
+    {
+      "@id": "vocab:DERStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DERStatus",
+      "rdfs:comment": "DER status information."
+    },
+    {
+      "@id": "vocab:CurrentRMS",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CurrentRMS",
+      "rdfs:comment": "Average flow of charge through a conductor."
+    },
+    {
+      "@id": "vocab:FixedPointType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FixedPointType",
+      "rdfs:comment": "Abstract type for specifying a fixed-point value without a given unit of measure."
+    },
+    {
+      "@id": "vocab:UnsignedFixedPointType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UnsignedFixedPointType",
+      "rdfs:comment": "Abstract type for specifying an unsigned fixed-point value without a given unit of measure."
+    },
+    {
+      "@id": "vocab:ActivePower",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ActivePower",
+      "rdfs:comment": "The active (real) power P (in W) is the product of root-mean-square (RMS) voltage, RMS current, and cos(theta) where theta is the phase angle of current relative to voltage.  It is the primary measure of the rate of flow of energy."
+    },
+    {
+      "@id": "vocab:AmpereHour",
+      "@type": "rdfs:Class",
+      "rdfs:label": "AmpereHour",
+      "rdfs:comment": "Available electric charge"
+    },
+    {
+      "@id": "vocab:ApparentPower",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ApparentPower",
+      "rdfs:comment": "The apparent power S (in VA) is the product of root mean square (RMS) voltage and RMS current."
+    },
+    {
+      "@id": "vocab:ReactivePower",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReactivePower",
+      "rdfs:comment": "The reactive power Q (in var) is the product of root mean square (RMS) voltage, RMS current, and sin(theta) where theta is the phase angle of current relative to voltage."
+    },
+    {
+      "@id": "vocab:ReactiveSusceptance",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReactiveSusceptance",
+      "rdfs:comment": "Reactive susceptance"
+    },
+    {
+      "@id": "vocab:PowerFactor",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PowerFactor",
+      "rdfs:comment": "Specifies a setpoint for Displacement Power Factor, the ratio between apparent and active powers at the fundamental frequency (e.g. 60 Hz)."
+    },
+    {
+      "@id": "vocab:PowerFactorWithExcitation",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PowerFactorWithExcitation",
+      "rdfs:comment": "Specifies a setpoint for Displacement Power Factor, the ratio between apparent and active powers at the fundamental frequency (e.g. 60 Hz) and includes an excitation flag."
+    },
+    {
+      "@id": "vocab:FixedVar",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FixedVar",
+      "rdfs:comment": "Specifies a signed setpoint for reactive power."
+    },
+    {
+      "@id": "vocab:WattHour",
+      "@type": "rdfs:Class",
+      "rdfs:label": "WattHour",
+      "rdfs:comment": "Active (real) energy"
+    },
+    {
+      "@id": "vocab:VoltageRMS",
+      "@type": "rdfs:Class",
+      "rdfs:label": "VoltageRMS",
+      "rdfs:comment": "Average electric potential difference between two points."
+    },
+    {
+      "@id": "vocab:ConnectStatusType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ConnectStatusType",
+      "rdfs:comment": "DER ConnectStatus value (bitmap):\n0 - Connected\n1 - Available\n2 - Operating\n3 - Test\n4 - Fault / Error\nAll other values reserved."
+    },
+    {
+      "@id": "vocab:InverterStatusType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "InverterStatusType",
+      "rdfs:comment": "DER InverterStatus value:\n0 - N/A\n1 - off\n2 - sleeping (auto-shutdown) or DER is at low output power/voltage\n3 - starting up or ON but not producing power\n4 - tracking MPPT power point\n5 - forced power reduction/derating\n6 - shutting down\n7 - one or more faults exist\n8 - standby (service on unit) - DER may be at high output voltage/power\n9 - test mode\n10 - as defined in manufacturer status\nAll other values reserved."
+    },
+    {
+      "@id": "vocab:LocalControlModeStatusType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LocalControlModeStatusType",
+      "rdfs:comment": "DER LocalControlModeStatus/value:\n0 – local control\n1 – remote control\nAll other values reserved."
+    },
+    {
+      "@id": "vocab:ManufacturerStatusType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ManufacturerStatusType",
+      "rdfs:comment": "DER ManufacturerStatus/value: String data type"
+    },
+    {
+      "@id": "vocab:OperationalModeStatusType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "OperationalModeStatusType",
+      "rdfs:comment": "DER OperationalModeStatus value:\n0 - Not applicable / Unknown\n1 - Off\n2 - Operational mode\n3 - Test mode\nAll other values reserved."
+    },
+    {
+      "@id": "vocab:StateOfChargeStatusType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "StateOfChargeStatusType",
+      "rdfs:comment": "DER StateOfChargeStatus value: Percent data type"
+    },
+    {
+      "@id": "vocab:StorageModeStatusType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "StorageModeStatusType",
+      "rdfs:comment": "DER StorageModeStatus value:\n0 – storage charging\n1 – storage discharging\n2 – storage holding\nAll other values reserved."
+    },
+    {
+      "@id": "vocab:IdentifiedObject",
+      "@type": "rdfs:Class",
+      "rdfs:label": "IdentifiedObject",
+      "rdfs:comment": "This is a root class to provide common naming attributes for all classes needing naming attributes"
+    },
+    {
+      "@id": "vocab:Link",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Link",
+      "rdfs:comment": "Links provide a reference, via URI, to another resource."
+    },
+    {
+      "@id": "vocab:List",
+      "@type": "rdfs:Class",
+      "rdfs:label": "List",
+      "rdfs:comment": "Container to hold a collection of object instances or references. See Design Pattern section for additional details."
+    },
+    {
+      "@id": "vocab:ListLink",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ListLink",
+      "rdfs:comment": "ListLinks provide a reference, via URI, to a List."
+    },
+    {
+      "@id": "vocab:Resource",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Resource",
+      "rdfs:comment": "A resource is an addressable unit of information, either a collection (List) or instance of an object (identifiedObject, or simply, Resource)"
+    },
+    {
+      "@id": "vocab:RespondableIdentifiedObject",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RespondableIdentifiedObject",
+      "rdfs:comment": "An IdentifiedObject to which a Response can be requested."
+    },
+    {
+      "@id": "vocab:RespondableResource",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RespondableResource",
+      "rdfs:comment": "A Resource to which a Response can be requested."
+    },
+    {
+      "@id": "vocab:RespondableSubscribableIdentifiedObject",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RespondableSubscribableIdentifiedObject",
+      "rdfs:comment": "An IdentifiedObject to which a Response can be requested."
+    },
+    {
+      "@id": "vocab:SubscribableIdentifiedObject",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SubscribableIdentifiedObject",
+      "rdfs:comment": "An IdentifiedObject to which a Subscription can be requested."
+    },
+    {
+      "@id": "vocab:SubscribableList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SubscribableList",
+      "rdfs:comment": "A List to which a Subscription can be requested."
+    },
+    {
+      "@id": "vocab:SubscribableResource",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SubscribableResource",
+      "rdfs:comment": "A Resource to which a Subscription can be requested."
+    },
+    {
+      "@id": "vocab:Error",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Error",
+      "rdfs:comment": "Contains information about the nature of an error if a request could not be completed successfully."
+    },
+    {
+      "@id": "vocab:Event",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Event",
+      "rdfs:comment": "An Event indicates information that applies to a particular period of time. Events SHALL be executed relative to the time of the server, as described in the Time function set section 11.1."
+    },
+    {
+      "@id": "vocab:EventStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EventStatus",
+      "rdfs:comment": "Current status information relevant to a specific object. The Status object is used to indicate the current status of an Event. Devices can read the containing resource (e.g. TextMessage) to get the most up to date status of the event.  Devices can also subscribe to a specific resource instance to get updates when any of its attributes change, including the Status object."
+    },
+    {
+      "@id": "vocab:RandomizableEvent",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RandomizableEvent",
+      "rdfs:comment": "An Event that can indicate time ranges over which the start time and duration SHALL be randomized."
+    },
+    {
+      "@id": "vocab:DateTimeInterval",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DateTimeInterval",
+      "rdfs:comment": "Interval of date and time."
+    },
+    {
+      "@id": "vocab:GPSLocationType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GPSLocationType",
+      "rdfs:comment": "Specifies a GPS location, expressed in WGS 84 coordinates."
+    },
+    {
+      "@id": "vocab:RealEnergy",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RealEnergy",
+      "rdfs:comment": "Real electrical energy"
+    },
+    {
+      "@id": "vocab:SignedRealEnergy",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SignedRealEnergy",
+      "rdfs:comment": "Real electrical energy, signed."
+    },
+    {
+      "@id": "vocab:UnitValueType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UnitValueType",
+      "rdfs:comment": "Type for specification of a specific value, with units and power of ten multiplier."
+    },
+    {
+      "@id": "vocab:MirrorMeterReading",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MirrorMeterReading",
+      "rdfs:comment": "Mimic of MeterReading used for managing mirrors."
+    },
+    {
+      "@id": "vocab:MirrorMeterReadingList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MirrorMeterReadingList",
+      "rdfs:comment": "A List of MirrorMeterReading instances."
+    },
+    {
+      "@id": "vocab:MirrorReadingSet",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MirrorReadingSet",
+      "rdfs:comment": "A set of Readings of the ReadingType indicated by the parent MeterReading."
+    },
+    {
+      "@id": "vocab:MirrorUsagePoint",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MirrorUsagePoint",
+      "rdfs:comment": "A parallel to UsagePoint to support mirroring"
+    },
+    {
+      "@id": "vocab:MirrorUsagePointList",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MirrorUsagePointList",
+      "rdfs:comment": "A List of MirrorUsagePoint instances."
+    },
+    {
+      "@id": "vocab:ReadingBase",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReadingBase",
+      "rdfs:comment": "Specific value measured by a meter or other asset. ReadingBase is abstract, used to define the elements common to Reading and IntervalReading."
+    },
+    {
+      "@id": "vocab:ReadingSetBase",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ReadingSetBase",
+      "rdfs:comment": "A set of Readings of the ReadingType indicated by the parent MeterReading. ReadingBase is abstract, used to define the elements common to ReadingSet and IntervalBlock."
+    },
+    {
+      "@id": "vocab:UsagePointBase",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UsagePointBase",
+      "rdfs:comment": "Logical point on a network at which consumption or production is either physically measured (e.g. metered) or estimated (e.g. unmetered street lights). A container for associating ReadingType, Readings and ReadingSets."
+    },
+    {
+      "@id": "vocab:DstendruleEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "DstendruleEnumType",
+      "rdfs:comment": "Rule to calculate end of daylight savings time in the current year.  Result of dstEndRule must be greater than result of dstStartRule.\nEnum values:\n  - 0: DST starts/ends on the Day of the Month\n  - 1: DST starts/ends on the Day of the Week that is on or after the Day of the Month\n  - 2: DST starts/ends on the first occurrence of the Day of the Week in a month\n  - 3: DST starts/ends on the second occurrence of the Day of the Week in a month\n  - 4: DST starts/ends on the third occurrence of the Day of the Week in a month\n  - 5: DST starts/ends on the forth occurrence of the Day of the Week in a month\n  - 6: DST starts/ends on the fifth occurrence of the Day of the Week in a month\n  - 7: DST starts/ends on the last occurrence of the Day of the Week in a month",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "vocab:0"
+        },
+        {
+          "@id": "vocab:1"
+        },
+        {
+          "@id": "vocab:2"
+        },
+        {
+          "@id": "vocab:3"
+        },
+        {
+          "@id": "vocab:4"
+        },
+        {
+          "@id": "vocab:5"
+        },
+        {
+          "@id": "vocab:6"
+        },
+        {
+          "@id": "vocab:7"
+        }
+      ]
+    },
+    {
+      "@id": "vocab:0",
+      "@type": [
+        "vocab:DstendruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "0",
+      "schema:identifier": "0"
+    },
+    {
+      "@id": "vocab:1",
+      "@type": [
+        "vocab:DstendruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "1",
+      "schema:identifier": "1"
+    },
+    {
+      "@id": "vocab:2",
+      "@type": [
+        "vocab:DstendruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "2",
+      "schema:identifier": "2"
+    },
+    {
+      "@id": "vocab:3",
+      "@type": [
+        "vocab:DstendruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "3",
+      "schema:identifier": "3"
+    },
+    {
+      "@id": "vocab:4",
+      "@type": [
+        "vocab:DstendruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "4",
+      "schema:identifier": "4"
+    },
+    {
+      "@id": "vocab:5",
+      "@type": [
+        "vocab:DstendruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "5",
+      "schema:identifier": "5"
+    },
+    {
+      "@id": "vocab:6",
+      "@type": [
+        "vocab:DstendruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "6",
+      "schema:identifier": "6"
+    },
+    {
+      "@id": "vocab:7",
+      "@type": [
+        "vocab:DstendruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "7",
+      "schema:identifier": "7"
+    },
+    {
+      "@id": "vocab:DststartruleEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "DststartruleEnumType",
+      "rdfs:comment": "Rule to calculate start of daylight savings time in the current year. Result of dstEndRule must be greater than result of dstStartRule.\nEnum values:\n  - 0: DST starts/ends on the Day of the Month\n  - 1: DST starts/ends on the Day of the Week that is on or after the Day of the Month\n  - 2: DST starts/ends on the first occurrence of the Day of the Week in a month\n  - 3: DST starts/ends on the second occurrence of the Day of the Week in a month\n  - 4: DST starts/ends on the third occurrence of the Day of the Week in a month\n  - 5: DST starts/ends on the forth occurrence of the Day of the Week in a month\n  - 6: DST starts/ends on the fifth occurrence of the Day of the Week in a month\n  - 7: DST starts/ends on the last occurrence of the Day of the Week in a month",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "vocab:0"
+        },
+        {
+          "@id": "vocab:1"
+        },
+        {
+          "@id": "vocab:2"
+        },
+        {
+          "@id": "vocab:3"
+        },
+        {
+          "@id": "vocab:4"
+        },
+        {
+          "@id": "vocab:5"
+        },
+        {
+          "@id": "vocab:6"
+        },
+        {
+          "@id": "vocab:7"
+        }
+      ]
+    },
+    {
+      "@id": "vocab:0",
+      "@type": [
+        "vocab:DststartruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "0",
+      "schema:identifier": "0"
+    },
+    {
+      "@id": "vocab:1",
+      "@type": [
+        "vocab:DststartruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "1",
+      "schema:identifier": "1"
+    },
+    {
+      "@id": "vocab:2",
+      "@type": [
+        "vocab:DststartruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "2",
+      "schema:identifier": "2"
+    },
+    {
+      "@id": "vocab:3",
+      "@type": [
+        "vocab:DststartruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "3",
+      "schema:identifier": "3"
+    },
+    {
+      "@id": "vocab:4",
+      "@type": [
+        "vocab:DststartruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "4",
+      "schema:identifier": "4"
+    },
+    {
+      "@id": "vocab:5",
+      "@type": [
+        "vocab:DststartruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "5",
+      "schema:identifier": "5"
+    },
+    {
+      "@id": "vocab:6",
+      "@type": [
+        "vocab:DststartruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "6",
+      "schema:identifier": "6"
+    },
+    {
+      "@id": "vocab:7",
+      "@type": [
+        "vocab:DststartruleEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "7",
+      "schema:identifier": "7"
+    },
+    {
+      "@id": "vocab:TypeEnumType",
+      "@type": "schema:Enumeration",
+      "schema:name": "TypeEnumType",
+      "rdfs:comment": "A value indicating the type of the file.  MUST be one of the following values:\n00 = Software Image\n01 = Security Credential\n02 = Configuration\n03 = Log\n04–7FFF = reserved\n8000-FFFF = Manufacturer defined\nEnum values:\n  - 00: Software Image\n  - 01: Security Credential\n  - 02: Configuration\n  - 03: Log\n  - 8000: FFFF = Manufacturer defined",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "vocab:00"
+        },
+        {
+          "@id": "vocab:01"
+        },
+        {
+          "@id": "vocab:02"
+        },
+        {
+          "@id": "vocab:03"
+        },
+        {
+          "@id": "vocab:8000"
+        }
+      ]
+    },
+    {
+      "@id": "vocab:00",
+      "@type": [
+        "vocab:TypeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "00",
+      "schema:identifier": "00"
+    },
+    {
+      "@id": "vocab:01",
+      "@type": [
+        "vocab:TypeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "01",
+      "schema:identifier": "01"
+    },
+    {
+      "@id": "vocab:02",
+      "@type": [
+        "vocab:TypeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "02",
+      "schema:identifier": "02"
+    },
+    {
+      "@id": "vocab:03",
+      "@type": [
+        "vocab:TypeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "03",
+      "schema:identifier": "03"
+    },
+    {
+      "@id": "vocab:8000",
+      "@type": [
+        "vocab:TypeEnumType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "8000",
+      "schema:identifier": "8000"
+    }
+  ]
+}

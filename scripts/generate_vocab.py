@@ -42,7 +42,9 @@ def get_base_iri(spec_path: Path, base_iri: Optional[str] = None) -> str:
     version = None
     
     for part in parts:
-        if part.startswith('ocpi'):
+        if part.startswith('ieee') or part == '2030.5':
+            return "https://schemas.ieee.org/2030.5/"
+        elif part.startswith('ocpi'):
             return "https://schemas.ocpi.org/2.2/"
         elif part.startswith('ocpp'):
             # Extract version from path
@@ -79,7 +81,7 @@ def sanitize_enum_value(value: str) -> str:
     return value
 
 def get_prefix(spec_path: Path) -> str:
-    """Determine prefix name from path (e.g., 'ocpp', 'ocpi', 'beckn')"""
+    """Determine prefix name from path (e.g., 'ocpp', 'ocpi', 'beckn', 'ieee')"""
     parts = spec_path.parent.parts
     for part in parts:
         if part.startswith('ocpi'):
@@ -88,6 +90,8 @@ def get_prefix(spec_path: Path) -> str:
             return 'ocpp'
         elif part.startswith('Energy') or part.startswith('EvCharging'):
             return 'beckn'
+        elif part.startswith('ieee') or part == '2030.5':
+            return 'ieee'
     return 'vocab'
 
 def get_enum_value_id(enum_type_name: str, enum_value: str, prefix: str) -> str:
@@ -266,6 +270,73 @@ def generate_vocab(spec_path: Path, base_iri: Optional[str] = None,
             }
             
             graph.append(enum_value_entry)
+    
+    # Fourth pass: automatically detect and add commonly used properties
+    # Collect properties and their usage across schemas
+    property_info = {}  # {prop_name: {domains: [], descriptions: [], types: [], usage_count: 0}}
+    
+    for schema_name, schema_def in schemas.items():
+        if schema_def.get('type') == 'object' and 'properties' in schema_def:
+            for prop_name, prop_def in schema_def['properties'].items():
+                if prop_name not in property_info:
+                    property_info[prop_name] = {
+                        'domains': [],
+                        'descriptions': [],
+                        'types': [],
+                        'usage_count': 0
+                    }
+                
+                property_info[prop_name]['usage_count'] += 1
+                property_info[prop_name]['domains'].append(schema_name)
+                
+                # Collect description (use first non-empty one)
+                desc = prop_def.get('description', '')
+                if desc and desc not in property_info[prop_name]['descriptions']:
+                    property_info[prop_name]['descriptions'].append(desc)
+                
+                # Collect type information
+                prop_type = prop_def.get('type', 'unknown')
+                if prop_type not in property_info[prop_name]['types']:
+                    property_info[prop_name]['types'].append(prop_type)
+    
+    # Add properties that are used in 2+ schemas (commonly used properties)
+    # This includes mRID, lFDI, serviceCategoryKind, etc.
+    for prop_name, info in property_info.items():
+        if info['usage_count'] >= 2:  # Used in 2 or more schemas
+            prop_id = get_schema_id(prop_name, prefix)
+            
+            # Get best description (prefer longer, more descriptive ones)
+            description = max(info['descriptions'], key=len) if info['descriptions'] else f'Property {prop_name}'
+            
+            # Determine range from type
+            prop_types = info['types']
+            range_type = None
+            if 'string' in prop_types:
+                range_type = 'xsd:string'
+            elif 'integer' in prop_types:
+                range_type = 'xsd:integer'
+            elif 'number' in prop_types or 'float' in prop_types:
+                range_type = 'xsd:double'
+            elif 'boolean' in prop_types:
+                range_type = 'xsd:boolean'
+            
+            prop_entry = {
+                "@id": prop_id,
+                "@type": "rdf:Property",
+                "rdfs:label": prop_name,
+                "rdfs:comment": description
+            }
+            
+            # Add domain (limit to first 5 to avoid overly long lists)
+            if info['domains']:
+                domain_ids = [get_schema_id(d, prefix) for d in info['domains'][:5]]
+                prop_entry["rdfs:domain"] = domain_ids if len(domain_ids) > 1 else domain_ids[0]
+            
+            # Add range if we determined it
+            if range_type:
+                prop_entry["schema:rangeIncludes"] = range_type
+            
+            graph.append(prop_entry)
     
     # Create vocab document with prefix mapping in context
     vocab_doc = {

@@ -187,6 +187,8 @@
     "provider": "beckn:provider",
     "providerAttributes": "beckn:providerAttributes",
     "providerId": "beckn:providerId",
+    "bppId": "beckn:bppId",
+    "bppUri": "beckn:bppUri",
     "quantity": "beckn:quantity",
     "rateable": "beckn:rateable",
     "rating": "beckn:rating",

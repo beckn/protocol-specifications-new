@@ -1277,6 +1277,22 @@
       "schema:rangeIncludes": "schema:Text"
     },
     {
+      "@id": "beckn:bppId",
+      "@type": "rdf:Property",
+      "rdfs:label": "BPP identifier",
+      "rdfs:comment": "BPP (Beckn Protocol Provider) identifier that publishes this catalog.",
+      "rdfs:domain": "beckn:Catalog",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:bppUri",
+      "@type": "rdf:Property",
+      "rdfs:label": "BPP URI",
+      "rdfs:comment": "BPP (Beckn Protocol Provider) URI endpoint.",
+      "rdfs:domain": "beckn:Catalog",
+      "schema:rangeIncludes": "schema:URL"
+    },
+    {
       "@id": "beckn:offers",
       "@type": "rdf:Property",
       "rdfs:label": "Offers",

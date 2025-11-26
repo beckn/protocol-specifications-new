@@ -5,41 +5,33 @@ This repository contains the pre-release Beckn Protocol v2.0.0-beta specificatio
 > This is Beckn Protocol v2.0.0-beta.
 > It is a baseline pre-release for future upgrades and must not be used in production systems.
 
-For the latest stable 1.x specification, refer to the Beckn Protocol v1 repository:
-https://github.com/beckn/protocol-specifications
-
-> To observe the latest developments on this specification, checkout the `draft` branch of this repo.
-
-# Key differences from 1.x
-
 ## 1. High-level goals of v2
-
 Beckn v2 reorganizes the protocol around:
 - Global semantic interoperability via JSON-LD and deep alignment with schema.org￼.
 - Design-time composability: modular core + pluggable domain “schema packs”.
 - Run-time composability: independent but interoperable actors (BAP, BPP, CDS, Registry, Agents) that can be recombined without changing the core.
 - Registry and discovery modernization:
-- BG → CDS: Beckn Gateway is replaced by a Catalog Discovery Service (CDS).
-- Legacy Registry → DeDi-compliant Registry: Network Registry becomes compliant with the Decentralized Directory (DeDi) protocol.  ￼
+	- BG → CDS: Beckn Gateway is replaced by a Catalog Discovery Service (CDS).
+	- Legacy Registry → DeDi-compliant Registry: Network Registry becomes compliant with the Decentralized Directory (DeDi) protocol.  ￼
 
 
 ## 2. Schema changes: from v1.x to v2
 
-2.1 From OpenAPI/JSON Schema to JSON-LD + schema.org
+### 2.1 From OpenAPI/JSON Schema to JSON-LD + schema.org
 
-### v1.x
+#### v1.x
 - API and data models primarily expressed as OpenAPI 3.x with embedded JSON Schema.  ￼
 - Domain semantics encoded as ad-hoc JSON fields inside the Beckn message envelope.
 - Limited machine-readable linkage to global vocabularies.
 
-### v2.0.0-beta
+#### v2.0.0-beta
 - All core entities are JSON-LD graphs with:
 - @context – Beckn core context + domain contexts.
 - @type – Beckn and/or schema.org types (e.g. beckn:Order, schema:Order).
 - Fields are explicitly mapped to schema.org wherever possible, with beckn: used for protocol-specific semantics.
 - APIs are defined against these JSON-LD entities, not bespoke JSON blobs.
 
-### Benefits
+#### Benefits
 - Global semantic interoperability:
 - External ecosystems can consume Beckn data as generic JSON-LD / schema.org without custom adapters.
 - Forward compatibility:
@@ -86,7 +78,7 @@ In v1.x networks, Beckn Gateway (BG) primarily:
 
 The catalog itself was either embedded in responses or pulled by BG/BAP as needed, but the control point for discovery was BG.
 
-#### Sequence (simplified)
+#### Sequence (OLD)
 ```mermaid
 sequenceDiagram
     participant BAP
@@ -108,7 +100,7 @@ In v2, BG is replaced by a more comprehensive actor: the Catalog Discovery Servi
 - BAPs query CDS for discovery; CDS resolves, aggregates, and returns results.
 - BAPs reach BPPs directly only when initiating a transaction flow (/select, /init, etc.).
 
-#### Sequence (simplified)
+#### Sequence (NEW)
 ```mermaid
 sequenceDiagram
     participant BPP1
@@ -139,7 +131,6 @@ sequenceDiagram
 - Catalog semantics are expressed in JSON-LD + schema.org, making CDS interoperable with external search/indexing infrastructure.
 
 ### 3.2 Network Registry: Beckn lookup/subscribe → DeDi-compliant registry
-
 #### v1.x
 - Network Registry exposed bespoke Beckn APIs for:
 - lookup – resolve participant endpoints and metadata.
@@ -167,7 +158,6 @@ sequenceDiagram
 - Evolvable registry semantics: new attributes (e.g., compliance certifications, ESG scores) can be plugged into directory records without changing Beckn core.
 
 ### 3.3 API surface and layering
-
 While v1.x already enforced asynchronous APIs and a standard set of transaction calls (/search, /select, /init, /confirm, /status, etc.), v2 strengthens separation of concerns:
 - Core transaction APIs:
 	- Continue to operate on Order, Payment, Fulfillment, etc., but those entities are now JSON-LD types with schema.org mappings.
@@ -181,7 +171,6 @@ This layered design enables:
 	- Network-specific policies and adapters (e.g., Beckn-ONIX) to operate purely at the configuration and schema-pack level
 
 ## 4. Benefits of v2.0.0-beta
-
 ### 4.1 Design-time composability
 - Minimal, stable core:
   - Most future changes land in schema packs, CDS configuration, or DeDi directory schemas—not in the core protocol.
@@ -309,6 +298,11 @@ To adopt v2.0.0-beta (even for labs/sandbox use), implementations should assume:
 > It is intended as a baseline reference for future evolution and must not be adopted as a production standard.
 > All production deployments should continue to rely on Beckn Protocol v1.x until an official stable v2 release is announced.
 
-## Facing issues or have a query ?
+For the latest stable 1.x specification, refer to the Beckn Protocol v1 repository:
+https://github.com/beckn/protocol-specifications
+
+> To observe the latest developments on this specification, checkout the `draft` branch of this repo.
+
+## 10. Facing issues or have a query ?
 Visit the Issues and discussion board of this repository.
 

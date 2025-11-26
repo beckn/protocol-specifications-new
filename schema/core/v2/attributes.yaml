@@ -16,7 +16,7 @@ components:
   schemas:
     Catalog:
       type: object
-      required: ["@context", "@type", "beckn:id", "beckn:descriptor", "beckn:items"]
+      required: ["@context", "@type", "beckn:id", "beckn:descriptor", "beckn:bppId", "beckn:bppUri", "beckn:items"]
       additionalProperties: false
       properties:
         "@context":

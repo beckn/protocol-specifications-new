@@ -38,6 +38,15 @@ components:
           type: string
           description: Reference to the provider that owns this catalog
           example: "tech-store-001"
+        "beckn:bppId":
+          type: string
+          description: BPP (Beckn Protocol Provider) identifier that publishes this catalog
+          example: "bpp.example.com"
+        "beckn:bppUri":
+          type: string
+          format: uri
+          description: BPP (Beckn Protocol Provider) URI endpoint
+          example: "https://bpp.example.com"
         "beckn:validity":
           $ref: '#/components/schemas/TimePeriod'
         "beckn:isActive":

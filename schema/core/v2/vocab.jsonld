@@ -1,7 +1,7 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/#",
+    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/#",
     "schema": "https://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -1275,6 +1275,22 @@
       "rdfs:comment": "Identifier of the provider who owns this catalog.",
       "rdfs:domain": "beckn:Catalog",
       "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:bppId",
+      "@type": "rdf:Property",
+      "rdfs:label": "BPP identifier",
+      "rdfs:comment": "BPP (Beckn Protocol Provider) identifier that publishes this catalog.",
+      "rdfs:domain": "beckn:Catalog",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:bppUri",
+      "@type": "rdf:Property",
+      "rdfs:label": "BPP URI",
+      "rdfs:comment": "BPP (Beckn Protocol Provider) URI endpoint.",
+      "rdfs:domain": "beckn:Catalog",
+      "schema:rangeIncludes": "schema:URL"
     },
     {
       "@id": "beckn:offers",

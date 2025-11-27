@@ -1,7 +1,8 @@
 # IEEE 2030.5 Schema Generation
 
 
-This directory contains the JSON-LD schema files for IEEE 2030.5 (Smart Energy Profile 2.0), generated from the OpenAPI specification.
+This directory contains the JSON-LD schema files for IEEE 2030.5 (Smart Energy Profile 2.0), generated from the OpenAPI specification `spec.yaml`, which is a copy of [sep_openapi_with_context.yaml](https://github.com/Beckn-One/xsd-to-openapi-jsonld/blob/main/test_outputs/sep_openapi_with_context.yaml) from [`xsd-to-openapi-jsonld`](https://github.com/Beckn-One/xsd-to-openapi-jsonld) repo. (See the README on that repo to see how it was generated.)
+
 
 ## File Structure
 
@@ -22,7 +23,7 @@ Generate the JSON-LD vocabulary file containing all schemas, enum values, and im
 
 **Command:**
 ```bash
-python3 scripts/generate_vocab.py schema/ieee/2030.5/spec.yaml --pretty
+python3 scripts/generate_vocab.py schema/ieee/2030.5/spec.yaml
 ```
 
 **Output:** `schema/ieee/2030.5/vocab.jsonld`
@@ -52,7 +53,7 @@ Generate SHACL shapes for validation.
 
 **Command:**
 ```bash
-python3 scripts/generate_shacl.py schema/ieee/2030.5/spec.yaml --pretty
+python3 scripts/generate_shacl.py schema/ieee/2030.5/spec.yaml
 ```
 
 **Output:** `schema/ieee/2030.5/shacl_spec.jsonld`

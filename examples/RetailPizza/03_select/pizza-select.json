@@ -1,0 +1,80 @@
+{
+  "context": {
+    "version": "2.0.0",
+    "action": "select",
+    "domain": "beckn.one:deg:retail:*",
+    "timestamp": "2025-01-27T18:15:00Z",
+    "message_id": "pizza-select-msg-001",
+    "transaction_id": "pizza-txn-001-2025-01-27",
+    "bpp_id": "pizza-hut-bpp.example.com",
+    "bpp_uri": "https://pizza-hut-bpp.example.com/bpp",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+      "@type": "beckn:Order",
+      "beckn:id": "order-pizza-001",
+      "beckn:orderStatus": "CREATED",
+      "beckn:seller": "pizza-hut-store",
+      "beckn:buyer": {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+        "@type": "beckn:Buyer",
+        "beckn:id": "user-pizza-123",
+        "beckn:role": "BUYER",
+        "beckn:displayName": "Rajesh Kumar",
+        "beckn:taxID": "GSTIN29ABCDE1234F1Z5"
+      },
+      "beckn:orderValue": {
+        "currency": "INR",
+        "value": 399.0
+      },
+      "beckn:orderItems": [
+        {
+          "beckn:lineId": "line-pizza-001",
+          "beckn:orderedItem": "margherita-pizza-001",
+          "beckn:quantity": {
+            "unitText": "Piece",
+            "unitCode": "C62",
+            "unitQuantity": 1
+          },
+          "beckn:acceptedOffer": {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-margherita-medium",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Margherita Pizza Medium Offer"
+            },
+            "beckn:items": [
+              "margherita-pizza-001"
+            ],
+            "beckn:provider": "pizza-hut-store",
+            "beckn:price": {
+              "currency": "INR",
+              "value": 399.0,
+              "applicableQuantity": {
+                "unitText": "Piece",
+                "unitCode": "C62",
+                "unitQuantity": 1
+              }
+            },
+            "beckn:validity": {
+              "@type": "beckn:TimePeriod",
+              "schema:startDate": "2025-01-27T00:00:00Z",
+              "schema:endDate": "2025-12-31T23:59:59Z"
+            },
+            "beckn:acceptedPaymentMethod": [
+              "UPI",
+              "CREDIT_CARD",
+              "DEBIT_CARD",
+              "WALLET",
+              "CASH"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

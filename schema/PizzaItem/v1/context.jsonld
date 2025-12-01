@@ -1,0 +1,69 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "beckn": "./vocab.jsonld#",
+    
+    "PizzaItem": "beckn:PizzaItem",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "category": {
+      "@id": "beckn:category",
+      "@type": "@id"
+    },
+    "dietaryClassification": {
+      "@id": "beckn:dietaryClassification",
+      "@type": "@id"
+    },
+    "crust": {
+      "@id": "beckn:crust",
+      "@type": "@id"
+    },
+    "size": {
+      "@id": "beckn:size",
+      "@type": "@id"
+    },
+    "toppings": {
+      "@id": "beckn:toppings",
+      "@type": "@id",
+      "@container": "@set"
+    },
+
+    "PIZZA": "beckn:PizzaCategoryPizza",
+
+    "veg": "beckn:DietaryClassificationVeg",
+    "vegetarian": "beckn:DietaryClassificationVeg",
+    "non-veg": "beckn:DietaryClassificationNonVeg",
+    "non-vegetarian": "beckn:DietaryClassificationNonVeg",
+    "nonvegetarian": "beckn:DietaryClassificationNonVeg",
+
+    "New Hand Tossed": "beckn:CrustTypeNewHandTossed",
+    "Thin Crust": "beckn:CrustTypeThinCrust",
+    "Thick Crust": "beckn:CrustTypeThickCrust",
+    "Cheese Burst": "beckn:CrustTypeCheeseBurst",
+    "Wheat Thin Crust": "beckn:CrustTypeWheatThinCrust",
+
+    "Regular": "beckn:PizzaSizeRegular",
+    "Medium": "beckn:PizzaSizeMedium",
+    "Large": "beckn:PizzaSizeLarge",
+    "Personal": "beckn:PizzaSizePersonal",
+    "Family": "beckn:PizzaSizeFamily",
+
+    "Grilled Mushrooms": "beckn:ToppingGrilledMushrooms",
+    "Pepperoni": "beckn:ToppingPepperoni",
+    "Olives": "beckn:ToppingOlives",
+    "Onions": "beckn:ToppingOnions",
+    "Capsicum": "beckn:ToppingCapsicum",
+    "Jalapenos": "beckn:ToppingJalapenos",
+    "Paneer": "beckn:ToppingPaneer",
+    "Corn": "beckn:ToppingCorn",
+    "Tomatoes": "beckn:ToppingTomatoes"
+  },
+
+  "@graph": []
+}
+

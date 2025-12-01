@@ -1,0 +1,38 @@
+{
+  "context": {
+    "version": "2.0.0",
+    "action": "discover",
+    "domain": "beckn.one:deg:retail:*",
+    "bap_id": "pizza-app.example.com",
+    "bap_uri": "https://pizza-app.example.com/bap",
+    "transaction_id": "pizza-txn-001-2025-01-27",
+    "message_id": "pizza-msg-001-2025-01-27",
+    "timestamp": "2025-01-27T18:00:00Z",
+    "ttl": "PT30S",
+    "schema_context": [
+      "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/PizzaItem/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "text_search": "veg pizza margherita",
+    "spatial": [
+      {
+        "op": "s_dwithin",
+        "targets": "$['beckn:availableAt'][*]['geo']",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.5946,
+            12.9716
+          ]
+        },
+        "distanceMeters": 5000
+      }
+    ],
+    "filters": {
+      "type": "jsonpath",
+      "expression": "$[?(@.beckn:itemAttributes.dietaryClassification == 'veg' && @.beckn:itemAttributes.category == 'PIZZA')]"
+    }
+  }
+}
+

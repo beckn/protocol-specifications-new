@@ -1,0 +1,231 @@
+{
+  "context": {
+    "version": "2.0.0",
+    "action": "on_discover",
+    "domain": "beckn.one:deg:retail:*",
+    "timestamp": "2025-01-27T18:00:05Z",
+    "transaction_id": "pizza-txn-001-2025-01-27",
+    "message_id": "pizza-msg-001-2025-01-27",
+    "bap_id": "pizza-app.example.com",
+    "bap_uri": "https://pizza-app.example.com/bap",
+    "bpp_id": "pizza-hut-bpp.example.com",
+    "bpp_uri": "https://pizza-hut-bpp.example.com/bpp",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "catalogs": [
+      {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+        "@type": "beckn:Catalog",
+        "beckn:id": "catalog-pizza-001",
+        "beckn:descriptor": {
+          "@type": "beckn:Descriptor",
+          "schema:name": "Pizza Hut",
+          "beckn:shortDesc": "Fresh, hot pizzas delivered to your door"
+        },
+        "beckn:bppId": "pizza-hut-bpp.example.com",
+        "beckn:bppUri": "https://pizza-hut-bpp.example.com/bpp",
+        "beckn:validity": {
+          "@type": "beckn:TimePeriod",
+          "schema:startDate": "2025-01-27T00:00:00Z",
+          "schema:endDate": "2025-12-31T23:59:59Z"
+        },
+        "beckn:items": [
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Item",
+            "beckn:id": "margherita-pizza-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Margherita Pizza",
+              "beckn:shortDesc": "Classic Italian pizza with fresh tomatoes, mozzarella, and basil",
+              "beckn:longDesc": "A timeless classic featuring fresh tomato sauce, premium mozzarella cheese, and aromatic basil leaves. Perfect for vegetarians."
+            },
+            "beckn:category": {
+              "@type": "schema:CategoryCode",
+              "schema:codeValue": "food-and-beverage",
+              "schema:name": "Food & Beverage"
+            },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 1245
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
+            ],
+            "beckn:provider": {
+              "beckn:id": "pizza-hut-store",
+              "beckn:descriptor": {
+                "@type": "beckn:Descriptor",
+                "schema:name": "Pizza Hut"
+              }
+            },
+            "beckn:itemAttributes": {
+              "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/PizzaItem/v1/context.jsonld",
+              "@type": "PizzaItem",
+              "category": "PIZZA",
+              "dietaryClassification": "veg",
+              "crust": "New Hand Tossed",
+              "size": "Medium",
+              "toppings": ["Grilled Mushrooms", "Olives"]
+            }
+          },
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Item",
+            "beckn:id": "pepperoni-pizza-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Pepperoni Pizza",
+              "beckn:shortDesc": "Spicy pepperoni with mozzarella cheese",
+              "beckn:longDesc": "A meat lover's favorite with spicy pepperoni slices and premium mozzarella cheese on a crispy crust."
+            },
+            "beckn:category": {
+              "@type": "schema:CategoryCode",
+              "schema:codeValue": "food-and-beverage",
+              "schema:name": "Food & Beverage"
+            },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.8,
+              "beckn:ratingCount": 987
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
+            ],
+            "beckn:provider": {
+              "beckn:id": "pizza-hut-store",
+              "beckn:descriptor": {
+                "@type": "beckn:Descriptor",
+                "schema:name": "Pizza Hut"
+              }
+            },
+            "beckn:itemAttributes": {
+              "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/PizzaItem/v1/context.jsonld",
+              "@type": "PizzaItem",
+              "category": "PIZZA",
+              "dietaryClassification": "non-veg",
+              "crust": "Thin Crust",
+              "size": "Large",
+              "toppings": ["Pepperoni"]
+            }
+          }
+        ],
+        "beckn:offers": [
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-margherita-medium",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Margherita Pizza Medium Offer"
+            },
+            "beckn:items": [
+              "margherita-pizza-001"
+            ],
+            "beckn:price": {
+              "currency": "INR",
+              "value": 399.0,
+              "applicableQuantity": {
+                "unitText": "Piece",
+                "unitCode": "C62",
+                "unitQuantity": 1
+              }
+            },
+            "beckn:validity": {
+              "@type": "beckn:TimePeriod",
+              "schema:startDate": "2025-01-27T00:00:00Z",
+              "schema:endDate": "2025-12-31T23:59:59Z"
+            },
+            "beckn:acceptedPaymentMethod": [
+              "UPI",
+              "CREDIT_CARD",
+              "DEBIT_CARD",
+              "WALLET",
+              "CASH"
+            ],
+            "beckn:provider": "pizza-hut-store"
+          },
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-pepperoni-large",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Pepperoni Pizza Large Offer"
+            },
+            "beckn:items": [
+              "pepperoni-pizza-001"
+            ],
+            "beckn:price": {
+              "currency": "INR",
+              "value": 599.0,
+              "applicableQuantity": {
+                "unitText": "Piece",
+                "unitCode": "C62",
+                "unitQuantity": 1
+              }
+            },
+            "beckn:validity": {
+              "@type": "beckn:TimePeriod",
+              "schema:startDate": "2025-01-27T00:00:00Z",
+              "schema:endDate": "2025-12-31T23:59:59Z"
+            },
+            "beckn:acceptedPaymentMethod": [
+              "UPI",
+              "CREDIT_CARD",
+              "DEBIT_CARD",
+              "WALLET",
+              "CASH"
+            ],
+            "beckn:provider": "pizza-hut-store"
+          }
+        ]
+      }
+    ]
+  }
+}
+

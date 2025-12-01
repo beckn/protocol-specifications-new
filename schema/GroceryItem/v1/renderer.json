@@ -1,0 +1,91 @@
+{
+  "$comment": "This file defines HTML templates and rendering hints for client-side display of GroceryItem data. It specifies how to render discovery listings, product cards, and item detail views.",
+  "description": "Renderer configuration for Grocery Item UI components - defines HTML templates and rendering hints for client-side display",
+  "version": "1.0.0",
+  "templates": {
+    "discoveryCard": {
+      "name": "Grocery Item Discovery Card",
+      "description": "Rich card view for grocery items in discovery/search results",
+      "html": "<div class=\"grocery-item-card\" data-item-id=\"{{beckn:id}}\">\n  <div class=\"grocery-item-media-row\">\n    <div class=\"grocery-item-image-wrapper\">\n      <img class=\"grocery-item-image\" src=\"{{beckn:descriptor.schema:image}}\" alt=\"{{beckn:descriptor.schema:name}}\" loading=\"lazy\" />\n      <div class=\"grocery-item-price-chip\">\n        <span class=\"price-currency\">{{beckn:offers[0].beckn:price.currency}}</span>\n        <span class=\"price-value\">{{beckn:offers[0].beckn:price.value}}</span>\n      </div>\n    </div>\n    <div class=\"grocery-item-main\">\n      <div class=\"grocery-item-header\">\n        <h3 class=\"grocery-item-name\">{{beckn:descriptor.schema:name}}</h3>\n        <span class=\"dietary-badge dietary-{{beckn:itemAttributes.dietaryClassification}}\">{{beckn:itemAttributes.dietaryClassification}}</span>\n      </div>\n      <p class=\"grocery-item-short-desc\">{{beckn:descriptor.beckn:shortDesc}}</p>\n      <div class=\"grocery-item-meta\">\n        <span class=\"grocery-quantity-chip\">{{beckn:itemAttributes.netQuantityOrMeasureInPackage.unitQuantity}} {{beckn:itemAttributes.netQuantityOrMeasureInPackage.unitText}}</span>\n        <span class=\"grocery-manufacturer-chip\">{{beckn:itemAttributes.manufacturerOrPacker.name}}</span>\n      </div>\n      <div class=\"grocery-item-rating\">\n        <span class=\"rating-stars\">{{#repeat}}{{beckn:rating.beckn:ratingValue}}{{/repeat}}</span>\n        <span class=\"rating-count\">{{beckn:rating.beckn:ratingValue}} · {{beckn:rating.beckn:ratingCount}} ratings</span>\n      </div>\n    </div>\n  </div>\n</div>",
+      "dataPaths": {
+        "itemId": "beckn:id",
+        "itemName": "beckn:descriptor.schema:name",
+        "shortDescription": "beckn:descriptor.beckn:shortDesc",
+        "longDescription": "beckn:descriptor.beckn:longDesc",
+        "imageUrl": "beckn:descriptor.schema:image",
+        "dietaryClassification": "beckn:itemAttributes.dietaryClassification",
+        "quantity": "beckn:itemAttributes.netQuantityOrMeasureInPackage.unitQuantity",
+        "quantityUnit": "beckn:itemAttributes.netQuantityOrMeasureInPackage.unitText",
+        "manufacturerType": "beckn:itemAttributes.manufacturerOrPacker.type",
+        "manufacturerName": "beckn:itemAttributes.manufacturerOrPacker.name",
+        "manufacturerId": "beckn:itemAttributes.manufacturerOrPacker.id",
+        "manufacturerAddress": "beckn:itemAttributes.manufacturerOrPacker.address",
+        "commonName": "beckn:itemAttributes.commonOrGenericNameOfCommodity",
+        "ratingValue": "beckn:rating.beckn:ratingValue",
+        "ratingCount": "beckn:rating.beckn:ratingCount",
+        "price": "beckn:offers[0].beckn:price.value",
+        "currency": "beckn:offers[0].beckn:price.currency"
+      }
+    },
+    "detailView": {
+      "name": "Grocery Item Detail View",
+      "description": "Comprehensive detail view for a single grocery item",
+      "html": "<div class=\"grocery-item-detail\" data-item-id=\"{{beckn:id}}\">\n  <div class=\"grocery-item-header\">\n    <h1 class=\"grocery-item-name\">{{beckn:descriptor.schema:name}}</h1>\n    <span class=\"dietary-badge dietary-{{beckn:itemAttributes.dietaryClassification}}\">{{beckn:itemAttributes.dietaryClassification}}</span>\n  </div>\n  <p class=\"grocery-item-long-desc\">{{beckn:descriptor.beckn:longDesc}}</p>\n  \n  <div class=\"grocery-item-specifications\">\n    <h2>Product Specifications</h2>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Common Name:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.commonOrGenericNameOfCommodity}}</span>\n    </div>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Net Quantity:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.netQuantityOrMeasureInPackage.unitQuantity}} {{beckn:itemAttributes.netQuantityOrMeasureInPackage.unitText}}</span>\n    </div>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">{{beckn:itemAttributes.manufacturerOrPacker.type}} Name:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.manufacturerOrPacker.name}}</span>\n    </div>\n    {{#if beckn:itemAttributes.manufacturerOrPacker.id}}\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">{{beckn:itemAttributes.manufacturerOrPacker.type}} ID:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.manufacturerOrPacker.id}}</span>\n    </div>\n    {{/if}}\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">{{beckn:itemAttributes.manufacturerOrPacker.type}} Address:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.manufacturerOrPacker.address}}</span>\n    </div>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Manufactured/Packed:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.manufacturePackingImportDate.month}}/{{beckn:itemAttributes.manufacturePackingImportDate.year}}</span>\n    </div>\n    {{#if beckn:itemAttributes.brandOwnerFssaiLicenseNo}}\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">FSSAI License:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.brandOwnerFssaiLicenseNo}}</span>\n    </div>\n    {{/if}}\n    {{#if beckn:itemAttributes.additivesInfo}}\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Additives:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.additivesInfo}}</span>\n    </div>\n    {{/if}}\n  </div>\n  \n  <div class=\"grocery-nutritional-info\">\n    <h2>Nutritional Information</h2>\n    <div class=\"nutrition-table\">\n      <div class=\"nutrition-header\">\n        <span>Nutrient</span>\n        <span>Per 100g</span>\n      </div>\n      {{#each beckn:itemAttributes.nutritionalInfo}}\n      <div class=\"nutrition-row\">\n        <span class=\"nutrient-name\">{{nutrient}}</span>\n        <span class=\"nutrient-value\">{{value.unitQuantity}} {{value.unitText}}</span>\n      </div>\n      {{/each}}\n    </div>\n  </div>\n  \n  <div class=\"grocery-item-rating\">\n    <div class=\"rating-display\">\n      <span class=\"rating-value\">{{beckn:rating.beckn:ratingValue}}</span>\n      <span class=\"rating-stars\">★★★★★</span>\n      <span class=\"rating-count\">({{beckn:rating.beckn:ratingCount}} reviews)</span>\n    </div>\n  </div>\n  \n  <div class=\"grocery-item-pricing\">\n    <div class=\"price-display\">\n      <span class=\"price-currency\">{{beckn:offers[0].beckn:price.currency}}</span>\n      <span class=\"price-value\">{{beckn:offers[0].beckn:price.value}}</span>\n      <span class=\"price-unit\">per {{beckn:offers[0].beckn:price.applicableQuantity.unitText}}</span>\n    </div>\n  </div>\n</div>",
+      "dataPaths": {
+        "itemId": "beckn:id",
+        "itemName": "beckn:descriptor.schema:name",
+        "longDescription": "beckn:descriptor.beckn:longDesc",
+        "dietaryClassification": "beckn:itemAttributes.dietaryClassification",
+        "commonName": "beckn:itemAttributes.commonOrGenericNameOfCommodity",
+        "quantity": "beckn:itemAttributes.netQuantityOrMeasureInPackage.unitQuantity",
+        "quantityUnit": "beckn:itemAttributes.netQuantityOrMeasureInPackage.unitText",
+        "manufacturerType": "beckn:itemAttributes.manufacturerOrPacker.type",
+        "manufacturerName": "beckn:itemAttributes.manufacturerOrPacker.name",
+        "manufacturerId": "beckn:itemAttributes.manufacturerOrPacker.id",
+        "manufacturerAddress": "beckn:itemAttributes.manufacturerOrPacker.address",
+        "manufactureDate": "beckn:itemAttributes.manufacturePackingImportDate",
+        "fssaiLicense": "beckn:itemAttributes.brandOwnerFssaiLicenseNo",
+        "additivesInfo": "beckn:itemAttributes.additivesInfo",
+        "nutritionalInfo": "beckn:itemAttributes.nutritionalInfo",
+        "ratingValue": "beckn:rating.beckn:ratingValue",
+        "ratingCount": "beckn:rating.beckn:ratingCount",
+        "price": "beckn:offers[0].beckn:price.value",
+        "currency": "beckn:offers[0].beckn:price.currency",
+        "priceUnit": "beckn:offers[0].beckn:price.applicableQuantity.unitText"
+      }
+    },
+    "compactCard": {
+      "name": "Grocery Item Compact Card",
+      "description": "Minimal card view for grid/list layouts",
+      "html": "<div class=\"grocery-item-compact\" data-item-id=\"{{beckn:id}}\">\n  <div class=\"compact-header\">\n    <h4>{{beckn:descriptor.schema:name}}</h4>\n    <span class=\"dietary-badge dietary-{{beckn:itemAttributes.dietaryClassification}}\">{{beckn:itemAttributes.dietaryClassification}}</span>\n  </div>\n  <div class=\"compact-quantity\">{{beckn:itemAttributes.netQuantityOrMeasureInPackage.unitQuantity}} {{beckn:itemAttributes.netQuantityOrMeasureInPackage.unitText}}</div>\n  <div class=\"compact-price\">{{beckn:offers[0].beckn:price.currency}} {{beckn:offers[0].beckn:price.value}}</div>\n</div>",
+      "dataPaths": {
+        "itemId": "beckn:id",
+        "itemName": "beckn:descriptor.schema:name",
+        "dietaryClassification": "beckn:itemAttributes.dietaryClassification",
+        "quantity": "beckn:itemAttributes.netQuantityOrMeasureInPackage.unitQuantity",
+        "quantityUnit": "beckn:itemAttributes.netQuantityOrMeasureInPackage.unitText",
+        "price": "beckn:offers[0].beckn:price.value",
+        "currency": "beckn:offers[0].beckn:price.currency"
+      }
+    }
+  },
+  "stylingHints": {
+    "dietaryBadge": {
+      "veg": {
+        "backgroundColor": "#4CAF50",
+        "color": "#FFFFFF",
+        "text": "VEG"
+      },
+      "non-veg": {
+        "backgroundColor": "#F44336",
+        "color": "#FFFFFF",
+        "text": "NON-VEG"
+      }
+    },
+    "cardLayout": {
+      "default": "vertical",
+      "alternatives": ["horizontal", "grid"]
+    }
+  }
+}
+

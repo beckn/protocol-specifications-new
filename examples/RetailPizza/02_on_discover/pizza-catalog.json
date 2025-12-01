@@ -39,7 +39,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Margherita Pizza",
               "beckn:shortDesc": "Classic Italian pizza with fresh tomatoes, mozzarella, and basil",
-              "beckn:longDesc": "A timeless classic featuring fresh tomato sauce, premium mozzarella cheese, and aromatic basil leaves. Perfect for vegetarians."
+              "beckn:longDesc": "A timeless classic featuring fresh tomato sauce, premium mozzarella cheese, and aromatic basil leaves. Perfect for vegetarians.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=800"
             },
             "beckn:category": {
               "@type": "schema:CategoryCode",
@@ -100,7 +101,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Pepperoni Pizza",
               "beckn:shortDesc": "Spicy pepperoni with mozzarella cheese",
-              "beckn:longDesc": "A meat lover's favorite with spicy pepperoni slices and premium mozzarella cheese on a crispy crust."
+              "beckn:longDesc": "A meat lover's favorite with spicy pepperoni slices and premium mozzarella cheese on a crispy crust.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=800"
             },
             "beckn:category": {
               "@type": "schema:CategoryCode",

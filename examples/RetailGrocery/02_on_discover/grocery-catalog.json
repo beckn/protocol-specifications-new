@@ -39,7 +39,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Premium Basmati Rice (1 kg)",
               "beckn:shortDesc": "Aged basmati rice, long grain, aromatic",
-              "beckn:longDesc": "Premium quality aged basmati rice, known for its long grains and aromatic fragrance. Perfect for biryanis and pulao."
+              "beckn:longDesc": "Premium quality aged basmati rice, known for its long grains and aromatic fragrance. Perfect for biryanis and pulao.",
+              "schema:image": "https://images.pexels.com/photos/4110254/pexels-photo-4110254.jpeg?auto=compress&cs=tinysrgb&w=800"
             },
             "beckn:category": {
               "@type": "schema:CategoryCode",
@@ -149,7 +150,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Organic Toor Dal (500g)",
               "beckn:shortDesc": "Certified organic split pigeon peas",
-              "beckn:longDesc": "Certified organic toor dal, rich in protein and fiber. Perfect for traditional Indian dal recipes."
+              "beckn:longDesc": "Certified organic toor dal, rich in protein and fiber. Perfect for traditional Indian dal recipes.",
+              "schema:image": "https://images.pexels.com/photos/4198025/pexels-photo-4198025.jpeg?auto=compress&cs=tinysrgb&w=800"
             },
             "beckn:category": {
               "@type": "schema:CategoryCode",

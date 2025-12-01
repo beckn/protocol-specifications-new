@@ -1,0 +1,104 @@
+{
+  "$comment": "This file defines HTML templates and rendering hints for client-side display of PizzaItem data. It specifies how to render discovery listings, pizza cards, and customization displays.",
+  "description": "Renderer configuration for Pizza Item UI components - defines HTML templates and rendering hints for client-side display",
+  "version": "1.0.0",
+  "templates": {
+    "discoveryCard": {
+      "name": "Pizza Item Discovery Card",
+      "description": "Rich card view for pizza items in discovery/search results with imagery and customization",
+      "html": "<div class=\"pizza-item-card\" data-item-id=\"{{beckn:id}}\">\n  <div class=\"pizza-item-media-row\">\n    <div class=\"pizza-item-image-wrapper\">\n      <img class=\"pizza-item-image\" src=\"{{beckn:descriptor.schema:image}}\" alt=\"{{beckn:descriptor.schema:name}}\" loading=\"lazy\" />\n      <div class=\"pizza-item-price-chip\">\n        <span class=\"price-currency\">{{beckn:offers[0].beckn:price.currency}}</span>\n        <span class=\"price-value\">{{beckn:offers[0].beckn:price.value}}</span>\n      </div>\n    </div>\n    <div class=\"pizza-item-main\">\n      <div class=\"pizza-item-header\">\n        <h3 class=\"pizza-item-name\">{{beckn:descriptor.schema:name}}</h3>\n        <span class=\"dietary-badge dietary-{{beckn:itemAttributes.dietaryClassification}}\">{{beckn:itemAttributes.dietaryClassification}}</span>\n      </div>\n      <p class=\"pizza-item-short-desc\">{{beckn:descriptor.beckn:shortDesc}}</p>\n      <div class=\"pizza-customization\">\n        <div class=\"customization-item\">\n          <span class=\"customization-label\">Crust:</span>\n          <span class=\"customization-value\">{{beckn:itemAttributes.crust}}</span>\n        </div>\n        <div class=\"customization-item\">\n          <span class=\"customization-label\">Size:</span>\n          <span class=\"customization-value\">{{beckn:itemAttributes.size}}</span>\n        </div>\n        {{#if beckn:itemAttributes.toppings}}\n        <div class=\"customization-item\">\n          <span class=\"customization-label\">Toppings:</span>\n          <span class=\"customization-value\">{{#each beckn:itemAttributes.toppings}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</span>\n        </div>\n        {{/if}}\n      </div>\n      <div class=\"pizza-item-rating\">\n        <span class=\"rating-stars\">{{#repeat}}{{beckn:rating.beckn:ratingValue}}{{/repeat}}</span>\n        <span class=\"rating-count\">{{beckn:rating.beckn:ratingValue}} · {{beckn:rating.beckn:ratingCount}} ratings</span>\n      </div>\n    </div>\n  </div>\n</div>",
+      "dataPaths": {
+        "itemId": "beckn:id",
+        "itemName": "beckn:descriptor.schema:name",
+        "shortDescription": "beckn:descriptor.beckn:shortDesc",
+        "longDescription": "beckn:descriptor.beckn:longDesc",
+        "imageUrl": "beckn:descriptor.schema:image",
+        "dietaryClassification": "beckn:itemAttributes.dietaryClassification",
+        "crust": "beckn:itemAttributes.crust",
+        "size": "beckn:itemAttributes.size",
+        "toppings": "beckn:itemAttributes.toppings",
+        "ratingValue": "beckn:rating.beckn:ratingValue",
+        "ratingCount": "beckn:rating.beckn:ratingCount",
+        "price": "beckn:offers[0].beckn:price.value",
+        "currency": "beckn:offers[0].beckn:price.currency"
+      }
+    },
+    "detailView": {
+      "name": "Pizza Item Detail View",
+      "description": "Comprehensive detail view for a single pizza item with customization options",
+      "html": "<div class=\"pizza-item-detail\" data-item-id=\"{{beckn:id}}\">\n  <div class=\"pizza-item-header\">\n    <h1 class=\"pizza-item-name\">{{beckn:descriptor.schema:name}}</h1>\n    <span class=\"dietary-badge dietary-{{beckn:itemAttributes.dietaryClassification}}\">{{beckn:itemAttributes.dietaryClassification}}</span>\n  </div>\n  <p class=\"pizza-item-long-desc\">{{beckn:descriptor.beckn:longDesc}}</p>\n  \n  <div class=\"pizza-customization-details\">\n    <h2>Customization</h2>\n    <div class=\"customization-section\">\n      <div class=\"customization-row\">\n        <span class=\"customization-label\">Crust Type:</span>\n        <span class=\"customization-value\">{{beckn:itemAttributes.crust}}</span>\n      </div>\n      <div class=\"customization-row\">\n        <span class=\"customization-label\">Size:</span>\n        <span class=\"customization-value\">{{beckn:itemAttributes.size}}</span>\n      </div>\n      {{#if beckn:itemAttributes.toppings}}\n      <div class=\"customization-row\">\n        <span class=\"customization-label\">Toppings:</span>\n        <div class=\"toppings-list\">\n          {{#each beckn:itemAttributes.toppings}}\n          <span class=\"topping-badge\">{{this}}</span>\n          {{/each}}\n        </div>\n      </div>\n      {{/if}}\n    </div>\n  </div>\n  \n  <div class=\"pizza-item-rating\">\n    <div class=\"rating-display\">\n      <span class=\"rating-value\">{{beckn:rating.beckn:ratingValue}}</span>\n      <span class=\"rating-stars\">★★★★★</span>\n      <span class=\"rating-count\">({{beckn:rating.beckn:ratingCount}} reviews)</span>\n    </div>\n  </div>\n  \n  <div class=\"pizza-item-pricing\">\n    <div class=\"price-display\">\n      <span class=\"price-currency\">{{beckn:offers[0].beckn:price.currency}}</span>\n      <span class=\"price-value\">{{beckn:offers[0].beckn:price.value}}</span>\n      <span class=\"price-unit\">per {{beckn:offers[0].beckn:price.applicableQuantity.unitText}}</span>\n    </div>\n  </div>\n</div>",
+      "dataPaths": {
+        "itemId": "beckn:id",
+        "itemName": "beckn:descriptor.schema:name",
+        "longDescription": "beckn:descriptor.beckn:longDesc",
+        "dietaryClassification": "beckn:itemAttributes.dietaryClassification",
+        "crust": "beckn:itemAttributes.crust",
+        "size": "beckn:itemAttributes.size",
+        "toppings": "beckn:itemAttributes.toppings",
+        "ratingValue": "beckn:rating.beckn:ratingValue",
+        "ratingCount": "beckn:rating.beckn:ratingCount",
+        "price": "beckn:offers[0].beckn:price.value",
+        "currency": "beckn:offers[0].beckn:price.currency",
+        "priceUnit": "beckn:offers[0].beckn:price.applicableQuantity.unitText"
+      }
+    },
+    "compactCard": {
+      "name": "Pizza Item Compact Card",
+      "description": "Minimal card view for grid/list layouts",
+      "html": "<div class=\"pizza-item-compact\" data-item-id=\"{{beckn:id}}\">\n  <div class=\"compact-header\">\n    <h4>{{beckn:descriptor.schema:name}}</h4>\n    <span class=\"dietary-badge dietary-{{beckn:itemAttributes.dietaryClassification}}\">{{beckn:itemAttributes.dietaryClassification}}</span>\n  </div>\n  <div class=\"compact-customization\">\n    <span class=\"compact-size\">{{beckn:itemAttributes.size}}</span>\n    <span class=\"compact-crust\">{{beckn:itemAttributes.crust}}</span>\n  </div>\n  <div class=\"compact-price\">{{beckn:offers[0].beckn:price.currency}} {{beckn:offers[0].beckn:price.value}}</div>\n</div>",
+      "dataPaths": {
+        "itemId": "beckn:id",
+        "itemName": "beckn:descriptor.schema:name",
+        "dietaryClassification": "beckn:itemAttributes.dietaryClassification",
+        "size": "beckn:itemAttributes.size",
+        "crust": "beckn:itemAttributes.crust",
+        "price": "beckn:offers[0].beckn:price.value",
+        "currency": "beckn:offers[0].beckn:price.currency"
+      }
+    },
+    "customizationSelector": {
+      "name": "Pizza Customization Selector",
+      "description": "Interactive customization selector for pizza options",
+      "html": "<div class=\"pizza-customization-selector\" data-item-id=\"{{beckn:id}}\">\n  <div class=\"customization-group\">\n    <label class=\"customization-group-label\">Select Crust</label>\n    <div class=\"customization-options\">\n      <button class=\"customization-option\" data-crust=\"New Hand Tossed\">New Hand Tossed</button>\n      <button class=\"customization-option\" data-crust=\"Thin Crust\">Thin Crust</button>\n      <button class=\"customization-option\" data-crust=\"Thick Crust\">Thick Crust</button>\n      <button class=\"customization-option\" data-crust=\"Cheese Burst\">Cheese Burst</button>\n      <button class=\"customization-option\" data-crust=\"Wheat Thin Crust\">Wheat Thin Crust</button>\n    </div>\n  </div>\n  <div class=\"customization-group\">\n    <label class=\"customization-group-label\">Select Size</label>\n    <div class=\"customization-options\">\n      <button class=\"customization-option\" data-size=\"Regular\">Regular</button>\n      <button class=\"customization-option\" data-size=\"Medium\">Medium</button>\n      <button class=\"customization-option\" data-size=\"Large\">Large</button>\n      <button class=\"customization-option\" data-size=\"Personal\">Personal</button>\n      <button class=\"customization-option\" data-size=\"Family\">Family</button>\n    </div>\n  </div>\n  <div class=\"customization-group\">\n    <label class=\"customization-group-label\">Select Toppings (up to 2)</label>\n    <div class=\"customization-options\">\n      <button class=\"customization-option\" data-topping=\"Grilled Mushrooms\">Grilled Mushrooms</button>\n      <button class=\"customization-option\" data-topping=\"Pepperoni\">Pepperoni</button>\n      <button class=\"customization-option\" data-topping=\"Olives\">Olives</button>\n      <button class=\"customization-option\" data-topping=\"Onions\">Onions</button>\n      <button class=\"customization-option\" data-topping=\"Capsicum\">Capsicum</button>\n      <button class=\"customization-option\" data-topping=\"Jalapenos\">Jalapenos</button>\n      <button class=\"customization-option\" data-topping=\"Paneer\">Paneer</button>\n      <button class=\"customization-option\" data-topping=\"Corn\">Corn</button>\n      <button class=\"customization-option\" data-topping=\"Tomatoes\">Tomatoes</button>\n    </div>\n  </div>\n</div>",
+      "dataPaths": {
+        "itemId": "beckn:id",
+        "availableCrusts": ["New Hand Tossed", "Thin Crust", "Thick Crust", "Cheese Burst", "Wheat Thin Crust"],
+        "availableSizes": ["Regular", "Medium", "Large", "Personal", "Family"],
+        "availableToppings": ["Grilled Mushrooms", "Pepperoni", "Olives", "Onions", "Capsicum", "Jalapenos", "Paneer", "Corn", "Tomatoes"]
+      }
+    }
+  },
+  "stylingHints": {
+    "dietaryBadge": {
+      "veg": {
+        "backgroundColor": "#4CAF50",
+        "color": "#FFFFFF",
+        "text": "VEG"
+      },
+      "non-veg": {
+        "backgroundColor": "#F44336",
+        "color": "#FFFFFF",
+        "text": "NON-VEG"
+      }
+    },
+    "cardLayout": {
+      "default": "vertical",
+      "alternatives": ["horizontal", "grid"]
+    },
+    "customizationBadges": {
+      "crust": {
+        "backgroundColor": "#FF9800",
+        "color": "#FFFFFF"
+      },
+      "size": {
+        "backgroundColor": "#2196F3",
+        "color": "#FFFFFF"
+      },
+      "toppings": {
+        "backgroundColor": "#9C27B0",
+        "color": "#FFFFFF"
+      }
+    }
+  }
+}
+

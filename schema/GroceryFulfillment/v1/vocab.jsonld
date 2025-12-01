@@ -1,0 +1,236 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/GroceryFulfillment/v1/#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:GroceryFulfillment",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Grocery Fulfillment",
+      "rdfs:comment": "Grocery fulfillment attributes for retail catalogs"
+    },
+    {
+      "@id": "beckn:supportedFulfillmentTypes",
+      "@type": "rdf:Property",
+      "rdfs:label": "Supported fulfillment types",
+      "rdfs:comment": "Array of fulfillment types supported by this provider/channel.",
+      "rdfs:domain": "beckn:GroceryFulfillment",
+      "schema:rangeIncludes": "beckn:FulfillmentType"
+    },
+    {
+      "@id": "beckn:contactPhone",
+      "@type": "rdf:Property",
+      "rdfs:label": "Contact phone",
+      "rdfs:comment": "Contact phone number for fulfillment-related inquiries.",
+      "rdfs:domain": "beckn:GroceryFulfillment",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:contactEmail",
+      "@type": "rdf:Property",
+      "rdfs:label": "Contact email",
+      "rdfs:comment": "Contact email address for fulfillment-related inquiries.",
+      "rdfs:domain": "beckn:GroceryFulfillment",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:serviceability",
+      "@type": "rdf:Property",
+      "rdfs:label": "Serviceability",
+      "rdfs:comment": "Serviceability rules defining where and for which categories the provider can fulfill orders.",
+      "rdfs:domain": "beckn:GroceryFulfillment",
+      "schema:rangeIncludes": "beckn:ServiceabilityRule"
+    },
+
+    {
+      "@id": "beckn:FulfillmentType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Fulfillment Type",
+      "rdfs:comment": "Enumeration of fulfillment types supported by retail providers.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:FulfillmentTypeDelivery" },
+        { "@id": "beckn:FulfillmentTypeSelfPickup" },
+        { "@id": "beckn:FulfillmentTypeDeliveryAndSelfPickup" }
+      ]
+    },
+    {
+      "@id": "beckn:FulfillmentTypeDelivery",
+      "@type": [
+        "beckn:FulfillmentType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Delivery",
+      "schema:identifier": "Delivery"
+    },
+    {
+      "@id": "beckn:FulfillmentTypeSelfPickup",
+      "@type": [
+        "beckn:FulfillmentType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Self-Pickup",
+      "schema:identifier": "Self-Pickup",
+      "schema:alternateName": "Self Pickup"
+    },
+    {
+      "@id": "beckn:FulfillmentTypeDeliveryAndSelfPickup",
+      "@type": [
+        "beckn:FulfillmentType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Delivery and Self-Pickup",
+      "schema:identifier": "Delivery and Self-Pickup"
+    },
+
+    {
+      "@id": "beckn:ServiceabilityRule",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Serviceability Rule",
+      "rdfs:comment": "Serviceability rule defining where and for which categories fulfillment is available."
+    },
+    {
+      "@id": "beckn:locationId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Location ID",
+      "rdfs:comment": "Location identifier where this serviceability rule applies.",
+      "rdfs:domain": "beckn:ServiceabilityRule",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:category",
+      "@type": "rdf:Property",
+      "rdfs:label": "Category",
+      "rdfs:comment": "Category name or code for which this serviceability applies.",
+      "rdfs:domain": "beckn:ServiceabilityRule",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:serviceabilityCode",
+      "@type": "rdf:Property",
+      "rdfs:label": "Serviceability code",
+      "rdfs:comment": "Serviceability code indicating the type of constraint.",
+      "rdfs:domain": "beckn:ServiceabilityRule",
+      "schema:rangeIncludes": "beckn:ServiceabilityCode"
+    },
+    {
+      "@id": "beckn:serviceabilityType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Serviceability type",
+      "rdfs:comment": "Type of serviceability constraint.",
+      "rdfs:domain": "beckn:ServiceabilityRule",
+      "schema:rangeIncludes": "beckn:ServiceabilityType"
+    },
+    {
+      "@id": "beckn:value",
+      "@type": "rdf:Property",
+      "rdfs:label": "Value",
+      "rdfs:comment": "Value of the serviceability constraint.",
+      "rdfs:domain": "beckn:ServiceabilityRule",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:unit",
+      "@type": "rdf:Property",
+      "rdfs:label": "Unit",
+      "rdfs:comment": "Unit of the serviceability value.",
+      "rdfs:domain": "beckn:ServiceabilityRule",
+      "schema:rangeIncludes": "beckn:ServiceabilityUnit"
+    },
+
+    {
+      "@id": "beckn:ServiceabilityCode",
+      "@type": "schema:Enumeration",
+      "schema:name": "Serviceability Code",
+      "rdfs:comment": "Enumeration of serviceability codes.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ServiceabilityCode10" },
+        { "@id": "beckn:ServiceabilityCode12" }
+      ]
+    },
+    {
+      "@id": "beckn:ServiceabilityCode10",
+      "@type": [
+        "beckn:ServiceabilityCode",
+        "schema:Enumeration"
+      ],
+      "schema:name": "10",
+      "schema:identifier": "10"
+    },
+    {
+      "@id": "beckn:ServiceabilityCode12",
+      "@type": [
+        "beckn:ServiceabilityCode",
+        "schema:Enumeration"
+      ],
+      "schema:name": "12",
+      "schema:identifier": "12"
+    },
+
+    {
+      "@id": "beckn:ServiceabilityType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Serviceability Type",
+      "rdfs:comment": "Enumeration of serviceability constraint types.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ServiceabilityTypeDistanceBased" },
+        { "@id": "beckn:ServiceabilityTypeCountryWide" }
+      ]
+    },
+    {
+      "@id": "beckn:ServiceabilityTypeDistanceBased",
+      "@type": [
+        "beckn:ServiceabilityType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "distance-based",
+      "schema:identifier": "distance-based",
+      "schema:alternateName": "distance based"
+    },
+    {
+      "@id": "beckn:ServiceabilityTypeCountryWide",
+      "@type": [
+        "beckn:ServiceabilityType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "country-wide",
+      "schema:identifier": "country-wide",
+      "schema:alternateName": "country wide"
+    },
+
+    {
+      "@id": "beckn:ServiceabilityUnit",
+      "@type": "schema:Enumeration",
+      "schema:name": "Serviceability Unit",
+      "rdfs:comment": "Enumeration of serviceability value units.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ServiceabilityUnitKm" },
+        { "@id": "beckn:ServiceabilityUnitCountry" }
+      ]
+    },
+    {
+      "@id": "beckn:ServiceabilityUnitKm",
+      "@type": [
+        "beckn:ServiceabilityUnit",
+        "schema:Enumeration"
+      ],
+      "schema:name": "km",
+      "schema:identifier": "km",
+      "schema:alternateName": "kilometer"
+    },
+    {
+      "@id": "beckn:ServiceabilityUnitCountry",
+      "@type": [
+        "beckn:ServiceabilityUnit",
+        "schema:Enumeration"
+      ],
+      "schema:name": "country",
+      "schema:identifier": "country"
+    }
+  ]
+}
+

@@ -1,0 +1,118 @@
+openapi: 3.1.1
+info:
+  title: Retail — Grocery Fulfillment Attributes (v1)
+  version: 1.0.0
+  x-profile-id: profiles/retail/grocery/v1/grocery-fulfillment
+  description: >
+    Grocery fulfillment attributes intended to be attached to Order.fulfillments[].attributes
+    or Provider-level fulfillment attributes for grocery catalogs on Beckn/ONDC.
+
+    This pack models fulfillment capabilities, contact information, and serviceability
+    policies specific to grocery retail, derived from ONDC grocery examples.
+
+components:
+  schemas:
+    ########################################################################
+    # FULFILLMENT.ATTRIBUTES — GroceryFulfillment
+    ########################################################################
+    GroceryFulfillment:
+      type: object
+      additionalProperties: false
+      description: >
+        Grocery fulfillment attributes (supported types, contact info, and
+        serviceability policies) to be attached to fulfillment objects.
+      properties:
+
+        ######################################################################
+        # Supported fulfillment types
+        ######################################################################
+        supportedFulfillmentTypes:
+          type: array
+          description: >
+            Array of fulfillment types supported by this provider/channel
+            (e.g., Delivery, Self-Pickup, Delivery and Self-Pickup).
+          items:
+            type: string
+            enum: [Delivery, Self-Pickup, "Delivery and Self-Pickup"]
+          example: ["Delivery", "Self-Pickup"]
+
+        ######################################################################
+        # Contact information
+        ######################################################################
+        contactPhone:
+          type: string
+          description: >
+            Contact phone number for fulfillment-related inquiries.
+          example: "9886098860"
+
+        contactEmail:
+          type: string
+          format: email
+          description: >
+            Contact email address for fulfillment-related inquiries.
+          example: "abc@xyz.com"
+
+        ######################################################################
+        # Serviceability (where & for which categories fulfillment is available)
+        ######################################################################
+        serviceability:
+          type: array
+          description: >
+            Serviceability rules defining where and for which categories the
+            provider can fulfill orders. Transformed from ONDC serviceability tags.
+          items:
+            type: object
+            additionalProperties: false
+            required: [locationId, category]
+            properties:
+              locationId:
+                type: string
+                description: >
+                  Location identifier where this serviceability rule applies.
+                example: "L1"
+              category:
+                type: string
+                description: >
+                  Category name or code for which this serviceability applies
+                  (e.g., "Eggs, Meat & Fish", "Kitchen Accessories").
+                example: "Eggs, Meat & Fish"
+              serviceabilityCode:
+                type: string
+                enum: ["10", "12"]
+                description: >
+                  Serviceability code indicating the type of constraint
+                  ("10" for distance-based, "12" for country-wide).
+                example: "10"
+              serviceabilityType:
+                type: string
+                enum: [distance-based, country-wide]
+                description: >
+                  Type of serviceability constraint (distance-based or country-wide).
+                example: "distance-based"
+              value:
+                type: string
+                description: >
+                  Value of the serviceability constraint (e.g., numeric radius
+                  or country code).
+                example: "3"
+              unit:
+                type: string
+                enum: [km, country]
+                description: >
+                  Unit of the serviceability value (e.g., "km" for distance,
+                  "country" for country-wide).
+                example: "km"
+          example:
+            - locationId: "L1"
+              category: "Eggs, Meat & Fish"
+              serviceabilityCode: "10"
+              serviceabilityType: "distance-based"
+              value: "3"
+              unit: "km"
+            - locationId: "L1"
+              category: "Kitchen Accessories"
+              serviceabilityCode: "12"
+              serviceabilityType: "country-wide"
+              value: "IND"
+              unit: "country"
+

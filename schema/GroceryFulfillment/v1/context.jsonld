@@ -1,0 +1,62 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "beckn": "./vocab.jsonld#",
+    
+    "GroceryFulfillment": "beckn:GroceryFulfillment",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "supportedFulfillmentTypes": {
+      "@id": "beckn:supportedFulfillmentTypes",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "contactPhone": "beckn:contactPhone",
+    "contactEmail": "beckn:contactEmail",
+    "serviceability": {
+      "@id": "beckn:serviceability",
+      "@container": "@set"
+    },
+
+    "locationId": "beckn:locationId",
+    "category": "beckn:category",
+    "serviceabilityCode": {
+      "@id": "beckn:serviceabilityCode",
+      "@type": "@id"
+    },
+    "serviceabilityType": {
+      "@id": "beckn:serviceabilityType",
+      "@type": "@id"
+    },
+    "value": "beckn:value",
+    "unit": {
+      "@id": "beckn:unit",
+      "@type": "@id"
+    },
+
+    "Delivery": "beckn:FulfillmentTypeDelivery",
+    "Self-Pickup": "beckn:FulfillmentTypeSelfPickup",
+    "Self Pickup": "beckn:FulfillmentTypeSelfPickup",
+    "Delivery and Self-Pickup": "beckn:FulfillmentTypeDeliveryAndSelfPickup",
+
+    "10": "beckn:ServiceabilityCode10",
+    "12": "beckn:ServiceabilityCode12",
+
+    "distance-based": "beckn:ServiceabilityTypeDistanceBased",
+    "distance based": "beckn:ServiceabilityTypeDistanceBased",
+    "country-wide": "beckn:ServiceabilityTypeCountryWide",
+    "country wide": "beckn:ServiceabilityTypeCountryWide",
+
+    "km": "beckn:ServiceabilityUnitKm",
+    "kilometer": "beckn:ServiceabilityUnitKm",
+    "country": "beckn:ServiceabilityUnitCountry"
+  },
+
+  "@graph": []
+}
+

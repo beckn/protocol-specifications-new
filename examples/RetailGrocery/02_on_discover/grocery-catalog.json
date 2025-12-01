@@ -1,0 +1,329 @@
+{
+  "context": {
+    "version": "2.0.0",
+    "action": "on_discover",
+    "domain": "beckn.one:deg:retail:*",
+    "timestamp": "2025-01-27T10:00:05Z",
+    "transaction_id": "grocery-txn-001-2025-01-27",
+    "message_id": "grocery-msg-001-2025-01-27",
+    "bap_id": "grocery-app.example.com",
+    "bap_uri": "https://grocery-app.example.com/bap",
+    "bpp_id": "fresh-grocery-bpp.example.com",
+    "bpp_uri": "https://fresh-grocery-bpp.example.com/bpp",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "catalogs": [
+      {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+        "@type": "beckn:Catalog",
+        "beckn:id": "catalog-grocery-001",
+        "beckn:descriptor": {
+          "@type": "beckn:Descriptor",
+          "schema:name": "Fresh Grocery Store",
+          "beckn:shortDesc": "Premium organic and fresh grocery products"
+        },
+        "beckn:bppId": "fresh-grocery-bpp.example.com",
+        "beckn:bppUri": "https://fresh-grocery-bpp.example.com/bpp",
+        "beckn:validity": {
+          "@type": "beckn:TimePeriod",
+          "schema:startDate": "2025-01-27T00:00:00Z",
+          "schema:endDate": "2025-12-31T23:59:59Z"
+        },
+        "beckn:items": [
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Item",
+            "beckn:id": "basmati-rice-1kg-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Premium Basmati Rice (1 kg)",
+              "beckn:shortDesc": "Aged basmati rice, long grain, aromatic",
+              "beckn:longDesc": "Premium quality aged basmati rice, known for its long grains and aromatic fragrance. Perfect for biryanis and pulao."
+            },
+            "beckn:category": {
+              "@type": "schema:CategoryCode",
+              "schema:codeValue": "grocery",
+              "schema:name": "Grocery"
+            },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.6,
+              "beckn:ratingCount": 387
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/grocery"
+            ],
+            "beckn:provider": {
+              "beckn:id": "fresh-grocery-store",
+              "beckn:descriptor": {
+                "@type": "beckn:Descriptor",
+                "schema:name": "Fresh Grocery Store"
+              }
+            },
+            "beckn:itemAttributes": {
+              "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/GroceryItem/v1/context.jsonld",
+              "@type": "GroceryItem",
+              "category": "PACKAGED_COMMODITIES",
+              "manufacturerOrPacker": {
+                "type": "manufacturer",
+                "name": "Premium Rice Mills Pvt Ltd",
+                "id": "MANU-RICE-001",
+                "address": "Plot No. 123, Industrial Area, Haryana, India"
+              },
+              "commonOrGenericNameOfCommodity": "Basmati Rice",
+              "netQuantityOrMeasureInPackage": {
+                "unitText": "Kilogram",
+                "unitCode": "KGM",
+                "unitQuantity": 1
+              },
+              "manufacturePackingImportDate": {
+                "month": 1,
+                "year": 2025
+              },
+              "nutritionalInfo": [
+                {
+                  "nutrient": "Energy",
+                  "value": {
+                    "unitText": "kilocalorie",
+                    "unitCode": "KCL",
+                    "unitQuantity": 350
+                  }
+                },
+                {
+                  "nutrient": "Carbohydrates",
+                  "value": {
+                    "unitText": "gram",
+                    "unitCode": "GRM",
+                    "unitQuantity": 78
+                  }
+                },
+                {
+                  "nutrient": "Protein",
+                  "value": {
+                    "unitText": "gram",
+                    "unitCode": "GRM",
+                    "unitQuantity": 7
+                  }
+                },
+                {
+                  "nutrient": "Fat",
+                  "value": {
+                    "unitText": "gram",
+                    "unitCode": "GRM",
+                    "unitQuantity": 0.5
+                  }
+                }
+              ],
+              "additivesInfo": "No additives",
+              "brandOwnerFssaiLicenseNo": "FSSAI123456789",
+              "dietaryClassification": "veg"
+            }
+          },
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Item",
+            "beckn:id": "organic-toor-dal-500g-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Organic Toor Dal (500g)",
+              "beckn:shortDesc": "Certified organic split pigeon peas",
+              "beckn:longDesc": "Certified organic toor dal, rich in protein and fiber. Perfect for traditional Indian dal recipes."
+            },
+            "beckn:category": {
+              "@type": "schema:CategoryCode",
+              "schema:codeValue": "grocery",
+              "schema:name": "Grocery"
+            },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.5,
+              "beckn:ratingCount": 256
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/grocery"
+            ],
+            "beckn:provider": {
+              "beckn:id": "fresh-grocery-store",
+              "beckn:descriptor": {
+                "@type": "beckn:Descriptor",
+                "schema:name": "Fresh Grocery Store"
+              }
+            },
+            "beckn:itemAttributes": {
+              "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/GroceryItem/v1/context.jsonld",
+              "@type": "GroceryItem",
+              "category": "PACKAGED_COMMODITIES",
+              "manufacturerOrPacker": {
+                "type": "manufacturer",
+                "name": "Organic Foods India Ltd",
+                "id": "MANU-ORG-001",
+                "address": "Farm No. 456, Organic Zone, Maharashtra, India"
+              },
+              "commonOrGenericNameOfCommodity": "Toor Dal",
+              "netQuantityOrMeasureInPackage": {
+                "unitText": "Gram",
+                "unitCode": "GRM",
+                "unitQuantity": 500
+              },
+              "manufacturePackingImportDate": {
+                "month": 12,
+                "year": 2024
+              },
+              "nutritionalInfo": [
+                {
+                  "nutrient": "Energy",
+                  "value": {
+                    "unitText": "kilocalorie",
+                    "unitCode": "KCL",
+                    "unitQuantity": 343
+                  }
+                },
+                {
+                  "nutrient": "Protein",
+                  "value": {
+                    "unitText": "gram",
+                    "unitCode": "GRM",
+                    "unitQuantity": 22
+                  }
+                },
+                {
+                  "nutrient": "Carbohydrates",
+                  "value": {
+                    "unitText": "gram",
+                    "unitCode": "GRM",
+                    "unitQuantity": 57
+                  }
+                },
+                {
+                  "nutrient": "Fiber",
+                  "value": {
+                    "unitText": "gram",
+                    "unitCode": "GRM",
+                    "unitQuantity": 15
+                  }
+                }
+              ],
+              "additivesInfo": "No additives",
+              "brandOwnerFssaiLicenseNo": "FSSAI987654321",
+              "dietaryClassification": "veg"
+            }
+          }
+        ],
+        "beckn:offers": [
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-basmati-rice-1kg",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Basmati Rice 1kg Offer"
+            },
+            "beckn:items": [
+              "basmati-rice-1kg-001"
+            ],
+            "beckn:price": {
+              "currency": "INR",
+              "value": 180.0,
+              "applicableQuantity": {
+                "unitText": "Kilogram",
+                "unitCode": "KGM",
+                "unitQuantity": 1
+              }
+            },
+            "beckn:validity": {
+              "@type": "beckn:TimePeriod",
+              "schema:startDate": "2025-01-27T00:00:00Z",
+              "schema:endDate": "2025-12-31T23:59:59Z"
+            },
+            "beckn:acceptedPaymentMethod": [
+              "UPI",
+              "CREDIT_CARD",
+              "DEBIT_CARD",
+              "WALLET",
+              "CASH"
+            ],
+            "beckn:provider": "fresh-grocery-store"
+          },
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-organic-toor-dal-500g",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Organic Toor Dal 500g Offer"
+            },
+            "beckn:items": [
+              "organic-toor-dal-500g-001"
+            ],
+            "beckn:price": {
+              "currency": "INR",
+              "value": 95.0,
+              "applicableQuantity": {
+                "unitText": "Gram",
+                "unitCode": "GRM",
+                "unitQuantity": 500
+              }
+            },
+            "beckn:validity": {
+              "@type": "beckn:TimePeriod",
+              "schema:startDate": "2025-01-27T00:00:00Z",
+              "schema:endDate": "2025-12-31T23:59:59Z"
+            },
+            "beckn:acceptedPaymentMethod": [
+              "UPI",
+              "CREDIT_CARD",
+              "DEBIT_CARD",
+              "WALLET",
+              "CASH"
+            ],
+            "beckn:provider": "fresh-grocery-store"
+          }
+        ]
+      }
+    ]
+  }
+}
+

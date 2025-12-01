@@ -1,0 +1,163 @@
+openapi: 3.1.1
+info:
+  title: Retail — Grocery Item Attributes (v1)
+  version: 1.0.0
+  x-profile-id: profiles/retail/grocery/v1/grocery-item
+  description: >
+    Grocery-specific item attributes intended to be attached to Item.attributes
+    (beckn:itemAttributes) for grocery catalogs on Beckn/ONDC.
+
+    This pack only models attributes that are **not** already covered by the
+    core Beckn Item schema (beckn:id, beckn:descriptor, beckn:category,
+    availability, etc.). It focuses on statutory/regulatory details and
+    grocery-specific product properties derived from ONDC grocery examples.
+
+components:
+  schemas:
+    ########################################################################
+    # ITEM.ATTRIBUTES — GroceryItem
+    ########################################################################
+    GroceryItem:
+      type: object
+      additionalProperties: false
+      description: >
+        Grocery-specific item attributes (statutory info, nutritional details,
+        and basic dietary flags) to be composed with the core Beckn Item via
+        beckn:itemAttributes.
+      properties:
+
+        ######################################################################
+        # Domain category (to be linked to core CategoryCode via JSON-LD)
+        ######################################################################
+        category:
+          type: string
+          enum: ["PACKAGED_COMMODITIES"]
+          description: >
+            Domain category for this grocery item (e.g., "Packaged Commodities"
+            in ONDC). This can be linked to the core beckn:CategoryCode via
+            JSON-LD equivalence in the profile context.
+
+        ######################################################################
+        # Statutory — packaged commodities
+        ######################################################################
+        manufacturerOrPacker:
+          type: object
+          additionalProperties: false
+          required: [type, name]
+          description: >
+            Manufacturer or packer information as required for packaged
+            commodities declarations.
+          properties:
+            type:
+              type: string
+              enum: [manufacturer, packer]
+              description: >
+                Type of entity: manufacturer or packer.
+            name:
+              type: string
+              description: >
+                Name of the manufacturer or packer.
+            id:
+              type: string
+              description: >
+                Unique identifier for the manufacturer or packer (optional).
+            address:
+              type: string
+              description: >
+                Address of the manufacturer or packer.
+
+        commonOrGenericNameOfCommodity:
+          type: string
+          description: >
+            Common or generic name of the commodity (e.g., "Wheat Flour").
+
+        netQuantityOrMeasureInPackage:
+          $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Quantity'
+          description: >
+            Net quantity or measure of the commodity in the retail package
+            using the core Quantity schema.
+
+        manufacturePackingImportDate:
+          type: object
+          additionalProperties: false
+          required: [month, year]
+          description: >
+            Month and year of manufacture/packing/import.
+          properties:
+            month:
+              type: integer
+              minimum: 1
+              maximum: 12
+              description: >
+                Month of manufacture/packing/import (1-12).
+            year:
+              type: integer
+              minimum: 1900
+              description: >
+                Year of manufacture/packing/import.
+
+        ######################################################################
+        # Statutory — prepackaged food
+        ######################################################################
+        nutritionalInfo:
+          type: array
+          description: >
+            Nutritional information as declared on the label, with each nutrient
+            tracked as an object using Quantity schema for values.
+          items:
+            type: object
+            additionalProperties: false
+            required: [nutrient, value]
+            properties:
+              nutrient:
+                type: string
+                description: >
+                  Name of the nutrient (e.g., "Energy", "Protein", "Carbohydrates",
+                  "Fat", "Fiber", "Sodium").
+              value:
+                $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Quantity'
+                description: >
+                  Quantity value for this nutrient (e.g., unitText: "kilocalorie",
+                  unitCode: "KCL", unitQuantity: 350).
+
+        additivesInfo:
+          type: string
+          description: >
+            Information about food additives (e.g., preservatives, colours).
+
+        brandOwnerFssaiLicenseNo:
+          type: string
+          description: >
+            FSSAI licence number of the brand owner for prepackaged food.
+
+        otherFssaiLicenseNo:
+          type: string
+          description: >
+            Other relevant FSSAI licence numbers, if any.
+
+        importerFssaiLicenseNo:
+          type: string
+          description: >
+            FSSAI licence number of the importer, where applicable.
+
+        ######################################################################
+        # Mandatory — fruits & vegetables
+        ######################################################################
+        netQuantityFreshProduce:
+          type: string
+          description: >
+            Net quantity declaration for fresh fruits/vegetables (where
+            applicable), aligned with ONDC mandatory requirements.
+
+        ######################################################################
+        # Dietary classification
+        ######################################################################
+        dietaryClassification:
+          type: string
+          enum: [veg, "non-veg"]
+          description: >
+            Dietary classification for the grocery item (veg or non-veg),
+            as used in ONDC grocery examples.
+          example: "veg"
+
+

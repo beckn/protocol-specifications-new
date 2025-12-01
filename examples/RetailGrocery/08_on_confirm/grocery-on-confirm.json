@@ -1,0 +1,163 @@
+{
+  "context": {
+    "version": "2.0.0",
+    "action": "on_confirm",
+    "domain": "beckn.one:deg:retail:*",
+    "bap_id": "grocery-app.example.com",
+    "bap_uri": "https://grocery-app.example.com/bap",
+    "transaction_id": "grocery-txn-001-2025-01-27",
+    "message_id": "grocery-confirm-msg-001",
+    "timestamp": "2025-01-27T10:25:05Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+      "@type": "beckn:Order",
+      "beckn:id": "order-grocery-001",
+      "beckn:orderStatus": "CONFIRMED",
+      "beckn:orderNumber": "ORD-GROCERY-2025-001",
+      "beckn:seller": "fresh-grocery-store",
+      "beckn:buyer": {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+        "@type": "beckn:Buyer",
+        "beckn:id": "user-grocery-123",
+        "beckn:role": "BUYER",
+        "beckn:displayName": "Priya Sharma",
+        "beckn:taxID": "GSTIN29ABCDE1234F1Z5"
+      },
+      "beckn:orderItems": [
+        {
+          "beckn:lineId": "line-grocery-001",
+          "beckn:orderedItem": "basmati-rice-1kg-001",
+          "beckn:acceptedOffer": {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-basmati-rice-1kg",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Basmati Rice 1kg Offer"
+            },
+            "beckn:items": [
+              "basmati-rice-1kg-001"
+            ],
+            "beckn:provider": "fresh-grocery-store",
+            "beckn:price": {
+              "currency": "INR",
+              "value": 180.0,
+              "applicableQuantity": {
+                "unitText": "Kilogram",
+                "unitCode": "KGM",
+                "unitQuantity": 1
+              }
+            },
+            "beckn:validity": {
+              "@type": "beckn:TimePeriod",
+              "schema:startDate": "2025-01-27T00:00:00Z",
+              "schema:endDate": "2025-12-31T23:59:59Z"
+            },
+            "beckn:acceptedPaymentMethod": [
+              "UPI",
+              "CREDIT_CARD",
+              "DEBIT_CARD",
+              "WALLET",
+              "CASH"
+            ]
+          },
+          "beckn:quantity": {
+            "unitText": "Kilogram",
+            "unitCode": "KGM",
+            "unitQuantity": 2
+          },
+          "beckn:price": {
+            "currency": "INR",
+            "value": 360.0,
+            "applicableQuantity": {
+              "unitText": "Kilogram",
+              "unitCode": "KGM",
+              "unitQuantity": 2
+            }
+          }
+        }
+      ],
+      "beckn:orderValue": {
+        "currency": "INR",
+        "value": 424.8,
+        "components": [
+          {
+            "type": "UNIT",
+            "value": 360.0,
+            "currency": "INR",
+            "description": "Base price for 2 kg basmati rice"
+          },
+          {
+            "type": "TAX",
+            "value": 54.0,
+            "currency": "INR",
+            "description": "GST (15%)"
+          },
+          {
+            "type": "DELIVERY",
+            "value": 50.0,
+            "currency": "INR",
+            "description": "Delivery charges"
+          },
+          {
+            "type": "DISCOUNT",
+            "value": -39.2,
+            "currency": "INR",
+            "description": "Promotional discount (10%)"
+          }
+        ]
+      },
+      "beckn:fulfillment": {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+        "@type": "beckn:Fulfillment",
+        "beckn:id": "fulfillment-grocery-001",
+        "beckn:mode": "DELIVERY",
+        "beckn:fulfillmentStatus": "PENDING",
+        "beckn:deliveryAttributes": {
+          "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/GroceryFulfillment/v1/context.jsonld",
+          "@type": "GroceryFulfillment",
+          "supportedFulfillmentTypes": [
+            "Delivery"
+          ],
+          "contactPhone": "9886098860",
+          "contactEmail": "support@fresh-grocery.example.com",
+          "serviceability": [
+            {
+              "locationId": "L1",
+              "category": "Grocery",
+              "serviceabilityCode": "10",
+              "serviceabilityType": "distance-based",
+              "value": "5",
+              "unit": "km"
+            }
+          ]
+        }
+      },
+      "beckn:payment": {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+        "@type": "beckn:Payment",
+        "beckn:id": "payment-grocery-001",
+        "beckn:amount": {
+          "currency": "INR",
+          "value": 424.8
+        },
+        "beckn:paymentURL": "https://payments.fresh-grocery-bpp.example.com/pay?transaction_id=$transaction_id&amount=$amount",
+        "beckn:txnRef": "TXN-GROCERY-123456",
+        "beckn:paidAt": "2025-01-27T10:25:00Z",
+        "beckn:beneficiary": "BPP",
+        "beckn:acceptedPaymentMethod": [
+          "UPI",
+          "CREDIT_CARD",
+          "DEBIT_CARD",
+          "WALLET",
+          "CASH"
+        ],
+        "beckn:paymentStatus": "COMPLETED"
+      }
+    }
+  }
+}
+

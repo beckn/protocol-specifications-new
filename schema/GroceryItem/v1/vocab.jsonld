@@ -1,0 +1,276 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/GroceryItem/v1/#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:GroceryItem",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Grocery Item",
+      "rdfs:comment": "Grocery-specific item attributes for retail catalogs"
+    },
+    {
+      "@id": "beckn:category",
+      "@type": "rdf:Property",
+      "rdfs:label": "Category",
+      "rdfs:comment": "Domain category for this grocery item.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "beckn:GroceryCategory"
+    },
+    {
+      "@id": "beckn:manufacturerOrPacker",
+      "@type": "rdf:Property",
+      "rdfs:label": "Manufacturer or packer",
+      "rdfs:comment": "Manufacturer or packer information as required for packaged commodities declarations.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "beckn:ManufacturerOrPacker"
+    },
+    {
+      "@id": "beckn:ManufacturerOrPacker",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Manufacturer or Packer",
+      "rdfs:comment": "Information about manufacturer or packer entity."
+    },
+    {
+      "@id": "beckn:manufacturerOrPackerType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Type",
+      "rdfs:comment": "Type of entity: manufacturer or packer.",
+      "rdfs:domain": "beckn:ManufacturerOrPacker",
+      "schema:rangeIncludes": "beckn:ManufacturerOrPackerType"
+    },
+    {
+      "@id": "beckn:manufacturerOrPackerName",
+      "@type": "rdf:Property",
+      "rdfs:label": "Name",
+      "rdfs:comment": "Name of the manufacturer or packer.",
+      "rdfs:domain": "beckn:ManufacturerOrPacker",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:manufacturerOrPackerId",
+      "@type": "rdf:Property",
+      "rdfs:label": "ID",
+      "rdfs:comment": "Unique identifier for the manufacturer or packer.",
+      "rdfs:domain": "beckn:ManufacturerOrPacker",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:manufacturerOrPackerAddress",
+      "@type": "rdf:Property",
+      "rdfs:label": "Address",
+      "rdfs:comment": "Address of the manufacturer or packer.",
+      "rdfs:domain": "beckn:ManufacturerOrPacker",
+      "schema:rangeIncludes": "schema:PostalAddress"
+    },
+    {
+      "@id": "beckn:ManufacturerOrPackerType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Manufacturer or Packer Type",
+      "rdfs:comment": "Enumeration of manufacturer or packer types.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ManufacturerOrPackerTypeManufacturer" },
+        { "@id": "beckn:ManufacturerOrPackerTypePacker" }
+      ]
+    },
+    {
+      "@id": "beckn:ManufacturerOrPackerTypeManufacturer",
+      "@type": [
+        "beckn:ManufacturerOrPackerType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "manufacturer",
+      "schema:identifier": "manufacturer"
+    },
+    {
+      "@id": "beckn:ManufacturerOrPackerTypePacker",
+      "@type": [
+        "beckn:ManufacturerOrPackerType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "packer",
+      "schema:identifier": "packer"
+    },
+    {
+      "@id": "beckn:commonOrGenericNameOfCommodity",
+      "@type": "rdf:Property",
+      "rdfs:label": "Common or generic name of commodity",
+      "rdfs:comment": "Common or generic name of the commodity.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:netQuantityOrMeasureInPackage",
+      "@type": "rdf:Property",
+      "rdfs:label": "Net quantity or measure in package",
+      "rdfs:comment": "Net quantity or measure of the commodity in the retail package.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "schema:QuantitativeValue"
+    },
+    {
+      "@id": "beckn:manufacturePackingImportDate",
+      "@type": "rdf:Property",
+      "rdfs:label": "Manufacture packing import date",
+      "rdfs:comment": "Month and year of manufacture/packing/import.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "beckn:ManufacturePackingImportDate"
+    },
+    {
+      "@id": "beckn:ManufacturePackingImportDate",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Manufacture Packing Import Date",
+      "rdfs:comment": "Date information for manufacture/packing/import."
+    },
+    {
+      "@id": "beckn:month",
+      "@type": "rdf:Property",
+      "rdfs:label": "Month",
+      "rdfs:comment": "Month of manufacture/packing/import (1-12).",
+      "rdfs:domain": "beckn:ManufacturePackingImportDate",
+      "schema:rangeIncludes": "schema:Integer"
+    },
+    {
+      "@id": "beckn:year",
+      "@type": "rdf:Property",
+      "rdfs:label": "Year",
+      "rdfs:comment": "Year of manufacture/packing/import.",
+      "rdfs:domain": "beckn:ManufacturePackingImportDate",
+      "schema:rangeIncludes": "schema:Integer"
+    },
+    {
+      "@id": "beckn:nutritionalInfo",
+      "@type": "rdf:Property",
+      "rdfs:label": "Nutritional information",
+      "rdfs:comment": "Nutritional information as declared on the label, with each nutrient tracked as an object.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "beckn:NutritionalInfoItem"
+    },
+    {
+      "@id": "beckn:NutritionalInfoItem",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Nutritional Info Item",
+      "rdfs:comment": "Individual nutritional information item."
+    },
+    {
+      "@id": "beckn:nutrient",
+      "@type": "rdf:Property",
+      "rdfs:label": "Nutrient",
+      "rdfs:comment": "Name of the nutrient (e.g., Energy, Protein, Carbohydrates).",
+      "rdfs:domain": "beckn:NutritionalInfoItem",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:nutritionalValue",
+      "@type": "rdf:Property",
+      "rdfs:label": "Nutritional value",
+      "rdfs:comment": "Quantity value for this nutrient using Quantity schema.",
+      "rdfs:domain": "beckn:NutritionalInfoItem",
+      "schema:rangeIncludes": "schema:QuantitativeValue"
+    },
+    {
+      "@id": "beckn:additivesInfo",
+      "@type": "rdf:Property",
+      "rdfs:label": "Additives information",
+      "rdfs:comment": "Information about food additives.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:brandOwnerFssaiLicenseNo",
+      "@type": "rdf:Property",
+      "rdfs:label": "Brand owner FSSAI license number",
+      "rdfs:comment": "FSSAI licence number of the brand owner for prepackaged food.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:otherFssaiLicenseNo",
+      "@type": "rdf:Property",
+      "rdfs:label": "Other FSSAI license number",
+      "rdfs:comment": "Other relevant FSSAI licence numbers, if any.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:importerFssaiLicenseNo",
+      "@type": "rdf:Property",
+      "rdfs:label": "Importer FSSAI license number",
+      "rdfs:comment": "FSSAI licence number of the importer, where applicable.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:netQuantityFreshProduce",
+      "@type": "rdf:Property",
+      "rdfs:label": "Net quantity fresh produce",
+      "rdfs:comment": "Net quantity declaration for fresh fruits/vegetables.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "schema:QuantitativeValue"
+    },
+    {
+      "@id": "beckn:dietaryClassification",
+      "@type": "rdf:Property",
+      "rdfs:label": "Dietary classification",
+      "rdfs:comment": "Dietary classification for the grocery item (veg or non-veg).",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "beckn:DietaryClassification"
+    },
+
+    {
+      "@id": "beckn:GroceryCategory",
+      "@type": "schema:Enumeration",
+      "schema:name": "Grocery Category",
+      "rdfs:comment": "Enumeration of grocery item categories.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:GroceryCategoryPackagedCommodities" }
+      ]
+    },
+    {
+      "@id": "beckn:GroceryCategoryPackagedCommodities",
+      "@type": [
+        "beckn:GroceryCategory",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PACKAGED_COMMODITIES",
+      "schema:identifier": "PACKAGED_COMMODITIES",
+      "schema:alternateName": "Packaged Commodities"
+    },
+
+    {
+      "@id": "beckn:DietaryClassification",
+      "@type": "schema:Enumeration",
+      "schema:name": "Dietary Classification",
+      "rdfs:comment": "Enumeration of dietary classifications for food items.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:DietaryClassificationVeg" },
+        { "@id": "beckn:DietaryClassificationNonVeg" }
+      ]
+    },
+    {
+      "@id": "beckn:DietaryClassificationVeg",
+      "@type": [
+        "beckn:DietaryClassification",
+        "schema:Enumeration"
+      ],
+      "schema:name": "veg",
+      "schema:identifier": "veg",
+      "schema:alternateName": "vegetarian"
+    },
+    {
+      "@id": "beckn:DietaryClassificationNonVeg",
+      "@type": [
+        "beckn:DietaryClassification",
+        "schema:Enumeration"
+      ],
+      "schema:name": "non-veg",
+      "schema:identifier": "non-veg",
+      "schema:alternateName": ["non-vegetarian", "nonvegetarian"]
+    }
+  ]
+}
+

@@ -65,6 +65,46 @@
                 }
               ]
             }
+          },
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Item",
+            "beckn:id": "organic-toor-dal-500g-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Organic Toor Dal (500g)",
+              "beckn:shortDesc": "Certified organic split pigeon peas",
+              "beckn:longDesc": "Certified organic toor dal, rich in protein and fiber. Perfect for traditional Indian dal recipes."
+            },
+            "beckn:provider": {
+              "beckn:id": "fresh-grocery-store",
+              "beckn:descriptor": {
+                "@type": "beckn:Descriptor",
+                "schema:name": "Fresh Grocery Store"
+              }
+            },
+            "beckn:itemAttributes": {
+              "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/GroceryItem/v1/context.jsonld",
+              "@type": "GroceryItem",
+              "manufacturerOrPacker": {
+                "type": "manufacturer",
+                "name": "Organic Foods India Ltd"
+              },
+              "manufacturePackingImportDate": {
+                "month": 12,
+                "year": 2024
+              },
+              "nutritionalInfo": [
+                {
+                  "nutrient": "Energy",
+                  "value": {
+                    "unitText": "kilocalorie",
+                    "unitCode": "KCL",
+                    "unitQuantity": 343
+                  }
+                }
+              ]
+            }
           }
         ],
         "beckn:offers": [
@@ -86,6 +126,28 @@
                 "unitText": "Kilogram",
                 "unitCode": "KGM",
                 "unitQuantity": 1
+              }
+            },
+            "beckn:provider": "fresh-grocery-store"
+          },
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-organic-toor-dal-500g",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Organic Toor Dal 500g Offer"
+            },
+            "beckn:items": [
+              "organic-toor-dal-500g-001"
+            ],
+            "beckn:price": {
+              "currency": "INR",
+              "value": 95.0,
+              "applicableQuantity": {
+                "unitText": "Gram",
+                "unitCode": "GRM",
+                "unitQuantity": 500
               }
             },
             "beckn:provider": "fresh-grocery-store"

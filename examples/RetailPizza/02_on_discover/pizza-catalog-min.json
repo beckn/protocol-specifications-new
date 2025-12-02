@@ -52,6 +52,33 @@
               "size": "Medium",
               "toppings": ["Grilled Mushrooms"]
             }
+          },
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Item",
+            "beckn:id": "pepperoni-pizza-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Pepperoni Pizza",
+              "beckn:shortDesc": "Spicy pepperoni with mozzarella cheese",
+              "beckn:longDesc": "A meat lover's favorite with spicy pepperoni slices and premium mozzarella cheese on a crispy crust."
+            },
+            "beckn:provider": {
+              "beckn:id": "pizza-hut-store",
+              "beckn:descriptor": {
+                "@type": "beckn:Descriptor",
+                "schema:name": "Pizza Hut"
+              }
+            },
+            "beckn:itemAttributes": {
+              "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/PizzaItem/v1/context.jsonld",
+              "@type": "PizzaItem",
+              "category": "PIZZA",
+              "dietaryClassification": "non-veg",
+              "crust": "Thin Crust",
+              "size": "Large",
+              "toppings": ["Pepperoni"]
+            }
           }
         ],
         "beckn:offers": [
@@ -69,6 +96,28 @@
             "beckn:price": {
               "currency": "INR",
               "value": 399.0,
+              "applicableQuantity": {
+                "unitText": "Piece",
+                "unitCode": "C62",
+                "unitQuantity": 1
+              }
+            },
+            "beckn:provider": "pizza-hut-store"
+          },
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-pepperoni-large",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Pepperoni Pizza Large Offer"
+            },
+            "beckn:items": [
+              "pepperoni-pizza-001"
+            ],
+            "beckn:price": {
+              "currency": "INR",
+              "value": 599.0,
               "applicableQuantity": {
                 "unitText": "Piece",
                 "unitCode": "C62",

@@ -53,6 +53,30 @@
               "toppings": ["Grilled Mushrooms"]
             }
           }
+        ],
+        "beckn:offers": [
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-margherita-medium",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Margherita Pizza Medium Offer"
+            },
+            "beckn:items": [
+              "margherita-pizza-001"
+            ],
+            "beckn:price": {
+              "currency": "INR",
+              "value": 399.0,
+              "applicableQuantity": {
+                "unitText": "Piece",
+                "unitCode": "C62",
+                "unitQuantity": 1
+              }
+            },
+            "beckn:provider": "pizza-hut-store"
+          }
         ]
       }
     ]

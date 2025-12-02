@@ -66,6 +66,30 @@
               ]
             }
           }
+        ],
+        "beckn:offers": [
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-basmati-rice-1kg",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Basmati Rice 1kg Offer"
+            },
+            "beckn:items": [
+              "basmati-rice-1kg-001"
+            ],
+            "beckn:price": {
+              "currency": "INR",
+              "value": 180.0,
+              "applicableQuantity": {
+                "unitText": "Kilogram",
+                "unitCode": "KGM",
+                "unitQuantity": 1
+              }
+            },
+            "beckn:provider": "fresh-grocery-store"
+          }
         ]
       }
     ]

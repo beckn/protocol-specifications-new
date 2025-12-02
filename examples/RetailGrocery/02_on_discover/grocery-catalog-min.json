@@ -43,6 +43,25 @@
                 "schema:name": "Fresh Grocery Store"
               }
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:itemAttributes": {
               "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/GroceryItem/v1/context.jsonld",
               "@type": "GroceryItem",
@@ -88,6 +107,25 @@
                 "schema:name": "Fresh Grocery Store"
               }
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:itemAttributes": {
               "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/GroceryItem/v1/context.jsonld",
               "@type": "GroceryItem",

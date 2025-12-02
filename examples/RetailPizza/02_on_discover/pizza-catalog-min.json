@@ -43,6 +43,25 @@
                 "schema:name": "Pizza Hut"
               }
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:itemAttributes": {
               "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/PizzaItem/v1/context.jsonld",
               "@type": "PizzaItem",
@@ -70,6 +89,25 @@
                 "schema:name": "Pizza Hut"
               }
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:itemAttributes": {
               "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/PizzaItem/v1/context.jsonld",
               "@type": "PizzaItem",

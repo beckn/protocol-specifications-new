@@ -36,6 +36,25 @@
               "beckn:shortDesc": "Classic Italian pizza with fresh tomatoes, mozzarella, and basil",
               "beckn:longDesc": "Classic Italian pizza with fresh tomatoes, mozzarella, and basil. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -66,6 +85,25 @@
               "beckn:shortDesc": "Spicy pepperoni with mozzarella cheese",
               "beckn:longDesc": "Spicy pepperoni with mozzarella cheese. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -95,6 +133,25 @@
               "beckn:shortDesc": "Loaded with fresh vegetables and cheese",
               "beckn:longDesc": "Loaded with fresh vegetables and cheese. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -125,6 +182,25 @@
               "beckn:shortDesc": "Fresh vegetables on a crispy base",
               "beckn:longDesc": "Fresh vegetables on a crispy base. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -154,6 +230,25 @@
               "beckn:shortDesc": "Spiced paneer cubes with onions and peppers",
               "beckn:longDesc": "Spiced paneer cubes with onions and peppers. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -183,6 +278,25 @@
               "beckn:shortDesc": "Tender chicken tikka pieces with onions",
               "beckn:longDesc": "Tender chicken tikka pieces with onions. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -212,6 +326,25 @@
               "beckn:shortDesc": "BBQ flavored chicken with red onions",
               "beckn:longDesc": "BBQ flavored chicken with red onions. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -242,6 +375,25 @@
               "beckn:shortDesc": "Ham and pineapple combination",
               "beckn:longDesc": "Ham and pineapple combination. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -271,6 +423,25 @@
               "beckn:shortDesc": "Spicy Mexican flavors with jalapenos",
               "beckn:longDesc": "Spicy Mexican flavors with jalapenos. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -300,6 +471,25 @@
               "beckn:shortDesc": "Extra cheese stuffed in the crust",
               "beckn:longDesc": "Extra cheese stuffed in the crust. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -329,6 +519,25 @@
               "beckn:shortDesc": "Double layer of mozzarella cheese",
               "beckn:longDesc": "Double layer of mozzarella cheese. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -359,6 +568,25 @@
               "beckn:shortDesc": "Fresh mushrooms with herbs",
               "beckn:longDesc": "Fresh mushrooms with herbs. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -388,6 +616,25 @@
               "beckn:shortDesc": "Fresh onions and capsicum",
               "beckn:longDesc": "Fresh onions and capsicum. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -417,6 +664,25 @@
               "beckn:shortDesc": "Sweet corn with mozzarella",
               "beckn:longDesc": "Sweet corn with mozzarella. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -446,6 +712,25 @@
               "beckn:shortDesc": "Black olives with spicy jalapenos",
               "beckn:longDesc": "Black olives with spicy jalapenos. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -475,6 +760,25 @@
               "beckn:shortDesc": "Assorted fresh vegetables",
               "beckn:longDesc": "Assorted fresh vegetables. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -505,6 +809,25 @@
               "beckn:shortDesc": "Loaded with multiple chicken toppings",
               "beckn:longDesc": "Loaded with multiple chicken toppings. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -534,6 +857,25 @@
               "beckn:shortDesc": "Golden chicken with capsicum",
               "beckn:longDesc": "Golden chicken with capsicum. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -563,6 +905,25 @@
               "beckn:shortDesc": "Spicy chicken with vegetables",
               "beckn:longDesc": "Spicy chicken with vegetables. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -592,6 +953,25 @@
               "beckn:shortDesc": "Loaded with chicken, pepperoni, and more",
               "beckn:longDesc": "Loaded with chicken, pepperoni, and more. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -621,6 +1001,25 @@
               "beckn:shortDesc": "Tandoori spiced paneer cubes",
               "beckn:longDesc": "Tandoori spiced paneer cubes. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -650,6 +1049,25 @@
               "beckn:shortDesc": "Garden fresh vegetables",
               "beckn:longDesc": "Garden fresh vegetables. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -680,6 +1098,25 @@
               "beckn:shortDesc": "Spiced paneer with chili flakes",
               "beckn:longDesc": "Spiced paneer with chili flakes. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -709,6 +1146,25 @@
               "beckn:shortDesc": "Perfect for vegetable enthusiasts",
               "beckn:longDesc": "Perfect for vegetable enthusiasts. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -738,6 +1194,25 @@
               "beckn:shortDesc": "Traditional vegetable pizza",
               "beckn:longDesc": "Traditional vegetable pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -767,6 +1242,25 @@
               "beckn:shortDesc": "Premium chicken toppings",
               "beckn:longDesc": "Premium chicken toppings. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -797,6 +1291,25 @@
               "beckn:shortDesc": "Loaded with multiple meats",
               "beckn:longDesc": "Loaded with multiple meats. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -827,6 +1340,25 @@
               "beckn:shortDesc": "BBQ chicken with special sauce",
               "beckn:longDesc": "BBQ chicken with special sauce. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -856,6 +1388,25 @@
               "beckn:shortDesc": "Chicken and pepperoni combo",
               "beckn:longDesc": "Chicken and pepperoni combo. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -885,6 +1436,25 @@
               "beckn:shortDesc": "Supreme vegetable combination",
               "beckn:longDesc": "Supreme vegetable combination. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -914,6 +1484,25 @@
               "beckn:shortDesc": "Butter paneer with makhani sauce",
               "beckn:longDesc": "Butter paneer with makhani sauce. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -944,6 +1533,25 @@
               "beckn:shortDesc": "Spiced minced chicken",
               "beckn:longDesc": "Spiced minced chicken. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -974,6 +1582,25 @@
               "beckn:shortDesc": "Deluxe vegetable toppings",
               "beckn:longDesc": "Deluxe vegetable toppings. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1004,6 +1631,25 @@
               "beckn:shortDesc": "Deluxe chicken toppings",
               "beckn:longDesc": "Deluxe chicken toppings. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1033,6 +1679,25 @@
               "beckn:shortDesc": "Special vegetable combination",
               "beckn:longDesc": "Special vegetable combination. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1062,6 +1727,25 @@
               "beckn:shortDesc": "Special chicken combination",
               "beckn:longDesc": "Special chicken combination. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1092,6 +1776,25 @@
               "beckn:shortDesc": "Classic vegetable pizza",
               "beckn:longDesc": "Classic vegetable pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1121,6 +1824,25 @@
               "beckn:shortDesc": "Classic chicken pizza",
               "beckn:longDesc": "Classic chicken pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1150,6 +1872,25 @@
               "beckn:shortDesc": "Premium vegetable selection",
               "beckn:longDesc": "Premium vegetable selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1180,6 +1921,25 @@
               "beckn:shortDesc": "Premium chicken selection",
               "beckn:longDesc": "Premium chicken selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1209,6 +1969,25 @@
               "beckn:shortDesc": "Signature vegetable blend",
               "beckn:longDesc": "Signature vegetable blend. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1238,6 +2017,25 @@
               "beckn:shortDesc": "Signature chicken blend",
               "beckn:longDesc": "Signature chicken blend. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1267,6 +2065,25 @@
               "beckn:shortDesc": "Fusion of vegetables",
               "beckn:longDesc": "Fusion of vegetables. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1296,6 +2113,25 @@
               "beckn:shortDesc": "Fusion of chicken flavors",
               "beckn:longDesc": "Fusion of chicken flavors. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1325,6 +2161,25 @@
               "beckn:shortDesc": "Exotic vegetable combination",
               "beckn:longDesc": "Exotic vegetable combination. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1354,6 +2209,25 @@
               "beckn:shortDesc": "Exotic chicken combination",
               "beckn:longDesc": "Exotic chicken combination. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1383,6 +2257,25 @@
               "beckn:shortDesc": "Gourmet vegetable selection",
               "beckn:longDesc": "Gourmet vegetable selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1413,6 +2306,25 @@
               "beckn:shortDesc": "Gourmet chicken selection",
               "beckn:longDesc": "Gourmet chicken selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1442,6 +2354,25 @@
               "beckn:shortDesc": "Ultimate vegetable pizza",
               "beckn:longDesc": "Ultimate vegetable pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1472,6 +2403,25 @@
               "beckn:shortDesc": "Ultimate chicken pizza",
               "beckn:longDesc": "Ultimate chicken pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1502,6 +2452,25 @@
               "beckn:shortDesc": "Maximum vegetables",
               "beckn:longDesc": "Maximum vegetables. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1532,6 +2501,25 @@
               "beckn:shortDesc": "Maximum chicken",
               "beckn:longDesc": "Maximum chicken. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1561,6 +2549,25 @@
               "beckn:shortDesc": "Extra vegetable toppings",
               "beckn:longDesc": "Extra vegetable toppings. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1591,6 +2598,25 @@
               "beckn:shortDesc": "Extra chicken toppings",
               "beckn:longDesc": "Extra chicken toppings. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1621,6 +2647,25 @@
               "beckn:shortDesc": "Extra vegetable selection",
               "beckn:longDesc": "Extra vegetable selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1651,6 +2696,25 @@
               "beckn:shortDesc": "Extra chicken selection",
               "beckn:longDesc": "Extra chicken selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1681,6 +2745,25 @@
               "beckn:shortDesc": "Mega vegetable pizza",
               "beckn:longDesc": "Mega vegetable pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1711,6 +2794,25 @@
               "beckn:shortDesc": "Mega chicken pizza",
               "beckn:longDesc": "Mega chicken pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1741,6 +2843,25 @@
               "beckn:shortDesc": "Super vegetable combination",
               "beckn:longDesc": "Super vegetable combination. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1771,6 +2892,25 @@
               "beckn:shortDesc": "Super chicken combination",
               "beckn:longDesc": "Super chicken combination. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1801,6 +2941,25 @@
               "beckn:shortDesc": "Turbo vegetable pizza",
               "beckn:longDesc": "Turbo vegetable pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1830,6 +2989,25 @@
               "beckn:shortDesc": "Turbo chicken pizza",
               "beckn:longDesc": "Turbo chicken pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1860,6 +3038,25 @@
               "beckn:shortDesc": "Power vegetable selection",
               "beckn:longDesc": "Power vegetable selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1890,6 +3087,25 @@
               "beckn:shortDesc": "Power chicken selection",
               "beckn:longDesc": "Power chicken selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1919,6 +3135,25 @@
               "beckn:shortDesc": "Blast of vegetables",
               "beckn:longDesc": "Blast of vegetables. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1949,6 +3184,25 @@
               "beckn:shortDesc": "Blast of chicken",
               "beckn:longDesc": "Blast of chicken. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -1979,6 +3233,25 @@
               "beckn:shortDesc": "Crunchy vegetable pizza",
               "beckn:longDesc": "Crunchy vegetable pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2009,6 +3282,25 @@
               "beckn:shortDesc": "Crunchy chicken pizza",
               "beckn:longDesc": "Crunchy chicken pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2039,6 +3331,25 @@
               "beckn:shortDesc": "Zesty vegetable flavors",
               "beckn:longDesc": "Zesty vegetable flavors. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2068,6 +3379,25 @@
               "beckn:shortDesc": "Zesty chicken flavors",
               "beckn:longDesc": "Zesty chicken flavors. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2098,6 +3428,25 @@
               "beckn:shortDesc": "Spicy vegetable combination",
               "beckn:longDesc": "Spicy vegetable combination. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2127,6 +3476,25 @@
               "beckn:shortDesc": "Spicy chicken combination",
               "beckn:longDesc": "Spicy chicken combination. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2156,6 +3524,25 @@
               "beckn:shortDesc": "Fiery vegetable pizza",
               "beckn:longDesc": "Fiery vegetable pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2185,6 +3572,25 @@
               "beckn:shortDesc": "Fiery chicken pizza",
               "beckn:longDesc": "Fiery chicken pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2214,6 +3620,25 @@
               "beckn:shortDesc": "Storm of vegetables",
               "beckn:longDesc": "Storm of vegetables. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2244,6 +3669,25 @@
               "beckn:shortDesc": "Storm of chicken",
               "beckn:longDesc": "Storm of chicken. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2273,6 +3717,25 @@
               "beckn:shortDesc": "Thunder vegetable pizza",
               "beckn:longDesc": "Thunder vegetable pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2303,6 +3766,25 @@
               "beckn:shortDesc": "Thunder chicken pizza",
               "beckn:longDesc": "Thunder chicken pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2332,6 +3814,25 @@
               "beckn:shortDesc": "Lightning vegetable combo",
               "beckn:longDesc": "Lightning vegetable combo. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2362,6 +3863,25 @@
               "beckn:shortDesc": "Lightning chicken combo",
               "beckn:longDesc": "Lightning chicken combo. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2392,6 +3912,25 @@
               "beckn:shortDesc": "Rocket vegetable pizza",
               "beckn:longDesc": "Rocket vegetable pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2422,6 +3961,25 @@
               "beckn:shortDesc": "Rocket chicken pizza",
               "beckn:longDesc": "Rocket chicken pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2451,6 +4009,25 @@
               "beckn:shortDesc": "Star vegetable selection",
               "beckn:longDesc": "Star vegetable selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2481,6 +4058,25 @@
               "beckn:shortDesc": "Star chicken selection",
               "beckn:longDesc": "Star chicken selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2511,6 +4107,25 @@
               "beckn:shortDesc": "Galaxy of vegetables",
               "beckn:longDesc": "Galaxy of vegetables. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2540,6 +4155,25 @@
               "beckn:shortDesc": "Galaxy of chicken",
               "beckn:longDesc": "Galaxy of chicken. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2569,6 +4203,25 @@
               "beckn:shortDesc": "Universe of vegetables",
               "beckn:longDesc": "Universe of vegetables. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2598,6 +4251,25 @@
               "beckn:shortDesc": "Universe of chicken",
               "beckn:longDesc": "Universe of chicken. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2628,6 +4300,25 @@
               "beckn:shortDesc": "Cosmic vegetable pizza",
               "beckn:longDesc": "Cosmic vegetable pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2657,6 +4348,25 @@
               "beckn:shortDesc": "Cosmic chicken pizza",
               "beckn:longDesc": "Cosmic chicken pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2687,6 +4397,25 @@
               "beckn:shortDesc": "Infinite vegetables",
               "beckn:longDesc": "Infinite vegetables. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2717,6 +4446,25 @@
               "beckn:shortDesc": "Infinite chicken",
               "beckn:longDesc": "Infinite chicken. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2747,6 +4495,25 @@
               "beckn:shortDesc": "Eternal vegetable selection",
               "beckn:longDesc": "Eternal vegetable selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2777,6 +4544,25 @@
               "beckn:shortDesc": "Eternal chicken selection",
               "beckn:longDesc": "Eternal chicken selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2807,6 +4593,25 @@
               "beckn:shortDesc": "Legendary vegetable pizza",
               "beckn:longDesc": "Legendary vegetable pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2836,6 +4641,25 @@
               "beckn:shortDesc": "Legendary chicken pizza",
               "beckn:longDesc": "Legendary chicken pizza. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2866,6 +4690,25 @@
               "beckn:shortDesc": "Mythical vegetable combo",
               "beckn:longDesc": "Mythical vegetable combo. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2895,6 +4738,25 @@
               "beckn:shortDesc": "Mythical chicken combo",
               "beckn:longDesc": "Mythical chicken combo. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2924,6 +4786,25 @@
               "beckn:shortDesc": "Epic vegetable selection",
               "beckn:longDesc": "Epic vegetable selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {
@@ -2954,6 +4835,25 @@
               "beckn:shortDesc": "Epic chicken selection",
               "beckn:longDesc": "Epic chicken selection. Made with premium ingredients and authentic flavors."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Pizza Hut, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "pizza-hut-store",
               "beckn:descriptor": {

@@ -36,6 +36,25 @@
               "beckn:shortDesc": "Premium quality basmati rice",
               "beckn:longDesc": "High-quality basmati rice sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -101,6 +120,25 @@
               "beckn:shortDesc": "Premium quality jasmine rice",
               "beckn:longDesc": "High-quality jasmine rice sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -166,6 +204,25 @@
               "beckn:shortDesc": "Premium quality brown rice",
               "beckn:longDesc": "High-quality brown rice sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -255,6 +312,25 @@
               "beckn:shortDesc": "Premium quality sona masuri rice",
               "beckn:longDesc": "High-quality sona masuri rice sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -320,6 +396,25 @@
               "beckn:shortDesc": "Premium quality ponni rice",
               "beckn:longDesc": "High-quality ponni rice sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -401,6 +496,25 @@
               "beckn:shortDesc": "Premium quality red rice rice",
               "beckn:longDesc": "High-quality red rice rice sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -490,6 +604,25 @@
               "beckn:shortDesc": "Premium quality steamed rice",
               "beckn:longDesc": "High-quality steamed rice sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -579,6 +712,25 @@
               "beckn:shortDesc": "Premium quality parboiled rice",
               "beckn:longDesc": "High-quality parboiled rice sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -660,6 +812,25 @@
               "beckn:shortDesc": "Premium quality organic basmati rice",
               "beckn:longDesc": "High-quality organic basmati rice sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -725,6 +896,25 @@
               "beckn:shortDesc": "Premium quality premium basmati rice",
               "beckn:longDesc": "High-quality premium basmati rice sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -806,6 +996,25 @@
               "beckn:shortDesc": "Premium quality toor dal",
               "beckn:longDesc": "High-quality toor dal sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -895,6 +1104,25 @@
               "beckn:shortDesc": "Premium quality moong dal",
               "beckn:longDesc": "High-quality moong dal sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -984,6 +1212,25 @@
               "beckn:shortDesc": "Premium quality urad dal",
               "beckn:longDesc": "High-quality urad dal sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1065,6 +1312,25 @@
               "beckn:shortDesc": "Premium quality chana dal",
               "beckn:longDesc": "High-quality chana dal sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1130,6 +1396,25 @@
               "beckn:shortDesc": "Premium quality masoor dal",
               "beckn:longDesc": "High-quality masoor dal sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1203,6 +1488,25 @@
               "beckn:shortDesc": "Premium quality rajma dal",
               "beckn:longDesc": "High-quality rajma dal sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1276,6 +1580,25 @@
               "beckn:shortDesc": "Premium quality moth dal",
               "beckn:longDesc": "High-quality moth dal sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1341,6 +1664,25 @@
               "beckn:shortDesc": "Premium quality black gram dal",
               "beckn:longDesc": "High-quality black gram dal sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1422,6 +1764,25 @@
               "beckn:shortDesc": "Premium quality green gram dal",
               "beckn:longDesc": "High-quality green gram dal sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1487,6 +1848,25 @@
               "beckn:shortDesc": "Premium quality split urad dal",
               "beckn:longDesc": "High-quality split urad dal sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1560,6 +1940,25 @@
               "beckn:shortDesc": "Premium quality wheat flour",
               "beckn:longDesc": "High-quality wheat flour sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1633,6 +2032,25 @@
               "beckn:shortDesc": "Premium quality rice flour",
               "beckn:longDesc": "High-quality rice flour sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1722,6 +2140,25 @@
               "beckn:shortDesc": "Premium quality besan flour",
               "beckn:longDesc": "High-quality besan flour sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1787,6 +2224,25 @@
               "beckn:shortDesc": "Premium quality ragi flour",
               "beckn:longDesc": "High-quality ragi flour sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1868,6 +2324,25 @@
               "beckn:shortDesc": "Premium quality corn flour",
               "beckn:longDesc": "High-quality corn flour sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -1933,6 +2408,25 @@
               "beckn:shortDesc": "Premium quality multigrain flour",
               "beckn:longDesc": "High-quality multigrain flour sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2006,6 +2500,25 @@
               "beckn:shortDesc": "Premium quality maida flour",
               "beckn:longDesc": "High-quality maida flour sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2071,6 +2584,25 @@
               "beckn:shortDesc": "Premium quality atta flour",
               "beckn:longDesc": "High-quality atta flour sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2152,6 +2684,25 @@
               "beckn:shortDesc": "Premium quality whole wheat flour",
               "beckn:longDesc": "High-quality whole wheat flour sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2233,6 +2784,25 @@
               "beckn:shortDesc": "Premium quality organic wheat flour",
               "beckn:longDesc": "High-quality organic wheat flour sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2306,6 +2876,25 @@
               "beckn:shortDesc": "Premium quality turmeric spices",
               "beckn:longDesc": "High-quality turmeric spices sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2387,6 +2976,25 @@
               "beckn:shortDesc": "Premium quality red chili spices",
               "beckn:longDesc": "High-quality red chili spices sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2476,6 +3084,25 @@
               "beckn:shortDesc": "Premium quality coriander spices",
               "beckn:longDesc": "High-quality coriander spices sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2557,6 +3184,25 @@
               "beckn:shortDesc": "Premium quality cumin spices",
               "beckn:longDesc": "High-quality cumin spices sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2622,6 +3268,25 @@
               "beckn:shortDesc": "Premium quality garam masala spices",
               "beckn:longDesc": "High-quality garam masala spices sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2687,6 +3352,25 @@
               "beckn:shortDesc": "Premium quality black pepper spices",
               "beckn:longDesc": "High-quality black pepper spices sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2760,6 +3444,25 @@
               "beckn:shortDesc": "Premium quality cardamom spices",
               "beckn:longDesc": "High-quality cardamom spices sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2841,6 +3544,25 @@
               "beckn:shortDesc": "Premium quality cinnamon spices",
               "beckn:longDesc": "High-quality cinnamon spices sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -2930,6 +3652,25 @@
               "beckn:shortDesc": "Premium quality cloves spices",
               "beckn:longDesc": "High-quality cloves spices sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3011,6 +3752,25 @@
               "beckn:shortDesc": "Premium quality fenugreek spices",
               "beckn:longDesc": "High-quality fenugreek spices sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3076,6 +3836,25 @@
               "beckn:shortDesc": "Premium quality sunflower oil",
               "beckn:longDesc": "High-quality sunflower oil sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3149,6 +3928,25 @@
               "beckn:shortDesc": "Premium quality mustard oil",
               "beckn:longDesc": "High-quality mustard oil sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3238,6 +4036,25 @@
               "beckn:shortDesc": "Premium quality groundnut oil",
               "beckn:longDesc": "High-quality groundnut oil sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3327,6 +4144,25 @@
               "beckn:shortDesc": "Premium quality coconut oil",
               "beckn:longDesc": "High-quality coconut oil sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3400,6 +4236,25 @@
               "beckn:shortDesc": "Premium quality olive oil",
               "beckn:longDesc": "High-quality olive oil sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3465,6 +4320,25 @@
               "beckn:shortDesc": "Premium quality sesame oil",
               "beckn:longDesc": "High-quality sesame oil sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3546,6 +4420,25 @@
               "beckn:shortDesc": "Premium quality rice bran oil",
               "beckn:longDesc": "High-quality rice bran oil sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3619,6 +4512,25 @@
               "beckn:shortDesc": "Premium quality soybean oil",
               "beckn:longDesc": "High-quality soybean oil sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3708,6 +4620,25 @@
               "beckn:shortDesc": "Premium quality palm oil",
               "beckn:longDesc": "High-quality palm oil sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3797,6 +4728,25 @@
               "beckn:shortDesc": "Premium quality canola oil",
               "beckn:longDesc": "High-quality canola oil sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3886,6 +4836,25 @@
               "beckn:shortDesc": "Premium quality white sugar",
               "beckn:longDesc": "High-quality white sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -3951,6 +4920,25 @@
               "beckn:shortDesc": "Premium quality brown sugar",
               "beckn:longDesc": "High-quality brown sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4040,6 +5028,25 @@
               "beckn:shortDesc": "Premium quality jaggery sugar",
               "beckn:longDesc": "High-quality jaggery sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4113,6 +5120,25 @@
               "beckn:shortDesc": "Premium quality powdered sugar",
               "beckn:longDesc": "High-quality powdered sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4186,6 +5212,25 @@
               "beckn:shortDesc": "Premium quality crystal sugar",
               "beckn:longDesc": "High-quality crystal sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4251,6 +5296,25 @@
               "beckn:shortDesc": "Premium quality organic sugar",
               "beckn:longDesc": "High-quality organic sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4340,6 +5404,25 @@
               "beckn:shortDesc": "Premium quality iodized salt",
               "beckn:longDesc": "High-quality iodized salt sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4405,6 +5488,25 @@
               "beckn:shortDesc": "Premium quality rock salt",
               "beckn:longDesc": "High-quality rock salt sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4478,6 +5580,25 @@
               "beckn:shortDesc": "Premium quality sea salt",
               "beckn:longDesc": "High-quality sea salt sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4551,6 +5672,25 @@
               "beckn:shortDesc": "Premium quality black salt",
               "beckn:longDesc": "High-quality black salt sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4624,6 +5764,25 @@
               "beckn:shortDesc": "Premium quality himalayan pink salt",
               "beckn:longDesc": "High-quality himalayan pink salt sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4697,6 +5856,25 @@
               "beckn:shortDesc": "Premium quality green tea",
               "beckn:longDesc": "High-quality green tea sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4778,6 +5956,25 @@
               "beckn:shortDesc": "Premium quality black tea",
               "beckn:longDesc": "High-quality black tea sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4851,6 +6048,25 @@
               "beckn:shortDesc": "Premium quality assam tea",
               "beckn:longDesc": "High-quality assam tea sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4924,6 +6140,25 @@
               "beckn:shortDesc": "Premium quality darjeeling tea",
               "beckn:longDesc": "High-quality darjeeling tea sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -4989,6 +6224,25 @@
               "beckn:shortDesc": "Premium quality earl grey tea",
               "beckn:longDesc": "High-quality earl grey tea sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5054,6 +6308,25 @@
               "beckn:shortDesc": "Premium quality masala tea",
               "beckn:longDesc": "High-quality masala tea sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5143,6 +6416,25 @@
               "beckn:shortDesc": "Premium quality lemon tea",
               "beckn:longDesc": "High-quality lemon tea sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5208,6 +6500,25 @@
               "beckn:shortDesc": "Premium quality ginger tea",
               "beckn:longDesc": "High-quality ginger tea sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5281,6 +6592,25 @@
               "beckn:shortDesc": "Premium quality tulsi tea",
               "beckn:longDesc": "High-quality tulsi tea sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5370,6 +6700,25 @@
               "beckn:shortDesc": "Premium quality organic tea",
               "beckn:longDesc": "High-quality organic tea sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5451,6 +6800,25 @@
               "beckn:shortDesc": "Premium quality instant coffee",
               "beckn:longDesc": "High-quality instant coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5540,6 +6908,25 @@
               "beckn:shortDesc": "Premium quality filter coffee",
               "beckn:longDesc": "High-quality filter coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5613,6 +7000,25 @@
               "beckn:shortDesc": "Premium quality arabica coffee",
               "beckn:longDesc": "High-quality arabica coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5678,6 +7084,25 @@
               "beckn:shortDesc": "Premium quality robusta coffee",
               "beckn:longDesc": "High-quality robusta coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5767,6 +7192,25 @@
               "beckn:shortDesc": "Premium quality decaf coffee",
               "beckn:longDesc": "High-quality decaf coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5832,6 +7276,25 @@
               "beckn:shortDesc": "Premium quality espresso coffee",
               "beckn:longDesc": "High-quality espresso coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5905,6 +7368,25 @@
               "beckn:shortDesc": "Premium quality glucose biscuits",
               "beckn:longDesc": "High-quality glucose biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -5994,6 +7476,25 @@
               "beckn:shortDesc": "Premium quality cream biscuits",
               "beckn:longDesc": "High-quality cream biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6075,6 +7576,25 @@
               "beckn:shortDesc": "Premium quality digestive biscuits",
               "beckn:longDesc": "High-quality digestive biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6164,6 +7684,25 @@
               "beckn:shortDesc": "Premium quality chocolate biscuits",
               "beckn:longDesc": "High-quality chocolate biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6253,6 +7792,25 @@
               "beckn:shortDesc": "Premium quality oreo biscuits",
               "beckn:longDesc": "High-quality oreo biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6318,6 +7876,25 @@
               "beckn:shortDesc": "Premium quality coconut biscuits",
               "beckn:longDesc": "High-quality coconut biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6391,6 +7968,25 @@
               "beckn:shortDesc": "Premium quality butter biscuits",
               "beckn:longDesc": "High-quality butter biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6464,6 +8060,25 @@
               "beckn:shortDesc": "Premium quality marie biscuits",
               "beckn:longDesc": "High-quality marie biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6545,6 +8160,25 @@
               "beckn:shortDesc": "Premium quality crackers biscuits",
               "beckn:longDesc": "High-quality crackers biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6634,6 +8268,25 @@
               "beckn:shortDesc": "Premium quality cookies biscuits",
               "beckn:longDesc": "High-quality cookies biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6707,6 +8360,25 @@
               "beckn:shortDesc": "Premium quality chips snacks",
               "beckn:longDesc": "High-quality chips snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6772,6 +8444,25 @@
               "beckn:shortDesc": "Premium quality namkeen snacks",
               "beckn:longDesc": "High-quality namkeen snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6861,6 +8552,25 @@
               "beckn:shortDesc": "Premium quality mixture snacks",
               "beckn:longDesc": "High-quality mixture snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -6942,6 +8652,25 @@
               "beckn:shortDesc": "Premium quality kurkure snacks",
               "beckn:longDesc": "High-quality kurkure snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -7015,6 +8744,25 @@
               "beckn:shortDesc": "Premium quality lays snacks",
               "beckn:longDesc": "High-quality lays snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -7104,6 +8852,25 @@
               "beckn:shortDesc": "Premium quality haldiram snacks",
               "beckn:longDesc": "High-quality haldiram snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -7177,6 +8944,25 @@
               "beckn:shortDesc": "Premium quality bhujia snacks",
               "beckn:longDesc": "High-quality bhujia snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -7242,6 +9028,25 @@
               "beckn:shortDesc": "Premium quality sev snacks",
               "beckn:longDesc": "High-quality sev snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -7331,6 +9136,25 @@
               "beckn:shortDesc": "Premium quality chakli snacks",
               "beckn:longDesc": "High-quality chakli snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -7412,6 +9236,25 @@
               "beckn:shortDesc": "Premium quality murukku snacks",
               "beckn:longDesc": "High-quality murukku snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -7501,6 +9344,25 @@
               "beckn:shortDesc": "Premium quality green gram pulses",
               "beckn:longDesc": "High-quality green gram pulses sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -7582,6 +9444,25 @@
               "beckn:shortDesc": "Premium quality black gram pulses",
               "beckn:longDesc": "High-quality black gram pulses sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {
@@ -7671,6 +9552,25 @@
               "beckn:shortDesc": "Premium quality horse gram pulses",
               "beckn:longDesc": "High-quality horse gram pulses sourced from trusted suppliers. Perfect for everyday cooking and household needs."
             },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Fresh Grocery Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
             "beckn:provider": {
               "beckn:id": "fresh-grocery-store",
               "beckn:descriptor": {

@@ -6,10 +6,8 @@
     "timestamp": "2025-12-02T15:03:05Z",
     "transaction_id": "pizza-txn-large-001",
     "message_id": "pizza-msg-large-001",
-    "bap_id": "pizza-app.example.com",
-    "bap_uri": "https://pizza-app.example.com/bap",
-    "bpp_id": "pizza-hut-bpp.example.com",
-    "bpp_uri": "https://pizza-hut-bpp.example.com/bpp",
+    "bpp_id": "sandbox-retail-np2.com",
+    "bpp_uri": "https://sandbox-retail-np2.com/bpp",
     "ttl": "PT30S"
   },
   "message": {

@@ -50,6 +50,11 @@
                 "type": "manufacturer",
                 "name": "Premium Rice Mills Pvt Ltd"
               },
+              "netQuantityOrMeasureInPackage": {
+                "unitText": "Kilogram",
+                "unitCode": "KGM",
+                "unitQuantity": 1
+              },
               "manufacturePackingImportDate": {
                 "month": 1,
                 "year": 2025
@@ -89,6 +94,11 @@
               "manufacturerOrPacker": {
                 "type": "manufacturer",
                 "name": "Organic Foods India Ltd"
+              },
+              "netQuantityOrMeasureInPackage": {
+                "unitText": "Gram",
+                "unitCode": "GRM",
+                "unitQuantity": 500
               },
               "manufacturePackingImportDate": {
                 "month": 12,

@@ -2,12 +2,12 @@
   "context": {
     "version": "2.0.0",
     "action": "on_select",
-    "domain": "beckn.one:deg:retail:*",
+    "domain": "beckn.one:retail",
     "timestamp": "2025-01-27T18:15:05Z",
-    "message_id": "pizza-select-msg-001",
-    "transaction_id": "pizza-txn-001-2025-01-27",
-    "bap_id": "pizza-app.example.com",
-    "bap_uri": "https://pizza-app.example.com/bap",
+    "message_id": "5180167b-bc2b-45b5-acc7-d97032abecf7",
+    "transaction_id": "ac3fb8fb-82ad-4e75-9bc1-2b9e453c2293",
+    "bpp_id": "sandbox-retail-np2.com",
+    "bpp_uri": "https://sandbox-retail-np2.com/bpp",
     "ttl": "PT30S"
   },
   "message": {
@@ -176,4 +176,3 @@
     }
   }
 }
-

@@ -2,11 +2,11 @@
   "context": {
     "version": "2.0.0",
     "action": "init",
-    "domain": "beckn.one:deg:retail:*",
-    "bpp_id": "fresh-grocery-bpp.example.com",
-    "bpp_uri": "https://fresh-grocery-bpp.example.com/bpp",
-    "transaction_id": "grocery-txn-001-2025-01-27",
-    "message_id": "grocery-init-msg-001",
+    "domain": "beckn.one:retail",
+    "bap_id": "sandbox-retail-np1.com",
+    "bap_uri": "https://sandbox-retail-np1.com/bap",
+    "transaction_id": "2cd192f6-ada6-4c61-b33a-3a31129d8e6a",
+    "message_id": "abedd504-c4ed-4fac-b32a-684ce03ace1c",
     "timestamp": "2025-01-27T10:20:00Z",
     "ttl": "PT30S"
   },
@@ -147,4 +147,3 @@
     }
   }
 }
-

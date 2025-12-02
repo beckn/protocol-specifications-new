@@ -2,12 +2,12 @@
   "context": {
     "version": "2.0.0",
     "action": "on_select",
-    "domain": "beckn.one:deg:retail:*",
+    "domain": "beckn.one:retail",
     "timestamp": "2025-01-27T10:15:05Z",
-    "message_id": "grocery-select-msg-001",
-    "transaction_id": "grocery-txn-001-2025-01-27",
-    "bap_id": "grocery-app.example.com",
-    "bap_uri": "https://grocery-app.example.com/bap",
+    "message_id": "76ff4524-f0b4-44e8-8488-c24a2956c976",
+    "transaction_id": "2cd192f6-ada6-4c61-b33a-3a31129d8e6a",
+    "bpp_id": "sandbox-retail-np1.com",
+    "bpp_uri": "https://sandbox-retail-np1.com/bpp",
     "ttl": "PT30S"
   },
   "message": {
@@ -36,4 +36,3 @@
     }
   }
 }
-

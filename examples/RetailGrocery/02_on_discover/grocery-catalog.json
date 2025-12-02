@@ -2,10 +2,10 @@
   "context": {
     "version": "2.0.0",
     "action": "on_discover",
-    "domain": "beckn.one:deg:retail:*",
+    "domain": "beckn.one:retail",
     "timestamp": "2025-01-27T10:00:05Z",
-    "transaction_id": "grocery-txn-001-2025-01-27",
-    "message_id": "grocery-msg-001-2025-01-27",
+    "transaction_id": "2cd192f6-ada6-4c61-b33a-3a31129d8e6a",
+    "message_id": "7e0121e3-7ee4-46f9-bc66-e8368943c681",
     "bpp_id": "sandbox-retail-np1.com",
     "bpp_uri": "https://sandbox-retail-np1.com/bpp",
     "ttl": "PT30S"
@@ -21,8 +21,8 @@
           "schema:name": "Fresh Grocery Store",
           "beckn:shortDesc": "Premium organic and fresh grocery products"
         },
-        "beckn:bppId": "fresh-grocery-bpp.example.com",
-        "beckn:bppUri": "https://fresh-grocery-bpp.example.com/bpp",
+        "beckn:bppId": "sandbox-retail-np1.com",
+        "beckn:bppUri": "https://sandbox-retail-np1.com/bpp",
         "beckn:validity": {
           "@type": "beckn:TimePeriod",
           "schema:startDate": "2025-01-27T00:00:00Z",
@@ -326,4 +326,3 @@
     ]
   }
 }
-

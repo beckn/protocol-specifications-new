@@ -2,10 +2,10 @@
   "context": {
     "version": "2.0.0",
     "action": "on_discover",
-    "domain": "beckn.one:deg:retail:*",
+    "domain": "beckn.one:retail",
     "timestamp": "2025-12-02T15:03:05Z",
-    "transaction_id": "pizza-txn-large-001",
-    "message_id": "pizza-msg-large-001",
+    "transaction_id": "ac3fb8fb-82ad-4e75-9bc1-2b9e453c2293",
+    "message_id": "f91551dd-e5ac-4aa0-a602-09f610703fcc",
     "bpp_id": "sandbox-retail-np2.com",
     "bpp_uri": "https://sandbox-retail-np2.com/bpp",
     "ttl": "PT30S"
@@ -21,8 +21,8 @@
           "schema:name": "Pizza Hut",
           "beckn:shortDesc": "Fresh, hot pizzas delivered to your door"
         },
-        "beckn:bppId": "pizza-hut-bpp.example.com",
-        "beckn:bppUri": "https://pizza-hut-bpp.example.com/bpp",
+        "beckn:bppId": "sandbox-retail-np2.com",
+        "beckn:bppUri": "https://sandbox-retail-np2.com/bpp",
         "beckn:items": [
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",

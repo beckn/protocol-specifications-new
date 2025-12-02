@@ -2,11 +2,11 @@
   "context": {
     "version": "2.0.0",
     "action": "init",
-    "domain": "beckn.one:deg:retail:*",
-    "bpp_id": "pizza-hut-bpp.example.com",
-    "bpp_uri": "https://pizza-hut-bpp.example.com/bpp",
-    "transaction_id": "pizza-txn-001-2025-01-27",
-    "message_id": "pizza-init-msg-001",
+    "domain": "beckn.one:retail",
+    "bap_id": "sandbox-retail-np2.com",
+    "bap_uri": "https://sandbox-retail-np2.com/bap",
+    "transaction_id": "ac3fb8fb-82ad-4e75-9bc1-2b9e453c2293",
+    "message_id": "eb4204fe-b97d-4d0d-ba21-10a8d4bc3d08",
     "timestamp": "2025-01-27T18:20:00Z",
     "ttl": "PT30S"
   },
@@ -147,4 +147,3 @@
     }
   }
 }
-

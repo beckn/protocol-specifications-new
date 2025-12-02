@@ -1,0 +1,61 @@
+{
+  "context": {
+    "version": "2.0.0",
+    "action": "on_discover",
+    "domain": "beckn.one:deg:retail:*",
+    "timestamp": "2025-01-27T18:00:05Z",
+    "transaction_id": "pizza-txn-001-2025-01-27",
+    "message_id": "pizza-msg-001-2025-01-27",
+    "bap_id": "pizza-app.example.com",
+    "bap_uri": "https://pizza-app.example.com/bap",
+    "bpp_id": "pizza-hut-bpp.example.com",
+    "bpp_uri": "https://pizza-hut-bpp.example.com/bpp",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "catalogs": [
+      {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+        "@type": "beckn:Catalog",
+        "beckn:id": "catalog-pizza-001",
+        "beckn:descriptor": {
+          "@type": "beckn:Descriptor",
+          "schema:name": "Pizza Hut",
+          "beckn:shortDesc": "Fresh, hot pizzas delivered to your door"
+        },
+        "beckn:bppId": "pizza-hut-bpp.example.com",
+        "beckn:bppUri": "https://pizza-hut-bpp.example.com/bpp",
+        "beckn:items": [
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Item",
+            "beckn:id": "margherita-pizza-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Margherita Pizza",
+              "beckn:shortDesc": "Classic Italian pizza with fresh tomatoes, mozzarella, and basil",
+              "beckn:longDesc": "A timeless classic featuring fresh tomato sauce, premium mozzarella cheese, and aromatic basil leaves. Perfect for vegetarians."
+            },
+            "beckn:provider": {
+              "beckn:id": "pizza-hut-store",
+              "beckn:descriptor": {
+                "@type": "beckn:Descriptor",
+                "schema:name": "Pizza Hut"
+              }
+            },
+            "beckn:itemAttributes": {
+              "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/PizzaItem/v1/context.jsonld",
+              "@type": "PizzaItem",
+              "category": "PIZZA",
+              "dietaryClassification": "veg",
+              "crust": "New Hand Tossed",
+              "size": "Medium",
+              "toppings": ["Grilled Mushrooms"]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+

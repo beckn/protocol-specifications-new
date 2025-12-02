@@ -1,0 +1,39 @@
+{
+  "context": {
+    "version": "2.0.0",
+    "action": "select",
+    "domain": "beckn.one:deg:retail:*",
+    "timestamp": "2025-01-27T10:15:00Z",
+    "message_id": "grocery-select-msg-001",
+    "transaction_id": "grocery-txn-001-2025-01-27",
+    "bpp_id": "fresh-grocery-bpp.example.com",
+    "bpp_uri": "https://fresh-grocery-bpp.example.com/bpp",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+      "@type": "beckn:Order",
+      "beckn:id": "order-grocery-001",
+      "beckn:orderStatus": "CREATED",
+      "beckn:seller": "fresh-grocery-store",
+      "beckn:buyer": {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+        "@type": "beckn:Buyer",
+        "beckn:id": "user-grocery-123"
+      },
+      "beckn:orderItems": [
+        {
+          "beckn:lineId": "line-grocery-001",
+          "beckn:orderedItem": "basmati-rice-1kg-001",
+          "beckn:quantity": {
+            "unitText": "Kilogram",
+            "unitCode": "KGM",
+            "unitQuantity": 2
+          }
+        }
+      ]
+    }
+  }
+}
+

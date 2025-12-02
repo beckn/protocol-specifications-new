@@ -8,10 +8,7 @@
     "transaction_id": "grocery-txn-001-2025-01-27",
     "message_id": "grocery-msg-001-2025-01-27",
     "timestamp": "2025-01-27T10:00:00Z",
-    "ttl": "PT30S",
-    "schema_context": [
-      "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/GroceryItem/v1/context.jsonld"
-    ]
+    "ttl": "PT30S"
   },
   "message": {
     "spatial": [

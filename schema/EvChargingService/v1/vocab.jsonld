@@ -1,7 +1,7 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/EvChargingService/v1/#",
+    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/EvChargingService/v1/#",
     "schema": "https://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -20,7 +20,7 @@
       "rdfs:label": "Connector type",
       "rdfs:comment": "Physical connector type supported by the EVSE/charger (e.g., CCS2, Type2, CHAdeMO, GB/T).",
       "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:ConnectorType"
     },
     {
       "@id": "beckn:maxPowerKW",
@@ -66,9 +66,9 @@
       "@id": "beckn:amenityFeature",
       "@type": "rdf:Property",
       "rdfs:label": "Amenity feature",
-      "rdfs:comment": "Nearby amenities such as Restaurant, Restroom, Wi-Fi.",
+      "rdfs:comment": "Nearby amenities such as Restaurant, Restroom, Wi-Fi, Parking.",
       "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:AmenityFeature"
     },
     {
       "@id": "beckn:ocppId",
@@ -100,7 +100,7 @@
       "rdfs:label": "Parking type",
       "rdfs:comment": "Type of parking facility (e.g., Mall, Office, FuelStation).",
       "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:ParkingType"
     },
     {
       "@id": "beckn:connectorId",
@@ -116,7 +116,7 @@
       "rdfs:label": "Power type",
       "rdfs:comment": "Electrical power type (AC_SINGLE_PHASE, AC_3_PHASE, DC).",
       "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:PowerType"
     },
     {
       "@id": "beckn:connectorFormat",
@@ -124,7 +124,7 @@
       "rdfs:label": "Connector format",
       "rdfs:comment": "Physical presentation of the connector (SOCKET or CABLE).",
       "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:ConnectorFormat"
     },
     {
       "@id": "beckn:chargingSpeed",
@@ -132,7 +132,7 @@
       "rdfs:label": "Charging speed band",
       "rdfs:comment": "Marketing speed band (SLOW, NORMAL, FAST, ULTRAFAST).",
       "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:ChargingSpeed"
     },
     {
       "@id": "beckn:stationStatus",
@@ -140,7 +140,345 @@
       "rdfs:label": "Station status",
       "rdfs:comment": "Real-time availability status of the station or connector.",
       "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:StationStatus"
+    },
+
+    {
+      "@id": "beckn:AmenityFeature",
+      "@type": "schema:Enumeration",
+      "schema:name": "Amenity Feature",
+      "rdfs:comment": "Enumeration of amenity features available near the charging service.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:AmenityRestaurant" },
+        { "@id": "beckn:AmenityRestroom" },
+        { "@id": "beckn:AmenityWiFi" },
+        { "@id": "beckn:AmenityParking" }
+      ]
+    },
+    {
+      "@id": "beckn:AmenityRestaurant",
+      "@type": [
+        "beckn:AmenityFeature",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RESTAURANT",
+      "schema:identifier": "RESTAURANT",
+      "schema:alternateName": "Restaurant"
+    },
+    {
+      "@id": "beckn:AmenityRestroom",
+      "@type": [
+        "beckn:AmenityFeature",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RESTROOM",
+      "schema:identifier": "RESTROOM",
+      "schema:alternateName": "Restroom"
+    },
+    {
+      "@id": "beckn:AmenityWiFi",
+      "@type": [
+        "beckn:AmenityFeature",
+        "schema:Enumeration"
+      ],
+      "schema:name": "WI-FI",
+      "schema:identifier": "WI-FI",
+      "schema:alternateName": ["Wi-Fi", "WiFi"]
+    },
+    {
+      "@id": "beckn:AmenityParking",
+      "@type": [
+        "beckn:AmenityFeature",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PARKING",
+      "schema:identifier": "PARKING",
+      "schema:alternateName": "Parking"
+    },
+    {
+      "@id": "beckn:ConnectorType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Connector Type",
+      "rdfs:comment": "Enumeration of electric vehicle connector interface types.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ConnectorTypeCCS2" },
+        { "@id": "beckn:ConnectorTypeType2" },
+        { "@id": "beckn:ConnectorTypeCHAdeMO" },
+        { "@id": "beckn:ConnectorTypeGBT" }
+      ]
+    },
+    {
+      "@id": "beckn:ConnectorTypeCCS2",
+      "@type": [
+        "beckn:ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CCS2",
+      "schema:identifier": "CCS2"
+    },
+    {
+      "@id": "beckn:ConnectorTypeType2",
+      "@type": [
+        "beckn:ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Type2",
+      "schema:identifier": "Type2"
+    },
+    {
+      "@id": "beckn:ConnectorTypeCHAdeMO",
+      "@type": [
+        "beckn:ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CHAdeMO",
+      "schema:identifier": "CHAdeMO"
+    },
+    {
+      "@id": "beckn:ConnectorTypeGBT",
+      "@type": [
+        "beckn:ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "GB/T",
+      "schema:identifier": "GB_T",
+      "schema:alternateName": "GB-T"
+    },
+    {
+      "@id": "beckn:PowerType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Power Type",
+      "rdfs:comment": "Enumeration of supported electrical power types.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:PowerTypeACSinglePhase" },
+        { "@id": "beckn:PowerTypeAC3Phase" },
+        { "@id": "beckn:PowerTypeDC" }
+      ]
+    },
+    {
+      "@id": "beckn:PowerTypeACSinglePhase",
+      "@type": [
+        "beckn:PowerType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AC_SINGLE_PHASE",
+      "schema:identifier": "AC_SINGLE_PHASE"
+    },
+    {
+      "@id": "beckn:PowerTypeAC3Phase",
+      "@type": [
+        "beckn:PowerType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AC_3_PHASE",
+      "schema:identifier": "AC_3_PHASE",
+      "schema:alternateName": "AC_THREE_PHASE"
+    },
+    {
+      "@id": "beckn:PowerTypeDC",
+      "@type": [
+        "beckn:PowerType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DC",
+      "schema:identifier": "DC"
+    },
+    {
+      "@id": "beckn:ConnectorFormat",
+      "@type": "schema:Enumeration",
+      "schema:name": "Connector Format",
+      "rdfs:comment": "Enumeration of connector presentation formats.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ConnectorFormatSocket" },
+        { "@id": "beckn:ConnectorFormatCable" }
+      ]
+    },
+    {
+      "@id": "beckn:ConnectorFormatSocket",
+      "@type": [
+        "beckn:ConnectorFormat",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SOCKET",
+      "schema:identifier": "SOCKET"
+    },
+    {
+      "@id": "beckn:ConnectorFormatCable",
+      "@type": [
+        "beckn:ConnectorFormat",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CABLE",
+      "schema:identifier": "CABLE"
+    },
+    {
+      "@id": "beckn:ChargingSpeed",
+      "@type": "schema:Enumeration",
+      "schema:name": "Charging Speed",
+      "rdfs:comment": "Enumeration of marketing charging speed bands.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ChargingSpeedSlow" },
+        { "@id": "beckn:ChargingSpeedNormal" },
+        { "@id": "beckn:ChargingSpeedFast" },
+        { "@id": "beckn:ChargingSpeedUltraFast" }
+      ]
+    },
+    {
+      "@id": "beckn:ChargingSpeedSlow",
+      "@type": [
+        "beckn:ChargingSpeed",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SLOW",
+      "schema:identifier": "SLOW"
+    },
+    {
+      "@id": "beckn:ChargingSpeedNormal",
+      "@type": [
+        "beckn:ChargingSpeed",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NORMAL",
+      "schema:identifier": "NORMAL"
+    },
+    {
+      "@id": "beckn:ChargingSpeedFast",
+      "@type": [
+        "beckn:ChargingSpeed",
+        "schema:Enumeration"
+      ],
+      "schema:name": "FAST",
+      "schema:identifier": "FAST"
+    },
+    {
+      "@id": "beckn:ChargingSpeedUltraFast",
+      "@type": [
+        "beckn:ChargingSpeed",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ULTRAFAST",
+      "schema:identifier": "ULTRAFAST",
+      "schema:alternateName": "Ultra Fast"
+    },
+    {
+      "@id": "beckn:ParkingType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Parking Type",
+      "rdfs:comment": "Enumeration of parking facility types available at the charging location.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ParkingTypeOnStreet" },
+        { "@id": "beckn:ParkingTypeOffStreet" },
+        { "@id": "beckn:ParkingTypeBasement" },
+        { "@id": "beckn:ParkingTypeMall" },
+        { "@id": "beckn:ParkingTypeFuelStation" },
+        { "@id": "beckn:ParkingTypeOffice" },
+        { "@id": "beckn:ParkingTypeHotel" }
+      ]
+    },
+    {
+      "@id": "beckn:ParkingTypeOnStreet",
+      "@type": [
+        "beckn:ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OnStreet",
+      "schema:identifier": "OnStreet",
+      "schema:alternateName": "On Street"
+    },
+    {
+      "@id": "beckn:ParkingTypeOffStreet",
+      "@type": [
+        "beckn:ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OffStreet",
+      "schema:identifier": "OffStreet",
+      "schema:alternateName": "Off Street"
+    },
+    {
+      "@id": "beckn:ParkingTypeBasement",
+      "@type": [
+        "beckn:ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Basement",
+      "schema:identifier": "Basement"
+    },
+    {
+      "@id": "beckn:ParkingTypeMall",
+      "@type": [
+        "beckn:ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Mall",
+      "schema:identifier": "Mall"
+    },
+    {
+      "@id": "beckn:ParkingTypeFuelStation",
+      "@type": [
+        "beckn:ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "FuelStation",
+      "schema:identifier": "FuelStation",
+      "schema:alternateName": "Fuel Station"
+    },
+    {
+      "@id": "beckn:ParkingTypeOffice",
+      "@type": [
+        "beckn:ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Office",
+      "schema:identifier": "Office"
+    },
+    {
+      "@id": "beckn:ParkingTypeHotel",
+      "@type": [
+        "beckn:ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Hotel",
+      "schema:identifier": "Hotel"
+    },
+    {
+      "@id": "beckn:StationStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Station Status",
+      "rdfs:comment": "Enumeration of charging station availability statuses.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:StationStatusAvailable" },
+        { "@id": "beckn:StationStatusOccupied" },
+        { "@id": "beckn:StationStatusOutOfService" }
+      ]
+    },
+    {
+      "@id": "beckn:StationStatusAvailable",
+      "@type": [
+        "beckn:StationStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Available",
+      "schema:identifier": "Available"
+    },
+    {
+      "@id": "beckn:StationStatusOccupied",
+      "@type": [
+        "beckn:StationStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Occupied",
+      "schema:identifier": "Occupied"
+    },
+    {
+      "@id": "beckn:StationStatusOutOfService",
+      "@type": [
+        "beckn:StationStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OutOfService",
+      "schema:identifier": "OutOfService",
+      "schema:alternateName": "Out Of Service"
     }
   ]
 }

@@ -18,10 +18,19 @@
     "orderStatus": "schema:orderStatus",
     "lastUpdated": "schema:dateModified",
 
-    "sessionStatus": "beckn:sessionStatus",
-    "authorizationMode": "beckn:authorizationMode",
+    "sessionStatus": {
+      "@id": "beckn:sessionStatus",
+      "@type": "@id"
+    },
+    "authorizationMode": {
+      "@id": "beckn:authorizationMode",
+      "@type": "@id"
+    },
     "authorizationOtpHint": "beckn:authorizationOtpHint",
-    "connectorType": "beckn:connectorType",
+    "connectorType": {
+      "@id": "beckn:connectorType",
+      "@type": "@id"
+    },
     "maxPowerKW": "beckn:maxPowerKW",
     "meteredEnergyKWh": "beckn:meteredEnergyKWh",
     "meteredDurationMinutes": "beckn:meteredDurationMinutes",
@@ -35,7 +44,31 @@
     "vehicleModel": "beckn:vehicleModel",
     "trackingId": "beckn:trackingId",
     "trackingUrl": "beckn:trackingUrl",
-    "trackingStatus": "beckn:trackingStatus"
+    "trackingStatus": "beckn:trackingStatus",
+
+    "PENDING": "beckn:SessionStatusPending",
+    "ACTIVE": "beckn:SessionStatusActive",
+    "COMPLETED": "beckn:SessionStatusCompleted",
+    "INTERRUPTED": "beckn:SessionStatusInterrupted",
+
+    "APP_QR": "beckn:AuthorizationModeAppQr",
+    "APP-QR": "beckn:AuthorizationModeAppQr",
+    "RFID": "beckn:AuthorizationModeRfid",
+    "OTP": "beckn:AuthorizationModeOtp",
+
+    "CCS2": "beckn:ConnectorTypeCCS2",
+    "Type2": "beckn:ConnectorTypeType2",
+    "CHAdeMO": "beckn:ConnectorTypeCHAdeMO",
+    "GB_T": "beckn:ConnectorTypeGBT",
+    "GB/T": "beckn:ConnectorTypeGBT",
+    "GB-T": "beckn:ConnectorTypeGBT",
+
+    "ENERGY": "beckn:TelemetryMetricEnergy",
+    "POWER": "beckn:TelemetryMetricPower",
+    "CURRENT": "beckn:TelemetryMetricCurrent",
+    "VOLTAGE": "beckn:TelemetryMetricVoltage",
+    "STATE_OF_CHARGE": "beckn:TelemetryMetricStateOfCharge",
+    "SOC": "beckn:TelemetryMetricStateOfCharge"
   },
 
   "@graph": []

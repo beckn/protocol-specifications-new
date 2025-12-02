@@ -1,7 +1,7 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/#",
+    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/#",
     "schema": "https://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -61,6 +61,13 @@
       "@type": "rdfs:Class",
       "rdfs:label": "Price Specification",
       "rdfs:comment": "Structured price snapshot including currency, value and optional components."
+    },
+    {
+      "@id": "beckn:Quantity",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Quantity",
+      "rdfs:comment": "A quantitative value specifying units, codes, and quantity constraints.",
+      "schema:rangeIncludes": "schema:QuantitativeValue"
     },
     {
       "@id": "beckn:Buyer",
@@ -271,7 +278,7 @@
       "rdfs:comment": "Numeric value captured in the price specification.",
       "rdfs:domain": [
         "beckn:PriceSpecification",
-        "schema:QuantitativeValue"
+        "beckn:Quantity"
       ],
       "schema:rangeIncludes": "schema:Number",
       "owl:equivalentProperty": "schema:price"
@@ -282,7 +289,7 @@
       "rdfs:label": "Minimum quantity",
       "rdfs:comment": "Minimum quantity threshold for which the price applies.",
       "rdfs:domain": [
-        "schema:QuantitativeValue",
+        "beckn:Quantity",
         "beckn:PriceSpecification"
       ],
       "schema:rangeIncludes": "schema:Number",
@@ -294,7 +301,7 @@
       "rdfs:label": "Maximum quantity",
       "rdfs:comment": "Maximum quantity threshold for which the price applies.",
       "rdfs:domain": [
-        "schema:QuantitativeValue",
+        "beckn:Quantity",
         "beckn:PriceSpecification"
       ],
       "schema:rangeIncludes": "schema:Number",
@@ -310,7 +317,89 @@
         "beckn:Item",
         "beckn:Payment"
       ],
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:AcceptedPaymentMethod"
+    },
+    {
+      "@id": "beckn:AcceptedPaymentMethod",
+      "@type": "schema:Enumeration",
+      "schema:name": "Accepted Payment Method",
+      "rdfs:comment": "Enumeration of payment methods supported across core entities.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:UPI" },
+        { "@id": "beckn:CREDIT_CARD" },
+        { "@id": "beckn:DEBIT_CARD" },
+        { "@id": "beckn:WALLET" },
+        { "@id": "beckn:BANK_TRANSFER" },
+        { "@id": "beckn:CASH" },
+        { "@id": "beckn:APPLE_PAY" }
+      ]
+    },
+    {
+      "@id": "beckn:UPI",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UPI",
+      "schema:identifier": "UPI"
+    },
+    {
+      "@id": "beckn:CREDIT_CARD",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CREDIT_CARD",
+      "schema:identifier": "CREDIT_CARD",
+      "schema:alternateName": "CREDIT-CARD"
+    },
+    {
+      "@id": "beckn:DEBIT_CARD",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DEBIT_CARD",
+      "schema:identifier": "DEBIT_CARD",
+      "schema:alternateName": "DEBIT-CARD"
+    },
+    {
+      "@id": "beckn:WALLET",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
+      "schema:name": "WALLET",
+      "schema:identifier": "WALLET"
+    },
+    {
+      "@id": "beckn:BANK_TRANSFER",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
+      "schema:name": "BANK_TRANSFER",
+      "schema:identifier": "BANK_TRANSFER",
+      "schema:alternateName": "BANK-TRANSFER"
+    },
+    {
+      "@id": "beckn:CASH",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CASH",
+      "schema:identifier": "CASH"
+    },
+    {
+      "@id": "beckn:APPLE_PAY",
+      "@type": [
+        "beckn:AcceptedPaymentMethod",
+        "schema:Enumeration"
+      ],
+      "schema:name": "APPLE_PAY",
+      "schema:identifier": "APPLE_PAY",
+      "schema:alternateName": "APPLE-PAY"
     },
     {
       "@id": "beckn:fulfillment",
@@ -434,16 +523,250 @@
       "schema:rangeIncludes": "beckn:TimePeriod"
     },
     {
-      "@id": "beckn:status",
+      "@id": "beckn:fulfillmentStatus",
       "@type": "rdf:Property",
-      "rdfs:label": "Status",
-      "rdfs:comment": "Lifecycle status.",
-      "rdfs:domain": [
-        "beckn:Fulfillment",
-        "beckn:Payment",
-        "beckn:Tracking"
+      "rdfs:label": "Fulfillment status",
+      "rdfs:comment": "Lifecycle status for a fulfillment (e.g., PENDING, CONFIRMED, COMPLETED).",
+      "rdfs:domain": "beckn:Fulfillment",
+      "schema:rangeIncludes": "schema:Text",
+      "owl:equivalentProperty": "schema:orderStatus"
+    },
+    {
+      "@id": "beckn:paymentStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "Payment status",
+      "rdfs:comment": "Lifecycle status for a payment (Pending, Authorized, Captured, Failed, Refunded, etc.).",
+      "rdfs:domain": "beckn:Payment",
+      "schema:rangeIncludes": "beckn:PaymentStatus",
+      "owl:equivalentProperty": "schema:paymentStatus"
+    },
+    {
+      "@id": "beckn:trackingStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "Tracking status",
+      "rdfs:comment": "Status value for a tracking handle (active, disabled, completed).",
+      "rdfs:domain": "beckn:Tracking",
+      "schema:rangeIncludes": "beckn:TrackingStatus",
+      "owl:equivalentProperty": "schema:actionStatus"
+    },
+    {
+      "@id": "beckn:TrackingStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Tracking Status",
+      "rdfs:comment": "Enumeration of tracking lifecycle statuses for fulfillment handles.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:TrackingActive" },
+        { "@id": "beckn:TrackingDisabled" },
+        { "@id": "beckn:TrackingCompleted" }
+      ]
+    },
+    {
+      "@id": "beckn:TrackingActive",
+      "@type": [
+        "beckn:TrackingStatus",
+        "schema:Enumeration"
       ],
-      "schema:rangeIncludes": "schema:Text"
+      "schema:name": "ACTIVE",
+      "schema:identifier": "ACTIVE"
+    },
+    {
+      "@id": "beckn:TrackingDisabled",
+      "@type": [
+        "beckn:TrackingStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DISABLED",
+      "schema:identifier": "DISABLED"
+    },
+    {
+      "@id": "beckn:TrackingCompleted",
+      "@type": [
+        "beckn:TrackingStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "COMPLETED",
+      "schema:identifier": "COMPLETED"
+    },
+    {
+      "@id": "beckn:PaymentStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Payment Status",
+      "rdfs:comment": "Enumeration of payment processing statuses used across the network.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:PaymentInitiated" },
+        { "@id": "beckn:PaymentPending" },
+        { "@id": "beckn:PaymentAuthorized" },
+        { "@id": "beckn:PaymentCaptured" },
+        { "@id": "beckn:PaymentCompleted" },
+        { "@id": "beckn:PaymentFailed" },
+        { "@id": "beckn:PaymentCancelled" },
+        { "@id": "beckn:PaymentRefunded" },
+        { "@id": "beckn:PaymentPartiallyRefunded" },
+        { "@id": "beckn:PaymentChargeback" },
+        { "@id": "beckn:PaymentDisputed" },
+        { "@id": "beckn:PaymentExpired" },
+        { "@id": "beckn:PaymentReversed" },
+        { "@id": "beckn:PaymentVoided" },
+        { "@id": "beckn:PaymentSettled" },
+        { "@id": "beckn:PaymentOnHold" },
+        { "@id": "beckn:PaymentAdjusted" }
+      ]
+    },
+    {
+      "@id": "beckn:PaymentInitiated",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "INITIATED",
+      "schema:identifier": "INITIATED"
+    },
+    {
+      "@id": "beckn:PaymentPending",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PENDING",
+      "schema:identifier": "PENDING"
+    },
+    {
+      "@id": "beckn:PaymentAuthorized",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AUTHORIZED",
+      "schema:identifier": "AUTHORIZED"
+    },
+    {
+      "@id": "beckn:PaymentCaptured",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CAPTURED",
+      "schema:identifier": "CAPTURED"
+    },
+    {
+      "@id": "beckn:PaymentCompleted",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "COMPLETED",
+      "schema:identifier": "COMPLETED"
+    },
+    {
+      "@id": "beckn:PaymentFailed",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "FAILED",
+      "schema:identifier": "FAILED"
+    },
+    {
+      "@id": "beckn:PaymentCancelled",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CANCELLED",
+      "schema:identifier": "CANCELLED",
+      "schema:alternateName": "CANCELED"
+    },
+    {
+      "@id": "beckn:PaymentRefunded",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "REFUNDED",
+      "schema:identifier": "REFUNDED"
+    },
+    {
+      "@id": "beckn:PaymentPartiallyRefunded",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PARTIALLY_REFUNDED",
+      "schema:identifier": "PARTIALLY_REFUNDED",
+      "schema:alternateName": "PARTIALLY-REFUNDED"
+    },
+    {
+      "@id": "beckn:PaymentChargeback",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CHARGEBACK",
+      "schema:identifier": "CHARGEBACK"
+    },
+    {
+      "@id": "beckn:PaymentDisputed",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DISPUTED",
+      "schema:identifier": "DISPUTED"
+    },
+    {
+      "@id": "beckn:PaymentExpired",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EXPIRED",
+      "schema:identifier": "EXPIRED"
+    },
+    {
+      "@id": "beckn:PaymentReversed",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "REVERSED",
+      "schema:identifier": "REVERSED"
+    },
+    {
+      "@id": "beckn:PaymentVoided",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "VOIDED",
+      "schema:identifier": "VOIDED"
+    },
+    {
+      "@id": "beckn:PaymentSettled",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SETTLED",
+      "schema:identifier": "SETTLED"
+    },
+    {
+      "@id": "beckn:PaymentOnHold",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ON_HOLD",
+      "schema:identifier": "ON_HOLD",
+      "schema:alternateName": "ON-HOLD"
+    },
+    {
+      "@id": "beckn:PaymentAdjusted",
+      "@type": [
+        "beckn:PaymentStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ADJUSTED",
+      "schema:identifier": "ADJUSTED"
     },
     {
       "@id": "beckn:currency",
@@ -460,7 +783,7 @@
       "rdfs:label": "Applicable quantity",
       "rdfs:comment": "Quantity context for which the quoted price applies.",
       "rdfs:domain": "beckn:PriceSpecification",
-      "schema:rangeIncludes": "schema:QuantitativeValue",
+      "schema:rangeIncludes": "beckn:Quantity",
       "owl:equivalentProperty": "schema:eligibleQuantity"
     },
     {
@@ -479,7 +802,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "Unit text",
       "rdfs:comment": "Human-readable unit for a quantitative value.",
-      "rdfs:domain": "schema:QuantitativeValue",
+      "rdfs:domain": "beckn:Quantity",
       "schema:rangeIncludes": "schema:Text",
       "owl:equivalentProperty": "schema:unitText"
     },
@@ -488,7 +811,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "Unit code",
       "rdfs:comment": "Code (UN/CEFACT, ISO) representing the measurement unit.",
-      "rdfs:domain": "schema:QuantitativeValue",
+      "rdfs:domain": "beckn:Quantity",
       "schema:rangeIncludes": "schema:Text",
       "owl:equivalentProperty": "schema:unitCode"
     },
@@ -497,7 +820,7 @@
       "@type": "rdf:Property",
       "rdfs:label": "Unit quantity",
       "rdfs:comment": "Quantity of the referenced measurement unit.",
-      "rdfs:domain": "schema:QuantitativeValue",
+      "rdfs:domain": "beckn:Quantity",
       "schema:rangeIncludes": "schema:Number",
       "owl:equivalentProperty": "schema:value"
     },
@@ -531,7 +854,7 @@
       "rdfs:label": "Eligible quantity",
       "rdfs:comment": "Quantity constraints (min/max) for which the offer is eligible.",
       "rdfs:domain": "beckn:Offer",
-      "schema:rangeIncludes": "schema:QuantitativeValue"
+      "schema:rangeIncludes": "beckn:Quantity"
     },
     {
       "@id": "beckn:addOns",
@@ -595,6 +918,135 @@
       "schema:rangeIncludes": "schema:PriceSpecification"
     },
     {
+      "@id": "beckn:OrderStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Order Status",
+      "rdfs:comment": "Enumeration of order lifecycle statuses.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:OrderCreated" },
+        { "@id": "beckn:OrderPending" },
+        { "@id": "beckn:OrderConfirmed" },
+        { "@id": "beckn:OrderInProgress" },
+        { "@id": "beckn:OrderPartiallyFulfilled" },
+        { "@id": "beckn:OrderCompleted" },
+        { "@id": "beckn:OrderCancelled" },
+        { "@id": "beckn:OrderRejected" },
+        { "@id": "beckn:OrderFailed" },
+        { "@id": "beckn:OrderReturned" },
+        { "@id": "beckn:OrderRefunded" },
+        { "@id": "beckn:OrderOnHold" }
+      ]
+    },
+    {
+      "@id": "beckn:OrderCreated",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CREATED",
+      "schema:identifier": "CREATED"
+    },
+    {
+      "@id": "beckn:OrderPending",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PENDING",
+      "schema:identifier": "PENDING"
+    },
+    {
+      "@id": "beckn:OrderConfirmed",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CONFIRMED",
+      "schema:identifier": "CONFIRMED"
+    },
+    {
+      "@id": "beckn:OrderInProgress",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "INPROGRESS",
+      "schema:identifier": "INPROGRESS"
+    },
+    {
+      "@id": "beckn:OrderPartiallyFulfilled",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PARTIALLYFULFILLED",
+      "schema:identifier": "PARTIALLYFULFILLED"
+    },
+    {
+      "@id": "beckn:OrderCompleted",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "COMPLETED",
+      "schema:identifier": "COMPLETED"
+    },
+    {
+      "@id": "beckn:OrderCancelled",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CANCELLED",
+      "schema:identifier": "CANCELLED"
+    },
+    {
+      "@id": "beckn:OrderRejected",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "REJECTED",
+      "schema:identifier": "REJECTED"
+    },
+    {
+      "@id": "beckn:OrderFailed",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "FAILED",
+      "schema:identifier": "FAILED"
+    },
+    {
+      "@id": "beckn:OrderReturned",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RETURNED",
+      "schema:identifier": "RETURNED"
+    },
+    {
+      "@id": "beckn:OrderRefunded",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "REFUNDED",
+      "schema:identifier": "REFUNDED"
+    },
+    {
+      "@id": "beckn:OrderOnHold",
+      "@type": [
+        "beckn:OrderStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ONHOLD",
+      "schema:identifier": "ONHOLD",
+      "schema:alternateName": "ON-HOLD"
+    },
+    {
       "@id": "beckn:buyer",
       "@type": "rdf:Property",
       "rdfs:label": "Buyer",
@@ -608,7 +1060,7 @@
       "rdfs:label": "Order status",
       "rdfs:comment": "Order status/state.",
       "rdfs:domain": "beckn:Order",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:OrderStatus"
     },
     {
       "@id": "beckn:orderNumber",
@@ -825,6 +1277,22 @@
       "schema:rangeIncludes": "schema:Text"
     },
     {
+      "@id": "beckn:bppId",
+      "@type": "rdf:Property",
+      "rdfs:label": "BPP identifier",
+      "rdfs:comment": "BPP (Beckn Protocol Provider) identifier that publishes this catalog.",
+      "rdfs:domain": "beckn:Catalog",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:bppUri",
+      "@type": "rdf:Property",
+      "rdfs:label": "BPP URI",
+      "rdfs:comment": "BPP (Beckn Protocol Provider) URI endpoint.",
+      "rdfs:domain": "beckn:Catalog",
+      "schema:rangeIncludes": "schema:URL"
+    },
+    {
       "@id": "beckn:offers",
       "@type": "rdf:Property",
       "rdfs:label": "Offers",
@@ -887,7 +1355,7 @@
       "rdfs:label": "Quantity",
       "rdfs:comment": "Ordered quantity for this line.",
       "rdfs:domain": "beckn:OrderItem",
-      "schema:rangeIncludes": "schema:Number"
+      "schema:rangeIncludes": "beckn:Quantity"
     },
     {
       "@id": "beckn:orderItemAttributes",
@@ -999,7 +1467,7 @@
       "rdfs:label": "Beneficiary",
       "rdfs:comment": "Beneficiary/recipient of the payment.",
       "rdfs:domain": "beckn:Payment",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:Beneficiary"
     },
     {
       "@id": "beckn:paymentAttributes",
@@ -1008,6 +1476,34 @@
       "rdfs:comment": "Rail-specific payment attribute pack.",
       "rdfs:domain": "beckn:Payment",
       "schema:rangeIncludes": "beckn:Attributes"
+    },
+    {
+      "@id": "beckn:Beneficiary",
+      "@type": "schema:Enumeration",
+      "schema:name": "Beneficiary",
+      "rdfs:comment": "Enumeration of parties who can receive a payment in the Beckn network.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:BPP" },
+        { "@id": "beckn:BAP" }
+      ]
+    },
+    {
+      "@id": "beckn:BPP",
+      "@type": [
+        "beckn:Beneficiary",
+        "schema:Enumeration"
+      ],
+      "schema:name": "BPP",
+      "schema:identifier": "BPP"
+    },
+    {
+      "@id": "beckn:BAP",
+      "@type": [
+        "beckn:Beneficiary",
+        "schema:Enumeration"
+      ],
+      "schema:name": "BAP",
+      "schema:identifier": "BAP"
     },
     {
       "@id": "beckn:role",
@@ -1073,7 +1569,7 @@
       "rdfs:domain": "beckn:SupportInfo",
       "schema:rangeIncludes": [
         "schema:ItemList",
-        "schema:Text"
+        "beckn:SupportChannel"
       ]
     },
     {
@@ -1091,6 +1587,86 @@
       "rdfs:comment": "Expiry timestamp for the tracking handle.",
       "rdfs:domain": "beckn:Tracking",
       "schema:rangeIncludes": "schema:DateTime"
+    },
+    {
+      "@id": "beckn:SupportChannel",
+      "@type": "schema:Enumeration",
+      "schema:name": "Support Channel",
+      "rdfs:comment": "Enumeration of supported customer service channels.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:SupportChannelPhone" },
+        { "@id": "beckn:SupportChannelEmail" },
+        { "@id": "beckn:SupportChannelWeb" },
+        { "@id": "beckn:SupportChannelChat" },
+        { "@id": "beckn:SupportChannelWhatsApp" },
+        { "@id": "beckn:SupportChannelInApp" },
+        { "@id": "beckn:SupportChannelOther" }
+      ]
+    },
+    {
+      "@id": "beckn:SupportChannelPhone",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PHONE",
+      "schema:identifier": "PHONE"
+    },
+    {
+      "@id": "beckn:SupportChannelEmail",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "EMAIL",
+      "schema:identifier": "EMAIL"
+    },
+    {
+      "@id": "beckn:SupportChannelWeb",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "WEB",
+      "schema:identifier": "WEB"
+    },
+    {
+      "@id": "beckn:SupportChannelChat",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CHAT",
+      "schema:identifier": "CHAT"
+    },
+    {
+      "@id": "beckn:SupportChannelWhatsApp",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "WHATSAPP",
+      "schema:identifier": "WHATSAPP",
+      "schema:alternateName": "WHATS_APP"
+    },
+    {
+      "@id": "beckn:SupportChannelInApp",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "IN_APP",
+      "schema:identifier": "IN_APP",
+      "schema:alternateName": "IN-APP"
+    },
+    {
+      "@id": "beckn:SupportChannelOther",
+      "@type": [
+        "beckn:SupportChannel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OTHER",
+      "schema:identifier": "OTHER"
     },
     {
       "@id": "beckn:shortDesc",

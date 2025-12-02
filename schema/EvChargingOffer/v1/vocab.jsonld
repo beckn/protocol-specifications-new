@@ -1,7 +1,7 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/EvChargingOffer/v1/#",
+    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/EvChargingOffer/v1/#",
     "schema": "https://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -20,7 +20,7 @@
       "rdfs:label": "Tariff model",
       "rdfs:comment": "Charging tariff basis: PER_KWH, PER_MINUTE, SUBSCRIPTION, TIME_OF_DAY.",
       "rdfs:domain": "beckn:ChargingOffer",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:TariffModel"
     },
     {
       "@id": "beckn:idleFeePolicy",
@@ -44,7 +44,7 @@
       "rdfs:label": "Fee type",
       "rdfs:comment": "Fee type (PERCENTAGE or AMOUNT) for buyer finder fee.",
       "rdfs:domain": "beckn:ChargingOffer",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:FeeType"
     },
     {
       "@id": "beckn:feeValue",
@@ -53,6 +53,97 @@
       "rdfs:comment": "Numeric fee value (interpreted per fee type).",
       "rdfs:domain": "beckn:ChargingOffer",
       "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "beckn:TariffModel",
+      "@type": "schema:Enumeration",
+      "schema:name": "Tariff Model",
+      "rdfs:comment": "Enumeration of supported tariff models for charging offers.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "beckn:TariffModelPerKwh"
+        },
+        {
+          "@id": "beckn:TariffModelPerMinute"
+        },
+        {
+          "@id": "beckn:TariffModelSubscription"
+        },
+        {
+          "@id": "beckn:TariffModelTimeOfDay"
+        }
+      ]
+    },
+    {
+      "@id": "beckn:TariffModelPerKwh",
+      "@type": [
+        "beckn:TariffModel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PER_KWH",
+      "schema:identifier": "PER_KWH",
+      "schema:alternateName": "PER-KWH"
+    },
+    {
+      "@id": "beckn:TariffModelPerMinute",
+      "@type": [
+        "beckn:TariffModel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PER_MINUTE",
+      "schema:identifier": "PER_MINUTE",
+      "schema:alternateName": "PER-MINUTE"
+    },
+    {
+      "@id": "beckn:TariffModelSubscription",
+      "@type": [
+        "beckn:TariffModel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SUBSCRIPTION",
+      "schema:identifier": "SUBSCRIPTION"
+    },
+    {
+      "@id": "beckn:TariffModelTimeOfDay",
+      "@type": [
+        "beckn:TariffModel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "TIME_OF_DAY",
+      "schema:identifier": "TIME_OF_DAY",
+      "schema:alternateName": "TIME-OF-DAY"
+    },
+    {
+      "@id": "beckn:FeeType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Fee Type",
+      "rdfs:comment": "Enumeration of fee types for buyer finder fee calculations.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "beckn:FeeTypePercentage"
+        },
+        {
+          "@id": "beckn:FeeTypeAmount"
+        }
+      ]
+    },
+    {
+      "@id": "beckn:FeeTypePercentage",
+      "@type": [
+        "beckn:FeeType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PERCENTAGE",
+      "schema:identifier": "PERCENTAGE"
+    },
+    {
+      "@id": "beckn:FeeTypeAmount",
+      "@type": [
+        "beckn:FeeType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AMOUNT",
+      "schema:identifier": "AMOUNT"
     }
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "context": {
+    "version": "2.0.0",
+    "action": "on_confirm",
+    "domain": "beckn.one:retail",
+    "bpp_id": "sandbox-retail-np2.com",
+    "bpp_uri": "https://sandbox-retail-np2.com/bpp",
+    "transaction_id": "ac3fb8fb-82ad-4e75-9bc1-2b9e453c2293",
+    "message_id": "f800b433-57f4-4194-97b1-4bd2c8404d8b",
+    "timestamp": "2025-01-27T18:25:05Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+      "@type": "beckn:Order",
+      "beckn:id": "order-food-and-beverage-001",
+      "beckn:orderStatus": "CONFIRMED",
+      "beckn:seller": "food-and-beverage-hut-store",
+      "beckn:buyer": {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+        "@type": "beckn:Buyer",
+        "beckn:id": "user-food-and-beverage-123"
+      },
+      "beckn:orderItems": [
+        {
+          "beckn:lineId": "line-food-and-beverage-001",
+          "beckn:orderedItem": "margherita-food-and-beverage-001",
+          "beckn:quantity": {
+            "unitText": "Piece",
+            "unitCode": "C62",
+            "unitQuantity": 1
+          }
+        }
+      ],
+      "beckn:payment": {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+        "@type": "beckn:Payment",
+        "beckn:id": "payment-food-and-beverage-001",
+        "beckn:paymentStatus": "COMPLETED"
+      },
+      "beckn:fulfillment": {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+        "@type": "beckn:Fulfillment",
+        "beckn:id": "fulfillment-food-and-beverage-001",
+        "beckn:mode": "DELIVERY"
+      }
+    }
+  }
+}

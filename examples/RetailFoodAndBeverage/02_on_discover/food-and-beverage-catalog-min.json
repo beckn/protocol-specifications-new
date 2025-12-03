@@ -1,0 +1,173 @@
+{
+  "context": {
+    "version": "2.0.0",
+    "action": "on_discover",
+    "domain": "beckn.one:retail",
+    "timestamp": "2025-01-27T18:00:05Z",
+    "transaction_id": "ac3fb8fb-82ad-4e75-9bc1-2b9e453c2293",
+    "message_id": "a373a837-c7ce-4dec-a908-5d1aae238122",
+    "bpp_id": "sandbox-retail-np2.com",
+    "bpp_uri": "https://sandbox-retail-np2.com/bpp",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "catalogs": [
+      {
+        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
+        "@type": "beckn:Catalog",
+        "beckn:id": "catalog-food-and-beverage-001",
+        "beckn:descriptor": {
+          "@type": "beckn:Descriptor",
+          "schema:name": "Food and Beverage Hut",
+          "beckn:shortDesc": "Fresh, hot food and beverages delivered to your door"
+        },
+        "beckn:bppId": "sandbox-retail-np2.com",
+        "beckn:bppUri": "https://sandbox-retail-np2.com/bpp",
+        "beckn:items": [
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
+            "@type": "beckn:Item",
+            "beckn:id": "margherita-food-and-beverage-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Margherita Food and Beverage",
+              "beckn:shortDesc": "Classic Italian food and beverage item with fresh ingredients",
+              "beckn:longDesc": "A timeless classic featuring fresh ingredients, premium mozzarella cheese, and aromatic basil leaves. Perfect for vegetarians."
+            },
+            "beckn:provider": {
+              "beckn:id": "food-and-beverage-hut-store",
+              "beckn:descriptor": {
+                "@type": "beckn:Descriptor",
+                "schema:name": "Food and Beverage Store"
+              }
+            },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Food and Beverage Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
+            "beckn:itemAttributes": {
+              "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/FoodAndBeverageItem/v1/context.jsonld",
+              "@type": "FoodAndBeverageItem",
+              "category": "PIZZA",
+              "dietaryClassification": "veg",
+              "crust": "New Hand Tossed",
+              "size": "Medium",
+              "toppings": [
+                "Grilled Mushrooms"
+              ]
+            }
+          },
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
+            "@type": "beckn:Item",
+            "beckn:id": "pepperoni-food-and-beverage-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Pepperoni Food and Beverage",
+              "beckn:shortDesc": "Spicy food and beverage item with premium ingredients",
+              "beckn:longDesc": "A meat lover's favorite with premium ingredients and premium mozzarella cheese on a crispy crust."
+            },
+            "beckn:provider": {
+              "beckn:id": "food-and-beverage-hut-store",
+              "beckn:descriptor": {
+                "@type": "beckn:Descriptor",
+                "schema:name": "Food and Beverage Store"
+              }
+            },
+            "beckn:availableAt": [
+              {
+                "@type": "beckn:Location",
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [
+                    77.5946,
+                    12.9716
+                  ]
+                },
+                "address": {
+                  "streetAddress": "Food and Beverage Store, MG Road",
+                  "addressLocality": "Bengaluru",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560001",
+                  "addressCountry": "IN"
+                }
+              }
+            ],
+            "beckn:itemAttributes": {
+              "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/FoodAndBeverageItem/v1/context.jsonld",
+              "@type": "FoodAndBeverageItem",
+              "category": "PIZZA",
+              "dietaryClassification": "non-veg",
+              "crust": "Thin Crust",
+              "size": "Large",
+              "toppings": [
+                "Pepperoni"
+              ]
+            }
+          }
+        ],
+        "beckn:offers": [
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-margherita-medium",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Margherita Pizza Medium Offer"
+            },
+            "beckn:items": [
+              "margherita-food-and-beverage-001"
+            ],
+            "beckn:price": {
+              "currency": "INR",
+              "value": 399.0,
+              "applicableQuantity": {
+                "unitText": "Piece",
+                "unitCode": "C62",
+                "unitQuantity": 1
+              }
+            },
+            "beckn:provider": "food-and-beverage-hut-store"
+          },
+          {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
+            "@type": "beckn:Offer",
+            "beckn:id": "offer-pepperoni-large",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "Pepperoni Pizza Large Offer"
+            },
+            "beckn:items": [
+              "pepperoni-food-and-beverage-001"
+            ],
+            "beckn:price": {
+              "currency": "INR",
+              "value": 599.0,
+              "applicableQuantity": {
+                "unitText": "Piece",
+                "unitCode": "C62",
+                "unitQuantity": 1
+              }
+            },
+            "beckn:provider": "food-and-beverage-hut-store"
+          }
+        ]
+      }
+    ]
+  }
+}

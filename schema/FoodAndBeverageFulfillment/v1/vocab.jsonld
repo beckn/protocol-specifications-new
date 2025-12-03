@@ -1,0 +1,344 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/FoodAndBeverageFulfillment/v1/#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:FoodAndBeverageFulfillment",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Food and Beverage Fulfillment",
+      "rdfs:comment": "Food and Beverage fulfillment attributes for F&B retail catalogs"
+    },
+    {
+      "@id": "beckn:supportedFulfillmentTypes",
+      "@type": "rdf:Property",
+      "rdfs:label": "Supported fulfillment types",
+      "rdfs:comment": "Array of fulfillment types supported by this provider/channel.",
+      "rdfs:domain": "beckn:FoodAndBeverageFulfillment",
+      "schema:rangeIncludes": "beckn:FulfillmentType"
+    },
+    {
+      "@id": "beckn:contactPhone",
+      "@type": "rdf:Property",
+      "rdfs:label": "Contact phone",
+      "rdfs:comment": "Contact phone number for fulfillment-related inquiries.",
+      "rdfs:domain": "beckn:FoodAndBeverageFulfillment",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:contactEmail",
+      "@type": "rdf:Property",
+      "rdfs:label": "Contact email",
+      "rdfs:comment": "Contact email address for fulfillment-related inquiries.",
+      "rdfs:domain": "beckn:FoodAndBeverageFulfillment",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:timingPolicies",
+      "@type": "rdf:Property",
+      "rdfs:label": "Timing policies",
+      "rdfs:comment": "Timing policies defining operating hours for different fulfillment types per location.",
+      "rdfs:domain": "beckn:FoodAndBeverageFulfillment",
+      "schema:rangeIncludes": "beckn:TimingPolicy"
+    },
+    {
+      "@id": "beckn:closeTiming",
+      "@type": "rdf:Property",
+      "rdfs:label": "Close timing",
+      "rdfs:comment": "Closure or downtime windows when fulfillment operations are temporarily unavailable.",
+      "rdfs:domain": "beckn:FoodAndBeverageFulfillment",
+      "schema:rangeIncludes": "beckn:CloseTiming"
+    },
+    {
+      "@id": "beckn:serviceability",
+      "@type": "rdf:Property",
+      "rdfs:label": "Serviceability",
+      "rdfs:comment": "Serviceability rules defining where and for which categories the provider can fulfill orders.",
+      "rdfs:domain": "beckn:FoodAndBeverageFulfillment",
+      "schema:rangeIncludes": "beckn:ServiceabilityRule"
+    },
+
+    {
+      "@id": "beckn:FulfillmentType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Fulfillment Type",
+      "rdfs:comment": "Enumeration of fulfillment types supported by retail providers.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:FulfillmentTypeDelivery" },
+        { "@id": "beckn:FulfillmentTypeSelfPickup" },
+        { "@id": "beckn:FulfillmentTypeDeliveryAndSelfPickup" }
+      ]
+    },
+    {
+      "@id": "beckn:FulfillmentTypeDelivery",
+      "@type": [
+        "beckn:FulfillmentType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Delivery",
+      "schema:identifier": "Delivery"
+    },
+    {
+      "@id": "beckn:FulfillmentTypeSelfPickup",
+      "@type": [
+        "beckn:FulfillmentType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Self-Pickup",
+      "schema:identifier": "Self-Pickup",
+      "schema:alternateName": "Self Pickup"
+    },
+    {
+      "@id": "beckn:FulfillmentTypeDeliveryAndSelfPickup",
+      "@type": [
+        "beckn:FulfillmentType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Delivery and Self-Pickup",
+      "schema:identifier": "Delivery and Self-Pickup"
+    },
+
+    {
+      "@id": "beckn:TimingPolicy",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Timing Policy",
+      "rdfs:comment": "Timing policy for a specific fulfillment type and location."
+    },
+    {
+      "@id": "beckn:fulfillmentType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Fulfillment type",
+      "rdfs:comment": "Type of fulfillment operation this timing policy applies to.",
+      "rdfs:domain": "beckn:TimingPolicy",
+      "schema:rangeIncludes": "beckn:FulfillmentOperationType"
+    },
+    {
+      "@id": "beckn:locationId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Location ID",
+      "rdfs:comment": "Location identifier where this timing policy applies.",
+      "rdfs:domain": ["beckn:TimingPolicy", "beckn:CloseTiming", "beckn:ServiceabilityRule"],
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:dayFrom",
+      "@type": "rdf:Property",
+      "rdfs:label": "Day from",
+      "rdfs:comment": "Starting day of week (1=Monday, 7=Sunday) for this timing window.",
+      "rdfs:domain": "beckn:TimingPolicy",
+      "schema:rangeIncludes": "schema:Integer"
+    },
+    {
+      "@id": "beckn:dayTo",
+      "@type": "rdf:Property",
+      "rdfs:label": "Day to",
+      "rdfs:comment": "Ending day of week (1=Monday, 7=Sunday) for this timing window.",
+      "rdfs:domain": "beckn:TimingPolicy",
+      "schema:rangeIncludes": "schema:Integer"
+    },
+    {
+      "@id": "beckn:timeFrom",
+      "@type": "rdf:Property",
+      "rdfs:label": "Time from",
+      "rdfs:comment": "Starting time in HHMM format (24-hour).",
+      "rdfs:domain": "beckn:TimingPolicy",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:timeTo",
+      "@type": "rdf:Property",
+      "rdfs:label": "Time to",
+      "rdfs:comment": "Ending time in HHMM format (24-hour).",
+      "rdfs:domain": "beckn:TimingPolicy",
+      "schema:rangeIncludes": "schema:Text"
+    },
+
+    {
+      "@id": "beckn:FulfillmentOperationType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Fulfillment Operation Type",
+      "rdfs:comment": "Enumeration of fulfillment operation types for timing policies.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:FulfillmentOperationTypeOrder" },
+        { "@id": "beckn:FulfillmentOperationTypeDelivery" },
+        { "@id": "beckn:FulfillmentOperationTypeSelfPickup" }
+      ]
+    },
+    {
+      "@id": "beckn:FulfillmentOperationTypeOrder",
+      "@type": [
+        "beckn:FulfillmentOperationType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Order",
+      "schema:identifier": "Order"
+    },
+    {
+      "@id": "beckn:FulfillmentOperationTypeDelivery",
+      "@type": [
+        "beckn:FulfillmentOperationType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Delivery",
+      "schema:identifier": "Delivery"
+    },
+    {
+      "@id": "beckn:FulfillmentOperationTypeSelfPickup",
+      "@type": [
+        "beckn:FulfillmentOperationType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Self-Pickup",
+      "schema:identifier": "Self-Pickup",
+      "schema:alternateName": "Self Pickup"
+    },
+
+    {
+      "@id": "beckn:CloseTiming",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Close Timing",
+      "rdfs:comment": "Closure or downtime window for a specific location."
+    },
+    {
+      "@id": "beckn:start",
+      "@type": "rdf:Property",
+      "rdfs:label": "Start",
+      "rdfs:comment": "Start timestamp of the closure window (ISO 8601 UTC).",
+      "rdfs:domain": "beckn:CloseTiming",
+      "schema:rangeIncludes": "schema:DateTime"
+    },
+    {
+      "@id": "beckn:end",
+      "@type": "rdf:Property",
+      "rdfs:label": "End",
+      "rdfs:comment": "End timestamp of the closure window (ISO 8601 UTC).",
+      "rdfs:domain": "beckn:CloseTiming",
+      "schema:rangeIncludes": "schema:DateTime"
+    },
+
+    {
+      "@id": "beckn:ServiceabilityRule",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Serviceability Rule",
+      "rdfs:comment": "Serviceability rule defining where and for which categories fulfillment is available."
+    },
+    {
+      "@id": "beckn:serviceabilityCode",
+      "@type": "rdf:Property",
+      "rdfs:label": "Serviceability code",
+      "rdfs:comment": "Serviceability code indicating the type of constraint.",
+      "rdfs:domain": "beckn:ServiceabilityRule",
+      "schema:rangeIncludes": "beckn:ServiceabilityCode"
+    },
+    {
+      "@id": "beckn:serviceabilityType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Serviceability type",
+      "rdfs:comment": "Type of serviceability constraint.",
+      "rdfs:domain": "beckn:ServiceabilityRule",
+      "schema:rangeIncludes": "beckn:ServiceabilityType"
+    },
+    {
+      "@id": "beckn:value",
+      "@type": "rdf:Property",
+      "rdfs:label": "Value",
+      "rdfs:comment": "Value of the serviceability constraint.",
+      "rdfs:domain": "beckn:ServiceabilityRule",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:unit",
+      "@type": "rdf:Property",
+      "rdfs:label": "Unit",
+      "rdfs:comment": "Unit of the serviceability value.",
+      "rdfs:domain": "beckn:ServiceabilityRule",
+      "schema:rangeIncludes": "beckn:ServiceabilityUnit"
+    },
+
+    {
+      "@id": "beckn:ServiceabilityCode",
+      "@type": "schema:Enumeration",
+      "schema:name": "Serviceability Code",
+      "rdfs:comment": "Enumeration of serviceability codes.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ServiceabilityCode10" },
+        { "@id": "beckn:ServiceabilityCode12" }
+      ]
+    },
+    {
+      "@id": "beckn:ServiceabilityCode10",
+      "@type": [
+        "beckn:ServiceabilityCode",
+        "schema:Enumeration"
+      ],
+      "schema:name": "10",
+      "schema:identifier": "10"
+    },
+    {
+      "@id": "beckn:ServiceabilityCode12",
+      "@type": [
+        "beckn:ServiceabilityCode",
+        "schema:Enumeration"
+      ],
+      "schema:name": "12",
+      "schema:identifier": "12"
+    },
+
+    {
+      "@id": "beckn:ServiceabilityType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Serviceability Type",
+      "rdfs:comment": "Enumeration of serviceability constraint types.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ServiceabilityTypeDistanceBased" },
+        { "@id": "beckn:ServiceabilityTypeCountryWide" }
+      ]
+    },
+    {
+      "@id": "beckn:ServiceabilityTypeDistanceBased",
+      "@type": [
+        "beckn:ServiceabilityType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "distance-based",
+      "schema:identifier": "distance-based",
+      "schema:alternateName": "distance based"
+    },
+    {
+      "@id": "beckn:ServiceabilityTypeCountryWide",
+      "@type": [
+        "beckn:ServiceabilityType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "country-wide",
+      "schema:identifier": "country-wide",
+      "schema:alternateName": "country wide"
+    },
+
+    {
+      "@id": "beckn:ServiceabilityUnit",
+      "@type": "schema:Enumeration",
+      "schema:name": "Serviceability Unit",
+      "rdfs:comment": "Enumeration of serviceability value units.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:ServiceabilityUnitKm" }
+      ]
+    },
+    {
+      "@id": "beckn:ServiceabilityUnitKm",
+      "@type": [
+        "beckn:ServiceabilityUnit",
+        "schema:Enumeration"
+      ],
+      "schema:name": "km",
+      "schema:identifier": "km",
+      "schema:alternateName": "kilometer"
+    }
+  ]
+}
+

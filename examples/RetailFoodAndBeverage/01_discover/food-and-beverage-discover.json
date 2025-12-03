@@ -1,0 +1,37 @@
+{
+  "context": {
+    "version": "2.0.0",
+    "action": "discover",
+    "domain": "beckn.one:retail",
+    "bap_id": "sandbox-retail-np2.com",
+    "bap_uri": "https://sandbox-retail-np2.com/bap",
+    "transaction_id": "ac3fb8fb-82ad-4e75-9bc1-2b9e453c2293",
+    "message_id": "ff996b75-7229-4117-ab73-19feda349db8",
+    "timestamp": "2025-01-27T18:00:00Z",
+    "ttl": "PT30S",
+    "schema_context": [
+      "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/FoodAndBeverageItem/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "text_search": "veg food and beverage margherita",
+    "spatial": [
+      {
+        "op": "s_dwithin",
+        "targets": "$['beckn:availableAt'][*]['geo']",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.5946,
+            12.9716
+          ]
+        },
+        "distanceMeters": 5000
+      }
+    ],
+    "filters": {
+      "type": "jsonpath",
+      "expression": "$[?(@.beckn:itemAttributes.dietaryClassification == 'veg' && @.beckn:itemAttributes.category == 'PIZZA')]"
+    }
+  }
+}

@@ -38,7 +38,7 @@
               "schema:name": "Margherita Food and Beverage",
               "beckn:shortDesc": "Classic Italian food and beverage item with fresh ingredients",
               "beckn:longDesc": "A timeless classic featuring fresh ingredients, premium mozzarella cheese, and aromatic basil leaves. Perfect for vegetarians.",
-              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=800"
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=800&q=80"
             },
             "beckn:category": {
               "@type": "schema:CategoryCode",

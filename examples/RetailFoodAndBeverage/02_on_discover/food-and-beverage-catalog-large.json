@@ -32,7 +32,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Margherita",
               "beckn:shortDesc": "Classic Italian food and beverage item with fresh ingredients",
-              "beckn:longDesc": "Classic Italian food and beverage item with fresh ingredients. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Classic Italian food and beverage item with fresh ingredients. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -52,6 +53,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.5,
+              "beckn:ratingCount": 497
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -81,7 +92,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Pepperoni",
               "beckn:shortDesc": "Spicy food and beverage item with premium ingredients",
-              "beckn:longDesc": "Spicy food and beverage item with premium ingredients. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Spicy food and beverage item with premium ingredients. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -101,6 +113,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 230
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -129,7 +151,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veg Supreme",
               "beckn:shortDesc": "Loaded with fresh vegetables and cheese",
-              "beckn:longDesc": "Loaded with fresh vegetables and cheese. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Loaded with fresh vegetables and cheese. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -149,6 +172,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.5,
+              "beckn:ratingCount": 521
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -178,7 +211,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Farmhouse",
               "beckn:shortDesc": "Fresh vegetables on a crispy base",
-              "beckn:longDesc": "Fresh vegetables on a crispy base. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Fresh vegetables on a crispy base. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -198,6 +232,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 1807
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -226,7 +270,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Paneer Tikka",
               "beckn:shortDesc": "Spiced paneer cubes with onions and peppers",
-              "beckn:longDesc": "Spiced paneer cubes with onions and peppers. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Spiced paneer cubes with onions and peppers. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -246,6 +291,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 5,
+              "beckn:ratingCount": 87
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -274,7 +329,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Tikka",
               "beckn:shortDesc": "Tender chicken tikka pieces with onions",
-              "beckn:longDesc": "Tender chicken tikka pieces with onions. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Tender chicken tikka pieces with onions. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -294,6 +350,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.8,
+              "beckn:ratingCount": 1737
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -322,7 +388,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "BBQ Chicken",
               "beckn:shortDesc": "BBQ flavored chicken with red onions",
-              "beckn:longDesc": "BBQ flavored chicken with red onions. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "BBQ flavored chicken with red onions. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -342,6 +409,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 883
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -371,7 +448,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Hawaiian",
               "beckn:shortDesc": "Ham and pineapple combination",
-              "beckn:longDesc": "Ham and pineapple combination. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Ham and pineapple combination. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -391,6 +469,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.5,
+              "beckn:ratingCount": 324
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -419,7 +507,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Mexican Wave",
               "beckn:shortDesc": "Spicy Mexican flavors with jalapenos",
-              "beckn:longDesc": "Spicy Mexican flavors with jalapenos. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Spicy Mexican flavors with jalapenos. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -439,6 +528,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 986
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -467,7 +566,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Cheese Burst",
               "beckn:shortDesc": "Extra cheese stuffed in the crust",
-              "beckn:longDesc": "Extra cheese stuffed in the crust. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Extra cheese stuffed in the crust. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -487,6 +587,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.3,
+              "beckn:ratingCount": 1205
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -515,7 +625,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Double Cheese",
               "beckn:shortDesc": "Double layer of mozzarella cheese",
-              "beckn:longDesc": "Double layer of mozzarella cheese. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Double layer of mozzarella cheese. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -535,6 +646,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 1423
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -564,7 +685,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Mushroom",
               "beckn:shortDesc": "Fresh mushrooms with herbs",
-              "beckn:longDesc": "Fresh mushrooms with herbs. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Fresh mushrooms with herbs. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -584,6 +706,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 1766
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -612,7 +744,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Onion Capsicum",
               "beckn:shortDesc": "Fresh onions and capsicum",
-              "beckn:longDesc": "Fresh onions and capsicum. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Fresh onions and capsicum. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -632,6 +765,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.1,
+              "beckn:ratingCount": 380
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -660,7 +803,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Corn & Cheese",
               "beckn:shortDesc": "Sweet corn with mozzarella",
-              "beckn:longDesc": "Sweet corn with mozzarella. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Sweet corn with mozzarella. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -680,6 +824,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.8,
+              "beckn:ratingCount": 207
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -708,7 +862,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Olive & Jalapeno",
               "beckn:shortDesc": "Black olives with spicy jalapenos",
-              "beckn:longDesc": "Black olives with spicy jalapenos. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Black olives with spicy jalapenos. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -728,6 +883,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 1843
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -756,7 +921,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Delight",
               "beckn:shortDesc": "Assorted fresh vegetables",
-              "beckn:longDesc": "Assorted fresh vegetables. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Assorted fresh vegetables. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -776,6 +942,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 1962
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -805,7 +981,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Dominator",
               "beckn:shortDesc": "Loaded with multiple chicken toppings",
-              "beckn:longDesc": "Loaded with multiple chicken toppings. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Loaded with multiple chicken toppings. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -825,6 +1002,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4,
+              "beckn:ratingCount": 1790
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -853,7 +1040,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Golden Delight",
               "beckn:shortDesc": "Golden chicken with capsicum",
-              "beckn:longDesc": "Golden chicken with capsicum. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Golden chicken with capsicum. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -873,6 +1061,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 1806
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -901,7 +1099,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Fiesta",
               "beckn:shortDesc": "Spicy chicken with vegetables",
-              "beckn:longDesc": "Spicy chicken with vegetables. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Spicy chicken with vegetables. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -921,6 +1120,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.3,
+              "beckn:ratingCount": 990
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -949,7 +1158,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Non Veg Supreme",
               "beckn:shortDesc": "Loaded with chicken, pepperoni, and more",
-              "beckn:longDesc": "Loaded with chicken, pepperoni, and more. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Loaded with chicken, pepperoni, and more. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -969,6 +1179,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 534
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -997,7 +1217,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Tandoori Paneer",
               "beckn:shortDesc": "Tandoori spiced paneer cubes",
-              "beckn:longDesc": "Tandoori spiced paneer cubes. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Tandoori spiced paneer cubes. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1017,6 +1238,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.8,
+              "beckn:ratingCount": 1225
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1045,7 +1276,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Paradise",
               "beckn:shortDesc": "Garden fresh vegetables",
-              "beckn:longDesc": "Garden fresh vegetables. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Garden fresh vegetables. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1065,6 +1297,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 1743
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1094,7 +1336,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Spicy Paneer",
               "beckn:shortDesc": "Spiced paneer with chili flakes",
-              "beckn:longDesc": "Spiced paneer with chili flakes. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Spiced paneer with chili flakes. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1114,6 +1357,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 482
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1142,7 +1395,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Lovers",
               "beckn:shortDesc": "Perfect for vegetable enthusiasts",
-              "beckn:longDesc": "Perfect for vegetable enthusiasts. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Perfect for vegetable enthusiasts. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1162,6 +1416,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 1115
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1190,7 +1454,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Classic Veg",
               "beckn:shortDesc": "Traditional vegetable pizza",
-              "beckn:longDesc": "Traditional vegetable pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Traditional vegetable pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1210,6 +1475,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 423
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1238,7 +1513,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Supreme",
               "beckn:shortDesc": "Premium chicken toppings",
-              "beckn:longDesc": "Premium chicken toppings. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Premium chicken toppings. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1258,6 +1534,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.4,
+              "beckn:ratingCount": 394
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1287,7 +1573,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Meat Lovers",
               "beckn:shortDesc": "Loaded with multiple meats",
-              "beckn:longDesc": "Loaded with multiple meats. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Loaded with multiple meats. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1307,6 +1594,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 1726
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1336,7 +1633,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Barbeque",
               "beckn:shortDesc": "BBQ chicken with special sauce",
-              "beckn:longDesc": "BBQ chicken with special sauce. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "BBQ chicken with special sauce. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1356,6 +1654,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 495
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1384,7 +1692,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Pepperoni",
               "beckn:shortDesc": "Chicken and pepperoni combo",
-              "beckn:longDesc": "Chicken and pepperoni combo. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Chicken and pepperoni combo. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1404,6 +1713,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 1351
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1432,7 +1751,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Supreme",
               "beckn:shortDesc": "Supreme vegetable combination",
-              "beckn:longDesc": "Supreme vegetable combination. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Supreme vegetable combination. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1452,6 +1772,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 1255
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1480,7 +1810,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Paneer Makhani",
               "beckn:shortDesc": "Butter paneer with makhani sauce",
-              "beckn:longDesc": "Butter paneer with makhani sauce. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Butter paneer with makhani sauce. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1500,6 +1831,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.3,
+              "beckn:ratingCount": 122
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1529,7 +1870,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Keema",
               "beckn:shortDesc": "Spiced minced chicken",
-              "beckn:longDesc": "Spiced minced chicken. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Spiced minced chicken. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1549,6 +1891,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.8,
+              "beckn:ratingCount": 866
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1578,7 +1930,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Deluxe",
               "beckn:shortDesc": "Deluxe vegetable toppings",
-              "beckn:longDesc": "Deluxe vegetable toppings. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Deluxe vegetable toppings. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1598,6 +1951,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 5,
+              "beckn:ratingCount": 1134
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1627,7 +1990,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Deluxe",
               "beckn:shortDesc": "Deluxe chicken toppings",
-              "beckn:longDesc": "Deluxe chicken toppings. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Deluxe chicken toppings. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1647,6 +2011,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4,
+              "beckn:ratingCount": 1970
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1675,7 +2049,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Special",
               "beckn:shortDesc": "Special vegetable combination",
-              "beckn:longDesc": "Special vegetable combination. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Special vegetable combination. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1695,6 +2070,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 1657
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1723,7 +2108,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Special",
               "beckn:shortDesc": "Special chicken combination",
-              "beckn:longDesc": "Special chicken combination. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Special chicken combination. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1743,6 +2129,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.5,
+              "beckn:ratingCount": 705
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1772,7 +2168,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Classic",
               "beckn:shortDesc": "Classic vegetable pizza",
-              "beckn:longDesc": "Classic vegetable pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Classic vegetable pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1792,6 +2189,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 476
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1820,7 +2227,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Classic",
               "beckn:shortDesc": "Classic chicken pizza",
-              "beckn:longDesc": "Classic chicken pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Classic chicken pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1840,6 +2248,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 844
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1868,7 +2286,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Premium",
               "beckn:shortDesc": "Premium vegetable selection",
-              "beckn:longDesc": "Premium vegetable selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Premium vegetable selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1888,6 +2307,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.6,
+              "beckn:ratingCount": 176
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1917,7 +2346,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Premium",
               "beckn:shortDesc": "Premium chicken selection",
-              "beckn:longDesc": "Premium chicken selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Premium chicken selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1937,6 +2367,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.3,
+              "beckn:ratingCount": 116
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -1965,7 +2405,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Signature",
               "beckn:shortDesc": "Signature vegetable blend",
-              "beckn:longDesc": "Signature vegetable blend. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Signature vegetable blend. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -1985,6 +2426,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.6,
+              "beckn:ratingCount": 357
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2013,7 +2464,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Signature",
               "beckn:shortDesc": "Signature chicken blend",
-              "beckn:longDesc": "Signature chicken blend. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Signature chicken blend. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2033,6 +2485,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4,
+              "beckn:ratingCount": 259
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2061,7 +2523,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Fusion",
               "beckn:shortDesc": "Fusion of vegetables",
-              "beckn:longDesc": "Fusion of vegetables. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Fusion of vegetables. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2081,6 +2544,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.1,
+              "beckn:ratingCount": 794
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2109,7 +2582,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Fusion",
               "beckn:shortDesc": "Fusion of chicken flavors",
-              "beckn:longDesc": "Fusion of chicken flavors. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Fusion of chicken flavors. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2129,6 +2603,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.1,
+              "beckn:ratingCount": 1163
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2157,7 +2641,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Exotic",
               "beckn:shortDesc": "Exotic vegetable combination",
-              "beckn:longDesc": "Exotic vegetable combination. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Exotic vegetable combination. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2177,6 +2662,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.6,
+              "beckn:ratingCount": 1466
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2205,7 +2700,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Exotic",
               "beckn:shortDesc": "Exotic chicken combination",
-              "beckn:longDesc": "Exotic chicken combination. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Exotic chicken combination. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2225,6 +2721,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.6,
+              "beckn:ratingCount": 392
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2253,7 +2759,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Gourmet",
               "beckn:shortDesc": "Gourmet vegetable selection",
-              "beckn:longDesc": "Gourmet vegetable selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Gourmet vegetable selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2273,6 +2780,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4,
+              "beckn:ratingCount": 1591
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2302,7 +2819,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Gourmet",
               "beckn:shortDesc": "Gourmet chicken selection",
-              "beckn:longDesc": "Gourmet chicken selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Gourmet chicken selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2322,6 +2840,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 1005
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2350,7 +2878,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Ultimate",
               "beckn:shortDesc": "Ultimate vegetable pizza",
-              "beckn:longDesc": "Ultimate vegetable pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Ultimate vegetable pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2370,6 +2899,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.6,
+              "beckn:ratingCount": 209
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2399,7 +2938,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Ultimate",
               "beckn:shortDesc": "Ultimate chicken pizza",
-              "beckn:longDesc": "Ultimate chicken pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Ultimate chicken pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2419,6 +2959,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 1104
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2448,7 +2998,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Max",
               "beckn:shortDesc": "Maximum vegetables",
-              "beckn:longDesc": "Maximum vegetables. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Maximum vegetables. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2468,6 +3019,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 1797
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2497,7 +3058,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Max",
               "beckn:shortDesc": "Maximum chicken",
-              "beckn:longDesc": "Maximum chicken. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Maximum chicken. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2517,6 +3079,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.4,
+              "beckn:ratingCount": 641
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2545,7 +3117,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Plus",
               "beckn:shortDesc": "Extra vegetable toppings",
-              "beckn:longDesc": "Extra vegetable toppings. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Extra vegetable toppings. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2565,6 +3138,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 675
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2594,7 +3177,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Plus",
               "beckn:shortDesc": "Extra chicken toppings",
-              "beckn:longDesc": "Extra chicken toppings. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Extra chicken toppings. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2614,6 +3198,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 1551
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2643,7 +3237,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Extra",
               "beckn:shortDesc": "Extra vegetable selection",
-              "beckn:longDesc": "Extra vegetable selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Extra vegetable selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2663,6 +3258,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.3,
+              "beckn:ratingCount": 365
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2692,7 +3297,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Extra",
               "beckn:shortDesc": "Extra chicken selection",
-              "beckn:longDesc": "Extra chicken selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Extra chicken selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2712,6 +3318,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4,
+              "beckn:ratingCount": 468
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2741,7 +3357,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Mega",
               "beckn:shortDesc": "Mega vegetable pizza",
-              "beckn:longDesc": "Mega vegetable pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Mega vegetable pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2761,6 +3378,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 679
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2790,7 +3417,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Mega",
               "beckn:shortDesc": "Mega chicken pizza",
-              "beckn:longDesc": "Mega chicken pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Mega chicken pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2810,6 +3438,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 1789
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2839,7 +3477,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Super",
               "beckn:shortDesc": "Super vegetable combination",
-              "beckn:longDesc": "Super vegetable combination. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Super vegetable combination. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2859,6 +3498,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.8,
+              "beckn:ratingCount": 865
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2888,7 +3537,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Super",
               "beckn:shortDesc": "Super chicken combination",
-              "beckn:longDesc": "Super chicken combination. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Super chicken combination. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2908,6 +3558,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 408
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2937,7 +3597,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Turbo",
               "beckn:shortDesc": "Turbo vegetable pizza",
-              "beckn:longDesc": "Turbo vegetable pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Turbo vegetable pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -2957,6 +3618,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.4,
+              "beckn:ratingCount": 1372
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -2985,7 +3656,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Turbo",
               "beckn:shortDesc": "Turbo chicken pizza",
-              "beckn:longDesc": "Turbo chicken pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Turbo chicken pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3005,6 +3677,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.3,
+              "beckn:ratingCount": 855
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3034,7 +3716,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Power",
               "beckn:shortDesc": "Power vegetable selection",
-              "beckn:longDesc": "Power vegetable selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Power vegetable selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3054,6 +3737,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.8,
+              "beckn:ratingCount": 1098
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3083,7 +3776,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Power",
               "beckn:shortDesc": "Power chicken selection",
-              "beckn:longDesc": "Power chicken selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Power chicken selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3103,6 +3797,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.2,
+              "beckn:ratingCount": 1012
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3131,7 +3835,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Blast",
               "beckn:shortDesc": "Blast of vegetables",
-              "beckn:longDesc": "Blast of vegetables. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Blast of vegetables. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3151,6 +3856,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.3,
+              "beckn:ratingCount": 1758
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3180,7 +3895,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Blast",
               "beckn:shortDesc": "Blast of chicken",
-              "beckn:longDesc": "Blast of chicken. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Blast of chicken. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3200,6 +3916,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.5,
+              "beckn:ratingCount": 1693
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3229,7 +3955,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Crunch",
               "beckn:shortDesc": "Crunchy vegetable pizza",
-              "beckn:longDesc": "Crunchy vegetable pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Crunchy vegetable pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3249,6 +3976,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.3,
+              "beckn:ratingCount": 1357
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3278,7 +4015,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Crunch",
               "beckn:shortDesc": "Crunchy chicken pizza",
-              "beckn:longDesc": "Crunchy chicken pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Crunchy chicken pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3298,6 +4036,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4,
+              "beckn:ratingCount": 228
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3327,7 +4075,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Zest",
               "beckn:shortDesc": "Zesty vegetable flavors",
-              "beckn:longDesc": "Zesty vegetable flavors. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Zesty vegetable flavors. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3347,6 +4096,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4,
+              "beckn:ratingCount": 136
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3375,7 +4134,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Zest",
               "beckn:shortDesc": "Zesty chicken flavors",
-              "beckn:longDesc": "Zesty chicken flavors. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Zesty chicken flavors. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3395,6 +4155,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4,
+              "beckn:ratingCount": 1434
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3424,7 +4194,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Spice",
               "beckn:shortDesc": "Spicy vegetable combination",
-              "beckn:longDesc": "Spicy vegetable combination. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Spicy vegetable combination. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3444,6 +4215,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 437
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3472,7 +4253,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Spice",
               "beckn:shortDesc": "Spicy chicken combination",
-              "beckn:longDesc": "Spicy chicken combination. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Spicy chicken combination. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3492,6 +4274,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.1,
+              "beckn:ratingCount": 1783
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3520,7 +4312,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Fire",
               "beckn:shortDesc": "Fiery vegetable pizza",
-              "beckn:longDesc": "Fiery vegetable pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Fiery vegetable pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3540,6 +4333,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 5,
+              "beckn:ratingCount": 1201
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3568,7 +4371,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Fire",
               "beckn:shortDesc": "Fiery chicken pizza",
-              "beckn:longDesc": "Fiery chicken pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Fiery chicken pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3588,6 +4392,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 1431
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3616,7 +4430,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Storm",
               "beckn:shortDesc": "Storm of vegetables",
-              "beckn:longDesc": "Storm of vegetables. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Storm of vegetables. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3636,6 +4451,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.4,
+              "beckn:ratingCount": 1374
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3665,7 +4490,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Storm",
               "beckn:shortDesc": "Storm of chicken",
-              "beckn:longDesc": "Storm of chicken. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Storm of chicken. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3685,6 +4511,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 1129
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3713,7 +4549,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Thunder",
               "beckn:shortDesc": "Thunder vegetable pizza",
-              "beckn:longDesc": "Thunder vegetable pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Thunder vegetable pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3733,6 +4570,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 1101
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3762,7 +4609,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Thunder",
               "beckn:shortDesc": "Thunder chicken pizza",
-              "beckn:longDesc": "Thunder chicken pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Thunder chicken pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3782,6 +4630,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4,
+              "beckn:ratingCount": 1788
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3810,7 +4668,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Lightning",
               "beckn:shortDesc": "Lightning vegetable combo",
-              "beckn:longDesc": "Lightning vegetable combo. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Lightning vegetable combo. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3830,6 +4689,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.4,
+              "beckn:ratingCount": 1294
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3859,7 +4728,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Lightning",
               "beckn:shortDesc": "Lightning chicken combo",
-              "beckn:longDesc": "Lightning chicken combo. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Lightning chicken combo. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3879,6 +4749,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4,
+              "beckn:ratingCount": 566
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3908,7 +4788,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Rocket",
               "beckn:shortDesc": "Rocket vegetable pizza",
-              "beckn:longDesc": "Rocket vegetable pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Rocket vegetable pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3928,6 +4809,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 338
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -3957,7 +4848,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Rocket",
               "beckn:shortDesc": "Rocket chicken pizza",
-              "beckn:longDesc": "Rocket chicken pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Rocket chicken pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -3977,6 +4869,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.5,
+              "beckn:ratingCount": 1267
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4005,7 +4907,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Star",
               "beckn:shortDesc": "Star vegetable selection",
-              "beckn:longDesc": "Star vegetable selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Star vegetable selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4025,6 +4928,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.4,
+              "beckn:ratingCount": 882
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4054,7 +4967,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Star",
               "beckn:shortDesc": "Star chicken selection",
-              "beckn:longDesc": "Star chicken selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Star chicken selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4074,6 +4988,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.8,
+              "beckn:ratingCount": 1928
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4103,7 +5027,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Galaxy",
               "beckn:shortDesc": "Galaxy of vegetables",
-              "beckn:longDesc": "Galaxy of vegetables. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Galaxy of vegetables. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4123,6 +5048,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 1095
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4151,7 +5086,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Galaxy",
               "beckn:shortDesc": "Galaxy of chicken",
-              "beckn:longDesc": "Galaxy of chicken. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Galaxy of chicken. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4171,6 +5107,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.5,
+              "beckn:ratingCount": 1134
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4199,7 +5145,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Universe",
               "beckn:shortDesc": "Universe of vegetables",
-              "beckn:longDesc": "Universe of vegetables. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Universe of vegetables. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4219,6 +5166,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.6,
+              "beckn:ratingCount": 1558
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4247,7 +5204,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Universe",
               "beckn:shortDesc": "Universe of chicken",
-              "beckn:longDesc": "Universe of chicken. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Universe of chicken. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4267,6 +5225,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.8,
+              "beckn:ratingCount": 1417
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4296,7 +5264,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Cosmic",
               "beckn:shortDesc": "Cosmic vegetable pizza",
-              "beckn:longDesc": "Cosmic vegetable pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Cosmic vegetable pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4316,6 +5285,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 1497
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4344,7 +5323,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Cosmic",
               "beckn:shortDesc": "Cosmic chicken pizza",
-              "beckn:longDesc": "Cosmic chicken pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Cosmic chicken pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4364,6 +5344,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.6,
+              "beckn:ratingCount": 1768
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4393,7 +5383,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Infinity",
               "beckn:shortDesc": "Infinite vegetables",
-              "beckn:longDesc": "Infinite vegetables. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Infinite vegetables. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4413,6 +5404,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.4,
+              "beckn:ratingCount": 1832
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4442,7 +5443,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Infinity",
               "beckn:shortDesc": "Infinite chicken",
-              "beckn:longDesc": "Infinite chicken. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Infinite chicken. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4462,6 +5464,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 1193
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4491,7 +5503,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Eternal",
               "beckn:shortDesc": "Eternal vegetable selection",
-              "beckn:longDesc": "Eternal vegetable selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Eternal vegetable selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4511,6 +5524,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.4,
+              "beckn:ratingCount": 947
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4540,7 +5563,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Eternal",
               "beckn:shortDesc": "Eternal chicken selection",
-              "beckn:longDesc": "Eternal chicken selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Eternal chicken selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4560,6 +5584,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.9,
+              "beckn:ratingCount": 509
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4589,7 +5623,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Legend",
               "beckn:shortDesc": "Legendary vegetable pizza",
-              "beckn:longDesc": "Legendary vegetable pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Legendary vegetable pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4609,6 +5644,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 1517
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4637,7 +5682,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Legend",
               "beckn:shortDesc": "Legendary chicken pizza",
-              "beckn:longDesc": "Legendary chicken pizza. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Legendary chicken pizza. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4657,6 +5703,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.6,
+              "beckn:ratingCount": 1993
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4686,7 +5742,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Myth",
               "beckn:shortDesc": "Mythical vegetable combo",
-              "beckn:longDesc": "Mythical vegetable combo. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Mythical vegetable combo. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4706,6 +5763,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.7,
+              "beckn:ratingCount": 704
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4734,7 +5801,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Myth",
               "beckn:shortDesc": "Mythical chicken combo",
-              "beckn:longDesc": "Mythical chicken combo. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Mythical chicken combo. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4754,6 +5822,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.1,
+              "beckn:ratingCount": 1916
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4782,7 +5860,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Epic",
               "beckn:shortDesc": "Epic vegetable selection",
-              "beckn:longDesc": "Epic vegetable selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Epic vegetable selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4802,6 +5881,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4.5,
+              "beckn:ratingCount": 150
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",
@@ -4831,7 +5920,8 @@
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Epic",
               "beckn:shortDesc": "Epic chicken selection",
-              "beckn:longDesc": "Epic chicken selection. Made with premium ingredients and authentic flavors."
+              "beckn:longDesc": "Epic chicken selection. Made with premium ingredients and authentic flavors.",
+              "schema:image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&q=80"
             },
             "beckn:availableAt": [
               {
@@ -4851,6 +5941,16 @@
                   "addressCountry": "IN"
                 }
               }
+            ],
+            "beckn:rateable": true,
+            "beckn:rating": {
+              "@type": "beckn:Rating",
+              "beckn:ratingValue": 4,
+              "beckn:ratingCount": 1068
+            },
+            "beckn:isActive": true,
+            "beckn:networkId": [
+              "bap.net/food-beverage"
             ],
             "beckn:provider": {
               "beckn:id": "food-and-beverage-hut-store",

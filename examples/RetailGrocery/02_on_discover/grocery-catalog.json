@@ -38,7 +38,9 @@
               "schema:name": "Premium Basmati Rice (1 kg)",
               "beckn:shortDesc": "Aged basmati rice, long grain, aromatic",
               "beckn:longDesc": "Premium quality aged basmati rice, known for its long grains and aromatic fragrance. Perfect for biryanis and pulao.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80"
+              ]
             },
             "beckn:category": {
               "@type": "schema:CategoryCode",
@@ -149,7 +151,9 @@
               "schema:name": "Organic Toor Dal (500g)",
               "beckn:shortDesc": "Certified organic split pigeon peas",
               "beckn:longDesc": "Certified organic toor dal, rich in protein and fiber. Perfect for traditional Indian dal recipes.",
-              "schema:image": "https://cdn.pixabay.com/photo/2017/08/11/19/36/lentils-2634308_1280.jpg"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:category": {
               "@type": "schema:CategoryCode",
@@ -266,7 +270,7 @@
             ],
             "beckn:price": {
               "currency": "INR",
-              "value": 180.0,
+              "value": 180,
               "applicableQuantity": {
                 "unitText": "Kilogram",
                 "unitCode": "KGM",
@@ -300,7 +304,7 @@
             ],
             "beckn:price": {
               "currency": "INR",
-              "value": 95.0,
+              "value": 95,
               "applicableQuantity": {
                 "unitText": "Gram",
                 "unitCode": "GRM",

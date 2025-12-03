@@ -33,7 +33,9 @@
               "schema:name": "Basmati Rice (1 kilogram)",
               "beckn:shortDesc": "Premium quality basmati rice",
               "beckn:longDesc": "High-quality basmati rice sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -128,7 +130,9 @@
               "schema:name": "Jasmine Rice (5 kilogram)",
               "beckn:shortDesc": "Premium quality jasmine rice",
               "beckn:longDesc": "High-quality jasmine rice sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -223,7 +227,9 @@
               "schema:name": "Brown Rice (500 gram)",
               "beckn:shortDesc": "Premium quality brown rice",
               "beckn:longDesc": "High-quality brown rice sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -342,7 +348,9 @@
               "schema:name": "Sona Masuri Rice (1 kilogram)",
               "beckn:shortDesc": "Premium quality sona masuri rice",
               "beckn:longDesc": "High-quality sona masuri rice sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -437,7 +445,9 @@
               "schema:name": "Ponni Rice (1 kilogram)",
               "beckn:shortDesc": "Premium quality ponni rice",
               "beckn:longDesc": "High-quality ponni rice sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -548,7 +558,9 @@
               "schema:name": "Red Rice Rice (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality red rice rice",
               "beckn:longDesc": "High-quality red rice rice sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -667,7 +679,9 @@
               "schema:name": "Steamed Rice (5 kilogram)",
               "beckn:shortDesc": "Premium quality steamed rice",
               "beckn:longDesc": "High-quality steamed rice sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -786,7 +800,9 @@
               "schema:name": "Parboiled Rice (500 gram)",
               "beckn:shortDesc": "Premium quality parboiled rice",
               "beckn:longDesc": "High-quality parboiled rice sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -897,7 +913,9 @@
               "schema:name": "Organic Basmati Rice (2 kilogram)",
               "beckn:shortDesc": "Premium quality organic basmati rice",
               "beckn:longDesc": "High-quality organic basmati rice sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -992,7 +1010,9 @@
               "schema:name": "Premium Basmati Rice (1000 gram)",
               "beckn:shortDesc": "Premium quality premium basmati rice",
               "beckn:longDesc": "High-quality premium basmati rice sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -1103,7 +1123,9 @@
               "schema:name": "Toor Dal (2 kilogram)",
               "beckn:shortDesc": "Premium quality toor dal",
               "beckn:longDesc": "High-quality toor dal sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -1222,7 +1244,9 @@
               "schema:name": "Moong Dal (250 gram)",
               "beckn:shortDesc": "Premium quality moong dal",
               "beckn:longDesc": "High-quality moong dal sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -1341,7 +1365,9 @@
               "schema:name": "Urad Dal (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality urad dal",
               "beckn:longDesc": "High-quality urad dal sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -1452,7 +1478,9 @@
               "schema:name": "Chana Dal (2 kilogram)",
               "beckn:shortDesc": "Premium quality chana dal",
               "beckn:longDesc": "High-quality chana dal sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -1547,7 +1575,9 @@
               "schema:name": "Masoor Dal (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality masoor dal",
               "beckn:longDesc": "High-quality masoor dal sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -1650,7 +1680,9 @@
               "schema:name": "Rajma Dal (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality rajma dal",
               "beckn:longDesc": "High-quality rajma dal sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -1753,7 +1785,9 @@
               "schema:name": "Moth Dal (250 gram)",
               "beckn:shortDesc": "Premium quality moth dal",
               "beckn:longDesc": "High-quality moth dal sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -1848,7 +1882,9 @@
               "schema:name": "Black Gram Dal (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality black gram dal",
               "beckn:longDesc": "High-quality black gram dal sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -1959,7 +1995,9 @@
               "schema:name": "Green Gram Dal (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality green gram dal",
               "beckn:longDesc": "High-quality green gram dal sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -2054,7 +2092,9 @@
               "schema:name": "Split Urad Dal (1000 gram)",
               "beckn:shortDesc": "Premium quality split urad dal",
               "beckn:longDesc": "High-quality split urad dal sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -2157,7 +2197,9 @@
               "schema:name": "Wheat Flour (500 gram)",
               "beckn:shortDesc": "Premium quality wheat flour",
               "beckn:longDesc": "High-quality wheat flour sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -2260,7 +2302,9 @@
               "schema:name": "Rice Flour (5 kilogram)",
               "beckn:shortDesc": "Premium quality rice flour",
               "beckn:longDesc": "High-quality rice flour sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -2379,7 +2423,9 @@
               "schema:name": "Besan Flour (500 gram)",
               "beckn:shortDesc": "Premium quality besan flour",
               "beckn:longDesc": "High-quality besan flour sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -2474,7 +2520,9 @@
               "schema:name": "Ragi Flour (500 gram)",
               "beckn:shortDesc": "Premium quality ragi flour",
               "beckn:longDesc": "High-quality ragi flour sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -2585,7 +2633,9 @@
               "schema:name": "Corn Flour (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality corn flour",
               "beckn:longDesc": "High-quality corn flour sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -2680,7 +2730,9 @@
               "schema:name": "Multigrain Flour (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality multigrain flour",
               "beckn:longDesc": "High-quality multigrain flour sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -2783,7 +2835,9 @@
               "schema:name": "Maida Flour (500 gram)",
               "beckn:shortDesc": "Premium quality maida flour",
               "beckn:longDesc": "High-quality maida flour sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -2878,7 +2932,9 @@
               "schema:name": "Atta Flour (1000 gram)",
               "beckn:shortDesc": "Premium quality atta flour",
               "beckn:longDesc": "High-quality atta flour sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -2989,7 +3045,9 @@
               "schema:name": "Whole Wheat Flour (1 kilogram)",
               "beckn:shortDesc": "Premium quality whole wheat flour",
               "beckn:longDesc": "High-quality whole wheat flour sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -3100,7 +3158,9 @@
               "schema:name": "Organic Wheat Flour (1000 gram)",
               "beckn:shortDesc": "Premium quality organic wheat flour",
               "beckn:longDesc": "High-quality organic wheat flour sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -3203,7 +3263,9 @@
               "schema:name": "Turmeric Spices (100 gram)",
               "beckn:shortDesc": "Premium quality turmeric spices",
               "beckn:longDesc": "High-quality turmeric spices sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -3314,7 +3376,9 @@
               "schema:name": "Red Chili Spices (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality red chili spices",
               "beckn:longDesc": "High-quality red chili spices sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -3433,7 +3497,9 @@
               "schema:name": "Coriander Spices (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality coriander spices",
               "beckn:longDesc": "High-quality coriander spices sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -3544,7 +3610,9 @@
               "schema:name": "Cumin Spices (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality cumin spices",
               "beckn:longDesc": "High-quality cumin spices sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -3639,7 +3707,9 @@
               "schema:name": "Garam Masala Spices (1 kilogram)",
               "beckn:shortDesc": "Premium quality garam masala spices",
               "beckn:longDesc": "High-quality garam masala spices sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -3734,7 +3804,9 @@
               "schema:name": "Black Pepper Spices (1 kilogram)",
               "beckn:shortDesc": "Premium quality black pepper spices",
               "beckn:longDesc": "High-quality black pepper spices sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -3837,7 +3909,9 @@
               "schema:name": "Cardamom Spices (1 kilogram)",
               "beckn:shortDesc": "Premium quality cardamom spices",
               "beckn:longDesc": "High-quality cardamom spices sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -3948,7 +4022,9 @@
               "schema:name": "Cinnamon Spices (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality cinnamon spices",
               "beckn:longDesc": "High-quality cinnamon spices sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -4067,7 +4143,9 @@
               "schema:name": "Cloves Spices (50 gram)",
               "beckn:shortDesc": "Premium quality cloves spices",
               "beckn:longDesc": "High-quality cloves spices sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -4178,7 +4256,9 @@
               "schema:name": "Fenugreek Spices (100 gram)",
               "beckn:shortDesc": "Premium quality fenugreek spices",
               "beckn:longDesc": "High-quality fenugreek spices sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -4273,7 +4353,9 @@
               "schema:name": "Sunflower Oil (250 milliliter)",
               "beckn:shortDesc": "Premium quality sunflower oil",
               "beckn:longDesc": "High-quality sunflower oil sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -4376,7 +4458,9 @@
               "schema:name": "Mustard Oil (1000 milliliter)",
               "beckn:shortDesc": "Premium quality mustard oil",
               "beckn:longDesc": "High-quality mustard oil sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -4495,7 +4579,9 @@
               "schema:name": "Groundnut Oil (500 milliliter)",
               "beckn:shortDesc": "Premium quality groundnut oil",
               "beckn:longDesc": "High-quality groundnut oil sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -4614,7 +4700,9 @@
               "schema:name": "Coconut Oil (5 liter)",
               "beckn:shortDesc": "Premium quality coconut oil",
               "beckn:longDesc": "High-quality coconut oil sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -4717,7 +4805,9 @@
               "schema:name": "Olive Oil (250 milliliter)",
               "beckn:shortDesc": "Premium quality olive oil",
               "beckn:longDesc": "High-quality olive oil sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -4812,7 +4902,9 @@
               "schema:name": "Sesame Oil (1000 milliliter)",
               "beckn:shortDesc": "Premium quality sesame oil",
               "beckn:longDesc": "High-quality sesame oil sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -4923,7 +5015,9 @@
               "schema:name": "Rice Bran Oil (1 liter)",
               "beckn:shortDesc": "Premium quality rice bran oil",
               "beckn:longDesc": "High-quality rice bran oil sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -5026,7 +5120,9 @@
               "schema:name": "Soybean Oil (1000 milliliter)",
               "beckn:shortDesc": "Premium quality soybean oil",
               "beckn:longDesc": "High-quality soybean oil sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -5145,7 +5241,9 @@
               "schema:name": "Palm Oil (250 milliliter)",
               "beckn:shortDesc": "Premium quality palm oil",
               "beckn:longDesc": "High-quality palm oil sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -5264,7 +5362,9 @@
               "schema:name": "Canola Oil (500 milliliter)",
               "beckn:shortDesc": "Premium quality canola oil",
               "beckn:longDesc": "High-quality canola oil sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -5383,7 +5483,9 @@
               "schema:name": "White Sugar (500 gram)",
               "beckn:shortDesc": "Premium quality white sugar",
               "beckn:longDesc": "High-quality white sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -5478,7 +5580,9 @@
               "schema:name": "Brown Sugar (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality brown sugar",
               "beckn:longDesc": "High-quality brown sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -5597,7 +5701,9 @@
               "schema:name": "Jaggery Sugar (1000 gram)",
               "beckn:shortDesc": "Premium quality jaggery sugar",
               "beckn:longDesc": "High-quality jaggery sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -5700,7 +5806,9 @@
               "schema:name": "Powdered Sugar (1 kilogram)",
               "beckn:shortDesc": "Premium quality powdered sugar",
               "beckn:longDesc": "High-quality powdered sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -5803,7 +5911,9 @@
               "schema:name": "Crystal Sugar (5 kilogram)",
               "beckn:shortDesc": "Premium quality crystal sugar",
               "beckn:longDesc": "High-quality crystal sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -5898,7 +6008,9 @@
               "schema:name": "Organic Sugar (1000 gram)",
               "beckn:shortDesc": "Premium quality organic sugar",
               "beckn:longDesc": "High-quality organic sugar sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -6017,7 +6129,9 @@
               "schema:name": "Iodized Salt (500 gram)",
               "beckn:shortDesc": "Premium quality iodized salt",
               "beckn:longDesc": "High-quality iodized salt sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -6112,7 +6226,9 @@
               "schema:name": "Rock Salt (1 kilogram)",
               "beckn:shortDesc": "Premium quality rock salt",
               "beckn:longDesc": "High-quality rock salt sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -6215,7 +6331,9 @@
               "schema:name": "Sea Salt (1 kilogram)",
               "beckn:shortDesc": "Premium quality sea salt",
               "beckn:longDesc": "High-quality sea salt sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -6318,7 +6436,9 @@
               "schema:name": "Black Salt (250 gram)",
               "beckn:shortDesc": "Premium quality black salt",
               "beckn:longDesc": "High-quality black salt sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -6421,7 +6541,9 @@
               "schema:name": "Himalayan Pink Salt (1 kilogram)",
               "beckn:shortDesc": "Premium quality himalayan pink salt",
               "beckn:longDesc": "High-quality himalayan pink salt sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -6524,7 +6646,9 @@
               "schema:name": "Green Tea (1 kilogram)",
               "beckn:shortDesc": "Premium quality green tea",
               "beckn:longDesc": "High-quality green tea sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -6635,7 +6759,9 @@
               "schema:name": "Black Tea (100 gram)",
               "beckn:shortDesc": "Premium quality black tea",
               "beckn:longDesc": "High-quality black tea sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -6738,7 +6864,9 @@
               "schema:name": "Assam Tea (1 kilogram)",
               "beckn:shortDesc": "Premium quality assam tea",
               "beckn:longDesc": "High-quality assam tea sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -6841,7 +6969,9 @@
               "schema:name": "Darjeeling Tea (500 gram)",
               "beckn:shortDesc": "Premium quality darjeeling tea",
               "beckn:longDesc": "High-quality darjeeling tea sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -6936,7 +7066,9 @@
               "schema:name": "Earl Grey Tea (250 gram)",
               "beckn:shortDesc": "Premium quality earl grey tea",
               "beckn:longDesc": "High-quality earl grey tea sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -7031,7 +7163,9 @@
               "schema:name": "Masala Tea (1 kilogram)",
               "beckn:shortDesc": "Premium quality masala tea",
               "beckn:longDesc": "High-quality masala tea sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -7150,7 +7284,9 @@
               "schema:name": "Lemon Tea (250 gram)",
               "beckn:shortDesc": "Premium quality lemon tea",
               "beckn:longDesc": "High-quality lemon tea sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -7245,7 +7381,9 @@
               "schema:name": "Ginger Tea (100 gram)",
               "beckn:shortDesc": "Premium quality ginger tea",
               "beckn:longDesc": "High-quality ginger tea sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -7348,7 +7486,9 @@
               "schema:name": "Tulsi Tea (1 kilogram)",
               "beckn:shortDesc": "Premium quality tulsi tea",
               "beckn:longDesc": "High-quality tulsi tea sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -7467,7 +7607,9 @@
               "schema:name": "Organic Tea (250 gram)",
               "beckn:shortDesc": "Premium quality organic tea",
               "beckn:longDesc": "High-quality organic tea sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -7578,7 +7720,9 @@
               "schema:name": "Instant Coffee (250 gram)",
               "beckn:shortDesc": "Premium quality instant coffee",
               "beckn:longDesc": "High-quality instant coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -7697,7 +7841,9 @@
               "schema:name": "Filter Coffee (100 gram)",
               "beckn:shortDesc": "Premium quality filter coffee",
               "beckn:longDesc": "High-quality filter coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -7800,7 +7946,9 @@
               "schema:name": "Arabica Coffee (1 kilogram)",
               "beckn:shortDesc": "Premium quality arabica coffee",
               "beckn:longDesc": "High-quality arabica coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -7895,7 +8043,9 @@
               "schema:name": "Robusta Coffee (1 kilogram)",
               "beckn:shortDesc": "Premium quality robusta coffee",
               "beckn:longDesc": "High-quality robusta coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -8014,7 +8164,9 @@
               "schema:name": "Decaf Coffee (100 gram)",
               "beckn:shortDesc": "Premium quality decaf coffee",
               "beckn:longDesc": "High-quality decaf coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -8109,7 +8261,9 @@
               "schema:name": "Espresso Coffee (250 gram)",
               "beckn:shortDesc": "Premium quality espresso coffee",
               "beckn:longDesc": "High-quality espresso coffee sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -8212,7 +8366,9 @@
               "schema:name": "Glucose Biscuits (300 gram)",
               "beckn:shortDesc": "Premium quality glucose biscuits",
               "beckn:longDesc": "High-quality glucose biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -8331,7 +8487,9 @@
               "schema:name": "Cream Biscuits (1 piece)",
               "beckn:shortDesc": "Premium quality cream biscuits",
               "beckn:longDesc": "High-quality cream biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -8442,7 +8600,9 @@
               "schema:name": "Digestive Biscuits (2 piece)",
               "beckn:shortDesc": "Premium quality digestive biscuits",
               "beckn:longDesc": "High-quality digestive biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -8561,7 +8721,9 @@
               "schema:name": "Chocolate Biscuits (1 piece)",
               "beckn:shortDesc": "Premium quality chocolate biscuits",
               "beckn:longDesc": "High-quality chocolate biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -8680,7 +8842,9 @@
               "schema:name": "Oreo Biscuits (2 piece)",
               "beckn:shortDesc": "Premium quality oreo biscuits",
               "beckn:longDesc": "High-quality oreo biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -8775,7 +8939,9 @@
               "schema:name": "Coconut Biscuits (2 piece)",
               "beckn:shortDesc": "Premium quality coconut biscuits",
               "beckn:longDesc": "High-quality coconut biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -8878,7 +9044,9 @@
               "schema:name": "Butter Biscuits (100 gram)",
               "beckn:shortDesc": "Premium quality butter biscuits",
               "beckn:longDesc": "High-quality butter biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -8981,7 +9149,9 @@
               "schema:name": "Marie Biscuits (1 piece)",
               "beckn:shortDesc": "Premium quality marie biscuits",
               "beckn:longDesc": "High-quality marie biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -9092,7 +9262,9 @@
               "schema:name": "Crackers Biscuits (5 piece)",
               "beckn:shortDesc": "Premium quality crackers biscuits",
               "beckn:longDesc": "High-quality crackers biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -9211,7 +9383,9 @@
               "schema:name": "Cookies Biscuits (1 piece)",
               "beckn:shortDesc": "Premium quality cookies biscuits",
               "beckn:longDesc": "High-quality cookies biscuits sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -9314,7 +9488,9 @@
               "schema:name": "Chips Snacks (100 gram)",
               "beckn:shortDesc": "Premium quality chips snacks",
               "beckn:longDesc": "High-quality chips snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -9409,7 +9585,9 @@
               "schema:name": "Namkeen Snacks (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality namkeen snacks",
               "beckn:longDesc": "High-quality namkeen snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -9528,7 +9706,9 @@
               "schema:name": "Mixture Snacks (100 gram)",
               "beckn:shortDesc": "Premium quality mixture snacks",
               "beckn:longDesc": "High-quality mixture snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -9639,7 +9819,9 @@
               "schema:name": "Kurkure Snacks (500 gram)",
               "beckn:shortDesc": "Premium quality kurkure snacks",
               "beckn:longDesc": "High-quality kurkure snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -9742,7 +9924,9 @@
               "schema:name": "Lays Snacks (50 gram)",
               "beckn:shortDesc": "Premium quality lays snacks",
               "beckn:longDesc": "High-quality lays snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -9861,7 +10045,9 @@
               "schema:name": "Haldiram Snacks (500 gram)",
               "beckn:shortDesc": "Premium quality haldiram snacks",
               "beckn:longDesc": "High-quality haldiram snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -9964,7 +10150,9 @@
               "schema:name": "Bhujia Snacks (500 gram)",
               "beckn:shortDesc": "Premium quality bhujia snacks",
               "beckn:longDesc": "High-quality bhujia snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -10059,7 +10247,9 @@
               "schema:name": "Sev Snacks (50 gram)",
               "beckn:shortDesc": "Premium quality sev snacks",
               "beckn:longDesc": "High-quality sev snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -10178,7 +10368,9 @@
               "schema:name": "Chakli Snacks (1 kilogram)",
               "beckn:shortDesc": "Premium quality chakli snacks",
               "beckn:longDesc": "High-quality chakli snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -10289,7 +10481,9 @@
               "schema:name": "Murukku Snacks (0.5 kilogram)",
               "beckn:shortDesc": "Premium quality murukku snacks",
               "beckn:longDesc": "High-quality murukku snacks sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -10408,7 +10602,9 @@
               "schema:name": "Green Gram Pulses (2 kilogram)",
               "beckn:shortDesc": "Premium quality green gram pulses",
               "beckn:longDesc": "High-quality green gram pulses sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -10519,7 +10715,9 @@
               "schema:name": "Black Gram Pulses (500 gram)",
               "beckn:shortDesc": "Premium quality black gram pulses",
               "beckn:longDesc": "High-quality black gram pulses sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {
@@ -10638,7 +10836,9 @@
               "schema:name": "Horse Gram Pulses (250 gram)",
               "beckn:shortDesc": "Premium quality horse gram pulses",
               "beckn:longDesc": "High-quality horse gram pulses sourced from trusted suppliers. Perfect for everyday cooking and household needs.",
-              "schema:image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              "schema:image": [
+                "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=200&h=200&q=80"
+              ]
             },
             "beckn:availableAt": [
               {

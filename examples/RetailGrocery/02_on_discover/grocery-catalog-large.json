@@ -15,7 +15,7 @@
       {
         "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
         "@type": "beckn:Catalog",
-        "beckn:id": "catalog-grocery-large-001",
+        "beckn:id": "fresh-grocery-store-catalog-bengaluru-2025",
         "beckn:descriptor": {
           "@type": "beckn:Descriptor",
           "schema:name": "Fresh Grocery Store",
@@ -27,7 +27,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-001",
+            "beckn:id": "basmati-rice-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Basmati Rice (1 kilogram)",
@@ -111,7 +111,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-002",
+            "beckn:id": "jasmine-rice-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Jasmine Rice (5 kilogram)",
@@ -195,7 +195,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-003",
+            "beckn:id": "brown-rice-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Brown Rice (500 gram)",
@@ -261,7 +261,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 61.0
+                    "unitQuantity": 61
                   }
                 },
                 {
@@ -303,7 +303,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-004",
+            "beckn:id": "sona-masuri-rice-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Sona Masuri Rice (1 kilogram)",
@@ -369,7 +369,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 49.0
+                    "unitQuantity": 49
                   }
                 },
                 {
@@ -387,7 +387,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-005",
+            "beckn:id": "ponni-rice-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Ponni Rice (1 kilogram)",
@@ -445,7 +445,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 59.0
+                    "unitQuantity": 59
                   }
                 },
                 {
@@ -487,7 +487,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-006",
+            "beckn:id": "red-rice-rice-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Red Rice Rice (0.5 kilogram)",
@@ -595,7 +595,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-007",
+            "beckn:id": "steamed-rice-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Steamed Rice (5 kilogram)",
@@ -703,7 +703,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-008",
+            "beckn:id": "parboiled-rice-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Parboiled Rice (500 gram)",
@@ -761,7 +761,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 36.0
+                    "unitQuantity": 36
                   }
                 },
                 {
@@ -803,7 +803,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-009",
+            "beckn:id": "organic-basmati-rice-2-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Organic Basmati Rice (2 kilogram)",
@@ -887,7 +887,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-010",
+            "beckn:id": "premium-basmati-rice-1000-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Premium Basmati Rice (1000 gram)",
@@ -987,7 +987,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-011",
+            "beckn:id": "toor-dal-2-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Toor Dal (2 kilogram)",
@@ -1095,7 +1095,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-012",
+            "beckn:id": "moong-dal-250-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Moong Dal (250 gram)",
@@ -1203,7 +1203,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-013",
+            "beckn:id": "urad-dal-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Urad Dal (0.5 kilogram)",
@@ -1303,7 +1303,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-014",
+            "beckn:id": "chana-dal-2-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chana Dal (2 kilogram)",
@@ -1387,7 +1387,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-015",
+            "beckn:id": "masoor-dal-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Masoor Dal (0.5 kilogram)",
@@ -1445,7 +1445,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 51.0
+                    "unitQuantity": 51
                   }
                 },
                 {
@@ -1479,7 +1479,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-016",
+            "beckn:id": "rajma-dal-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Rajma Dal (0.5 kilogram)",
@@ -1571,7 +1571,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-017",
+            "beckn:id": "moth-dal-250-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Moth Dal (250 gram)",
@@ -1655,7 +1655,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-018",
+            "beckn:id": "black-gram-dal-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Black Gram Dal (0.5 kilogram)",
@@ -1755,7 +1755,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-019",
+            "beckn:id": "green-gram-dal-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Green Gram Dal (0.5 kilogram)",
@@ -1839,7 +1839,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-020",
+            "beckn:id": "split-urad-dal-1000-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Split Urad Dal (1000 gram)",
@@ -1897,7 +1897,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 44.0
+                    "unitQuantity": 44
                   }
                 },
                 {
@@ -1931,7 +1931,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-021",
+            "beckn:id": "wheat-flour-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Wheat Flour (500 gram)",
@@ -2023,7 +2023,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-022",
+            "beckn:id": "rice-flour-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Rice Flour (5 kilogram)",
@@ -2131,7 +2131,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-023",
+            "beckn:id": "besan-flour-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Besan Flour (500 gram)",
@@ -2215,7 +2215,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-024",
+            "beckn:id": "ragi-flour-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Ragi Flour (500 gram)",
@@ -2315,7 +2315,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-025",
+            "beckn:id": "corn-flour-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Corn Flour (0.5 kilogram)",
@@ -2399,7 +2399,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-026",
+            "beckn:id": "multigrain-flour-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Multigrain Flour (0.5 kilogram)",
@@ -2491,7 +2491,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-027",
+            "beckn:id": "maida-flour-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Maida Flour (500 gram)",
@@ -2575,7 +2575,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-028",
+            "beckn:id": "atta-flour-1000-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Atta Flour (1000 gram)",
@@ -2675,7 +2675,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-029",
+            "beckn:id": "whole-wheat-flour-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Whole Wheat Flour (1 kilogram)",
@@ -2775,7 +2775,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-030",
+            "beckn:id": "organic-wheat-flour-1000-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Organic Wheat Flour (1000 gram)",
@@ -2867,7 +2867,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-031",
+            "beckn:id": "turmeric-spices-100-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Turmeric Spices (100 gram)",
@@ -2925,7 +2925,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 60.0
+                    "unitQuantity": 60
                   }
                 },
                 {
@@ -2967,7 +2967,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-032",
+            "beckn:id": "red-chili-spices-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Red Chili Spices (0.5 kilogram)",
@@ -3075,7 +3075,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-033",
+            "beckn:id": "coriander-spices-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Coriander Spices (0.5 kilogram)",
@@ -3175,7 +3175,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-034",
+            "beckn:id": "cumin-spices-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Cumin Spices (0.5 kilogram)",
@@ -3259,7 +3259,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-035",
+            "beckn:id": "garam-masala-spices-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Garam Masala Spices (1 kilogram)",
@@ -3343,7 +3343,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-036",
+            "beckn:id": "black-pepper-spices-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Black Pepper Spices (1 kilogram)",
@@ -3435,7 +3435,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-037",
+            "beckn:id": "cardamom-spices-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Cardamom Spices (1 kilogram)",
@@ -3535,7 +3535,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-038",
+            "beckn:id": "cinnamon-spices-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Cinnamon Spices (0.5 kilogram)",
@@ -3643,7 +3643,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-039",
+            "beckn:id": "cloves-spices-50-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Cloves Spices (50 gram)",
@@ -3725,7 +3725,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 76.0
+                    "unitQuantity": 76
                   }
                 },
                 {
@@ -3743,7 +3743,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-040",
+            "beckn:id": "fenugreek-spices-100-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Fenugreek Spices (100 gram)",
@@ -3827,7 +3827,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-041",
+            "beckn:id": "sunflower-oil-250-milliliter",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Sunflower Oil (250 milliliter)",
@@ -3919,7 +3919,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-042",
+            "beckn:id": "mustard-oil-1000-milliliter",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Mustard Oil (1000 milliliter)",
@@ -4027,7 +4027,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-043",
+            "beckn:id": "groundnut-oil-500-milliliter",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Groundnut Oil (500 milliliter)",
@@ -4135,7 +4135,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-044",
+            "beckn:id": "coconut-oil-5-liter",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Coconut Oil (5 liter)",
@@ -4227,7 +4227,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-045",
+            "beckn:id": "olive-oil-250-milliliter",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Olive Oil (250 milliliter)",
@@ -4311,7 +4311,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-046",
+            "beckn:id": "sesame-oil-1000-milliliter",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Sesame Oil (1000 milliliter)",
@@ -4411,7 +4411,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-047",
+            "beckn:id": "rice-bran-oil-1-liter",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Rice Bran Oil (1 liter)",
@@ -4503,7 +4503,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-048",
+            "beckn:id": "soybean-oil-1000-milliliter",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Soybean Oil (1000 milliliter)",
@@ -4577,7 +4577,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 26.0
+                    "unitQuantity": 26
                   }
                 },
                 {
@@ -4611,7 +4611,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-049",
+            "beckn:id": "palm-oil-250-milliliter",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Palm Oil (250 milliliter)",
@@ -4719,7 +4719,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-050",
+            "beckn:id": "canola-oil-500-milliliter",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Canola Oil (500 milliliter)",
@@ -4827,7 +4827,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-051",
+            "beckn:id": "white-sugar-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "White Sugar (500 gram)",
@@ -4911,7 +4911,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-052",
+            "beckn:id": "brown-sugar-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Brown Sugar (0.5 kilogram)",
@@ -4977,7 +4977,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 1.0
+                    "unitQuantity": 1
                   }
                 },
                 {
@@ -5019,7 +5019,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-053",
+            "beckn:id": "jaggery-sugar-1000-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Jaggery Sugar (1000 gram)",
@@ -5111,7 +5111,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-054",
+            "beckn:id": "powdered-sugar-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Powdered Sugar (1 kilogram)",
@@ -5185,7 +5185,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 21.0
+                    "unitQuantity": 21
                   }
                 },
                 {
@@ -5203,7 +5203,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-055",
+            "beckn:id": "crystal-sugar-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Crystal Sugar (5 kilogram)",
@@ -5287,7 +5287,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-056",
+            "beckn:id": "organic-sugar-1000-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Organic Sugar (1000 gram)",
@@ -5395,7 +5395,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-057",
+            "beckn:id": "iodized-salt-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Iodized Salt (500 gram)",
@@ -5479,7 +5479,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-058",
+            "beckn:id": "rock-salt-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Rock Salt (1 kilogram)",
@@ -5571,7 +5571,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-059",
+            "beckn:id": "sea-salt-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Sea Salt (1 kilogram)",
@@ -5663,7 +5663,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-060",
+            "beckn:id": "black-salt-250-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Black Salt (250 gram)",
@@ -5755,7 +5755,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-061",
+            "beckn:id": "himalayan-pink-salt-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Himalayan Pink Salt (1 kilogram)",
@@ -5847,7 +5847,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-062",
+            "beckn:id": "green-tea-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Green Tea (1 kilogram)",
@@ -5947,7 +5947,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-063",
+            "beckn:id": "black-tea-100-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Black Tea (100 gram)",
@@ -6039,7 +6039,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-064",
+            "beckn:id": "assam-tea-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Assam Tea (1 kilogram)",
@@ -6131,7 +6131,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-065",
+            "beckn:id": "darjeeling-tea-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Darjeeling Tea (500 gram)",
@@ -6215,7 +6215,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-066",
+            "beckn:id": "earl-grey-tea-250-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Earl Grey Tea (250 gram)",
@@ -6299,7 +6299,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-067",
+            "beckn:id": "masala-tea-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Masala Tea (1 kilogram)",
@@ -6407,7 +6407,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-068",
+            "beckn:id": "lemon-tea-250-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Lemon Tea (250 gram)",
@@ -6491,7 +6491,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-069",
+            "beckn:id": "ginger-tea-100-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Ginger Tea (100 gram)",
@@ -6583,7 +6583,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-070",
+            "beckn:id": "tulsi-tea-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Tulsi Tea (1 kilogram)",
@@ -6691,7 +6691,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-071",
+            "beckn:id": "organic-tea-250-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Organic Tea (250 gram)",
@@ -6757,7 +6757,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 13.0
+                    "unitQuantity": 13
                   }
                 },
                 {
@@ -6791,7 +6791,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-072",
+            "beckn:id": "instant-coffee-250-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Instant Coffee (250 gram)",
@@ -6899,7 +6899,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-073",
+            "beckn:id": "filter-coffee-100-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Filter Coffee (100 gram)",
@@ -6991,7 +6991,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-074",
+            "beckn:id": "arabica-coffee-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Arabica Coffee (1 kilogram)",
@@ -7075,7 +7075,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-075",
+            "beckn:id": "robusta-coffee-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Robusta Coffee (1 kilogram)",
@@ -7141,7 +7141,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 54.0
+                    "unitQuantity": 54
                   }
                 },
                 {
@@ -7183,7 +7183,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-076",
+            "beckn:id": "decaf-coffee-100-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Decaf Coffee (100 gram)",
@@ -7267,7 +7267,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-077",
+            "beckn:id": "espresso-coffee-250-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Espresso Coffee (250 gram)",
@@ -7359,7 +7359,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-078",
+            "beckn:id": "glucose-biscuits-300-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Glucose Biscuits (300 gram)",
@@ -7467,7 +7467,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-079",
+            "beckn:id": "cream-biscuits-1-piece",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Cream Biscuits (1 piece)",
@@ -7567,7 +7567,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-080",
+            "beckn:id": "digestive-biscuits-2-piece",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Digestive Biscuits (2 piece)",
@@ -7625,7 +7625,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 72.0
+                    "unitQuantity": 72
                   }
                 },
                 {
@@ -7675,7 +7675,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-081",
+            "beckn:id": "chocolate-biscuits-1-piece",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chocolate Biscuits (1 piece)",
@@ -7733,7 +7733,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 3.0
+                    "unitQuantity": 3
                   }
                 },
                 {
@@ -7783,7 +7783,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-082",
+            "beckn:id": "oreo-biscuits-2-piece",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Oreo Biscuits (2 piece)",
@@ -7849,7 +7849,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 24.0
+                    "unitQuantity": 24
                   }
                 },
                 {
@@ -7867,7 +7867,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-083",
+            "beckn:id": "coconut-biscuits-2-piece",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Coconut Biscuits (2 piece)",
@@ -7959,7 +7959,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-084",
+            "beckn:id": "butter-biscuits-100-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Butter Biscuits (100 gram)",
@@ -8051,7 +8051,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-085",
+            "beckn:id": "marie-biscuits-1-piece",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Marie Biscuits (1 piece)",
@@ -8151,7 +8151,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-086",
+            "beckn:id": "crackers-biscuits-5-piece",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Crackers Biscuits (5 piece)",
@@ -8225,7 +8225,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 45.0
+                    "unitQuantity": 45
                   }
                 },
                 {
@@ -8259,7 +8259,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-087",
+            "beckn:id": "cookies-biscuits-1-piece",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Cookies Biscuits (1 piece)",
@@ -8351,7 +8351,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-088",
+            "beckn:id": "chips-snacks-100-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chips Snacks (100 gram)",
@@ -8435,7 +8435,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-089",
+            "beckn:id": "namkeen-snacks-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Namkeen Snacks (0.5 kilogram)",
@@ -8543,7 +8543,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-090",
+            "beckn:id": "mixture-snacks-100-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Mixture Snacks (100 gram)",
@@ -8609,7 +8609,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 65.0
+                    "unitQuantity": 65
                   }
                 },
                 {
@@ -8643,7 +8643,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-091",
+            "beckn:id": "kurkure-snacks-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Kurkure Snacks (500 gram)",
@@ -8717,7 +8717,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 12.0
+                    "unitQuantity": 12
                   }
                 },
                 {
@@ -8735,7 +8735,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-092",
+            "beckn:id": "lays-snacks-50-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Lays Snacks (50 gram)",
@@ -8843,7 +8843,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-093",
+            "beckn:id": "haldiram-snacks-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Haldiram Snacks (500 gram)",
@@ -8935,7 +8935,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-094",
+            "beckn:id": "bhujia-snacks-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Bhujia Snacks (500 gram)",
@@ -9019,7 +9019,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-095",
+            "beckn:id": "sev-snacks-50-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Sev Snacks (50 gram)",
@@ -9127,7 +9127,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-096",
+            "beckn:id": "chakli-snacks-1-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chakli Snacks (1 kilogram)",
@@ -9227,7 +9227,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-097",
+            "beckn:id": "murukku-snacks-0-5-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Murukku Snacks (0.5 kilogram)",
@@ -9293,7 +9293,7 @@
                   "value": {
                     "unitText": "gram",
                     "unitCode": "GRM",
-                    "unitQuantity": 78.0
+                    "unitQuantity": 78
                   }
                 },
                 {
@@ -9335,7 +9335,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-098",
+            "beckn:id": "green-gram-pulses-2-kilogram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Green Gram Pulses (2 kilogram)",
@@ -9435,7 +9435,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-099",
+            "beckn:id": "black-gram-pulses-500-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Black Gram Pulses (500 gram)",
@@ -9543,7 +9543,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "grocery-item-100",
+            "beckn:id": "horse-gram-pulses-250-gram",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Horse Gram Pulses (250 gram)",
@@ -9651,7 +9651,7 @@
               "schema:name": "Basmati Rice Offer"
             },
             "beckn:items": [
-              "grocery-item-001"
+              "basmati-rice-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9673,7 +9673,7 @@
               "schema:name": "Jasmine Rice Offer"
             },
             "beckn:items": [
-              "grocery-item-002"
+              "jasmine-rice-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9695,7 +9695,7 @@
               "schema:name": "Brown Rice Offer"
             },
             "beckn:items": [
-              "grocery-item-003"
+              "brown-rice-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9717,7 +9717,7 @@
               "schema:name": "Sona Masuri Rice Offer"
             },
             "beckn:items": [
-              "grocery-item-004"
+              "sona-masuri-rice-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9739,7 +9739,7 @@
               "schema:name": "Ponni Rice Offer"
             },
             "beckn:items": [
-              "grocery-item-005"
+              "ponni-rice-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9761,7 +9761,7 @@
               "schema:name": "Red Rice Rice Offer"
             },
             "beckn:items": [
-              "grocery-item-006"
+              "red-rice-rice-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9783,7 +9783,7 @@
               "schema:name": "Steamed Rice Offer"
             },
             "beckn:items": [
-              "grocery-item-007"
+              "steamed-rice-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9805,7 +9805,7 @@
               "schema:name": "Parboiled Rice Offer"
             },
             "beckn:items": [
-              "grocery-item-008"
+              "parboiled-rice-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9827,7 +9827,7 @@
               "schema:name": "Organic Basmati Rice Offer"
             },
             "beckn:items": [
-              "grocery-item-009"
+              "organic-basmati-rice-2-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9849,7 +9849,7 @@
               "schema:name": "Premium Basmati Rice Offer"
             },
             "beckn:items": [
-              "grocery-item-010"
+              "premium-basmati-rice-1000-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9871,7 +9871,7 @@
               "schema:name": "Toor Dal Offer"
             },
             "beckn:items": [
-              "grocery-item-011"
+              "toor-dal-2-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9893,7 +9893,7 @@
               "schema:name": "Moong Dal Offer"
             },
             "beckn:items": [
-              "grocery-item-012"
+              "moong-dal-250-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9915,7 +9915,7 @@
               "schema:name": "Urad Dal Offer"
             },
             "beckn:items": [
-              "grocery-item-013"
+              "urad-dal-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9937,7 +9937,7 @@
               "schema:name": "Chana Dal Offer"
             },
             "beckn:items": [
-              "grocery-item-014"
+              "chana-dal-2-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9959,7 +9959,7 @@
               "schema:name": "Masoor Dal Offer"
             },
             "beckn:items": [
-              "grocery-item-015"
+              "masoor-dal-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -9981,7 +9981,7 @@
               "schema:name": "Rajma Dal Offer"
             },
             "beckn:items": [
-              "grocery-item-016"
+              "rajma-dal-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10003,7 +10003,7 @@
               "schema:name": "Moth Dal Offer"
             },
             "beckn:items": [
-              "grocery-item-017"
+              "moth-dal-250-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10025,7 +10025,7 @@
               "schema:name": "Black Gram Dal Offer"
             },
             "beckn:items": [
-              "grocery-item-018"
+              "black-gram-dal-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10047,7 +10047,7 @@
               "schema:name": "Green Gram Dal Offer"
             },
             "beckn:items": [
-              "grocery-item-019"
+              "green-gram-dal-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10069,7 +10069,7 @@
               "schema:name": "Split Urad Dal Offer"
             },
             "beckn:items": [
-              "grocery-item-020"
+              "split-urad-dal-1000-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10091,7 +10091,7 @@
               "schema:name": "Wheat Flour Offer"
             },
             "beckn:items": [
-              "grocery-item-021"
+              "wheat-flour-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10113,7 +10113,7 @@
               "schema:name": "Rice Flour Offer"
             },
             "beckn:items": [
-              "grocery-item-022"
+              "rice-flour-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10135,7 +10135,7 @@
               "schema:name": "Besan Flour Offer"
             },
             "beckn:items": [
-              "grocery-item-023"
+              "besan-flour-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10157,7 +10157,7 @@
               "schema:name": "Ragi Flour Offer"
             },
             "beckn:items": [
-              "grocery-item-024"
+              "ragi-flour-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10179,7 +10179,7 @@
               "schema:name": "Corn Flour Offer"
             },
             "beckn:items": [
-              "grocery-item-025"
+              "corn-flour-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10201,7 +10201,7 @@
               "schema:name": "Multigrain Flour Offer"
             },
             "beckn:items": [
-              "grocery-item-026"
+              "multigrain-flour-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10223,7 +10223,7 @@
               "schema:name": "Maida Flour Offer"
             },
             "beckn:items": [
-              "grocery-item-027"
+              "maida-flour-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10245,7 +10245,7 @@
               "schema:name": "Atta Flour Offer"
             },
             "beckn:items": [
-              "grocery-item-028"
+              "atta-flour-1000-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10267,7 +10267,7 @@
               "schema:name": "Whole Wheat Flour Offer"
             },
             "beckn:items": [
-              "grocery-item-029"
+              "whole-wheat-flour-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10289,7 +10289,7 @@
               "schema:name": "Organic Wheat Flour Offer"
             },
             "beckn:items": [
-              "grocery-item-030"
+              "organic-wheat-flour-1000-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10311,7 +10311,7 @@
               "schema:name": "Turmeric Spices Offer"
             },
             "beckn:items": [
-              "grocery-item-031"
+              "turmeric-spices-100-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10333,7 +10333,7 @@
               "schema:name": "Red Chili Spices Offer"
             },
             "beckn:items": [
-              "grocery-item-032"
+              "red-chili-spices-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10355,7 +10355,7 @@
               "schema:name": "Coriander Spices Offer"
             },
             "beckn:items": [
-              "grocery-item-033"
+              "coriander-spices-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10377,7 +10377,7 @@
               "schema:name": "Cumin Spices Offer"
             },
             "beckn:items": [
-              "grocery-item-034"
+              "cumin-spices-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10399,7 +10399,7 @@
               "schema:name": "Garam Masala Spices Offer"
             },
             "beckn:items": [
-              "grocery-item-035"
+              "garam-masala-spices-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10421,7 +10421,7 @@
               "schema:name": "Black Pepper Spices Offer"
             },
             "beckn:items": [
-              "grocery-item-036"
+              "black-pepper-spices-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10443,7 +10443,7 @@
               "schema:name": "Cardamom Spices Offer"
             },
             "beckn:items": [
-              "grocery-item-037"
+              "cardamom-spices-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10465,7 +10465,7 @@
               "schema:name": "Cinnamon Spices Offer"
             },
             "beckn:items": [
-              "grocery-item-038"
+              "cinnamon-spices-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10487,7 +10487,7 @@
               "schema:name": "Cloves Spices Offer"
             },
             "beckn:items": [
-              "grocery-item-039"
+              "cloves-spices-50-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10509,7 +10509,7 @@
               "schema:name": "Fenugreek Spices Offer"
             },
             "beckn:items": [
-              "grocery-item-040"
+              "fenugreek-spices-100-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10531,7 +10531,7 @@
               "schema:name": "Sunflower Oil Offer"
             },
             "beckn:items": [
-              "grocery-item-041"
+              "sunflower-oil-250-milliliter"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10553,7 +10553,7 @@
               "schema:name": "Mustard Oil Offer"
             },
             "beckn:items": [
-              "grocery-item-042"
+              "mustard-oil-1000-milliliter"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10575,7 +10575,7 @@
               "schema:name": "Groundnut Oil Offer"
             },
             "beckn:items": [
-              "grocery-item-043"
+              "groundnut-oil-500-milliliter"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10597,7 +10597,7 @@
               "schema:name": "Coconut Oil Offer"
             },
             "beckn:items": [
-              "grocery-item-044"
+              "coconut-oil-5-liter"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10619,7 +10619,7 @@
               "schema:name": "Olive Oil Offer"
             },
             "beckn:items": [
-              "grocery-item-045"
+              "olive-oil-250-milliliter"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10641,7 +10641,7 @@
               "schema:name": "Sesame Oil Offer"
             },
             "beckn:items": [
-              "grocery-item-046"
+              "sesame-oil-1000-milliliter"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10663,11 +10663,11 @@
               "schema:name": "Rice Bran Oil Offer"
             },
             "beckn:items": [
-              "grocery-item-047"
+              "rice-bran-oil-1-liter"
             ],
             "beckn:price": {
               "currency": "INR",
-              "value": 264.0,
+              "value": 264,
               "applicableQuantity": {
                 "unitText": "Liter",
                 "unitCode": "LTR",
@@ -10685,7 +10685,7 @@
               "schema:name": "Soybean Oil Offer"
             },
             "beckn:items": [
-              "grocery-item-048"
+              "soybean-oil-1000-milliliter"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10707,7 +10707,7 @@
               "schema:name": "Palm Oil Offer"
             },
             "beckn:items": [
-              "grocery-item-049"
+              "palm-oil-250-milliliter"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10729,7 +10729,7 @@
               "schema:name": "Canola Oil Offer"
             },
             "beckn:items": [
-              "grocery-item-050"
+              "canola-oil-500-milliliter"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10751,7 +10751,7 @@
               "schema:name": "White Sugar Offer"
             },
             "beckn:items": [
-              "grocery-item-051"
+              "white-sugar-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10773,7 +10773,7 @@
               "schema:name": "Brown Sugar Offer"
             },
             "beckn:items": [
-              "grocery-item-052"
+              "brown-sugar-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10795,7 +10795,7 @@
               "schema:name": "Jaggery Sugar Offer"
             },
             "beckn:items": [
-              "grocery-item-053"
+              "jaggery-sugar-1000-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10817,7 +10817,7 @@
               "schema:name": "Powdered Sugar Offer"
             },
             "beckn:items": [
-              "grocery-item-054"
+              "powdered-sugar-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10839,7 +10839,7 @@
               "schema:name": "Crystal Sugar Offer"
             },
             "beckn:items": [
-              "grocery-item-055"
+              "crystal-sugar-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10861,7 +10861,7 @@
               "schema:name": "Organic Sugar Offer"
             },
             "beckn:items": [
-              "grocery-item-056"
+              "organic-sugar-1000-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10883,7 +10883,7 @@
               "schema:name": "Iodized Salt Offer"
             },
             "beckn:items": [
-              "grocery-item-057"
+              "iodized-salt-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10905,7 +10905,7 @@
               "schema:name": "Rock Salt Offer"
             },
             "beckn:items": [
-              "grocery-item-058"
+              "rock-salt-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10927,7 +10927,7 @@
               "schema:name": "Sea Salt Offer"
             },
             "beckn:items": [
-              "grocery-item-059"
+              "sea-salt-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10949,7 +10949,7 @@
               "schema:name": "Black Salt Offer"
             },
             "beckn:items": [
-              "grocery-item-060"
+              "black-salt-250-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10971,7 +10971,7 @@
               "schema:name": "Himalayan Pink Salt Offer"
             },
             "beckn:items": [
-              "grocery-item-061"
+              "himalayan-pink-salt-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -10993,7 +10993,7 @@
               "schema:name": "Green Tea Offer"
             },
             "beckn:items": [
-              "grocery-item-062"
+              "green-tea-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11015,7 +11015,7 @@
               "schema:name": "Black Tea Offer"
             },
             "beckn:items": [
-              "grocery-item-063"
+              "black-tea-100-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11037,7 +11037,7 @@
               "schema:name": "Assam Tea Offer"
             },
             "beckn:items": [
-              "grocery-item-064"
+              "assam-tea-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11059,7 +11059,7 @@
               "schema:name": "Darjeeling Tea Offer"
             },
             "beckn:items": [
-              "grocery-item-065"
+              "darjeeling-tea-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11081,7 +11081,7 @@
               "schema:name": "Earl Grey Tea Offer"
             },
             "beckn:items": [
-              "grocery-item-066"
+              "earl-grey-tea-250-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11103,7 +11103,7 @@
               "schema:name": "Masala Tea Offer"
             },
             "beckn:items": [
-              "grocery-item-067"
+              "masala-tea-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11125,7 +11125,7 @@
               "schema:name": "Lemon Tea Offer"
             },
             "beckn:items": [
-              "grocery-item-068"
+              "lemon-tea-250-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11147,7 +11147,7 @@
               "schema:name": "Ginger Tea Offer"
             },
             "beckn:items": [
-              "grocery-item-069"
+              "ginger-tea-100-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11169,7 +11169,7 @@
               "schema:name": "Tulsi Tea Offer"
             },
             "beckn:items": [
-              "grocery-item-070"
+              "tulsi-tea-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11191,7 +11191,7 @@
               "schema:name": "Organic Tea Offer"
             },
             "beckn:items": [
-              "grocery-item-071"
+              "organic-tea-250-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11213,7 +11213,7 @@
               "schema:name": "Instant Coffee Offer"
             },
             "beckn:items": [
-              "grocery-item-072"
+              "instant-coffee-250-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11235,7 +11235,7 @@
               "schema:name": "Filter Coffee Offer"
             },
             "beckn:items": [
-              "grocery-item-073"
+              "filter-coffee-100-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11257,7 +11257,7 @@
               "schema:name": "Arabica Coffee Offer"
             },
             "beckn:items": [
-              "grocery-item-074"
+              "arabica-coffee-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11279,7 +11279,7 @@
               "schema:name": "Robusta Coffee Offer"
             },
             "beckn:items": [
-              "grocery-item-075"
+              "robusta-coffee-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11301,7 +11301,7 @@
               "schema:name": "Decaf Coffee Offer"
             },
             "beckn:items": [
-              "grocery-item-076"
+              "decaf-coffee-100-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11323,7 +11323,7 @@
               "schema:name": "Espresso Coffee Offer"
             },
             "beckn:items": [
-              "grocery-item-077"
+              "espresso-coffee-250-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11345,7 +11345,7 @@
               "schema:name": "Glucose Biscuits Offer"
             },
             "beckn:items": [
-              "grocery-item-078"
+              "glucose-biscuits-300-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11367,7 +11367,7 @@
               "schema:name": "Cream Biscuits Offer"
             },
             "beckn:items": [
-              "grocery-item-079"
+              "cream-biscuits-1-piece"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11389,7 +11389,7 @@
               "schema:name": "Digestive Biscuits Offer"
             },
             "beckn:items": [
-              "grocery-item-080"
+              "digestive-biscuits-2-piece"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11411,7 +11411,7 @@
               "schema:name": "Chocolate Biscuits Offer"
             },
             "beckn:items": [
-              "grocery-item-081"
+              "chocolate-biscuits-1-piece"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11433,7 +11433,7 @@
               "schema:name": "Oreo Biscuits Offer"
             },
             "beckn:items": [
-              "grocery-item-082"
+              "oreo-biscuits-2-piece"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11455,7 +11455,7 @@
               "schema:name": "Coconut Biscuits Offer"
             },
             "beckn:items": [
-              "grocery-item-083"
+              "coconut-biscuits-2-piece"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11477,7 +11477,7 @@
               "schema:name": "Butter Biscuits Offer"
             },
             "beckn:items": [
-              "grocery-item-084"
+              "butter-biscuits-100-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11499,7 +11499,7 @@
               "schema:name": "Marie Biscuits Offer"
             },
             "beckn:items": [
-              "grocery-item-085"
+              "marie-biscuits-1-piece"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11521,7 +11521,7 @@
               "schema:name": "Crackers Biscuits Offer"
             },
             "beckn:items": [
-              "grocery-item-086"
+              "crackers-biscuits-5-piece"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11543,7 +11543,7 @@
               "schema:name": "Cookies Biscuits Offer"
             },
             "beckn:items": [
-              "grocery-item-087"
+              "cookies-biscuits-1-piece"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11565,7 +11565,7 @@
               "schema:name": "Chips Snacks Offer"
             },
             "beckn:items": [
-              "grocery-item-088"
+              "chips-snacks-100-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11587,7 +11587,7 @@
               "schema:name": "Namkeen Snacks Offer"
             },
             "beckn:items": [
-              "grocery-item-089"
+              "namkeen-snacks-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11609,7 +11609,7 @@
               "schema:name": "Mixture Snacks Offer"
             },
             "beckn:items": [
-              "grocery-item-090"
+              "mixture-snacks-100-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11631,7 +11631,7 @@
               "schema:name": "Kurkure Snacks Offer"
             },
             "beckn:items": [
-              "grocery-item-091"
+              "kurkure-snacks-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11653,7 +11653,7 @@
               "schema:name": "Lays Snacks Offer"
             },
             "beckn:items": [
-              "grocery-item-092"
+              "lays-snacks-50-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11675,7 +11675,7 @@
               "schema:name": "Haldiram Snacks Offer"
             },
             "beckn:items": [
-              "grocery-item-093"
+              "haldiram-snacks-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11697,7 +11697,7 @@
               "schema:name": "Bhujia Snacks Offer"
             },
             "beckn:items": [
-              "grocery-item-094"
+              "bhujia-snacks-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11719,7 +11719,7 @@
               "schema:name": "Sev Snacks Offer"
             },
             "beckn:items": [
-              "grocery-item-095"
+              "sev-snacks-50-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11741,7 +11741,7 @@
               "schema:name": "Chakli Snacks Offer"
             },
             "beckn:items": [
-              "grocery-item-096"
+              "chakli-snacks-1-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11763,7 +11763,7 @@
               "schema:name": "Murukku Snacks Offer"
             },
             "beckn:items": [
-              "grocery-item-097"
+              "murukku-snacks-0-5-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11785,7 +11785,7 @@
               "schema:name": "Green Gram Pulses Offer"
             },
             "beckn:items": [
-              "grocery-item-098"
+              "green-gram-pulses-2-kilogram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11807,7 +11807,7 @@
               "schema:name": "Black Gram Pulses Offer"
             },
             "beckn:items": [
-              "grocery-item-099"
+              "black-gram-pulses-500-gram"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -11829,7 +11829,7 @@
               "schema:name": "Horse Gram Pulses Offer"
             },
             "beckn:items": [
-              "grocery-item-100"
+              "horse-gram-pulses-250-gram"
             ],
             "beckn:price": {
               "currency": "INR",

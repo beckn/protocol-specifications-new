@@ -15,7 +15,7 @@
       {
         "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
         "@type": "beckn:Catalog",
-        "beckn:id": "catalog-food-and-beverage-large-001",
+        "beckn:id": "food-beverage-catalog-bengaluru-2025",
         "beckn:descriptor": {
           "@type": "beckn:Descriptor",
           "schema:name": "Food and Beverage Hut",
@@ -27,7 +27,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-001",
+            "beckn:id": "margherita-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Margherita",
@@ -76,7 +76,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-002",
+            "beckn:id": "pepperoni-pizza-personal-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Pepperoni",
@@ -124,7 +124,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-003",
+            "beckn:id": "veg-supreme-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veg Supreme",
@@ -173,7 +173,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-004",
+            "beckn:id": "farmhouse-pizza-large",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Farmhouse",
@@ -221,7 +221,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-005",
+            "beckn:id": "paneer-tikka-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Paneer Tikka",
@@ -269,7 +269,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-006",
+            "beckn:id": "chicken-tikka-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Tikka",
@@ -317,7 +317,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-007",
+            "beckn:id": "bbq-chicken-pizza-medium-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "BBQ Chicken",
@@ -366,7 +366,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-008",
+            "beckn:id": "hawaiian-pizza-medium-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Hawaiian",
@@ -414,7 +414,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-009",
+            "beckn:id": "mexican-wave-pizza-personal",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Mexican Wave",
@@ -462,7 +462,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-010",
+            "beckn:id": "cheese-burst-pizza-personal",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Cheese Burst",
@@ -510,7 +510,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-011",
+            "beckn:id": "double-cheese-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Double Cheese",
@@ -559,7 +559,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-012",
+            "beckn:id": "mushroom-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Mushroom",
@@ -607,7 +607,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-013",
+            "beckn:id": "onion-capsicum-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Onion Capsicum",
@@ -655,7 +655,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-014",
+            "beckn:id": "corn-cheese-pizza-family",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Corn & Cheese",
@@ -703,7 +703,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-015",
+            "beckn:id": "olive-jalapeno-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Olive & Jalapeno",
@@ -751,7 +751,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-016",
+            "beckn:id": "veggie-delight-pizza-personal",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Delight",
@@ -800,7 +800,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-017",
+            "beckn:id": "chicken-dominator-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Dominator",
@@ -848,7 +848,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-018",
+            "beckn:id": "chicken-golden-delight-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Golden Delight",
@@ -896,7 +896,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-019",
+            "beckn:id": "chicken-fiesta-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Fiesta",
@@ -944,7 +944,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-020",
+            "beckn:id": "non-veg-supreme-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Non Veg Supreme",
@@ -992,7 +992,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-021",
+            "beckn:id": "tandoori-paneer-pizza-large",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Tandoori Paneer",
@@ -1040,7 +1040,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-022",
+            "beckn:id": "veggie-paradise-pizza-personal",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Paradise",
@@ -1089,7 +1089,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-023",
+            "beckn:id": "spicy-paneer-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Spicy Paneer",
@@ -1137,7 +1137,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-024",
+            "beckn:id": "veggie-lovers-pizza-personal",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Lovers",
@@ -1185,7 +1185,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-025",
+            "beckn:id": "classic-veg-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Classic Veg",
@@ -1233,7 +1233,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-026",
+            "beckn:id": "chicken-supreme-pizza-personal-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Supreme",
@@ -1282,7 +1282,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-027",
+            "beckn:id": "meat-lovers-pizza-medium-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Meat Lovers",
@@ -1331,7 +1331,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-028",
+            "beckn:id": "chicken-barbeque-pizza-family-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Barbeque",
@@ -1379,7 +1379,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-029",
+            "beckn:id": "chicken-pepperoni-pizza-personal-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Pepperoni",
@@ -1427,7 +1427,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-030",
+            "beckn:id": "veggie-supreme-pizza-family",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Supreme",
@@ -1475,7 +1475,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-031",
+            "beckn:id": "paneer-makhani-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Paneer Makhani",
@@ -1524,7 +1524,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-032",
+            "beckn:id": "chicken-keema-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Keema",
@@ -1573,7 +1573,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-033",
+            "beckn:id": "veggie-deluxe-pizza-family",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Deluxe",
@@ -1622,7 +1622,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-034",
+            "beckn:id": "chicken-deluxe-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Deluxe",
@@ -1670,7 +1670,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-035",
+            "beckn:id": "veggie-special-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Special",
@@ -1718,7 +1718,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-036",
+            "beckn:id": "chicken-special-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Special",
@@ -1767,7 +1767,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-037",
+            "beckn:id": "veggie-classic-pizza-family",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Classic",
@@ -1815,7 +1815,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-038",
+            "beckn:id": "chicken-classic-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Classic",
@@ -1863,7 +1863,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-039",
+            "beckn:id": "veggie-premium-pizza-family",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Premium",
@@ -1912,7 +1912,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-040",
+            "beckn:id": "chicken-premium-pizza-medium-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Premium",
@@ -1960,7 +1960,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-041",
+            "beckn:id": "veggie-signature-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Signature",
@@ -2008,7 +2008,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-042",
+            "beckn:id": "chicken-signature-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Signature",
@@ -2056,7 +2056,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-043",
+            "beckn:id": "veggie-fusion-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Fusion",
@@ -2104,7 +2104,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-044",
+            "beckn:id": "chicken-fusion-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Fusion",
@@ -2152,7 +2152,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-045",
+            "beckn:id": "veggie-exotic-pizza-family",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Exotic",
@@ -2200,7 +2200,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-046",
+            "beckn:id": "chicken-exotic-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Exotic",
@@ -2248,7 +2248,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-047",
+            "beckn:id": "veggie-gourmet-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Gourmet",
@@ -2297,7 +2297,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-048",
+            "beckn:id": "chicken-gourmet-pizza-family-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Gourmet",
@@ -2345,7 +2345,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-049",
+            "beckn:id": "veggie-ultimate-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Ultimate",
@@ -2394,7 +2394,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-050",
+            "beckn:id": "chicken-ultimate-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Ultimate",
@@ -2443,7 +2443,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-051",
+            "beckn:id": "veggie-max-pizza-family",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Max",
@@ -2492,7 +2492,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-052",
+            "beckn:id": "chicken-max-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Max",
@@ -2540,7 +2540,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-053",
+            "beckn:id": "veggie-plus-pizza-personal",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Plus",
@@ -2589,7 +2589,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-054",
+            "beckn:id": "chicken-plus-pizza-medium-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Plus",
@@ -2638,7 +2638,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-055",
+            "beckn:id": "veggie-extra-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Extra",
@@ -2687,7 +2687,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-056",
+            "beckn:id": "chicken-extra-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Extra",
@@ -2736,7 +2736,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-057",
+            "beckn:id": "veggie-mega-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Mega",
@@ -2785,7 +2785,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-058",
+            "beckn:id": "chicken-mega-pizza-personal-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Mega",
@@ -2834,7 +2834,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-059",
+            "beckn:id": "veggie-super-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Super",
@@ -2883,7 +2883,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-060",
+            "beckn:id": "chicken-super-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Super",
@@ -2932,7 +2932,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-061",
+            "beckn:id": "veggie-turbo-pizza-personal",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Turbo",
@@ -2980,7 +2980,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-062",
+            "beckn:id": "chicken-turbo-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Turbo",
@@ -3029,7 +3029,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-063",
+            "beckn:id": "veggie-power-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Power",
@@ -3078,7 +3078,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-064",
+            "beckn:id": "chicken-power-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Power",
@@ -3126,7 +3126,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-065",
+            "beckn:id": "veggie-blast-pizza-large",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Blast",
@@ -3175,7 +3175,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-066",
+            "beckn:id": "chicken-blast-pizza-personal-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Blast",
@@ -3224,7 +3224,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-067",
+            "beckn:id": "veggie-crunch-pizza-family",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Crunch",
@@ -3273,7 +3273,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-068",
+            "beckn:id": "chicken-crunch-pizza-medium-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Crunch",
@@ -3322,7 +3322,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-069",
+            "beckn:id": "veggie-zest-pizza-family",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Zest",
@@ -3370,7 +3370,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-070",
+            "beckn:id": "chicken-zest-pizza-medium-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Zest",
@@ -3419,7 +3419,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-071",
+            "beckn:id": "veggie-spice-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Spice",
@@ -3467,7 +3467,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-072",
+            "beckn:id": "chicken-spice-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Spice",
@@ -3515,7 +3515,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-073",
+            "beckn:id": "veggie-fire-pizza-personal",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Fire",
@@ -3563,7 +3563,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-074",
+            "beckn:id": "chicken-fire-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Fire",
@@ -3611,7 +3611,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-075",
+            "beckn:id": "veggie-storm-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Storm",
@@ -3660,7 +3660,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-076",
+            "beckn:id": "chicken-storm-pizza-family-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Storm",
@@ -3708,7 +3708,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-077",
+            "beckn:id": "veggie-thunder-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Thunder",
@@ -3757,7 +3757,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-078",
+            "beckn:id": "chicken-thunder-pizza-family-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Thunder",
@@ -3805,7 +3805,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-079",
+            "beckn:id": "veggie-lightning-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Lightning",
@@ -3854,7 +3854,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-080",
+            "beckn:id": "chicken-lightning-pizza-family-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Lightning",
@@ -3903,7 +3903,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-081",
+            "beckn:id": "veggie-rocket-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Rocket",
@@ -3952,7 +3952,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-082",
+            "beckn:id": "chicken-rocket-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Rocket",
@@ -4000,7 +4000,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-083",
+            "beckn:id": "veggie-star-pizza-family",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Star",
@@ -4049,7 +4049,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-084",
+            "beckn:id": "chicken-star-pizza-personal-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Star",
@@ -4098,7 +4098,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-085",
+            "beckn:id": "veggie-galaxy-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Galaxy",
@@ -4146,7 +4146,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-086",
+            "beckn:id": "chicken-galaxy-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Galaxy",
@@ -4194,7 +4194,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-087",
+            "beckn:id": "veggie-universe-pizza-large",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Universe",
@@ -4242,7 +4242,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-088",
+            "beckn:id": "chicken-universe-pizza-personal-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Universe",
@@ -4291,7 +4291,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-089",
+            "beckn:id": "veggie-cosmic-pizza-medium",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Cosmic",
@@ -4339,7 +4339,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-090",
+            "beckn:id": "chicken-cosmic-pizza-family-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Cosmic",
@@ -4388,7 +4388,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-091",
+            "beckn:id": "veggie-infinity-pizza-regular",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Infinity",
@@ -4437,7 +4437,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-092",
+            "beckn:id": "chicken-infinity-pizza-family-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Infinity",
@@ -4486,7 +4486,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-093",
+            "beckn:id": "veggie-eternal-pizza-large",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Eternal",
@@ -4535,7 +4535,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-094",
+            "beckn:id": "chicken-eternal-pizza-large-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Eternal",
@@ -4584,7 +4584,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-095",
+            "beckn:id": "veggie-legend-pizza-personal",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Legend",
@@ -4632,7 +4632,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-096",
+            "beckn:id": "chicken-legend-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Legend",
@@ -4681,7 +4681,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-097",
+            "beckn:id": "veggie-myth-pizza-large",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Myth",
@@ -4729,7 +4729,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-098",
+            "beckn:id": "chicken-myth-pizza-personal-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Myth",
@@ -4777,7 +4777,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-099",
+            "beckn:id": "veggie-epic-pizza-family",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Veggie Epic",
@@ -4826,7 +4826,7 @@
           {
             "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
             "@type": "beckn:Item",
-            "beckn:id": "food-and-beverage-item-100",
+            "beckn:id": "chicken-epic-pizza-regular-non-veg",
             "beckn:descriptor": {
               "@type": "beckn:Descriptor",
               "schema:name": "Chicken Epic",
@@ -4882,7 +4882,7 @@
               "schema:name": "Margherita Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-001"
+              "margherita-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -4904,7 +4904,7 @@
               "schema:name": "Pepperoni Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-002"
+              "pepperoni-pizza-personal-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -4926,7 +4926,7 @@
               "schema:name": "Veg Supreme Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-003"
+              "veg-supreme-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -4948,7 +4948,7 @@
               "schema:name": "Farmhouse Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-004"
+              "farmhouse-pizza-large"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -4970,7 +4970,7 @@
               "schema:name": "Paneer Tikka Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-005"
+              "paneer-tikka-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -4992,7 +4992,7 @@
               "schema:name": "Chicken Tikka Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-006"
+              "chicken-tikka-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5014,7 +5014,7 @@
               "schema:name": "BBQ Chicken Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-007"
+              "bbq-chicken-pizza-medium-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5036,7 +5036,7 @@
               "schema:name": "Hawaiian Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-008"
+              "hawaiian-pizza-medium-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5058,7 +5058,7 @@
               "schema:name": "Mexican Wave Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-009"
+              "mexican-wave-pizza-personal"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5080,7 +5080,7 @@
               "schema:name": "Cheese Burst Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-010"
+              "cheese-burst-pizza-personal"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5102,7 +5102,7 @@
               "schema:name": "Double Cheese Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-011"
+              "double-cheese-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5124,7 +5124,7 @@
               "schema:name": "Mushroom Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-012"
+              "mushroom-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5146,7 +5146,7 @@
               "schema:name": "Onion Capsicum Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-013"
+              "onion-capsicum-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5168,7 +5168,7 @@
               "schema:name": "Corn & Cheese Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-014"
+              "corn-cheese-pizza-family"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5190,7 +5190,7 @@
               "schema:name": "Olive & Jalapeno Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-015"
+              "olive-jalapeno-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5212,7 +5212,7 @@
               "schema:name": "Veggie Delight Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-016"
+              "veggie-delight-pizza-personal"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5234,7 +5234,7 @@
               "schema:name": "Chicken Dominator Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-017"
+              "chicken-dominator-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5256,7 +5256,7 @@
               "schema:name": "Chicken Golden Delight Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-018"
+              "chicken-golden-delight-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5278,7 +5278,7 @@
               "schema:name": "Chicken Fiesta Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-019"
+              "chicken-fiesta-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5300,7 +5300,7 @@
               "schema:name": "Non Veg Supreme Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-020"
+              "non-veg-supreme-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5322,7 +5322,7 @@
               "schema:name": "Tandoori Paneer Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-021"
+              "tandoori-paneer-pizza-large"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5344,7 +5344,7 @@
               "schema:name": "Veggie Paradise Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-022"
+              "veggie-paradise-pizza-personal"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5366,7 +5366,7 @@
               "schema:name": "Spicy Paneer Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-023"
+              "spicy-paneer-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5388,7 +5388,7 @@
               "schema:name": "Veggie Lovers Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-024"
+              "veggie-lovers-pizza-personal"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5410,7 +5410,7 @@
               "schema:name": "Classic Veg Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-025"
+              "classic-veg-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5432,7 +5432,7 @@
               "schema:name": "Chicken Supreme Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-026"
+              "chicken-supreme-pizza-personal-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5454,7 +5454,7 @@
               "schema:name": "Meat Lovers Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-027"
+              "meat-lovers-pizza-medium-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5476,7 +5476,7 @@
               "schema:name": "Chicken Barbeque Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-028"
+              "chicken-barbeque-pizza-family-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5498,7 +5498,7 @@
               "schema:name": "Chicken Pepperoni Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-029"
+              "chicken-pepperoni-pizza-personal-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5520,7 +5520,7 @@
               "schema:name": "Veggie Supreme Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-030"
+              "veggie-supreme-pizza-family"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5542,7 +5542,7 @@
               "schema:name": "Paneer Makhani Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-031"
+              "paneer-makhani-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5564,7 +5564,7 @@
               "schema:name": "Chicken Keema Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-032"
+              "chicken-keema-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5586,7 +5586,7 @@
               "schema:name": "Veggie Deluxe Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-033"
+              "veggie-deluxe-pizza-family"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5608,7 +5608,7 @@
               "schema:name": "Chicken Deluxe Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-034"
+              "chicken-deluxe-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5630,7 +5630,7 @@
               "schema:name": "Veggie Special Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-035"
+              "veggie-special-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5652,7 +5652,7 @@
               "schema:name": "Chicken Special Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-036"
+              "chicken-special-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5674,7 +5674,7 @@
               "schema:name": "Veggie Classic Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-037"
+              "veggie-classic-pizza-family"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5696,7 +5696,7 @@
               "schema:name": "Chicken Classic Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-038"
+              "chicken-classic-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5718,7 +5718,7 @@
               "schema:name": "Veggie Premium Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-039"
+              "veggie-premium-pizza-family"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5740,7 +5740,7 @@
               "schema:name": "Chicken Premium Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-040"
+              "chicken-premium-pizza-medium-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5762,7 +5762,7 @@
               "schema:name": "Veggie Signature Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-041"
+              "veggie-signature-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5784,7 +5784,7 @@
               "schema:name": "Chicken Signature Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-042"
+              "chicken-signature-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5806,7 +5806,7 @@
               "schema:name": "Veggie Fusion Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-043"
+              "veggie-fusion-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5828,7 +5828,7 @@
               "schema:name": "Chicken Fusion Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-044"
+              "chicken-fusion-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5850,7 +5850,7 @@
               "schema:name": "Veggie Exotic Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-045"
+              "veggie-exotic-pizza-family"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5872,7 +5872,7 @@
               "schema:name": "Chicken Exotic Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-046"
+              "chicken-exotic-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5894,7 +5894,7 @@
               "schema:name": "Veggie Gourmet Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-047"
+              "veggie-gourmet-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5916,7 +5916,7 @@
               "schema:name": "Chicken Gourmet Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-048"
+              "chicken-gourmet-pizza-family-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5938,7 +5938,7 @@
               "schema:name": "Veggie Ultimate Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-049"
+              "veggie-ultimate-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5960,7 +5960,7 @@
               "schema:name": "Chicken Ultimate Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-050"
+              "chicken-ultimate-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -5982,7 +5982,7 @@
               "schema:name": "Veggie Max Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-051"
+              "veggie-max-pizza-family"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6004,7 +6004,7 @@
               "schema:name": "Chicken Max Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-052"
+              "chicken-max-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6026,7 +6026,7 @@
               "schema:name": "Veggie Plus Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-053"
+              "veggie-plus-pizza-personal"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6048,7 +6048,7 @@
               "schema:name": "Chicken Plus Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-054"
+              "chicken-plus-pizza-medium-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6070,7 +6070,7 @@
               "schema:name": "Veggie Extra Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-055"
+              "veggie-extra-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6092,7 +6092,7 @@
               "schema:name": "Chicken Extra Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-056"
+              "chicken-extra-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6114,7 +6114,7 @@
               "schema:name": "Veggie Mega Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-057"
+              "veggie-mega-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6136,7 +6136,7 @@
               "schema:name": "Chicken Mega Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-058"
+              "chicken-mega-pizza-personal-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6158,7 +6158,7 @@
               "schema:name": "Veggie Super Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-059"
+              "veggie-super-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6180,7 +6180,7 @@
               "schema:name": "Chicken Super Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-060"
+              "chicken-super-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6202,7 +6202,7 @@
               "schema:name": "Veggie Turbo Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-061"
+              "veggie-turbo-pizza-personal"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6224,7 +6224,7 @@
               "schema:name": "Chicken Turbo Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-062"
+              "chicken-turbo-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6246,7 +6246,7 @@
               "schema:name": "Veggie Power Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-063"
+              "veggie-power-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6268,7 +6268,7 @@
               "schema:name": "Chicken Power Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-064"
+              "chicken-power-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6290,7 +6290,7 @@
               "schema:name": "Veggie Blast Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-065"
+              "veggie-blast-pizza-large"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6312,7 +6312,7 @@
               "schema:name": "Chicken Blast Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-066"
+              "chicken-blast-pizza-personal-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6334,7 +6334,7 @@
               "schema:name": "Veggie Crunch Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-067"
+              "veggie-crunch-pizza-family"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6356,7 +6356,7 @@
               "schema:name": "Chicken Crunch Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-068"
+              "chicken-crunch-pizza-medium-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6378,7 +6378,7 @@
               "schema:name": "Veggie Zest Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-069"
+              "veggie-zest-pizza-family"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6400,7 +6400,7 @@
               "schema:name": "Chicken Zest Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-070"
+              "chicken-zest-pizza-medium-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6422,7 +6422,7 @@
               "schema:name": "Veggie Spice Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-071"
+              "veggie-spice-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6444,7 +6444,7 @@
               "schema:name": "Chicken Spice Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-072"
+              "chicken-spice-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6466,7 +6466,7 @@
               "schema:name": "Veggie Fire Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-073"
+              "veggie-fire-pizza-personal"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6488,7 +6488,7 @@
               "schema:name": "Chicken Fire Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-074"
+              "chicken-fire-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6510,7 +6510,7 @@
               "schema:name": "Veggie Storm Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-075"
+              "veggie-storm-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6532,7 +6532,7 @@
               "schema:name": "Chicken Storm Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-076"
+              "chicken-storm-pizza-family-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6554,7 +6554,7 @@
               "schema:name": "Veggie Thunder Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-077"
+              "veggie-thunder-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6576,7 +6576,7 @@
               "schema:name": "Chicken Thunder Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-078"
+              "chicken-thunder-pizza-family-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6598,7 +6598,7 @@
               "schema:name": "Veggie Lightning Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-079"
+              "veggie-lightning-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6620,7 +6620,7 @@
               "schema:name": "Chicken Lightning Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-080"
+              "chicken-lightning-pizza-family-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6642,7 +6642,7 @@
               "schema:name": "Veggie Rocket Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-081"
+              "veggie-rocket-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6664,7 +6664,7 @@
               "schema:name": "Chicken Rocket Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-082"
+              "chicken-rocket-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6686,7 +6686,7 @@
               "schema:name": "Veggie Star Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-083"
+              "veggie-star-pizza-family"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6708,7 +6708,7 @@
               "schema:name": "Chicken Star Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-084"
+              "chicken-star-pizza-personal-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6730,7 +6730,7 @@
               "schema:name": "Veggie Galaxy Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-085"
+              "veggie-galaxy-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6752,7 +6752,7 @@
               "schema:name": "Chicken Galaxy Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-086"
+              "chicken-galaxy-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6774,7 +6774,7 @@
               "schema:name": "Veggie Universe Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-087"
+              "veggie-universe-pizza-large"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6796,7 +6796,7 @@
               "schema:name": "Chicken Universe Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-088"
+              "chicken-universe-pizza-personal-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6818,7 +6818,7 @@
               "schema:name": "Veggie Cosmic Medium Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-089"
+              "veggie-cosmic-pizza-medium"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6840,7 +6840,7 @@
               "schema:name": "Chicken Cosmic Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-090"
+              "chicken-cosmic-pizza-family-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6862,7 +6862,7 @@
               "schema:name": "Veggie Infinity Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-091"
+              "veggie-infinity-pizza-regular"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6884,7 +6884,7 @@
               "schema:name": "Chicken Infinity Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-092"
+              "chicken-infinity-pizza-family-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6906,7 +6906,7 @@
               "schema:name": "Veggie Eternal Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-093"
+              "veggie-eternal-pizza-large"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6928,7 +6928,7 @@
               "schema:name": "Chicken Eternal Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-094"
+              "chicken-eternal-pizza-large-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6950,7 +6950,7 @@
               "schema:name": "Veggie Legend Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-095"
+              "veggie-legend-pizza-personal"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6972,7 +6972,7 @@
               "schema:name": "Chicken Legend Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-096"
+              "chicken-legend-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -6994,7 +6994,7 @@
               "schema:name": "Veggie Myth Large Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-097"
+              "veggie-myth-pizza-large"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -7016,7 +7016,7 @@
               "schema:name": "Chicken Myth Personal Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-098"
+              "chicken-myth-pizza-personal-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -7038,7 +7038,7 @@
               "schema:name": "Veggie Epic Family Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-099"
+              "veggie-epic-pizza-family"
             ],
             "beckn:price": {
               "currency": "INR",
@@ -7060,7 +7060,7 @@
               "schema:name": "Chicken Epic Regular Offer"
             },
             "beckn:items": [
-              "food-and-beverage-item-100"
+              "chicken-epic-pizza-regular-non-veg"
             ],
             "beckn:price": {
               "currency": "INR",

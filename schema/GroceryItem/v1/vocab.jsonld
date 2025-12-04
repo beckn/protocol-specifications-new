@@ -220,6 +220,96 @@
       "rdfs:domain": "beckn:GroceryItem",
       "schema:rangeIncludes": "beckn:DietaryClassification"
     },
+    {
+      "@id": "beckn:credentials",
+      "@type": "rdf:Property",
+      "rdfs:label": "Credentials",
+      "rdfs:comment": "Credentials information for the grocery item, including provider and item credential details.",
+      "rdfs:domain": "beckn:GroceryItem",
+      "schema:rangeIncludes": "beckn:Credentials"
+    },
+    {
+      "@id": "beckn:Credentials",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Credentials",
+      "rdfs:comment": "Credentials information for grocery items."
+    },
+    {
+      "@id": "beckn:providerCredentials",
+      "@type": "rdf:Property",
+      "rdfs:label": "Provider credentials",
+      "rdfs:comment": "Provider credentials information.",
+      "rdfs:domain": "beckn:Credentials",
+      "schema:rangeIncludes": "beckn:ProviderCredentials"
+    },
+    {
+      "@id": "beckn:ProviderCredentials",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Provider Credentials",
+      "rdfs:comment": "Provider credentials information."
+    },
+    {
+      "@id": "beckn:providerCredentialsUrl",
+      "@type": "rdf:Property",
+      "rdfs:label": "Provider credentials URL",
+      "rdfs:comment": "URL for the provider credentials.",
+      "rdfs:domain": "beckn:ProviderCredentials",
+      "schema:rangeIncludes": "schema:URL"
+    },
+    {
+      "@id": "beckn:providerCredentialsId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Provider credentials ID",
+      "rdfs:comment": "Unique identifier for the provider credentials.",
+      "rdfs:domain": "beckn:ProviderCredentials",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:providerCredentialsDescription",
+      "@type": "rdf:Property",
+      "rdfs:label": "Provider credentials description",
+      "rdfs:comment": "Description of the provider credentials.",
+      "rdfs:domain": "beckn:ProviderCredentials",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:itemCredentials",
+      "@type": "rdf:Property",
+      "rdfs:label": "Item credentials",
+      "rdfs:comment": "Item credentials information.",
+      "rdfs:domain": "beckn:Credentials",
+      "schema:rangeIncludes": "beckn:ItemCredentials"
+    },
+    {
+      "@id": "beckn:ItemCredentials",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Item Credentials",
+      "rdfs:comment": "Item credentials information."
+    },
+    {
+      "@id": "beckn:itemCredentialsUrl",
+      "@type": "rdf:Property",
+      "rdfs:label": "Item credentials URL",
+      "rdfs:comment": "URL for the item credentials.",
+      "rdfs:domain": "beckn:ItemCredentials",
+      "schema:rangeIncludes": "schema:URL"
+    },
+    {
+      "@id": "beckn:itemCredentialsId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Item credentials ID",
+      "rdfs:comment": "Unique identifier for the item credentials.",
+      "rdfs:domain": "beckn:ItemCredentials",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:itemCredentialsDescription",
+      "@type": "rdf:Property",
+      "rdfs:label": "Item credentials description",
+      "rdfs:comment": "Description of the item credentials.",
+      "rdfs:domain": "beckn:ItemCredentials",
+      "schema:rangeIncludes": "schema:Text"
+    },
 
     {
       "@id": "beckn:GroceryCategory",

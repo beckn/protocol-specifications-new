@@ -49,6 +49,24 @@
       "@id": "beckn:dietaryClassification",
       "@type": "@id"
     },
+    "credentials": {
+      "@id": "beckn:credentials",
+      "@type": "@id"
+    },
+    "provider": {
+      "@id": "beckn:providerCredentials",
+      "@type": "@id"
+    },
+    "providerUrl": "beckn:providerCredentialsUrl",
+    "providerId": "beckn:providerCredentialsId",
+    "providerDescription": "beckn:providerCredentialsDescription",
+    "item": {
+      "@id": "beckn:itemCredentials",
+      "@type": "@id"
+    },
+    "itemUrl": "beckn:itemCredentialsUrl",
+    "itemId": "beckn:itemCredentialsId",
+    "itemDescription": "beckn:itemCredentialsDescription",
 
     "PACKAGED_COMMODITIES": "beckn:GroceryCategoryPackagedCommodities",
     "Packaged Commodities": "beckn:GroceryCategoryPackagedCommodities",

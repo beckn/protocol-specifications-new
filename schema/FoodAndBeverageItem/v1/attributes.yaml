@@ -77,5 +77,54 @@ components:
             enum: ["Grilled Mushrooms", "Pepperoni", "Olives", "Onions", "Capsicum", "Jalapenos", "Paneer", "Corn", "Tomatoes"]
           example: ["Grilled Mushrooms"]
 
+        ######################################################################
+        # Credentials
+        ######################################################################
+        credentials:
+          type: object
+          additionalProperties: false
+          description: >
+            Credentials information for the food and beverage item, including provider
+            and item credential details.
+          properties:
+            provider:
+              type: object
+              additionalProperties: false
+              description: >
+                Provider credentials information.
+              properties:
+                url:
+                  type: string
+                  format: uri
+                  description: >
+                    URL for the provider credentials.
+                id:
+                  type: string
+                  description: >
+                    Unique identifier for the provider credentials.
+                description:
+                  type: string
+                  description: >
+                    Description of the provider credentials.
+            item:
+              type: object
+              additionalProperties: false
+              description: >
+                Item credentials information.
+              properties:
+                url:
+                  type: string
+                  format: uri
+                  description: >
+                    URL for the item credentials.
+                id:
+                  type: string
+                  description: >
+                    Unique identifier for the item credentials.
+                description:
+                  type: string
+                  description: >
+                    Description of the item credentials.
+
 
 

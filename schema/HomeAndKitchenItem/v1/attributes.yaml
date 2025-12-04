@@ -1,0 +1,161 @@
+openapi: 3.1.1
+info:
+  title: Retail — Home and Kitchen Item Attributes (v1)
+  version: 1.0.0
+  x-profile-id: profiles/retail/home-and-kitchen/v1/home-and-kitchen-item
+  description: >
+    Home and Kitchen-specific item attributes intended to be attached to Item.attributes
+    (beckn:itemAttributes) for home and kitchen catalogs on Beckn/ONDC.
+
+    This pack only models attributes that are **not** already covered by the
+    core Beckn Item schema (beckn:id, beckn:descriptor, beckn:category,
+    availability, etc.). It focuses on statutory/regulatory details and
+    product-specific attributes (origin, imagery, brand, material, color) derived
+    from ONDC home and kitchen examples.
+
+components:
+  schemas:
+    ########################################################################
+    # ITEM.ATTRIBUTES — HomeAndKitchenItem
+    ########################################################################
+    HomeAndKitchenItem:
+      type: object
+      additionalProperties: false
+      description: >
+        Home and Kitchen-specific item attributes (statutory info, origin details,
+        imagery metadata, and product attributes like brand, material, color) to be
+        composed with the core Beckn Item via beckn:itemAttributes.
+      properties:
+
+        ######################################################################
+        # Domain category (to be linked to core CategoryCode via JSON-LD)
+        ######################################################################
+        category:
+          type: string
+          enum: ["HOME_AND_KITCHEN"]
+          description: >
+            Domain category for this home and kitchen item. This can be linked to
+            the core beckn:CategoryCode via JSON-LD equivalence in the profile context.
+
+        ######################################################################
+        # Statutory — packaged commodities
+        ######################################################################
+        manufacturerOrPacker:
+          type: object
+          additionalProperties: false
+          required: [type, name]
+          description: >
+            Manufacturer or packer information as required for packaged
+            commodities declarations.
+          properties:
+            type:
+              type: string
+              enum: [manufacturer, packer]
+              description: >
+                Type of entity: manufacturer or packer.
+            name:
+              type: string
+              description: >
+                Name of the manufacturer or packer.
+            id:
+              type: string
+              description: >
+                Unique identifier for the manufacturer or packer (optional).
+            address:
+              type: string
+              description: >
+                Address of the manufacturer or packer.
+
+        commonOrGenericNameOfCommodity:
+          type: string
+          description: >
+            Common or generic name of the commodity (e.g., "Bedsheet", "Pillow Cover").
+
+        manufacturePackingImportDate:
+          type: object
+          additionalProperties: false
+          required: [month, year]
+          description: >
+            Month and year of manufacture/packing/import.
+          properties:
+            month:
+              type: integer
+              minimum: 1
+              maximum: 12
+              description: >
+                Month of manufacture/packing/import (1-12).
+            year:
+              type: integer
+              minimum: 1900
+              description: >
+                Year of manufacture/packing/import.
+
+        ######################################################################
+        # Origin information
+        ######################################################################
+        origin:
+          type: object
+          additionalProperties: false
+          description: >
+            Origin information for the product, indicating the country of origin.
+          properties:
+            country:
+              type: string
+              description: >
+                Country code or name where the product originates from
+                (e.g., "IND" for India).
+              example: "IND"
+
+        ######################################################################
+        # Image metadata
+        ######################################################################
+        imageMetadata:
+          type: array
+          description: >
+            Additional image metadata beyond the primary descriptor images,
+            such as back images, detail images, etc.
+          items:
+            type: object
+            additionalProperties: false
+            required: [url]
+            properties:
+              type:
+                type: string
+                description: >
+                  Type of image (e.g., "back_image", "detail_image", "side_image").
+                example: "back_image"
+              url:
+                type: string
+                format: uri
+                description: >
+                  URL of the image.
+                example: "https://snp.com/images/i1_back_image.png"
+
+        ######################################################################
+        # Product attributes
+        ######################################################################
+        brand:
+          type: string
+          description: >
+            Brand name of the product.
+          example: "Hiyanshi"
+
+        colour:
+          type: string
+          description: >
+            Color code of the product (e.g., hex color code like "#000000").
+          example: "#000000"
+
+        colourName:
+          type: string
+          description: >
+            Human-readable color name of the product.
+          example: "Black"
+
+        material:
+          type: string
+          description: >
+            Material composition of the product (e.g., "cotton", "polyester",
+            "viscose rayon - cotton blend").
+          example: "cotton"
+

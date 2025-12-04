@@ -1,0 +1,4737 @@
+{
+  "data": {
+    "context": {
+      "action": "on_search",
+      "bap_id": "prod.nirmitbap.ondc.org",
+      "bap_uri": "https://prod.digihaat.in/protocol/v1",
+      "bpp_id": "webapi.magicpin.in/oms_partner/ondc",
+      "bpp_uri": "https://webapi.magicpin.in/oms_partner/ondc",
+      "city": "std:040",
+      "core_version": "1.2.0",
+      "country": "IND",
+      "domain": "ONDC:RET11",
+      "key": "ruCJ701shkXnux9Km+rYUMBlU52LIt/W0z3t0dnyoZk=",
+      "message_id": "841163b5-b02b-44b6-a976-5a9c2bb74677",
+      "timestamp": "2025-11-27T19:58:26.153Z",
+      "transaction_id": "fc09bacb-3c1f-40b7-8013-87b892e590d7",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "catalog": {
+        "bpp/descriptor": {
+          "images": [
+            "https://yt3.googleusercontent.com/ytc/AL5GRJW8PCs2xm0nDQfOMMzRyes58DrdtgZuSDJUWfjShg=s176-c-k-c0x00ffffff-no-rj"
+          ],
+          "long_desc": "Discover the best places to eat, shop and hang out around you. Earn rewards by uploading all your bills.",
+          "name": "MAGICPIN",
+          "short_desc": "#ShopLocal",
+          "symbol": "https://yt3.googleusercontent.com/ytc/AL5GRJW8PCs2xm0nDQfOMMzRyes58DrdtgZuSDJUWfjShg=s176-c-k-c0x00ffffff-no-rj",
+          "tags": [
+            {
+              "code": "bpp_terms",
+              "list": [
+                {
+                  "code": "np_type",
+                  "value": "MSN"
+                }
+              ]
+            }
+          ]
+        },
+        "bpp/fulfillments": [
+          {
+            "id": "1",
+            "type": "Delivery"
+          }
+        ],
+        "bpp/providers": [
+          {
+            "@ondc/org/fssai_license_no": "23621033004511",
+            "categories": [
+              {
+                "descriptor": {
+                  "long_desc": "Recommended",
+                  "name": "Recommended",
+                  "short_desc": "Recommended"
+                },
+                "id": "c-10",
+                "parent_category_id": "",
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "custom_menu"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "display",
+                    "list": [
+                      {
+                        "code": "rank",
+                        "value": "1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "descriptor": {
+                  "long_desc": "Starter",
+                  "name": "Starter",
+                  "short_desc": "Starter"
+                },
+                "id": "18729335",
+                "parent_category_id": "",
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "custom_menu"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "display",
+                    "list": [
+                      {
+                        "code": "rank",
+                        "value": "2"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "descriptor": {
+              "images": [
+                "http://lh3.googleusercontent.com/CPiItVfpwCrANfhgZvF3FBOlYxJMx48jEx1bLvTLtcG6tX0ByJPmX7lSuJeBN2LVFf2v-ERLhYemmPgw_D-WBdSFq6o",
+                "http://lh3.googleusercontent.com/dJqf0D0QH5pKfAZxXCkHbnhqmWrNbDegoofndXLyIrBAGZpkLc5aVW1aKQdCeaXDJP9XvmBLSnqVvT5KB3hqWYh3rJ8=s750"
+              ],
+              "long_desc": "Lucky Fast Food And Bakery",
+              "name": "Lucky Fast Food And Bakery",
+              "short_desc": "Delivery and Takeaway, Chinese,Fast Food,Sichuan",
+              "symbol": "http://lh3.googleusercontent.com/CPiItVfpwCrANfhgZvF3FBOlYxJMx48jEx1bLvTLtcG6tX0ByJPmX7lSuJeBN2LVFf2v-ERLhYemmPgw_D-WBdSFq6o"
+            },
+            "exp": "2025-11-27T19:58:26.153Z",
+            "fulfillments": [
+              {
+                "contact": {
+                  "email": "care@magicpin.in",
+                  "phone": "9391234333"
+                },
+                "id": "F1",
+                "type": "Delivery"
+              }
+            ],
+            "id": "2423791",
+            "items": [
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:1"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Leg Piece",
+                  "name": "Chicken Leg Piece",
+                  "short_desc": "Chicken Leg Piece",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320397",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "154.00",
+                  "value": "77.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:2"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Lolly Pop (2P)",
+                  "name": "Chicken Lolly Pop (2P)",
+                  "short_desc": "Chicken Lolly Pop (2P)",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320393",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "168.00",
+                  "value": "84.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:3"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Gobi 65",
+                  "name": "Gobi 65",
+                  "short_desc": "Gobi 65",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "113856785",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "168.00",
+                  "value": "84.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:4"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Schzvan Rice",
+                  "name": "Veg Schzvan Rice",
+                  "short_desc": "Veg Schzvan Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320383",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "168.00",
+                  "value": "84.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:5"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Schzvan Noodles",
+                  "name": "Veg Schzvan Noodles",
+                  "short_desc": "Veg Schzvan Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320382",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "168.00",
+                  "value": "84.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:6"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Jeera Noodles",
+                  "name": "Veg Jeera Noodles",
+                  "short_desc": "Veg Jeera Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320392",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "168.00",
+                  "value": "84.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:7"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Machuriya Rice",
+                  "name": "Veg Machuriya Rice",
+                  "short_desc": "Veg Machuriya Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320375",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "196.00",
+                  "value": "98.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:8"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Jeera Rice",
+                  "name": "Veg Jeera Rice",
+                  "short_desc": "Veg Jeera Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320395",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "196.00",
+                  "value": "98.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:9"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Noodles (2)",
+                  "name": "Egg Noodles (2)",
+                  "short_desc": "Egg Noodles (2)",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320386",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "196.00",
+                  "value": "98.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:10"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Machuriya Rice",
+                  "name": "Egg Machuriya Rice",
+                  "short_desc": "Egg Machuriya Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320389",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:11"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Manchuriya",
+                  "name": "Egg Manchuriya",
+                  "short_desc": "Egg Manchuriya",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320385",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:12"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Rice",
+                  "name": "Egg Rice",
+                  "short_desc": "Egg Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320381",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:13"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Noodles",
+                  "name": "Egg Noodles",
+                  "short_desc": "Egg Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "111136659",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:14"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Noodles",
+                  "name": "Chicken Noodles",
+                  "short_desc": "Chicken Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "16147991",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:15"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Manchuriya",
+                  "name": "Veg Manchuriya",
+                  "short_desc": "Veg Manchuriya",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320379",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:16"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Schzvan Noodles",
+                  "name": "Egg Schzvan Noodles",
+                  "short_desc": "Egg Schzvan Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320394",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:17"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Machuriya Rice (2)",
+                  "name": "Egg Machuriya Rice (2)",
+                  "short_desc": "Egg Machuriya Rice (2)",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320372",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:18"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg 65",
+                  "name": "Veg 65",
+                  "short_desc": "Veg 65",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320399",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "238.00",
+                  "value": "119.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:19"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Double Egg Rice",
+                  "name": "Double Egg Rice",
+                  "short_desc": "Double Egg Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320388",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:20"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Double Egg Noodles",
+                  "name": "Double Egg Noodles",
+                  "short_desc": "Double Egg Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "111136662",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:21"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Rice",
+                  "name": "Chicken Rice",
+                  "short_desc": "Chicken Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320380",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:22"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Pakodi Bone",
+                  "name": "Chicken Pakodi Bone",
+                  "short_desc": "Chicken Pakodi Bone",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320396",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:23"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chilli Chicken",
+                  "name": "Chilli Chicken",
+                  "short_desc": "Chilli Chicken",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "111136673",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "266.00",
+                  "value": "133.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:24"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken 65",
+                  "name": "Chicken 65",
+                  "short_desc": "Chicken 65",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114032177",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "266.00",
+                  "value": "133.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "c-10:25"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Manchuriya",
+                  "name": "Chicken Manchuriya",
+                  "short_desc": "Chicken Manchuriya",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320391",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "280.00",
+                  "value": "140.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:26"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Machuriya Rice",
+                  "name": "Egg Machuriya Rice",
+                  "short_desc": "Egg Machuriya Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320389",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:27"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Manchuriya",
+                  "name": "Egg Manchuriya",
+                  "short_desc": "Egg Manchuriya",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320385",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:28"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Rice",
+                  "name": "Egg Rice",
+                  "short_desc": "Egg Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320381",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:29"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Noodles",
+                  "name": "Egg Noodles",
+                  "short_desc": "Egg Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "111136659",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:30"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Double Egg Rice",
+                  "name": "Double Egg Rice",
+                  "short_desc": "Double Egg Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320388",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:31"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Double Egg Noodles",
+                  "name": "Double Egg Noodles",
+                  "short_desc": "Double Egg Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "111136662",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:32"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chilli Chicken",
+                  "name": "Chilli Chicken",
+                  "short_desc": "Chilli Chicken",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "111136673",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "266.00",
+                  "value": "133.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:33"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Manchuriya",
+                  "name": "Chicken Manchuriya",
+                  "short_desc": "Chicken Manchuriya",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320391",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "280.00",
+                  "value": "140.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:34"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken 65",
+                  "name": "Chicken 65",
+                  "short_desc": "Chicken 65",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114032177",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "266.00",
+                  "value": "133.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:35"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Leg Piece",
+                  "name": "Chicken Leg Piece",
+                  "short_desc": "Chicken Leg Piece",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320397",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "154.00",
+                  "value": "77.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:36"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Lolly Pop (2P)",
+                  "name": "Chicken Lolly Pop (2P)",
+                  "short_desc": "Chicken Lolly Pop (2P)",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320393",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "168.00",
+                  "value": "84.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:37"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Panner Rice",
+                  "name": "Chicken Panner Rice",
+                  "short_desc": "Chicken Panner Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320378",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "0"
+                  },
+                  "maximum": {
+                    "count": "0"
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:38"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Panner Noodles",
+                  "name": "Chicken Panner Noodles",
+                  "short_desc": "Chicken Panner Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320384",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "0"
+                  },
+                  "maximum": {
+                    "count": "0"
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:39"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Gobi 65",
+                  "name": "Gobi 65",
+                  "short_desc": "Gobi 65",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "113856785",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "168.00",
+                  "value": "84.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:40"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Rice",
+                  "name": "Chicken Rice",
+                  "short_desc": "Chicken Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320380",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:41"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Noodles",
+                  "name": "Chicken Noodles",
+                  "short_desc": "Chicken Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "16147991",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:42"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Biryani",
+                  "name": "Biryani",
+                  "short_desc": "Biryani",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320377",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:43"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Manchuriya",
+                  "name": "Veg Manchuriya",
+                  "short_desc": "Veg Manchuriya",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320379",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:44"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Schzvan Rice",
+                  "name": "Veg Schzvan Rice",
+                  "short_desc": "Veg Schzvan Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320383",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "168.00",
+                  "value": "84.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:45"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Schzvan Noodles",
+                  "name": "Veg Schzvan Noodles",
+                  "short_desc": "Veg Schzvan Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320382",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "168.00",
+                  "value": "84.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:46"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Machuriya Rice",
+                  "name": "Veg Machuriya Rice",
+                  "short_desc": "Veg Machuriya Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320375",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "196.00",
+                  "value": "98.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:47"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Jeera Rice",
+                  "name": "Veg Jeera Rice",
+                  "short_desc": "Veg Jeera Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320395",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "196.00",
+                  "value": "98.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:48"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg Jeera Noodles",
+                  "name": "Veg Jeera Noodles",
+                  "short_desc": "Veg Jeera Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320392",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "168.00",
+                  "value": "84.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:49"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Veg 65",
+                  "name": "Veg 65",
+                  "short_desc": "Veg 65",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320399",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "238.00",
+                  "value": "119.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:50"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Panner Rice",
+                  "name": "Panner Rice",
+                  "short_desc": "Panner Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320374",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "196.00",
+                  "value": "98.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "0"
+                  },
+                  "maximum": {
+                    "count": "0"
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:51"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Panner Noodles",
+                  "name": "Panner Noodles",
+                  "short_desc": "Panner Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320390",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "196.00",
+                  "value": "98.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "0"
+                  },
+                  "maximum": {
+                    "count": "0"
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:52"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Panner Manchuriya",
+                  "name": "Panner Manchuriya",
+                  "short_desc": "Panner Manchuriya",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320376",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "0"
+                  },
+                  "maximum": {
+                    "count": "0"
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:53"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Panner 65",
+                  "name": "Panner 65",
+                  "short_desc": "Panner 65",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320387",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "0"
+                  },
+                  "maximum": {
+                    "count": "0"
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:54"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Kajju Schzvan Rice",
+                  "name": "Kajju Schzvan Rice",
+                  "short_desc": "Kajju Schzvan Rice",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320371",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "308.00",
+                  "value": "154.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:55"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Kajju Schzvan Noodles",
+                  "name": "Kajju Schzvan Noodles",
+                  "short_desc": "Kajju Schzvan Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320373",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "308.00",
+                  "value": "154.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:56"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "French Fries",
+                  "name": "French Fries",
+                  "short_desc": "French Fries",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320398",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "0"
+                  },
+                  "maximum": {
+                    "count": "0"
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:57"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Chicken Pakodi Bone",
+                  "name": "Chicken Pakodi Bone",
+                  "short_desc": "Chicken Pakodi Bone",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320396",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "252.00",
+                  "value": "126.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:58"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Schzvan Noodles",
+                  "name": "Egg Schzvan Noodles",
+                  "short_desc": "Egg Schzvan Noodles",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320394",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:59"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Noodles (2)",
+                  "name": "Egg Noodles (2)",
+                  "short_desc": "Egg Noodles (2)",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320386",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "196.00",
+                  "value": "98.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              },
+              {
+                "@ondc/org/available_on_cod": false,
+                "@ondc/org/cancellable": false,
+                "@ondc/org/contact_details_consumer_care": "Lucky Fast Food And Bakery,care@magicpin.in,9391234333",
+                "@ondc/org/returnable": false,
+                "@ondc/org/seller_pickup_return": false,
+                "@ondc/org/statutory_reqs_packaged_commodities": {
+                  "imported_product_country_of_origin": "IND"
+                },
+                "@ondc/org/time_to_ship": "PT30M",
+                "category_id": "F&B",
+                "category_ids": [
+                  "18729335:60"
+                ],
+                "customization_grp_ids": null,
+                "descriptor": {
+                  "images": [
+                    "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                  ],
+                  "long_desc": "Egg Machuriya Rice (2)",
+                  "name": "Egg Machuriya Rice (2)",
+                  "short_desc": "Egg Machuriya Rice (2)",
+                  "symbol": "https://lh3.googleusercontent.com/iqjwHDdhVTYn8uqCIrGfNHIbN3hHa9dBalrddLwpzE5rdldeAW9RGcujHsLvqNQsdmzl9anmbsS7OW7Hn4dBHNETZf5wSkSOfgSeaMrIYA"
+                },
+                "fulfillment_id": "1",
+                "id": "114320372",
+                "location_id": "2423791",
+                "price": {
+                  "currency": "INR",
+                  "maximum_value": "224.00",
+                  "value": "112.00"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "200"
+                  },
+                  "maximum": {
+                    "count": "25"
+                  },
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  }
+                },
+                "related": false,
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              }
+            ],
+            "locations": [
+              {
+                "address": {
+                  "area_code": "500055",
+                  "city": "Hyderabad",
+                  "country": "India",
+                  "locality": "Jeedimetla",
+                  "name": "Lucky Fast Food And Bakery",
+                  "state": "Telangana",
+                  "street": "Jeedimetla"
+                },
+                "circle": {
+                  "gps": "17.51667265,78.44281193",
+                  "radius": {
+                    "unit": "km",
+                    "value": "4.57"
+                  }
+                },
+                "gps": "17.51667265,78.44281193",
+                "id": "2423791",
+                "time": {
+                  "days": "1,6,7,4,2,3,5",
+                  "label": "enable",
+                  "schedule": {
+                    "frequency": "PT30M",
+                    "holidays": [],
+                    "times": [
+                      "1100",
+                      "1130",
+                      "1200",
+                      "1230",
+                      "1300",
+                      "1330",
+                      "1400",
+                      "1430",
+                      "1500",
+                      "1530",
+                      "1600",
+                      "1630",
+                      "1700",
+                      "1730",
+                      "1800",
+                      "1830",
+                      "1900",
+                      "1930",
+                      "2000",
+                      "2030",
+                      "2100",
+                      "2130",
+                      "2200"
+                    ]
+                  },
+                  "timestamp": "2025-11-27T19:58:26.153Z"
+                }
+              }
+            ],
+            "tags": [
+              {
+                "code": "serviceability",
+                "list": [
+                  {
+                    "code": "location",
+                    "value": "2423791"
+                  },
+                  {
+                    "code": "category",
+                    "value": "F&B"
+                  },
+                  {
+                    "code": "day_from",
+                    "value": "1"
+                  },
+                  {
+                    "code": "day_to",
+                    "value": "7"
+                  },
+                  {
+                    "code": "time_from",
+                    "value": "0000"
+                  },
+                  {
+                    "code": "time_to",
+                    "value": "2359"
+                  },
+                  {
+                    "code": "type",
+                    "value": "10"
+                  },
+                  {
+                    "code": "val",
+                    "value": "4.57"
+                  },
+                  {
+                    "code": "unit",
+                    "value": "km"
+                  }
+                ]
+              },
+              {
+                "code": "timing",
+                "list": [
+                  {
+                    "code": "type",
+                    "value": "Order"
+                  },
+                  {
+                    "code": "location",
+                    "value": "2423791"
+                  },
+                  {
+                    "code": "day_from",
+                    "value": "1"
+                  },
+                  {
+                    "code": "day_to",
+                    "value": "1"
+                  },
+                  {
+                    "code": "time_from",
+                    "value": "1100"
+                  },
+                  {
+                    "code": "time_to",
+                    "value": "2245"
+                  }
+                ]
+              },
+              {
+                "code": "timing",
+                "list": [
+                  {
+                    "code": "type",
+                    "value": "Order"
+                  },
+                  {
+                    "code": "location",
+                    "value": "2423791"
+                  },
+                  {
+                    "code": "day_from",
+                    "value": "6"
+                  },
+                  {
+                    "code": "day_to",
+                    "value": "6"
+                  },
+                  {
+                    "code": "time_from",
+                    "value": "1100"
+                  },
+                  {
+                    "code": "time_to",
+                    "value": "2245"
+                  }
+                ]
+              },
+              {
+                "code": "timing",
+                "list": [
+                  {
+                    "code": "type",
+                    "value": "Order"
+                  },
+                  {
+                    "code": "location",
+                    "value": "2423791"
+                  },
+                  {
+                    "code": "day_from",
+                    "value": "7"
+                  },
+                  {
+                    "code": "day_to",
+                    "value": "7"
+                  },
+                  {
+                    "code": "time_from",
+                    "value": "1100"
+                  },
+                  {
+                    "code": "time_to",
+                    "value": "2245"
+                  }
+                ]
+              },
+              {
+                "code": "timing",
+                "list": [
+                  {
+                    "code": "type",
+                    "value": "Order"
+                  },
+                  {
+                    "code": "location",
+                    "value": "2423791"
+                  },
+                  {
+                    "code": "day_from",
+                    "value": "4"
+                  },
+                  {
+                    "code": "day_to",
+                    "value": "4"
+                  },
+                  {
+                    "code": "time_from",
+                    "value": "1100"
+                  },
+                  {
+                    "code": "time_to",
+                    "value": "2230"
+                  }
+                ]
+              },
+              {
+                "code": "timing",
+                "list": [
+                  {
+                    "code": "type",
+                    "value": "Order"
+                  },
+                  {
+                    "code": "location",
+                    "value": "2423791"
+                  },
+                  {
+                    "code": "day_from",
+                    "value": "2"
+                  },
+                  {
+                    "code": "day_to",
+                    "value": "2"
+                  },
+                  {
+                    "code": "time_from",
+                    "value": "1100"
+                  },
+                  {
+                    "code": "time_to",
+                    "value": "2245"
+                  }
+                ]
+              },
+              {
+                "code": "timing",
+                "list": [
+                  {
+                    "code": "type",
+                    "value": "Order"
+                  },
+                  {
+                    "code": "location",
+                    "value": "2423791"
+                  },
+                  {
+                    "code": "day_from",
+                    "value": "3"
+                  },
+                  {
+                    "code": "day_to",
+                    "value": "3"
+                  },
+                  {
+                    "code": "time_from",
+                    "value": "1100"
+                  },
+                  {
+                    "code": "time_to",
+                    "value": "2245"
+                  }
+                ]
+              },
+              {
+                "code": "timing",
+                "list": [
+                  {
+                    "code": "type",
+                    "value": "Order"
+                  },
+                  {
+                    "code": "location",
+                    "value": "2423791"
+                  },
+                  {
+                    "code": "day_from",
+                    "value": "5"
+                  },
+                  {
+                    "code": "day_to",
+                    "value": "5"
+                  },
+                  {
+                    "code": "time_from",
+                    "value": "1100"
+                  },
+                  {
+                    "code": "time_to",
+                    "value": "2245"
+                  }
+                ]
+              },
+              {
+                "code": "close_timing",
+                "list": [
+                  {
+                    "code": "location",
+                    "value": "2423791"
+                  },
+                  {
+                    "code": "start",
+                    "value": "2025-11-27T17:00:56.142Z"
+                  }
+                ]
+              }
+            ],
+            "time": {
+              "label": "enable",
+              "timestamp": "2025-11-27T19:58:26.153Z"
+            },
+            "ttl": "P1D"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,183 @@
+openapi: 3.1.1
+info:
+  title: Retail — Home and Kitchen Fulfillment Attributes (v1)
+  version: 1.0.0
+  x-profile-id: profiles/retail/home-and-kitchen/v1/home-and-kitchen-fulfillment
+  description: >
+    Home and Kitchen fulfillment attributes intended to be attached to Order.fulfillments[].attributes
+    or Provider-level fulfillment attributes for home and kitchen catalogs on Beckn/ONDC.
+
+    This pack models fulfillment capabilities, contact information, timing policies,
+    and serviceability rules specific to home and kitchen retail, derived from ONDC
+    home and kitchen examples.
+
+components:
+  schemas:
+    ########################################################################
+    # FULFILLMENT.ATTRIBUTES — HomeAndKitchenFulfillment
+    ########################################################################
+    HomeAndKitchenFulfillment:
+      type: object
+      additionalProperties: false
+      description: >
+        Home and Kitchen fulfillment attributes (supported types, contact info,
+        timing policies, and serviceability) to be attached to fulfillment objects.
+      properties:
+
+        ######################################################################
+        # Supported fulfillment types
+        ######################################################################
+        supportedFulfillmentTypes:
+          type: array
+          description: >
+            Array of fulfillment types supported by this provider/channel
+            (e.g., Delivery, Self-Pickup, Delivery and Self-Pickup).
+          items:
+            type: string
+            enum: [Delivery, Self-Pickup, "Delivery and Self-Pickup"]
+          example: ["Delivery", "Self-Pickup"]
+
+        ######################################################################
+        # Contact information
+        ######################################################################
+        contactPhone:
+          type: string
+          description: >
+            Contact phone number for fulfillment-related inquiries.
+          example: "9886098860"
+
+        contactEmail:
+          type: string
+          format: email
+          description: >
+            Contact email address for fulfillment-related inquiries.
+          example: "abc@xyz.com"
+
+        ######################################################################
+        # Timing policies (operating hours per fulfillment type and location)
+        ######################################################################
+        timingPolicies:
+          type: array
+          description: >
+            Timing policies defining operating hours for different fulfillment types
+            (Order, Delivery, Self-Pickup) per location. Transformed from ONDC
+            timing tags.
+          items:
+            type: object
+            additionalProperties: false
+            required: [fulfillmentType, locationId]
+            properties:
+              fulfillmentType:
+                type: string
+                enum: [Order, Delivery, Self-Pickup]
+                description: >
+                  Type of fulfillment operation this timing policy applies to.
+                example: "Order"
+              locationId:
+                type: string
+                description: >
+                  Location identifier where this timing policy applies.
+                example: "L1"
+              dayFrom:
+                type: integer
+                minimum: 1
+                maximum: 7
+                description: >
+                  Starting day of week (1=Monday, 7=Sunday) for this timing window.
+                example: 1
+              dayTo:
+                type: integer
+                minimum: 1
+                maximum: 7
+                description: >
+                  Ending day of week (1=Monday, 7=Sunday) for this timing window.
+                example: 7
+              timeFrom:
+                type: string
+                pattern: '^[0-9]{4}$'
+                description: >
+                  Starting time in HHMM format (24-hour, e.g., "1100" for 11:00 AM).
+                example: "1100"
+              timeTo:
+                type: string
+                pattern: '^[0-9]{4}$'
+                description: >
+                  Ending time in HHMM format (24-hour, e.g., "2200" for 10:00 PM).
+                example: "2200"
+          example:
+            - fulfillmentType: "Order"
+              locationId: "L1"
+              dayFrom: 1
+              dayTo: 7
+              timeFrom: "0000"
+              timeTo: "2359"
+            - fulfillmentType: "Delivery"
+              locationId: "L1"
+              dayFrom: 1
+              dayTo: 7
+              timeFrom: "1100"
+              timeTo: "2200"
+            - fulfillmentType: "Self-Pickup"
+              locationId: "L1"
+              dayFrom: 1
+              dayTo: 7
+              timeFrom: "1100"
+              timeTo: "2000"
+
+        ######################################################################
+        # Serviceability (where & for which categories fulfillment is available)
+        ######################################################################
+        serviceability:
+          type: array
+          description: >
+            Serviceability rules defining where and for which categories the
+            provider can fulfill orders. Transformed from ONDC serviceability tags.
+          items:
+            type: object
+            additionalProperties: false
+            required: [locationId, category]
+            properties:
+              locationId:
+                type: string
+                description: >
+                  Location identifier where this serviceability rule applies.
+                example: "L1"
+              category:
+                type: string
+                description: >
+                  Category name or code for which this serviceability applies
+                  (e.g., "Home Furnishings").
+                example: "Home Furnishings"
+              serviceabilityCode:
+                type: string
+                enum: ["10", "12"]
+                description: >
+                  Serviceability code indicating the type of constraint
+                  ("10" for distance-based, "12" for country-wide).
+                example: "12"
+              serviceabilityType:
+                type: string
+                enum: [distance-based, country-wide]
+                description: >
+                  Type of serviceability constraint (distance-based or country-wide).
+                example: "country-wide"
+              value:
+                type: string
+                description: >
+                  Value of the serviceability constraint (e.g., country code like "IND").
+                example: "IND"
+              unit:
+                type: string
+                enum: [km, country]
+                description: >
+                  Unit of the serviceability value (e.g., "km" for distance,
+                  "country" for country-wide).
+                example: "country"
+          example:
+            - locationId: "L1"
+              category: "Home Furnishings"
+              serviceabilityCode: "12"
+              serviceabilityType: "country-wide"
+              value: "IND"
+              unit: "country"
+

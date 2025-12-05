@@ -1,0 +1,362 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/p2p-trading/schema/EnergyEnrollment/v0.2/#",
+    "beckn": "../vocab.jsonld",
+    "did": "https://www.w3.org/ns/did/v1#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "vc": "https://www.w3.org/2018/credentials#",
+    
+    "EnergyEnrollment": {
+      "@id": "EnergyEnrollment",
+      "@type": "@id",
+      "rdfs:comment": "Main schema type for program enrollment attributes. Used in fulfillmentAttributes (init request) and orderAttributes (init response, confirm request, confirm response)."
+    },
+    
+    "VerifiableCredential": {
+      "@id": "vc:VerifiableCredential",
+      "@type": "@id",
+      "rdfs:comment": "A W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model-2.0/) used in enrollment. This is a wrapper/reference object that contains the credential data (as JWT or JSON-LD), metadata, and URLs. The actual credential follows W3C VC Data Model v2.0 structure."
+    },
+    
+    "CredentialVerification": {
+      "@id": "CredentialVerification",
+      "@type": "@id",
+      "rdfs:comment": "Results of credential verification performed by BPP. Contains status and list of verified credentials."
+    },
+    
+    "ConflictCheck": {
+      "@id": "ConflictCheck",
+      "@type": "@id",
+      "rdfs:comment": "Results of conflict checking with existing enrollments. Indicates if conflicts exist and provides details of conflicting enrollments."
+    },
+    
+    "ConflictingEnrollment": {
+      "@id": "ConflictingEnrollment",
+      "@type": "@id",
+      "rdfs:comment": "Details of a conflicting enrollment that prevents the requested enrollment from proceeding."
+    },
+    
+    "VerifiedCredential": {
+      "@id": "VerifiedCredential",
+      "@type": "@id",
+      "rdfs:comment": "Details of a credential that has been verified by the BPP, including verification timestamp."
+    },
+    
+    "ConsentRevocation": {
+      "@id": "ConsentRevocation",
+      "@type": "@id",
+      "rdfs:comment": "Details of a consent revocation request or confirmation. Used in update flow to revoke consent credentials."
+    },
+    
+    "Unenrollment": {
+      "@id": "Unenrollment",
+      "@type": "@id",
+      "rdfs:comment": "Details of an unenrollment request or confirmation. Used in update flow to revoke enrollment and associated consents."
+    },
+    
+    "Customer": {
+      "@id": "beckn:Customer",
+      "@type": "@id",
+      "rdfs:comment": "Customer entity in energy enrollment context. Represents the user being enrolled in a program. Used in Fulfillment.customer property."
+    },
+    
+    "Instrument": {
+      "@id": "beckn:Instrument",
+      "@type": "@id",
+      "rdfs:comment": "Instrument entity containing meters and DERs associated with an enrollment. Used in Fulfillment.instrument property to specify the physical assets (meters and DERs) involved in the enrollment."
+    },
+    
+    "Meter": {
+      "@id": "beckn:Meter",
+      "@type": "@id",
+      "rdfs:comment": "Electricity meter entity. Represents a physical meter tracking consumption, generation, or net flow. Used in Instrument.meters array. Contains meter identifier (UMID), utility information, and enrollment status."
+    },
+    
+    "DER": {
+      "@id": "beckn:DER",
+      "@type": "@id",
+      "rdfs:comment": "Distributed Energy Resource entity. Represents a distributed asset such as solar PV, EV, home batteries, V2G, or smart loads. Used in Instrument.ders array. Contains DER identifier, type, and capacity information."
+    },
+    
+    "enrollmentId": {
+      "@id": "enrollmentId",
+      "@type": "xsd:string",
+      "rdfs:comment": "Unique identifier for the enrollment. Assigned by BPP upon enrollment confirmation."
+    },
+    
+    "programId": {
+      "@id": "programId",
+      "@type": "xsd:string",
+      "rdfs:comment": "Identifier of the digital energy program (e.g., P2P trading, demand response, VPP)."
+    },
+    
+    "status": {
+      "@id": "status",
+      "@type": "xsd:string",
+      "rdfs:comment": "Enrollment status. Values: ACTIVE, PENDING, CANCELLED, SUSPENDED."
+    },
+    
+    "startDate": {
+      "@id": "startDate",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Date and time when the enrollment becomes active (ISO 8601). Specified in confirm request, returned in on_confirm response."
+    },
+    
+    "endDate": {
+      "@id": "endDate",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Date and time when the enrollment expires or ends (ISO 8601). Specified in confirm request, returned in on_confirm response."
+    },
+    
+    "enrolledAt": {
+      "@id": "enrolledAt",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the enrollment was confirmed and logged by BPP (ISO 8601)."
+    },
+    
+    "meters": {
+      "@id": "meters",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of meter identifiers (UMIDs) associated with the enrollment. Used in enrollment credentials."
+    },
+    
+    "ders": {
+      "@id": "ders",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of DER identifiers associated with the enrollment. Used in enrollment credentials."
+    },
+    
+    "credential": {
+      "@id": "credential",
+      "@type": "@id",
+      "rdfs:comment": "Enrollment credential object. Contains the signed Verifiable Credential proving enrollment."
+    },
+    
+    "credentialId": {
+      "@id": "credentialId",
+      "@type": "xsd:string",
+      "rdfs:comment": "Unique identifier for the credential. Used to reference credentials in verification and conflict checking."
+    },
+    
+    "credentialData": {
+      "@id": "credentialData",
+      "@type": "xsd:string",
+      "rdfs:comment": "The credential data itself, typically a JWT or JSON-LD string containing the W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model-2.0/). When decoded, must conform to W3C VC Data Model v2.0 structure."
+    },
+    
+    "credentialUrl": {
+      "@id": "credentialUrl",
+      "@type": "@id",
+      "rdfs:comment": "URL where the credential can be accessed or retrieved. Used for enrollment credentials returned in on_confirm."
+    },
+    
+    "verificationUrl": {
+      "@id": "verificationUrl",
+      "@type": "@id",
+      "rdfs:comment": "URL for verifying the credential. Used for third-party verification of enrollment credentials."
+    },
+    
+    "format": {
+      "@id": "format",
+      "@type": "xsd:string",
+      "rdfs:comment": "Credential format as per W3C VC Data Model v2.0. Values: VC-JWT (JWT-encoded VC), VC-JSON-LD (JSON-LD encoded VC), or other W3C Verifiable Credential formats."
+    },
+    
+    "issuedAt": {
+      "@id": "vc:issuanceDate",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the credential was issued (ISO 8601). Maps to W3C VC issuanceDate property."
+    },
+    
+    "expiresAt": {
+      "@id": "vc:expirationDate",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the credential expires (ISO 8601). Maps to W3C VC expirationDate property. May be null for non-expiring credentials."
+    },
+    
+    "credentialVerification": {
+      "@id": "credentialVerification",
+      "@type": "@id",
+      "rdfs:comment": "Credential verification results object. Returned in on_init response after BPP verifies provided credentials."
+    },
+    
+    "verifiedCredentials": {
+      "@id": "verifiedCredentials",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of VerifiedCredential objects representing credentials that were successfully verified."
+    },
+    
+    "verifiedAt": {
+      "@id": "verifiedAt",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the credential was verified by BPP (ISO 8601)."
+    },
+    
+    "conflictCheck": {
+      "@id": "conflictCheck",
+      "@type": "@id",
+      "rdfs:comment": "Conflict check results object. Returned in on_init response after BPP checks for conflicts with existing enrollments."
+    },
+    
+    "hasConflict": {
+      "@id": "hasConflict",
+      "@type": "xsd:boolean",
+      "rdfs:comment": "Boolean indicating whether a conflict exists with existing enrollments. True if conflict found, false otherwise."
+    },
+    
+    "conflictingEnrollments": {
+      "@id": "conflictingEnrollments",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of ConflictingEnrollment objects detailing conflicts found during conflict checking."
+    },
+    
+    "conflictReason": {
+      "@id": "conflictReason",
+      "@type": "xsd:string",
+      "rdfs:comment": "Human-readable description of why the conflict exists. Explains the nature of the conflict."
+    },
+    
+    "conflictType": {
+      "@id": "conflictType",
+      "@type": "xsd:string",
+      "rdfs:comment": "Type of conflict. Values: METER_ALREADY_ENROLLED, DER_ALREADY_ENROLLED, PROGRAM_CONFLICT, etc."
+    },
+    
+    "checkedAt": {
+      "@id": "checkedAt",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the conflict check was performed by BPP (ISO 8601)."
+    },
+    
+    "message": {
+      "@id": "message",
+      "@type": "xsd:string",
+      "rdfs:comment": "Human-readable message providing additional information. Used in conflictCheck to explain results."
+    },
+    
+    "loggedAt": {
+      "@id": "loggedAt",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the enrollment was logged in BPP's audit system (ISO 8601). Returned in on_confirm response."
+    },
+    
+    "logReference": {
+      "@id": "logReference",
+      "@type": "xsd:string",
+      "rdfs:comment": "Reference identifier for the enrollment log entry. Used for audit trail and record keeping."
+    },
+    
+    "credentials": {
+      "@id": "credentials",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of VerifiableCredential objects (W3C VC Data Model v2.0) provided in init request. Contains VCs for meter ownership, program eligibility, DER certification, etc."
+    },
+    
+    "existingEnrollments": {
+      "@id": "existingEnrollments",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of VerifiableCredential objects (W3C VC Data Model v2.0) representing existing enrollments. Provided in init request to help BPP check for conflicts."
+    },
+    
+    "type": {
+      "@id": "vc:type",
+      "@type": "xsd:string",
+      "rdfs:comment": "Credential type as per W3C VC Data Model v2.0. Must include 'VerifiableCredential' plus specific types: MeterOwnershipCredential, ProgramEligibilityCredential, DERCertificationCredential, ProgramEnrollmentCredential."
+    },
+    
+    "derId": {
+      "@id": "derId",
+      "@type": "xsd:string",
+      "rdfs:comment": "DER identifier associated with a DER certification credential. Links the credential to a specific DER."
+    },
+    
+    "updateType": {
+      "@id": "updateType",
+      "@type": "xsd:string",
+      "rdfs:comment": "Type of update being performed. Values: CONSENT_REVOCATION, UNENROLLMENT."
+    },
+    
+    "consentRevocation": {
+      "@id": "consentRevocation",
+      "@type": "@id",
+      "rdfs:comment": "Consent revocation details object. Contains information about the consent being revoked."
+    },
+    
+    "unenrollment": {
+      "@id": "unenrollment",
+      "@type": "@id",
+      "rdfs:comment": "Unenrollment details object. Contains information about the enrollment being cancelled."
+    },
+    
+    "consentCredentialId": {
+      "@id": "consentCredentialId",
+      "@type": "xsd:string",
+      "rdfs:comment": "Identifier of the consent credential being revoked. References the Verifiable Credential ID."
+    },
+    
+    "consentType": {
+      "@id": "consentType",
+      "@type": "xsd:string",
+      "rdfs:comment": "Type of consent being revoked. Values: DATA_COLLECTION, DER_CONTROL, CROSS_UTILITY_SHARING."
+    },
+    
+    "revokedAt": {
+      "@id": "revokedAt",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the consent or enrollment was revoked (ISO 8601)."
+    },
+    
+    "effectiveDate": {
+      "@id": "effectiveDate",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Date and time when the revocation becomes effective (ISO 8601). May be in the future for scheduled revocations."
+    },
+    
+    "statusListUrl": {
+      "@id": "statusListUrl",
+      "@type": "@id",
+      "rdfs:comment": "URL of the W3C VC status list where the revoked credential is recorded. Used for verification."
+    },
+    
+    "statusListIndex": {
+      "@id": "statusListIndex",
+      "@type": "xsd:string",
+      "rdfs:comment": "Index in the status list where this credential's revocation status is recorded. Used for efficient status checking."
+    },
+    
+    "cancelledAt": {
+      "@id": "cancelledAt",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the enrollment was cancelled (ISO 8601)."
+    },
+    
+    "enrollmentCredentialStatus": {
+      "@id": "enrollmentCredentialStatus",
+      "@type": "@id",
+      "rdfs:comment": "Status information for the enrollment credential after revocation. Contains status list details."
+    },
+    
+    "consentsRevoked": {
+      "@id": "consentsRevoked",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of consent credentials that were revoked as part of unenrollment."
+    },
+    
+    "revokeAllConsents": {
+      "@id": "revokeAllConsents",
+      "@type": "xsd:boolean",
+      "rdfs:comment": "Boolean indicating whether all associated consents should be revoked during unenrollment."
+    }
+  }
+}
+

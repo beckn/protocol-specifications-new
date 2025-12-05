@@ -1,0 +1,93 @@
+{
+  "@context": [
+    "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
+    "https://www.w3.org/ns/credentials/v2",
+    "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/p2p-trading/schema/EnergyEnrollment/v0.2/vocab.jsonld",
+    {
+      "fulfillments": {
+        "@id": "beckn:fulfillments",
+        "@type": "beckn:Fulfillment",
+        "@container": "@set"
+      },
+      "items": {
+        "@id": "beckn:items",
+        "@type": "beckn:Item",
+        "@container": "@set"
+      },
+      "provider": {
+        "@id": "beckn:provider",
+        "@type": "beckn:Provider"
+      },
+      "descriptor": {
+        "@id": "beckn:descriptor",
+        "@type": "beckn:Descriptor"
+      },
+      "customer": {
+        "@id": "beckn:customer",
+        "@type": "beckn:Customer"
+      },
+      "instrument": {
+        "@id": "beckn:instrument",
+        "@type": "beckn:Instrument"
+      },
+      "meters": {
+        "@id": "meters",
+        "@type": "beckn:Meter",
+        "@container": "@set"
+      },
+      "ders": {
+        "@id": "ders",
+        "@type": "beckn:DER",
+        "@container": "@set"
+      },
+      "person": {
+        "@id": "beckn:person",
+        "@type": "schema:Person"
+      },
+      "state": {
+        "@id": "beckn:state",
+        "@type": "beckn:State"
+      },
+      "credentials": {
+        "@id": "credentials",
+        "@type": "VerifiableCredential",
+        "@container": "@set"
+      },
+      "existingEnrollments": {
+        "@id": "existingEnrollments",
+        "@type": "VerifiableCredential",
+        "@container": "@set"
+      },
+      "credentialVerification": {
+        "@id": "credentialVerification",
+        "@type": "CredentialVerification"
+      },
+      "verifiedCredentials": {
+        "@id": "verifiedCredentials",
+        "@type": "VerifiedCredential",
+        "@container": "@set"
+      },
+      "conflictCheck": {
+        "@id": "conflictCheck",
+        "@type": "ConflictCheck"
+      },
+      "conflictingEnrollments": {
+        "@id": "conflictingEnrollments",
+        "@type": "ConflictingEnrollment",
+        "@container": "@set"
+      },
+      "consentRevocation": {
+        "@id": "consentRevocation",
+        "@type": "ConsentRevocation"
+      },
+      "unenrollment": {
+        "@id": "unenrollment",
+        "@type": "Unenrollment"
+      },
+      "credential": {
+        "@id": "credential",
+        "@type": "VerifiableCredential"
+      }
+    }
+  ]
+}

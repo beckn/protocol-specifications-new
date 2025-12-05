@@ -1,0 +1,580 @@
+openapi: 3.1.1
+info:
+  title: Energy Enrollment — Enrollment Attributes (v0.2)
+  version: 0.2.0
+  x-profile-id: profiles/energy-onboarding/energy_enrollment/v0.2/enrollment
+  description: >
+    Attribute schemas for program enrollment (Fulfillment.fulfillmentAttributes and Order.orderAttributes).
+    These attributes support the onboarding flow where BPP verifies credentials, checks for conflicts,
+    and issues enrollment credentials. Used in init requests (fulfillmentAttributes) and init/confirm
+    responses (orderAttributes).
+
+components:
+  schemas:
+    ########################################################################
+    # FULFILLMENT.ATTRIBUTES & ORDER.ATTRIBUTES — EnergyEnrollment
+    ########################################################################
+    EnergyEnrollment:
+      type: object
+      additionalProperties: false
+      x-jsonld:
+        "@context": ./context.jsonld
+        "@type": EnergyEnrollment
+      description: >
+        Main schema for enrollment attributes. Used in:
+        - fulfillmentAttributes (init request): Contains credentials and existingEnrollments
+        - orderAttributes (on_init response): Contains credentialVerification and conflictCheck
+        - orderAttributes (confirm request): Contains startDate and endDate
+        - orderAttributes (on_confirm response): Contains full enrollment details including credential
+      properties:
+
+        # Used in fulfillmentAttributes (init request)
+        credentials:
+          type: array
+          description: >
+            Array of W3C Verifiable Credentials (https://www.w3.org/TR/vc-data-model-2.0/) provided by calling entity (Portal/BAP).
+            Includes meter ownership, program eligibility, and DER certification credentials.
+          items:
+            $ref: '#/components/schemas/VerifiableCredential'
+          x-jsonld: { "@id": credentials }
+
+        existingEnrollments:
+          type: array
+          description: >
+            Array of existing W3C Verifiable Credentials for conflict checking.
+            Provided by calling entity to help BPP identify conflicts.
+          items:
+            $ref: '#/components/schemas/VerifiableCredential'
+          x-jsonld: { "@id": existingEnrollments }
+
+        # Used in orderAttributes (on_init response)
+        credentialVerification:
+          type: object
+          description: >
+            Results of credential verification performed by BPP.
+            Returned in on_init response after BPP verifies provided credentials.
+          x-jsonld:
+            "@id": credentialVerification
+            "@type": CredentialVerification
+          additionalProperties: false
+          properties:
+            status:
+              type: string
+              enum: [VERIFIED, FAILED, PARTIAL]
+              description: Overall verification status. VERIFIED if all credentials verified, FAILED if any failed, PARTIAL if some verified.
+              example: "VERIFIED"
+              x-jsonld: { "@id": status }
+            verifiedCredentials:
+              type: array
+              description: Array of credentials that were successfully verified.
+              items:
+                $ref: '#/components/schemas/VerifiedCredential'
+              x-jsonld: { "@id": verifiedCredentials }
+
+        conflictCheck:
+          type: object
+          description: >
+            Results of conflict checking with existing enrollments.
+            Returned in on_init response after BPP checks for conflicts.
+          x-jsonld:
+            "@id": conflictCheck
+            "@type": ConflictCheck
+          additionalProperties: false
+          properties:
+            hasConflict:
+              type: boolean
+              description: >
+                Boolean indicating if a conflict exists. True if meter/DER is already enrolled
+                in another program with overlapping dates, false otherwise.
+              example: false
+              x-jsonld: { "@id": hasConflict }
+            conflictingEnrollments:
+              type: array
+              description: >
+                Array of conflicting enrollments. Only present when hasConflict is true.
+                Empty array if no conflicts found.
+              items:
+                $ref: '#/components/schemas/ConflictingEnrollment'
+              x-jsonld: { "@id": conflictingEnrollments }
+            checkedAt:
+              type: string
+              format: date-time
+              description: Timestamp when conflict check was performed (ISO 8601 UTC).
+              example: "2024-10-15T10:30:05Z"
+              x-jsonld: { "@id": checkedAt }
+            message:
+              type: string
+              description: Human-readable message explaining conflict check results.
+              example: "No conflicts found with existing enrollments"
+              x-jsonld: { "@id": message }
+
+        # Used in orderAttributes (confirm request)
+        startDate:
+          type: string
+          format: date-time
+          description: >
+            Date and time when enrollment becomes active (ISO 8601 UTC).
+            Specified by calling entity in confirm request, returned in on_confirm response.
+          example: "2024-11-01T00:00:00Z"
+          x-jsonld: { "@id": startDate }
+
+        endDate:
+          type: string
+          format: date-time
+          description: >
+            Date and time when enrollment expires or ends (ISO 8601 UTC).
+            Specified by calling entity in confirm request, returned in on_confirm response.
+          example: "2025-10-31T23:59:59Z"
+          x-jsonld: { "@id": endDate }
+
+        # Used in orderAttributes (update request/response)
+        updateType:
+          type: string
+          enum: [CONSENT_REVOCATION, UNENROLLMENT]
+          description: >
+            Type of update being performed. CONSENT_REVOCATION for revoking consent,
+            UNENROLLMENT for cancelling entire enrollment.
+          example: "CONSENT_REVOCATION"
+          x-jsonld: { "@id": updateType }
+
+        consentRevocation:
+          type: object
+          description: >
+            Consent revocation details. Used in update request to revoke a consent credential,
+            and in on_update response to confirm revocation with status list information.
+          x-jsonld:
+            "@id": consentRevocation
+            "@type": ConsentRevocation
+          additionalProperties: false
+          properties:
+            consentCredentialId:
+              type: string
+              format: uri
+              description: >
+                Identifier of the consent credential being revoked. References the Verifiable Credential ID.
+              example: "https://vpp-program-owner.example.com/credentials/vc:consent:consumer-001"
+              x-jsonld: { "@id": consentCredentialId }
+            consentType:
+              type: string
+              enum: [DATA_COLLECTION, DER_CONTROL, CROSS_UTILITY_SHARING]
+              description: >
+                Type of consent being revoked. DATA_COLLECTION for data sharing consent,
+                DER_CONTROL for device control consent, CROSS_UTILITY_SHARING for cross-utility data sharing.
+              example: "DATA_COLLECTION"
+              x-jsonld: { "@id": consentType }
+            reason:
+              type: string
+              description: >
+                Reason for revocation. Values: USER_REQUESTED, PROGRAM_TERMINATED, COMPLIANCE_REQUIREMENT, etc.
+              example: "USER_REQUESTED"
+              x-jsonld: { "@id": reason }
+            revokedAt:
+              type: string
+              format: date-time
+              description: >
+                Timestamp when the consent was revoked (ISO 8601 UTC).
+                In request, this is when user initiated revocation. In response, this is when BPP processed it.
+              example: "2024-11-20T14:30:00Z"
+              x-jsonld: { "@id": revokedAt }
+            effectiveDate:
+              type: string
+              format: date-time
+              description: >
+                Date and time when the revocation becomes effective (ISO 8601 UTC).
+                May be in the future for scheduled revocations.
+              example: "2024-11-20T14:30:00Z"
+              x-jsonld: { "@id": effectiveDate }
+            status:
+              type: string
+              enum: [REVOKED, PENDING]
+              description: >
+                Revocation status. REVOKED when processed, PENDING when scheduled for future.
+                Only present in on_update response.
+              example: "REVOKED"
+              x-jsonld: { "@id": status }
+            statusListUrl:
+              type: string
+              format: uri
+              description: >
+                URL of the W3C VC status list where the revoked credential is recorded.
+                Only present in on_update response after revocation is processed.
+              example: "https://vpp-program-owner.example.com/status/consent-list"
+              x-jsonld: { "@id": statusListUrl }
+            statusListIndex:
+              type: string
+              description: >
+                Index in the status list where this credential's revocation status is recorded.
+                Only present in on_update response.
+              example: "94567"
+              x-jsonld: { "@id": statusListIndex }
+            message:
+              type: string
+              description: >
+                Human-readable message about the revocation status.
+                Only present in on_update response.
+              example: "Consent has been revoked and added to revocation status list."
+              x-jsonld: { "@id": message }
+
+        unenrollment:
+          type: object
+          description: >
+            Unenrollment details. Used in update request to cancel enrollment,
+            and in on_update response to confirm cancellation with status list information.
+          x-jsonld:
+            "@id": unenrollment
+            "@type": Unenrollment
+          additionalProperties: false
+          properties:
+            enrollmentId:
+              type: string
+              description: >
+                Identifier of the enrollment being cancelled.
+              example: "enrollment-consumer-001"
+              x-jsonld: { "@id": enrollmentId }
+            reason:
+              type: string
+              description: >
+                Reason for unenrollment. Values: USER_REQUESTED, PROGRAM_TERMINATED, COMPLIANCE_REQUIREMENT, etc.
+              example: "USER_REQUESTED"
+              x-jsonld: { "@id": reason }
+            effectiveDate:
+              type: string
+              format: date-time
+              description: >
+                Date and time when the unenrollment becomes effective (ISO 8601 UTC).
+                May be in the future for scheduled unenrollment.
+              example: "2024-11-20T15:00:00Z"
+              x-jsonld: { "@id": effectiveDate }
+            revokeAllConsents:
+              type: boolean
+              description: >
+                Boolean indicating whether all associated consents should be revoked during unenrollment.
+                If true, all consent credentials associated with this enrollment will be revoked.
+              example: true
+              x-jsonld: { "@id": revokeAllConsents }
+            status:
+              type: string
+              enum: [CANCELLED, PENDING]
+              description: >
+                Unenrollment status. CANCELLED when processed, PENDING when scheduled for future.
+                Only present in on_update response.
+              example: "CANCELLED"
+              x-jsonld: { "@id": status }
+            cancelledAt:
+              type: string
+              format: date-time
+              description: >
+                Timestamp when the enrollment was cancelled (ISO 8601 UTC).
+                Only present in on_update response.
+              example: "2024-11-20T15:00:05Z"
+              x-jsonld: { "@id": cancelledAt }
+            enrollmentCredentialStatus:
+              type: object
+              description: >
+                Status information for the enrollment credential after revocation.
+                Contains status list details for verification.
+                Only present in on_update response.
+              x-jsonld: { "@id": enrollmentCredentialStatus }
+              additionalProperties: false
+              properties:
+                statusListUrl:
+                  type: string
+                  format: uri
+                  description: URL of the status list for the enrollment credential.
+                  example: "https://vpp-program-owner.example.com/status/enrollment-list"
+                  x-jsonld: { "@id": statusListUrl }
+                statusListIndex:
+                  type: string
+                  description: Index in the status list for the enrollment credential.
+                  example: "12345"
+                  x-jsonld: { "@id": statusListIndex }
+                revoked:
+                  type: boolean
+                  description: Whether the enrollment credential has been revoked.
+                  example: true
+                  x-jsonld: { "@id": revoked }
+            consentsRevoked:
+              type: array
+              description: >
+                Array of consent credentials that were revoked as part of unenrollment.
+                Only present in on_update response when revokeAllConsents was true.
+              items:
+                type: object
+                additionalProperties: false
+                properties:
+                  consentCredentialId:
+                    type: string
+                    format: uri
+                    description: Identifier of the revoked consent credential.
+                    example: "https://vpp-program-owner.example.com/credentials/vc:consent:consumer-001"
+                    x-jsonld: { "@id": consentCredentialId }
+                  statusListUrl:
+                    type: string
+                    format: uri
+                    description: URL of the status list for this consent credential.
+                    example: "https://vpp-program-owner.example.com/status/consent-list"
+                    x-jsonld: { "@id": statusListUrl }
+                  statusListIndex:
+                    type: string
+                    description: Index in the status list for this consent credential.
+                    example: "94567"
+                    x-jsonld: { "@id": statusListIndex }
+                  revoked:
+                    type: boolean
+                    description: Whether this consent credential has been revoked.
+                    example: true
+                    x-jsonld: { "@id": revoked }
+              x-jsonld: { "@id": consentsRevoked }
+            message:
+              type: string
+              description: >
+                Human-readable message about the unenrollment status.
+                Only present in on_update response.
+              example: "Enrollment and all associated consents have been revoked."
+              x-jsonld: { "@id": message }
+
+        # Used in orderAttributes (on_confirm response)
+        enrollmentId:
+          type: string
+          description: >
+            Unique identifier for the enrollment. Assigned by BPP upon enrollment confirmation.
+            Used for tracking, audit, and enrollment management.
+          example: "enrollment-consumer-001"
+          x-jsonld: { "@id": enrollmentId }
+
+        programId:
+          type: string
+          description: >
+            Identifier of the digital energy program. Matches the program ID from the init request.
+          example: "program-flex-demand-response-001"
+          x-jsonld: { "@id": programId }
+
+        status:
+          type: string
+          enum: [ACTIVE, PENDING, CANCELLED, SUSPENDED]
+          description: >
+            Enrollment status. ACTIVE when enrollment is active, PENDING when awaiting activation,
+            CANCELLED when unenrolled, SUSPENDED when temporarily suspended.
+          example: "ACTIVE"
+          x-jsonld: { "@id": status }
+
+        enrolledAt:
+          type: string
+          format: date-time
+          description: >
+            Timestamp when enrollment was confirmed and logged by BPP (ISO 8601 UTC).
+            May differ from startDate if enrollment is scheduled for future activation.
+          example: "2024-10-15T10:35:05Z"
+          x-jsonld: { "@id": enrolledAt }
+
+        credential:
+          type: object
+          description: >
+            Signed enrollment credential issued by BPP. Contains W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model-2.0/) proving enrollment.
+            Returned in on_confirm response.
+          x-jsonld: { "@id": credential }
+          additionalProperties: false
+          allOf:
+            - $ref: '#/components/schemas/VerifiableCredential'
+
+        loggedAt:
+          type: string
+          format: date-time
+          description: >
+            Timestamp when enrollment was logged in BPP's audit system (ISO 8601 UTC).
+            Used for audit trail and compliance.
+          example: "2024-10-15T10:35:05Z"
+          x-jsonld: { "@id": loggedAt }
+
+        logReference:
+          type: string
+          description: >
+            Reference identifier for the enrollment log entry.
+            Used for audit trail, record keeping, and log retrieval.
+          example: "log-enrollment-consumer-001"
+          x-jsonld: { "@id": logReference }
+
+    ########################################################################
+    # VerifiableCredential (W3C VC Data Model v2.0)
+    ########################################################################
+    VerifiableCredential:
+      type: object
+      additionalProperties: false
+      description: >
+        Represents a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model-2.0/) used in enrollment flow.
+        This is a wrapper/reference object that contains the credential data (as JWT or JSON-LD), metadata, and URLs.
+        The actual credential follows W3C VC Data Model v2.0 structure. Can be a meter ownership credential,
+        program eligibility credential, DER certification credential, or program enrollment credential.
+      x-jsonld:
+        "@type": "vc:VerifiableCredential"
+      properties:
+        credentialId:
+          type: string
+          description: >
+            Unique identifier for the credential. Used to reference credentials
+            in verification and conflict checking.
+          example: "vc-meter-ownership-001"
+          x-jsonld: { "@id": credentialId }
+
+        type:
+          type: string
+          enum: [MeterOwnershipCredential, ProgramEligibilityCredential, DERCertificationCredential, ProgramEnrollmentCredential]
+          description: >
+            Credential type as per W3C VC Data Model v2.0. The credential must include 'VerifiableCredential' 
+            in its type array plus one of these specific types. MeterOwnershipCredential proves meter ownership,
+            ProgramEligibilityCredential proves eligibility, DERCertificationCredential
+            proves DER certification, ProgramEnrollmentCredential represents an enrollment.
+          example: "MeterOwnershipCredential"
+          x-jsonld: { "@id": "vc:type" }
+
+        format:
+          type: string
+          enum: [VC-JWT, VC-JSON-LD]
+          description: >
+            Credential format as per W3C VC Data Model v2.0. VC-JWT for JWT-encoded credentials,
+            VC-JSON-LD for JSON-LD encoded credentials. The credentialData field contains the
+            encoded credential that must conform to W3C VC structure when decoded.
+          example: "VC-JWT"
+          x-jsonld: { "@id": format }
+
+        credentialData:
+          type: string
+          description: >
+            The credential data itself, typically a JWT or JSON-LD string
+            containing the W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model-2.0/).
+            Contains the full credential including signature/proof. When decoded, must conform
+            to W3C VC Data Model v2.0 structure with @context, type, credentialSubject, issuer, etc.
+          example: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."
+          x-jsonld: { "@id": credentialData }
+
+        credentialUrl:
+          type: string
+          format: uri
+          description: >
+            URL where the credential can be accessed or retrieved.
+            Used for enrollment credentials returned in on_confirm response.
+            Optional for credentials in init request.
+          example: "https://vpp-program-owner.example.com/credentials/vc:enrollment:consumer-001"
+          x-jsonld: { "@id": credentialUrl }
+
+        verificationUrl:
+          type: string
+          format: uri
+          description: >
+            URL for verifying the credential. Used for third-party verification
+            of enrollment credentials. Optional for credentials in init request.
+          example: "https://vpp-program-owner.example.com/verify/vc:enrollment:consumer-001"
+          x-jsonld: { "@id": verificationUrl }
+
+        issuedAt:
+          type: string
+          format: date-time
+          description: >
+            Timestamp when the credential was issued (ISO 8601 UTC).
+            Maps to W3C VC issuanceDate property. Used for enrollment credentials in on_confirm response.
+          example: "2024-10-15T10:35:05Z"
+          x-jsonld: { "@id": "vc:issuanceDate" }
+
+        expiresAt:
+          type: string
+          format: date-time
+          nullable: true
+          description: >
+            Timestamp when the credential expires (ISO 8601 UTC).
+            Maps to W3C VC expirationDate property. May be null for non-expiring credentials.
+          example: "2025-10-15T10:35:05Z"
+          x-jsonld: { "@id": "vc:expirationDate" }
+
+        derId:
+          type: string
+          description: >
+            DER identifier associated with a DER certification credential.
+            Links the credential to a specific DER. Only present for
+            DERCertificationCredential type.
+          example: "der-solar-001"
+          x-jsonld: { "@id": derId }
+
+    ########################################################################
+    # VerifiedCredential
+    ########################################################################
+    VerifiedCredential:
+      type: object
+      additionalProperties: false
+      description: >
+        Details of a credential that has been verified by the BPP.
+        Returned in credentialVerification.verifiedCredentials array.
+      x-jsonld:
+        "@type": VerifiedCredential
+      properties:
+        credentialId:
+          type: string
+          description: >
+            Identifier of the credential that was verified.
+            Matches the credentialId from the init request.
+          example: "vc-meter-ownership-001"
+          x-jsonld: { "@id": credentialId }
+
+        status:
+          type: string
+          enum: [VERIFIED, FAILED]
+          description: >
+            Verification status for this specific credential.
+            VERIFIED if credential is valid, FAILED if invalid or expired.
+          example: "VERIFIED"
+          x-jsonld: { "@id": status }
+
+        verifiedAt:
+          type: string
+          format: date-time
+          description: >
+            Timestamp when the credential was verified by BPP (ISO 8601 UTC).
+          example: "2024-10-15T10:30:05Z"
+          x-jsonld: { "@id": verifiedAt }
+
+    ########################################################################
+    # ConflictingEnrollment
+    ########################################################################
+    ConflictingEnrollment:
+      type: object
+      additionalProperties: false
+      description: >
+        Details of a conflicting enrollment that prevents the requested
+        enrollment from proceeding. Returned in conflictCheck.conflictingEnrollments array.
+      x-jsonld:
+        "@type": ConflictingEnrollment
+      properties:
+        enrollmentId:
+          type: string
+          description: >
+            Identifier of the conflicting enrollment.
+            Used to reference the existing enrollment causing the conflict.
+          example: "enrollment-existing-001"
+          x-jsonld: { "@id": enrollmentId }
+
+        programId:
+          type: string
+          description: >
+            Program identifier of the conflicting enrollment.
+            Identifies which program the meter/DER is already enrolled in.
+          example: "program-flex-other-001"
+          x-jsonld: { "@id": programId }
+
+        conflictReason:
+          type: string
+          description: >
+            Human-readable description of why the conflict exists.
+            Explains the nature of the conflict (e.g., meter already enrolled,
+            overlapping dates, etc.).
+          example: "Meter umid-001 is already enrolled in program-flex-other-001 from 2024-09-01 to 2025-09-01"
+          x-jsonld: { "@id": conflictReason }
+
+        conflictType:
+          type: string
+          enum: [METER_ALREADY_ENROLLED, DER_ALREADY_ENROLLED, PROGRAM_CONFLICT, DATE_OVERLAP]
+          description: >
+            Type of conflict. METER_ALREADY_ENROLLED if meter is enrolled,
+            DER_ALREADY_ENROLLED if DER is enrolled, PROGRAM_CONFLICT if program
+            doesn't allow multiple enrollments, DATE_OVERLAP if dates overlap.
+          example: "METER_ALREADY_ENROLLED"
+          x-jsonld: { "@id": conflictType }
+

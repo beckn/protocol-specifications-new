@@ -240,3 +240,61 @@ components:
           example: "2024-10-04T15:30:00Z"
           x-jsonld: { "@id": "schema:dateModified" }
 
+        remainingTradingLimit:
+          type: object
+          description: Remaining trading capacity/limits for the source meter, provided by utility BPP in on_init response.
+          x-jsonld: { "@id": remainingTradingLimit }
+          additionalProperties: false
+          properties:
+            sourceMeterId:
+              type: string
+              description: Source meter identifier for which the limit applies.
+              example: "100200300"
+              x-jsonld: { "@id": sourceMeterId }
+            remainingQuantity:
+              type: number
+              minimum: 0
+              description: Remaining tradable quantity in kWh.
+              example: 20.5
+              x-jsonld: { "@id": "schema:value" }
+            unit:
+              type: string
+              description: Unit of measurement.
+              example: "kWh"
+              x-jsonld: { "@id": "schema:unitText" }
+            validUntil:
+              type: string
+              format: date-time
+              description: Validity timestamp for the remaining limit (ISO 8601).
+              example: "2024-10-04T23:59:59Z"
+              x-jsonld: { "@id": "schema:validThrough" }
+            sanctionedLoad:
+              type: object
+              description: Sanctioned load breakdown (total, used, remaining).
+              x-jsonld: { "@id": sanctionedLoad }
+              additionalProperties: false
+              properties:
+                total:
+                  type: number
+                  minimum: 0
+                  description: Total sanctioned load in kWh.
+                  example: 50.0
+                  x-jsonld: { "@id": "schema:maxValue" }
+                used:
+                  type: number
+                  minimum: 0
+                  description: Used sanctioned load in kWh.
+                  example: 29.5
+                  x-jsonld: { "@id": "schema:value" }
+                remaining:
+                  type: number
+                  minimum: 0
+                  description: Remaining sanctioned load in kWh.
+                  example: 20.5
+                  x-jsonld: { "@id": "schema:minValue" }
+                unit:
+                  type: string
+                  description: Unit of measurement.
+                  example: "kWh"
+                  x-jsonld: { "@id": "schema:unitText" }
+

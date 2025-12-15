@@ -62,23 +62,28 @@ components:
           x-jsonld: { "@id": availableQuantity }
 
         productionWindow:
-          type: object
-          description: Time window when energy is produced or available for trading.
+          type: array
+          description: Array of time windows when energy is produced or available for trading.
           x-jsonld: { "@id": productionWindow }
-          additionalProperties: false
-          properties:
-            start:
-              type: string
-              format: date-time
-              description: Start time of production/availability window (ISO 8601).
-              example: "2024-10-04T10:00:00Z"
-              x-jsonld: { "@id": "schema:startTime" }
-            end:
-              type: string
-              format: date-time
-              description: End time of production/availability window (ISO 8601).
-              example: "2024-10-04T18:00:00Z"
-              x-jsonld: { "@id": "schema:endTime" }
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              start:
+                type: string
+                format: date-time
+                description: Start time of production/availability window (ISO 8601).
+                example: "2024-10-04T10:00:00Z"
+                x-jsonld: { "@id": "schema:startTime" }
+              end:
+                type: string
+                format: date-time
+                description: End time of production/availability window (ISO 8601).
+                example: "2024-10-04T18:00:00Z"
+                x-jsonld: { "@id": "schema:endTime" }
+          example:
+            - start: "2024-10-04T10:00:00Z"
+              end: "2024-10-04T18:00:00Z"
 
         sourceVerification:
           type: object

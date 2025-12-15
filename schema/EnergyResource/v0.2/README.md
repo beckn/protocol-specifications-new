@@ -29,9 +29,9 @@ The **EnergyResource** schema composes with the core Beckn `Item` entity to repr
 | `meterId` | string | No | Source meter identifier in DER address format (der://meter/{id}) | Unique identification of the energy source meter. Used for discovery and fulfillment tracking. Enables meter-based discovery where provider names are irrelevant. |
 | `inverterId` | string | No | Inverter identifier serving as consistent interface between source and grid | Provides stable reference point even if energy source changes. The inverter remains constant and serves as the interface between source and grid infrastructure. |
 | `availableQuantity` | number | No | Available energy quantity in kilowatt-hours (kWh) | Indicates how much energy is currently available for trading. Used in discovery to match consumer quantity requirements. |
-| `productionWindow` | object | No | Time window when energy is produced or available for trading | Defines when energy is available. Contains start and end timestamps (ISO 8601). Used to match consumer time requirements with producer availability. |
-| `productionWindow.start` | date-time | No | Start time of production/availability window | Beginning of the time window when energy is available for trading. |
-| `productionWindow.end` | date-time | No | End time of production/availability window | End of the time window when energy is available for trading. |
+| `productionWindow` | array&lt;object&gt; | No | Array of time windows when energy is produced or available for trading | Defines when energy is available. Each window contains start and end timestamps (ISO 8601). Used to match consumer time requirements with producer availability. |
+| `productionWindow[].start` | date-time | No | Start time of production/availability window | Beginning of the time window when energy is available for trading. |
+| `productionWindow[].end` | date-time | No | End time of production/availability window | End of the time window when energy is available for trading. |
 | `sourceVerification` | object | No | Source verification details including certificates and verification status | Tracks verification status and certificate references. Used for compliance and trust building. |
 | `sourceVerification.verified` | boolean | No | Whether the source has been verified | Indicates if the energy source has passed verification checks. |
 | `sourceVerification.verificationDate` | date-time | No | Date when source was last verified | Timestamp of the most recent verification. Used for compliance tracking and audit purposes. |
@@ -54,10 +54,12 @@ This schema composes with: `core/v2/core.yaml#Item.itemAttributes`
   "meterId": "der://meter/100200300",
   "inverterId": "inv-12345",
   "availableQuantity": 30.5,
-  "productionWindow": {
-    "start": "2024-10-04T10:00:00Z",
-    "end": "2024-10-04T18:00:00Z"
-  },
+  "productionWindow": [
+    {
+      "start": "2024-10-04T10:00:00Z",
+      "end": "2024-10-04T18:00:00Z"
+    }
+  ],
   "sourceVerification": {
     "verified": true,
     "verificationDate": "2024-09-01T00:00:00Z",

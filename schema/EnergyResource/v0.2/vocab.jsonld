@@ -66,9 +66,9 @@
       "@id": "beckn:productionWindow",
       "@type": "rdf:Property",
       "rdfs:label": "Production window",
-      "rdfs:comment": "Time window when energy is produced or available for trading.",
+      "rdfs:comment": "Array of time windows when energy is produced or available for trading.",
       "rdfs:domain": "beckn:EnergyResource",
-      "schema:rangeIncludes": "schema:TimePeriod"
+      "schema:rangeIncludes": ["schema:ItemList", "schema:TimePeriod"]
     },
     {
       "@id": "beckn:sourceVerification",

@@ -23,7 +23,7 @@ components:
           type: string
           format: uri
           description: JSON-LD context URI for the core Catalog schema
-          enum: ["https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"]
+          enum: ["https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"]
         "@type":
           type: string
           description: Type of the catalog
@@ -72,7 +72,7 @@ components:
           type: string
           format: uri
           description: JSON-LD context URI for the core Item schema
-          enum: ["https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"]
+          enum: ["https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"]
         "@type":
           type: string
           description: Type of the core item
@@ -130,7 +130,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Offer"]
@@ -612,7 +612,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Order"]
@@ -715,7 +715,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Invoice"]
@@ -771,7 +771,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Fulfillment"]
@@ -858,7 +858,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Payment"]
@@ -920,7 +920,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Buyer"]

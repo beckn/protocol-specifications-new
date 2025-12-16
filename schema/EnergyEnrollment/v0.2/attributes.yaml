@@ -56,7 +56,6 @@ components:
           x-jsonld:
             "@id": credentialVerification
             "@type": CredentialVerification
-          additionalProperties: false
           properties:
             status:
               type: string
@@ -79,7 +78,6 @@ components:
           x-jsonld:
             "@id": conflictCheck
             "@type": ConflictCheck
-          additionalProperties: false
           properties:
             hasConflict:
               type: boolean
@@ -145,7 +143,6 @@ components:
           x-jsonld:
             "@id": consentRevocation
             "@type": ConsentRevocation
-          additionalProperties: false
           properties:
             consentCredentialId:
               type: string
@@ -223,7 +220,6 @@ components:
           x-jsonld:
             "@id": unenrollment
             "@type": Unenrollment
-          additionalProperties: false
           properties:
             enrollmentId:
               type: string
@@ -373,7 +369,6 @@ components:
             Signed enrollment credential issued by BPP. Contains W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model-2.0/) proving enrollment.
             Returned in on_confirm response.
           x-jsonld: { "@id": credential }
-          additionalProperties: false
           allOf:
             - $ref: '#/components/schemas/VerifiableCredential'
 

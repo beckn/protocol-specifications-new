@@ -1,5 +1,148 @@
 {
-  "$comment": "This file defines HTML templates and rendering hints for client-side display of EV charging service data. It will specify how to render discovery listings, offer cards, and session status displays on the client side.",
+  "$comment": "This file defines HTML templates and rendering hints for client-side display of EV charging service data. It specifies how to render discovery listings, charging station cards, and detail views.",
   "description": "Renderer configuration for EV Charging Service UI components - defines HTML templates and rendering hints for client-side display",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "templates": {
+    "discoveryCard": {
+      "name": "EV Charging Service Discovery Card",
+      "description": "Rich card view for EV charging stations in discovery/search results",
+      "html": "<div class=\"ev-charging-card\" data-item-id=\"{{beckn:id}}\">\n  <div class=\"ev-charging-main\">\n    <div class=\"ev-charging-header\">\n      <h3 class=\"ev-charging-name\">{{beckn:descriptor.schema:name}}</h3>\n      <span class=\"charging-speed-badge speed-{{beckn:itemAttributes.chargingSpeed}}\">{{beckn:itemAttributes.chargingSpeed}}</span>\n    </div>\n    <p class=\"ev-charging-short-desc\">{{beckn:descriptor.beckn:shortDesc}}</p>\n    <div class=\"ev-charging-location\">\n      <span class=\"location-icon\">📍</span>\n      <span class=\"location-text\">{{beckn:itemAttributes.serviceLocation.address.streetAddress}}, {{beckn:itemAttributes.serviceLocation.address.addressLocality}}</span>\n    </div>\n    <div class=\"ev-charging-specs\">\n      <div class=\"spec-chip\">\n        <span class=\"spec-label\">Connector:</span>\n        <span class=\"spec-value\">{{beckn:itemAttributes.connectorType}}</span>\n      </div>\n      <div class=\"spec-chip\">\n        <span class=\"spec-label\">Power:</span>\n        <span class=\"spec-value\">{{beckn:itemAttributes.maxPowerKW}}kW</span>\n      </div>\n      <div class=\"spec-chip\">\n        <span class=\"spec-label\">Sockets:</span>\n        <span class=\"spec-value\">{{beckn:itemAttributes.socketCount}}</span>\n      </div>\n      <div class=\"spec-chip\">\n        <span class=\"spec-label\">Type:</span>\n        <span class=\"spec-value\">{{beckn:itemAttributes.powerType}}</span>\n      </div>\n    </div>\n    {{#if beckn:itemAttributes.amenityFeature}}\n    <div class=\"ev-charging-amenities\">\n      {{#each beckn:itemAttributes.amenityFeature}}\n      <span class=\"amenity-badge\">{{this}}</span>\n      {{/each}}\n    </div>\n    {{/if}}\n    <div class=\"ev-charging-status-row\">\n      <div class=\"status-badge status-{{beckn:itemAttributes.stationStatus}}\">\n        <span class=\"status-dot\"></span>\n        <span class=\"status-text\">{{beckn:itemAttributes.stationStatus}}</span>\n      </div>\n      {{#if beckn:itemAttributes.reservationSupported}}\n      <span class=\"reservation-badge\">✓ Reservation Available</span>\n      {{/if}}\n      <span class=\"parking-type-badge\">{{beckn:itemAttributes.parkingType}}</span>\n    </div>\n    <div class=\"ev-charging-rating\">\n      <div class=\"rating-stars-container\" data-rating=\"{{beckn:rating.beckn:ratingValue}}\">\n        <span class=\"star\">★</span>\n        <span class=\"star\">★</span>\n        <span class=\"star\">★</span>\n        <span class=\"star\">★</span>\n        <span class=\"star\">★</span>\n      </div>\n      <span class=\"rating-value-text\">{{beckn:rating.beckn:ratingValue}}</span>\n      <span class=\"rating-count\">({{beckn:rating.beckn:ratingCount}} ratings)</span>\n    </div>\n    <div class=\"ev-charging-price-row\">\n      <div class=\"price-chip\">\n        <span class=\"price-currency\">{{beckn:offers[0].beckn:price.currency}}</span>\n        <span class=\"price-value\">{{beckn:offers[0].beckn:price.value}}</span>\n        <span class=\"price-unit\">/ {{beckn:offers[0].beckn:price.applicableQuantity.unitText}}</span>\n      </div>\n    </div>\n  </div>\n</div>",
+      "dataPaths": {
+        "itemId": "beckn:id",
+        "itemName": "beckn:descriptor.schema:name",
+        "shortDescription": "beckn:descriptor.beckn:shortDesc",
+        "longDescription": "beckn:descriptor.beckn:longDesc",
+        "connectorType": "beckn:itemAttributes.connectorType",
+        "maxPowerKW": "beckn:itemAttributes.maxPowerKW",
+        "minPowerKW": "beckn:itemAttributes.minPowerKW",
+        "socketCount": "beckn:itemAttributes.socketCount",
+        "chargingSpeed": "beckn:itemAttributes.chargingSpeed",
+        "powerType": "beckn:itemAttributes.powerType",
+        "connectorFormat": "beckn:itemAttributes.connectorFormat",
+        "stationStatus": "beckn:itemAttributes.stationStatus",
+        "reservationSupported": "beckn:itemAttributes.reservationSupported",
+        "parkingType": "beckn:itemAttributes.parkingType",
+        "amenityFeature": "beckn:itemAttributes.amenityFeature",
+        "serviceLocation": "beckn:itemAttributes.serviceLocation",
+        "streetAddress": "beckn:itemAttributes.serviceLocation.address.streetAddress",
+        "addressLocality": "beckn:itemAttributes.serviceLocation.address.addressLocality",
+        "addressRegion": "beckn:itemAttributes.serviceLocation.address.addressRegion",
+        "postalCode": "beckn:itemAttributes.serviceLocation.address.postalCode",
+        "geoCoordinates": "beckn:itemAttributes.serviceLocation.geo.coordinates",
+        "ocppId": "beckn:itemAttributes.ocppId",
+        "evseId": "beckn:itemAttributes.evseId",
+        "roamingNetwork": "beckn:itemAttributes.roamingNetwork",
+        "connectorId": "beckn:itemAttributes.connectorId",
+        "ratingValue": "beckn:rating.beckn:ratingValue",
+        "ratingCount": "beckn:rating.beckn:ratingCount",
+        "price": "beckn:offers[0].beckn:price.value",
+        "currency": "beckn:offers[0].beckn:price.currency",
+        "priceUnit": "beckn:offers[0].beckn:price.applicableQuantity.unitText"
+      }
+    },
+    "detailView": {
+      "name": "EV Charging Service Detail View",
+      "description": "Comprehensive detail view for a single EV charging station",
+      "html": "<div class=\"ev-charging-detail\" data-item-id=\"{{beckn:id}}\">\n  <div class=\"ev-charging-header\">\n    <h1 class=\"ev-charging-name\">{{beckn:descriptor.schema:name}}</h1>\n    <span class=\"charging-speed-badge speed-{{beckn:itemAttributes.chargingSpeed}}\">{{beckn:itemAttributes.chargingSpeed}}</span>\n  </div>\n  <p class=\"ev-charging-long-desc\">{{beckn:descriptor.beckn:longDesc}}</p>\n  \n  <div class=\"ev-charging-specifications\">\n    <h2>Charging Specifications</h2>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Connector Type:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.connectorType}}</span>\n    </div>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Power Range:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.minPowerKW}}kW - {{beckn:itemAttributes.maxPowerKW}}kW</span>\n    </div>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Charging Speed:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.chargingSpeed}}</span>\n    </div>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Power Type:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.powerType}}</span>\n    </div>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Connector Format:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.connectorFormat}}</span>\n    </div>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Socket Count:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.socketCount}}</span>\n    </div>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Station Status:</span>\n      <span class=\"spec-value status-{{beckn:itemAttributes.stationStatus}}\">{{beckn:itemAttributes.stationStatus}}</span>\n    </div>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Reservation Supported:</span>\n      <span class=\"spec-value\">{{#if beckn:itemAttributes.reservationSupported}}Yes{{else}}No{{/if}}</span>\n    </div>\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Parking Type:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.parkingType}}</span>\n    </div>\n    {{#if beckn:itemAttributes.roamingNetwork}}\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Roaming Network:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.roamingNetwork}}</span>\n    </div>\n    {{/if}}\n    {{#if beckn:itemAttributes.ocppId}}\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">OCPP ID:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.ocppId}}</span>\n    </div>\n    {{/if}}\n    {{#if beckn:itemAttributes.evseId}}\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">EVSE ID:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.evseId}}</span>\n    </div>\n    {{/if}}\n    {{#if beckn:itemAttributes.connectorId}}\n    <div class=\"spec-row\">\n      <span class=\"spec-label\">Connector ID:</span>\n      <span class=\"spec-value\">{{beckn:itemAttributes.connectorId}}</span>\n    </div>\n    {{/if}}\n  </div>\n  \n  <div class=\"ev-charging-location-info\">\n    <h2>Location</h2>\n    <div class=\"location-details\">\n      <div class=\"location-row\">\n        <span class=\"location-label\">Address:</span>\n        <span class=\"location-value\">{{beckn:itemAttributes.serviceLocation.address.streetAddress}}</span>\n      </div>\n      <div class=\"location-row\">\n        <span class=\"location-label\">City:</span>\n        <span class=\"location-value\">{{beckn:itemAttributes.serviceLocation.address.addressLocality}}</span>\n      </div>\n      <div class=\"location-row\">\n        <span class=\"location-label\">State:</span>\n        <span class=\"location-value\">{{beckn:itemAttributes.serviceLocation.address.addressRegion}}</span>\n      </div>\n      <div class=\"location-row\">\n        <span class=\"location-label\">Postal Code:</span>\n        <span class=\"location-value\">{{beckn:itemAttributes.serviceLocation.address.postalCode}}</span>\n      </div>\n      <div class=\"location-row\">\n        <span class=\"location-label\">Coordinates:</span>\n        <span class=\"location-value\">{{beckn:itemAttributes.serviceLocation.geo.coordinates.[0]}}, {{beckn:itemAttributes.serviceLocation.geo.coordinates.[1]}}</span>\n      </div>\n    </div>\n  </div>\n  \n  {{#if beckn:itemAttributes.amenityFeature}}\n  <div class=\"ev-charging-amenities-section\">\n    <h2>Amenities</h2>\n    <div class=\"amenities-list\">\n      {{#each beckn:itemAttributes.amenityFeature}}\n      <span class=\"amenity-item\">{{this}}</span>\n      {{/each}}\n    </div>\n  </div>\n  {{/if}}\n  \n  <div class=\"ev-charging-rating\">\n    <div class=\"rating-display\">\n      <span class=\"rating-value\">{{beckn:rating.beckn:ratingValue}}</span>\n      <span class=\"rating-stars\">★★★★★</span>\n      <span class=\"rating-count\">({{beckn:rating.beckn:ratingCount}} reviews)</span>\n    </div>\n  </div>\n  \n  <div class=\"ev-charging-pricing\">\n    <div class=\"price-display\">\n      <span class=\"price-currency\">{{beckn:offers[0].beckn:price.currency}}</span>\n      <span class=\"price-value\">{{beckn:offers[0].beckn:price.value}}</span>\n      <span class=\"price-unit\">per {{beckn:offers[0].beckn:price.applicableQuantity.unitText}}</span>\n    </div>\n  </div>\n</div>",
+      "dataPaths": {
+        "itemId": "beckn:id",
+        "itemName": "beckn:descriptor.schema:name",
+        "longDescription": "beckn:descriptor.beckn:longDesc",
+        "connectorType": "beckn:itemAttributes.connectorType",
+        "maxPowerKW": "beckn:itemAttributes.maxPowerKW",
+        "minPowerKW": "beckn:itemAttributes.minPowerKW",
+        "socketCount": "beckn:itemAttributes.socketCount",
+        "chargingSpeed": "beckn:itemAttributes.chargingSpeed",
+        "powerType": "beckn:itemAttributes.powerType",
+        "connectorFormat": "beckn:itemAttributes.connectorFormat",
+        "stationStatus": "beckn:itemAttributes.stationStatus",
+        "reservationSupported": "beckn:itemAttributes.reservationSupported",
+        "parkingType": "beckn:itemAttributes.parkingType",
+        "amenityFeature": "beckn:itemAttributes.amenityFeature",
+        "serviceLocation": "beckn:itemAttributes.serviceLocation",
+        "streetAddress": "beckn:itemAttributes.serviceLocation.address.streetAddress",
+        "addressLocality": "beckn:itemAttributes.serviceLocation.address.addressLocality",
+        "addressRegion": "beckn:itemAttributes.serviceLocation.address.addressRegion",
+        "postalCode": "beckn:itemAttributes.serviceLocation.address.postalCode",
+        "geoCoordinates": "beckn:itemAttributes.serviceLocation.geo.coordinates",
+        "ocppId": "beckn:itemAttributes.ocppId",
+        "evseId": "beckn:itemAttributes.evseId",
+        "roamingNetwork": "beckn:itemAttributes.roamingNetwork",
+        "connectorId": "beckn:itemAttributes.connectorId",
+        "ratingValue": "beckn:rating.beckn:ratingValue",
+        "ratingCount": "beckn:rating.beckn:ratingCount",
+        "price": "beckn:offers[0].beckn:price.value",
+        "currency": "beckn:offers[0].beckn:price.currency",
+        "priceUnit": "beckn:offers[0].beckn:price.applicableQuantity.unitText"
+      }
+    },
+    "compactCard": {
+      "name": "EV Charging Service Compact Card",
+      "description": "Minimal card view for grid/list layouts",
+      "html": "<div class=\"ev-charging-compact\" data-item-id=\"{{beckn:id}}\">\n  <div class=\"compact-header\">\n    <h4>{{beckn:descriptor.schema:name}}</h4>\n    <span class=\"charging-speed-badge speed-{{beckn:itemAttributes.chargingSpeed}}\">{{beckn:itemAttributes.chargingSpeed}}</span>\n  </div>\n  <div class=\"compact-location\">{{beckn:itemAttributes.serviceLocation.address.addressLocality}}</div>\n  <div class=\"compact-specs\">\n    <span class=\"compact-spec\">{{beckn:itemAttributes.connectorType}}</span>\n    <span class=\"compact-spec\">{{beckn:itemAttributes.maxPowerKW}}kW</span>\n    <span class=\"compact-spec\">{{beckn:itemAttributes.socketCount}} sockets</span>\n  </div>\n  <div class=\"compact-status status-{{beckn:itemAttributes.stationStatus}}\">{{beckn:itemAttributes.stationStatus}}</div>\n  <div class=\"compact-price\">{{beckn:offers[0].beckn:price.currency}} {{beckn:offers[0].beckn:price.value}}/{{beckn:offers[0].beckn:price.applicableQuantity.unitText}}</div>\n</div>",
+      "dataPaths": {
+        "itemId": "beckn:id",
+        "itemName": "beckn:descriptor.schema:name",
+        "chargingSpeed": "beckn:itemAttributes.chargingSpeed",
+        "connectorType": "beckn:itemAttributes.connectorType",
+        "maxPowerKW": "beckn:itemAttributes.maxPowerKW",
+        "socketCount": "beckn:itemAttributes.socketCount",
+        "stationStatus": "beckn:itemAttributes.stationStatus",
+        "addressLocality": "beckn:itemAttributes.serviceLocation.address.addressLocality",
+        "price": "beckn:offers[0].beckn:price.value",
+        "currency": "beckn:offers[0].beckn:price.currency",
+        "priceUnit": "beckn:offers[0].beckn:price.applicableQuantity.unitText"
+      }
+    }
+  },
+  "stylingHints": {
+    "chargingSpeedBadge": {
+      "SLOW": {
+        "backgroundColor": "#9E9E9E",
+        "color": "#FFFFFF",
+        "text": "SLOW"
+      },
+      "NORMAL": {
+        "backgroundColor": "#4CAF50",
+        "color": "#FFFFFF",
+        "text": "NORMAL"
+      },
+      "FAST": {
+        "backgroundColor": "#2196F3",
+        "color": "#FFFFFF",
+        "text": "FAST"
+      },
+      "ULTRAFAST": {
+        "backgroundColor": "#FF9800",
+        "color": "#FFFFFF",
+        "text": "ULTRAFAST"
+      }
+    },
+    "stationStatus": {
+      "Available": {
+        "backgroundColor": "#4CAF50",
+        "color": "#FFFFFF",
+        "text": "Available"
+      },
+      "Occupied": {
+        "backgroundColor": "#FF9800",
+        "color": "#FFFFFF",
+        "text": "Occupied"
+      },
+      "OutOfService": {
+        "backgroundColor": "#F44336",
+        "color": "#FFFFFF",
+        "text": "Out of Service"
+      },
+      "Reserved": {
+        "backgroundColor": "#2196F3",
+        "color": "#FFFFFF",
+        "text": "Reserved"
+      }
+    },
+    "cardLayout": {
+      "default": "vertical",
+      "alternatives": ["horizontal", "grid"]
+    }
+  }
 }

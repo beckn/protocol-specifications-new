@@ -53,6 +53,10 @@
       "@id": "beckn:stationStatus",
       "@type": "@id"
     },
+    "vehicleType": {
+      "@id": "beckn:vehicleType",
+      "@type": "@id"
+    },
     "parkingType": {
       "@id": "beckn:parkingType",
       "@type": "@id"
@@ -100,7 +104,11 @@
     "Available": "beckn:StationStatusAvailable",
     "Occupied": "beckn:StationStatusOccupied",
     "OutOfService": "beckn:StationStatusOutOfService",
-    "Out Of Service": "beckn:StationStatusOutOfService"
+    "Out Of Service": "beckn:StationStatusOutOfService",
+
+    "2-WHEELER": "beckn:VehicleType2Wheeler",
+    "3-WHEELER": "beckn:VehicleType3Wheeler",
+    "4-WHEELER": "beckn:VehicleType4Wheeler"
   },
 
   "@graph": []

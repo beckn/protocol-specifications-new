@@ -17,7 +17,6 @@ components:
     ChargingOffer:
       type: object
       additionalProperties: false
-      required: [priceSpecification]
       x-jsonld:
         "@context": ./context.jsonld
         "@type": ChargingOffer

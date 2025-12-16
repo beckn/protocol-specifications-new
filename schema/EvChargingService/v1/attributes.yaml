@@ -73,7 +73,7 @@ components:
         # Location: REUSE Beckn Location (core.yaml) via $ref
         serviceLocation:
           allOf:
-            - $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Location"
+            - $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Location"
             - type: object
               description: Location of the charging site (reuses Beckn Location).
               x-jsonld: { "@id": serviceLocation }
@@ -156,4 +156,11 @@ components:
           description: Near-real-time availability state.
           example: "Available"
           x-jsonld: { "@id": stationStatus }
+
+        vehicleType:
+          type: string
+          enum: ["2-WHEELER", "3-WHEELER", "4-WHEELER"]
+          description: Type of vehicle that can use this charging service.
+          example: "4-WHEELER"
+          x-jsonld: { "@id": vehicleType }
 

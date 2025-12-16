@@ -142,6 +142,14 @@
       "rdfs:domain": "beckn:ChargingService",
       "schema:rangeIncludes": "beckn:StationStatus"
     },
+    {
+      "@id": "beckn:vehicleType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Vehicle type",
+      "rdfs:comment": "Type of vehicle that can use this charging service (2-WHEELER, 3-WHEELER, 4-WHEELER).",
+      "rdfs:domain": "beckn:ChargingService",
+      "schema:rangeIncludes": "beckn:VehicleType"
+    },
 
     {
       "@id": "beckn:AmenityFeature",
@@ -479,6 +487,44 @@
       "schema:name": "OutOfService",
       "schema:identifier": "OutOfService",
       "schema:alternateName": "Out Of Service"
+    },
+    {
+      "@id": "beckn:VehicleType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Vehicle Type",
+      "rdfs:comment": "Enumeration of vehicle types that can use the charging service.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:VehicleType2Wheeler" },
+        { "@id": "beckn:VehicleType3Wheeler" },
+        { "@id": "beckn:VehicleType4Wheeler" }
+      ]
+    },
+    {
+      "@id": "beckn:VehicleType2Wheeler",
+      "@type": [
+        "beckn:VehicleType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "2-WHEELER",
+      "schema:identifier": "2-WHEELER"
+    },
+    {
+      "@id": "beckn:VehicleType3Wheeler",
+      "@type": [
+        "beckn:VehicleType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "3-WHEELER",
+      "schema:identifier": "3-WHEELER"
+    },
+    {
+      "@id": "beckn:VehicleType4Wheeler",
+      "@type": [
+        "beckn:VehicleType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "4-WHEELER",
+      "schema:identifier": "4-WHEELER"
     }
   ]
 }

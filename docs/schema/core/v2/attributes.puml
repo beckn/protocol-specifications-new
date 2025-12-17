@@ -1,0 +1,378 @@
+@startuml
+hide empty members
+set namespaceSeparator none
+
+
+class Catalog {
+    {field} string (uri) <b>@context</b> {"https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"}
+    {field} string <b>@type</b>
+    {field} string <b>beckn:id</b>
+    {field} Descriptor <b>beckn:descriptor</b>
+    {field} string <b>beckn:bppId</b>
+    {field} string (uri) <b>beckn:bppUri</b>
+    {field} Item[] <b>beckn:items</b>
+    {field} string beckn:providerId
+    {field} TimePeriod beckn:validity
+    {field} boolean beckn:isActive = true
+    {field} Offer[] beckn:offers
+}
+
+Catalog ..> Descriptor
+Catalog ..> Item
+Catalog ..> Offer
+Catalog ..> TimePeriod
+
+
+class Item {
+    {field} string (uri) <b>@context</b> {"https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"}
+    {field} string <b>@type</b> {"beckn:Item"}
+    {field} string <b>beckn:id</b>
+    {field} Descriptor <b>beckn:descriptor</b>
+    {field} Provider <b>beckn:provider</b>
+    {field} Attributes <b>beckn:itemAttributes</b>
+    {field} CategoryCode beckn:category
+    {field} Location[] beckn:availableAt
+    {field} TimePeriod[] beckn:availabilityWindow
+    {field} boolean beckn:rateable
+    {field} Rating beckn:rating
+    {field} boolean beckn:isActive = true
+    {field} string[] beckn:networkId
+}
+
+Item ..> Attributes
+Item ..> CategoryCode
+Item ..> Descriptor
+Item ..> Location
+Item ..> Provider
+Item ..> Rating
+Item ..> TimePeriod
+
+
+class Offer {
+    {field} string (uri) <b>@context</b>
+    {field} string <b>@type</b> {"beckn:Offer"}
+    {field} string <b>beckn:id</b>
+    {field} Descriptor <b>beckn:descriptor</b>
+    {field} beckn:id <b>beckn:provider</b>
+    {field} beckn:id[1:] <b>beckn:items</b>
+    {field} beckn:id[] beckn:addOns
+    {field} beckn:id[] beckn:addOnItems
+    {field} boolean beckn:isActive = true
+    {field} TimePeriod beckn:validity
+    {field} PriceSpecification beckn:price
+    {field} Location[] beckn:eligibleRegion
+    {field} AcceptedPaymentMethod beckn:acceptedPaymentMethod
+    {field} Attributes beckn:offerAttributes
+}
+
+Offer ..> AcceptedPaymentMethod
+Offer ..> Attributes
+Offer ..> Descriptor
+Offer ..> Location
+Offer ..> PriceSpecification
+Offer ..> TimePeriod
+Offer ..> beckn:id
+
+
+class Attributes {
+    {field} string (uri) <b>@context</b>
+    {field} string <b>@type</b>
+}
+
+
+
+class AcceptedPaymentMethod {
+}
+
+
+
+class Provider {
+    {field} string <b>beckn:id</b>
+    {field} Descriptor <b>beckn:descriptor</b>
+    {field} TimePeriod beckn:validity
+    {field} Location[] beckn:locations
+    {field} boolean beckn:rateable
+    {field} Rating beckn:rating
+    {field} Attributes beckn:providerAttributes
+}
+
+Provider ..> Attributes
+Provider ..> Descriptor
+Provider ..> Location
+Provider ..> Rating
+Provider ..> TimePeriod
+
+
+class Quantity {
+    {field} string unitText
+    {field} string unitCode
+    {field} number unitQuantity
+    {field} number minQuantity
+    {field} number maxQuantity
+}
+
+
+
+class PriceSpecification {
+    {field} string currency
+    {field} number value
+    {field} Quantity applicableQuantity
+    {field} object[] components
+}
+
+PriceSpecification ..> Quantity
+
+
+class Eligibility {
+    {field} string eligibleRegion
+    {field} object eligibleQuantity
+}
+
+
+
+class Descriptor {
+    {field} string <b>@type</b> {"beckn:Descriptor"}
+    {field} string schema:name
+    {field} string beckn:shortDesc
+    {field} string beckn:longDesc
+    {field} string[] schema:image
+}
+
+
+
+class CategoryCode {
+    {field} string <b>@type</b> {"schema:CategoryCode"}
+    {field} string <b>schema:codeValue</b>
+    {field} string schema:name
+    {field} string schema:description
+}
+
+
+
+class TimePeriod {
+    {field} string <b>@type</b>
+    {field} string (date-time) schema:startDate
+    {field} string (date-time) schema:endDate
+    {field} string (time) schema:startTime
+    {field} string (time) schema:endTime
+}
+
+
+
+class Rating {
+    {field} string <b>@type</b> {"beckn:Rating"}
+    {field} number beckn:ratingValue {0..5}
+    {field} integer beckn:ratingCount
+}
+
+
+
+class ErrorResponse {
+    {field} Error <b>error</b>
+}
+
+ErrorResponse ..> Error
+
+
+class Error {
+    {field} string <b>code</b>
+    {field} string <b>message</b>
+    {field} object details
+}
+
+
+
+class AckResponse {
+    {field} string <b>transaction_id</b>
+    {field} string (date-time) <b>timestamp</b>
+    {field} string <b>ack_status</b> {"ACK", "NACK"}
+    {field} Error error
+}
+
+AckResponse ..> Error
+
+
+class Location {
+    {field} GeoJSONGeometry <b>geo</b>
+    {field} string @type {"beckn:Location"}
+    {field} <i>not specified</i> address
+}
+
+Location ..> GeoJSONGeometry
+
+
+class Address {
+    {field} string streetAddress
+    {field} string extendedAddress
+    {field} string addressLocality
+    {field} string addressRegion
+    {field} string postalCode
+    {field} string addressCountry
+}
+
+
+
+class GeoJSONGeometry {
+    {field} string <b>type</b> {"Point", "LineString", "Polygon", "MultiPoint", "MultiLineString", "MultiPolygon", "GeometryCollection"}
+    {field} None[] coordinates
+    {field} GeoJSONGeometry[] geometries
+    {field} None[4:4] bbox
+}
+
+GeoJSONGeometry ..> GeoJSONGeometry
+
+
+class Order {
+    {field} string (uri) <b>@context</b>
+    {field} string <b>@type</b> {"beckn:Order"}
+    {field} string <b>beckn:id</b>
+    {field} string <b>beckn:orderStatus</b> {"CREATED", "PENDING", "CONFIRMED", "INPROGRESS", "PARTIALLYFULFILLED", "COMPLETED", "CANCELLED", "REJECTED", "FAILED", "RETURNED", "REFUNDED", "ONHOLD"}
+    {field} beckn:id <b>beckn:seller</b>
+    {field} Buyer <b>beckn:buyer</b>
+    {field} OrderItem[1:] <b>beckn:orderItems</b>
+    {field} string beckn:orderNumber
+    {field} Offer[] beckn:acceptedOffers
+    {field} PriceSpecification beckn:orderValue
+    {field} beckn:id beckn:invoice
+    {field} Payment beckn:payment
+    {field} Fulfillment beckn:fulfillment
+    {field} Attributes beckn:orderAttributes
+}
+
+Order ..> Attributes
+Order ..> Buyer
+Order ..> Fulfillment
+Order ..> Offer
+Order ..> OrderItem
+Order ..> Payment
+Order ..> PriceSpecification
+Order ..> beckn:id
+
+
+class OrderItem {
+    {field} string <b>beckn:lineId</b>
+    {field} beckn:id <b>beckn:orderedItem</b>
+    {field} Quantity <b>beckn:quantity</b>
+    {field} Offer beckn:acceptedOffer
+    {field} PriceSpecification beckn:price
+    {field} Attributes beckn:orderItemAttributes
+}
+
+OrderItem ..> Attributes
+OrderItem ..> Offer
+OrderItem ..> PriceSpecification
+OrderItem ..> Quantity
+OrderItem ..> beckn:id
+
+
+class Invoice {
+    {field} string (uri) <b>@context</b>
+    {field} string <b>@type</b> {"beckn:Invoice"}
+    {field} string <b>beckn:id</b>
+    {field} string <b>beckn:number</b>
+    {field} string (date) <b>beckn:issueDate</b>
+    {field} beckn:id <b>beckn:payee</b>
+    {field} beckn:id <b>beckn:payer</b>
+    {field} PriceSpecification <b>beckn:totals</b>
+    {field} string (date) beckn:dueDate
+    {field} Attributes beckn:invoiceAttributes
+}
+
+Invoice ..> Attributes
+Invoice ..> PriceSpecification
+Invoice ..> beckn:id
+
+
+class Fulfillment {
+    {field} string (uri) <b>@context</b>
+    {field} string <b>@type</b> {"beckn:Fulfillment"}
+    {field} string <b>beckn:id</b>
+    {field} string <b>beckn:mode</b> {"DELIVERY", "PICKUP", "RESERVATION", "DIGITAL"}
+    {field} string beckn:fulfillmentStatus
+    {field} TrackAction trackingAction
+    {field} Attributes beckn:deliveryAttributes
+}
+
+Fulfillment ..> Attributes
+Fulfillment ..> TrackAction
+
+
+class TrackAction {
+    {field} object target
+    {field} string deliveryMethod {"DELIVERY", "PICKUP", "RESERVATION", "DIGITAL"}
+    {field} string reservationId
+}
+
+
+
+class Payment {
+    {field} string (uri) <b>@context</b>
+    {field} string <b>@type</b> {"beckn:Payment"}
+    {field} string <b>beckn:id</b>
+    {field} string <b>beckn:paymentStatus</b> {"INITIATED", "PENDING", "AUTHORIZED", "CAPTURED", "COMPLETED", "FAILED", "CANCELLED", "REFUNDED", "PARTIALLY_REFUNDED", "CHARGEBACK", "DISPUTED", "EXPIRED", "REVERSED", "VOIDED", "SETTLED", "ON_HOLD", "ADJUSTED"}
+    {field} object beckn:amount
+    {field} string (uri) beckn:paymentURL
+    {field} string beckn:txnRef
+    {field} string (date-time) beckn:paidAt
+    {field} AcceptedPaymentMethod beckn:acceptedPaymentMethod
+    {field} string beckn:beneficiary {"BPP", "BAP"}
+    {field} Attributes beckn:paymentAttributes
+}
+
+Payment ..> AcceptedPaymentMethod
+Payment ..> Attributes
+
+
+class Buyer {
+    {field} string (uri) <b>@context</b>
+    {field} string <b>@type</b> {"beckn:Buyer"}
+    {field} string <b>beckn:id</b>
+    {field} string beckn:role {"BUYER", "SELLER", "INTERMEDIARY", "PAYER", "PAYEE", "FULFILLER"}
+    {field} string beckn:displayName
+    {field} string beckn:taxID
+    {field} Attributes beckn:buyerAttributes
+}
+
+Buyer ..> Attributes
+
+
+class SupportInfo {
+    {field} string name
+    {field} string phone
+    {field} string (email) email
+    {field} string (uri) url
+    {field} string hours
+    {field} string[] channels
+}
+
+
+
+class Tracking {
+    {field} string <b>tl_method</b> {"http/get", "http/post", "http/redirect", "ws/handle", "custom"}
+    {field} string (uri) <b>url</b>
+    {field} string <b>trackingStatus</b> {"ACTIVE", "DISABLED", "COMPLETED"}
+    {field} string (date-time) expires_at
+}
+
+
+
+class RatingInput {
+    {field} string <b>id</b>
+    {field} number <b>ratingValue</b>
+    {field} number bestRating
+    {field} number worstRating
+    {field} string category {"order", "item", "fulfillment", "provider", "agent", "other"}
+    {field} object feedback
+}
+
+
+
+class Form {
+    {field} string (uri) url
+    {field} object data
+    {field} string mime_type {"text/html", "application/xml"}
+    {field} string (uuid) submission_id
+}
+
+
+@enduml

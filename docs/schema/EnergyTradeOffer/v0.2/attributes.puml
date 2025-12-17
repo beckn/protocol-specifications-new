@@ -1,0 +1,17 @@
+@startuml
+hide empty members
+set namespaceSeparator none
+
+
+class EnergyTradeOffer {
+    {field} string <b>pricingModel</b> {"PER_KWH", "TIME_OF_DAY", "SUBSCRIPTION", "FIXED"}
+    {field} string settlementType {"REAL_TIME", "HOURLY", "DAILY", "WEEKLY", "MONTHLY"}
+    {field} object wheelingCharges
+    {field} number minimumQuantity
+    {field} number maximumQuantity
+    {field} object validityWindow
+    {field} object[] timeOfDayRates
+}
+
+
+@enduml

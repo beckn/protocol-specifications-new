@@ -1,0 +1,24 @@
+@startuml
+hide empty members
+set namespaceSeparator none
+
+
+class ChargingSession {
+    {field} string sessionStatus {"PENDING", "ACTIVE", "COMPLETED", "INTERRUPTED"}
+    {field} string authorizationMode {"APP_QR", "RFID", "OTP"}
+    {field} string authorizationOtpHint
+    {field} string connectorType {"CCS2", "Type2", "CHAdeMO", "GB_T"}
+    {field} number maxPowerKW {1..}
+    {field} number meteredEnergyKWh
+    {field} number meteredDurationMinutes
+    {field} object[] chargingTelemetry
+    {field} object totalCost
+    {field} string (date-time) lastUpdated
+    {field} string reservationId
+    {field} number gracePeriodMinutes
+    {field} string vehicleMake
+    {field} string vehicleModel
+}
+
+
+@enduml

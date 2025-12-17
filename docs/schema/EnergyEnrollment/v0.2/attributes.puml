@@ -1,0 +1,58 @@
+@startuml
+hide empty members
+set namespaceSeparator none
+
+
+class EnergyEnrollment {
+    {field} VerifiableCredential[] credentials
+    {field} VerifiableCredential[] existingEnrollments
+    {field} object credentialVerification
+    {field} object conflictCheck
+    {field} string (date-time) startDate
+    {field} string (date-time) endDate
+    {field} string updateType {"CONSENT_REVOCATION", "UNENROLLMENT"}
+    {field} object consentRevocation
+    {field} object unenrollment
+    {field} string enrollmentId
+    {field} string programId
+    {field} string status {"ACTIVE", "PENDING", "CANCELLED", "SUSPENDED"}
+    {field} string (date-time) enrolledAt
+    {field} object credential
+    {field} string (date-time) loggedAt
+    {field} string logReference
+}
+
+EnergyEnrollment ..> VerifiableCredential
+
+
+class VerifiableCredential {
+    {field} string credentialId
+    {field} string type {"MeterOwnershipCredential", "ProgramEligibilityCredential", "DERCertificationCredential", "ProgramEnrollmentCredential"}
+    {field} string format {"VC-JWT", "VC-JSON-LD"}
+    {field} string credentialData
+    {field} string (uri) credentialUrl
+    {field} string (uri) verificationUrl
+    {field} string (date-time) issuedAt
+    {field} string (date-time) expiresAt
+    {field} string derId
+}
+
+
+
+class VerifiedCredential {
+    {field} string credentialId
+    {field} string status {"VERIFIED", "FAILED"}
+    {field} string (date-time) verifiedAt
+}
+
+
+
+class ConflictingEnrollment {
+    {field} string enrollmentId
+    {field} string programId
+    {field} string conflictReason
+    {field} string conflictType {"METER_ALREADY_ENROLLED", "DER_ALREADY_ENROLLED", "PROGRAM_CONFLICT", "DATE_OVERLAP"}
+}
+
+
+@enduml

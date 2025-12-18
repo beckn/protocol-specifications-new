@@ -1,0 +1,49 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix beckn: <https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/p2p-trading/schema/core/v2/vocab.jsonld#> .
+@prefix schema: <https://schema.org/> .
+
+# P2P Trading Domain Constraints
+# These constraints enforce domain-specific rules for P2P energy trading
+# without modifying the core Beckn Protocol specification.
+
+# Constraint: Provider objects must have providerAttributes with EnergyProvider type
+<#ProviderConstraint>
+    a sh:NodeShape ;
+    rdfs:label "P2P Trading Provider Constraint" ;
+    rdfs:comment "Provider objects in P2P trading domain must have providerAttributes with @type='EnergyProvider'" ;
+    sh:targetClass beckn:Provider ;
+    sh:property [
+        sh:path beckn:providerAttributes ;
+        sh:minCount 1 ;
+        sh:message "Provider object must have 'providerAttributes' in P2P trading domain" ;
+        sh:node [
+            sh:property [
+                sh:path rdf:type ;
+                sh:hasValue "EnergyProvider" ;
+                sh:message "Provider.providerAttributes must have @type='EnergyProvider' in P2P trading domain" ;
+            ]
+        ]
+    ] .
+
+# Constraint: Buyer objects must have buyerAttributes with EnergyBuyer type
+<#BuyerConstraint>
+    a sh:NodeShape ;
+    rdfs:label "P2P Trading Buyer Constraint" ;
+    rdfs:comment "Buyer objects in P2P trading domain must have buyerAttributes with @type='EnergyBuyer'" ;
+    sh:targetClass beckn:Buyer ;
+    sh:property [
+        sh:path beckn:buyerAttributes ;
+        sh:minCount 1 ;
+        sh:message "Buyer object must have 'buyerAttributes' in P2P trading domain" ;
+        sh:node [
+            sh:property [
+                sh:path rdf:type ;
+                sh:hasValue "EnergyBuyer" ;
+                sh:message "Buyer.buyerAttributes must have @type='EnergyBuyer' in P2P trading domain" ;
+            ]
+        ]
+    ] .
+

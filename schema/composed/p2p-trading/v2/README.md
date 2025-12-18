@@ -12,6 +12,11 @@ This directory contains a **composed JSON-LD context** that merges all necessary
   - Energy Trade Offer attributes (`EnergyTradeOffer/v0.2`)
   - Energy Trade Delivery attributes (`EnergyTradeDelivery/v0.2`)
 
+- `constraints.yaml`: Domain-specific validation rules enforced for P2P trading:
+  - Provider objects must have `providerAttributes` with `@type: "EnergyProvider"`
+  - Buyer objects must have `buyerAttributes` with `@type: "EnergyBuyer"`
+  - See `ENFORCEMENT_RULES.md` for detailed documentation
+
 ## Usage
 
 ### In JSON Examples
@@ -55,16 +60,17 @@ Use a single composed context at the root:
 
 ## Validation
 
-The validator (`DEG/scripts/validate_schema.py`) supports composed contexts with the `--jsonld` flag:
+The validator (`DEG/scripts/validate_schema.py`) automatically:
+1. Detects composed context URLs
+2. Loads domain-specific constraints from `constraints.yaml` (if available)
+3. Applies constraints before schema validation
+4. Validates against OpenAPI schemas
+
+Optional JSON-LD expansion with `--jsonld` flag:
 
 ```bash
 python3 scripts/validate_schema.py --jsonld examples/p2p-trading/v2/*.json
 ```
-
-This will:
-1. Detect composed context URLs
-2. Expand JSON-LD using pyld library
-3. Validate against OpenAPI schemas
 
 ## Benefits
 

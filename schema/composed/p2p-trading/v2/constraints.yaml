@@ -1,0 +1,34 @@
+# P2P Trading Domain Constraints
+# Domain-specific validation rules enforced for P2P energy trading
+# without modifying the core Beckn Protocol specification.
+
+version: "1.0"
+domain: "p2p-trading"
+
+constraints:
+  # Constraint: Provider objects must have providerAttributes
+  - name: "Provider must have providerAttributes"
+    description: "Provider objects in P2P trading domain must include providerAttributes with @type='EnergyProvider'"
+    target:
+      type: "beckn:Provider"
+    rules:
+      - property: "providerAttributes"
+        required: true
+        message: "Provider object must have 'providerAttributes' in P2P trading domain"
+      - property: "providerAttributes.@type"
+        equals: "EnergyProvider"
+        message: "Provider.providerAttributes must have @type='EnergyProvider' in P2P trading domain"
+
+  # Constraint: Buyer objects must have buyerAttributes
+  - name: "Buyer must have buyerAttributes"
+    description: "Buyer objects in P2P trading domain must include buyerAttributes with @type='EnergyBuyer'"
+    target:
+      type: "beckn:Buyer"
+    rules:
+      - property: "buyerAttributes"
+        required: true
+        message: "Buyer object must have 'buyerAttributes' in P2P trading domain"
+      - property: "buyerAttributes.@type"
+        equals: "EnergyBuyer"
+        message: "Buyer.buyerAttributes must have @type='EnergyBuyer' in P2P trading domain"
+

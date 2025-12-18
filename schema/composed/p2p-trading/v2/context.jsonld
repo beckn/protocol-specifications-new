@@ -1,20 +1,12 @@
 {
   "@context": {
     "@version": 1.1,
-    
-    // Base vocabularies
     "schema": "https://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
-    
-    // Beckn core namespace (from p2p-trading branch)
     "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/p2p-trading/schema/core/v2/vocab.jsonld#",
-    
-    // ============================================
-    // CORE BECKN TYPES (from core/v2/context.jsonld)
-    // ============================================
     "Address": "beckn:Address",
     "Attributes": "beckn:Attributes",
     "Buyer": "beckn:Buyer",
@@ -41,10 +33,6 @@
     "TimePeriod": "beckn:TimePeriod",
     "TrackAction": "beckn:TrackAction",
     "Tracking": "beckn:Tracking",
-    
-    // ============================================
-    // CORE BECKN PROPERTIES (from core/v2/context.jsonld)
-    // ============================================
     "acceptedOffer": "beckn:acceptedOffer",
     "acceptedOffers": "beckn:acceptedOffers",
     "acceptedPaymentMethod": {
@@ -108,8 +96,8 @@
     "eligibleQuantity": "beckn:eligibleQuantity",
     "eligibleRegion": "beckn:eligibleRegion",
     "email": "beckn:email",
-    "endDate": "beckn:endDate",
-    "endTime": "beckn:endTime",
+    "endDate": "schema:endDate",
+    "endTime": "schema:endTime",
     "errorCode": "beckn:errorCode",
     "errorDetails": "beckn:errorDetails",
     "errorMessage": "beckn:errorMessage",
@@ -211,8 +199,8 @@
     "role": "beckn:role",
     "seller": "beckn:seller",
     "shortDesc": "beckn:shortDesc",
-    "startDate": "beckn:startDate",
-    "startTime": "beckn:startTime",
+    "startDate": "schema:startDate",
+    "startTime": "schema:startTime",
     "supportInfo": "beckn:supportInfo",
     "taxID": "beckn:taxID",
     "tl_method": "beckn:tl_method",
@@ -236,27 +224,11 @@
     "updatedAt": "beckn:updatedAt",
     "validity": "beckn:validity",
     "value": "beckn:value",
-    
-    // ============================================
-    // SCHEMA.ORG PROPERTIES (commonly used)
-    // ============================================
     "name": "schema:name",
     "description": "schema:description",
-    "startTime": "schema:startTime",
-    "endTime": "schema:endTime",
-    "startDate": "schema:startDate",
-    "endDate": "schema:endDate",
     "dateModified": "schema:dateModified",
-    
-    // ============================================
-    // ENERGY BUYER (from EnergyBuyer/v0.2/context.jsonld)
-    // ============================================
     "EnergyBuyer": "beckn:EnergyBuyer",
     "targetMeterId": "beckn:targetMeterId",
-    
-    // ============================================
-    // ENERGY PROVIDER (from EnergyProvider/v0.2/context.jsonld)
-    // ============================================
     "EnergyProvider": "beckn:EnergyProvider",
     "sourceMeterId": "beckn:sourceMeterId",
     "sourceType": {
@@ -270,10 +242,6 @@
     "GRID": "beckn:SourceTypeGrid",
     "HYBRID": "beckn:SourceTypeHybrid",
     "RENEWABLE": "beckn:SourceTypeRenewable",
-    
-    // ============================================
-    // ENERGY RESOURCE (from EnergyResource/v0.2/context.jsonld)
-    // ============================================
     "EnergyResource": "beckn:EnergyResource",
     "deliveryMode": {
       "@id": "beckn:deliveryMode",
@@ -294,10 +262,6 @@
     "V2G": "beckn:DeliveryModeV2G",
     "GRID_INJECTION": "beckn:DeliveryModeGridInjection",
     "GRID-INJECTION": "beckn:DeliveryModeGridInjection",
-    
-    // ============================================
-    // ENERGY TRADE OFFER (from EnergyTradeOffer/v0.2/context.jsonld)
-    // ============================================
     "EnergyTradeOffer": "beckn:EnergyTradeOffer",
     "pricingModel": {
       "@id": "beckn:pricingModel",
@@ -327,10 +291,6 @@
     "DAILY": "beckn:SettlementTypeDaily",
     "WEEKLY": "beckn:SettlementTypeWeekly",
     "MONTHLY": "beckn:SettlementTypeMonthly",
-    
-    // ============================================
-    // ENERGY TRADE DELIVERY (from EnergyTradeDelivery/v0.2/context.jsonld)
-    // ============================================
     "EnergyTradeDelivery": "beckn:EnergyTradeDelivery",
     "deliveryStatus": {
       "@id": "beckn:deliveryStatus",
@@ -393,4 +353,3 @@
     }
   ]
 }
-

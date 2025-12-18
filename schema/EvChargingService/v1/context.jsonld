@@ -8,6 +8,7 @@
     "beckn": "./vocab.jsonld#",
     
     "ChargingService": "beckn:ChargingService",
+    "ChargingStation": "beckn:ChargingStation",
 
     "name": "schema:name",
     "description": "schema:description",
@@ -28,7 +29,7 @@
     "areaServed": "schema:areaServed",
     "category": "schema:category",
 
-    "connectorId": "beckn:connectorId",
+    "chargingStation": "beckn:chargingStation",
     "amenityFeature": {
       "@id": "beckn:amenityFeature",
       "@type": "@id"
@@ -47,10 +48,6 @@
     },
     "chargingSpeed": {
       "@id": "beckn:chargingSpeed",
-      "@type": "@id"
-    },
-    "stationStatus": {
-      "@id": "beckn:stationStatus",
       "@type": "@id"
     },
     "vehicleType": {
@@ -100,11 +97,6 @@
     "Fuel Station": "beckn:ParkingTypeFuelStation",
     "Office": "beckn:ParkingTypeOffice",
     "Hotel": "beckn:ParkingTypeHotel",
-
-    "Available": "beckn:StationStatusAvailable",
-    "Occupied": "beckn:StationStatusOccupied",
-    "OutOfService": "beckn:StationStatusOutOfService",
-    "Out Of Service": "beckn:StationStatusOutOfService",
 
     "2-WHEELER": "beckn:VehicleType2Wheeler",
     "3-WHEELER": "beckn:VehicleType3Wheeler",

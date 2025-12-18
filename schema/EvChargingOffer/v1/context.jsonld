@@ -20,21 +20,12 @@
       "@id": "beckn:tariffModel",
       "@type": "@id"
     },
-    "buyerFinderFee": "beckn:buyerFinderFee",
-    "feeType": {
-      "@id": "beckn:feeType",
-      "@type": "@id"
-    },
-    "feeValue": "beckn:feeValue",
     "idleFeePolicy": "beckn:idleFeePolicy",
 
     "PER_KWH": "beckn:TariffModelPerKwh",
     "PER_MINUTE": "beckn:TariffModelPerMinute",
     "SUBSCRIPTION": "beckn:TariffModelSubscription",
-    "TIME_OF_DAY": "beckn:TariffModelTimeOfDay",
-
-    "PERCENTAGE": "beckn:FeeTypePercentage",
-    "AMOUNT": "beckn:FeeTypeAmount"
+    "TIME_OF_DAY": "beckn:TariffModelTimeOfDay"
   },
 
   "@graph": []

@@ -6,16 +6,15 @@ Attach these schemas as follows:
 
 | **Attribute Schema** | **Attach To** | **Purpose** |
 | --- | --- | --- |
-| ChargingSession | Order.fulfillments[].attributes | Real-time or completed charging session data – energy, duration, cost, telemetry intervals, and simple tracking identifiers. |
+| ChargingSession | Order.fulfillments[].attributes | Real-time or completed charging session data – energy, duration, cost, telemetry intervals, buyer-finder fees and simple tracking identifiers. |
 | --- | --- | --- |
 
 ## **🧭 Role and Design**
 
 - **Aligned with Beckn Core**
   Uses canonical Beckn schemas for common objects and reuses canonical components from:
-  - core.yaml – Catalog, Item, Offer, Provider, Attributes, Location, Address, GeoJSONGeometry
-  - discover.yaml – Discovery API endpoints and request/response schemas
-  - transaction.yaml – Transaction API endpoints and Order, Fulfillment, Payment schemas
+  - [core.yaml](../../core/v2/attributes.yaml) - Catalog, Item, Offer, Provider, Attributes, Location, Address, GeoJSONGeometry
+  - [api/beckn.yaml](../../../api/beckn.yaml) - Unified API specification for discovery and transaction endpoints
 - **Adds EV semantics only**
   Introduces session-specific elements such as sessionStatus, authorizationMode, telemetry, and totalCost.
 - **Designed for interoperability**
@@ -48,7 +47,7 @@ This supports both local development and public hosting.
 | --- | --- |
 
 ## 🏷️ Tags
-`ev-charging, charging-session, telemetry, billing, reservation, beckn, json-ld, schema.org, openapi`
+`ev-charging, charging-session, buyer-finder-fee, telemetry, billing, reservation, beckn, json-ld, schema.org, openapi`
 
 
 

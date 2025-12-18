@@ -5,6 +5,15 @@
 version: "1.0"
 domain: "p2p-trading"
 
+# Schema mappings: Maps attribute types to their schema context URLs
+# Used to infer schema URLs when @type is found without explicit @context
+schemaMapping:
+  EnergyBuyer: "EnergyBuyer/v0.2"
+  EnergyProvider: "EnergyProvider/v0.2"
+  EnergyResource: "EnergyResource/v0.2"
+  EnergyTradeOffer: "EnergyTradeOffer/v0.2"
+  EnergyTradeDelivery: "EnergyTradeDelivery/v0.2"
+
 constraints:
   # Constraint: Provider objects must have providerAttributes
   - name: "Provider must have providerAttributes"

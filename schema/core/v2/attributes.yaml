@@ -893,7 +893,7 @@ components:
         beckn:beneficiary:
           type: string
           description: Who will be the beneficiary or recipient of the payment
-          enum: ["BPP","BAP"]
+          enum: ["BPP","BAP","BUYER"]
           example: "BPP"
           x-jsonld: { "@id": "schema:beneficiary" }
         beckn:paymentAttributes:

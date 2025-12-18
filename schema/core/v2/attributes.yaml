@@ -760,12 +760,7 @@ components:
     Fulfillment:
       type: object
       additionalProperties: false
-      required: [
-        "@context",
-        "@type",
-        "beckn:id",
-        "beckn:mode"
-      ]
+      required: ["@context","@type","beckn:mode"]
       properties:
         "@context":
           type: string
@@ -851,7 +846,7 @@ components:
     Payment:
       type: object
       additionalProperties: false
-      required: ["@context","@type","beckn:id","beckn:paymentStatus"]
+      required: ["@context","@type","beckn:paymentStatus"]
       # Core payment semantics: rail + status + references. Rail payloads live in payment packs (UPI/Card/BNPL/Wallet).
       properties:
         "@context":

@@ -1,0 +1,29 @@
+openapi: 3.1.1
+info:
+  title: Energy Trade — Buyer Attributes (v0.2)
+  version: 0.2.0
+  x-profile-id: profiles/energy-trade/energy_trade/v0.2/buyer
+  description: >
+    Attribute schemas for energy buyers (Buyer.buyerAttributes).
+    These attributes are attached to Buyer.buyerAttributes to provide energy-specific
+    buyer information including target meter identification for P2P energy trading.
+
+components:
+  schemas:
+    ########################################################################
+    # BUYER.ATTRIBUTES — EnergyBuyer (P2P Energy Trading)
+    ########################################################################
+    EnergyBuyer:
+      type: object
+      additionalProperties: false
+      x-jsonld:
+        "@context": ./context.jsonld
+        "@type": EnergyBuyer
+      properties:
+
+        targetMeterId:
+          type: string
+          description: Target meter identifier in DER address format (der://meter/{id}) where energy will be delivered. Validated by utility BPP against grid registry.
+          example: "der://meter/98765456"
+          x-jsonld: { "@id": targetMeterId }
+

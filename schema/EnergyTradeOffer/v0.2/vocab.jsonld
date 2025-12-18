@@ -71,6 +71,30 @@
       "schema:rangeIncludes": "schema:ItemList"
     },
     {
+      "@id": "schema:priceSpecification",
+      "@type": "rdf:Property",
+      "rdfs:label": "Price",
+      "rdfs:comment": "Price per unit for this specific time window. User's requested quantity is specified in OrderItem.beckn:quantity.",
+      "rdfs:domain": "beckn:EnergyTradeOffer",
+      "schema:rangeIncludes": "schema:PriceSpecification"
+    },
+    {
+      "@id": "schema:QuantitativeValue",
+      "@type": "rdf:Property",
+      "rdfs:label": "Max Quantity",
+      "rdfs:comment": "Maximum quantity offered/available in this specific time window (hour). Time-window specific, distinct from maximumQuantity which is the overall offer limit.",
+      "rdfs:domain": "beckn:EnergyTradeOffer",
+      "schema:rangeIncludes": "schema:QuantitativeValue"
+    },
+    {
+      "@id": "schema:availableAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "Time Window",
+      "rdfs:comment": "Specific time period (hour) when energy delivery occurs. Different from validityWindow which indicates when the offer can be selected.",
+      "rdfs:domain": "beckn:EnergyTradeOffer",
+      "schema:rangeIncludes": "schema:TimePeriod"
+    },
+    {
       "@id": "beckn:PricingModel",
       "@type": "schema:Enumeration",
       "schema:name": "Pricing Model",

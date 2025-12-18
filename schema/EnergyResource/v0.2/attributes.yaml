@@ -48,12 +48,6 @@ components:
           example: "der://meter/100200300"
           x-jsonld: { "@id": meterId }
 
-        inverterId:
-          type: string
-          description: Inverter identifier serving as consistent interface between source and grid. Remains constant even if source changes.
-          example: "inv-12345"
-          x-jsonld: { "@id": inverterId }
-
         availableQuantity:
           type: number
           minimum: 0

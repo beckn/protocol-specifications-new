@@ -26,7 +26,6 @@
     },
     "certificationStatus": "beckn:certificationStatus",
     "meterId": "beckn:meterId",
-    "inverterId": "beckn:inverterId",
     "availableQuantity": "beckn:availableQuantity",
     "productionWindow": "beckn:productionWindow",
     "sourceVerification": "beckn:sourceVerification",

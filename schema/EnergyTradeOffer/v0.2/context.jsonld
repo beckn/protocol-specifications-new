@@ -31,6 +31,9 @@
     "maximumQuantity": "beckn:maximumQuantity",
     "validityWindow": "beckn:validityWindow",
     "timeOfDayRates": "beckn:timeOfDayRates",
+    "beckn:price": "schema:priceSpecification",
+    "beckn:maxQuantity": "schema:QuantitativeValue",
+    "beckn:timeWindow": "schema:availableAt|schema:availabilityStarts|schema:availabilityEnds",
 
     "PER_KWH": "beckn:PricingModelPerKwh",
     "PER-KWH": "beckn:PricingModelPerKwh",

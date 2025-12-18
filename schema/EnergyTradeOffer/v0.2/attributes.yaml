@@ -129,3 +129,71 @@ components:
                 x-jsonld: { "@id": "schema:priceCurrency" }
           x-jsonld: { "@id": timeOfDayRates }
 
+        # Time-specific pricing and availability (for time-scheduled offers)
+        beckn:price:
+          type: object
+          description: Price per unit for this specific time window. User's requested quantity is specified in OrderItem.beckn:quantity.
+          additionalProperties: true
+          properties:
+            value:
+              type: number
+              description: Price value per unit.
+              example: 0.15
+              x-jsonld: { "@id": "schema:price" }
+            currency:
+              type: string
+              description: Currency code (ISO 4217).
+              example: "USD"
+              x-jsonld: { "@id": "schema:priceCurrency" }
+            unitText:
+              type: string
+              description: Unit for the price (e.g., "kWh").
+              example: "kWh"
+              x-jsonld: { "@id": "schema:unitText" }
+          x-jsonld: { "@id": "schema:priceSpecification" }
+
+        beckn:maxQuantity:
+          type: object
+          description: Maximum quantity offered/available in this specific time window (hour). User's requested quantity is specified in OrderItem.beckn:quantity and must be ≤ this value. This is time-window specific, distinct from maximumQuantity which is the overall offer limit.
+          additionalProperties: false
+          properties:
+            unitQuantity:
+              type: number
+              minimum: 0
+              description: Maximum quantity value available in this time window.
+              example: 20.0
+              x-jsonld: { "@id": "schema:value" }
+            unitText:
+              type: string
+              description: Unit (e.g., "kWh").
+              example: "kWh"
+              x-jsonld: { "@id": "schema:unitText" }
+            unitCode:
+              type: string
+              description: Unit code (e.g., "KWH").
+              example: "KWH"
+              x-jsonld: { "@id": "schema:unitCode" }
+          x-jsonld: { "@id": "schema:QuantitativeValue" }
+
+        beckn:timeWindow:
+          type: object
+          description: Specific time period (hour) when energy delivery occurs. Different from validityWindow which indicates when the offer can be selected. This represents the actual delivery time window.
+          required: ["@type"]
+          properties:
+            "@type":
+              type: string
+              example: "beckn:TimePeriod"
+            schema:startDate:
+              type: string
+              format: date-time
+              description: Start instant (inclusive) when energy delivery begins (ISO 8601).
+              example: "2024-10-04T06:00:00Z"
+              x-jsonld: { "@id": "schema:startDate" }
+            schema:endDate:
+              type: string
+              format: date-time
+              description: End instant (exclusive or inclusive per domain semantics) when energy delivery ends (ISO 8601).
+              example: "2024-10-04T07:00:00Z"
+              x-jsonld: { "@id": "schema:endDate" }
+          x-jsonld: { "@id": "schema:availableAt|schema:availabilityStarts|schema:availabilityEnds" }
+

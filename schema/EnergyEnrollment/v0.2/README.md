@@ -279,5 +279,6 @@ The schema uses W3C Verifiable Credentials Data Model v2.0 (`https://www.w3.org/
 - **Core v2**: Base Beckn protocol schemas (`Fulfillment`, `Order`)
 - **W3C VC v2.0**: Verifiable Credentials Data Model (`https://www.w3.org/TR/vc-data-model-2.0/`)
 - **EnergyResource**: For energy source characteristics in discovery
-- **EnergyTradeContract**: For P2P trading contract details
+- **EnergyProvider**: For provider attributes including source meter ID and certification
+- **EnergyBuyer**: For buyer attributes including target meter ID
 

@@ -47,14 +47,6 @@
       "schema:rangeIncludes": "schema:Text"
     },
     {
-      "@id": "beckn:inverterId",
-      "@type": "rdf:Property",
-      "rdfs:label": "Inverter ID",
-      "rdfs:comment": "Inverter identifier serving as consistent interface between source and grid.",
-      "rdfs:domain": "beckn:EnergyResource",
-      "schema:rangeIncludes": "schema:Text"
-    },
-    {
       "@id": "beckn:availableQuantity",
       "@type": "rdf:Property",
       "rdfs:label": "Available quantity",

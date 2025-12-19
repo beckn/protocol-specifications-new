@@ -60,24 +60,14 @@ components:
           description: Array of time windows when energy is produced or available for trading.
           x-jsonld: { "@id": productionWindow }
           items:
-            type: object
-            additionalProperties: false
-            properties:
-              start:
-                type: string
-                format: date-time
-                description: Start time of production/availability window (ISO 8601).
-                example: "2024-10-04T10:00:00Z"
-                x-jsonld: { "@id": "schema:startTime" }
-              end:
-                type: string
-                format: date-time
-                description: End time of production/availability window (ISO 8601).
-                example: "2024-10-04T18:00:00Z"
-                x-jsonld: { "@id": "schema:endTime" }
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
+              - type: object
+                description: Time window when energy is produced or available for trading.
           example:
-            - start: "2024-10-04T10:00:00Z"
-              end: "2024-10-04T18:00:00Z"
+            - "@type": "beckn:TimePeriod"
+              "schema:startDate": "2024-10-04T10:00:00Z"
+              "schema:endDate": "2024-10-04T18:00:00Z"
 
         sourceVerification:
           type: object

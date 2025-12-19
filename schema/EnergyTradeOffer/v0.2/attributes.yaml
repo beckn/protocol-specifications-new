@@ -36,6 +36,12 @@ components:
           example: "DAILY"
           x-jsonld: { "@id": settlementType }
 
+        sourceMeterId:
+          type: string
+          description: Source meter identifier in DER address format (der://meter/{id}) where energy originates. This is copied from Provider.providerAttributes.sourceMeterId for convenience in offer attributes.
+          example: "der://meter/100200300"
+          x-jsonld: { "@id": sourceMeterId }
+
         wheelingCharges:
           type: object
           description: Utility wheeling charges (fixed charges for delivery intermediaries like PG&E). Reflected as billing line item.
@@ -74,23 +80,11 @@ components:
           x-jsonld: { "@id": maximumQuantity }
 
         validityWindow:
-          type: object
-          description: Time window when the offer is valid.
+          allOf:
+            - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
+            - type: object
+              description: Time window when the offer is valid.
           x-jsonld: { "@id": validityWindow }
-          additionalProperties: false
-          properties:
-            start:
-              type: string
-              format: date-time
-              description: Offer validity start time (ISO 8601).
-              example: "2024-10-04T00:00:00Z"
-              x-jsonld: { "@id": "schema:startTime" }
-            end:
-              type: string
-              format: date-time
-              description: Offer validity end time (ISO 8601).
-              example: "2024-10-04T23:59:59Z"
-              x-jsonld: { "@id": "schema:endTime" }
 
         timeOfDayRates:
           type: array
@@ -131,69 +125,23 @@ components:
 
         # Time-specific pricing and availability (for time-scheduled offers)
         beckn:price:
-          type: object
-          description: Price per unit for this specific time window. User's requested quantity is specified in OrderItem.beckn:quantity.
-          additionalProperties: true
-          properties:
-            value:
-              type: number
-              description: Price value per unit.
-              example: 0.15
-              x-jsonld: { "@id": "schema:price" }
-            currency:
-              type: string
-              description: Currency code (ISO 4217).
-              example: "USD"
-              x-jsonld: { "@id": "schema:priceCurrency" }
-            unitText:
-              type: string
-              description: Unit for the price (e.g., "kWh").
-              example: "kWh"
-              x-jsonld: { "@id": "schema:unitText" }
+          allOf:
+            - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/PriceSpecification'
+            - type: object
+              description: Price per unit for this specific time window. User's requested quantity is specified in OrderItem.beckn:quantity.
           x-jsonld: { "@id": "schema:priceSpecification" }
 
         beckn:maxQuantity:
-          type: object
-          description: Maximum quantity offered/available in this specific time window (hour). User's requested quantity is specified in OrderItem.beckn:quantity and must be ≤ this value. This is time-window specific, distinct from maximumQuantity which is the overall offer limit.
-          additionalProperties: false
-          properties:
-            unitQuantity:
-              type: number
-              minimum: 0
-              description: Maximum quantity value available in this time window.
-              example: 20.0
-              x-jsonld: { "@id": "schema:value" }
-            unitText:
-              type: string
-              description: Unit (e.g., "kWh").
-              example: "kWh"
-              x-jsonld: { "@id": "schema:unitText" }
-            unitCode:
-              type: string
-              description: Unit code (e.g., "KWH").
-              example: "KWH"
-              x-jsonld: { "@id": "schema:unitCode" }
+          allOf:
+            - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Quantity'
+            - type: object
+              description: Maximum quantity offered/available in this specific time window (hour). User's requested quantity is specified in OrderItem.beckn:quantity and must be ≤ this value. This is time-window specific, distinct from maximumQuantity which is the overall offer limit.
           x-jsonld: { "@id": "schema:QuantitativeValue" }
 
         beckn:timeWindow:
-          type: object
-          description: Specific time period (hour) when energy delivery occurs. Different from validityWindow which indicates when the offer can be selected. This represents the actual delivery time window.
-          required: ["@type"]
-          properties:
-            "@type":
-              type: string
-              example: "beckn:TimePeriod"
-            schema:startDate:
-              type: string
-              format: date-time
-              description: Start instant (inclusive) when energy delivery begins (ISO 8601).
-              example: "2024-10-04T06:00:00Z"
-              x-jsonld: { "@id": "schema:startDate" }
-            schema:endDate:
-              type: string
-              format: date-time
-              description: End instant (exclusive or inclusive per domain semantics) when energy delivery ends (ISO 8601).
-              example: "2024-10-04T07:00:00Z"
-              x-jsonld: { "@id": "schema:endDate" }
+          allOf:
+            - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
+            - type: object
+              description: Specific time period (hour) when energy delivery occurs. Different from validityWindow which indicates when the offer can be selected. This represents the actual delivery time window.
           x-jsonld: { "@id": "schema:availableAt|schema:availabilityStarts|schema:availabilityEnds" }
 

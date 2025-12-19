@@ -1,17 +1,12 @@
-@startuml
-hide empty members
-set namespaceSeparator none
-
-
-class EnergyTradeOffer {
-    {field} string <b>pricingModel</b> {"PER_KWH", "TIME_OF_DAY", "SUBSCRIPTION", "FIXED"}
-    {field} string settlementType {"REAL_TIME", "HOURLY", "DAILY", "WEEKLY", "MONTHLY"}
-    {field} object wheelingCharges
-    {field} number minimumQuantity
-    {field} number maximumQuantity
-    {field} object validityWindow
-    {field} object[] timeOfDayRates
-}
-
-
-@enduml
+/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml:367: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  return Swagger.from_dict(loader(fd))
+Traceback (most recent call last):
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 380, in <module>
+    sw = Swagger.from_file(input_file_name)
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 367, in from_file
+    return Swagger.from_dict(loader(fd))
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 357, in from_dict
+    paths = [Path.from_dict(d, path_name, path) for path_name, path in d['paths'].items()]
+                                                                       ~^^^^^^^^^
+KeyError: 'paths'

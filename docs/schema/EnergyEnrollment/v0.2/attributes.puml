@@ -1,58 +1,12 @@
-@startuml
-hide empty members
-set namespaceSeparator none
-
-
-class EnergyEnrollment {
-    {field} VerifiableCredential[] credentials
-    {field} VerifiableCredential[] existingEnrollments
-    {field} object credentialVerification
-    {field} object conflictCheck
-    {field} string (date-time) startDate
-    {field} string (date-time) endDate
-    {field} string updateType {"CONSENT_REVOCATION", "UNENROLLMENT"}
-    {field} object consentRevocation
-    {field} object unenrollment
-    {field} string enrollmentId
-    {field} string programId
-    {field} string status {"ACTIVE", "PENDING", "CANCELLED", "SUSPENDED"}
-    {field} string (date-time) enrolledAt
-    {field} object credential
-    {field} string (date-time) loggedAt
-    {field} string logReference
-}
-
-EnergyEnrollment ..> VerifiableCredential
-
-
-class VerifiableCredential {
-    {field} string credentialId
-    {field} string type {"MeterOwnershipCredential", "ProgramEligibilityCredential", "DERCertificationCredential", "ProgramEnrollmentCredential"}
-    {field} string format {"VC-JWT", "VC-JSON-LD"}
-    {field} string credentialData
-    {field} string (uri) credentialUrl
-    {field} string (uri) verificationUrl
-    {field} string (date-time) issuedAt
-    {field} string (date-time) expiresAt
-    {field} string derId
-}
-
-
-
-class VerifiedCredential {
-    {field} string credentialId
-    {field} string status {"VERIFIED", "FAILED"}
-    {field} string (date-time) verifiedAt
-}
-
-
-
-class ConflictingEnrollment {
-    {field} string enrollmentId
-    {field} string programId
-    {field} string conflictReason
-    {field} string conflictType {"METER_ALREADY_ENROLLED", "DER_ALREADY_ENROLLED", "PROGRAM_CONFLICT", "DATE_OVERLAP"}
-}
-
-
-@enduml
+/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml:367: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  return Swagger.from_dict(loader(fd))
+Traceback (most recent call last):
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 380, in <module>
+    sw = Swagger.from_file(input_file_name)
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 367, in from_file
+    return Swagger.from_dict(loader(fd))
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 357, in from_dict
+    paths = [Path.from_dict(d, path_name, path) for path_name, path in d['paths'].items()]
+                                                                       ~^^^^^^^^^
+KeyError: 'paths'

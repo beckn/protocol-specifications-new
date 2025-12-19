@@ -1,28 +1,12 @@
-@startuml
-hide empty members
-set namespaceSeparator none
-
-
-class ChargingService {
-    {field} string <b>connectorType</b> {"CCS2", "Type2", "CHAdeMO", "GB_T"}
-    {field} number <b>maxPowerKW</b> {1..500}
-    {field} integer <b>socketCount</b> {1..}
-    {field} number minPowerKW {0..500}
-    {field} boolean reservationSupported = true
-    {field} Location serviceLocation
-    {field} None[] amenityFeature
-    {field} string items {"RESTAURANT", "RESTROOM", "WI-FI", "PARKING"}
-    {field} string ocppId
-    {field} string evseId
-    {field} string roamingNetwork
-    {field} string parkingType {"OnStreet", "OffStreet", "Basement", "Mall", "FuelStation", "Office", "Hotel"}
-    {field} string connectorId
-    {field} string powerType {"AC_SINGLE_PHASE", "AC_3_PHASE", "DC"}
-    {field} string connectorFormat {"SOCKET", "CABLE"}
-    {field} string chargingSpeed {"SLOW", "NORMAL", "FAST", "ULTRAFAST"}
-    {field} string stationStatus {"Available", "Occupied", "OutOfService"}
-}
-
-ChargingService ..> Location
-
-@enduml
+/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml:367: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  return Swagger.from_dict(loader(fd))
+Traceback (most recent call last):
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 380, in <module>
+    sw = Swagger.from_file(input_file_name)
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 367, in from_file
+    return Swagger.from_dict(loader(fd))
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 357, in from_dict
+    paths = [Path.from_dict(d, path_name, path) for path_name, path in d['paths'].items()]
+                                                                       ~^^^^^^^^^
+KeyError: 'paths'

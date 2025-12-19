@@ -1,7 +1,5 @@
 # Beckn Enabled Deep Links
 
-<div align="center">
-
 ## Objective
 
 To facilitate seamless and standardized user interactions across digital ecosystems, it is crucial to create a universally recognized and standardized "beckn" URI scheme, similar to what Unified Payments Interface (UPI) and WhatsApp has achieved for major platforms like Web, Android and iOS, thus enhancing deep linking capabilities for entities using the Beckn protocol. Furthermore, the scheme should have easy integration and accessibility through software languages like Java, Python, etc.
@@ -26,14 +24,15 @@ As the primary goal specifically for generating and interpreting QR codes for on
 
 The deep link for QR code in store is mentioned below:
 
-```beckn://<api-verb>?context.bpp_id=<BPP_ID>```
+```beckn://<api-verb>?<param1>=<value1>```
 
 ## Data Fields:
 The fields provided here are only for reference and serve as a guidance. As use cases evolve and expand, the input fields in the deep link may also grow or change to cater to the specific needs and scenarios. The field structure refers to the beckn protocol specifications. Below fields are populated based on the use cases defined in below sections.
 
-| Fields	| Description	| Example	| Default	| Mandatory |
-| context.bpp_id |	Subscriber ID of the BPP |	seller-np.com	| - | No |
-| message.intent.provider.id |	Id of the provider/ merchant |	P1 |	- |	No |
+| Fields | Description | Example | Default | Mandatory |
+|--------|-------------|---------|---------|-----------|
+| context.bpp_id | Subscriber ID of the BPP | seller-np.com | - | No |
+| message.intent.provider.id | Id of the provider | P1 | - | No |
 
 ## QR code generation
 BPPs would facilitate the sellers to generate the QR codes specific to the provider. Networks may offer open-source SDKs designed to produce QR codes embedded with merchant-specific information. However, BPPs may decide to provide their own feature and technology sets to generate standard QR codes with appropriate density for each scanning of the code.

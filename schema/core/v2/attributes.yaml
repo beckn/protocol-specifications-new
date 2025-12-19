@@ -246,27 +246,27 @@ components:
       type: object
       additionalProperties: false
       properties:
-        unitText:
+        beckn:unitText:
           type: string
           description: Unit for the quoted price (e.g., kWh, minute, hour, month)
           example: "kWh"
           x-jsonld: { "@id": "schema:unitText" }
-        unitCode:
+        beckn:unitCode:
           type: string
           description: Unit code for the quoted price (e.g., KWH, MIN, H, MON)
           example: "KWH"
           x-jsonld: { "@id": "schema:unitCode" }
-        unitQuantity:
+        beckn:unitQuantity:
           type: number
           description: Quantity of the unit
           example: 1
           x-jsonld: { "@id": "schema:Number" }
-        minQuantity:
+        beckn:minQuantity:
           type: number
           description: Minimum quantity for this price
           example: 1
           x-jsonld: { "@id": "schema:Number" }
-        maxQuantity:
+        beckn:maxQuantity:
           type: number
           description: Maximum quantity for this price
           example: 100

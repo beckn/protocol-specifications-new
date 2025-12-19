@@ -36,6 +36,12 @@ components:
           example: "DAILY"
           x-jsonld: { "@id": settlementType }
 
+        sourceMeterId:
+          type: string
+          description: Source meter identifier in DER address format (der://meter/{id}) where energy originates. This is copied from Provider.providerAttributes.sourceMeterId for convenience in offer processing.
+          example: "der://meter/100200300"
+          x-jsonld: { "@id": sourceMeterId }
+
         wheelingCharges:
           type: object
           description: Utility wheeling charges (fixed charges for delivery intermediaries like PG&E). Reflected as billing line item.
@@ -183,17 +189,17 @@ components:
             "@type":
               type: string
               example: "beckn:TimePeriod"
-            schema:startDate:
+            schema:startTime:
               type: string
               format: date-time
               description: Start instant (inclusive) when energy delivery begins (ISO 8601).
               example: "2024-10-04T06:00:00Z"
-              x-jsonld: { "@id": "schema:startDate" }
-            schema:endDate:
+              x-jsonld: { "@id": "schema:startTime" }
+            schema:endTime:
               type: string
               format: date-time
               description: End instant (exclusive or inclusive per domain semantics) when energy delivery ends (ISO 8601).
               example: "2024-10-04T07:00:00Z"
-              x-jsonld: { "@id": "schema:endDate" }
+              x-jsonld: { "@id": "schema:endTime" }
           x-jsonld: { "@id": "schema:availableAt|schema:availabilityStarts|schema:availabilityEnds" }
 

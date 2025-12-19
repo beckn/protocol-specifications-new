@@ -6,7 +6,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/p2p-trading/schema/core/v2/vocab.jsonld#",
+    "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/scratch-p2p-trading-use-composed-schema-ameetdesh/schema/core/v2/vocab.jsonld#",
     "Address": "beckn:Address",
     "Attributes": "beckn:Attributes",
     "Buyer": "beckn:Buyer",

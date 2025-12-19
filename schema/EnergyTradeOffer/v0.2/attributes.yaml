@@ -84,6 +84,7 @@ components:
             - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
             - type: object
               description: Time window when the offer is valid.
+              required: ["schema:startTime", "schema:endTime"]
           x-jsonld: { "@id": validityWindow }
 
         timeOfDayRates:
@@ -143,5 +144,6 @@ components:
             - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
             - type: object
               description: Specific time period (hour) when energy delivery occurs. Different from validityWindow which indicates when the offer can be selected. This represents the actual delivery time window.
+              required: ["schema:startTime", "schema:endTime"]
           x-jsonld: { "@id": "schema:availableAt|schema:availabilityStarts|schema:availabilityEnds" }
 

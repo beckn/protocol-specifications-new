@@ -64,10 +64,11 @@ components:
               - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
               - type: object
                 description: Time window when energy is produced or available for trading.
+                required: ["schema:startTime", "schema:endTime"]
           example:
             - "@type": "beckn:TimePeriod"
-              "schema:startDate": "2024-10-04T10:00:00Z"
-              "schema:endDate": "2024-10-04T18:00:00Z"
+              "schema:startTime": "10:00:00"
+              "schema:endTime": "18:00:00"
 
         sourceVerification:
           type: object

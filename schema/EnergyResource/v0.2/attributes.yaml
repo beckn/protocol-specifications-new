@@ -61,7 +61,7 @@ components:
           x-jsonld: { "@id": productionWindow }
           items:
             allOf:
-              - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
+              - $ref: 'schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
               - type: object
                 description: Time window when energy is produced or available for trading.
                 required: ["schema:startTime", "schema:endTime"]

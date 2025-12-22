@@ -20,11 +20,10 @@ Attach these schemas as follows:
 
 ## **🧭 Role and Design**
 
-- **Aligned with Beckn Core  
-    **Uses canonical Beckn schemas for common objects and reuses canonical components from:
-  - [core.yaml](../../core/v2/core.yaml) - Catalog, Item, Offer, Provider, Attributes, Location, Address, GeoJSONGeometry
-  - [discover.yaml](../../../api-specs/discover.yaml) - Discovery API endpoints and request/response schemas
-  - [transaction.yaml](../../../api-specs/transaction.yaml) - Transaction API endpoints and Order, Fulfillment, Payment schemas
+- **Aligned with Beckn Core**
+  Uses canonical Beckn schemas for common objects and reuses canonical components from:
+  - [core.yaml](../../core/v2/attributes.yaml) - Catalog, Item, Offer, Provider, Attributes, Location, Address, GeoJSONGeometry
+  - [api/beckn.yaml](../../../api/beckn.yaml) - Unified API specification for discovery and transaction endpoints
 - **Adds EV semantics only  
     **Introduces domain-specific elements such as connectors, power ratings, roaming networks, charging periods, and session telemetry.
 - **Designed for interoperability  

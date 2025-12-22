@@ -22,11 +22,11 @@
       "@id": "beckn:sessionStatus",
       "@type": "@id"
     },
-    "authorizationMode": {
-      "@id": "beckn:authorizationMode",
+    "connectorStatus": {
+      "@id": "beckn:connectorStatus",
       "@type": "@id"
     },
-    "authorizationOtpHint": "beckn:authorizationOtpHint",
+    "buyerFinderFee": "beckn:buyerFinderFee",
     "connectorType": {
       "@id": "beckn:connectorType",
       "@type": "@id"
@@ -42,6 +42,7 @@
     "gracePeriodMinutes": "beckn:gracePeriodMinutes",
     "vehicleMake": "beckn:vehicleMake",
     "vehicleModel": "beckn:vehicleModel",
+    "preferences": "beckn:preferences",
     "trackingId": "beckn:trackingId",
     "trackingUrl": "beckn:trackingUrl",
     "trackingStatus": "beckn:trackingStatus",
@@ -51,10 +52,9 @@
     "COMPLETED": "beckn:SessionStatusCompleted",
     "INTERRUPTED": "beckn:SessionStatusInterrupted",
 
-    "APP_QR": "beckn:AuthorizationModeAppQr",
-    "APP-QR": "beckn:AuthorizationModeAppQr",
-    "RFID": "beckn:AuthorizationModeRfid",
-    "OTP": "beckn:AuthorizationModeOtp",
+    "AVAILABLE": "beckn:ConnectorStatusAvailable",
+    "PREPARING": "beckn:ConnectorStatusPreparing",
+    "UNAVAILABLE": "beckn:ConnectorStatusUnavailable",
 
     "CCS2": "beckn:ConnectorTypeCCS2",
     "Type2": "beckn:ConnectorTypeType2",

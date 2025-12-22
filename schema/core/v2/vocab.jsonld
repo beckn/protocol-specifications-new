@@ -189,7 +189,8 @@
         "beckn:Location",
         "beckn:Invoice",
         "beckn:Rating",
-        "beckn:SupportInfo"
+        "beckn:SupportInfo",
+        "beckn:Tracking"
       ],
       "schema:rangeIncludes": "schema:Text"
     },
@@ -1522,6 +1523,22 @@
       "schema:rangeIncludes": "schema:Text"
     },
     {
+      "@id": "schema:telephone",
+      "@type": "rdf:Property",
+      "rdfs:label": "Telephone number",
+      "rdfs:comment": "Telephone number",
+      "rdfs:domain": "beckn:Buyer",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "schema:email",
+      "@type": "rdf:Property",
+      "rdfs:label": "Email Address",
+      "rdfs:comment": "Email Address",
+      "rdfs:domain": "beckn:Buyer",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
       "@id": "beckn:taxID",
       "@type": "rdf:Property",
       "rdfs:label": "Tax ID",
@@ -1667,6 +1684,46 @@
       ],
       "schema:name": "OTHER",
       "schema:identifier": "OTHER"
+    },
+    {
+      "@id": "beckn:ratingValue",
+      "@type": "rdf:Property",
+      "rdfs:label": "Rating value",
+      "rdfs:comment": "Numeric rating value (legacy usually 1–5).",
+      "rdfs:domain": "beckn:RatingInput",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "beckn:bestRating",
+      "@type": "rdf:Property",
+      "rdfs:label": "Best rating",
+      "rdfs:comment": "Maximum of the rating scale (default 5 if omitted).",
+      "rdfs:domain": "beckn:RatingInput",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "beckn:worstRating",
+      "@type": "rdf:Property",
+      "rdfs:label": "Worst rating",
+      "rdfs:comment": "Minimum of the rating scale (default 1 or 0 if omitted).",
+      "rdfs:domain": "beckn:RatingInput",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "beckn:category",
+      "@type": "rdf:Property",
+      "rdfs:label": "Category",
+      "rdfs:comment": "What is being rated.",
+      "rdfs:domain": "beckn:RatingInput",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:feedback",
+      "@type": "rdf:Property",
+      "rdfs:label": "Feedback",
+      "rdfs:comment": "Feedback object containing comments and tags.",
+      "rdfs:domain": "beckn:RatingInput",
+      "schema:rangeIncludes": "schema:Thing"
     },
     {
       "@id": "beckn:shortDesc",

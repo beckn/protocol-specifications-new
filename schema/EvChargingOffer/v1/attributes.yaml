@@ -7,7 +7,7 @@ info:
     Attribute schemas for charging offers (Offer.attributes).
     These attributes are attached to Offer.attributes to provide tariff details beyond 
     core price fields including per-kWh or time-based pricing, idle fee policies, 
-    buyer-finder fees, and accepted payment methods.
+    and accepted payment methods.
 
 components:
   schemas:
@@ -17,7 +17,6 @@ components:
     ChargingOffer:
       type: object
       additionalProperties: false
-      required: [priceSpecification]
       x-jsonld:
         "@context": ./context.jsonld
         "@type": ChargingOffer
@@ -30,26 +29,16 @@ components:
           example: "PER_KWH"
           x-jsonld: { "@id": tariffModel }
 
-        buyerFinderFee:
-          type: object
-          description: Commission payable by provider to the BAP for this offer.
-          x-jsonld: { "@id": buyerFinderFee }
-          additionalProperties: false
-          properties:
-            feeType:
-              type: string
-              enum: [PERCENTAGE, AMOUNT]
-              example: "PERCENTAGE"
-              x-jsonld: { "@id": feeType }
-            feeValue:
-              type: number
-              minimum: 0
-              example: 2.5
-              x-jsonld: { "@id": feeValue }
-
         idleFeePolicy:
-          type: string
-          description: Human-readable policy for post-charge idle fees.
-          example: "₹2/min after 10 min post-charge"
-          x-jsonld: { "@id": idleFeePolicy }
-
+          allOf:
+            - $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/PriceSpecification"
+            - type: object
+              description: Idle fee policy specification (reuses Beckn PriceSpecification).
+              x-jsonld: { "@id": idleFeePolicy }
+          example:
+            currency: "INR"
+            value: 2
+            applicableQuantity:
+              unitCode: "MIN"
+              unitText: "minutes"
+              unitQuantity: 10

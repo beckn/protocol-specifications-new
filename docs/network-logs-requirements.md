@@ -21,12 +21,8 @@ This document outlines requirements for extending the Beckn-ONIX adapter to ship
 **Network Context Fields (Network-specific):**
 Networks can define a list of Network fields they need to capture, a sample list could look like below-
 
-- `category`: Product/service category (for search/select)
-- `provider_id`: Service provider identifier
-- `item_ids`: Array of item identifiers in transaction
-- `order_value`: Transaction amount (if applicable)
-- `fulfillment_type`: Delivery/pickup type
-- `location`: City/region (at city level only, not precise location)
+- `message`: Beckn Message object (for search/select)
+- `error`: Beckn Error object
 
 **Metadata:**
 - `app_version`: Beckn-ONIX adapter version

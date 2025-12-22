@@ -27,7 +27,6 @@ components:
       required:
         - connectorType
         - maxPowerKW
-        - socketCount
       x-jsonld:
         "@context": ./context.jsonld
         "@type": ChargingService

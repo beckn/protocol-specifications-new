@@ -8,11 +8,11 @@ This document outlines requirements for extending the Beckn-ONIX adapter to ship
 
 ### 2.1 Network Log Payload Structure
 
-**Core Fields (Required for all logs):**
+**Network Core Fields (Required for all logs):**
 
 - `Context`: Beckn Context object
 
-**Network Context Fields (Network-specific):**
+**Network Business Fields (Network-specific):**
 
 Networks can define a list of Network fields they need to capture, a sample list could look like below-
 - `message`: Beckn Message object (for search/select)

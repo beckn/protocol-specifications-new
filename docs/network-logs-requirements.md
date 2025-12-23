@@ -9,20 +9,19 @@ This document outlines requirements for extending the Beckn-ONIX adapter to ship
 ### 2.1 Network Log Payload Structure
 
 **Core Fields (Required for all logs):**
+
 - `Context`: Beckn Context object
 
-**Operational Fields:**
-- `status`: Transaction status (success, failure, timeout, validation_error)
-- `latency_ms`: Processing latency in milliseconds
-- `http_status_code`: HTTP response code (if applicable)
-- `error_code`: Application error code (if failure)
-- `error_message`: Masked error description
-
 **Network Context Fields (Network-specific):**
-Networks can define a list of Network fields they need to capture, a sample list could look like below-
 
+Networks can define a list of Network fields they need to capture, a sample list could look like below-
 - `message`: Beckn Message object (for search/select)
 - `error`: Beckn Error object
+
+**Operational Fields:**
+- `latency_ms`: Processing latency in milliseconds
+- `http_status_code`: HTTP response code (if applicable)
+- `http_error_message`: HTTP error message
 
 **Metadata:**
 - `app_version`: Beckn-ONIX adapter version
@@ -31,8 +30,9 @@ Networks can define a list of Network fields they need to capture, a sample list
 
 ### 2.2 PII Masking Requirements
 
-ONIX is aware of Beckn fields and can mask/obfuscate fields determined by the Network.
-Below is a sample list of fields that can be masked by the ONIX adapter, before shipping to the receiver API.
+Beckn protocol fields can be masked/obfuscated as determined by the Network.
+Below is a sample list of fields that can be masked.
+
 **Fields Requiring Masking:**
 
 1. **Personal Identifiers:**
@@ -185,109 +185,111 @@ The centralized API should:
 **Sample OTLP Log Record Schema:**
 ```json
 {
-  "resourceLogs": [{
-    "resource": {
-      "attributes": [
-        {"key": "service.name", "value": {"stringValue": "beckn-onix"}},
-        {"key": "deployment.environment", "value": {"stringValue": "production"}}
-      ]
-    },
-    "scopeLogs": [{
-      "scope": {
-        "name": "beckn-network-logs",
-        "version": "1.0.0"
-      },
-      "severityLevel": "INFO",
-      "traceId": "hex-encoded-trace-id",
-      "logRecords": [{
-          "context": {
-            "version": "2.0.0",
-            "action": "select",
-            "domain": "beckn.one:deg:ev-charging:*",
-            "timestamp": "2024-01-15T10:30:00Z",
-            "message_id": "bb9f86db-9a3d-4e9c-8c11-81c8f1a7b901",
-            "transaction_id": "2b4d69aa-22e4-4c78-9f56-5a7b9e2b2002",
-            "bap_id": "example-bap.com",
-            "bap_uri": "https://api.example-bap.com/pilot/bap/energy/v2",
-            "bpp_id": "example-bpp.com",
-            "bpp_uri": "https://example-bpp.com/pilot/bap/energy/v2",
-            "ttl": "PT30S"
-          },
-          "message": {
-            "order": {
-              "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
-              "@type": "beckn:Order",
-              "beckn:id": "order-ev-charging-001",
-              "beckn:orderStatus": "CREATED",
-              "beckn:seller": "ecopower-charging",
-              "beckn:buyer": {
-                "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
-                "@type": "beckn:Buyer",
-                "beckn:id": "user-123",
-                "beckn:role": "BUYER",
-                "beckn:displayName": "Ravi Kumar",
-                "beckn:taxID": "GSTIN29ABCDE1234F1Z5"
-              },
-              "beckn:orderValue": {
-                "currency": "INR",
-                "value": 100.0
-              },
-              "beckn:orderItems": [
-                {
-                  "beckn:lineId": "line-001",
-                  "beckn:orderedItem": "ev-charger-ccs2-001",
-                  "beckn:quantity": {
-                    "unitText": "Kilowatt Hour",
-                    "unitCode": "KWH",
-                    "unitQuantity": 2.5
+  "resource": {
+    "attributes": [
+      {"key": "subscriber_id", "value": {"stringValue": "bap.example1.com"}},
+      {"key": "subscriber_role", "value": {"stringValue": "bap"}},
+      {"key": "service_name", "value": {"stringValue": "beckn-onix"}},
+      {"key": "environment", "value": {"stringValue": "production"}}        
+    ]
+  },
+  "resource": {
+    "attributes": [
+      {"key": "latency_ms", "value": 100},
+      {"key": "http_status_code", "value": 200},
+      {"key": "http_error_message", "value": ""}
+    ]
+  },
+  "logs": [{
+    "severityLevel": "INFO",
+    "logRecords": [{
+        "context": {
+          "version": "2.0.0",
+          "action": "select",
+          "domain": "beckn.one:deg:ev-charging:*",
+          "timestamp": "2024-01-15T10:30:00Z",
+          "message_id": "bb9f86db-9a3d-4e9c-8c11-81c8f1a7b901",
+          "transaction_id": "2b4d69aa-22e4-4c78-9f56-5a7b9e2b2002",
+          "bap_id": "example-bap.com",
+          "bap_uri": "https://api.example-bap.com/pilot/bap/energy/v2",
+          "bpp_id": "example-bpp.com",
+          "bpp_uri": "https://example-bpp.com/pilot/bap/energy/v2",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "order": {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+            "@type": "beckn:Order",
+            "beckn:id": "order-ev-charging-001",
+            "beckn:orderStatus": "CREATED",
+            "beckn:seller": "ecopower-charging",
+            "beckn:buyer": {
+              "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
+              "@type": "beckn:Buyer",
+              "beckn:id": "user-123",
+              "beckn:role": "BUYER",
+              "beckn:displayName": "Ravi Kumar",
+              "beckn:taxID": "GSTIN29ABCDE1234F1Z5"
+            },
+            "beckn:orderValue": {
+              "currency": "INR",
+              "value": 100.0
+            },
+            "beckn:orderItems": [
+              {
+                "beckn:lineId": "line-001",
+                "beckn:orderedItem": "ev-charger-ccs2-001",
+                "beckn:quantity": {
+                  "unitText": "Kilowatt Hour",
+                  "unitCode": "KWH",
+                  "unitQuantity": 2.5
+                },
+                "beckn:acceptedOffer": {
+                  "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+                  "@type": "beckn:Offer",
+                  "beckn:id": "offer-ccs2-60kw-kwh",
+                  "beckn:descriptor": {
+                    "@type": "beckn:Descriptor",
+                    "schema:name": "Per-kWh Tariff - CCS2 60kW"
                   },
-                  "beckn:acceptedOffer": {
-                    "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
-                    "@type": "beckn:Offer",
-                    "beckn:id": "offer-ccs2-60kw-kwh",
-                    "beckn:descriptor": {
-                      "@type": "beckn:Descriptor",
-                      "schema:name": "Per-kWh Tariff - CCS2 60kW"
-                    },
-                    "beckn:items": [
-                      "ev-charger-ccs2-001"
-                    ],
-                    "beckn:provider": "ecopower-charging",
-                    "beckn:price": {
-                      "currency": "INR",
-                      "value": 18.0,
-                      "applicableQuantity": {
-                        "unitText": "Kilowatt Hour",
-                        "unitCode": "KWH",
-                        "unitQuantity": 1
-                      }
-                    },
-                    "beckn:validity": {
-                      "@type": "beckn:TimePeriod",
-                      "schema:startDate": "2024-10-01T00:00:00Z",
-                      "schema:endDate": "2025-01-15T23:59:59Z"
-                    },
-                    "beckn:acceptedPaymentMethod": [
-                      "UPI",
-                      "CREDIT_CARD",
-                      "WALLET"
-                    ],
-                    "beckn:offerAttributes": {
-                      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/EvChargingOffer/v1/context.jsonld",
-                      "@type": "ChargingOffer",
-                      "buyerFinderFee": {
-                        "feeType": "PERCENTAGE",
-                        "feeValue": 2.5
-                      },
-                      "idleFeePolicy": "₹2/min after 10 min post-charge"
+                  "beckn:items": [
+                    "ev-charger-ccs2-001"
+                  ],
+                  "beckn:provider": "ecopower-charging",
+                  "beckn:price": {
+                    "currency": "INR",
+                    "value": 18.0,
+                    "applicableQuantity": {
+                      "unitText": "Kilowatt Hour",
+                      "unitCode": "KWH",
+                      "unitQuantity": 1
                     }
+                  },
+                  "beckn:validity": {
+                    "@type": "beckn:TimePeriod",
+                    "schema:startDate": "2024-10-01T00:00:00Z",
+                    "schema:endDate": "2025-01-15T23:59:59Z"
+                  },
+                  "beckn:acceptedPaymentMethod": [
+                    "UPI",
+                    "CREDIT_CARD",
+                    "WALLET"
+                  ],
+                  "beckn:offerAttributes": {
+                    "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/EvChargingOffer/v1/context.jsonld",
+                    "@type": "ChargingOffer",
+                    "buyerFinderFee": {
+                      "feeType": "PERCENTAGE",
+                      "feeValue": 2.5
+                    },
+                    "idleFeePolicy": "₹2/min after 10 min post-charge"
                   }
                 }
-              ]
-            }
+              }
+            ]
           }
         }
-      }]
+      }
     }]
   }]
 }

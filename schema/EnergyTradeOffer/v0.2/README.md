@@ -26,6 +26,7 @@ The **EnergyTradeOffer** schema composes with the core Beckn `Offer` entity to r
 |-----------|------|----------|-------------|----------|
 | `pricingModel` | enum | Yes | Pricing model classification: PER_KWH, TIME_OF_DAY, SUBSCRIPTION, FIXED | Determines how the energy price is calculated. PER_KWH charges per unit, TIME_OF_DAY varies by time, SUBSCRIPTION is recurring, FIXED is a flat rate. |
 | `settlementType` | enum | No | Settlement frequency: REAL_TIME, HOURLY, DAILY, WEEKLY, MONTHLY | Defines when payments are processed. REAL_TIME processes immediately, others batch at specified intervals. Used for cash flow management and reconciliation. |
+| `sourceMeterId` | string | No | Source meter identifier in DER address format (der://meter/{id}) or IEEE mRID | References the first meter in the provider's EnergyProsumer.meters array. Identifies where energy originates for this specific offer. |
 | `wheelingCharges` | object | No | Utility wheeling charges (fixed charges for delivery intermediaries like PG&E) | Tracks charges from utility companies that facilitate energy transmission. Reflected as billing line item. Contains amount, currency, and description. |
 | `wheelingCharges.amount` | number | No | Wheeling charge amount | The monetary value of utility transmission charges. |
 | `wheelingCharges.currency` | string | No | Currency code (ISO 4217) | Currency for the wheeling charge (e.g., USD, EUR). |

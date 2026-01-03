@@ -31,6 +31,14 @@
       "schema:rangeIncludes": "beckn:SettlementType"
     },
     {
+      "@id": "beckn:sourceMeterId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Source Meter ID",
+      "rdfs:comment": "Source meter identifier in DER address format or IEEE mRID format where energy originates. References the first meter in the provider's EnergyProsumer.meters array.",
+      "rdfs:domain": "beckn:EnergyTradeOffer",
+      "rdfs:range": "xsd:string"
+    },
+    {
       "@id": "beckn:wheelingCharges",
       "@type": "rdf:Property",
       "rdfs:label": "Wheeling charges",

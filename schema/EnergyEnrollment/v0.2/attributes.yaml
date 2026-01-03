@@ -106,6 +106,30 @@ components:
               example: "No conflicts found with existing enrollments"
               x-jsonld: { "@id": message }
 
+        requiredCredentials:
+          type: array
+          description: >
+            Array of credential types that are required for enrollment.
+            Returned in on_init response to inform BAP what credentials are needed.
+            Each entry includes type, description, and status (PROVIDED, MISSING).
+          items:
+            type: object
+            additionalProperties: true
+            description: Required credential object with type, description, and status
+          x-jsonld: { "@id": requiredCredentials }
+
+        requiredConsents:
+          type: array
+          description: >
+            Array of consent types that are required for enrollment.
+            Returned in on_init response to inform BAP what consents are needed.
+            Each entry includes type, description, and whether it's required or optional.
+          items:
+            type: object
+            additionalProperties: true
+            description: Required consent object with type, description, and required flag
+          x-jsonld: { "@id": requiredConsents }
+
         # Used in orderAttributes (confirm request)
         startDate:
           type: string
@@ -124,6 +148,17 @@ components:
             Specified by calling entity in confirm request, returned in on_confirm response.
           example: "2025-10-31T23:59:59Z"
           x-jsonld: { "@id": endDate }
+
+        consents:
+          type: array
+          description: >
+            Array of consent objects provided by the buyer in confirm request.
+            Each consent indicates the type of consent and whether it was granted.
+          items:
+            type: object
+            additionalProperties: true
+            description: Consent object with type, granted status, grantedAt timestamp, and description
+          x-jsonld: { "@id": consents }
 
         # Used in orderAttributes (update request/response)
         updateType:

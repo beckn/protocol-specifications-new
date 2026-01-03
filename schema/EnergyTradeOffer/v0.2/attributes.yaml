@@ -38,9 +38,10 @@ components:
 
         sourceMeterId:
           type: string
-          description: Source meter identifier in DER address format (der://meter/{id}) where energy originates. This is copied from Provider.providerAttributes.sourceMeterId for convenience in offer attributes.
+          description: Source meter identifier in DER address format (der://meter/{id}) or IEEE mRID format where energy originates. References the first meter in the provider's EnergyProsumer.meters array.
           example: "der://meter/100200300"
           x-jsonld: { "@id": sourceMeterId }
+
 
         wheelingCharges:
           type: object

@@ -26,6 +26,7 @@
       "@id": "beckn:settlementType",
       "@type": "@id"
     },
+    "sourceMeterId": "beckn:sourceMeterId",
     "wheelingCharges": "beckn:wheelingCharges",
     "minimumQuantity": "beckn:minimumQuantity",
     "maximumQuantity": "beckn:maximumQuantity",

@@ -82,7 +82,7 @@ components:
 
         validityWindow:
           allOf:
-            - $ref: 'schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
+            - $ref: '../../../core/v2/attributes.yaml#/components/schemas/TimePeriod'
             - type: object
               description: Time window when the offer is valid.
               required: ["schema:startTime", "schema:endTime"]
@@ -128,21 +128,21 @@ components:
         # Time-specific pricing and availability (for time-scheduled offers)
         beckn:price:
           allOf:
-            - $ref: 'schema/core/v2/attributes.yaml#/components/schemas/PriceSpecification'
+            - $ref: '../../../core/v2/attributes.yaml#/components/schemas/PriceSpecification'
             - type: object
               description: Price per unit for this specific time window. User's requested quantity is specified in OrderItem.beckn:quantity.
           x-jsonld: { "@id": "schema:priceSpecification" }
 
         beckn:maxQuantity:
           allOf:
-            - $ref: 'schema/core/v2/attributes.yaml#/components/schemas/Quantity'
+            - $ref: '../../../core/v2/attributes.yaml#/components/schemas/Quantity'
             - type: object
               description: Maximum quantity offered/available in this specific time window (hour). User's requested quantity is specified in OrderItem.beckn:quantity and must be ≤ this value. This is time-window specific, distinct from maximumQuantity which is the overall offer limit.
           x-jsonld: { "@id": "schema:QuantitativeValue" }
 
         beckn:timeWindow:
           allOf:
-            - $ref: 'schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
+            - $ref: '../../../core/v2/attributes.yaml#/components/schemas/TimePeriod'
             - type: object
               description: Specific time period (hour) when energy delivery occurs. Different from validityWindow which indicates when the offer can be selected. This represents the actual delivery time window.
               required: ["schema:startTime", "schema:endTime"]

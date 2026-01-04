@@ -59,7 +59,7 @@ components:
           type: array
           description: Array of time windows when energy is produced or available for trading.
           x-jsonld: { "@id": productionWindow }
-          items: { $ref: 'schema/core/v2/attributes.yaml#/components/schemas/TimePeriod' }
+          items: { $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TimePeriod' }
           example:
             - "@type": "beckn:TimePeriod"
               "schema:startTime": "10:00:00"

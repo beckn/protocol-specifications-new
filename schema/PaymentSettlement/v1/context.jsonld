@@ -17,19 +17,13 @@
     "endTime": "schema:endTime",
 
     "settlementAccounts": "beckn:settlementAccounts",
-    "beneficiaryType": {
-      "@id": "beckn:beneficiaryType",
-      "@type": "@id"
-    },
+    "beneficiaryId": "beckn:beneficiaryId",
     "accountHolderName": "beckn:accountHolderName",
     "accountNumber": "beckn:accountNumber",
     "ifscCode": "beckn:ifscCode",
     "bankName": "beckn:bankName",
     "vpa": "beckn:vpa",
-    "paymentURL": "schema:url",
-
-    "BPP": "beckn:BeneficiaryTypeBPP",
-    "BAP": "beckn:BeneficiaryTypeBAP"
+    "paymentURL": "schema:url"
   },
 
   "@graph": []

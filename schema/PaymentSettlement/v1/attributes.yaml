@@ -7,7 +7,7 @@ info:
     Attribute schemas for payment settlement (Provider/Payment attributes).
     These attributes are attached to Provider.attributes or Payment.attributes to provide
     settlement account details including bank accounts, IFSC codes, and UPI addresses
-    for different beneficiary types (BPP, BAP).
+    for network participants identified by their subscriber ID.
 
 components:
   schemas:
@@ -30,12 +30,11 @@ components:
             type: object
             additionalProperties: false
             properties:
-              beneficiaryType:
+              beneficiaryId:
                 type: string
-                enum: [BPP, BAP]
-                description: Role of the entity (BPP for Provider, BAP for User/App).
-                example: "BPP"
-                x-jsonld: { "@id": beneficiaryType }
+                description: Subscriber ID of the network participant (BPP or BAP).
+                example: "example-bpp.com"
+                x-jsonld: { "@id": beneficiaryId }
               accountHolderName:
                 type: string
                 description: Account holder name.

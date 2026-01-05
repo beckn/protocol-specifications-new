@@ -23,12 +23,12 @@
       "schema:rangeIncludes": "schema:ItemList"
     },
     {
-      "@id": "beckn:beneficiaryType",
+      "@id": "beckn:beneficiaryId",
       "@type": "rdf:Property",
-      "rdfs:label": "Beneficiary type",
-      "rdfs:comment": "Role of the entity (BPP for Provider, BAP for User/App).",
+      "rdfs:label": "Beneficiary ID",
+      "rdfs:comment": "Subscriber ID of the network participant (BPP or BAP).",
       "rdfs:domain": "beckn:PaymentSettlement",
-      "schema:rangeIncludes": "beckn:BeneficiaryType"
+      "schema:rangeIncludes": "schema:Text"
     },
     {
       "@id": "beckn:accountHolderName",
@@ -70,38 +70,6 @@
       "rdfs:domain": "beckn:PaymentSettlement",
       "schema:rangeIncludes": "schema:Text"
     },
-    {
-      "@id": "beckn:BeneficiaryType",
-      "@type": "schema:Enumeration",
-      "schema:name": "Beneficiary Type",
-      "rdfs:comment": "Enumeration of beneficiary types for payment settlement.",
-      "schema:hasEnumerationMember": [
-        {
-          "@id": "beckn:BeneficiaryTypeBPP"
-        },
-        {
-          "@id": "beckn:BeneficiaryTypeBAP"
-        }
-      ]
-    },
-    {
-      "@id": "beckn:BeneficiaryTypeBPP",
-      "@type": [
-        "beckn:BeneficiaryType",
-        "schema:Enumeration"
-      ],
-      "schema:name": "BPP",
-      "schema:identifier": "BPP"
-    },
-    {
-      "@id": "beckn:BeneficiaryTypeBAP",
-      "@type": [
-        "beckn:BeneficiaryType",
-        "schema:Enumeration"
-      ],
-      "schema:name": "BAP",
-      "schema:identifier": "BAP"
-    }
   ]
 }
 

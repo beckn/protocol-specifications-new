@@ -27,11 +27,16 @@ components:
       required:
         - connectorType
         - maxPowerKW
-        - socketCount
       x-jsonld:
         "@context": ./context.jsonld
         "@type": ChargingService
       properties:
+
+        evseId:
+          type: string
+          description: EVSE identifier (e.g., OCPI/Hubject style).
+          example: "IN*ECO*01*CCS2*A"
+          x-jsonld: { "@id": evseId }
 
         # EV-specific technicals
         connectorType:
@@ -57,37 +62,53 @@ components:
           example: 5
           x-jsonld: { "@id": minPowerKW }
 
-        socketCount:
-          type: integer
-          minimum: 1
-          description: Number of simultaneously usable outlets for this connector type.
-          example: 2
-          x-jsonld: { "@id": socketCount }
-
         reservationSupported:
           type: boolean
           default: true
           description: Whether advance reservations are supported.
           x-jsonld: { "@id": reservationSupported }
 
-        # Location: REUSE Beckn Location (core.yaml) via $ref
-        serviceLocation:
-          allOf:
-            - $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/core.yaml#/components/schemas/Location"
-            - type: object
-              description: Location of the charging site (reuses Beckn Location).
-              x-jsonld: { "@id": serviceLocation }
+        # Charging Station: Object containing station ID and location
+        chargingStation:
+          type: object
+          description: Charging station information including station ID and location.
+          x-jsonld: { "@id": chargingStation }
+          properties:
+            id:
+              type: string
+              description: Unique identifier for the charging station (chargingStationId).
+              example: "IN-ECO-MDY-STATION-01"
+              x-jsonld: { "@id": "beckn:id" }
+            serviceLocation:
+              allOf:
+                - $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Location"
+                - type: object
+                  description: Location of the charging site (reuses Beckn Location).
+                  x-jsonld: { "@id": serviceLocation }
+              example:
+                "@type": "beckn:Location"
+                geo:
+                  type: "Point"
+                  coordinates: [77.6104, 12.9153]
+                address:
+                  streetAddress: "EcoPower BTM Hub, 100 Ft Rd"
+                  addressLocality: "Bengaluru"
+                  addressRegion: "Karnataka"
+                  postalCode: "560076"
+                  addressCountry: "IN"
           example:
-            "@type": "beckn:Location"
-            geo:
-              type: "Point"
-              coordinates: [77.6104, 12.9153]
-            address:
-              streetAddress: "EcoPower BTM Hub, 100 Ft Rd"
-              addressLocality: "Bengaluru"
-              addressRegion: "Karnataka"
-              postalCode: "560076"
-              addressCountry: "IN"
+            id: "IN-ECO-MDY-STATION-01"
+            serviceLocation:
+              "@type": "beckn:Location"
+              geo:
+                type: "Point"
+                coordinates: [77.6104, 12.9153]
+              address:
+                streetAddress: "EcoPower BTM Hub, 100 Ft Rd"
+                addressLocality: "Bengaluru"
+                addressRegion: "Karnataka"
+                postalCode: "560076"
+                addressCountry: "IN"
 
         amenityFeature:
           type: array
@@ -97,18 +118,6 @@ components:
           description: Nearby amenities (e.g., Restaurant, Restroom, Wi-Fi).
           example: ["RESTAURANT", "RESTROOM"]
           x-jsonld: { "@id": amenityFeature }
-
-        ocppId:
-          type: string
-          description: Site/CSMS identifier in OCPP backend.
-          example: "IN-ECO-MDY-01"
-          x-jsonld: { "@id": ocppId }
-
-        evseId:
-          type: string
-          description: EVSE identifier (e.g., OCPI/Hubject style).
-          example: "IN*ECO*01*CCS2*A"
-          x-jsonld: { "@id": evseId }
 
         roamingNetwork:
           type: string
@@ -122,12 +131,6 @@ components:
           description: Parking context of the station.
           example: "Mall"
           x-jsonld: { "@id": parkingType }
-
-        connectorId:
-          type: string
-          description: Provider-specific connector/socket id.
-          example: "CCS2-A"
-          x-jsonld: { "@id": connectorId }
 
         powerType:
           type: string
@@ -150,10 +153,9 @@ components:
           example: "FAST"
           x-jsonld: { "@id": chargingSpeed }
 
-        stationStatus:
+        vehicleType:
           type: string
-          enum: [Available, Occupied, OutOfService]
-          description: Near-real-time availability state.
-          example: "Available"
-          x-jsonld: { "@id": stationStatus }
-
+          enum: ["2-WHEELER", "3-WHEELER", "4-WHEELER"]
+          description: Type of vehicle that can use this charging service.
+          example: "4-WHEELER"
+          x-jsonld: { "@id": vehicleType }

@@ -477,7 +477,11 @@ paths:
                     - order
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -511,7 +515,11 @@ paths:
                     - order
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -552,7 +560,11 @@ paths:
                           properties:
                             beckn:id:
                               $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order/properties/beckn:id'
-                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - allOf:
+                            - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                            - type: object
+                              required:
+                                - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -584,7 +596,11 @@ paths:
                   type: object
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
                   anyOf:
                     - required:
                         - order
@@ -622,7 +638,11 @@ paths:
                     - order
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -656,7 +676,11 @@ paths:
                     - order
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -714,7 +738,11 @@ paths:
                                       beckn:quantity:
                                         $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Quantity'
                                   - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/OrderItem'
-                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - allOf:
+                            - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                            - type: object
+                              required:
+                                - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -748,7 +776,11 @@ paths:
                     - order
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -776,15 +808,17 @@ paths:
                           const: support
                 message:
                   type: object
-                  required: [ref_id]
+                  required: [refId, refType]
                   properties:
-                    ref_id:
+                    refId:
                       type: string
                       description: ID of the entity for which support is requested (order/item/fulfillment/provider/agent). # legacy kept minimal
-                    ref_type:
+                    refType:
                       type: string
-                      description: Optional hint to help route support.
-                      enum: [order, fulfillment, item, provider, agent, other]
+                      description: Entity type for which support is requested.
+                      enum: [ORDER, FULFILLMENT, ITEM, PROVIDER, AGENT, OTHER]
+                    support:
+                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/SupportInfo'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -861,7 +895,11 @@ paths:
                                     beckn:id:
                                       $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Fulfillment/properties/beckn:id'
                                 - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Fulfillment'
-                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - allOf:
+                            - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                            - type: object
+                              required:
+                                - beckn:id
                     mode_hint:
                       type: string
                       description: Optional delivery mode for the tracking handle.
@@ -923,7 +961,10 @@ paths:
                         action:
                           const: rating
                 message:
-                  $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/RatingInput'
+                  ratings:
+                    type: array
+                    items:
+                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/RatingInput'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'

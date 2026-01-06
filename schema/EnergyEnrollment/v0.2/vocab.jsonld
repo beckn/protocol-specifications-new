@@ -7,12 +7,14 @@
     "schema": "https://schema.org/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
     "vc": "https://www.w3.org/2018/credentials#",
     
     "EnergyEnrollment": {
       "@id": "EnergyEnrollment",
       "@type": "@id",
-      "rdfs:comment": "Main schema type for program enrollment attributes. Used in fulfillmentAttributes (init request) and orderAttributes (init response, confirm request, confirm response)."
+      "rdfs:subClassOf": { "@id": "schema:ProgramMembership" },
+      "rdfs:comment": "Program enrollment/subscription. Extends schema:ProgramMembership for energy-specific enrollment flows. Reusable pattern for any subscription-based service (telecom, utilities, memberships)."
     },
     
     "VerifiableCredential": {
@@ -48,80 +50,92 @@
     "ConsentRevocation": {
       "@id": "ConsentRevocation",
       "@type": "@id",
-      "rdfs:comment": "Details of a consent revocation request or confirmation. Used in update flow to revoke consent credentials."
+      "rdfs:subClassOf": { "@id": "schema:CancelAction" },
+      "rdfs:comment": "Consent revocation. Extends schema:CancelAction for revoking consent/permissions."
     },
     
     "Unenrollment": {
       "@id": "Unenrollment",
       "@type": "@id",
-      "rdfs:comment": "Details of an unenrollment request or confirmation. Used in update flow to revoke enrollment and associated consents."
+      "rdfs:subClassOf": { "@id": "schema:LeaveAction" },
+      "rdfs:comment": "Unenrollment/unsubscription. Extends schema:LeaveAction for leaving a program/membership."
     },
     
     "Customer": {
       "@id": "beckn:Customer",
       "@type": "@id",
-      "rdfs:comment": "Customer entity in energy enrollment context. Represents the user being enrolled in a program. Used in Fulfillment.customer property."
+      "rdfs:subClassOf": { "@id": "schema:Person" },
+      "rdfs:comment": "Customer/subscriber entity. Extends schema:Person. Represents the user being enrolled in a program. Can also be schema:Organization for business subscriptions."
     },
     
     "Instrument": {
       "@id": "beckn:Instrument",
       "@type": "@id",
-      "rdfs:comment": "Instrument entity containing meters and DERs associated with an enrollment. Used in Fulfillment.instrument property to specify the physical assets (meters and DERs) involved in the enrollment."
+      "rdfs:subClassOf": { "@id": "schema:ItemList" },
+      "rdfs:comment": "Collection of assets (meters, DERs) associated with an enrollment. Extends schema:ItemList as a container for enrollable items."
     },
     
     "Meter": {
       "@id": "beckn:Meter",
       "@type": "@id",
-      "rdfs:comment": "Electricity meter entity. Represents a physical meter tracking consumption, generation, or net flow. Used in Instrument.meters array. Contains meter identifier (UMID), utility information, and enrollment status."
+      "rdfs:subClassOf": { "@id": "schema:Product" },
+      "rdfs:comment": "Electricity meter entity. Extends schema:Product. Represents a physical meter tracking consumption, generation, or net flow."
     },
     
     "DER": {
       "@id": "beckn:DER",
       "@type": "@id",
-      "rdfs:comment": "Distributed Energy Resource entity. Represents a distributed asset such as solar PV, EV, home batteries, V2G, or smart loads. Used in Instrument.ders array. Contains DER identifier, type, and capacity information."
+      "rdfs:subClassOf": { "@id": "schema:Product" },
+      "rdfs:comment": "Distributed Energy Resource. Extends schema:Product. Represents a distributed asset such as solar PV, EV, home batteries, V2G, or smart loads."
     },
     
     "enrollmentId": {
       "@id": "enrollmentId",
       "@type": "xsd:string",
-      "rdfs:comment": "Unique identifier for the enrollment. Assigned by BPP upon enrollment confirmation."
+      "owl:equivalentProperty": { "@id": "schema:membershipNumber" },
+      "rdfs:comment": "Unique identifier for the enrollment/subscription. Equivalent to schema:membershipNumber."
     },
     
     "programId": {
       "@id": "programId",
       "@type": "xsd:string",
-      "rdfs:comment": "Identifier of the digital energy program (e.g., P2P trading, demand response, VPP)."
+      "owl:equivalentProperty": { "@id": "schema:programName" },
+      "rdfs:comment": "Identifier/name of the program. Equivalent to schema:programName."
     },
     
     "status": {
       "@id": "status",
       "@type": "xsd:string",
-      "rdfs:comment": "Enrollment status. Values: ACTIVE, PENDING, CANCELLED, SUSPENDED."
+      "owl:equivalentProperty": { "@id": "schema:reservationStatus" },
+      "rdfs:comment": "Enrollment status. Equivalent to schema:reservationStatus. Values: ACTIVE (Confirmed), PENDING (Pending), CANCELLED (Cancelled), SUSPENDED (Hold)."
     },
     
     "startDate": {
       "@id": "startDate",
       "@type": "xsd:dateTime",
-      "rdfs:comment": "Date and time when the enrollment becomes active (ISO 8601). Specified in confirm request, returned in on_confirm response."
+      "owl:equivalentProperty": { "@id": "schema:validFrom" },
+      "rdfs:comment": "When enrollment becomes active. Equivalent to schema:validFrom."
     },
     
     "endDate": {
       "@id": "endDate",
       "@type": "xsd:dateTime",
-      "rdfs:comment": "Date and time when the enrollment expires or ends (ISO 8601). Specified in confirm request, returned in on_confirm response."
+      "owl:equivalentProperty": { "@id": "schema:validThrough" },
+      "rdfs:comment": "When enrollment expires/ends. Equivalent to schema:validThrough."
     },
     
     "enrolledAt": {
       "@id": "enrolledAt",
       "@type": "xsd:dateTime",
-      "rdfs:comment": "Timestamp when the enrollment was confirmed and logged by BPP (ISO 8601)."
+      "owl:equivalentProperty": { "@id": "schema:dateCreated" },
+      "rdfs:comment": "When enrollment was created/confirmed. Equivalent to schema:dateCreated."
     },
     
     "meters": {
       "@id": "meters",
       "@type": "@id",
       "@container": "@set",
-      "rdfs:comment": "Array of meter identifiers (UMIDs) associated with the enrollment. Used in enrollment credentials."
+      "rdfs:comment": "Array of MeterEnrollment objects specifying meters to enroll. Required in confirm request - order will only be confirmed if at least one meter is specified."
     },
     
     "ders": {
@@ -238,7 +252,8 @@
     "message": {
       "@id": "message",
       "@type": "xsd:string",
-      "rdfs:comment": "Human-readable message providing additional information. Used in conflictCheck to explain results."
+      "owl:equivalentProperty": { "@id": "schema:description" },
+      "rdfs:comment": "Human-readable message. Equivalent to schema:description."
     },
     
     "loggedAt": {
@@ -312,13 +327,15 @@
     "revokedAt": {
       "@id": "revokedAt",
       "@type": "xsd:dateTime",
-      "rdfs:comment": "Timestamp when the consent or enrollment was revoked (ISO 8601)."
+      "owl:equivalentProperty": { "@id": "schema:endTime" },
+      "rdfs:comment": "When revocation occurred. Equivalent to schema:endTime for actions."
     },
     
     "effectiveDate": {
       "@id": "effectiveDate",
       "@type": "xsd:dateTime",
-      "rdfs:comment": "Date and time when the revocation becomes effective (ISO 8601). May be in the future for scheduled revocations."
+      "owl:equivalentProperty": { "@id": "schema:scheduledTime" },
+      "rdfs:comment": "When revocation takes effect. Equivalent to schema:scheduledTime."
     },
     
     "statusListUrl": {
@@ -356,6 +373,178 @@
       "@id": "revokeAllConsents",
       "@type": "xsd:boolean",
       "rdfs:comment": "Boolean indicating whether all associated consents should be revoked during unenrollment."
+    },
+    
+    "UserAuth": {
+      "@id": "UserAuth",
+      "@type": "@id",
+      "rdfs:subClassOf": { "@id": "schema:AuthenticateAction" },
+      "rdfs:comment": "User authentication base type. Extends schema:AuthenticateAction."
+    },
+    
+    "UserAuthRequest": {
+      "@id": "UserAuthRequest",
+      "@type": "@id",
+      "rdfs:subClassOf": { "@id": "UserAuth" },
+      "rdfs:comment": "User authentication request (BAP → BPP). Contains credentials for verification."
+    },
+    
+    "UserAuthResponse": {
+      "@id": "UserAuthResponse",
+      "@type": "@id",
+      "rdfs:subClassOf": { "@id": "UserAuth" },
+      "rdfs:comment": "User authentication response (BPP → BAP). Contains verification results."
+    },
+    
+    "userAuth": {
+      "@id": "userAuth",
+      "@type": "@id",
+      "owl:equivalentProperty": { "@id": "schema:actionStatus" },
+      "rdfs:comment": "Authentication object. UserAuthRequest for requests, UserAuthResponse for responses."
+    },
+    
+    "OtpAuthRequest": {
+      "@id": "OtpAuthRequest",
+      "@type": "@id",
+      "rdfs:subClassOf": { "@id": "UserAuthRequest" },
+      "rdfs:comment": "OTP authentication request. Contains mobile number and optionally OTP+nguid."
+    },
+    
+    "OtpAuthResponse": {
+      "@id": "OtpAuthResponse",
+      "@type": "@id",
+      "rdfs:subClassOf": { "@id": "UserAuthResponse" },
+      "rdfs:comment": "OTP authentication response. Contains nguid, verification status, and message."
+    },
+    
+    "OAuth2AuthRequest": {
+      "@id": "OAuth2AuthRequest",
+      "@type": "@id",
+      "rdfs:subClassOf": { "@id": "UserAuthRequest" },
+      "rdfs:comment": "OAuth2/OIDC authentication request. Contains JWT tokens (accessToken, idToken)."
+    },
+    
+    "OAuth2AuthResponse": {
+      "@id": "OAuth2AuthResponse",
+      "@type": "@id",
+      "rdfs:subClassOf": { "@id": "UserAuthResponse" },
+      "rdfs:comment": "OAuth2/OIDC authentication response. Contains verification result and extracted claims."
+    },
+    
+    "authMethod": {
+      "@id": "authMethod",
+      "@type": "xsd:string",
+      "rdfs:comment": "Authentication method discriminator. Values: OTP, OAUTH2, OIDC."
+    },
+    
+    "accessToken": {
+      "@id": "accessToken",
+      "@type": "xsd:string",
+      "rdfs:comment": "OAuth2 access token (bearer token) for authentication."
+    },
+    
+    "tokenType": {
+      "@id": "tokenType",
+      "@type": "xsd:string",
+      "rdfs:comment": "Token type, usually 'Bearer' for OAuth2."
+    },
+    
+    "idToken": {
+      "@id": "idToken",
+      "@type": "xsd:string",
+      "rdfs:comment": "OIDC ID token (JWT) containing user identity claims."
+    },
+    
+    "refreshToken": {
+      "@id": "refreshToken",
+      "@type": "xsd:string",
+      "rdfs:comment": "OAuth2 refresh token for obtaining new access tokens."
+    },
+    
+    "scope": {
+      "@id": "scope",
+      "@type": "xsd:string",
+      "rdfs:comment": "OAuth2 scopes granted to the token. Space-separated list."
+    },
+    
+    "issuer": {
+      "@id": "issuer",
+      "@type": "@id",
+      "owl:equivalentProperty": { "@id": "schema:issuedBy" },
+      "rdfs:comment": "OIDC issuer URL. Equivalent to schema:issuedBy."
+    },
+    
+    "subject": {
+      "@id": "subject",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": { "@id": "schema:identifier" },
+      "rdfs:comment": "Subject identifier (user ID) from token. Related to schema:identifier."
+    },
+    
+    "MeterEnrollment": {
+      "@id": "MeterEnrollment",
+      "@type": "@id",
+      "rdfs:subClassOf": { "@id": "schema:IndividualProduct" },
+      "rdfs:comment": "A specific product instance for enrollment. Extends schema:IndividualProduct. Represents a device/asset being subscribed (meter, SIM, device, etc.)."
+    },
+    
+    "meterId": {
+      "@id": "meterId",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": { "@id": "schema:serialNumber" },
+      "rdfs:comment": "Primary device identifier. Equivalent to schema:serialNumber."
+    },
+    
+    "meterNumber": {
+      "@id": "meterNumber",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": { "@id": "schema:productID" },
+      "rdfs:comment": "Secondary/display identifier. Equivalent to schema:productID."
+    },
+    
+    "utilityId": {
+      "@id": "utilityId",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": { "@id": "schema:provider" },
+      "rdfs:comment": "Service provider identifier. Related to schema:provider."
+    },
+    
+    "connectionType": {
+      "@id": "connectionType",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": { "@id": "schema:category" },
+      "rdfs:comment": "Service category. Equivalent to schema:category (residential, commercial, etc.)."
+    },
+    
+    "sanctionedLoad": {
+      "@id": "sanctionedLoad",
+      "@type": "xsd:decimal",
+      "rdfs:comment": "Capacity/limit for the connection (kW). Domain-specific; no direct schema.org equivalent."
+    },
+    
+    "mobile": {
+      "@id": "mobile",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": { "@id": "schema:telephone" },
+      "rdfs:comment": "Mobile phone number. Equivalent to schema:telephone."
+    },
+    
+    "otp": {
+      "@id": "otp",
+      "@type": "xsd:string",
+      "rdfs:comment": "One-time password entered by user for verification. Sent by BPP via SMS to mobile number."
+    },
+    
+    "nguid": {
+      "@id": "nguid",
+      "@type": "xsd:string",
+      "rdfs:comment": "Network GUID / session token for OTP verification. Generated by BPP, returned in on_init, required in confirm."
+    },
+    
+    "verified": {
+      "@id": "verified",
+      "@type": "xsd:boolean",
+      "rdfs:comment": "Boolean indicating whether OTP verification was successful. Only present in on_confirm response."
     }
   }
 }

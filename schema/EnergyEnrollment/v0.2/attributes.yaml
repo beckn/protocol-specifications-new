@@ -16,7 +16,7 @@ components:
     ########################################################################
     EnergyEnrollment:
       type: object
-      additionalProperties: false
+      additionalProperties: true
       x-jsonld:
         "@context": ./context.jsonld
         "@type": EnergyEnrollment
@@ -27,6 +27,37 @@ components:
         - orderAttributes (confirm request): Contains startDate and endDate
         - orderAttributes (on_confirm response): Contains full enrollment details including credential
       properties:
+
+        # Used in orderAttributes for user authentication
+        userAuth:
+          description: >
+            User authentication for enrollment verification.
+            Supports OTP-based or OAuth2/OIDC token-based authentication.
+            
+            For REQUESTS (init, confirm):
+              Use UserAuthRequest (OtpAuthRequest or OAuth2AuthRequest)
+              - OTP: Send mobile (init) or mobile+nguid+otp (confirm)
+              - OAuth2/OIDC: Send accessToken (and idToken for OIDC)
+            
+            For RESPONSES (on_init, on_confirm):
+              Use UserAuthResponse (OtpAuthResponse or OAuth2AuthResponse)
+              - Returns verification status, extracted identity, and session tokens
+          oneOf:
+            - $ref: '#/components/schemas/UserAuthRequest'
+            - $ref: '#/components/schemas/UserAuthResponse'
+          x-jsonld: { "@id": userAuth }
+
+        # Used in orderAttributes (confirm request) - meters to enroll
+        meters:
+          type: array
+          description: >
+            Array of meter identifiers to enroll in the program.
+            Required in confirm request - order will only be confirmed if at least one meter is specified.
+            Each meter should include the meter ID (UMID) and optionally utility information.
+            If userAuth is verified but meters array is empty, on_confirm returns error "no meter specified".
+          items:
+            $ref: '#/components/schemas/MeterEnrollment'
+          x-jsonld: { "@id": meters, "@container": "@set" }
 
         # Used in fulfillmentAttributes (init request)
         credentials:
@@ -607,4 +638,311 @@ components:
             doesn't allow multiple enrollments, DATE_OVERLAP if dates overlap.
           example: "METER_ALREADY_ENROLLED"
           x-jsonld: { "@id": conflictType }
+
+    ########################################################################
+    # UserAuth - REQUEST (BAP → BPP)
+    ########################################################################
+    UserAuthRequest:
+      description: >
+        User authentication request - sent by BAP to BPP in init/confirm requests.
+        Supports OTP-based or OAuth2/OIDC token-based authentication.
+      oneOf:
+        - $ref: '#/components/schemas/OtpAuthRequest'
+        - $ref: '#/components/schemas/OAuth2AuthRequest'
+      discriminator:
+        propertyName: authMethod
+        mapping:
+          OTP: '#/components/schemas/OtpAuthRequest'
+          OAUTH2: '#/components/schemas/OAuth2AuthRequest'
+          OIDC: '#/components/schemas/OAuth2AuthRequest'
+
+    ########################################################################
+    # UserAuth - RESPONSE (BPP → BAP)
+    ########################################################################
+    UserAuthResponse:
+      description: >
+        User authentication response - returned by BPP to BAP in on_init/on_confirm responses.
+        Contains verification results and extracted user identity.
+      oneOf:
+        - $ref: '#/components/schemas/OtpAuthResponse'
+        - $ref: '#/components/schemas/OAuth2AuthResponse'
+      discriminator:
+        propertyName: authMethod
+        mapping:
+          OTP: '#/components/schemas/OtpAuthResponse'
+          OAUTH2: '#/components/schemas/OAuth2AuthResponse'
+          OIDC: '#/components/schemas/OAuth2AuthResponse'
+
+    ########################################################################
+    # OtpAuthRequest (BAP → BPP)
+    ########################################################################
+    OtpAuthRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - authMethod
+        - mobile
+      description: >
+        OTP authentication request from BAP.
+        - Init request: Send mobile number to initiate OTP
+        - Confirm request: Send mobile + nguid + otp for verification
+      x-jsonld:
+        "@type": OtpAuthRequest
+      properties:
+        authMethod:
+          type: string
+          enum: [OTP]
+          description: Authentication method. Must be "OTP".
+          example: "OTP"
+          x-jsonld: { "@id": authMethod }
+
+        mobile:
+          type: string
+          description: Mobile phone number in E.164 format. Required.
+          example: "+919999999999"
+          x-jsonld: { "@id": mobile }
+
+        otp:
+          type: string
+          description: >
+            One-time password entered by user.
+            Required in confirm request (after user receives OTP via SMS).
+          example: "123456"
+          x-jsonld: { "@id": otp }
+
+        nguid:
+          type: string
+          description: >
+            Session token received from on_init response.
+            Required in confirm request along with otp.
+          example: "LQUejkRbBL9nJGQiqbComfQ242AHnbG3hnwWdHJut59jqmdJygnVHoiyDcnAUrKm"
+          x-jsonld: { "@id": nguid }
+
+    ########################################################################
+    # OtpAuthResponse (BPP → BAP)
+    ########################################################################
+    OtpAuthResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - authMethod
+      description: >
+        OTP authentication response from BPP.
+        - On_init response: Returns nguid and message ("OTP sent")
+        - On_confirm response: Returns verification result
+      x-jsonld:
+        "@type": OtpAuthResponse
+      properties:
+        authMethod:
+          type: string
+          enum: [OTP]
+          description: Authentication method. Always "OTP".
+          example: "OTP"
+          x-jsonld: { "@id": authMethod }
+
+        nguid:
+          type: string
+          description: >
+            Session token generated by BPP. Returned in on_init response.
+            BAP must include this in confirm request.
+          example: "LQUejkRbBL9nJGQiqbComfQ242AHnbG3hnwWdHJut59jqmdJygnVHoiyDcnAUrKm"
+          x-jsonld: { "@id": nguid }
+
+        message:
+          type: string
+          description: >
+            Human-readable status message.
+            e.g., "OTP sent to +91XXXXXX9999" or "Verification successful".
+          example: "OTP sent to +91XXXXXX9999. Valid for 5 minutes."
+          x-jsonld: { "@id": message }
+
+        expiresAt:
+          type: string
+          format: date-time
+          description: When OTP/nguid expires (ISO 8601 UTC).
+          example: "2024-10-15T10:35:00Z"
+          x-jsonld: { "@id": expiresAt }
+
+        verified:
+          type: boolean
+          description: Whether OTP verification succeeded. Present in on_confirm.
+          example: true
+          x-jsonld: { "@id": verified }
+
+        verifiedAt:
+          type: string
+          format: date-time
+          description: When OTP was verified (ISO 8601 UTC).
+          example: "2024-10-15T10:35:05Z"
+          x-jsonld: { "@id": verifiedAt }
+
+    ########################################################################
+    # OAuth2AuthRequest (BAP → BPP)
+    ########################################################################
+    OAuth2AuthRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - authMethod
+        - accessToken
+      description: >
+        OAuth2/OIDC authentication request from BAP.
+        Contains JWT tokens for BPP to validate. BPP extracts claims from token.
+      x-jsonld:
+        "@type": OAuth2AuthRequest
+      properties:
+        authMethod:
+          type: string
+          enum: [OAUTH2, OIDC]
+          description: >
+            Authentication method.
+            "OAUTH2" for access token only, "OIDC" for access + ID token.
+          example: "OIDC"
+          x-jsonld: { "@id": authMethod }
+
+        accessToken:
+          type: string
+          description: OAuth2 access token (bearer token). Required.
+          example: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."
+          x-jsonld: { "@id": accessToken }
+
+        idToken:
+          type: string
+          description: >
+            OIDC ID token (JWT with user claims).
+            Required when authMethod is "OIDC".
+          example: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."
+          x-jsonld: { "@id": idToken }
+
+        refreshToken:
+          type: string
+          description: >
+            OAuth2 refresh token. Optional - for long-running flows
+            where token might expire mid-transaction.
+          example: "dGhpcyBpcyBhIHJlZnJlc2ggdG9rZW4..."
+          x-jsonld: { "@id": refreshToken }
+
+    ########################################################################
+    # OAuth2AuthResponse (BPP → BAP)
+    ########################################################################
+    OAuth2AuthResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - authMethod
+      description: >
+        OAuth2/OIDC authentication response from BPP.
+        Contains verification results and extracted user identity from token.
+      x-jsonld:
+        "@type": OAuth2AuthResponse
+      properties:
+        authMethod:
+          type: string
+          enum: [OAUTH2, OIDC]
+          description: Authentication method that was used.
+          example: "OIDC"
+          x-jsonld: { "@id": authMethod }
+
+        verified:
+          type: boolean
+          description: Whether token verification succeeded.
+          example: true
+          x-jsonld: { "@id": verified }
+
+        verifiedAt:
+          type: string
+          format: date-time
+          description: When token was verified (ISO 8601 UTC).
+          example: "2024-10-15T10:35:05Z"
+          x-jsonld: { "@id": verifiedAt }
+
+        subject:
+          type: string
+          description: >
+            User identifier extracted from token "sub" claim.
+          example: "user-12345"
+          x-jsonld: { "@id": subject }
+
+        issuer:
+          type: string
+          format: uri
+          description: >
+            OIDC issuer URL extracted from token "iss" claim.
+          example: "https://accounts.google.com"
+          x-jsonld: { "@id": issuer }
+
+        scope:
+          type: string
+          description: >
+            Scopes granted to the token (extracted from token or introspection).
+          example: "openid profile email meter:read"
+          x-jsonld: { "@id": scope }
+
+        expiresAt:
+          type: string
+          format: date-time
+          description: When the access token expires (from "exp" claim).
+          example: "2024-10-15T11:35:00Z"
+          x-jsonld: { "@id": expiresAt }
+
+        message:
+          type: string
+          description: Human-readable verification status message.
+          example: "Token verified successfully"
+          x-jsonld: { "@id": message }
+
+    ########################################################################
+    # MeterEnrollment (Meter details for enrollment)
+    ########################################################################
+    MeterEnrollment:
+      type: object
+      additionalProperties: false
+      required:
+        - meterId
+      description: >
+        Meter details for enrollment in an energy program.
+        Contains meter identifier (UMID) and optional utility information.
+        Used in the meters array within orderAttributes during confirm request.
+        At least one meter must be specified for enrollment to be confirmed.
+      x-jsonld:
+        "@type": MeterEnrollment
+      properties:
+        meterId:
+          type: string
+          description: >
+            Unique Meter Identifier (UMID) for the meter to be enrolled.
+            This is the primary identifier used by the utility/DISCOM.
+          example: "umid-001"
+          x-jsonld: { "@id": meterId }
+
+        meterNumber:
+          type: string
+          description: >
+            Physical meter number as displayed on the meter device.
+            May differ from meterId which is the utility's internal identifier.
+          example: "MTR-123456"
+          x-jsonld: { "@id": meterNumber }
+
+        utilityId:
+          type: string
+          description: >
+            Identifier of the utility/DISCOM that owns or manages the meter.
+          example: "utility-tpddl-001"
+          x-jsonld: { "@id": utilityId }
+
+        connectionType:
+          type: string
+          enum: [residential, commercial, industrial, agricultural]
+          description: >
+            Type of electricity connection for this meter.
+          example: "residential"
+          x-jsonld: { "@id": connectionType }
+
+        sanctionedLoad:
+          type: number
+          minimum: 0
+          description: >
+            Sanctioned load capacity in kilowatts (kW) for this meter connection.
+          example: 5.0
+          x-jsonld: { "@id": sanctionedLoad }
 

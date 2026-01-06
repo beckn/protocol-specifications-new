@@ -2,8 +2,11 @@
   "@context": [
     "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
     "https://www.w3.org/ns/credentials/v2",
-    "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/p2p-trading/schema/EnergyEnrollment/v0.2/vocab.jsonld",
+    "../vocab.jsonld",
     {
+      "@comment": "Schema.org semantic mappings for cross-domain interoperability",
+      "schema": "https://schema.org/",
+      "owl": "http://www.w3.org/2002/07/owl#",
       "fulfillments": {
         "@id": "beckn:fulfillments",
         "@type": "beckn:Fulfillment",
@@ -32,7 +35,7 @@
       },
       "meters": {
         "@id": "meters",
-        "@type": "beckn:Meter",
+        "@type": "MeterEnrollment",
         "@container": "@set"
       },
       "ders": {
@@ -87,7 +90,36 @@
       "credential": {
         "@id": "credential",
         "@type": "VerifiableCredential"
-      }
+      },
+      "userAuth": {
+        "@id": "userAuth",
+        "@type": "UserAuth"
+      },
+      "UserAuth": "beckn:UserAuth",
+      "UserAuthRequest": "beckn:UserAuthRequest",
+      "UserAuthResponse": "beckn:UserAuthResponse",
+      "OtpAuthRequest": "beckn:OtpAuthRequest",
+      "OtpAuthResponse": "beckn:OtpAuthResponse",
+      "OAuth2AuthRequest": "beckn:OAuth2AuthRequest",
+      "OAuth2AuthResponse": "beckn:OAuth2AuthResponse",
+      "MeterEnrollment": "beckn:MeterEnrollment",
+      "authMethod": "beckn:authMethod",
+      "mobile": "beckn:mobile",
+      "otp": "beckn:otp",
+      "nguid": "beckn:nguid",
+      "accessToken": "beckn:accessToken",
+      "tokenType": "beckn:tokenType",
+      "idToken": "beckn:idToken",
+      "refreshToken": "beckn:refreshToken",
+      "scope": "beckn:scope",
+      "issuer": { "@id": "beckn:issuer", "@type": "@id" },
+      "subject": "beckn:subject",
+      "verified": "beckn:verified",
+      "meterId": "beckn:meterId",
+      "meterNumber": "beckn:meterNumber",
+      "utilityId": "beckn:utilityId",
+      "connectionType": "beckn:connectionType",
+      "sanctionedLoad": "beckn:sanctionedLoad"
     }
   ]
 }

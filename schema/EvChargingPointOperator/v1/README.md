@@ -13,9 +13,8 @@ Attach these schemas as follows:
 
 - **Aligned with Beckn Core**
   Uses canonical Beckn schemas for common objects and reuses canonical components from:
-  - core.yaml – Catalog, Item, Offer, Provider, Attributes, Location, Address, GeoJSONGeometry
-  - discover.yaml – Discovery API endpoints and request/response schemas
-  - transaction.yaml – Transaction API endpoints and Order, Fulfillment, Payment schemas
+  - [core.yaml](../../core/v2/attributes.yaml) - Catalog, Item, Offer, Provider, Attributes, Location, Address, GeoJSONGeometry
+  - [api/beckn.yaml](../../../api/beckn.yaml) - Unified API specification for discovery and transaction endpoints
 - **Adds EV semantics only**
   Introduces operator-specific elements such as operator IDs, roaming network IDs, and support contacts.
 - **Designed for interoperability**
@@ -49,6 +48,3 @@ This supports both local development and public hosting.
 
 ## 🏷️ Tags
 `ev-charging, charging-point-operator, provider, operator, roaming, registry, beckn, json-ld, schema.org, openapi`
-
-
-

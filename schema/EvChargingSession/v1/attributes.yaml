@@ -25,22 +25,36 @@ components:
         # Session state & authorization (EV-specific)
         sessionStatus:
           type: string
-          enum: [PENDING, ACTIVE, COMPLETED, INTERRUPTED]
+          enum: [PENDING, ACTIVE, STOP, COMPLETED, INTERRUPTED]
           description: High-level session state (order.state carries overall state).
           example: "ACTIVE"
           x-jsonld: { "@id": sessionStatus }
+        
+        # Charging Connector status (from OCPP status codes)
+        connectorStatus:
+          type: string
+          enum: [AVAILABLE, PREPARING, UNAVAILABLE]
+          description: Charging connector status (from OCPP status codes).
+          example: "PREPARING"
+          x-jsonld: { "@id": connectorStatus }
 
-        authorizationMode:
-          type: string
-          enum: [APP_QR, RFID, OTP]
-          description: Mode used to authorize/start the session.
-          example: "APP_QR"
-          x-jsonld: { "@id": authorizationMode }
-        authorizationOtpHint:
-          type: string
-          description: Optional OTP or hint presented to user for kiosk entry.
-          example: "Enter last 4 digits"
-          x-jsonld: { "@id": authorizationOtpHint }
+        # The Buyer Finder Fee is applied by the BAP
+        buyerFinderFee:
+          type: object
+          description: Commission payable by provider to the BAP for this offer.
+          x-jsonld: { "@id": buyerFinderFee }
+          additionalProperties: false
+          properties:
+            feeType:
+              type: string
+              enum: [PERCENTAGE, AMOUNT]
+              example: "PERCENTAGE"
+              x-jsonld: { "@id": feeType }
+            feeValue:
+              type: number
+              minimum: 0
+              example: 2.5
+              x-jsonld: { "@id": feeValue }
 
         # Technical lens for this session
         connectorType:
@@ -156,3 +170,22 @@ components:
           example: "Nexon EV"
           x-jsonld: { "@id": vehicleModel }
 
+        # Session preferences
+        preferences:
+          type: object
+          description: Charging session preferences including time windows.
+          x-jsonld: { "@id": preferences }
+          additionalProperties: false
+          properties:
+            startTime:
+              type: string
+              format: date-time
+              description: Preferred or scheduled start time for the charging session (UTC).
+              example: "2024-01-15T10:00:00Z"
+              x-jsonld: { "@id": "schema:startTime" }
+            endTime:
+              type: string
+              format: date-time
+              description: Preferred or scheduled end time for the charging session (UTC).
+              example: "2024-01-15T11:30:00Z"
+              x-jsonld: { "@id": "schema:endTime" }

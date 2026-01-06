@@ -603,7 +603,6 @@ components:
       required:
         - "@context"
         - "@type"
-        - beckn:id
         - beckn:orderStatus
         - beckn:seller
         - beckn:buyer
@@ -679,7 +678,7 @@ components:
 
     OrderItem:
       type: object
-      required: ["beckn:lineId","beckn:orderedItem","beckn:quantity"]
+      required: ["beckn:orderedItem"]
       properties:
         beckn:lineId:
           type: string
@@ -761,12 +760,7 @@ components:
     Fulfillment:
       type: object
       additionalProperties: false
-      required: [
-        "@context",
-        "@type",
-        "beckn:id",
-        "beckn:mode"
-      ]
+      required: ["@context","@type","beckn:mode"]
       properties:
         "@context":
           type: string
@@ -852,7 +846,7 @@ components:
     Payment:
       type: object
       additionalProperties: false
-      required: ["@context","@type","beckn:id","beckn:paymentStatus"]
+      required: ["@context","@type","beckn:paymentStatus"]
       # Core payment semantics: rail + status + references. Rail payloads live in payment packs (UPI/Card/BNPL/Wallet).
       properties:
         "@context":
@@ -899,7 +893,7 @@ components:
         beckn:beneficiary:
           type: string
           description: Who will be the beneficiary or recipient of the payment
-          enum: ["BPP","BAP"]
+          enum: ["BPP","BAP","BUYER"]
           example: "BPP"
           x-jsonld: { "@id": "schema:beneficiary" }
         beckn:paymentAttributes:
@@ -938,6 +932,15 @@ components:
           type: string
           description: Human-readable display name
           x-jsonld: { "@id": "schema:name" }
+        beckn:telephone:
+          type: string
+          description: Telephone number
+          x-jsonld: { "@id": "schema:telephone" }
+        beckn:email:
+          type: string
+          format: email
+          description: Email Address
+          x-jsonld: { "@id": "schema:email" }
         beckn:taxID:
           type: string
           description: Tax identifier for the buyer.
@@ -956,7 +959,16 @@ components:
       description: >
         Canonical support contact for an entity, mapped to schema.org ContactPoint.
       additionalProperties: false
+      required: ["@context", "@type"]
       properties:
+        "@context":
+          type: string
+          format: uri
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
+        "@type":
+          type: string
+          enum: ["beckn:SupportInfo"]
+          x-jsonld: { "@id": "beckn:SupportInfo" }
         name:
           type: string
           description: Name of the support organization or contact.
@@ -1001,7 +1013,16 @@ components:
       description: >
         Non-streaming tracking handle per legacy semantics (url/transport/status).
       additionalProperties: false
+      required: ["@context", "@type", "tl_method", "url", "trackingStatus"]
       properties:
+        "@context":
+          type: string
+          format: uri
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
+        "@type":
+          type: string
+          enum: ["beckn:Tracking"]
+          x-jsonld: { "@id": "beckn:Tracking" }
         tl_method:
           type: string
           enum: [http/get, http/post, http/redirect, ws/handle, custom]
@@ -1017,7 +1038,6 @@ components:
           type: string
           format: date-time
           description: ISO 8601 expiry timestamp for the tracking handle.
-      required: [tl_method, url, trackingStatus]
       example:
         tl_method: "http/get"
         url: "https://track.bpp.example?order_id=ORD-123"
@@ -1026,14 +1046,22 @@ components:
       x-jsonld:
         '@type': 'schema:TrackAction'
         'schema:target':    '$.url'           # URL to track → EntryPoint(target)
-        'schema:deliveryMethod': '$.tl_method' # best-effort mapping
+        'schema:deliveryMethod': '$.tl_method'
         'beckn:trackingStatus': '$.trackingStatus'
 
     RatingInput:
       type: object
       additionalProperties: false
-      required: [id, ratingValue]
+      required: ["@context","@type","id","ratingValue"]
       properties:
+        "@context":
+          type: string
+          format: uri
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
+        "@type":
+          type: string
+          enum: ["beckn:RatingInput"]
+          x-jsonld: { "@id": "beckn:RatingInput" }
         id:
           type: string
           description: Target entity ID being rated (order/item/fulfillment/provider/agent).
@@ -1050,7 +1078,7 @@ components:
         category:
           type: string
           description: What is being rated.
-          enum: [order, item, fulfillment, provider, agent, other]
+          enum: [ORDER, FULFILLMENT, ITEM, PROVIDER, AGENT, OTHER]
         feedback:
           type: object
           additionalProperties: false
@@ -1069,7 +1097,16 @@ components:
     Form:
       description: Describes a form
       type: object
+      required: ["@context", "@type"]
       properties:
+        "@context":
+          type: string
+          format: uri
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
+        "@type":
+          type: string
+          enum: ["beckn:Form"]
+          x-jsonld: { "@id": "beckn:Form" }
         url:
           description: The URL from where the form can be fetched. The content fetched from the url must be processed as per the mime_type specified in this object. Once fetched, the rendering platform can choosed to render the form as-is as an embeddable element; or process it further to blend with the theme of the application. In case the interface is non-visual, the the render can process the form data and reproduce it as per the standard specified in the form.
           type: string

@@ -15,6 +15,12 @@
       "rdfs:comment": "A service that provides electric vehicle charging capabilities"
     },
     {
+      "@id": "beckn:ChargingStation",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Charging Station",
+      "rdfs:comment": "A charging station containing station identifier and location information."
+    },
+    {
       "@id": "beckn:connectorType",
       "@type": "rdf:Property",
       "rdfs:label": "Connector type",
@@ -39,14 +45,6 @@
       "schema:rangeIncludes": "schema:Number"
     },
     {
-      "@id": "beckn:socketCount",
-      "@type": "rdf:Property",
-      "rdfs:label": "Socket count",
-      "rdfs:comment": "Number of simultaneously usable sockets/connectors.",
-      "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Integer"
-    },
-    {
       "@id": "beckn:reservationSupported",
       "@type": "rdf:Property",
       "rdfs:label": "Reservation supported",
@@ -55,28 +53,12 @@
       "schema:rangeIncludes": "schema:Boolean"
     },
     {
-      "@id": "beckn:serviceLocation",
-      "@type": "rdf:Property",
-      "rdfs:label": "Service location",
-      "rdfs:comment": "Physical location where the charging service is offered; aligns to Beckn Location in payloads.",
-      "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Place"
-    },
-    {
       "@id": "beckn:amenityFeature",
       "@type": "rdf:Property",
       "rdfs:label": "Amenity feature",
       "rdfs:comment": "Nearby amenities such as Restaurant, Restroom, Wi-Fi, Parking.",
       "rdfs:domain": "beckn:ChargingService",
       "schema:rangeIncludes": "beckn:AmenityFeature"
-    },
-    {
-      "@id": "beckn:ocppId",
-      "@type": "rdf:Property",
-      "rdfs:label": "OCPP identifier",
-      "rdfs:comment": "Internal identifier used by the CPO/OCPP backend.",
-      "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Text"
     },
     {
       "@id": "beckn:evseId",
@@ -103,14 +85,6 @@
       "schema:rangeIncludes": "beckn:ParkingType"
     },
     {
-      "@id": "beckn:connectorId",
-      "@type": "rdf:Property",
-      "rdfs:label": "Connector ID",
-      "rdfs:comment": "Provider-specific connector or socket identifier.",
-      "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "schema:Text"
-    },
-    {
       "@id": "beckn:powerType",
       "@type": "rdf:Property",
       "rdfs:label": "Power type",
@@ -135,14 +109,37 @@
       "schema:rangeIncludes": "beckn:ChargingSpeed"
     },
     {
-      "@id": "beckn:stationStatus",
+      "@id": "beckn:vehicleType",
       "@type": "rdf:Property",
-      "rdfs:label": "Station status",
-      "rdfs:comment": "Real-time availability status of the station or connector.",
+      "rdfs:label": "Vehicle type",
+      "rdfs:comment": "Type of vehicle that can use this charging service (2-WHEELER, 3-WHEELER, 4-WHEELER).",
       "rdfs:domain": "beckn:ChargingService",
-      "schema:rangeIncludes": "beckn:StationStatus"
+      "schema:rangeIncludes": "beckn:VehicleType"
     },
-
+    {
+      "@id": "beckn:chargingStation",
+      "@type": "rdf:Property",
+      "rdfs:label": "Charging station",
+      "rdfs:comment": "Charging station information including station ID and location.",
+      "rdfs:domain": "beckn:ChargingService",
+      "schema:rangeIncludes": "beckn:ChargingStation"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "Charging station ID",
+      "rdfs:comment": "Unique identifier for the charging station (chargingStationId).",
+      "rdfs:domain": "beckn:ChargingStation",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "beckn:serviceLocation",
+      "@type": "rdf:Property",
+      "rdfs:label": "Service location",
+      "rdfs:comment": "Physical location where the charging service is offered; aligns to Beckn Location in payloads.",
+      "rdfs:domain": "beckn:ChargingStation",
+      "schema:rangeIncludes": "schema:Place"
+    },
     {
       "@id": "beckn:AmenityFeature",
       "@type": "schema:Enumeration",
@@ -442,44 +439,42 @@
       "schema:identifier": "Hotel"
     },
     {
-      "@id": "beckn:StationStatus",
+      "@id": "beckn:VehicleType",
       "@type": "schema:Enumeration",
-      "schema:name": "Station Status",
-      "rdfs:comment": "Enumeration of charging station availability statuses.",
+      "schema:name": "Vehicle Type",
+      "rdfs:comment": "Enumeration of vehicle types that can use the charging service.",
       "schema:hasEnumerationMember": [
-        { "@id": "beckn:StationStatusAvailable" },
-        { "@id": "beckn:StationStatusOccupied" },
-        { "@id": "beckn:StationStatusOutOfService" }
+        { "@id": "beckn:VehicleType2Wheeler" },
+        { "@id": "beckn:VehicleType3Wheeler" },
+        { "@id": "beckn:VehicleType4Wheeler" }
       ]
     },
     {
-      "@id": "beckn:StationStatusAvailable",
+      "@id": "beckn:VehicleType2Wheeler",
       "@type": [
-        "beckn:StationStatus",
+        "beckn:VehicleType",
         "schema:Enumeration"
       ],
-      "schema:name": "Available",
-      "schema:identifier": "Available"
+      "schema:name": "2-WHEELER",
+      "schema:identifier": "2-WHEELER"
     },
     {
-      "@id": "beckn:StationStatusOccupied",
+      "@id": "beckn:VehicleType3Wheeler",
       "@type": [
-        "beckn:StationStatus",
+        "beckn:VehicleType",
         "schema:Enumeration"
       ],
-      "schema:name": "Occupied",
-      "schema:identifier": "Occupied"
+      "schema:name": "3-WHEELER",
+      "schema:identifier": "3-WHEELER"
     },
     {
-      "@id": "beckn:StationStatusOutOfService",
+      "@id": "beckn:VehicleType4Wheeler",
       "@type": [
-        "beckn:StationStatus",
+        "beckn:VehicleType",
         "schema:Enumeration"
       ],
-      "schema:name": "OutOfService",
-      "schema:identifier": "OutOfService",
-      "schema:alternateName": "Out Of Service"
+      "schema:name": "4-WHEELER",
+      "schema:identifier": "4-WHEELER"
     }
   ]
 }
-

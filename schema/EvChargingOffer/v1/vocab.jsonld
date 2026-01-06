@@ -26,33 +26,9 @@
       "@id": "beckn:idleFeePolicy",
       "@type": "rdf:Property",
       "rdfs:label": "Idle fee policy",
-      "rdfs:comment": "Human-readable policy for post-charge idle fees associated with an offer.",
-      "rdfs:domain": "beckn:ChargingOffer",
-      "schema:rangeIncludes": "schema:Text"
-    },
-    {
-      "@id": "beckn:buyerFinderFee",
-      "@type": "rdf:Property",
-      "rdfs:label": "Buyer finder fee",
-      "rdfs:comment": "Commission payable (percentage or absolute) associated with an offer/order.",
+      "rdfs:comment": "Idle fee policy specification for post-charge idle fees associated with an offer (reuses Beckn PriceSpecification).",
       "rdfs:domain": "beckn:ChargingOffer",
       "schema:rangeIncludes": "schema:PriceSpecification"
-    },
-    {
-      "@id": "beckn:feeType",
-      "@type": "rdf:Property",
-      "rdfs:label": "Fee type",
-      "rdfs:comment": "Fee type (PERCENTAGE or AMOUNT) for buyer finder fee.",
-      "rdfs:domain": "beckn:ChargingOffer",
-      "schema:rangeIncludes": "beckn:FeeType"
-    },
-    {
-      "@id": "beckn:feeValue",
-      "@type": "rdf:Property",
-      "rdfs:label": "Fee value",
-      "rdfs:comment": "Numeric fee value (interpreted per fee type).",
-      "rdfs:domain": "beckn:ChargingOffer",
-      "schema:rangeIncludes": "schema:Number"
     },
     {
       "@id": "beckn:TariffModel",
@@ -112,39 +88,6 @@
       "schema:name": "TIME_OF_DAY",
       "schema:identifier": "TIME_OF_DAY",
       "schema:alternateName": "TIME-OF-DAY"
-    },
-    {
-      "@id": "beckn:FeeType",
-      "@type": "schema:Enumeration",
-      "schema:name": "Fee Type",
-      "rdfs:comment": "Enumeration of fee types for buyer finder fee calculations.",
-      "schema:hasEnumerationMember": [
-        {
-          "@id": "beckn:FeeTypePercentage"
-        },
-        {
-          "@id": "beckn:FeeTypeAmount"
-        }
-      ]
-    },
-    {
-      "@id": "beckn:FeeTypePercentage",
-      "@type": [
-        "beckn:FeeType",
-        "schema:Enumeration"
-      ],
-      "schema:name": "PERCENTAGE",
-      "schema:identifier": "PERCENTAGE"
-    },
-    {
-      "@id": "beckn:FeeTypeAmount",
-      "@type": [
-        "beckn:FeeType",
-        "schema:Enumeration"
-      ],
-      "schema:name": "AMOUNT",
-      "schema:identifier": "AMOUNT"
     }
   ]
 }
-

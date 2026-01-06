@@ -39,6 +39,13 @@
     "value": "schema:value",
     "unitCode": "schema:unitCode",
 
+    "curtailedQuantity": "beckn:curtailedQuantity",
+    "curtailmentReason": {
+      "@id": "beckn:curtailmentReason",
+      "@type": "@id"
+    },
+    "curtailmentTime": "beckn:curtailmentTime",
+
     "PENDING": "beckn:DeliveryStatusPending",
     "IN_PROGRESS": "beckn:DeliveryStatusInProgress",
     "IN-PROGRESS": "beckn:DeliveryStatusInProgress",
@@ -61,7 +68,11 @@
     "CURRENT": "beckn:TelemetryMetricCurrent",
     "FREQUENCY": "beckn:TelemetryMetricFrequency",
     "POWER_QUALITY": "beckn:TelemetryMetricPowerQuality",
-    "POWER-QUALITY": "beckn:TelemetryMetricPowerQuality"
+    "POWER-QUALITY": "beckn:TelemetryMetricPowerQuality",
+
+    "GRID_OUTAGE": "beckn:CurtailmentReasonGridOutage",
+    "CONGESTION": "beckn:CurtailmentReasonCongestion",
+    "MAINTENANCE": "beckn:CurtailmentReasonMaintenance"
   },
 
   "@graph": []

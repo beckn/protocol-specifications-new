@@ -128,6 +128,27 @@ components:
                   x-jsonld: { "@id": "schema:QuantitativeValue" }
           x-jsonld: { "@id": telemetry }
 
+        curtailedQuantity:
+          type: number
+          minimum: 0
+          description: Revised trade quantity after curtailment (kWh). Used by BAP/BPP to reconcile payment vs. original contracted quantity.
+          example: 10.0
+          x-jsonld: { "@id": curtailedQuantity }
+
+        curtailmentReason:
+          type: string
+          enum: [GRID_OUTAGE, EMERGENCY, CONGESTION, MAINTENANCE, OTHER]
+          description: Reason for curtailment. Useful for audit trail and dispute resolution.
+          example: "GRID_OUTAGE"
+          x-jsonld: { "@id": curtailmentReason }
+
+        curtailmentTime:
+          type: string
+          format: date-time
+          description: When the curtailment was issued (ISO 8601).
+          example: "2024-10-04T14:30:00Z"
+          x-jsonld: { "@id": curtailmentTime }
+
         settlementCycleId:
           type: string
           description: Associated settlement cycle identifier. Links delivery to settlement for billing.

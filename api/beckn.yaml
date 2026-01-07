@@ -552,6 +552,7 @@ paths:
                     order:
                       oneOf:
                         - type: object
+                          additionalProperties: false
                           required:
                             - beckn:id
                           properties:
@@ -713,6 +714,7 @@ paths:
                     order:
                       oneOf:
                         - type: object
+                          additionalProperties: false
                           required:
                             - beckn:id
                           properties:
@@ -880,6 +882,7 @@ paths:
                     order:
                       oneOf:
                         - type: object
+                          additionalProperties: false
                           required:
                             - beckn:id
                           properties:

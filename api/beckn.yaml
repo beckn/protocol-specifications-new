@@ -931,10 +931,15 @@ paths:
                           const: on_track
                 message:
                   type: object
-                  required: [tracking]
+                  required:
+                    - order
                   properties:
-                    tracking:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Tracking'
+                    order:
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'

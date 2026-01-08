@@ -810,19 +810,16 @@ components:
       x-jsonld:
         '@type': 'schema:TrackAction'
       properties:
-        target:
-          type: object
-          description: schema.org EntryPoint
+        id:
+          type: string
+          description: Tracking action identifier
+          x-jsonld: { "@id": "schema:identifier" }
+        url:
+          type: string
+          format: uri
+          description: Tracking page URL
           x-jsonld:
-            '@type': 'schema:EntryPoint'
-          properties:
-            url:
-              type: string
-              format: uri
-              description: Tracking page URL
-              x-jsonld:
-                '@id': 'schema:url'
-          additionalProperties: true
+            '@id': 'schema:url'
         deliveryMethod:
           type: string
           enum: ["DELIVERY","PICKUP","RESERVATION","DIGITAL"]
@@ -832,12 +829,7 @@ components:
             RESERVATION → entitlement/booking is fulfilled (tickets, seats, appointments)
             DIGITAL     → digital good / license access
           x-jsonld:
-            '@id': 'schema:deliveryMethod'    
-        reservationId:
-          type: string
-          description: Unique identifier for the reservation (schema.org Reservation.reservationId).
-          x-jsonld:
-            '@id': 'schema:reservationId'
+            '@id': 'schema:deliveryMethod'
       additionalProperties: true            
 
     # -----------------------------

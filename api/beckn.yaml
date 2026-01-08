@@ -877,7 +877,7 @@ paths:
                 message:
                   type: object
                   required:
-                    - order
+                    - tracking
                   properties:
                     tracking:
                       type: object

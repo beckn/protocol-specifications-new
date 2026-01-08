@@ -926,7 +926,7 @@ paths:
                     - tracking
                   properties:
                     tracking:
-                      - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TrackAction'
+                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TrackAction'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'

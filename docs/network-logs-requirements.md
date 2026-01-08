@@ -1,4 +1,4 @@
-# Network Logs Shipping Requirements for Beckn-ONIX
+# Beckn Network Observability - Requirements
 
 ## 1. Executive Summary
 

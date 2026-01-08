@@ -509,6 +509,13 @@
       "rdfs:comment": "Service provider identifier. Related to schema:provider."
     },
     
+    "utilityCustomerId": {
+      "@id": "utilityCustomerId",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": { "@id": "schema:accountId" },
+      "rdfs:comment": "Customer account identifier at the utility. Equivalent to schema:accountId. Links the authenticated user to their billing account."
+    },
+    
     "connectionType": {
       "@id": "connectionType",
       "@type": "xsd:string",

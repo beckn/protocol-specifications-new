@@ -776,6 +776,22 @@ components:
           example: "2024-10-15T10:35:05Z"
           x-jsonld: { "@id": verifiedAt }
 
+        utilityId:
+          type: string
+          description: >
+            Utility/DISCOM identifier returned by IdP after authentication.
+            Identifies which utility the authenticated user's account belongs to.
+          example: "utility-example-001"
+          x-jsonld: { "@id": utilityId }
+
+        utilityCustomerId:
+          type: string
+          description: >
+            Customer account identifier assigned by the utility/DISCOM.
+            Returned by IdP to link the authenticated user to their utility billing account.
+          example: "CUST-123456"
+          x-jsonld: { "@id": utilityCustomerId }
+
     ########################################################################
     # OAuth2AuthRequest (BAP → BPP)
     ########################################################################
@@ -890,6 +906,22 @@ components:
           description: Human-readable verification status message.
           example: "Token verified successfully"
           x-jsonld: { "@id": message }
+
+        utilityId:
+          type: string
+          description: >
+            Utility/DISCOM identifier returned by IdP after authentication.
+            Identifies which utility the authenticated user's account belongs to.
+          example: "utility-example-001"
+          x-jsonld: { "@id": utilityId }
+
+        utilityCustomerId:
+          type: string
+          description: >
+            Customer account identifier assigned by the utility/DISCOM.
+            Returned by IdP to link the authenticated user to their utility billing account.
+          example: "CUST-123456"
+          x-jsonld: { "@id": utilityCustomerId }
 
     ########################################################################
     # MeterEnrollment (Meter details for enrollment)

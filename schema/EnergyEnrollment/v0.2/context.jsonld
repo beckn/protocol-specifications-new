@@ -118,6 +118,7 @@
       "meterId": "beckn:meterId",
       "meterNumber": "beckn:meterNumber",
       "utilityId": "beckn:utilityId",
+      "utilityCustomerId": "beckn:utilityCustomerId",
       "connectionType": "beckn:connectionType",
       "sanctionedLoad": "beckn:sanctionedLoad"
     }

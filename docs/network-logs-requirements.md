@@ -2,7 +2,11 @@
 
 ## 1. Executive Summary
 
-This document outlines requirements for extending the Beckn-ONIX adapter to ship Network logs to a centralized logging API. The system currently supports application logging through configurable log destinations. This extension will add a new Network-focused logging layer that captures transactional events with PII masking and ships them to a remote API using OpenTelemetry principles.
+This document outlines requirements for Network Participants for sending Network logs to a centralized logging API. This specification details out the follwing
+- Data points to be sent and masking of sensitive fields
+- cadence of sending logs
+- Endpoint details on the receiving end using OpenTelemetry principles.
+
 
 ## 2. Functional Requirements
 

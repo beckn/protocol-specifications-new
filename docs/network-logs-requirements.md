@@ -2,15 +2,21 @@
 
 ## 1. Executive Summary
 
-This document outlines requirements for Network Participants for sending Network logs to a centralized logging API. This specification details out the follwing
+This document outlines specification for Network Participants for sending Network logs to a centralized Observability system. This specification details out the follwing-
 - Data points to be sent and masking of sensitive fields
-- cadence of sending logs
+- Cadence of sending logs
 - Endpoint details on the receiving end using OpenTelemetry principles.
 
 
 ## 2. Functional Requirements
 
-### 2.1 Network Log Payload Structure
+### 2.1 Support for pushing payload to Two observability systems
+
+- Exporter can send logs to two independent Receiver APIs. One could be the Network Operator for Governance and another could be any additional service that may offer comprehensive Network aware Analytics capability.
+- If Observability is enabled, sending to 1 or 2 systems is configurable.
+- Support separate Configuration for each Receiver.
+
+### 2.2 Network Log Payload Structure
 
 **Network Core Fields (Required for all logs):**
 
@@ -32,7 +38,7 @@ Networks can define a list of Network fields they need to capture, a sample list
 - `environment`: Deployment environment (dev, staging, production)
 - `subscriber_type`: BAP or BPP
 
-### 2.2 PII Masking Requirements
+### 2.3 PII Masking Requirements
 
 Beckn protocol fields can be masked/obfuscated as determined by the Network.
 Below is a sample list of fields that can be masked.
@@ -65,7 +71,7 @@ Below is a sample list of fields that can be masked.
 - Allow custom masking rules per field type
 - Log masked field count in metadata for audit
 
-### 2.3 Log Shipping Cadence
+### 2.4 Log Shipping Cadence
 
 **Batch Processing:**
 - **Default batch size**: 100 log entries
@@ -75,7 +81,7 @@ Below is a sample list of fields that can be masked.
 - **Maximum retry attempts**: 3
 
 **Real-time Triggers:**
-- Critical errors (HTTP 5xx, validation failures)
+- Critical errors (HTTP 5xx, validation failures, specific Beckn Error codes)
 - High-value transactions (configurable threshold)
 - Fraud detection triggers (configurable rules)
 
@@ -85,7 +91,7 @@ Below is a sample list of fields that can be masked.
 - Circuit breaker pattern for API failures
 - Compression of payloads before transmission (gzip)
 
-### 2.4 Log Levels for Network Events
+### 2.5 Log Levels for Network Events
 
 **Structured Event Types:**
 1. `NETWORK_INFO`: Successful transaction events
@@ -141,24 +147,19 @@ NetworkLogs:
 - `deployment.environment`: production
 - `host.name`: node-instance-id
 
-**Instrumentation:**
-- Use `go.opentelemetry.io/otel/log` API
-- Create custom LogRecordExporter implementation
-- Support for multiple exporters (primary + backup)
-- Integrate with existing OpenTelemetry SDK setup
 
 ### 3.2 OpenTelemetry Integration - Receiver Side
 
 The Receiver side must implement folloing API-
-`analytics_service.domain.com/api/v1/network_log_push`
+`/beckn/v2/observe/push`
 
-The service will be operated by the Network Operator
+The service will be operated by the Network Operator and/or Beckn Infra. 
 
 **Log Receiver API Requirements:**
 
 The centralized API should:
 1. **Accept OTLP Protocol:**
-   - Support OTLP/HTTP and OTLP/gRPC
+   - Support OTLP/HTTP
    - Accept compressed payloads (gzip)
    - Implement standard OTLP LogService
    
@@ -177,14 +178,10 @@ The centralized API should:
 4. **Storage & Retention:**
    - High-throughput log ingestion (>10K logs/sec)
    - Indexing on: transaction_id, timestamp, action, status
-   - Retention policy: 90 days for detailed logs, 1 year for aggregates
-   - Support for log forwarding to long-term storage (S3, etc.)
+   - Retention policy: Specific to each implementation
 
 5. **Query Interface:**
-   - RESTful query API with filters
-   - Support for time range queries
-   - Aggregation APIs (counts, percentiles, etc.)
-   - Real-time streaming for monitoring
+   - Specific to each implementation
 
 **Sample OTLP Log Record Schema:**
 ```json
@@ -349,92 +346,3 @@ masking_rules:
     strategy: initials
 ```
 
-### 3.4 Non-Functional Requirements
-
-**Performance:**
-- Log capture overhead: <5ms per transaction
-- Memory footprint: <100MB for buffer
-- CPU overhead: <2% additional load
-- No blocking on log shipping failures
-
-**Reliability:**
-- 99.9% log delivery guarantee
-- Disk buffering for network failures
-- Automatic retry with exponential backoff
-- Circuit breaker to prevent cascade failures
-
-**Security:**
-- TLS 1.3 for API communication
-- Mutual TLS (mTLS) support
-- Encrypted disk buffer
-- No credentials in logs
-
-**Observability:**
-- Metrics: logs_shipped_total, logs_failed_total, buffer_size, api_latency
-- Health check endpoint for log shipping status
-- Alerts on high failure rates or buffer overflow
-
-## 4. Implementation Approach
-
-### 4.1 Plugin Architecture
-
-Create a new plugin type: `NetworkLogger`
-
-**Interface Definition:**
-```go
-type NetworkLogger interface {
-    LogEvent(ctx context.Context, event *NetworkEvent) error
-    Flush() error
-    Close() error
-}
-```
-
-### 4.2 Integration Points
-
-1. **Handler Step Integration:**
-   - Add `logNetworkEvent` step to handler pipeline
-   - Execute after main transaction processing
-   - Non-blocking execution
-
-2. **Context Propagation:**
-   - Extend context with Network event builder
-   - Collect data across multiple steps
-   - Final log generation at end of request
-
-3. **Middleware Support:**
-   - Pre-processing middleware to capture request details
-   - Post-processing middleware to capture response details
-
-### 4.3 Backward Compatibility
-
-- Network logging is opt-in via configuration
-- Zero impact when disabled
-- Existing application logs unchanged
-- Compatible with current plugin architecture
-
-## 5. Success Criteria
-
-1. **Functional:**
-   - All Network events captured with <1% loss
-   - PII masking 100% effective (validated via regex checks)
-   - Configurable sampling working correctly
-
-2. **Performance:**
-   - <5ms latency overhead per transaction
-   - No blocking on remote API failures
-   - Handles 1000+ transactions/sec
-
-3. **Operational:**
-   - Easy configuration and deployment
-   - Clear documentation and examples
-   - Monitoring dashboards available
-   - Alerts for anomalies
-
-## 6. Future Enhancements (Out of Scope)
-
-- Real-time analytics dashboards
-- ML-based anomaly detection
-- Automated compliance reporting
-- Log encryption at rest
-- Multi-region log aggregation
-- Custom webhook integrations

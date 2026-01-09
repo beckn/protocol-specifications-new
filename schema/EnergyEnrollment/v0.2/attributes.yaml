@@ -726,6 +726,14 @@ components:
           example: "CUST-123456"
           x-jsonld: { "@id": utilityCustomerId }
 
+        userType:
+          type: string
+          description: >
+            Type of user.
+            CONSUMER for consumer, PRODUCER for producer, PROSUMER for prosumer.
+          example: "CONSUMER"
+          x-jsonld: { "@id": userType }
+
     ########################################################################
     # OtpAuthResponse (BPP → BAP)
     ########################################################################

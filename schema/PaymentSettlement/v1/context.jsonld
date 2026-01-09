@@ -7,7 +7,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "beckn": "./vocab.jsonld#",
     
-    "ChargingOffer": "beckn:ChargingOffer",
+    "PaymentSettlement": "beckn:PaymentSettlement",
 
     "name": "schema:name",
     "description": "schema:description",
@@ -16,17 +16,16 @@
     "startTime": "schema:startTime",
     "endTime": "schema:endTime",
 
-    "tariffModel": {
-      "@id": "beckn:tariffModel",
-      "@type": "@id"
-    },
-    "idleFeePolicy": "beckn:idleFeePolicy",
-
-    "PER_KWH": "beckn:TariffModelPerKwh",
-    "PER_MINUTE": "beckn:TariffModelPerMinute",
-    "SUBSCRIPTION": "beckn:TariffModelSubscription",
-    "TIME_OF_DAY": "beckn:TariffModelTimeOfDay"
+    "settlementAccounts": "beckn:settlementAccounts",
+    "beneficiaryId": "beckn:beneficiaryId",
+    "accountHolderName": "beckn:accountHolderName",
+    "accountNumber": "beckn:accountNumber",
+    "ifscCode": "beckn:ifscCode",
+    "bankName": "beckn:bankName",
+    "vpa": "beckn:vpa",
+    "paymentURL": "schema:url"
   },
 
   "@graph": []
 }
+

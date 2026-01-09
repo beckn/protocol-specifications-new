@@ -913,7 +913,7 @@ paths:
           $ref: '#/components/responses/Ack400'
         '500':
           $ref: '#/components/responses/Ack500'
-  /beckn/v2/catalog/publish:
+  /beckn/catalog/publish:
     post:
       summary: Publish one or more catalogs for indexing
       description: |
@@ -953,7 +953,7 @@ paths:
           $ref: '#/components/responses/Ack400'
         '500':
           $ref: '#/components/responses/Ack500'
-  /beckn/v2/catalog/on_publish:
+  /beckn/catalog/on_publish:
     post:
       summary: Callback with catalog publish processing results
       description: |

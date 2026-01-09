@@ -214,107 +214,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /beckn/discover/offer:
-    post:
-      summary: Compute/prune final offers for a given selection of items and/or offers (no Order envelope)
-      description: >
-        Client (BAP) submits a selection of items and/or offers. The BPP computes applicable, priced offers and returns them asynchronously via /beckn/on_discover/offer. This is semantically similar to /select, but avoids the Order wrapper to keep the intent clear: "give me offers for these choices".
-
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [context, message]
-              properties:
-                context:
-                  allOf:
-                    - $ref: "#/components/schemas/DiscoveryContext"
-                    - type: object
-                      properties: {action: {const: "discover_offer"}}
-                message:
-                  type: object
-                  required: [selection]
-                  properties:
-                    # The selection may be a set of items, a set of offers, or both.
-                    selection:
-                      type: object
-                      properties:
-                        items:
-                          type: array
-                          minItems: 1
-                          items:
-                            type: object
-                            required: ['beckn:id']
-                            properties:
-                              beckn:id:
-                                $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Item/properties/beckn:id"
-                              quantity:
-                                type: number
-                                description: Optional requested quantity for this item
-                        offers:
-                          type: array
-                          minItems: 1
-                          items:
-                            type: object
-                            required: ['beckn:id']
-                            properties:
-                              beckn:id:
-                                $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Offer/properties/beckn:id"
-                      anyOf:
-                        - required: [items]
-                        - required: [offers]
-                    # Optional scoping hints (kept open; networks can define attribute packs if needed)
-                    provider:
-                      $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Provider/properties/beckn:id"
-                    constraints:
-                      type: object
-                      description: Optional constraints (e.g., fulfillment mode/slots, region, eligibility). Extend via attribute packs as needed.
-                      additionalProperties: true
-      responses:
-        '200':
-          $ref: '#/components/responses/Ack200'
-        '400':
-          $ref: '#/components/responses/Ack400'
-        '500':
-          $ref: '#/components/responses/Ack500'
-  /beckn/on_discover/offer:
-    post:
-      summary: Provider returns computed offers for the selection
-      description: >
-        BPP responds with the final set of offers applicable to the submitted selection. Each Offer must reference the base items via beckn:items (schema:itemOffered). Additional pricing/eligibility details can be carried in offerAttributes packs.
-
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [context, message]
-              properties:
-                context:
-                  allOf:
-                    - $ref: "#/components/schemas/DiscoveryContext"
-                    - type: object
-                      properties: {action: {const: "on_discover_offer"}}
-                message:
-                  type: object
-                  required: [offers]
-                  properties:
-                    # Full Offer objects are returned (not just ids) so clients can render price/terms immediately.
-                    offers:
-                      type: array
-                      minItems: 1
-                      items:
-                        $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Offer"
-      responses:
-        '200':
-          $ref: '#/components/responses/Ack200'
-        '400':
-          $ref: '#/components/responses/Ack400'
-        '500':
-          $ref: '#/components/responses/Ack500'
   /beckn/select:
     post:
       summary: "Buyer selects items/offers — returns priced order"
@@ -1081,19 +980,20 @@ paths:
                     bpp_id: "discovery-indexer.example.com"
                     bpp_uri: "https://discovery-indexer.example.com"
                     ttl: "PT30S"
-                  results:
-                    - catalog_id: "catalog-001"
-                      status: "ACCEPTED"
-                      item_count: 42
-                      warnings:
-                        - code: "NON_NORMALIZED_BRAND"
-                          message: "Some brand values were normalized"
-                    - catalog_id: "catalog-002"
-                      status: "REJECTED"
-                      error:
-                        code: "INVALID_ITEM"
-                        message: "Invalid item payload at index 3"
-                        paths: "catalogs[1].items[3]"
+                  message:
+                    results:
+                      - catalog_id: "catalog-001"
+                        status: "ACCEPTED"
+                        item_count: 42
+                        warnings:
+                          - code: "NON_NORMALIZED_BRAND"
+                            message: "Some brand values were normalized"
+                      - catalog_id: "catalog-002"
+                        status: "REJECTED"
+                        error:
+                          code: "INVALID_ITEM"
+                          message: "Invalid item payload at index 3"
+                          paths: "catalogs[1].items[3]"
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -1487,7 +1387,7 @@ components:
         *context.version* MUST indicate the supported protocol version (e.g., "2.0.0").
     CatalogPublishResponse:
       type: object
-      required: [context, results]
+      required: [context, message]
       properties:
         context:
           allOf:

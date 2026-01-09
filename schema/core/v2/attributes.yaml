@@ -820,16 +820,6 @@ components:
           description: Tracking page URL
           x-jsonld:
             '@id': 'schema:url'
-        deliveryMethod:
-          type: string
-          enum: ["DELIVERY","PICKUP","RESERVATION","DIGITAL"]
-          description: |
-            DELIVERY    → last-mile / parcel logistics
-            PICKUP      → customer collects from a place
-            RESERVATION → entitlement/booking is fulfilled (tickets, seats, appointments)
-            DIGITAL     → digital good / license access
-          x-jsonld:
-            '@id': 'schema:deliveryMethod'
       additionalProperties: true            
 
     # -----------------------------

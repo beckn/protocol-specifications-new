@@ -1,0 +1,42 @@
+openapi: 3.1.1
+info:
+  title: Energy Trade — Trade Order Attributes (v0.2)
+  version: 0.2.0
+  x-profile-id: profiles/energy-trade/energy_trade/v0.2/trade-order
+  description: >
+    Attribute schemas for energy trade orders (Order.attributes).
+    These attributes are attached to Order.orderAttributes to identify the
+    BAP and BPP participants involved in a P2P energy trade, along with order quantity details.
+
+components:
+  schemas:
+    ########################################################################
+    # ORDER.ATTRIBUTES — EnergyTradeOrder (P2P Energy Trading)
+    ########################################################################
+    EnergyTradeOrder:
+      type: object
+      additionalProperties: false
+      required: [bap_id, bpp_id]
+      x-jsonld:
+        "@context": ./context.jsonld
+        "@type": EnergyTradeOrder
+      properties:
+
+        bap_id:
+          type: string
+          description: Beckn Application Platform (BAP) identifier. The subscriber ID of the buyer/consumer platform initiating the trade order.
+          example: "bap.energymarket.io"
+          x-jsonld: { "@id": bap_id }
+
+        bpp_id:
+          type: string
+          description: Beckn Provider Platform (BPP) identifier. The subscriber ID of the seller/provider platform fulfilling the trade order.
+          example: "bpp.solarprovider.io"
+          x-jsonld: { "@id": bpp_id }
+
+        total_quantity:
+          type: number
+          minimum: 0
+          description: Total quantity of energy in kilowatt-hours (kWh) for this trade order.
+          example: 50.0
+          x-jsonld: { "@id": total_quantity }

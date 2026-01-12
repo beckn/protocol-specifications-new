@@ -29,6 +29,14 @@
       "rdfs:comment": "Approved electrical load capacity in kilowatts for regulatory compliance and load management.",
       "rdfs:domain": "beckn:EnergyCustomer",
       "rdfs:range": "xsd:decimal"
+    },
+    {
+      "@id": "beckn:utilityCustomerId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Utility Customer ID",
+      "rdfs:comment": "Customer's account identifier with the utility company for billing, service identification, and utility system integration.",
+      "rdfs:domain": "beckn:EnergyCustomer",
+      "rdfs:range": "xsd:string"
     }
   ]
 }

@@ -45,3 +45,11 @@ components:
             regulatory compliance.
           example: 15.0
           x-jsonld: { "@id": sanctionedLoad }
+
+        utilityCustomerId:
+          type: string
+          description: >
+            Customer's account identifier with the utility company (e.g., PG&E customer number).
+            Used for billing, service identification, and utility system integration.
+          example: "UTIL-CUST-123456"
+          x-jsonld: { "@id": utilityCustomerId }

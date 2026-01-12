@@ -11,6 +11,9 @@ class EnergyTradeDelivery {
     {field} string (date-time) deliveryEndTime
     {field} object[] meterReadings
     {field} object[] telemetry
+    {field} number curtailedQuantity
+    {field} string curtailmentReason {"GRID_OUTAGE", "EMERGENCY", "CONGESTION", "MAINTENANCE", "OTHER"}
+    {field} string (date-time) curtailmentTime
     {field} string settlementCycleId
     {field} string (date-time) lastUpdated
 }

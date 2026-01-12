@@ -225,11 +225,11 @@ GeoJSONGeometry ..> GeoJSONGeometry
 class Order {
     {field} string (uri) <b>@context</b>
     {field} string <b>@type</b> {"beckn:Order"}
-    {field} string <b>beckn:id</b>
     {field} string <b>beckn:orderStatus</b> {"CREATED", "PENDING", "CONFIRMED", "INPROGRESS", "PARTIALLYFULFILLED", "COMPLETED", "CANCELLED", "REJECTED", "FAILED", "RETURNED", "REFUNDED", "ONHOLD"}
     {field} beckn:id <b>beckn:seller</b>
     {field} Buyer <b>beckn:buyer</b>
     {field} OrderItem[1:] <b>beckn:orderItems</b>
+    {field} string beckn:id
     {field} string beckn:orderNumber
     {field} Offer[] beckn:acceptedOffers
     {field} PriceSpecification beckn:orderValue
@@ -250,10 +250,10 @@ Order ..> beckn:id
 
 
 class OrderItem {
-    {field} string <b>beckn:lineId</b>
     {field} beckn:id <b>beckn:orderedItem</b>
-    {field} Quantity <b>beckn:quantity</b>
+    {field} string beckn:lineId
     {field} Offer beckn:acceptedOffer
+    {field} Quantity beckn:quantity
     {field} PriceSpecification beckn:price
     {field} Attributes beckn:orderItemAttributes
 }
@@ -286,8 +286,8 @@ Invoice ..> beckn:id
 class Fulfillment {
     {field} string (uri) <b>@context</b>
     {field} string <b>@type</b> {"beckn:Fulfillment"}
-    {field} string <b>beckn:id</b>
     {field} string <b>beckn:mode</b> {"DELIVERY", "PICKUP", "RESERVATION", "DIGITAL"}
+    {field} string beckn:id
     {field} string beckn:fulfillmentStatus
     {field} TrackAction trackingAction
     {field} Attributes beckn:deliveryAttributes
@@ -308,14 +308,14 @@ class TrackAction {
 class Payment {
     {field} string (uri) <b>@context</b>
     {field} string <b>@type</b> {"beckn:Payment"}
-    {field} string <b>beckn:id</b>
     {field} string <b>beckn:paymentStatus</b> {"INITIATED", "PENDING", "AUTHORIZED", "CAPTURED", "COMPLETED", "FAILED", "CANCELLED", "REFUNDED", "PARTIALLY_REFUNDED", "CHARGEBACK", "DISPUTED", "EXPIRED", "REVERSED", "VOIDED", "SETTLED", "ON_HOLD", "ADJUSTED"}
+    {field} string beckn:id
     {field} object beckn:amount
     {field} string (uri) beckn:paymentURL
     {field} string beckn:txnRef
     {field} string (date-time) beckn:paidAt
     {field} AcceptedPaymentMethod beckn:acceptedPaymentMethod
-    {field} string beckn:beneficiary {"BPP", "BAP"}
+    {field} string beckn:beneficiary {"BPP", "BAP", "BUYER"}
     {field} Attributes beckn:paymentAttributes
 }
 
@@ -329,6 +329,8 @@ class Buyer {
     {field} string <b>beckn:id</b>
     {field} string beckn:role {"BUYER", "SELLER", "INTERMEDIARY", "PAYER", "PAYEE", "FULFILLER"}
     {field} string beckn:displayName
+    {field} string beckn:telephone
+    {field} string (email) beckn:email
     {field} string beckn:taxID
     {field} Attributes beckn:buyerAttributes
 }
@@ -337,6 +339,8 @@ Buyer ..> Attributes
 
 
 class SupportInfo {
+    {field} string (uri) <b>@context</b>
+    {field} string <b>@type</b> {"beckn:SupportInfo"}
     {field} string name
     {field} string phone
     {field} string (email) email
@@ -348,6 +352,8 @@ class SupportInfo {
 
 
 class Tracking {
+    {field} string (uri) <b>@context</b>
+    {field} string <b>@type</b> {"beckn:Tracking"}
     {field} string <b>tl_method</b> {"http/get", "http/post", "http/redirect", "ws/handle", "custom"}
     {field} string (uri) <b>url</b>
     {field} string <b>trackingStatus</b> {"ACTIVE", "DISABLED", "COMPLETED"}
@@ -357,17 +363,21 @@ class Tracking {
 
 
 class RatingInput {
+    {field} string (uri) <b>@context</b>
+    {field} string <b>@type</b> {"beckn:RatingInput"}
     {field} string <b>id</b>
     {field} number <b>ratingValue</b>
     {field} number bestRating
     {field} number worstRating
-    {field} string category {"order", "item", "fulfillment", "provider", "agent", "other"}
+    {field} string category {"ORDER", "FULFILLMENT", "ITEM", "PROVIDER", "AGENT", "OTHER"}
     {field} object feedback
 }
 
 
 
 class Form {
+    {field} string (uri) <b>@context</b>
+    {field} string <b>@type</b> {"beckn:Form"}
     {field} string (uri) url
     {field} object data
     {field} string mime_type {"text/html", "application/xml"}

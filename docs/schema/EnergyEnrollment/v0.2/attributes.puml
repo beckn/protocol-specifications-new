@@ -1,61 +1,14 @@
-@startuml
-hide empty members
-set namespaceSeparator none
-
-
-class EnergyEnrollment {
-    {field} VerifiableCredential[] credentials
-    {field} VerifiableCredential[] existingEnrollments
-    {field} object credentialVerification
-    {field} object conflictCheck
-    {field} object[] requiredCredentials
-    {field} object[] requiredConsents
-    {field} string (date-time) startDate
-    {field} string (date-time) endDate
-    {field} object[] consents
-    {field} string updateType {"CONSENT_REVOCATION", "UNENROLLMENT"}
-    {field} object consentRevocation
-    {field} object unenrollment
-    {field} string enrollmentId
-    {field} string programId
-    {field} string status {"ACTIVE", "PENDING", "CANCELLED", "SUSPENDED"}
-    {field} string (date-time) enrolledAt
-    {field} object credential
-    {field} string (date-time) loggedAt
-    {field} string logReference
-}
-
-EnergyEnrollment ..> VerifiableCredential
-
-
-class VerifiableCredential {
-    {field} string credentialId
-    {field} string type {"MeterOwnershipCredential", "ProgramEligibilityCredential", "DERCertificationCredential", "ProgramEnrollmentCredential"}
-    {field} string format {"VC-JWT", "VC-JSON-LD"}
-    {field} string credentialData
-    {field} string (uri) credentialUrl
-    {field} string (uri) verificationUrl
-    {field} string (date-time) issuedAt
-    {field} string (date-time) expiresAt
-    {field} string derId
-}
-
-
-
-class VerifiedCredential {
-    {field} string credentialId
-    {field} string status {"VERIFIED", "FAILED"}
-    {field} string (date-time) verifiedAt
-}
-
-
-
-class ConflictingEnrollment {
-    {field} string enrollmentId
-    {field} string programId
-    {field} string conflictReason
-    {field} string conflictType {"METER_ALREADY_ENROLLED", "DER_ALREADY_ENROLLED", "PROGRAM_CONFLICT", "DATE_OVERLAP"}
-}
-
-
-@enduml
+required key "type" not found in dictionary {"description": "User authentication request - sent by BAP to BPP in init/confirm requests. Supports OTP-based or OAuth2/OIDC token-based authentication.\n", "oneOf": [{"$ref": "#/components/schemas/OtpAuthRequest"}, {"$ref": "#/components/schemas/OAuth2AuthRequest"}], "discriminator": {"propertyName": "authMethod", "mapping": {"OTP": "#/components/schemas/OtpAuthRequest", "OAUTH2": "#/components/schemas/OAuth2AuthRequest", "OIDC": "#/components/schemas/OAuth2AuthRequest"}}}
+Traceback (most recent call last):
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 385, in <module>
+    sw = Swagger.from_file(input_file_name)
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 372, in from_file
+    return Swagger.from_dict(loader(fd))
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 360, in from_dict
+    definitions.extend([Definition.from_dict(name, definition) for name, definition in d['components']['schemas'].items()])
+                        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/ameetdeshpande/.pyenv/versions/3.14.0b3/bin/swagger_to_uml", line 203, in from_dict
+    type=d['type'],
+         ~^^^^^^^^
+KeyError: 'type'

@@ -5,9 +5,9 @@ set namespaceSeparator none
 
 class ChargingOffer {
     {field} string tariffModel {"PER_KWH", "PER_MINUTE", "SUBSCRIPTION", "TIME_OF_DAY"}
-    {field} object buyerFinderFee
-    {field} string idleFeePolicy
+    {field} PriceSpecification idleFeePolicy
 }
 
+ChargingOffer ..> PriceSpecification
 
 @enduml

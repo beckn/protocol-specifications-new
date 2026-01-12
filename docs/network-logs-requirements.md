@@ -3,18 +3,17 @@
 ## 1. Executive Summary
 
 This document outlines specification for Network Participants for sending Network logs to a centralized Observability system. This specification details out the follwing-
-- Data points to be sent and masking of sensitive fields
-- Cadence of sending logs
-- Endpoint details on the receiving end using OpenTelemetry principles.
+- New Network Participating entity type, called Observer, that implements an API to receive logs from other Network Participants.
+- Exporter requirements to be implemented by BAP/BPP entities including Data points to be sent, filtering & masking of sensitive fields, Cadence of sending logs.
 
 
 ## 2. Functional Requirements
 
 ### 2.1 Support for pushing payload to Two observability systems
 
-- Exporter can send logs to two independent Receiver APIs. One could be the Network Operator for Governance and another could be any additional service that may offer comprehensive Network aware Analytics capability.
-- If Observability is enabled, sending to 1 or 2 systems is configurable.
-- Support separate Configuration for each Receiver.
+- Exporter can send logs to two independent Receiver APIs, i.e. two Network Observers. One could be the Observer operated by the Network Operator for Governance and another could be any additional Observer that may offer comprehensive Network aware Analytics capability.
+- If Observability is enabled by the BAP or BPP NPs, then sharing with 1 or 2 Observers is configurable.
+- Support separate Configuration for each Observer.
 
 ### 2.2 Network Log Payload Structure
 
@@ -151,7 +150,7 @@ NetworkLogs:
 ### 3.2 OpenTelemetry Integration - Receiver Side
 
 The Receiver side must implement folloing API-
-`/beckn/v2/observe/push`
+`/observe/push`
 
 The service will be operated by the Network Operator and/or Beckn Infra. 
 
@@ -164,10 +163,8 @@ The centralized API should:
    - Implement standard OTLP LogService
    
 2. **Authentication & Authorization:**
-   - Bearer token authentication with Beckn signature header
-   - API key per subscriber
+   - Beckn signature header
    - Rate limiting per client
-   - IP allowlisting (optional)
 
 3. **Data Validation:**
    - Validate OTLP schema conformance

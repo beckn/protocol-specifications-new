@@ -111,32 +111,35 @@ Below is a sample list of fields that can be masked.
 ```yaml
 NetworkLogs:
   enabled: true
-  exporter:
-    protocol: otlp/http
-    endpoint: https://networkanalytics.example.com/v1/network_log_push
-    compression: gzip
-    timeout: 10s
-    headers:
-      X-Service-Name: "beckn-onix"
-  
-  buffer:
-    maxSize: 1000
-    flushInterval: 60s
-    flushOnShutdown: true
-    overflowToDisk: true
-    diskPath: /var/log/beckn-onix/buffer
-  
-  sampling:
-    rules:
-      - action: search
-        rate: 0.5  # 50% sampling
-      - action: confirm
-        rate: 1.0  # 100% sampling
-      - default: 0.5
-  
-  piiMasking:
-    enabled: true
-    configFile: ./config/pii-rules.yaml
+  # The new 'observers' array allows for 2 separate destinations
+  observers:
+    - id: "network-monitoring"
+      enabled: true
+      endpoint: https://observer.networkoperator.com/v1/observe/push
+      timeout: 10s
+      buffer:
+        maxSize: 1000
+        flushInterval: 60s
+      sampling:
+        rules:
+          - action: search
+            rate: 0.5  # 50% sampling
+          - action: confirm
+            rate: 1.0  # 100% sampling
+          - default: 0.5
+      piiMasking:
+        enabled: true
+        configFile: ./config/pii-rules.yaml
+    - id: "np1-analytics"
+      enabled: true
+      endpoint: https://analytics.np1.com/v1/observe/push
+      timeout: 10s
+      buffer:
+        maxSize: 1000
+        flushInterval: 60s
+      piiMasking:
+        enabled: true
+        configFile: ./config/pii-rules.yaml
 ```
 
 **Resource Attributes (per OpenTelemetry conventions):**

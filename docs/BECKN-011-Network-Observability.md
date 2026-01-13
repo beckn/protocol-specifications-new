@@ -14,6 +14,9 @@ This document outlines specification for Network Participants for sending Networ
 - Exporter can send logs to two independent Receiver APIs, i.e. two Network Observers. One could be the Observer operated by the Network Operator for Governance and another could be any additional Observer that may offer comprehensive Network aware Analytics capability.
 - If Observability is enabled by the BAP or BPP NPs, then sharing with 1 or 2 Observers is configurable.
 - Support separate Configuration for each Observer.
+- Initialization: Upon startup, the observability module iterates through the list of configured observers. It instantiates a separate "Exporter" for each entry.
+- Execution: When a Beckn request is processed, the observability exporter "fans out" the data. It pushes the same (or filtered) log to all active observers concurrently.
+- Failure Handling: The spec should define that a failure to push to one Observer should not interrupt the flow to another Observer, ensuring that separate configurations provide operational redundancy.
 
 ### 2.2 Network Log Payload Structure
 

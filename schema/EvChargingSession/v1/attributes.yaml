@@ -70,13 +70,13 @@ components:
           example: 60
           x-jsonld: { "@id": maxPowerKW }
 
-        # Metered outputs (use meteredEnergyKWh as single source of truth)
-        meteredEnergyKWh:
+        # Metered outputs (use meteredEnergyKWH as single source of truth)
+        meteredEnergyKWH:
           type: number
           minimum: 0
           description: Total metered energy delivered (kWh).
           example: 13.6
-          x-jsonld: { "@id": meteredEnergyKWh }
+          x-jsonld: { "@id": meteredEnergyKWH }
         meteredDurationMinutes:
           type: number
           minimum: 0

@@ -56,7 +56,7 @@
       "schema:rangeIncludes": "schema:Number"
     },
     {
-      "@id": "beckn:meteredEnergyKWh",
+      "@id": "beckn:meteredEnergyKWH",
       "@type": "rdf:Property",
       "rdfs:label": "Metered energy (kWh)",
       "rdfs:comment": "Energy dispensed during a charging session, in kilowatt-hours.",

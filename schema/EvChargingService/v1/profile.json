@@ -46,7 +46,7 @@
       "beckn:offerAttributes.idleFeePolicy",
       "beckn:orderAttributes.sessionStatus",
       "beckn:orderAttributes.reservationId",
-      "beckn:orderAttributes.meteredEnergyKWh",
+      "beckn:orderAttributes.meteredEnergyKWH",
       "beckn:orderAttributes.totalCost.inclVat",
       "beckn:providerAttributes.operatorName"
     ],

@@ -99,7 +99,7 @@ paths:
           $ref: '#/components/responses/Ack400'
         '500':
           $ref: '#/components/responses/Ack500'
-  /beckn/discover/browser-search:
+  /beckn/discover/browser_search:
     get:
       summary: Browser-friendly search API
       description: |
@@ -918,7 +918,7 @@ paths:
       summary: Publish one or more catalogs for indexing
       description: |
         BPP submits catalogs to be indexed. Returns **ACK** immediately if accepted for processing.
-        The detailed per-catalog processing result arrives later via **/on_catalog_publish**.
+        The detailed per-catalog processing result arrives later via **/on_publish**.
       operationId: publishCatalogs
       tags: [Catalog Publish]
       requestBody:
@@ -1027,16 +1027,16 @@ components:
               type: object
               description: Filter criteria for items
               properties:
-                type:
+                expressionType:
                   type: string
                   enum: [jsonpath]
                   default: jsonpath
                   description: Type of filter expression
                 expression:
                   type: string
-                  description: Filter expression based on the specified type
+                  description: Filter expression based on the specified expressionType
                   example: "$[?(@.rating.value >= 4.0 && @.electronic.brand.name == 'Premium Tech')]"
-              required: [type, expression]
+              required: [expressionType, expression]
             spatial:
               type: array
               description: Optional array of spatial constraints (CQL2-JSON semantics).
@@ -1458,7 +1458,7 @@ components:
         message:
           text_search: "gaming laptop premium tech"
           filters:
-            type: "jsonpath"
+            expressionType: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && @.electronic.brand.name == 'Premium Tech')]"
     discover_natural_language:
       summary: Natural-language discover (electronics)
@@ -1493,7 +1493,7 @@ components:
         message:
           text_search: "organic apples fresh"
           filters:
-            type: "jsonpath"
+            expressionType: "jsonpath"
             expression: "$[?(@.grocery.organicCertification ~ 'USDA Organic')]"
     discover_combined_search:
       summary: Combined text + filters
@@ -1512,7 +1512,7 @@ components:
         message:
           text_search: "gaming laptop"
           filters:
-            type: "jsonpath"
+            expressionType: "jsonpath"
             expression: "$[?(@.electronic.price['schema:price'] <= 2000 && @.electronic.brand.name == 'Premium Tech')]"
     discover_multi_schema_search:
       summary: Multi-schema discover (electronics + grocery)
@@ -1532,7 +1532,7 @@ components:
         message:
           text_search: "premium tech and organic food"
           filters:
-            type: "jsonpath"
+            expressionType: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && (@.electronic.brand.name == 'Premium Tech' || @.grocery.organicCertification ~ 'USDA Organic'))]"
     # ---------- /on_discover callback (DiscoverResponse) examples ----------
     on_discover_electronics_catalog:
@@ -1600,11 +1600,11 @@ components:
           code: "INTERNAL_ERROR"
           paths: "server"
           message: "Internal server error occurred"
-    # ---------- /discover/browser-search JSON example ----------
+    # ---------- /discover/browser_search JSON example ----------
     browser_search_electronic_items:
       summary: Browser-search JSON response (electronics)
       value:
-        id: "api.beckn.discover.browser-search"
+        id: "api.beckn.discover.browser_search"
         ver: "v2"
         ts: "2024-04-10T16:10:50+05:30"
         params:

@@ -212,7 +212,7 @@ components:
       items:
         type: string
         enum: ["UPI", "CREDIT_CARD", "DEBIT_CARD", "WALLET", "BANK_TRANSFER", "CASH", "APPLE_PAY"]
-      example: ["UPI", "Card", "Wallet"]
+      example: ["UPI", "CREDIT_CARD", "WALLET"]
       x-jsonld: { "@id": "beckn:acceptedPaymentMethod" }
 
     Provider:
@@ -980,7 +980,7 @@ components:
         email: "support@acme.example"
         url: "https://acme.example/support"
         hours: "Mon–Sat 09:00–20:00 IST"
-        channels: ["web", "phone", "email"]
+        channels: ["WEB", "PHONE", "EMAIL"]
       x-jsonld:
         '@type': 'schema:ContactPoint'
         'schema:contactType': '"Customer Support"'
@@ -1023,7 +1023,7 @@ components:
       example:
         tl_method: "http/get"
         url: "https://track.bpp.example?order_id=ORD-123"
-        trackingStatus: "active"
+        trackingStatus: "ACTIVE"
         expires_at: "2025-10-16T18:30:00Z"
       x-jsonld:
         '@type': 'schema:TrackAction'

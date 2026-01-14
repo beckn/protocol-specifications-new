@@ -1590,7 +1590,7 @@
       ]
     },
     {
-      "@id": "beckn:tl_method",
+      "@id": "beckn:tlMethod",
       "@type": "rdf:Property",
       "rdfs:label": "Tracking transport method",
       "rdfs:comment": "Transport/method used to access the tracking handle.",
@@ -1598,7 +1598,7 @@
       "schema:rangeIncludes": "schema:Text"
     },
     {
-      "@id": "beckn:expires_at",
+      "@id": "beckn:expiresAt",
       "@type": "rdf:Property",
       "rdfs:label": "Expires at",
       "rdfs:comment": "Expiry timestamp for the tracking handle.",

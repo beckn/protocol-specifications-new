@@ -64,6 +64,6 @@ components:
                 type: string
                 format: uri
                 description: URL for payment processing/redirection.
-                example: "https://payments.example.com/pay?transaction_id=123&amount=100"
+                example: "https://payments.example.com/pay?transactionId=123&amount=100"
                 x-jsonld: { "@id": "schema:url" }
 

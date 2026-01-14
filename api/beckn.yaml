@@ -936,7 +936,7 @@ paths:
                     action: "catalog_publish"
                     timestamp: "2025-09-01T10:30:00+05:30"
                     message_id: "u-req-123"
-                    transaction_id: "u-txn-123"
+                    transactionId: "u-txn-123"
                     bap_id: "bpp.example.com"
                     bap_uri: "https://bpp.example.com/callbacks" # where /on_catalog_publish is exposed
                     ttl: "PT30S"
@@ -976,7 +976,7 @@ paths:
                     action: "on_catalog_publish"
                     timestamp: "2025-09-01T10:31:05+05:30"
                     message_id: "u-resp-123"
-                    transaction_id: "u-txn-123"
+                    transactionId: "u-txn-123"
                     bpp_id: "discovery-indexer.example.com"
                     bpp_uri: "https://discovery-indexer.example.com"
                     ttl: "PT30S"
@@ -1449,7 +1449,7 @@ components:
           action: "discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "5c8f1a2b-9d3e-4f76-8b21-3a4c5d6e7f80"
-          transaction_id: "d3b07384-4a1c-4f5e-9c2b-7e6d5c4b3a21"
+          transactionId: "d3b07384-4a1c-4f5e-9c2b-7e6d5c4b3a21"
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
@@ -1468,7 +1468,7 @@ components:
           action: "discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "9a7b6c5d-8e4f-4a3b-9c2d-1e0f2a3b4c5d"
-          transaction_id: "1f2e3d4c-5b6a-4789-8c0d-1a2b3c4d5e6f"
+          transactionId: "1f2e3d4c-5b6a-4789-8c0d-1a2b3c4d5e6f"
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
@@ -1484,7 +1484,7 @@ components:
           action: "discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "2a3b4c5d-6e7f-4890-9a1b-2c3d4e5f6071"
-          transaction_id: "7e6d5c4b-3a21-4c5d-8f70-9a1b2c3d4e5f"
+          transactionId: "7e6d5c4b-3a21-4c5d-8f70-9a1b2c3d4e5f"
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
@@ -1503,7 +1503,7 @@ components:
           action: "discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "3b4c5d6e-7f80-41a2-93b4-c5d6e7f8091a"
-          transaction_id: "8f70e6d5-c4b3-42a1-9c2d-3e4f5a6b7c8d"
+          transactionId: "8f70e6d5-c4b3-42a1-9c2d-3e4f5a6b7c8d"
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
@@ -1522,7 +1522,7 @@ components:
           action: "discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "4c5d6e7f-8091-42b3-94c5-d6e7f8091a2b"
-          transaction_id: "9c2d3e4f-5a6b-47c8-8d90-1a2b3c4d5e6f"
+          transactionId: "9c2d3e4f-5a6b-47c8-8d90-1a2b3c4d5e6f"
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
@@ -1543,7 +1543,7 @@ components:
           action: "on_discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "a1b2c3d4-e5f6-4789-90ab-cdef12345678"
-          transaction_id: "b2c3d4e5-f6a7-4890-8b9a-cdef23456789"
+          transactionId: "b2c3d4e5-f6a7-4890-8b9a-cdef23456789"
           bpp_id: "bpp.example.com"
           bpp_uri: "https://bpp.example.com"
           ttl: "PT30S"
@@ -1562,7 +1562,7 @@ components:
           action: "on_discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "c3d4e5f6-a7b8-49c0-9dab-ef1234567890"
-          transaction_id: "d4e5f6a7-b8c9-4ad1-8cab-1234567890ef"
+          transactionId: "d4e5f6a7-b8c9-4ad1-8cab-1234567890ef"
           bpp_id: "bpp.example.com"
           bpp_uri: "https://bpp.example.com"
           ttl: "PT30S"
@@ -1577,15 +1577,15 @@ components:
     ack_success:
       summary: ACK
       value:
-        transaction_id: "e5f6a7b8-c9d0-4e1f-9a2b-3c4d5e6f7081"
+        transactionId: "e5f6a7b8-c9d0-4e1f-9a2b-3c4d5e6f7081"
         timestamp: "2024-04-10T16:10:50+05:30"
-        ack_status: "ACK"
+        ackStatus: "ACK"
     ack_bad_request:
       summary: NACK — bad request
       value:
-        transaction_id: "f6a7b8c9-d0e1-42f3-8a2b-3c4d5e6f7081"
+        transactionId: "f6a7b8c9-d0e1-42f3-8a2b-3c4d5e6f7081"
         timestamp: "2024-04-10T16:10:50+05:30"
-        ack_status: "NACK"
+        ackStatus: "NACK"
         error:
           code: "INVALID_REQUEST"
           paths: "context.schema_context"
@@ -1593,9 +1593,9 @@ components:
     ack_server_error:
       summary: NACK — internal error
       value:
-        transaction_id: "a7b8c9d0-e1f2-43a4-9b2c-3d4e5f607081"
+        transactionId: "a7b8c9d0-e1f2-43a4-9b2c-3d4e5f607081"
         timestamp: "2024-04-10T16:10:50+05:30"
-        ack_status: "NACK"
+        ackStatus: "NACK"
         error:
           code: "INTERNAL_ERROR"
           paths: "server"

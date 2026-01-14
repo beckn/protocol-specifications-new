@@ -88,6 +88,6 @@ The merchant generated QR code will have specific bpp id and provider id in the 
 - Show the catalog from cache or
 - Send a live search to all BPPs and then show specific merchant’s catalog
 - Send live search for specific bpp id in context, however in that case the BAP would need the bpp url (from local lookup).
-- All BAPs would need to support beckn anchor tags across different platforms i.e. web, android and iOS.
+- All BAPs would need to support beckn anchor tags across different platforms, i.e., web, Android, and iOS.
 
 The BAPs would need to maintain a local lookup for registry endpoints based on the network, in case the BAP is complying to multiple networks within beckn.

@@ -112,7 +112,7 @@
       "@id": "beckn:vehicleType",
       "@type": "rdf:Property",
       "rdfs:label": "Vehicle type",
-      "rdfs:comment": "Type of vehicle that can use this charging service (2-WHEELER, 3-WHEELER, 4-WHEELER).",
+      "rdfs:comment": "Type of vehicle that can use this charging service (2_WHEELER, 3_WHEELER, 4_WHEELER).",
       "rdfs:domain": "beckn:ChargingService",
       "schema:rangeIncludes": "beckn:VehicleType"
     },
@@ -178,9 +178,9 @@
         "beckn:AmenityFeature",
         "schema:Enumeration"
       ],
-      "schema:name": "WI-FI",
-      "schema:identifier": "WI-FI",
-      "schema:alternateName": ["Wi-Fi", "WiFi"]
+      "schema:name": "WI_FI",
+      "schema:identifier": "WI_FI",
+      "schema:alternateName": ["Wi-Fi", "WiFi", "WI-FI"]
     },
     {
       "@id": "beckn:AmenityParking",
@@ -378,8 +378,8 @@
         "beckn:ParkingType",
         "schema:Enumeration"
       ],
-      "schema:name": "OnStreet",
-      "schema:identifier": "OnStreet",
+      "schema:name": "ON_STREET",
+      "schema:identifier": "ON_STREET",
       "schema:alternateName": "On Street"
     },
     {
@@ -388,8 +388,8 @@
         "beckn:ParkingType",
         "schema:Enumeration"
       ],
-      "schema:name": "OffStreet",
-      "schema:identifier": "OffStreet",
+      "schema:name": "OFF_STREET",
+      "schema:identifier": "OFF_STREET",
       "schema:alternateName": "Off Street"
     },
     {
@@ -398,8 +398,8 @@
         "beckn:ParkingType",
         "schema:Enumeration"
       ],
-      "schema:name": "Basement",
-      "schema:identifier": "Basement"
+      "schema:name": "BASEMENT",
+      "schema:identifier": "BASEMENT"
     },
     {
       "@id": "beckn:ParkingTypeMall",
@@ -407,8 +407,8 @@
         "beckn:ParkingType",
         "schema:Enumeration"
       ],
-      "schema:name": "Mall",
-      "schema:identifier": "Mall"
+      "schema:name": "MALL",
+      "schema:identifier": "MALL"
     },
     {
       "@id": "beckn:ParkingTypeFuelStation",
@@ -416,8 +416,8 @@
         "beckn:ParkingType",
         "schema:Enumeration"
       ],
-      "schema:name": "FuelStation",
-      "schema:identifier": "FuelStation",
+      "schema:name": "FUEL_STATION",
+      "schema:identifier": "FUEL_STATION",
       "schema:alternateName": "Fuel Station"
     },
     {
@@ -426,8 +426,8 @@
         "beckn:ParkingType",
         "schema:Enumeration"
       ],
-      "schema:name": "Office",
-      "schema:identifier": "Office"
+      "schema:name": "OFFICE",
+      "schema:identifier": "OFFICE"
     },
     {
       "@id": "beckn:ParkingTypeHotel",
@@ -435,8 +435,8 @@
         "beckn:ParkingType",
         "schema:Enumeration"
       ],
-      "schema:name": "Hotel",
-      "schema:identifier": "Hotel"
+      "schema:name": "HOTEL",
+      "schema:identifier": "HOTEL"
     },
     {
       "@id": "beckn:VehicleType",
@@ -455,8 +455,9 @@
         "beckn:VehicleType",
         "schema:Enumeration"
       ],
-      "schema:name": "2-WHEELER",
-      "schema:identifier": "2-WHEELER"
+      "schema:name": "2_WHEELER",
+      "schema:identifier": "2_WHEELER",
+      "schema:alternateName": "2-WHEELER"
     },
     {
       "@id": "beckn:VehicleType3Wheeler",
@@ -464,8 +465,9 @@
         "beckn:VehicleType",
         "schema:Enumeration"
       ],
-      "schema:name": "3-WHEELER",
-      "schema:identifier": "3-WHEELER"
+      "schema:name": "3_WHEELER",
+      "schema:identifier": "3_WHEELER",
+      "schema:alternateName": "3-WHEELER"
     },
     {
       "@id": "beckn:VehicleType4Wheeler",
@@ -473,8 +475,9 @@
         "beckn:VehicleType",
         "schema:Enumeration"
       ],
-      "schema:name": "4-WHEELER",
-      "schema:identifier": "4-WHEELER"
+      "schema:name": "4_WHEELER",
+      "schema:identifier": "4_WHEELER",
+      "schema:alternateName": "4-WHEELER"
     }
   ]
 }

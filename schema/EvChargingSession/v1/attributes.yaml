@@ -25,7 +25,7 @@ components:
         # Session state & authorization (EV-specific)
         sessionStatus:
           type: string
-          enum: [PENDING, ACTIVE, STOP, COMPLETED, INTERRUPTED]
+          enum: [PENDING, ACTIVE, STOPPED, COMPLETED, INTERRUPTED]
           description: High-level session state (order.state carries overall state).
           example: "ACTIVE"
           x-jsonld: { "@id": sessionStatus }

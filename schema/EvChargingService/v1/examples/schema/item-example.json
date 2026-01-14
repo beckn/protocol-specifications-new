@@ -18,7 +18,7 @@
       "addressCountry": "IN"
     }
   },
-  "amenityFeature": ["Restaurant", "Restroom", "Wi-Fi"],
+  "amenityFeature": ["RESTAURANT", "RESTROOM", "WI-FI"],
   "ocppId": "IN-ECO-BTM-01",
   "evseId": "IN*ECO*BTM*01*CCS2*A",
   "roamingNetwork": "GreenRoam",

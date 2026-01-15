@@ -24,20 +24,20 @@
       "owl:equivalentProperty": "beckn:fulfillmentStatus"
     },
     {
-      "@id": "beckn:authorizationMode",
+      "@id": "beckn:connectorStatus",
       "@type": "rdf:Property",
-      "rdfs:label": "Authorization mode",
-      "rdfs:comment": "Mode used to authorize/start the session (APP_QR, RFID, OTP).",
+      "rdfs:label": "Connector status",
+      "rdfs:comment": "Charging connector status (from OCPP status codes).",
       "rdfs:domain": "beckn:ChargingSession",
-      "schema:rangeIncludes": "beckn:AuthorizationMode"
+      "schema:rangeIncludes": "beckn:ConnectorStatus"
     },
     {
-      "@id": "beckn:authorizationOtpHint",
+      "@id": "beckn:buyerFinderFee",
       "@type": "rdf:Property",
-      "rdfs:label": "Authorization OTP hint",
-      "rdfs:comment": "Optional OTP or hint presented to user for kiosk entry.",
+      "rdfs:label": "Buyer finder fee",
+      "rdfs:comment": "Commission payable by provider to the BAP for this offer.",
       "rdfs:domain": "beckn:ChargingSession",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "schema:PriceSpecification"
     },
     {
       "@id": "beckn:connectorType",
@@ -56,7 +56,7 @@
       "schema:rangeIncludes": "schema:Number"
     },
     {
-      "@id": "beckn:meteredEnergyKWh",
+      "@id": "beckn:meteredEnergyKWH",
       "@type": "rdf:Property",
       "rdfs:label": "Metered energy (kWh)",
       "rdfs:comment": "Energy dispensed during a charging session, in kilowatt-hours.",
@@ -151,6 +151,14 @@
       "rdfs:domain": "beckn:ChargingSession",
       "schema:rangeIncludes": "schema:Text"
     },
+    {
+      "@id": "beckn:preferences",
+      "@type": "rdf:Property",
+      "rdfs:label": "Preferences",
+      "rdfs:comment": "Charging session preferences including time windows.",
+      "rdfs:domain": "beckn:ChargingSession",
+      "schema:rangeIncludes": "schema:Thing"
+    },
 
     {
       "@id": "beckn:SessionStatus",
@@ -160,6 +168,7 @@
       "schema:hasEnumerationMember": [
         { "@id": "beckn:SessionStatusPending" },
         { "@id": "beckn:SessionStatusActive" },
+        { "@id": "beckn:SessionStatusStopped" },
         { "@id": "beckn:SessionStatusCompleted" },
         { "@id": "beckn:SessionStatusInterrupted" }
       ]
@@ -183,6 +192,15 @@
       "schema:identifier": "ACTIVE"
     },
     {
+      "@id": "beckn:SessionStatusStopped",
+      "@type": [
+        "beckn:SessionStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "STOPPED",
+      "schema:identifier": "STOPPED"
+    },
+    {
       "@id": "beckn:SessionStatusCompleted",
       "@type": [
         "beckn:SessionStatus",
@@ -201,43 +219,42 @@
       "schema:identifier": "INTERRUPTED"
     },
     {
-      "@id": "beckn:AuthorizationMode",
+      "@id": "beckn:ConnectorStatus",
       "@type": "schema:Enumeration",
-      "schema:name": "Authorization Mode",
-      "rdfs:comment": "Enumeration of user authorization modes for initiating a charging session.",
+      "schema:name": "Connector Status",
+      "rdfs:comment": "Enumeration of charging connector statuses (from OCPP status codes).",
       "schema:hasEnumerationMember": [
-        { "@id": "beckn:AuthorizationModeAppQr" },
-        { "@id": "beckn:AuthorizationModeRfid" },
-        { "@id": "beckn:AuthorizationModeOtp" }
+        { "@id": "beckn:ConnectorStatusAvailable" },
+        { "@id": "beckn:ConnectorStatusPreparing" },
+        { "@id": "beckn:ConnectorStatusUnavailable" }
       ]
     },
     {
-      "@id": "beckn:AuthorizationModeAppQr",
+      "@id": "beckn:ConnectorStatusAvailable",
       "@type": [
-        "beckn:AuthorizationMode",
+        "beckn:ConnectorStatus",
         "schema:Enumeration"
       ],
-      "schema:name": "APP_QR",
-      "schema:identifier": "APP_QR",
-      "schema:alternateName": "APP-QR"
+      "schema:name": "AVAILABLE",
+      "schema:identifier": "AVAILABLE"
     },
     {
-      "@id": "beckn:AuthorizationModeRfid",
+      "@id": "beckn:ConnectorStatusPreparing",
       "@type": [
-        "beckn:AuthorizationMode",
+        "beckn:ConnectorStatus",
         "schema:Enumeration"
       ],
-      "schema:name": "RFID",
-      "schema:identifier": "RFID"
+      "schema:name": "PREPARING",
+      "schema:identifier": "PREPARING"
     },
     {
-      "@id": "beckn:AuthorizationModeOtp",
+      "@id": "beckn:ConnectorStatusUnavailable",
       "@type": [
-        "beckn:AuthorizationMode",
+        "beckn:ConnectorStatus",
         "schema:Enumeration"
       ],
-      "schema:name": "OTP",
-      "schema:identifier": "OTP"
+      "schema:name": "UNAVAILABLE",
+      "schema:identifier": "UNAVAILABLE"
     },
     {
       "@id": "beckn:ConnectorType",
@@ -349,4 +366,3 @@
     }
   ]
 }
-

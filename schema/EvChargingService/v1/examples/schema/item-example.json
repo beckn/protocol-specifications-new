@@ -18,11 +18,11 @@
       "addressCountry": "IN"
     }
   },
-  "amenityFeature": ["Restaurant", "Restroom", "Wi-Fi"],
+  "amenityFeature": ["RESTAURANT", "RESTROOM", "WI_FI"],
   "ocppId": "IN-ECO-BTM-01",
   "evseId": "IN*ECO*BTM*01*CCS2*A",
   "roamingNetwork": "GreenRoam",
-  "parkingType": "Mall",
+  "parkingType": "MALL",
   "connectorId": "CCS2-A",
   "powerType": "DC",
   "connectorFormat": "CABLE",

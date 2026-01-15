@@ -49,6 +49,3 @@ This supports both local development and public hosting.
 
 ## 🏷️ Tags
 `ev-charging, charging-session, telemetry, billing, reservation, beckn, json-ld, schema.org, openapi`
-
-
-

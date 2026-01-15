@@ -8,6 +8,7 @@
     "beckn": "./vocab.jsonld#",
     
     "ChargingService": "beckn:ChargingService",
+    "ChargingStation": "beckn:ChargingStation",
 
     "name": "schema:name",
     "description": "schema:description",
@@ -28,7 +29,7 @@
     "areaServed": "schema:areaServed",
     "category": "schema:category",
 
-    "connectorId": "beckn:connectorId",
+    "chargingStation": "beckn:chargingStation",
     "amenityFeature": {
       "@id": "beckn:amenityFeature",
       "@type": "@id"
@@ -49,8 +50,8 @@
       "@id": "beckn:chargingSpeed",
       "@type": "@id"
     },
-    "stationStatus": {
-      "@id": "beckn:stationStatus",
+    "vehicleType": {
+      "@id": "beckn:vehicleType",
       "@type": "@id"
     },
     "parkingType": {
@@ -62,6 +63,7 @@
     "Restaurant": "beckn:AmenityRestaurant",
     "RESTROOM": "beckn:AmenityRestroom",
     "Restroom": "beckn:AmenityRestroom",
+    "WI_FI": "beckn:AmenityWiFi",
     "WI-FI": "beckn:AmenityWiFi",
     "Wi-Fi": "beckn:AmenityWiFi",
     "WiFi": "beckn:AmenityWiFi",
@@ -88,6 +90,13 @@
     "FAST": "beckn:ChargingSpeedFast",
     "ULTRAFAST": "beckn:ChargingSpeedUltraFast",
 
+    "ON_STREET": "beckn:ParkingTypeOnStreet",
+    "OFF_STREET": "beckn:ParkingTypeOffStreet",
+    "BASEMENT": "beckn:ParkingTypeBasement",
+    "MALL": "beckn:ParkingTypeMall",
+    "FUEL_STATION": "beckn:ParkingTypeFuelStation",
+    "OFFICE": "beckn:ParkingTypeOffice",
+    "HOTEL": "beckn:ParkingTypeHotel",
     "OnStreet": "beckn:ParkingTypeOnStreet",
     "OffStreet": "beckn:ParkingTypeOffStreet",
     "Basement": "beckn:ParkingTypeBasement",
@@ -97,12 +106,13 @@
     "Office": "beckn:ParkingTypeOffice",
     "Hotel": "beckn:ParkingTypeHotel",
 
-    "Available": "beckn:StationStatusAvailable",
-    "Occupied": "beckn:StationStatusOccupied",
-    "OutOfService": "beckn:StationStatusOutOfService",
-    "Out Of Service": "beckn:StationStatusOutOfService"
+    "2_WHEELER": "beckn:VehicleType2Wheeler",
+    "3_WHEELER": "beckn:VehicleType3Wheeler",
+    "4_WHEELER": "beckn:VehicleType4Wheeler",
+    "2-WHEELER": "beckn:VehicleType2Wheeler",
+    "3-WHEELER": "beckn:VehicleType3Wheeler",
+    "4-WHEELER": "beckn:VehicleType4Wheeler"
   },
 
   "@graph": []
 }
-

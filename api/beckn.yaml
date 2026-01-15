@@ -99,7 +99,7 @@ paths:
           $ref: '#/components/responses/Ack400'
         '500':
           $ref: '#/components/responses/Ack500'
-  /beckn/discover/browser-search:
+  /beckn/discover/browser_search:
     get:
       summary: Browser-friendly search API
       description: |
@@ -214,107 +214,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /beckn/discover/offer:
-    post:
-      summary: Compute/prune final offers for a given selection of items and/or offers (no Order envelope)
-      description: >
-        Client (BAP) submits a selection of items and/or offers. The BPP computes applicable, priced offers and returns them asynchronously via /beckn/on_discover/offer. This is semantically similar to /select, but avoids the Order wrapper to keep the intent clear: "give me offers for these choices".
-
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [context, message]
-              properties:
-                context:
-                  allOf:
-                    - $ref: "#/components/schemas/DiscoveryContext"
-                    - type: object
-                      properties: {action: {const: "discover_offer"}}
-                message:
-                  type: object
-                  required: [selection]
-                  properties:
-                    # The selection may be a set of items, a set of offers, or both.
-                    selection:
-                      type: object
-                      properties:
-                        items:
-                          type: array
-                          minItems: 1
-                          items:
-                            type: object
-                            required: ['beckn:id']
-                            properties:
-                              beckn:id:
-                                $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Item/properties/beckn:id"
-                              quantity:
-                                type: number
-                                description: Optional requested quantity for this item
-                        offers:
-                          type: array
-                          minItems: 1
-                          items:
-                            type: object
-                            required: ['beckn:id']
-                            properties:
-                              beckn:id:
-                                $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Offer/properties/beckn:id"
-                      anyOf:
-                        - required: [items]
-                        - required: [offers]
-                    # Optional scoping hints (kept open; networks can define attribute packs if needed)
-                    provider:
-                      $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Provider/properties/beckn:id"
-                    constraints:
-                      type: object
-                      description: Optional constraints (e.g., fulfillment mode/slots, region, eligibility). Extend via attribute packs as needed.
-                      additionalProperties: true
-      responses:
-        '200':
-          $ref: '#/components/responses/Ack200'
-        '400':
-          $ref: '#/components/responses/Ack400'
-        '500':
-          $ref: '#/components/responses/Ack500'
-  /beckn/on_discover/offer:
-    post:
-      summary: Provider returns computed offers for the selection
-      description: >
-        BPP responds with the final set of offers applicable to the submitted selection. Each Offer must reference the base items via beckn:items (schema:itemOffered). Additional pricing/eligibility details can be carried in offerAttributes packs.
-
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [context, message]
-              properties:
-                context:
-                  allOf:
-                    - $ref: "#/components/schemas/DiscoveryContext"
-                    - type: object
-                      properties: {action: {const: "on_discover_offer"}}
-                message:
-                  type: object
-                  required: [offers]
-                  properties:
-                    # Full Offer objects are returned (not just ids) so clients can render price/terms immediately.
-                    offers:
-                      type: array
-                      minItems: 1
-                      items:
-                        $ref: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Offer"
-      responses:
-        '200':
-          $ref: '#/components/responses/Ack200'
-        '400':
-          $ref: '#/components/responses/Ack400'
-        '500':
-          $ref: '#/components/responses/Ack500'
   /beckn/select:
     post:
       summary: "Buyer selects items/offers — returns priced order"
@@ -477,7 +376,8 @@ paths:
                     - order
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -511,7 +411,11 @@ paths:
                     - order
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -547,12 +451,17 @@ paths:
                     order:
                       oneOf:
                         - type: object
+                          additionalProperties: false
                           required:
                             - beckn:id
                           properties:
                             beckn:id:
                               $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order/properties/beckn:id'
-                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - allOf:
+                            - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                            - type: object
+                              required:
+                                - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -584,7 +493,11 @@ paths:
                   type: object
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
                   anyOf:
                     - required:
                         - order
@@ -622,7 +535,11 @@ paths:
                     - order
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -656,7 +573,11 @@ paths:
                     - order
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -692,6 +613,7 @@ paths:
                     order:
                       oneOf:
                         - type: object
+                          additionalProperties: false
                           required:
                             - beckn:id
                           properties:
@@ -714,7 +636,11 @@ paths:
                                       beckn:quantity:
                                         $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Quantity'
                                   - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/OrderItem'
-                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - allOf:
+                            - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                            - type: object
+                              required:
+                                - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -748,7 +674,11 @@ paths:
                     - order
                   properties:
                     order:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                      allOf:
+                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
+                        - type: object
+                          required:
+                            - beckn:id
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -776,15 +706,17 @@ paths:
                           const: support
                 message:
                   type: object
-                  required: [ref_id]
+                  required: [refId, refType]
                   properties:
-                    ref_id:
+                    refId:
                       type: string
                       description: ID of the entity for which support is requested (order/item/fulfillment/provider/agent). # legacy kept minimal
-                    ref_type:
+                    refType:
                       type: string
-                      description: Optional hint to help route support.
-                      enum: [order, fulfillment, item, provider, agent, other]
+                      description: Entity type for which support is requested.
+                      enum: [ORDER, FULFILLMENT, ITEM, PROVIDER, AGENT, OTHER]
+                    support:
+                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/SupportInfo'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -844,28 +776,24 @@ paths:
                 message:
                   type: object
                   required:
-                    - order
+                    - tracking
                   properties:
-                    order:
-                      oneOf:
-                        - type: object
-                          required:
-                            - beckn:id
-                          properties:
-                            beckn:id:
-                              $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order/properties/beckn:id'
-                            fulfillment:
-                              oneOf:
-                                - type: object
-                                  properties:
-                                    beckn:id:
-                                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Fulfillment/properties/beckn:id'
-                                - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Fulfillment'
-                        - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Order'
-                    mode_hint:
-                      type: string
-                      description: Optional delivery mode for the tracking handle.
-                      enum: [link_only, deep_link, webhook, ws_handle]
+                    tracking:
+                      type: object
+                      required:
+                        - id
+                      properties:
+                        id:
+                          type: string
+                          description: Tracking identifier
+                        callbackUrl:
+                          type: string
+                          format: uri
+                          description: Optional callback URL for streaming tracking coordinates/updates
+                        mode_hint:
+                          type: string
+                          description: Optional delivery mode for the tracking handle.
+                          enum: [link_only, deep_link, webhook, ws_handle]
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -893,10 +821,11 @@ paths:
                           const: on_track
                 message:
                   type: object
-                  required: [tracking]
+                  required:
+                    - tracking
                   properties:
                     tracking:
-                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Tracking'
+                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TrackAction'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -923,7 +852,10 @@ paths:
                         action:
                           const: rating
                 message:
-                  $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/RatingInput'
+                  ratings:
+                    type: array
+                    items:
+                      $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/RatingInput'
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -981,12 +913,12 @@ paths:
           $ref: '#/components/responses/Ack400'
         '500':
           $ref: '#/components/responses/Ack500'
-  /beckn/v2/catalog/publish:
+  /beckn/catalog/publish:
     post:
       summary: Publish one or more catalogs for indexing
       description: |
         BPP submits catalogs to be indexed. Returns **ACK** immediately if accepted for processing.
-        The detailed per-catalog processing result arrives later via **/on_catalog_publish**.
+        The detailed per-catalog processing result arrives later via **/on_publish**.
       operationId: publishCatalogs
       tags: [Catalog Publish]
       requestBody:
@@ -1004,7 +936,7 @@ paths:
                     action: "catalog_publish"
                     timestamp: "2025-09-01T10:30:00+05:30"
                     message_id: "u-req-123"
-                    transaction_id: "u-txn-123"
+                    transactionId: "u-txn-123"
                     bap_id: "bpp.example.com"
                     bap_uri: "https://bpp.example.com/callbacks" # where /on_catalog_publish is exposed
                     ttl: "PT30S"
@@ -1021,7 +953,7 @@ paths:
           $ref: '#/components/responses/Ack400'
         '500':
           $ref: '#/components/responses/Ack500'
-  /beckn/v2/catalog/on_publish:
+  /beckn/catalog/on_publish:
     post:
       summary: Callback with catalog publish processing results
       description: |
@@ -1044,23 +976,24 @@ paths:
                     action: "on_catalog_publish"
                     timestamp: "2025-09-01T10:31:05+05:30"
                     message_id: "u-resp-123"
-                    transaction_id: "u-txn-123"
+                    transactionId: "u-txn-123"
                     bpp_id: "discovery-indexer.example.com"
                     bpp_uri: "https://discovery-indexer.example.com"
                     ttl: "PT30S"
-                  results:
-                    - catalog_id: "catalog-001"
-                      status: "ACCEPTED"
-                      item_count: 42
-                      warnings:
-                        - code: "NON_NORMALIZED_BRAND"
-                          message: "Some brand values were normalized"
-                    - catalog_id: "catalog-002"
-                      status: "REJECTED"
-                      error:
-                        code: "INVALID_ITEM"
-                        message: "Invalid item payload at index 3"
-                        paths: "catalogs[1].items[3]"
+                  message:
+                    results:
+                      - catalog_id: "catalog-001"
+                        status: "ACCEPTED"
+                        item_count: 42
+                        warnings:
+                          - code: "NON_NORMALIZED_BRAND"
+                            message: "Some brand values were normalized"
+                      - catalog_id: "catalog-002"
+                        status: "REJECTED"
+                        error:
+                          code: "INVALID_ITEM"
+                          message: "Invalid item payload at index 3"
+                          paths: "catalogs[1].items[3]"
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -1094,16 +1027,16 @@ components:
               type: object
               description: Filter criteria for items
               properties:
-                type:
+                expressionType:
                   type: string
                   enum: [jsonpath]
                   default: jsonpath
                   description: Type of filter expression
                 expression:
                   type: string
-                  description: Filter expression based on the specified type
+                  description: Filter expression based on the specified expressionType
                   example: "$[?(@.rating.value >= 4.0 && @.electronic.brand.name == 'Premium Tech')]"
-              required: [type, expression]
+              required: [expressionType, expression]
             spatial:
               type: array
               description: Optional array of spatial constraints (CQL2-JSON semantics).
@@ -1454,7 +1387,7 @@ components:
         *context.version* MUST indicate the supported protocol version (e.g., "2.0.0").
     CatalogPublishResponse:
       type: object
-      required: [context, results]
+      required: [context, message]
       properties:
         context:
           allOf:
@@ -1516,7 +1449,7 @@ components:
           action: "discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "5c8f1a2b-9d3e-4f76-8b21-3a4c5d6e7f80"
-          transaction_id: "d3b07384-4a1c-4f5e-9c2b-7e6d5c4b3a21"
+          transactionId: "d3b07384-4a1c-4f5e-9c2b-7e6d5c4b3a21"
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
@@ -1525,7 +1458,7 @@ components:
         message:
           text_search: "gaming laptop premium tech"
           filters:
-            type: "jsonpath"
+            expressionType: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && @.electronic.brand.name == 'Premium Tech')]"
     discover_natural_language:
       summary: Natural-language discover (electronics)
@@ -1535,7 +1468,7 @@ components:
           action: "discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "9a7b6c5d-8e4f-4a3b-9c2d-1e0f2a3b4c5d"
-          transaction_id: "1f2e3d4c-5b6a-4789-8c0d-1a2b3c4d5e6f"
+          transactionId: "1f2e3d4c-5b6a-4789-8c0d-1a2b3c4d5e6f"
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
@@ -1551,7 +1484,7 @@ components:
           action: "discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "2a3b4c5d-6e7f-4890-9a1b-2c3d4e5f6071"
-          transaction_id: "7e6d5c4b-3a21-4c5d-8f70-9a1b2c3d4e5f"
+          transactionId: "7e6d5c4b-3a21-4c5d-8f70-9a1b2c3d4e5f"
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
@@ -1560,7 +1493,7 @@ components:
         message:
           text_search: "organic apples fresh"
           filters:
-            type: "jsonpath"
+            expressionType: "jsonpath"
             expression: "$[?(@.grocery.organicCertification ~ 'USDA Organic')]"
     discover_combined_search:
       summary: Combined text + filters
@@ -1570,7 +1503,7 @@ components:
           action: "discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "3b4c5d6e-7f80-41a2-93b4-c5d6e7f8091a"
-          transaction_id: "8f70e6d5-c4b3-42a1-9c2d-3e4f5a6b7c8d"
+          transactionId: "8f70e6d5-c4b3-42a1-9c2d-3e4f5a6b7c8d"
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
@@ -1579,7 +1512,7 @@ components:
         message:
           text_search: "gaming laptop"
           filters:
-            type: "jsonpath"
+            expressionType: "jsonpath"
             expression: "$[?(@.electronic.price['schema:price'] <= 2000 && @.electronic.brand.name == 'Premium Tech')]"
     discover_multi_schema_search:
       summary: Multi-schema discover (electronics + grocery)
@@ -1589,7 +1522,7 @@ components:
           action: "discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "4c5d6e7f-8091-42b3-94c5-d6e7f8091a2b"
-          transaction_id: "9c2d3e4f-5a6b-47c8-8d90-1a2b3c4d5e6f"
+          transactionId: "9c2d3e4f-5a6b-47c8-8d90-1a2b3c4d5e6f"
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
@@ -1599,7 +1532,7 @@ components:
         message:
           text_search: "premium tech and organic food"
           filters:
-            type: "jsonpath"
+            expressionType: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && (@.electronic.brand.name == 'Premium Tech' || @.grocery.organicCertification ~ 'USDA Organic'))]"
     # ---------- /on_discover callback (DiscoverResponse) examples ----------
     on_discover_electronics_catalog:
@@ -1610,7 +1543,7 @@ components:
           action: "on_discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "a1b2c3d4-e5f6-4789-90ab-cdef12345678"
-          transaction_id: "b2c3d4e5-f6a7-4890-8b9a-cdef23456789"
+          transactionId: "b2c3d4e5-f6a7-4890-8b9a-cdef23456789"
           bpp_id: "bpp.example.com"
           bpp_uri: "https://bpp.example.com"
           ttl: "PT30S"
@@ -1629,7 +1562,7 @@ components:
           action: "on_discover"
           timestamp: "2024-04-10T16:10:50+05:30"
           message_id: "c3d4e5f6-a7b8-49c0-9dab-ef1234567890"
-          transaction_id: "d4e5f6a7-b8c9-4ad1-8cab-1234567890ef"
+          transactionId: "d4e5f6a7-b8c9-4ad1-8cab-1234567890ef"
           bpp_id: "bpp.example.com"
           bpp_uri: "https://bpp.example.com"
           ttl: "PT30S"
@@ -1644,15 +1577,15 @@ components:
     ack_success:
       summary: ACK
       value:
-        transaction_id: "e5f6a7b8-c9d0-4e1f-9a2b-3c4d5e6f7081"
+        transactionId: "e5f6a7b8-c9d0-4e1f-9a2b-3c4d5e6f7081"
         timestamp: "2024-04-10T16:10:50+05:30"
-        ack_status: "ACK"
+        ackStatus: "ACK"
     ack_bad_request:
       summary: NACK — bad request
       value:
-        transaction_id: "f6a7b8c9-d0e1-42f3-8a2b-3c4d5e6f7081"
+        transactionId: "f6a7b8c9-d0e1-42f3-8a2b-3c4d5e6f7081"
         timestamp: "2024-04-10T16:10:50+05:30"
-        ack_status: "NACK"
+        ackStatus: "NACK"
         error:
           code: "INVALID_REQUEST"
           paths: "context.schema_context"
@@ -1660,18 +1593,18 @@ components:
     ack_server_error:
       summary: NACK — internal error
       value:
-        transaction_id: "a7b8c9d0-e1f2-43a4-9b2c-3d4e5f607081"
+        transactionId: "a7b8c9d0-e1f2-43a4-9b2c-3d4e5f607081"
         timestamp: "2024-04-10T16:10:50+05:30"
-        ack_status: "NACK"
+        ackStatus: "NACK"
         error:
           code: "INTERNAL_ERROR"
           paths: "server"
           message: "Internal server error occurred"
-    # ---------- /discover/browser-search JSON example ----------
+    # ---------- /discover/browser_search JSON example ----------
     browser_search_electronic_items:
       summary: Browser-search JSON response (electronics)
       value:
-        id: "api.beckn.discover.browser-search"
+        id: "api.beckn.discover.browser_search"
         ver: "v2"
         ts: "2024-04-10T16:10:50+05:30"
         params:

@@ -23,7 +23,7 @@ components:
           type: string
           format: uri
           description: JSON-LD context URI for the core Catalog schema
-          enum: ["https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"]
+          enum: ["https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"]
         "@type":
           type: string
           description: Type of the catalog
@@ -72,7 +72,7 @@ components:
           type: string
           format: uri
           description: JSON-LD context URI for the core Item schema
-          enum: ["https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"]
+          enum: ["https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"]
         "@type":
           type: string
           description: Type of the core item
@@ -130,7 +130,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Offer"]
@@ -212,7 +212,7 @@ components:
       items:
         type: string
         enum: ["UPI", "CREDIT_CARD", "DEBIT_CARD", "WALLET", "BANK_TRANSFER", "CASH", "APPLE_PAY"]
-      example: ["UPI", "Card", "Wallet"]
+      example: ["UPI", "CREDIT_CARD", "WALLET"]
       x-jsonld: { "@id": "beckn:acceptedPaymentMethod" }
 
     Provider:
@@ -434,30 +434,30 @@ components:
       type: object
       additionalProperties: false
       properties:
-        transaction_id:
+        transactionId:
           type: string
         timestamp:
           type: string
           format: date-time
-        ack_status:
+        ackStatus:
           type: string
           enum: [ACK, NACK]
         error:
           $ref: '#/components/schemas/Error'
-      required: [transaction_id, timestamp, ack_status]
+      required: [transactionId, timestamp, ackStatus]
       allOf:
         - if:
             properties:
-              ack_status:
+              ackStatus:
                 const: NACK
-            required: [ack_status]
+            required: [ackStatus]
           then:
             required: [error]
         - if:
             properties:
-              ack_status:
+              ackStatus:
                 const: ACK
-            required: [ack_status]
+            required: [ackStatus]
           then:
             not:
               required: [error]
@@ -483,11 +483,11 @@ components:
       required: [geo]
       additionalProperties: false
       examples:
-        site_point:
+        sitePoint:
           value:
             geo: { type: Point, coordinates: [77.5946, 12.9716] }
             address: "MG Road, Bengaluru"
-        service_area:
+        serviceArea:
           value:
             geo:
               type: Polygon
@@ -582,12 +582,12 @@ components:
           value:
             type: Point
             coordinates: [77.5946, 12.9716]
-        polygon_rectangle:
+        polygonRectangle:
           value:
             type: Polygon
             coordinates:
               - [[77.6100, 12.9200], [77.6400, 12.9200], [77.6400, 12.9500], [77.6100, 12.9500], [77.6100, 12.9200]]
-        geometry_collection:
+        geometryCollection:
           value:
             type: GeometryCollection
             geometries:
@@ -603,7 +603,6 @@ components:
       required:
         - "@context"
         - "@type"
-        - beckn:id
         - beckn:orderStatus
         - beckn:seller
         - beckn:buyer
@@ -612,7 +611,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Order"]
@@ -679,7 +678,7 @@ components:
 
     OrderItem:
       type: object
-      required: ["beckn:lineId","beckn:orderedItem","beckn:quantity"]
+      required: ["beckn:orderedItem"]
       properties:
         beckn:lineId:
           type: string
@@ -715,7 +714,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Invoice"]
@@ -761,17 +760,12 @@ components:
     Fulfillment:
       type: object
       additionalProperties: false
-      required: [
-        "@context",
-        "@type",
-        "beckn:id",
-        "beckn:mode"
-      ]
+      required: ["@context","@type","beckn:mode"]
       properties:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Fulfillment"]
@@ -816,34 +810,16 @@ components:
       x-jsonld:
         '@type': 'schema:TrackAction'
       properties:
-        target:
-          type: object
-          description: schema.org EntryPoint
-          x-jsonld:
-            '@type': 'schema:EntryPoint'
-          properties:
-            url:
-              type: string
-              format: uri
-              description: Tracking page URL
-              x-jsonld:
-                '@id': 'schema:url'
-          additionalProperties: true
-        deliveryMethod:
+        id:
           type: string
-          enum: ["DELIVERY","PICKUP","RESERVATION","DIGITAL"]
-          description: |
-            DELIVERY    → last-mile / parcel logistics
-            PICKUP      → customer collects from a place
-            RESERVATION → entitlement/booking is fulfilled (tickets, seats, appointments)
-            DIGITAL     → digital good / license access
-          x-jsonld:
-            '@id': 'schema:deliveryMethod'    
-        reservationId:
+          description: Tracking action identifier
+          x-jsonld: { "@id": "schema:identifier" }
+        url:
           type: string
-          description: Unique identifier for the reservation (schema.org Reservation.reservationId).
+          format: uri
+          description: Tracking page URL
           x-jsonld:
-            '@id': 'schema:reservationId'
+            '@id': 'schema:url'
       additionalProperties: true            
 
     # -----------------------------
@@ -852,13 +828,13 @@ components:
     Payment:
       type: object
       additionalProperties: false
-      required: ["@context","@type","beckn:id","beckn:paymentStatus"]
+      required: ["@context","@type","beckn:paymentStatus"]
       # Core payment semantics: rail + status + references. Rail payloads live in payment packs (UPI/Card/BNPL/Wallet).
       properties:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Payment"]
@@ -882,7 +858,7 @@ components:
           type: string
           format: uri
           description: URL for payment processing/redirection
-          example: "https://payments.example.com/pay?transaction_id=123&amount=100"
+          example: "https://payments.example.com/pay?transactionId=123&amount=100"
           x-jsonld: { "@id": "schema:url" }
         beckn:txnRef:
           type: string
@@ -899,7 +875,7 @@ components:
         beckn:beneficiary:
           type: string
           description: Who will be the beneficiary or recipient of the payment
-          enum: ["BPP","BAP"]
+          enum: ["BPP","BAP","BUYER"]
           example: "BPP"
           x-jsonld: { "@id": "schema:beneficiary" }
         beckn:paymentAttributes:
@@ -920,7 +896,7 @@ components:
         "@context":
           type: string
           format: uri
-          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld"
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
         "@type":
           type: string
           enum: ["beckn:Buyer"]
@@ -938,6 +914,15 @@ components:
           type: string
           description: Human-readable display name
           x-jsonld: { "@id": "schema:name" }
+        beckn:telephone:
+          type: string
+          description: Telephone number
+          x-jsonld: { "@id": "schema:telephone" }
+        beckn:email:
+          type: string
+          format: email
+          description: Email Address
+          x-jsonld: { "@id": "schema:email" }
         beckn:taxID:
           type: string
           description: Tax identifier for the buyer.
@@ -956,7 +941,16 @@ components:
       description: >
         Canonical support contact for an entity, mapped to schema.org ContactPoint.
       additionalProperties: false
+      required: ["@context", "@type"]
       properties:
+        "@context":
+          type: string
+          format: uri
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
+        "@type":
+          type: string
+          enum: ["beckn:SupportInfo"]
+          x-jsonld: { "@id": "beckn:SupportInfo" }
         name:
           type: string
           description: Name of the support organization or contact.
@@ -986,7 +980,7 @@ components:
         email: "support@acme.example"
         url: "https://acme.example/support"
         hours: "Mon–Sat 09:00–20:00 IST"
-        channels: ["web", "phone", "email"]
+        channels: ["WEB", "PHONE", "EMAIL"]
       x-jsonld:
         '@type': 'schema:ContactPoint'
         'schema:contactType': '"Customer Support"'
@@ -1001,11 +995,20 @@ components:
       description: >
         Non-streaming tracking handle per legacy semantics (url/transport/status).
       additionalProperties: false
+      required: ["@context", "@type", "tlMethod", "url", "trackingStatus"]
       properties:
-        tl_method:
+        "@context":
+          type: string
+          format: uri
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
+        "@type":
+          type: string
+          enum: ["beckn:Tracking"]
+          x-jsonld: { "@id": "beckn:Tracking" }
+        tlMethod:
           type: string
           enum: [http/get, http/post, http/redirect, ws/handle, custom]
-          description: Transport/method used to access the tracking handle.  # mirrors legacy tl_method concept
+          description: Transport/method used to access the tracking handle.  # mirrors legacy tlMethod concept
         url:
           type: string
           format: uri
@@ -1013,27 +1016,34 @@ components:
         trackingStatus:
           type: string
           enum: [ACTIVE, DISABLED, COMPLETED]
-        expires_at:
+        expiresAt:
           type: string
           format: date-time
           description: ISO 8601 expiry timestamp for the tracking handle.
-      required: [tl_method, url, trackingStatus]
       example:
-        tl_method: "http/get"
+        tlMethod: "http/get"
         url: "https://track.bpp.example?order_id=ORD-123"
-        trackingStatus: "active"
-        expires_at: "2025-10-16T18:30:00Z"
+        trackingStatus: "ACTIVE"
+        expiresAt: "2025-10-16T18:30:00Z"
       x-jsonld:
         '@type': 'schema:TrackAction'
         'schema:target':    '$.url'           # URL to track → EntryPoint(target)
-        'schema:deliveryMethod': '$.tl_method' # best-effort mapping
+        'schema:deliveryMethod': '$.tlMethod'
         'beckn:trackingStatus': '$.trackingStatus'
 
     RatingInput:
       type: object
       additionalProperties: false
-      required: [id, ratingValue]
+      required: ["@context","@type","id","ratingValue"]
       properties:
+        "@context":
+          type: string
+          format: uri
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
+        "@type":
+          type: string
+          enum: ["beckn:RatingInput"]
+          x-jsonld: { "@id": "beckn:RatingInput" }
         id:
           type: string
           description: Target entity ID being rated (order/item/fulfillment/provider/agent).
@@ -1050,7 +1060,7 @@ components:
         category:
           type: string
           description: What is being rated.
-          enum: [order, item, fulfillment, provider, agent, other]
+          enum: [ORDER, FULFILLMENT, ITEM, PROVIDER, AGENT, OTHER]
         feedback:
           type: object
           additionalProperties: false
@@ -1069,9 +1079,18 @@ components:
     Form:
       description: Describes a form
       type: object
+      required: ["@context", "@type"]
       properties:
+        "@context":
+          type: string
+          format: uri
+          example: "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
+        "@type":
+          type: string
+          enum: ["beckn:Form"]
+          x-jsonld: { "@id": "beckn:Form" }
         url:
-          description: The URL from where the form can be fetched. The content fetched from the url must be processed as per the mime_type specified in this object. Once fetched, the rendering platform can choosed to render the form as-is as an embeddable element; or process it further to blend with the theme of the application. In case the interface is non-visual, the the render can process the form data and reproduce it as per the standard specified in the form.
+          description: The URL from where the form can be fetched. The content fetched from the url must be processed as per the mimeType specified in this object. Once fetched, the rendering platform can choose to render the form as-is as an embeddable element; or process it further to blend with the theme of the application. In case the interface is non-visual, the render can process the form data and reproduce it as per the standard specified in the form.
           type: string
           format: uri
         data:
@@ -1079,12 +1098,12 @@ components:
           type: object
           additionalProperties:
             type: string
-        mime_type:
+        mimeType:
           description: This field indicates the nature and format of the form received by querying the url. MIME types are defined and standardized in IETF's RFC 6838.
           type: string
           enum:
             - text/html
             - application/xml
-        submission_id:
+        submissionId:
           type: string
           format: uuid

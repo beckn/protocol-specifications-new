@@ -2,7 +2,7 @@
 
 This bundle defines **EV-specific attribute extensions only** (no Beckn core objects).
 
-It reuses core Beckn schemas for Item, Offer, Order/Fulfillment, and Provider, and adds only **domain-specific attributes**relevant to electric-vehicle charging.
+It reuses core Beckn schemas for Item, Offer, Order/Fulfillment, and Provider, and adds only **domain-specific attributes** relevant to electric-vehicle charging.
 
 Attach these schemas as follows:
 
@@ -14,21 +14,20 @@ Attach these schemas as follows:
 | --- | --- | --- |
 | ChargingSession | Order.fulfillments\[\].attributes | Real-time or completed charging session data - energy consumed, session duration, total cost, telemetry intervals, and tracking links. |
 | --- | --- | --- |
-| ChargingProvider | Provider.attributes | Operator identifiers, statutory registrations, and extended contact details for the charging provider. |
+| ChargingPointOperator | Provider.attributes | Operator identifiers, statutory registrations, and extended contact details for the charging provider. |
 | --- | --- | --- |
 
 
 ## **🧭 Role and Design**
 
-- **Aligned with Beckn Core  
-    **Uses canonical Beckn schemas for common objects and reuses canonical components from:
-  - [core.yaml](../../core/v2/core.yaml) - Catalog, Item, Offer, Provider, Attributes, Location, Address, GeoJSONGeometry
-  - [discover.yaml](../../../api-specs/discover.yaml) - Discovery API endpoints and request/response schemas
-  - [transaction.yaml](../../../api-specs/transaction.yaml) - Transaction API endpoints and Order, Fulfillment, Payment schemas
-- **Adds EV semantics only  
-    **Introduces domain-specific elements such as connectors, power ratings, roaming networks, charging periods, and session telemetry.
-- **Designed for interoperability  
-    **Enables charging-point operators, aggregators, and mobility apps to exchange structured data seamlessly across Beckn networks.
+- **Aligned with Beckn Core**
+  Uses canonical Beckn schemas for common objects and reuses canonical components from:
+  - [core.yaml](../../core/v2/attributes.yaml) - Catalog, Item, Offer, Provider, Attributes, Location, Address, GeoJSONGeometry
+  - [api/beckn.yaml](../../../api/beckn.yaml) - Unified API specification for discovery and transaction endpoints
+- **Adds EV semantics only:**
+  Introduces domain-specific elements such as connectors, power ratings, roaming networks, charging periods, and session telemetry.
+- **Designed for interoperability:**
+  Enables charging-point operators, aggregators, and mobility apps to exchange structured data seamlessly across Beckn networks.
 
 ## **🗺️ Local Namespace Mapping**
 

@@ -982,13 +982,13 @@ paths:
                     ttl: "PT30S"
                   message:
                     results:
-                      - catalog_id: "catalog-001"
+                      - catalogId: "catalog-001"
                         status: "ACCEPTED"
-                        item_count: 42
+                        itemCount: 42
                         warnings:
                           - code: "NON_NORMALIZED_BRAND"
                             message: "Some brand values were normalized"
-                      - catalog_id: "catalog-002"
+                      - catalogId: "catalog-002"
                         status: "REJECTED"
                         error:
                           code: "INVALID_ITEM"
@@ -1019,7 +1019,7 @@ components:
           type: object
           description: Discover payload containing search criteria
           properties:
-            text_search:
+            textSearch:
               type: string
               description: Free text search query for items
               example: "gaming laptop premium tech"
@@ -1042,10 +1042,10 @@ components:
               description: Optional array of spatial constraints (CQL2-JSON semantics).
               items:
                 $ref: '#/components/schemas/SpatialConstraint'
-            media_search:
+            mediaSearch:
               $ref: '#/components/schemas/MediaSearch'
           anyOf:
-            - required: [text_search]
+            - required: [textSearch]
             - required: [filters]
             - required: [spatial]
             - required: [filters, spatial]
@@ -1075,7 +1075,7 @@ components:
         - type: object
           description: Beckn Context extended for Discovery.
           properties:
-            schema_context:
+            schemaContext:
               type: array
               items:
                 type: string
@@ -1226,7 +1226,7 @@ components:
             contentType: "image/jpeg"
         options:
           goals: ["visual-object-detect", "text-from-image"]
-          augment_text_search: true
+          augmentTextSearch: true
     MediaInput:
       type: object
       description: Reference to an image, audio clip, or video used for multimodal search.
@@ -1277,13 +1277,13 @@ components:
               - text-from-audio # extract text (ASR)
               - semantic-audio-match # audio embedding similarity
               - semantic-video-match # video scene/keyframe similarity
-        augment_text_search:
+        augmentTextSearch:
           type: boolean
           default: true
           description: >
-            Whether to append extracted text from OCR/ASR to `text_search`.
+            Whether to append extracted text from OCR/ASR to `textSearch`.
 
-        restrict_results_to_media_proximity:
+        restrictResultsToMediaProximity:
           type: boolean
           default: false
           description: >
@@ -1323,14 +1323,14 @@ components:
         - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications/refs/heads/master/api/transaction/build/transaction.yaml#/components/schemas/Context'
         - type: object
           description: >
-            Beckn Context extended for Transaction flows. Mirrors DiscoveryContext pattern to enable validation and per-endpoint action constraints. network_id/schema_context are optional for routing and JSON-LD hints.
+            Beckn Context extended for Transaction flows. Mirrors DiscoveryContext pattern to enable validation and per-endpoint action constraints. networkId/schemaContext are optional for routing and JSON-LD hints.
 
           properties:
-            network_id:
+            networkId:
               type: array
               items: {type: string}
               description: Optional list of addressed networks (for routing/allowlisting)
-            schema_context:
+            schemaContext:
               type: array
               items:
                 type: string
@@ -1408,16 +1408,16 @@ components:
     # ---------- Result model ----------
     CatalogProcessingResult:
       type: object
-      required: [catalog_id, status]
+      required: [catalogId, status]
       properties:
-        catalog_id:
+        catalogId:
           type: string
           description: The "beckn:id" of the submitted catalog
         status:
           type: string
           enum: [ACCEPTED, REJECTED, PARTIAL]
           description: Final processing outcome for this catalog
-        item_count:
+        itemCount:
           type: integer
           minimum: 0
           description: Number of items indexed (when accepted/partial)
@@ -1453,10 +1453,10 @@ components:
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
-          schema_context:
+          schemaContext:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
         message:
-          text_search: "gaming laptop premium tech"
+          textSearch: "gaming laptop premium tech"
           filters:
             expressionType: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && @.electronic.brand.name == 'Premium Tech')]"
@@ -1472,10 +1472,10 @@ components:
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
-          schema_context:
+          schemaContext:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
         message:
-          text_search: "Looking for a premium gaming laptop under $2000 near San Francisco"
+          textSearch: "Looking for a premium gaming laptop under $2000 near San Francisco"
     discover_grocery_search:
       summary: Structured discover (grocery)
       value:
@@ -1488,10 +1488,10 @@ components:
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
-          schema_context:
+          schemaContext:
             - "https://example.org/schema/items/v1/GroceryItem/schema-context.jsonld"
         message:
-          text_search: "organic apples fresh"
+          textSearch: "organic apples fresh"
           filters:
             expressionType: "jsonpath"
             expression: "$[?(@.grocery.organicCertification ~ 'USDA Organic')]"
@@ -1507,10 +1507,10 @@ components:
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
-          schema_context:
+          schemaContext:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
         message:
-          text_search: "gaming laptop"
+          textSearch: "gaming laptop"
           filters:
             expressionType: "jsonpath"
             expression: "$[?(@.electronic.price['schema:price'] <= 2000 && @.electronic.brand.name == 'Premium Tech')]"
@@ -1526,11 +1526,11 @@ components:
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
-          schema_context:
+          schemaContext:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
             - "https://example.org/schema/items/v1/GroceryItem/schema-context.jsonld"
         message:
-          text_search: "premium tech and organic food"
+          textSearch: "premium tech and organic food"
           filters:
             expressionType: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && (@.electronic.brand.name == 'Premium Tech' || @.grocery.organicCertification ~ 'USDA Organic'))]"
@@ -1588,7 +1588,7 @@ components:
         ackStatus: "NACK"
         error:
           code: "INVALID_REQUEST"
-          paths: "context.schema_context"
+          paths: "context.schemaContext"
           message: "Invalid schema context provided"
     ack_server_error:
       summary: NACK — internal error

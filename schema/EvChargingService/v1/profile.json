@@ -22,7 +22,7 @@
   },
   "required": ["EvChargingService"],
 
-  "operational_hints": {
+  "operationalHints": {
     "indexHints": [
       "beckn:id",
       "beckn:descriptor.schema:name",
@@ -69,12 +69,12 @@
       "notes": "EV Charging PII includes authorization hints, vehicle information, and provider contact details. Discovery and catalog payloads generally contain no PII; PII appears post-transaction (confirm/status)."
     },
 
-    "api_response_config": {
+    "apiResponseConfig": {
       "description": "Configuration for API response field sets - defines what fields to return for different use cases",
-      "max_items_per_page": 1000,
-      "max_offers_per_item": 1,
-      "minimal_fields": {
-        "item_attributes": [
+      "maxItemsPerPage": 1000,
+      "maxOffersPerItem": 1,
+      "minimalFields": {
+        "itemAttributes": [
           "beckn:id",
           "beckn:descriptor.schema:name",
           "beckn:descriptor.beckn:shortDesc",
@@ -87,7 +87,7 @@
           "beckn:itemAttributes.parkingType",
           "beckn:itemAttributes.chargingSpeed"
         ],
-        "offer_attributes": [
+        "offerAttributes": [
           "beckn:id",
           "beckn:price.currency",
           "beckn:price.value",
@@ -104,11 +104,11 @@
     },
 
     "discover": {
-      "supported_filters": [
-        "text_search",
-        "jsonpath_filters"
+      "supportedFilters": [
+        "textSearch",
+        "jsonpathFilters"
       ],
-      "default_sort": [
+      "defaultSort": [
         "distance.asc",
         "beckn:offerAttributes.priceSpecification.price.asc",
         "beckn:itemAttributes.maxPowerKW.desc"

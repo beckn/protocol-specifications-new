@@ -8,13 +8,13 @@ Attach these schemas as follows:
 
 | **Attribute Schema** | **Attach To** | **Purpose** |
 | --- | --- | --- |
-| ChargingService | Item.attributes | Technical and contextual details of a charging connector or station - e.g., connector type, power capacity, socket count, reservation capability, and amenities. |
+| EvChargingService | Item.attributes | Technical and contextual details of a charging connector or station - e.g., connector type, power capacity, socket count, reservation capability, and amenities. |
 | --- | --- | --- |
-| ChargingOffer | Offer.attributes | Tariff details beyond core price fields - e.g., per-kWh or time-based pricing, idle fee policies, buyer-finder fees, and accepted payment methods. |
+| EvChargingOffer | Offer.attributes | Tariff details beyond core price fields - e.g., per-kWh or time-based pricing, idle fee policies, buyer-finder fees, and accepted payment methods. |
 | --- | --- | --- |
-| ChargingSession | Order.fulfillments\[\].attributes | Real-time or completed charging session data - energy consumed, session duration, total cost, telemetry intervals, and tracking links. |
+| EvChargingSession | Order.fulfillments\[\].attributes | Real-time or completed charging session data - energy consumed, session duration, total cost, telemetry intervals, and tracking links. |
 | --- | --- | --- |
-| ChargingPointOperator | Provider.attributes | Operator identifiers, statutory registrations, and extended contact details for the charging provider. |
+| EvChargingPointOperator | Provider.attributes | Operator identifiers, statutory registrations, and extended contact details for the charging provider. |
 | --- | --- | --- |
 
 
@@ -47,18 +47,18 @@ This supports both local development and public hosting.
 
 | **File / Folder** | **Purpose** |
 | --- | --- |
-| **attributes.yaml** | OpenAPI 3.1.1 attribute schema for ChargingService (Item.attributes), annotated with x-jsonld. Reuses canonical Beckn components (e.g., Location via \$ref). |
-| **context.jsonld** | Maps all properties to schema.org and local beckn: IRIs for ChargingService. Defines semantic equivalences (e.g., serviceLocation ≡ beckn:availableAt). |
-| **vocab.jsonld** | Local vocabulary for ChargingService domain terms (connectorType, chargingSpeed, ocppId, etc.) in JSON-LD format with RDFS definitions and semantic relationships. |
+| **attributes.yaml** | OpenAPI 3.1.1 attribute schema for EvChargingService (Item.attributes), annotated with x-jsonld. Reuses canonical Beckn components (e.g., Location via \$ref). |
+| **context.jsonld** | Maps all properties to schema.org and local beckn: IRIs for EvChargingService. Defines semantic equivalences (e.g., serviceLocation ≡ beckn:availableAt). |
+| **vocab.jsonld** | Local vocabulary for EvChargingService domain terms (connectorType, chargingSpeed, ocppId, etc.) in JSON-LD format with RDFS definitions and semantic relationships. |
 | **profile.json** | Lists included schemas (references all 4 standalone v1 folders), operational/index hints, minimal attributes for discovery, and privacy guidance for implementers. |
 | **renderer.json** | Defines rendering templates (HTML + JSON data paths) for discovery cards, offer chips, and session status views used in UI implementations. |
-| **examples/** | Contains working examples showing each attribute type (ChargingService, ChargingOffer, ChargingSession, ChargingPointOperator) in the context of Beckn discover and transaction flows. |
+| **examples/** | Contains working examples showing each attribute type (EvChargingService, EvChargingOffer, EvChargingSession, EvChargingPointOperator) in the context of Beckn discover and transaction flows. |
 | --- | --- |
 
-**Note:** This directory contains the ChargingService-specific attributes (v1). Other related attribute bundles are available as standalone folders:
-- `../../EvChargingOffer/v1/` - ChargingOffer attributes (Offer.attributes)
-- `../../EvChargingSession/v1/` - ChargingSession attributes (Order/Fulfillment.attributes)  
-- `../../EvChargingPointOperator/v1/` - ChargingPointOperator attributes (Provider.attributes)
+**Note:** This directory contains the EvChargingService-specific attributes (v1). Other related attribute bundles are available as standalone folders:
+- `../../EvChargingOffer/v1/` - EvChargingOffer attributes (Offer.attributes)
+- `../../EvChargingSession/v1/` - EvChargingSession attributes (Order/Fulfillment.attributes)  
+- `../../EvChargingPointOperator/v1/` - EvChargingPointOperator attributes (Provider.attributes)
 
 
 ## 🏷️ Tags

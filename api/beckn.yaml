@@ -793,7 +793,7 @@ paths:
                         mode_hint:
                           type: string
                           description: Optional delivery mode for the tracking handle.
-                          enum: [link_only, deep_link, webhook, ws_handle]
+                          enum: [LINK_ONLY, DEEP_LINK, WEBHOOK, WS_HANDLE]
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -982,13 +982,13 @@ paths:
                     ttl: "PT30S"
                   message:
                     results:
-                      - catalog_id: "catalog-001"
+                      - catalogId: "catalog-001"
                         status: "ACCEPTED"
-                        item_count: 42
+                        itemCount: 42
                         warnings:
                           - code: "NON_NORMALIZED_BRAND"
                             message: "Some brand values were normalized"
-                      - catalog_id: "catalog-002"
+                      - catalogId: "catalog-002"
                         status: "REJECTED"
                         error:
                           code: "INVALID_ITEM"
@@ -1019,7 +1019,7 @@ components:
           type: object
           description: Discover payload containing search criteria
           properties:
-            text_search:
+            textSearch:
               type: string
               description: Free text search query for items
               example: "gaming laptop premium tech"
@@ -1042,10 +1042,10 @@ components:
               description: Optional array of spatial constraints (CQL2-JSON semantics).
               items:
                 $ref: '#/components/schemas/SpatialConstraint'
-            media_search:
+            mediaSearch:
               $ref: '#/components/schemas/MediaSearch'
           anyOf:
-            - required: [text_search]
+            - required: [textSearch]
             - required: [filters]
             - required: [spatial]
             - required: [filters, spatial]
@@ -1075,7 +1075,7 @@ components:
         - type: object
           description: Beckn Context extended for Discovery.
           properties:
-            schema_context:
+            schemaContext:
               type: array
               items:
                 type: string
@@ -1097,13 +1097,13 @@ components:
           fields within each item document (e.g., `$['beckn:availableAt'][*]['geo']`).
         - `op`: spatial operator (CQL2). Common ones:
 
-            • `s_within`     (A is completely inside B)
-            • `s_intersects` (A intersects B)
-            • `s_contains`   (A contains B)
-            • `s_dwithin`    (A within distance of B)
-        - `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `s_dwithin` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **any** (default),
+            • `S_WITHIN`     (A is completely inside B)
+            • `S_INTERSECTS` (A intersects B)
+            • `S_CONTAINS`   (A contains B)
+            • `S_DWITHIN`    (A within distance of B)
+        - `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),
 
-          **all**, or **none** of elements must satisfy the predicate.
+          **ALL**, or **NONE** of elements must satisfy the predicate.
 
         CRS: unless otherwise stated, all coordinates are **EPSG:4326**.
 
@@ -1112,15 +1112,15 @@ components:
         op:
           type: string
           enum:
-            - s_within
-            - s_contains
-            - s_intersects
-            - s_disjoint
-            - s_overlaps
-            - s_crosses
-            - s_touches
-            - s_equals
-            - s_dwithin
+            - S_WITHIN
+            - S_CONTAINS
+            - S_INTERSECTS
+            - S_DISJOINT
+            - S_OVERLAPS
+            - S_CROSSES
+            - S_TOUCHES
+            - S_EQUALS
+            - S_DWITHIN
           description: OGC CQL2 spatial operator.
         targets:
           description: >
@@ -1136,11 +1136,11 @@ components:
           type: number
           minimum: 0
           description: >
-            For `s_dwithin`: maximum distance in meters from the target geometry to `geometry` (e.g., “within 5000 m of this Point”). Ignored for other ops.
+            For `S_DWITHIN`: maximum distance in meters from the target geometry to `geometry` (e.g., "within 5000 m of this Point"). Ignored for other ops.
 
         quantifier:
           type: string
-          enum: [any, all, none]
+          enum: [ANY, ALL, NONE]
           default: any
           description: >
             How to evaluate when `targets` resolves to an array: - **any**: at least one element matches (default) - **all**: every element must match - **none**: no element may match
@@ -1154,9 +1154,9 @@ components:
       additionalProperties: false
       examples:
         within_circle_as_distance:
-          summary: EV sites within 5 km of a center (via s_dwithin)
+          summary: EV sites within 5 km of a center (via S_DWITHIN)
           value:
-            op: s_dwithin
+            op: S_DWITHIN
             targets: "$['beckn:availableAt'][*]['geo']"
             geometry:
               type: Point
@@ -1168,7 +1168,7 @@ components:
             Example of a DiscoverRequest spatial constraint representing a specific pickup location. The requester defines a GeoJSON Point as the pickup location, and the server finds providers whose service area **contains** this point.
 
           value:
-            op: s_contains
+            op: S_CONTAINS
             targets: "$['beckn:itemAttributes']['ride:serviceArea']['geo']" # provider polygon field
             geometry:
               type: Point
@@ -1176,7 +1176,7 @@ components:
         drop_intersects_user_box:
           summary: Provider drop zone intersects user’s rectangle
           value:
-            op: s_intersects
+            op: S_INTERSECTS
             targets: "$['beckn:itemAttributes']['ride:dropOff']['geo']"
             geometry:
               type: Polygon
@@ -1225,8 +1225,8 @@ components:
             url: "https://cdn.example.com/user/snaps/ccs2-cable.jpg"
             contentType: "image/jpeg"
         options:
-          goals: ["visual-object-detect", "text-from-image"]
-          augment_text_search: true
+          goals: ["VISUAL_OBJECT_DETECT", "TEXT_FROM_IMAGE"]
+          augmentTextSearch: true
     MediaInput:
       type: object
       description: Reference to an image, audio clip, or video used for multimodal search.
@@ -1271,19 +1271,19 @@ components:
           items:
             type: string
             enum:
-              - visual-similarity # find visually similar items
-              - visual-object-detect # detect object classes within image/video
-              - text-from-image # extract text (OCR)
-              - text-from-audio # extract text (ASR)
-              - semantic-audio-match # audio embedding similarity
-              - semantic-video-match # video scene/keyframe similarity
-        augment_text_search:
+              - VISUAL_SIMILARITY # find visually similar items
+              - VISUAL_OBJECT_DETECT # detect object classes within image/video
+              - TEXT_FROM_IMAGE # extract text (OCR)
+              - TEXT_FROM_AUDIO # extract text (ASR)
+              - SEMANTIC_AUDIO_MATCH # audio embedding similarity
+              - SEMANTIC_VIDEO_MATCH # video scene/keyframe similarity
+        augmentTextSearch:
           type: boolean
           default: true
           description: >
-            Whether to append extracted text from OCR/ASR to `text_search`.
+            Whether to append extracted text from OCR/ASR to `textSearch`.
 
-        restrict_results_to_media_proximity:
+        restrictResultsToMediaProximity:
           type: boolean
           default: false
           description: >
@@ -1323,14 +1323,14 @@ components:
         - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications/refs/heads/master/api/transaction/build/transaction.yaml#/components/schemas/Context'
         - type: object
           description: >
-            Beckn Context extended for Transaction flows. Mirrors DiscoveryContext pattern to enable validation and per-endpoint action constraints. network_id/schema_context are optional for routing and JSON-LD hints.
+            Beckn Context extended for Transaction flows. Mirrors DiscoveryContext pattern to enable validation and per-endpoint action constraints. networkId/schemaContext are optional for routing and JSON-LD hints.
 
           properties:
-            network_id:
+            networkId:
               type: array
               items: {type: string}
               description: Optional list of addressed networks (for routing/allowlisting)
-            schema_context:
+            schemaContext:
               type: array
               items:
                 type: string
@@ -1408,16 +1408,16 @@ components:
     # ---------- Result model ----------
     CatalogProcessingResult:
       type: object
-      required: [catalog_id, status]
+      required: [catalogId, status]
       properties:
-        catalog_id:
+        catalogId:
           type: string
           description: The "beckn:id" of the submitted catalog
         status:
           type: string
           enum: [ACCEPTED, REJECTED, PARTIAL]
           description: Final processing outcome for this catalog
-        item_count:
+        itemCount:
           type: integer
           minimum: 0
           description: Number of items indexed (when accepted/partial)
@@ -1453,10 +1453,10 @@ components:
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
-          schema_context:
+          schemaContext:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
         message:
-          text_search: "gaming laptop premium tech"
+          textSearch: "gaming laptop premium tech"
           filters:
             expressionType: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && @.electronic.brand.name == 'Premium Tech')]"
@@ -1472,10 +1472,10 @@ components:
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
-          schema_context:
+          schemaContext:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
         message:
-          text_search: "Looking for a premium gaming laptop under $2000 near San Francisco"
+          textSearch: "Looking for a premium gaming laptop under $2000 near San Francisco"
     discover_grocery_search:
       summary: Structured discover (grocery)
       value:
@@ -1488,10 +1488,10 @@ components:
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
-          schema_context:
+          schemaContext:
             - "https://example.org/schema/items/v1/GroceryItem/schema-context.jsonld"
         message:
-          text_search: "organic apples fresh"
+          textSearch: "organic apples fresh"
           filters:
             expressionType: "jsonpath"
             expression: "$[?(@.grocery.organicCertification ~ 'USDA Organic')]"
@@ -1507,10 +1507,10 @@ components:
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
-          schema_context:
+          schemaContext:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
         message:
-          text_search: "gaming laptop"
+          textSearch: "gaming laptop"
           filters:
             expressionType: "jsonpath"
             expression: "$[?(@.electronic.price['schema:price'] <= 2000 && @.electronic.brand.name == 'Premium Tech')]"
@@ -1526,11 +1526,11 @@ components:
           bap_id: "bap.example.com"
           bap_uri: "https://bap.example.com"
           ttl: "PT30S"
-          schema_context:
+          schemaContext:
             - "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
             - "https://example.org/schema/items/v1/GroceryItem/schema-context.jsonld"
         message:
-          text_search: "premium tech and organic food"
+          textSearch: "premium tech and organic food"
           filters:
             expressionType: "jsonpath"
             expression: "$[?(@.rating.value >= 4 && (@.electronic.brand.name == 'Premium Tech' || @.grocery.organicCertification ~ 'USDA Organic'))]"
@@ -1588,7 +1588,7 @@ components:
         ackStatus: "NACK"
         error:
           code: "INVALID_REQUEST"
-          paths: "context.schema_context"
+          paths: "context.schemaContext"
           message: "Invalid schema context provided"
     ack_server_error:
       summary: NACK — internal error

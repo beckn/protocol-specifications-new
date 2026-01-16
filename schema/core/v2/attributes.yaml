@@ -543,7 +543,7 @@ components:
         - For rectangles, use a Polygon with a single linear ring where the first
           and last positions are identical.
         - Circles are **not native** to GeoJSON. For circular searches, use
-          `SpatialConstraint` with `op: s_dwithin` and a Point + `distanceMeters`,
+          `SpatialConstraint` with `op: S_DWITHIN` and a Point + `distanceMeters`,
           or approximate the circle as a Polygon.
         - Optional `bbox` is `[west, south, east, north]` in degrees.
 
@@ -1007,7 +1007,7 @@ components:
           x-jsonld: { "@id": "beckn:Tracking" }
         tlMethod:
           type: string
-          enum: [http/get, http/post, http/redirect, ws/handle, custom]
+          enum: [HTTP_GET, HTTP_POST, HTTP_REDIRECT, WS_HANDLE, CUSTOM]
           description: Transport/method used to access the tracking handle.  # mirrors legacy tlMethod concept
         url:
           type: string
@@ -1021,7 +1021,7 @@ components:
           format: date-time
           description: ISO 8601 expiry timestamp for the tracking handle.
       example:
-        tlMethod: "http/get"
+        tlMethod: "HTTP_GET"
         url: "https://track.bpp.example?order_id=ORD-123"
         trackingStatus: "ACTIVE"
         expiresAt: "2025-10-16T18:30:00Z"

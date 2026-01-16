@@ -793,7 +793,7 @@ paths:
                         mode_hint:
                           type: string
                           description: Optional delivery mode for the tracking handle.
-                          enum: [link_only, deep_link, webhook, ws_handle]
+                          enum: [LINK_ONLY, DEEP_LINK, WEBHOOK, WS_HANDLE]
       responses:
         '200':
           $ref: '#/components/responses/Ack200'
@@ -1097,13 +1097,13 @@ components:
           fields within each item document (e.g., `$['beckn:availableAt'][*]['geo']`).
         - `op`: spatial operator (CQL2). Common ones:
 
-            • `s_within`     (A is completely inside B)
-            • `s_intersects` (A intersects B)
-            • `s_contains`   (A contains B)
-            • `s_dwithin`    (A within distance of B)
-        - `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `s_dwithin` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **any** (default),
+            • `S_WITHIN`     (A is completely inside B)
+            • `S_INTERSECTS` (A intersects B)
+            • `S_CONTAINS`   (A contains B)
+            • `S_DWITHIN`    (A within distance of B)
+        - `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),
 
-          **all**, or **none** of elements must satisfy the predicate.
+          **ALL**, or **NONE** of elements must satisfy the predicate.
 
         CRS: unless otherwise stated, all coordinates are **EPSG:4326**.
 
@@ -1112,15 +1112,15 @@ components:
         op:
           type: string
           enum:
-            - s_within
-            - s_contains
-            - s_intersects
-            - s_disjoint
-            - s_overlaps
-            - s_crosses
-            - s_touches
-            - s_equals
-            - s_dwithin
+            - S_WITHIN
+            - S_CONTAINS
+            - S_INTERSECTS
+            - S_DISJOINT
+            - S_OVERLAPS
+            - S_CROSSES
+            - S_TOUCHES
+            - S_EQUALS
+            - S_DWITHIN
           description: OGC CQL2 spatial operator.
         targets:
           description: >
@@ -1136,11 +1136,11 @@ components:
           type: number
           minimum: 0
           description: >
-            For `s_dwithin`: maximum distance in meters from the target geometry to `geometry` (e.g., “within 5000 m of this Point”). Ignored for other ops.
+            For `S_DWITHIN`: maximum distance in meters from the target geometry to `geometry` (e.g., "within 5000 m of this Point"). Ignored for other ops.
 
         quantifier:
           type: string
-          enum: [any, all, none]
+          enum: [ANY, ALL, NONE]
           default: any
           description: >
             How to evaluate when `targets` resolves to an array: - **any**: at least one element matches (default) - **all**: every element must match - **none**: no element may match
@@ -1154,9 +1154,9 @@ components:
       additionalProperties: false
       examples:
         within_circle_as_distance:
-          summary: EV sites within 5 km of a center (via s_dwithin)
+          summary: EV sites within 5 km of a center (via S_DWITHIN)
           value:
-            op: s_dwithin
+            op: S_DWITHIN
             targets: "$['beckn:availableAt'][*]['geo']"
             geometry:
               type: Point
@@ -1168,7 +1168,7 @@ components:
             Example of a DiscoverRequest spatial constraint representing a specific pickup location. The requester defines a GeoJSON Point as the pickup location, and the server finds providers whose service area **contains** this point.
 
           value:
-            op: s_contains
+            op: S_CONTAINS
             targets: "$['beckn:itemAttributes']['ride:serviceArea']['geo']" # provider polygon field
             geometry:
               type: Point
@@ -1176,7 +1176,7 @@ components:
         drop_intersects_user_box:
           summary: Provider drop zone intersects user’s rectangle
           value:
-            op: s_intersects
+            op: S_INTERSECTS
             targets: "$['beckn:itemAttributes']['ride:dropOff']['geo']"
             geometry:
               type: Polygon
@@ -1225,7 +1225,7 @@ components:
             url: "https://cdn.example.com/user/snaps/ccs2-cable.jpg"
             contentType: "image/jpeg"
         options:
-          goals: ["visual-object-detect", "text-from-image"]
+          goals: ["VISUAL_OBJECT_DETECT", "TEXT_FROM_IMAGE"]
           augmentTextSearch: true
     MediaInput:
       type: object
@@ -1271,12 +1271,12 @@ components:
           items:
             type: string
             enum:
-              - visual-similarity # find visually similar items
-              - visual-object-detect # detect object classes within image/video
-              - text-from-image # extract text (OCR)
-              - text-from-audio # extract text (ASR)
-              - semantic-audio-match # audio embedding similarity
-              - semantic-video-match # video scene/keyframe similarity
+              - VISUAL_SIMILARITY # find visually similar items
+              - VISUAL_OBJECT_DETECT # detect object classes within image/video
+              - TEXT_FROM_IMAGE # extract text (OCR)
+              - TEXT_FROM_AUDIO # extract text (ASR)
+              - SEMANTIC_AUDIO_MATCH # audio embedding similarity
+              - SEMANTIC_VIDEO_MATCH # video scene/keyframe similarity
         augmentTextSearch:
           type: boolean
           default: true

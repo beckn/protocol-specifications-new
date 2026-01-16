@@ -11,14 +11,14 @@ info:
 components:
   schemas:
     ########################################################################
-    # PROVIDER.ATTRIBUTES — ChargingPointOperator (unchanged/minimal)
+    # PROVIDER.ATTRIBUTES — EvChargingPointOperator (unchanged/minimal)
     ########################################################################
-    ChargingPointOperator:
+    EvChargingPointOperator:
       type: object
       additionalProperties: false
       x-jsonld:
         "@context": ./context.jsonld
-        "@type": ChargingPointOperator
+        "@type": EvChargingPointOperator
       properties:
         operatorName:
           type: string

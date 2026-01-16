@@ -19,9 +19,9 @@ info:
 components:
   schemas:
     ########################################################################
-    # ITEM.ATTRIBUTES — ChargingService (pruned; EV-specific only)
+    # ITEM.ATTRIBUTES — EvChargingService (pruned; EV-specific only)
     ########################################################################
-    ChargingService:
+    EvChargingService:
       type: object
       additionalProperties: false
       required:
@@ -29,7 +29,7 @@ components:
         - maxPowerKW
       x-jsonld:
         "@context": ./context.jsonld
-        "@type": ChargingService
+        "@type": EvChargingService
       properties:
 
         evseId:

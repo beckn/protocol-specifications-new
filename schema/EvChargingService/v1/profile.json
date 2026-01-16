@@ -2,25 +2,25 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.example.org/profiles/ev-charging/ev_charging/v1/profile.json",
   "title": "EV Charging — Charging Service Attribute Pack (v1)",
-  "description": "Bundle of attribute schemas for EV charging: Item (ChargingService), Offer, Session (Order/Fulfillment), and Provider. Uses ./context.jsonld for JSON-LD mappings and ./vocab.jsonld for EV terms.",
+  "description": "Bundle of attribute schemas for EV charging: Item (EvChargingService), Offer, Session (Order/Fulfillment), and Provider. Uses ./context.jsonld for JSON-LD mappings and ./vocab.jsonld for EV terms.",
   "type": "object",
   "additionalProperties": false,
   "$comment": "JSON-LD context: ./context.jsonld ; EV vocab: ./vocab.jsonld",
   "properties": {
-    "ChargingService": {
-      "$ref": "./attributes.yaml#/components/schemas/ChargingService"
+    "EvChargingService": {
+      "$ref": "./attributes.yaml#/components/schemas/EvChargingService"
     },
-    "ChargingOffer": {
-      "$ref": "../../EvChargingOffer/v1/attributes.yaml#/components/schemas/ChargingOffer"
+    "EvChargingOffer": {
+      "$ref": "../../EvChargingOffer/v1/attributes.yaml#/components/schemas/EvChargingOffer"
     },
-    "ChargingSession": {
-      "$ref": "../../EvChargingSession/v1/attributes.yaml#/components/schemas/ChargingSession"
+    "EvChargingSession": {
+      "$ref": "../../EvChargingSession/v1/attributes.yaml#/components/schemas/EvChargingSession"
     },
-    "ChargingProvider": {
-      "$ref": "../../EvChargingPointOperator/v1/attributes.yaml#/components/schemas/ChargingPointOperator"
+    "EvChargingPointOperator": {
+      "$ref": "../../EvChargingPointOperator/v1/attributes.yaml#/components/schemas/EvChargingPointOperator"
     }
   },
-  "required": ["ChargingService"],
+  "required": ["EvChargingService"],
 
   "operational_hints": {
     "indexHints": [

@@ -12,14 +12,14 @@ info:
 components:
   schemas:
     ########################################################################
-    # ORDER/FULFILLMENT.ATTRIBUTES — ChargingSession (pruned)
+    # ORDER/FULFILLMENT.ATTRIBUTES — EvChargingSession (pruned)
     ########################################################################
-    ChargingSession:
+    EvChargingSession:
       type: object
       additionalProperties: false
       x-jsonld:
         "@context": ./context.jsonld
-        "@type": ChargingSession
+        "@type": EvChargingSession
       properties:
 
         # Session state & authorization (EV-specific)

@@ -12,14 +12,14 @@ info:
 components:
   schemas:
     ########################################################################
-    # OFFER.ATTRIBUTES — ChargingOffer (pruned; EV/commercial bits)
+    # OFFER.ATTRIBUTES — EvChargingOffer (pruned; EV/commercial bits)
     ########################################################################
-    ChargingOffer:
+    EvChargingOffer:
       type: object
       additionalProperties: false
       x-jsonld:
         "@context": ./context.jsonld
-        "@type": ChargingOffer
+        "@type": EvChargingOffer
       properties:
 
         tariffModel:

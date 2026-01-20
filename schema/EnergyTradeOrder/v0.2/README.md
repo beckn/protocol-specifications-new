@@ -38,3 +38,54 @@ This schema composes with: `core/v2/core.yaml#Order.orderAttributes`
   "total_quantity": 50.0
 }
 ```
+
+---
+
+# EnergyTradeOrderInterUtility Schema (v0.2)
+
+## Introduction
+
+The **EnergyTradeOrderInterUtility** schema extends `EnergyTradeOrder` for inter-utility (inter-discom) P2P energy trading scenarios. It adds required utility/discom identifiers for both the buyer and seller sides to support trades that cross distribution company boundaries.
+
+### Use Cases
+
+- **Inter-Discom Trading**: Enables P2P trades where the buyer and seller are connected to different distribution companies (discoms)
+- **Grid Coordination**: Facilitates coordination between utilities for energy scheduling and settlement
+- **Regulatory Compliance**: Supports tracking and reporting requirements for inter-utility energy transfers
+- **Ledger Recording**: Provides the discom identifiers needed for immutable trade record creation
+
+### Key Features
+
+- Inherits all properties from `EnergyTradeOrder` (bap_id, bpp_id, total_quantity)
+- Adds required utility/discom identifiers for both buyer and seller
+- Clear distinction between utility IDs (discom) and customer IDs
+
+## Attributes
+
+| Attribute | Type | Required | Description | Use Case |
+|-----------|------|----------|-------------|----------|
+| `bap_id` | string | Yes | (Inherited) BAP identifier | The buyer platform initiating the trade order |
+| `bpp_id` | string | Yes | (Inherited) BPP identifier | The seller platform fulfilling the trade order |
+| `total_quantity` | number | No | (Inherited) Total energy quantity (kWh) | Total energy for this trade order |
+| `utilityIdBuyer` | string | Yes | Buyer-side utility/discom identifier | The distribution company the buyer is connected to. **NOT the buyer's customer ID.** |
+| `utilityIdSeller` | string | Yes | Seller-side utility/discom identifier | The distribution company the seller is connected to. **NOT the seller's customer ID.** |
+
+> **Important**: `utilityIdBuyer` and `utilityIdSeller` identify the distribution companies (discoms), not the customers. For customer identification, use `orderItemAttributes.utilityCustomerId`.
+
+## Schema Composition Point
+
+This schema composes with: `core/v2/core.yaml#Order.orderAttributes`
+
+## Example Usage
+
+```json
+{
+  "@context": "./context.jsonld",
+  "@type": "EnergyTradeOrderInterUtility",
+  "bap_id": "bap.energymarket.io",
+  "bpp_id": "bpp.solarprovider.io",
+  "total_quantity": 50.0,
+  "utilityIdBuyer": "BESCOM-KA",
+  "utilityIdSeller": "TPDDL-DL"
+}
+```

@@ -40,3 +40,38 @@ components:
           description: Total quantity of energy in kilowatt-hours (kWh) for this trade order.
           example: 50.0
           x-jsonld: { "@id": total_quantity }
+
+    ########################################################################
+    # ORDER.ATTRIBUTES — EnergyTradeOrderInterUtility (Inter-Discom P2P Trading)
+    ########################################################################
+    EnergyTradeOrderInterUtility:
+      description: >
+        Extended energy trade order attributes for inter-utility (inter-discom) P2P trading.
+        Inherits all properties from EnergyTradeOrder and adds utility/discom identifiers
+        for both buyer and seller sides. These IDs identify the distribution companies
+        (discoms) that the buyer and seller are connected to, NOT the customer IDs.
+      allOf:
+        - $ref: '#/components/schemas/EnergyTradeOrder'
+        - type: object
+          required: [utilityIdBuyer, utilityIdSeller]
+          properties:
+            utilityIdBuyer:
+              type: string
+              description: >
+                Identifier of the buyer-side utility/distribution company (discom).
+                This is the discom that the energy buyer is connected to for grid access.
+                NOT the buyer's customer ID - use orderItemAttributes.utilityCustomerId for that.
+              example: "BESCOM-KA"
+              x-jsonld: { "@id": utilityIdBuyer }
+
+            utilityIdSeller:
+              type: string
+              description: >
+                Identifier of the seller-side utility/distribution company (discom).
+                This is the discom that the energy seller/prosumer is connected to for grid injection.
+                NOT the seller's customer ID - this identifies the distribution company.
+              example: "TPDDL-DL"
+              x-jsonld: { "@id": utilityIdSeller }
+      x-jsonld:
+        "@context": ./context.jsonld
+        "@type": EnergyTradeOrderInterUtility

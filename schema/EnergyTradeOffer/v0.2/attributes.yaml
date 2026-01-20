@@ -144,7 +144,20 @@ components:
           allOf:
             - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
             - type: object
-              description: Specific time period (hour) when energy delivery occurs. Different from validityWindow which indicates when the offer can be selected. This represents the actual delivery time window.
+              description: Specific time period (start and end time) when energy delivery occurs. Different from validityWindow which indicates when the offer can be selected. This represents the actual delivery time window. All times MUST be in UTC (ISO 8601 with Z suffix).
               required: ["schema:startTime", "schema:endTime"]
+              properties:
+                "schema:startTime":
+                  type: string
+                  format: date-time
+                  pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$'
+                  description: Start time in UTC (ISO 8601 format with Z suffix).
+                  example: "2025-06-15T09:00:00Z"
+                "schema:endTime":
+                  type: string
+                  format: date-time
+                  pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$'
+                  description: End time in UTC (ISO 8601 format with Z suffix).
+                  example: "2025-06-15T10:00:00Z"
           x-jsonld: { "@id": "schema:availableAt|schema:availabilityStarts|schema:availabilityEnds" }
 

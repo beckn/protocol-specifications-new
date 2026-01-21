@@ -105,6 +105,18 @@ Below is a sample list of fields that can be masked.
 - Allow filtering by action, domain, status
 - Support sampling rates (e.g., log 10% of searches, 100% of confirms)
 
+### 2.6 Compliance with W3C Headers (Open Telemetry standards)
+
+The W3C specification defines [spec](https://www.w3.org/TR/trace-context/) standard HTTP headers and a value format to propagate context information that enables distributed tracing scenarios needed for Beckn enabled network.
+
+The Beckn schema is already aligned with W3C spec in terms of the required context information. The mapping of W3C fields to corresponding Beckn schema fields is as per below. 
+
+`traceparent` describes the position of the incoming request in its trace graph in a portable, fixed-length format. Every tracing tool MUST properly set traceparent even when it only relies on vendor-specific information in tracestate.
+1. `traceparent.version` maps to `context.version` from the Beckn schema.
+2. `traceparent.trace_id` maps to `context.transaction_id` from the Beckn schema.
+3. `traceparent.parent_id` maps to `context.message_id` from the Beckn schema.
+
+`tracestate` extends traceparent with vendor-specific data represented by a set of name/value pairs. Storing information in tracestate is optional. 
 
 ## 3. Technical Requirements
 

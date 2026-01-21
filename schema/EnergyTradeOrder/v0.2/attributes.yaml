@@ -15,7 +15,8 @@ components:
     ########################################################################
     EnergyTradeOrder:
       type: object
-      additionalProperties: false
+      # Note: additionalProperties not set to false to allow allOf composition
+      # with EnergyTradeOrderInterUtility and future extensions
       required: [bap_id, bpp_id]
       x-jsonld:
         "@context": ./context.jsonld

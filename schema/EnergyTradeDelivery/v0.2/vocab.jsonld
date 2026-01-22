@@ -12,7 +12,7 @@
       "@id": "beckn:EnergyTradeDelivery",
       "@type": "rdfs:Class",
       "rdfs:label": "Energy Trade Delivery",
-      "rdfs:comment": "Represents the physical transfer of energy between source and target, extending the core Fulfillment entity."
+      "rdfs:comment": "Represents the physical transfer of energy for an orderItem, tracking delivery status, meter readings with time windows, and energy allocation."
     },
     {
       "@id": "beckn:deliveryStatus",
@@ -20,14 +20,13 @@
       "rdfs:label": "Delivery status",
       "rdfs:comment": "Delivery status for the energy transfer (PENDING, IN_PROGRESS, COMPLETED, FAILED).",
       "rdfs:domain": "beckn:EnergyTradeDelivery",
-      "schema:rangeIncludes": "beckn:DeliveryStatus",
-      "owl:equivalentProperty": "beckn:fulfillmentStatus"
+      "schema:rangeIncludes": "beckn:DeliveryStatus"
     },
     {
       "@id": "beckn:deliveryMode",
       "@type": "rdf:Property",
       "rdfs:label": "Delivery mode",
-      "rdfs:comment": "Mode of energy delivery for this fulfillment cycle (EV_CHARGING, BATTERY_SWAP, V2G, GRID_INJECTION).",
+      "rdfs:comment": "Mode of energy delivery (EV_CHARGING, BATTERY_SWAP, V2G, GRID_INJECTION).",
       "rdfs:domain": "beckn:EnergyTradeDelivery",
       "schema:rangeIncludes": "beckn:DeliveryMode"
     },
@@ -35,7 +34,7 @@
       "@id": "beckn:deliveredQuantity",
       "@type": "rdf:Property",
       "rdfs:label": "Delivered quantity",
-      "rdfs:comment": "Quantity delivered in this fulfillment cycle in kilowatt-hours (kWh).",
+      "rdfs:comment": "Total quantity delivered so far in kilowatt-hours (kWh).",
       "rdfs:domain": "beckn:EnergyTradeDelivery",
       "schema:rangeIncludes": "schema:Number"
     },
@@ -43,49 +42,49 @@
       "@id": "beckn:meterReadings",
       "@type": "rdf:Property",
       "rdfs:label": "Meter readings",
-      "rdfs:comment": "Array of meter readings during delivery tracking energy flow from source to target.",
+      "rdfs:comment": "Array of meter readings with time windows and energy values for this orderItem.",
       "rdfs:domain": "beckn:EnergyTradeDelivery",
       "schema:rangeIncludes": "schema:ItemList"
     },
     {
-      "@id": "beckn:sourceReading",
+      "@id": "beckn:deliveredEnergy",
       "@type": "rdf:Property",
-      "rdfs:label": "Source reading",
-      "rdfs:comment": "Source meter reading at a specific timestamp (kWh).",
+      "rdfs:label": "Delivered energy",
+      "rdfs:comment": "Energy delivered TO the customer (imported from grid) in a time window (kWh). Per IEC 61968/ESPI flowDirection=1.",
       "rdfs:domain": "beckn:EnergyTradeDelivery",
       "schema:rangeIncludes": "schema:Number"
     },
     {
-      "@id": "beckn:targetReading",
+      "@id": "beckn:receivedEnergy",
       "@type": "rdf:Property",
-      "rdfs:label": "Target reading",
-      "rdfs:comment": "Target meter reading at a specific timestamp (kWh).",
+      "rdfs:label": "Received energy",
+      "rdfs:comment": "Energy received FROM the customer (exported to grid) in a time window (kWh). Per IEC 61968/ESPI flowDirection=19.",
       "rdfs:domain": "beckn:EnergyTradeDelivery",
       "schema:rangeIncludes": "schema:Number"
     },
     {
-      "@id": "beckn:energyFlow",
+      "@id": "beckn:allocatedEnergy",
       "@type": "rdf:Property",
-      "rdfs:label": "Energy flow",
-      "rdfs:comment": "Calculated energy flow between meter readings (kWh). Positive indicates delivery to target.",
+      "rdfs:label": "Allocated energy",
+      "rdfs:comment": "Net energy allocated for this trade in a time window (kWh).",
       "rdfs:domain": "beckn:EnergyTradeDelivery",
       "schema:rangeIncludes": "schema:Number"
     },
     {
-      "@id": "beckn:telemetry",
+      "@id": "beckn:curtailedQuantity",
       "@type": "rdf:Property",
-      "rdfs:label": "Telemetry",
-      "rdfs:comment": "Energy flow telemetry data during delivery.",
+      "rdfs:label": "Curtailed quantity",
+      "rdfs:comment": "Quantity curtailed from original contracted amount (kWh).",
       "rdfs:domain": "beckn:EnergyTradeDelivery",
-      "schema:rangeIncludes": "schema:ItemList"
+      "schema:rangeIncludes": "schema:Number"
     },
     {
-      "@id": "beckn:settlementCycleId",
+      "@id": "beckn:curtailmentReason",
       "@type": "rdf:Property",
-      "rdfs:label": "Settlement cycle ID",
-      "rdfs:comment": "Associated settlement cycle identifier linking delivery to settlement for billing.",
+      "rdfs:label": "Curtailment reason",
+      "rdfs:comment": "Reason for curtailment (GRID_OUTAGE, EMERGENCY, CONGESTION, MAINTENANCE, OTHER).",
       "rdfs:domain": "beckn:EnergyTradeDelivery",
-      "schema:rangeIncludes": "schema:Text"
+      "schema:rangeIncludes": "beckn:CurtailmentReason"
     },
     {
       "@id": "beckn:DeliveryStatus",
@@ -125,64 +124,86 @@
       "schema:identifier": "FAILED"
     },
     {
-      "@id": "beckn:TelemetryMetric",
+      "@id": "beckn:DeliveryMode",
       "@type": "schema:Enumeration",
-      "schema:name": "Telemetry Metric",
-      "rdfs:comment": "Enumeration of telemetry metric names used in energy trade delivery telemetry.",
+      "schema:name": "Delivery Mode",
+      "rdfs:comment": "Enumeration of delivery modes for energy transfers.",
       "schema:hasEnumerationMember": [
-        { "@id": "beckn:TelemetryMetricEnergy" },
-        { "@id": "beckn:TelemetryMetricPower" },
-        { "@id": "beckn:TelemetryMetricFlowRate" },
-        { "@id": "beckn:TelemetryMetricVoltage" },
-        { "@id": "beckn:TelemetryMetricCurrent" },
-        { "@id": "beckn:TelemetryMetricFrequency" },
-        { "@id": "beckn:TelemetryMetricPowerQuality" }
+        { "@id": "beckn:DeliveryModeEvCharging" },
+        { "@id": "beckn:DeliveryModeBatterySwap" },
+        { "@id": "beckn:DeliveryModeV2G" },
+        { "@id": "beckn:DeliveryModeGridInjection" }
       ]
     },
     {
-      "@id": "beckn:TelemetryMetricEnergy",
-      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
-      "schema:name": "ENERGY",
-      "schema:identifier": "ENERGY"
+      "@id": "beckn:DeliveryModeEvCharging",
+      "@type": ["beckn:DeliveryMode", "schema:Enumeration"],
+      "schema:name": "EV_CHARGING",
+      "schema:identifier": "EV_CHARGING",
+      "schema:alternateName": "EV-CHARGING"
     },
     {
-      "@id": "beckn:TelemetryMetricPower",
-      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
-      "schema:name": "POWER",
-      "schema:identifier": "POWER"
+      "@id": "beckn:DeliveryModeBatterySwap",
+      "@type": ["beckn:DeliveryMode", "schema:Enumeration"],
+      "schema:name": "BATTERY_SWAP",
+      "schema:identifier": "BATTERY_SWAP",
+      "schema:alternateName": "BATTERY-SWAP"
     },
     {
-      "@id": "beckn:TelemetryMetricFlowRate",
-      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
-      "schema:name": "FLOW_RATE",
-      "schema:identifier": "FLOW_RATE",
-      "schema:alternateName": "FLOW-RATE"
+      "@id": "beckn:DeliveryModeV2G",
+      "@type": ["beckn:DeliveryMode", "schema:Enumeration"],
+      "schema:name": "V2G",
+      "schema:identifier": "V2G"
     },
     {
-      "@id": "beckn:TelemetryMetricVoltage",
-      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
-      "schema:name": "VOLTAGE",
-      "schema:identifier": "VOLTAGE"
+      "@id": "beckn:DeliveryModeGridInjection",
+      "@type": ["beckn:DeliveryMode", "schema:Enumeration"],
+      "schema:name": "GRID_INJECTION",
+      "schema:identifier": "GRID_INJECTION",
+      "schema:alternateName": "GRID-INJECTION"
     },
     {
-      "@id": "beckn:TelemetryMetricCurrent",
-      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
-      "schema:name": "CURRENT",
-      "schema:identifier": "CURRENT"
+      "@id": "beckn:CurtailmentReason",
+      "@type": "schema:Enumeration",
+      "schema:name": "Curtailment Reason",
+      "rdfs:comment": "Enumeration of reasons for energy trade curtailment.",
+      "schema:hasEnumerationMember": [
+        { "@id": "beckn:CurtailmentReasonGridOutage" },
+        { "@id": "beckn:CurtailmentReasonEmergency" },
+        { "@id": "beckn:CurtailmentReasonCongestion" },
+        { "@id": "beckn:CurtailmentReasonMaintenance" },
+        { "@id": "beckn:CurtailmentReasonOther" }
+      ]
     },
     {
-      "@id": "beckn:TelemetryMetricFrequency",
-      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
-      "schema:name": "FREQUENCY",
-      "schema:identifier": "FREQUENCY"
+      "@id": "beckn:CurtailmentReasonGridOutage",
+      "@type": ["beckn:CurtailmentReason", "schema:Enumeration"],
+      "schema:name": "GRID_OUTAGE",
+      "schema:identifier": "GRID_OUTAGE"
     },
     {
-      "@id": "beckn:TelemetryMetricPowerQuality",
-      "@type": ["beckn:TelemetryMetric", "schema:Enumeration"],
-      "schema:name": "POWER_QUALITY",
-      "schema:identifier": "POWER_QUALITY",
-      "schema:alternateName": "POWER-QUALITY"
+      "@id": "beckn:CurtailmentReasonEmergency",
+      "@type": ["beckn:CurtailmentReason", "schema:Enumeration"],
+      "schema:name": "EMERGENCY",
+      "schema:identifier": "EMERGENCY"
+    },
+    {
+      "@id": "beckn:CurtailmentReasonCongestion",
+      "@type": ["beckn:CurtailmentReason", "schema:Enumeration"],
+      "schema:name": "CONGESTION",
+      "schema:identifier": "CONGESTION"
+    },
+    {
+      "@id": "beckn:CurtailmentReasonMaintenance",
+      "@type": ["beckn:CurtailmentReason", "schema:Enumeration"],
+      "schema:name": "MAINTENANCE",
+      "schema:identifier": "MAINTENANCE"
+    },
+    {
+      "@id": "beckn:CurtailmentReasonOther",
+      "@type": ["beckn:CurtailmentReason", "schema:Enumeration"],
+      "schema:name": "OTHER",
+      "schema:identifier": "OTHER"
     }
   ]
 }
-

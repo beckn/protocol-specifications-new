@@ -6,7 +6,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "beckn": "./vocab.jsonld#",
-    
+
     "EnergyTradeDelivery": "beckn:EnergyTradeDelivery",
 
     "name": "schema:name",
@@ -14,8 +14,6 @@
     "startTime": "schema:startTime",
     "endTime": "schema:endTime",
     "lastUpdated": "schema:dateModified",
-    "orderStatus": "schema:orderStatus",
-    "fulfillmentStatus": "beckn:fulfillmentStatus",
 
     "deliveryStatus": {
       "@id": "beckn:deliveryStatus",
@@ -26,25 +24,17 @@
       "@type": "@id"
     },
     "deliveredQuantity": "beckn:deliveredQuantity",
-    "deliveryStartTime": "schema:startTime",
-    "deliveryEndTime": "schema:endTime",
     "meterReadings": "beckn:meterReadings",
-    "sourceReading": "beckn:sourceReading",
-    "targetReading": "beckn:targetReading",
-    "energyFlow": "beckn:energyFlow",
-    "telemetry": "beckn:telemetry",
-    "settlementCycleId": "beckn:settlementCycleId",
-    "eventTime": "schema:startTime",
-    "metrics": "beckn:metrics",
-    "value": "schema:value",
-    "unitCode": "schema:unitCode",
+    "deliveredEnergy": "beckn:deliveredEnergy",
+    "receivedEnergy": "beckn:receivedEnergy",
+    "allocatedEnergy": "beckn:allocatedEnergy",
+    "unit": "schema:unitText",
 
     "curtailedQuantity": "beckn:curtailedQuantity",
     "curtailmentReason": {
       "@id": "beckn:curtailmentReason",
       "@type": "@id"
     },
-    "curtailmentTime": "beckn:curtailmentTime",
 
     "PENDING": "beckn:DeliveryStatusPending",
     "IN_PROGRESS": "beckn:DeliveryStatusInProgress",
@@ -60,21 +50,12 @@
     "GRID_INJECTION": "beckn:DeliveryModeGridInjection",
     "GRID-INJECTION": "beckn:DeliveryModeGridInjection",
 
-    "ENERGY": "beckn:TelemetryMetricEnergy",
-    "POWER": "beckn:TelemetryMetricPower",
-    "FLOW_RATE": "beckn:TelemetryMetricFlowRate",
-    "FLOW-RATE": "beckn:TelemetryMetricFlowRate",
-    "VOLTAGE": "beckn:TelemetryMetricVoltage",
-    "CURRENT": "beckn:TelemetryMetricCurrent",
-    "FREQUENCY": "beckn:TelemetryMetricFrequency",
-    "POWER_QUALITY": "beckn:TelemetryMetricPowerQuality",
-    "POWER-QUALITY": "beckn:TelemetryMetricPowerQuality",
-
     "GRID_OUTAGE": "beckn:CurtailmentReasonGridOutage",
+    "EMERGENCY": "beckn:CurtailmentReasonEmergency",
     "CONGESTION": "beckn:CurtailmentReasonCongestion",
-    "MAINTENANCE": "beckn:CurtailmentReasonMaintenance"
+    "MAINTENANCE": "beckn:CurtailmentReasonMaintenance",
+    "OTHER": "beckn:CurtailmentReasonOther"
   },
 
   "@graph": []
 }
-

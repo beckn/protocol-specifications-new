@@ -25,8 +25,8 @@
     },
     "deliveredQuantity": "beckn:deliveredQuantity",
     "meterReadings": "beckn:meterReadings",
-    "deliveredEnergy": "beckn:deliveredEnergy",
-    "receivedEnergy": "beckn:receivedEnergy",
+    "consumedEnergy": "beckn:consumedEnergy",
+    "producedEnergy": "beckn:producedEnergy",
     "allocatedEnergy": "beckn:allocatedEnergy",
     "unit": "schema:unitText",
 

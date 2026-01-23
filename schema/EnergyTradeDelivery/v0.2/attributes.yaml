@@ -7,8 +7,8 @@ info:
     Attribute schemas for energy trade deliveries (orderItemAttributes.fulfillmentAttributes).
     These attributes track physical transfer of energy between source and target, including
     delivery status, meter readings with time windows, and energy allocation data.
-    Per IEC 61968/NAESB ESPI standards: deliveredEnergy = energy TO customer (imported),
-    receivedEnergy = energy FROM customer (exported to grid).
+    consumedEnergy = energy TO customer (imported),
+    producedEnergy = energy FROM customer (exported to grid).
 
 components:
   schemas:
@@ -72,20 +72,20 @@ components:
                     pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$'
                     description: End time in UTC (ISO 8601 with Z suffix).
                 required: ["schema:startTime", "schema:endTime"]
-              deliveredEnergy:
+              consumedEnergy:
                 type: number
                 minimum: 0
                 description: >
-                  Energy delivered TO the customer (imported from grid) in this time window (kWh).
+                  Energy consumed by the customer (imported from grid) in this time window (kWh).
                   Per IEC 61968/ESPI flowDirection=1.
-                x-jsonld: { "@id": deliveredEnergy }
-              receivedEnergy:
+                x-jsonld: { "@id": consumedEnergy }
+              producedEnergy:
                 type: number
                 minimum: 0
                 description: >
-                  Energy received FROM the customer (exported to grid) in this time window (kWh).
+                  Energy produced by the customer (exported to grid) in this time window (kWh).
                   Per IEC 61968/ESPI flowDirection=19.
-                x-jsonld: { "@id": receivedEnergy }
+                x-jsonld: { "@id": producedEnergy }
               allocatedEnergy:
                 type: number
                 minimum: 0

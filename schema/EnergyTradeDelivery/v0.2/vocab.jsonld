@@ -47,18 +47,18 @@
       "schema:rangeIncludes": "schema:ItemList"
     },
     {
-      "@id": "beckn:deliveredEnergy",
+      "@id": "beckn:consumedEnergy",
       "@type": "rdf:Property",
-      "rdfs:label": "Delivered energy",
-      "rdfs:comment": "Energy delivered TO the customer (imported from grid) in a time window (kWh). Per IEC 61968/ESPI flowDirection=1.",
+      "rdfs:label": "Consumed energy",
+      "rdfs:comment": "Energy consumed by the customer (imported from grid) in a time window (kWh). Per IEC 61968/ESPI flowDirection=1.",
       "rdfs:domain": "beckn:EnergyTradeDelivery",
       "schema:rangeIncludes": "schema:Number"
     },
     {
-      "@id": "beckn:receivedEnergy",
+      "@id": "beckn:producedEnergy",
       "@type": "rdf:Property",
-      "rdfs:label": "Received energy",
-      "rdfs:comment": "Energy received FROM the customer (exported to grid) in a time window (kWh). Per IEC 61968/ESPI flowDirection=19.",
+      "rdfs:label": "Produced energy",
+      "rdfs:comment": "Energy produced by the customer (exported to grid) in a time window (kWh). Per IEC 61968/ESPI flowDirection=19.",
       "rdfs:domain": "beckn:EnergyTradeDelivery",
       "schema:rangeIncludes": "schema:Number"
     },

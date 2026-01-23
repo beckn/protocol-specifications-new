@@ -15,10 +15,10 @@
       "rdfs:comment": "Represents an order item in P2P energy trading, containing customer information and optional fulfillment tracking data."
     },
     {
-      "@id": "beckn:customerAttributes",
+      "@id": "beckn:providerAttributes",
       "@type": "rdf:Property",
-      "rdfs:label": "Customer Attributes",
-      "rdfs:comment": "Customer information for this order item, including meter ID and utility account. Uses EnergyCustomer schema.",
+      "rdfs:label": "Provider Attributes",
+      "rdfs:comment": "Provider/customer information for this order item, including meter ID and utility account. Uses EnergyCustomer schema.",
       "rdfs:domain": "beckn:EnergyOrderItem",
       "schema:rangeIncludes": "beckn:EnergyCustomer"
     },

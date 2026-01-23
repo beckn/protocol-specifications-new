@@ -21,10 +21,10 @@ components:
         "@type": EnergyOrderItem
       properties:
 
-        customerAttributes:
+        providerAttributes:
           type: object
           description: >
-            Customer information for this order item, including meter ID and utility account.
+            Provider/customer information for this order item, including meter ID and utility account.
           additionalProperties: true
           properties:
             "@context":
@@ -34,8 +34,8 @@ components:
             "@type":
               type: string
               enum: ["EnergyCustomer"]
-              description: Type identifier for customer attributes
-          x-jsonld: { "@id": customerAttributes }
+              description: Type identifier for provider attributes
+          x-jsonld: { "@id": providerAttributes }
 
         fulfillmentAttributes:
           type: object
@@ -56,4 +56,4 @@ components:
           x-jsonld: { "@id": fulfillmentAttributes }
 
       required:
-        - customerAttributes
+        - providerAttributes

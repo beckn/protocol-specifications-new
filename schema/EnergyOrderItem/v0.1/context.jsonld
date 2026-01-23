@@ -8,7 +8,7 @@
     "beckn": "./vocab.jsonld#",
 
     "EnergyOrderItem": "beckn:EnergyOrderItem",
-    "customerAttributes": "beckn:customerAttributes",
+    "providerAttributes": "beckn:providerAttributes",
     "fulfillmentAttributes": "beckn:fulfillmentAttributes"
   },
 

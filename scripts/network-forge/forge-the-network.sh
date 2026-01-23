@@ -9,7 +9,7 @@ set -euo pipefail
 # -----------------------------
 # Config (edit these as needed)
 # -----------------------------
-NETWORK_SLUG="${1:-ubc}"          # e.g., ubc, uei, ondc
+NETWORK_SLUG="${1:-acmenet}"          # e.g., acmenet, uei, ondc
 WORKDIR="${2:-$PWD/${NETWORK_SLUG}-org}"   # local workspace root
 
 # Upstream repos (placeholders; replace with real URLs)

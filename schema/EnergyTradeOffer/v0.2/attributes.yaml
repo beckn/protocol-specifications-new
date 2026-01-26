@@ -69,14 +69,20 @@ components:
         minimumQuantity:
           type: number
           minimum: 0
-          description: Minimum tradable energy quantity in kilowatt-hours (kWh).
+          description: >
+            Minimum power export capacity in kilowatt-hours (kWh). Represents the lowest
+            power export threshold the prosumer can deliver. Orders must request at least
+            this quantity.
           example: 1.0
           x-jsonld: { "@id": minimumQuantity }
 
         maximumQuantity:
           type: number
           minimum: 0
-          description: Maximum tradable energy quantity in kilowatt-hours (kWh).
+          description: >
+            Maximum power export capacity (sanctioned load) in kilowatt-hours (kWh).
+            Represents the prosumer's maximum sanctioned export capacity as per their
+            utility agreement. This is the upper bound for any order quantity.
           example: 100.0
           x-jsonld: { "@id": maximumQuantity }
 
@@ -84,7 +90,11 @@ components:
           allOf:
             - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/TimePeriod'
             - type: object
-              description: Time window when the offer is valid.
+              description: >
+                Time window during which this offer can be selected/accepted. Typically set
+                to expire before delivery starts (e.g., 4 hours before delivery start time)
+                to allow for scheduling and grid coordination. After this window closes,
+                the offer is no longer available for selection.
               required: ["schema:startTime", "schema:endTime"]
           x-jsonld: { "@id": validityWindow }
 
@@ -137,7 +147,13 @@ components:
           allOf:
             - $ref: 'https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/attributes.yaml#/components/schemas/Quantity'
             - type: object
-              description: Maximum quantity offered/available in this specific time window (hour). User's requested quantity is specified in OrderItem.beckn:quantity and must be ≤ this value. This is time-window specific, distinct from maximumQuantity which is the overall offer limit.
+              description: >
+                Actual maximum energy quantity being offered in this specific time window
+                (e.g., hourly slot). This represents the available inventory for this
+                particular delivery window, which may be less than the prosumer's overall
+                maximumQuantity capacity. Buyers can purchase any portion up to this amount.
+                User's requested quantity is specified in OrderItem.beckn:quantity and must
+                be ≤ this value.
           x-jsonld: { "@id": "schema:QuantitativeValue" }
 
         beckn:timeWindow:

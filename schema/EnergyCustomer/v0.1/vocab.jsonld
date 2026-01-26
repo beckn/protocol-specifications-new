@@ -37,6 +37,14 @@
       "rdfs:comment": "Customer's account identifier with the utility company for billing, service identification, and utility system integration.",
       "rdfs:domain": "beckn:EnergyCustomer",
       "rdfs:range": "xsd:string"
+    },
+    {
+      "@id": "beckn:utilityId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Utility ID",
+      "rdfs:comment": "Utility/DISCOM identifier for the customer's service territory (e.g., TPDDL-DL, BESCOM-KA). Used in inter-utility P2P trading to identify which utility serves this customer.",
+      "rdfs:domain": "beckn:EnergyCustomer",
+      "rdfs:range": "xsd:string"
     }
   ]
 }

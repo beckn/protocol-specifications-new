@@ -10,7 +10,8 @@
     "EnergyCustomer": "beckn:EnergyCustomer",
     "meterId": "beckn:meterId",
     "sanctionedLoad": "beckn:sanctionedLoad",
-    "utilityCustomerId": "beckn:utilityCustomerId"
+    "utilityCustomerId": "beckn:utilityCustomerId",
+    "utilityId": "beckn:utilityId"
   },
   "@graph": []
 }

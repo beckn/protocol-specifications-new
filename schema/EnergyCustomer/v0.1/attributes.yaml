@@ -53,3 +53,13 @@ components:
             Used for billing, service identification, and utility system integration.
           example: "UTIL-CUST-123456"
           x-jsonld: { "@id": utilityCustomerId }
+
+        utilityId:
+          type: string
+          description: >
+            Utility/DISCOM identifier for the customer's service territory (e.g., "TPDDL-DL", "BESCOM-KA").
+            Used in inter-utility/inter-DISCOM P2P trading to identify which utility serves this customer.
+            Should match the corresponding utilityIdSeller or utilityIdBuyer in orderAttributes for
+            cross-utility transactions.
+          example: "TPDDL-DL"
+          x-jsonld: { "@id": utilityId }

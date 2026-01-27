@@ -1,5 +1,5 @@
 # **Attribution Playbook for NFOs \[DRAFT\]**
-### _Publishing network architecture, IG overlays, schema extensions, and examples **without** forking/copy-pasting — while giving implementers **one front door**_
+## _Publishing network architecture, IG overlays, schema extensions, and examples **without** forking/copy-pasting — while giving implementers **one front door**_
 
 # **About this Document**
 
@@ -30,16 +30,16 @@ Ravi Prakash (Beckn Labs)
 
 ## Feedback
 
-### Issues
+## Issues
 No Issues raised.
 
-### Discussions
+## Discussions
 No Discussions open.
 
-### Pull Requests
+## Pull Requests
 No open PRs on this topic.
 
-### GitHub Labels
+## GitHub Labels
 The following labels MUST be used whenever raising Issues, starting discussions, and submitting PRs regarding this document
 - `governance`
 - `attribution`
@@ -132,7 +132,7 @@ That separation is the whole trick: **single home ≠ single repo**.
 
 # 1. Org-level principles (non-negotiable seatbelts)
 
-### 1.1 Core \+ Domain are dependencies, not editable content
+## 1.1 Core \+ Domain are dependencies, not editable content
 
 **MUST**
 
@@ -143,7 +143,7 @@ That separation is the whole trick: **single home ≠ single repo**.
 
 * Copying creates drift; drift becomes technical debt with legal garnish.
 
-### 1.2 Network IGs are overlays, not duplicates
+## 1.2 Network IGs are overlays, not duplicates
 
 **MUST**
 
@@ -154,14 +154,14 @@ That separation is the whole trick: **single home ≠ single repo**.
   * “What’s added?” (extensions \+ regulatory fields)  
   * “What’s forbidden/optional here?”
 
-### 1.3 Extensions are machine-readable and semantically bindable
+## 1.3 Extensions are machine-readable and semantically bindable
 
 **MUST**
 
 * Publish JSON Schema for your packs **and** JSON-LD contexts (`@context`, `@type`).  
 * Version these packs and keep their URLs stable.
 
-### 1.4 Examples are patches \+ generated outputs
+## 1.4 Examples are patches \+ generated outputs
 
 **MUST**
 
@@ -171,17 +171,17 @@ That separation is the whole trick: **single home ≠ single repo**.
 
 # 2. The recommended GitHub Organization blueprint
 
-### 2.1 Repo taxonomy (what exists, and why)
+## 2.1 Repo taxonomy (what exists, and why)
 
 A clean org typically has **7–10 repos**. Each repo has one job.
 
-#### A) “Front door” and navigation
+### A) “Front door” and navigation
 
 1. **`<network>-docs`** **Purpose:** The docs portal source (mkdocs/docusaurus/etc.), published via GitHub Pages or another host. **Contains:** Your authored docs \+ integration hooks to render pinned upstream content.  
      
 2. **`.github`** (org-wide) **Purpose:** Community \+ governance wiring (issue templates, PR templates, CODEOWNERS defaults, security policy, contributing). **Contains:** The norms and guardrails, applied everywhere.
 
-#### B) Network specification layer
+### B) Network specification layer
 
 3. **`<network>-profile`** **Purpose:** The network’s “profile” / manifest of compatibility \+ conformance rules. **Contains:**  
 * `DEPENDENCIES.yaml` (pinned upstream refs)  
@@ -197,7 +197,7 @@ A clean org typically has **7–10 repos**. Each repo has one job.
 * `generated/` (CI output, optionally released)  
 * references to upstream example anchors (pinned)
 
-#### C) Tooling \+ automation
+### C) Tooling \+ automation
 
 6. **`<network>-tooling`** **Purpose:** The scripts that make “no copy-paste” feasible. **Contains:**  
 * patch applicator / example generator  
@@ -206,7 +206,7 @@ A clean org typically has **7–10 repos**. Each repo has one job.
 * doc build integration tools  
 7. **`<network>-ci`** (optional if you prefer to centralize) **Purpose:** Reusable GitHub Actions workflows (called by other repos). **Contains:** organization-standard CI workflows, release pipelines.
 
-#### D) Policies, legal, and operations
+### D) Policies, legal, and operations
 
 8. **`<network>-policy`** (optional, but recommended for regulated networks) **Purpose:** Network policy, regional policy, security posture, registry rules, onboarding rules. **Contains:** human-readable policy docs \+ machine-readable policy artifacts if any.  
      
@@ -234,7 +234,7 @@ Also: add short repo descriptions that begin with the verb:
 
 # 4. What goes where (repo-level information architecture)
 
-### 4.1 `<network>-profile` (the “contract” repo)
+## 4.1 `<network>-profile` (the “contract” repo)
 
 This repo is the canonical answer to: **“What does this network support, exactly?”**
 
@@ -269,7 +269,7 @@ This repo is the canonical answer to: **“What does this network support, exact
   * `CHANGELOG.md`  
   * compatibility matrix
 
-### 4.2 `<network>-schemas` (attribute packs \+ contexts)
+## 4.2 `<network>-schemas` (attribute packs \+ contexts)
 
 **Recommended structure**
 
@@ -307,7 +307,7 @@ This repo is the canonical answer to: **“What does this network support, exact
 
 ---
 
-### 4.3 `<network>-examples` (patch-first examples)
+## 4.3 `<network>-examples` (patch-first examples)
 
 **Recommended structure**
 
@@ -341,7 +341,7 @@ This repo is the canonical answer to: **“What does this network support, exact
     
   * `upstream-refs/*` \+ `patches/*` \+ tooling version
 
-### 4.4 `<network>-docs` (portal)
+## 4.4 `<network>-docs` (portal)
 
 The portal makes the org feel like a single cohesive “spec.”
 
@@ -385,7 +385,7 @@ The portal makes the org feel like a single cohesive “spec.”
 
 Both are fine if attribution is explicit and version pinning is strict.
 
-### 4.5 `.github` (org guardrails)
+## 4.5 `.github` (org guardrails)
 
 **Recommended contents**
 
@@ -412,7 +412,7 @@ Both are fine if attribution is explicit and version pinning is strict.
 
 # 5. “Single home” without copying: how implementers don’t bounce around
 
-### Option A (recommended): docs portal composes upstream \+ overlay
+## Option A (recommended): docs portal composes upstream \+ overlay
 
 * Portal navigation shows:  
     
@@ -426,7 +426,7 @@ Both are fine if attribution is explicit and version pinning is strict.
   * pinned ref  
   * license/notice pointer
 
-### Option B: portal deep-links into upstream at pinned refs
+## Option B: portal deep-links into upstream at pinned refs
 
 Lower effort, less “single home” feeling, but still compliant:
 
@@ -435,7 +435,7 @@ Lower effort, less “single home” feeling, but still compliant:
 
 # 6. Release mechanics across multiple repos (so versions don’t drift)
 
-### 6.1 Release train: “profile” is the master version
+## 6.1 Release train: “profile” is the master version
 
 Treat `<network>-profile` as the **release coordinator**.
 
@@ -446,13 +446,13 @@ A network release `v1.4.0` should correspond to:
 * `<network>-examples` tag: `v1.4.0`  
 * `<network>-docs` tag: `v1.4.0` (optional but nice)
 
-### 6.2 Compatibility is declared once
+## 6.2 Compatibility is declared once
 
 `DEPENDENCIES.yaml` in `<network>-profile` is canonical. Other repos may reference it or import it in CI.
 
 # 7. Attribution: make “forgetting” structurally hard
 
-### 7.1 Org-wide `NOTICE.md` expectations
+## 7.1 Org-wide `NOTICE.md` expectations
 
 Each repo MUST include a `NOTICE.md` that lists:
 
@@ -466,7 +466,7 @@ Each repo MUST include a `NOTICE.md` that lists:
     
   * “This repository contains network-specific overlays and extensions. Upstream specifications remain authoritative.”
 
-### 7.2 File-level attribution for overlays
+## 7.2 File-level attribution for overlays
 
 At the top of every overlay IG page:
 

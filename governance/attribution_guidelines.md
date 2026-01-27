@@ -30,16 +30,16 @@ Ravi Prakash (Beckn Labs)
 
 ## Feedback
 
-## Issues
+### Issues
 No Issues raised.
 
-## Discussions
+### Discussions
 No Discussions open.
 
-## Pull Requests
+### Pull Requests
 No open PRs on this topic.
 
-## GitHub Labels
+### GitHub Labels
 The following labels MUST be used whenever raising Issues, starting discussions, and submitting PRs regarding this document
 - `governance`
 - `attribution`

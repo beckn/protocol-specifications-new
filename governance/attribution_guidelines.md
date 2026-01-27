@@ -1,16 +1,111 @@
-# Attribution Guidelines for NFOs \[DRAFT\]
+# **Attribution Playbook for NFOs \[DRAFT\]**
+### _Publishing network architecture, IG overlays, schema extensions, and examples **without** forking/copy-pasting — while giving implementers **one front door**_
 
-## Publishing network architecture, IG overlays, schema extensions, and examples **without** forking/copy-pasting — while giving implementers **one front door**
+# **About this Document**
 
+## Latest published version
+
+TODOs
+
+- [ ] Add the link to the latest version published on the main branch if available. 
+
+## Latest editor's draft
+
+GitHub : 
+
+Note: Contributors must request commenter access to access this draft. Before requesting, please read the [Community Guidelines for Contributing](#) carefully
+
+## Implementation report
+
+- [ ] TODO: To provide link report of how this playbook has been implemented across multiple networks
+
+## Editors
+
+Ravi Prakash (Beckn Labs)  
+Pramod Varma (Networks for Humanity)
+
+## Authors
+
+Ravi Prakash (Beckn Labs)
+
+## Feedback
+
+### Issues
+No Issues raised.
+
+### Discussions
+No Discussions open.
+
+### Pull Requests
+No open PRs on this topic.
+
+### GitHub Labels
+The following labels MUST be used whenever raising Issues, starting discussions, and submitting PRs regarding this document
+- `governance`
+- `attribution`
+- `core-v2`
+
+## Errata
+
+No Errata exists as of now
+
+# **Acknowledgements**
+
+The author would like to thank the following persons for their valuable contributions to this document.
+
+1. Pramod Varma
+2. Sujith Nair
+3. Tanmoy Adhikary
+
+## Notice
+
+This document is **within scope of the Governance Model of the Beckn Protocol** (“Governance Model”).
+
+The Governance Model is the **authoritative source** for Beckn’s governing intent—its **philosophies**, **design principles**, and **policies**. Documents like this one are **derived instruments** that translate that intent into practical guidance (analogous to how *regulations* are derived from *policies*).
+
+Accordingly:
+
+- This document **does not redefine** Beckn’s core philosophies, design principles, or policies.
+- Where interpretation is needed, the **Governance Model prevails**.
+- Any conflicts, ambiguity, or gaps should be treated as **input for improving the Governance Model**, not as permission to fork governance intent.
+
+**Lineage (recommended):**
+- **Governing Source:** Governance Model of the Beckn Protocol  
+- **Derived From:** Applicable policies / principles defined therein  
+- **This Document:** <document name> — operational guidance / process / requirements derived from the above
+
+
+# Context
+
+Beckn Protocol v2 is built as a **three-layer ecosystem** that’s meant to scale without everyone reinventing the universe every time a new network launches:
+
+1. **Core layer (Beckn Protocol v2):** domain-agnostic verbs and a standard vocabulary for the order lifecycle (Discovery → Ordering → Fulfillment → Post-fulfillment), with schemas that are broadly semantically aligned (e.g., via JSON-LD).
+2. **Domain layer (Layer-2 specs):** domain communities (often with NFH and contributors) publish **domain-specific bindings**—schemas, vocab, and Implementation Guides (IGs)—that adapt the core to real industries like energy, mobility, etc.
+3. **Network layer (Layer-3 specs):** individual networks (NFO-led) introduce **region- and network-specific requirements**—local policy constraints, regulatory identifiers, payment rails, operational rules, and network governance—while still aiming to remain compatible with core + domain foundations.
+
+This layering is deliberate: **core stays stable**, domains evolve as industry practice matures, and networks move fastest because they’re closest to launch timelines and compliance realities.
+
+That last point creates a very human, very predictable dynamic.
+
+Network-level needs often show up **before** they can be fully normalized into the domain layer (and certainly before they can be absorbed into the core layer). Meanwhile, implementers building for a specific network typically want **one place to read**—a single “home” where the network’s rules and examples live—rather than stitching together guidance across multiple repositories and versions.
+
+Under these conditions, it’s a natural operational outcome that some networks end up **republishing** domain IG material (and sometimes example payloads) inside network repositories, then extending it with network-specific details. This is usually not about intent or attribution avoidance; it’s commonly a side-effect of:
+
+* **Asynchronous evolution** between core, domain, and network layers
+* **Go-to-market pressure** (launch dates, ecosystem commitments, regulatory timelines)
+* **DX pragmatism** (reducing “repo-hopping” for implementers)
+* **Unclear default patterns** for “overlaying” network rules on top of pinned upstream specs
+
+Over time, though, that republishing pattern can introduce ecosystem friction: **drift** between upstream and network material, blurred boundaries between what is core vs domain vs network, and a heavier maintenance burden for everyone involved—especially when upstream continues evolving.
+
+This guideline exists to offer a structured way for networks to publish **network-specific architecture docs, IG overlays, schema extensions, and examples** while treating **Core + Domain** as pinned upstream dependencies and keeping implementers anchored to a single, coherent entry point. 
 This playbook describes how an NFO should structure its **GitHub Organization** (not a single repo) so that:
 
 * **Core \+ Domain specs remain upstream dependencies** (pinned, attributable, not rebranded).  
 * Network-specific content is authored as **overlays/addenda** \+ **attribute packs**.  
 * Implementers experience a **single “home”** (a docs portal \+ predictable repo layout), not scavenger hunts across random folders.
 
----
-
-## 0\) The North Star: one “front door,” many rooms
+# 0. The North Star: one “front door,” many rooms
 
 **Implementer experience should look like this:**
 
@@ -34,9 +129,8 @@ This playbook describes how an NFO should structure its **GitHub Organization** 
 
 That separation is the whole trick: **single home ≠ single repo**.
 
----
 
-## 1\) Org-level principles (non-negotiable seatbelts)
+# 1. Org-level principles (non-negotiable seatbelts)
 
 ### 1.1 Core \+ Domain are dependencies, not editable content
 
@@ -74,9 +168,8 @@ That separation is the whole trick: **single home ≠ single repo**.
 * Store deltas (JSON Patch / overlays), generate full payloads in CI.  
 * Avoid distributing rebranded upstream examples as hand-edited copies.
 
----
 
-## 2\) The recommended GitHub Organization blueprint
+# 2. The recommended GitHub Organization blueprint
 
 ### 2.1 Repo taxonomy (what exists, and why)
 
@@ -121,9 +214,7 @@ A clean org typically has **7–10 repos**. Each repo has one job.
 
 You can compress or expand these depending on maturity. The key is: **don’t mix everything into one repo that becomes a landfill.**
 
----
-
-## 3\) Naming conventions (so humans stop getting lost)
+# 3. Naming conventions (so humans stop getting lost)
 
 Use predictable names so implementers instantly understand the landscape:
 
@@ -141,9 +232,7 @@ Also: add short repo descriptions that begin with the verb:
 * “**Defines** network attribute packs…”  
 * “**Publishes** patch-based examples…”
 
----
-
-## 4\) What goes where (repo-level information architecture)
+# 4. What goes where (repo-level information architecture)
 
 ### 4.1 `<network>-profile` (the “contract” repo)
 
@@ -179,8 +268,6 @@ This repo is the canonical answer to: **“What does this network support, exact
   * `DEPENDENCIES.yaml`  
   * `CHANGELOG.md`  
   * compatibility matrix
-
----
 
 ### 4.2 `<network>-schemas` (attribute packs \+ contexts)
 
@@ -254,8 +341,6 @@ This repo is the canonical answer to: **“What does this network support, exact
     
   * `upstream-refs/*` \+ `patches/*` \+ tooling version
 
----
-
 ### 4.4 `<network>-docs` (portal)
 
 The portal makes the org feel like a single cohesive “spec.”
@@ -300,8 +385,6 @@ The portal makes the org feel like a single cohesive “spec.”
 
 Both are fine if attribution is explicit and version pinning is strict.
 
----
-
 ### 4.5 `.github` (org guardrails)
 
 **Recommended contents**
@@ -327,9 +410,7 @@ Both are fine if attribution is explicit and version pinning is strict.
   * “Were examples generated via patch pipeline?”  
   * “Are NOTICE/attribution requirements met?”
 
----
-
-## 5\) “Single home” without copying: how implementers don’t bounce around
+# 5. “Single home” without copying: how implementers don’t bounce around
 
 ### Option A (recommended): docs portal composes upstream \+ overlay
 
@@ -352,9 +433,7 @@ Lower effort, less “single home” feeling, but still compliant:
 * Portal pages are mostly curated indexes  
 * Links go to upstream `blob/<tag-or-commit>/...` paths
 
----
-
-## 6\) Release mechanics across multiple repos (so versions don’t drift)
+# 6. Release mechanics across multiple repos (so versions don’t drift)
 
 ### 6.1 Release train: “profile” is the master version
 
@@ -371,9 +450,7 @@ A network release `v1.4.0` should correspond to:
 
 `DEPENDENCIES.yaml` in `<network>-profile` is canonical. Other repos may reference it or import it in CI.
 
----
-
-## 7\) Attribution: make “forgetting” structurally hard
+# 7. Attribution: make “forgetting” structurally hard
 
 ### 7.1 Org-wide `NOTICE.md` expectations
 
@@ -397,9 +474,7 @@ At the top of every overlay IG page:
 * What is authored here  
 * Copyright attribution split
 
----
-
-## 8\) CI: automated enforcement of “no fork trap”
+# 8. CI: automated enforcement of “no fork trap”
 
 Minimum CI gates (run on PRs for relevant repos):
 
@@ -426,18 +501,16 @@ Minimum CI gates (run on PRs for relevant repos):
   * Link checker (optional)  
   * “Attribution banner required” check (optional but useful)
 
----
 
-## 9\) Anti-patterns (now at org scale)
+# 9. Anti-patterns (now at org scale)
 
 * A repo named “`<network>-deg`” that is literally a fork with logos swapped.  
 * A `docs/` folder inside every repo containing overlapping copies of the same IG text.  
 * Hand-edited “generated” examples committed without a reproducible pipeline.  
 * “Compatible with main” statements (that’s roulette, not compatibility).
 
----
 
-## 10\) The “go-live in 2 weeks” org starter kit
+# 10. The “go-live in 2 weeks” org starter kit
 
 If you’re under launch pressure, create only these repos first:
 
@@ -449,8 +522,6 @@ If you’re under launch pressure, create only these repos first:
 
 That’s enough to ship fast **without** falling into copy-paste debt.
 
----
-
-## Conclusion
+# Conclusion
 
 At org level, this becomes pleasantly boring in the best way: upstream specs are **libraries**, your network is a **profile \+ overlays \+ extensions**, and your portal is a **compiled reading experience**—all versioned, attributable, and validator-friendly. The universe remains strange and delightful, but your Git history doesn’t have to be.  

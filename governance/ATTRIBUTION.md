@@ -1,4 +1,4 @@
-# **1. Attribution Playbook for NFOs [RECOMMENDED PRACTICE]**
+# **1. Attribution Playbook for NFOs [DRAFT]**
 
 ## *Publishing network architecture, IG overlays, schema extensions, and examples **without** forking/copy-pasting—while giving implementers **a single front door***
 
@@ -13,7 +13,8 @@ To be added.
 ### **1.1.2 Latest editor’s draft**
 
 To be added.
-Note: Contributors are expected to request commenter access prior to proposing changes. Before requesting access, contributors are expected to review the Community Guidelines for Contributing.
+
+> Note: Contributors are expected to request commenter access prior to proposing changes. Before requesting access, contributors are expected to review the Community Guidelines for Contributing.
 
 ### **1.1.3 Implementation report**
 
@@ -501,13 +502,11 @@ These scripts generate only the **folder structure and placeholder file names**,
 
 ## **16.1 Full-Fledged Organization Scaffold**
 
-**Reference:** `<URL_TO_FORGE_THE_NETWORK_SH>`
-**Suggested path in project repo:** `tools/scaffold/forge-the-network.sh`
+[Click here to view the script](../scripts/network-scaffold/forge-the-network.sh)
 
 ## **16.2 Minimal Starter Organization Scaffold**
 
-**Reference:** `<URL_TO_SPARK_THE_NETWORK_SH>`
-**Suggested path in project repo:** `tools/scaffold/spark-the-network.sh`
+[Click here to view the script](../scripts/network-scaffold/spark-the-network.sh)
 
 ## **16.3 Expected Capabilities**
 
@@ -517,6 +516,9 @@ The referenced scripts are expected to support, at minimum:
 * `git init` for each repository folder,
 * insertion of upstream dependencies as submodules under `<network>-docs/upstream/` (e.g., `core`, `domain`),
 * generation of only file/folder names (no authored content).
+
+## **16.4 Org Folder Structure Description**
+The recommended GitHub organization structure for an NFO and its details can be found [here](./NFO_ORG_STRUCTURE.md)
 
 ---
 

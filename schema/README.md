@@ -1,4 +1,4 @@
-# 📚 Beckn Schema Registry
+# 📚 The Beckn Schema Registry
 
 > **A centralized repository for Beckn Protocol schemas with core schemas and use-case specific attribute packs.**
 

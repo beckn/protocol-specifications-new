@@ -7,10 +7,10 @@ info:
   version: 2.0.0
   contact:
     name: Beckn Protocol
-    url: https://becknprotocol.io
+    url: https://beckn.io
   license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
 
 components:
   schemas:

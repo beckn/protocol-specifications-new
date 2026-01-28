@@ -1,6 +1,6 @@
-# 📚 The Beckn Schema Registry
+# 📚 Contributing Domain-specific Schemas
 
-> **A centralized repository for Beckn Protocol schemas with core schemas and use-case specific attribute packs.**
+> This document has been copied from `schemas/README.md` folder. All content below this is to be reviewed and updated. 
 
 ---
 

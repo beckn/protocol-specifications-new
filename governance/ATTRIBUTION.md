@@ -1,246 +1,261 @@
-# **Attribution Playbook for NFOs \[DRAFT\]**
-## _Publishing network architecture, IG overlays, schema extensions, and examples **without** forking/copy-pasting — while giving implementers **one front door**_
+# **1. Attribution Playbook for NFOs [RECOMMENDED PRACTICE]**
 
-# **About this Document**
+## *Publishing network architecture, IG overlays, schema extensions, and examples **without** forking/copy-pasting—while giving implementers **a single front door***
 
-## Latest published version
+---
 
-TODOs
+## **1.1 About this Document**
 
-- [ ] Add the link to the latest version published on the main branch if available. 
+### **1.1.1 Latest published version**
 
-## Latest editor's draft
+To be added.
 
-GitHub : 
+### **1.1.2 Latest editor’s draft**
 
-Note: Contributors must request commenter access to access this draft. Before requesting, please read the [Community Guidelines for Contributing](#) carefully
+To be added.
+Note: Contributors are expected to request commenter access prior to proposing changes. Before requesting access, contributors are expected to review the Community Guidelines for Contributing.
 
-## Implementation report
+### **1.1.3 Implementation report**
 
-- [ ] TODO: To provide link report of how this playbook has been implemented across multiple networks
+To be added.
 
-## Editors
+### **1.1.4 Editors**
 
-Ravi Prakash (Beckn Labs)  
-Pramod Varma (Networks for Humanity)
+* Ravi Prakash (Beckn Labs)
+* Pramod Varma (Networks for Humanity)
 
-## Authors
+### **1.1.5 Authors**
 
-Ravi Prakash (Beckn Labs)
+* Ravi Prakash (Beckn Labs)
 
-## Feedback
+### **1.1.6 Feedback**
 
-### Issues
-No Issues raised.
+#### **1.1.6.1 Issues**
 
-### Discussions
-No Discussions open.
+No issues have been raised.
 
-### Pull Requests
-No open PRs on this topic.
+#### **1.1.6.2 Discussions**
 
-### GitHub Labels
-The following labels MUST be used whenever raising Issues, starting discussions, and submitting PRs regarding this document
-- `governance`
-- `attribution`
-- `core-v2`
+No discussions are currently open.
 
-## Errata
+#### **1.1.6.3 Pull Requests**
 
-No Errata exists as of now
+No pull requests are currently open on this topic.
 
-# **Acknowledgements**
+#### **1.1.6.4 GitHub Labels**
 
-The author would like to thank the following persons for their valuable contributions to this document.
+The following labels are expected to be used when raising Issues, initiating Discussions, and submitting Pull Requests regarding this document:
+
+* `governance`
+* `attribution`
+* `core-v2`
+
+### **1.1.7 Errata**
+
+No errata exist as of this version.
+
+---
+
+## **1.2 Acknowledgements**
+
+The author acknowledges the following individuals for their valuable contributions:
 
 1. Pramod Varma
 2. Sujith Nair
 3. Tanmoy Adhikary
 
-## Notice
+---
 
-This document is **within scope of the Governance Model of the Beckn Protocol** (“Governance Model”).
+## **1.3 Notice**
 
-The Governance Model is the **authoritative source** for Beckn’s governing intent—its **philosophies**, **design principles**, and **policies**. Documents like this one are **derived instruments** that translate that intent into practical guidance (analogous to how *regulations* are derived from *policies*).
+This document is **within the scope of the Governance Model of the Beckn Protocol** (“Governance Model”).
+
+The Governance Model is the **authoritative source** for Beckn’s governing intent—its **philosophies**, **design principles**, and **policies**. Documents such as this one are **derived instruments** that translate that intent into operational recommendations (analogous to how *regulations* are derived from *policies*).
 
 Accordingly:
 
-- This document **does not redefine** Beckn’s core philosophies, design principles, or policies.
-- Where interpretation is needed, the **Governance Model prevails**.
-- Any conflicts, ambiguity, or gaps should be treated as **input for improving the Governance Model**, not as permission to fork governance intent.
+* This document **does not redefine** Beckn’s core philosophies, design principles, or policies.
+* Where interpretation is required, the **Governance Model prevails**.
+* Conflicts, ambiguity, or gaps are to be treated as **input for improving the Governance Model**, rather than as justification for divergence from governing intent.
 
-**Lineage (recommended):**
-- **Governing Source:** Governance Model of the Beckn Protocol  
-- **Derived From:** Applicable policies / principles defined therein  
-- **This Document:** <document name> — operational guidance / process / requirements derived from the above
+**1.3.1 Lineage (recommended):**
 
+* **Governing Source:** Governance Model of the Beckn Protocol
+* **Derived From:** Applicable policies / principles defined therein
+* **This Document:** Attribution Playbook for NFOs — operational recommendations and processes derived from the above
 
-# Context
+---
 
-Beckn Protocol v2 is built as a **three-layer ecosystem** that’s meant to scale without everyone reinventing the universe every time a new network launches:
+# **2. Status and Applicability**
 
-1. **Core layer (Beckn Protocol v2):** domain-agnostic verbs and a standard vocabulary for the order lifecycle (Discovery → Ordering → Fulfillment → Post-fulfillment), with schemas that are broadly semantically aligned (e.g., via JSON-LD).
-2. **Domain layer (Layer-2 specs):** domain communities (often with NFH and contributors) publish **domain-specific bindings**—schemas, vocab, and Implementation Guides (IGs)—that adapt the core to real industries like energy, mobility, etc.
-3. **Network layer (Layer-3 specs):** individual networks (NFO-led) introduce **region- and network-specific requirements**—local policy constraints, regulatory identifiers, payment rails, operational rules, and network governance—while still aiming to remain compatible with core + domain foundations.
+This playbook constitutes a **strong recommendation** for Network Facilitator Organizations (NFOs) publishing network-specific repositories for Beckn-based open networks. While not framed as a strictly mandatory requirement, it is intended to be treated as the **default expected approach** for responsible publication, attribution, and long-term maintainability.
 
-This layering is deliberate: **core stays stable**, domains evolve as industry practice matures, and networks move fastest because they’re closest to launch timelines and compliance realities.
+Deviation from the guidance in this playbook is expected to be **exceptional**, **justified**, and **explicitly documented**, including the rationale and the compensating measures used to mitigate drift, attribution risk, and implementer confusion.
 
-That last point creates a very human, very predictable dynamic.
+---
 
-Network-level needs often show up **before** they can be fully normalized into the domain layer (and certainly before they can be absorbed into the core layer). Meanwhile, implementers building for a specific network typically want **one place to read**—a single “home” where the network’s rules and examples live—rather than stitching together guidance across multiple repositories and versions.
+# **3. Context**
 
-Under these conditions, it’s a natural operational outcome that some networks end up **republishing** domain IG material (and sometimes example payloads) inside network repositories, then extending it with network-specific details. This is usually not about intent or attribution avoidance; it’s commonly a side-effect of:
+Beckn Protocol v2 is designed as a **three-layer ecosystem** intended to scale across domains, regions, and networks without repeated reinvention:
 
-* **Asynchronous evolution** between core, domain, and network layers
-* **Go-to-market pressure** (launch dates, ecosystem commitments, regulatory timelines)
-* **DX pragmatism** (reducing “repo-hopping” for implementers)
-* **Unclear default patterns** for “overlaying” network rules on top of pinned upstream specs
+1. **Core layer (Beckn Protocol v2):** Domain-agnostic actions (“verbs”) and a standard vocabulary for the order lifecycle (Discovery → Ordering → Fulfillment → Post-fulfillment), accompanied by broadly semantically aligned schemas (e.g., via JSON-LD).
+2. **Domain layer (Layer-2 specifications):** Domain communities—often in collaboration with Networks for Humanity Foundation (NFH) and contributors—publish **domain-specific bindings**, including schemas, vocabulary, and Implementation Guides (IGs), to adapt the core specification to specific industries (e.g., energy, mobility).
+3. **Network layer (Layer-3 specifications):** Individual networks (led by NFOs) introduce **region- and network-specific requirements**, including policy constraints, regulatory identifiers, payment mechanisms, operational rules, and network governance, while aiming to remain compatible with core and domain foundations.
 
-Over time, though, that republishing pattern can introduce ecosystem friction: **drift** between upstream and network material, blurred boundaries between what is core vs domain vs network, and a heavier maintenance burden for everyone involved—especially when upstream continues evolving.
+This layering is intentional: the **core** is expected to remain stable, **domains** are expected to evolve as practice matures, and **networks** frequently move the fastest due to launch timelines and compliance imperatives.
 
-This guideline exists to offer a structured way for networks to publish **network-specific architecture docs, IG overlays, schema extensions, and examples** while treating **Core + Domain** as pinned upstream dependencies and keeping implementers anchored to a single, coherent entry point. 
-This playbook describes how an NFO should structure its **GitHub Organization** (not a single repo) so that:
+In practice, network-level requirements often emerge **before** they can be normalized into the domain layer (and certainly before they can be incorporated into the core). At the same time, implementers building for a specific network generally require **a single authoritative entry point**—a coherent “home” where the network’s rules and examples can be found without repeated navigation across repositories and versions.
 
-* **Core \+ Domain specs remain upstream dependencies** (pinned, attributable, not rebranded).  
-* Network-specific content is authored as **overlays/addenda** \+ **attribute packs**.  
-* Implementers experience a **single “home”** (a docs portal \+ predictable repo layout), not scavenger hunts across random folders.
+Under these conditions, it is a predictable operational outcome that some networks **republish** domain IG material (and sometimes example payloads) inside network repositories and then extend it with network-specific details. This pattern is commonly driven by:
 
-# 0. The North Star: one “front door,” many rooms
+* **Asynchronous evolution** across core, domain, and network layers
+* **Go-to-market pressures** (launch commitments, regulatory timelines, ecosystem deadlines)
+* **Developer experience (DX) pragmatism** (reducing “repo-hopping” for implementers)
+* **Lack of a default pattern** for overlaying network rules on top of pinned upstream specifications
 
-**Implementer experience should look like this:**
+Over time, however, republishing increases ecosystem friction by introducing **drift** between upstream and network material, blurring boundaries between core/domain/network responsibilities, and increasing maintenance burden—especially when upstream continues to evolve.
 
-1. They land on **one URL** (docs portal) with a clean nav:  
-     
-   * *Architecture*  
-   * *Implementation Guides*  
-   * *Schemas & Contexts*  
-   * *Examples*  
-   * *Conformance & Policies*  
-   * *Release notes / compatibility matrix*
+This playbook provides a structured approach for NFOs to publish **network-specific architecture documentation, IG overlays, schema extensions, and examples** while treating **Core + Domain** as pinned upstream dependencies and providing implementers a single coherent entry point.
 
-   
+---
 
-2. Behind the scenes, that portal is built from:  
-     
-   * **Pinned upstream** (Core \+ Domain)  
-   * **Your authored network overlays**  
-   * **Your machine-readable extensions** (schemas, JSON-LD contexts)  
-   * **Your generated examples** (built from patches)
+# **4. The North Star: One Front Door, Many Rooms**
 
-That separation is the whole trick: **single home ≠ single repo**.
+The implementer experience is strongly recommended to follow these expectations:
 
+1. Implementers should be directed to **one URL** (a documentation portal) presenting a clear navigation structure, typically including:
 
-# 1. Org-level principles (non-negotiable seatbelts)
+   * Architecture
+   * Implementation Guides
+   * Schemas & Contexts
+   * Examples
+   * Conformance & Policies
+   * Release notes / compatibility matrix
 
-## 1.1 Core \+ Domain are dependencies, not editable content
+2. The documentation portal should be composed from:
 
-**MUST**
+   * **Pinned upstream sources** (Core + Domain)
+   * **Network-authored overlays** (addenda describing deltas)
+   * **Machine-readable extensions** (JSON Schemas, JSON-LD contexts)
+   * **Generated examples** (reproducible from patches)
 
-* Pin upstream references (tags/commits) per network release.  
-* Avoid copying upstream IG markdown and “branding” it.
+The central principle is that **a single “home” does not require a single repository**.
 
-**WHY**
+---
 
-* Copying creates drift; drift becomes technical debt with legal garnish.
+# **5. Organization-Level Principles**
 
-## 1.2 Network IGs are overlays, not duplicates
+## **5.1 Core and Domain Specifications as Dependencies**
 
-**MUST**
+**Strong recommendation (expected practice):**
 
-* Network IG content should mostly be:  
-    
-  * “What’s different here?”  
-  * “What’s stricter?”  
-  * “What’s added?” (extensions \+ regulatory fields)  
-  * “What’s forbidden/optional here?”
+* Upstream references (tags/commits) should be pinned per network release.
+* Upstream IG markdown should not be copied and rebranded within network repositories.
 
-## 1.3 Extensions are machine-readable and semantically bindable
+**Rationale:**
+Copying upstream content creates drift; drift accumulates into long-term maintenance costs and attribution risk.
 
-**MUST**
+## **5.2 Network IGs as Overlays (Not Duplicates)**
 
-* Publish JSON Schema for your packs **and** JSON-LD contexts (`@context`, `@type`).  
-* Version these packs and keep their URLs stable.
+**Strong recommendation (expected practice):**
+Network-authored IG content should primarily articulate:
 
-## 1.4 Examples are patches \+ generated outputs
+* What differs within the network context
+* What is stricter
+* What is added (extensions, regulatory fields)
+* What is forbidden or optional within the network
 
-**MUST**
+## **5.3 Extensions as Machine-Readable and Semantically Bindable**
 
-* Store deltas (JSON Patch / overlays), generate full payloads in CI.  
-* Avoid distributing rebranded upstream examples as hand-edited copies.
+**Strong recommendation (expected practice):**
 
+* Network attribute packs should be published as JSON Schema **and** JSON-LD contexts (`@context`, `@type`).
+* These packs should be versioned, and their URLs should remain stable.
 
-# 2. The recommended GitHub Organization blueprint
+## **5.4 Examples as Patches and Generated Outputs**
 
-## 2.1 Repo taxonomy (what exists, and why)
+**Strong recommendation (expected practice):**
 
-A clean org typically has **7–10 repos**. Each repo has one job.
+* Network repositories should store deltas (e.g., JSON Patch / overlays) and generate full payloads via CI.
+* Rebranded upstream examples should not be distributed as hand-edited copies.
 
-### A) “Front door” and navigation
+---
 
-1. **`<network>-docs`** **Purpose:** The docs portal source (mkdocs/docusaurus/etc.), published via GitHub Pages or another host. **Contains:** Your authored docs \+ integration hooks to render pinned upstream content.  
-     
-2. **`.github`** (org-wide) **Purpose:** Community \+ governance wiring (issue templates, PR templates, CODEOWNERS defaults, security policy, contributing). **Contains:** The norms and guardrails, applied everywhere.
+# **6. Recommended GitHub Organization Blueprint**
 
-### B) Network specification layer
+## **6.1 Repository Taxonomy**
 
-3. **`<network>-profile`** **Purpose:** The network’s “profile” / manifest of compatibility \+ conformance rules. **Contains:**  
-* `DEPENDENCIES.yaml` (pinned upstream refs)  
-* conformance rules (MUST/SHOULD/MAY)  
-* supported use cases list  
-* release metadata  
-4. **`<network>-schemas`** **Purpose:** The source of truth for network attribute packs. **Contains:**  
-* JSON Schemas  
-* JSON-LD contexts  
-* mapping tables (network → beckn → schema.org)  
-5. **`<network>-examples`** **Purpose:** Patch-first examples \+ generated outputs (built artifacts). **Contains:**  
-* `patches/` (source)  
-* `generated/` (CI output, optionally released)  
-* references to upstream example anchors (pinned)
+A well-structured GitHub Organization is expected to use approximately **7–10 repositories**, each with a specific responsibility.
 
-### C) Tooling \+ automation
+### **6.1.1 Front Door and Navigation**
 
-6. **`<network>-tooling`** **Purpose:** The scripts that make “no copy-paste” feasible. **Contains:**  
-* patch applicator / example generator  
-* schema validation runners  
-* JSON-LD validators  
-* doc build integration tools  
-7. **`<network>-ci`** (optional if you prefer to centralize) **Purpose:** Reusable GitHub Actions workflows (called by other repos). **Contains:** organization-standard CI workflows, release pipelines.
+1. **`<network>-docs`**
+   **Purpose:** Documentation portal source (e.g., mkdocs/docusaurus), published via GitHub Pages or equivalent.
+   **Contains:** Network-authored docs and integration hooks to render pinned upstream content.
 
-### D) Policies, legal, and operations
+2. **`.github`** (org-wide)
+   **Purpose:** Community and governance scaffolding (issue templates, PR templates, CODEOWNERS defaults, security policy, contributing).
+   **Contains:** Organization-level norms and guardrails.
 
-8. **`<network>-policy`** (optional, but recommended for regulated networks) **Purpose:** Network policy, regional policy, security posture, registry rules, onboarding rules. **Contains:** human-readable policy docs \+ machine-readable policy artifacts if any.  
-     
-9. **`<network>-registry`** (optional, if the network publishes registry schemas or test fixtures) **Purpose:** Registry data models, fixtures, and onboarding validation (not the live registry\!).
+### **6.1.2 Network Specification Layer**
 
-You can compress or expand these depending on maturity. The key is: **don’t mix everything into one repo that becomes a landfill.**
+3. **`<network>-profile`**
+   **Purpose:** Network manifest for compatibility and conformance.
+   **Contains:** pinned dependencies, conformance rules, supported use cases, release metadata.
 
-# 3. Naming conventions (so humans stop getting lost)
+4. **`<network>-schemas`**
+   **Purpose:** Source of truth for network attribute packs.
+   **Contains:** schemas, JSON-LD contexts, mapping tables (network → beckn → schema.org).
 
-Use predictable names so implementers instantly understand the landscape:
+5. **`<network>-examples`**
+   **Purpose:** Patch-first examples with generated outputs.
+   **Contains:** patches, generated outputs, pinned upstream anchors.
 
-* **Portal:** `<network>-docs`  
-* **Compatibility/conformance manifest:** `<network>-profile`  
-* **Extensions:** `<network>-schemas`  
-* **Examples:** `<network>-examples`  
-* **Automation:** `<network>-tooling`  
-* **Policies:** `<network>-policy`  
-* **Org defaults:** `.github`
+### **6.1.3 Tooling and Automation**
 
-Also: add short repo descriptions that begin with the verb:
+6. **`<network>-tooling`**
+   **Purpose:** Tooling required to implement the no-copy pattern (patch applicator, validators, doc composition tools).
 
-* “**Builds** the documentation portal…”  
-* “**Defines** network attribute packs…”  
-* “**Publishes** patch-based examples…”
+7. **`<network>-ci`** (optional)
+   **Purpose:** Centralized reusable workflows.
 
-# 4. What goes where (repo-level information architecture)
+### **6.1.4 Policies, Legal, Operations**
 
-## 4.1 `<network>-profile` (the “contract” repo)
+8. **`<network>-policy`** (recommended in regulated networks)
+   **Purpose:** Network policy, security posture, onboarding rules, and associated artifacts.
 
-This repo is the canonical answer to: **“What does this network support, exactly?”**
+9. **`<network>-registry`** (optional)
+   **Purpose:** Registry data models and fixtures (not the live registry).
 
-**Recommended structure**
+The guiding principle is to avoid consolidating unrelated responsibilities into a single repository that becomes difficult to maintain.
 
-```
+---
+
+# **7. Naming Conventions**
+
+Predictable naming is strongly recommended so implementers can quickly locate information:
+
+* Portal: `<network>-docs`
+* Compatibility/conformance manifest: `<network>-profile`
+* Extensions: `<network>-schemas`
+* Examples: `<network>-examples`
+* Automation: `<network>-tooling`
+* Policies: `<network>-policy`
+* Org defaults: `.github`
+
+Repository descriptions are recommended to begin with a verb (e.g., “Builds…”, “Defines…”, “Publishes…”).
+
+---
+
+# **8. Repository-Level Information Architecture**
+
+## **8.1 `<network>-profile` (Contract Repository)**
+
+This repository is expected to serve as the canonical answer to: **what the network supports**.
+
+### **8.1.1 Recommended structure**
+
+```text
 <network>-profile/
   README.md
   LICENSE
@@ -248,32 +263,28 @@ This repo is the canonical answer to: **“What does this network support, exact
   CHANGELOG.md
 
   profile/
-    DEPENDENCIES.yaml            # pinned upstream refs (core + domain + IG paths)
-    SUPPORT_MATRIX.md            # use cases + supported versions
+    DEPENDENCIES.yaml
+    SUPPORT_MATRIX.md
     CONFORMANCE/
       discovery.md
       ordering.md
       fulfillment.md
       post_fulfillment.md
-    POLICY_REFERENCES.md         # links to policy repo pages (pinned)
+    POLICY_REFERENCES.md
 
   releases/
-    v1.4.0.md                    # human-friendly release note snapshot
+    v1.4.0.md
 ```
 
-**MUST**
+### **8.1.2 Strong recommendation (expected practice)**
 
-* Every release tags the repo and updates:  
-    
-  * `DEPENDENCIES.yaml`  
-  * `CHANGELOG.md`  
-  * compatibility matrix
+Each release should tag the repository and update `DEPENDENCIES.yaml`, `CHANGELOG.md`, and the compatibility matrix.
 
-## 4.2 `<network>-schemas` (attribute packs \+ contexts)
+## **8.2 `<network>-schemas` (Attribute Packs and Contexts)**
 
-**Recommended structure**
+### **8.2.1 Recommended structure**
 
-```
+```text
 <network>-schemas/
   README.md
   LICENSE
@@ -291,27 +302,19 @@ This repo is the canonical answer to: **“What does this network support, exact
       provider.regulatory.v1.schema.json
 
   mapping/
-    mapping-matrix.csv           # network term -> beckn term -> schema.org
+    mapping-matrix.csv
     notes.md
 ```
 
-**MUST**
+### **8.2.2 Strong recommendation (expected practice)**
 
-* Context URLs are stable and resolvable.  
-    
-* Every pack has:  
-    
-  * `@type` with version semantics  
-  * JSON Schema  
-  * mapping notes (even if partial)
+Contexts should be stable and resolvable; every pack should include `@type` version semantics, JSON Schema, and mapping notes.
 
----
+## **8.3 `<network>-examples` (Patch-First Examples)**
 
-## 4.3 `<network>-examples` (patch-first examples)
+### **8.3.1 Recommended structure**
 
-**Recommended structure**
-
-```
+```text
 <network>-examples/
   README.md
   LICENSE
@@ -319,42 +322,38 @@ This repo is the canonical answer to: **“What does this network support, exact
   CHANGELOG.md
 
   upstream-refs/
-    ev-charging.yaml             # upstream example URLs + pinned refs
+    ev-charging.yaml
 
   patches/
     ev-charging/
       on_search.patch.json
       on_confirm.patch.json
 
-  generated/                     # CI output; never hand-edited
+  generated/
     ev-charging/
       on_search.json
       on_confirm.json
 
   reports/
-    latest-validation.json       # CI output (optional)
+    latest-validation.json
 ```
 
-**MUST**
+### **8.3.2 Strong recommendation (expected practice)**
 
-* Generated outputs are reproducible from:  
-    
-  * `upstream-refs/*` \+ `patches/*` \+ tooling version
+Generated outputs should be reproducible from upstream references, patches, and tooling versions.
 
-## 4.4 `<network>-docs` (portal)
+## **8.4 `<network>-docs` (Portal Repository)**
 
-The portal makes the org feel like a single cohesive “spec.”
+### **8.4.1 Recommended structure**
 
-**Recommended structure**
-
-```
+```text
 <network>-docs/
   README.md
   LICENSE
   NOTICE.md
 
   docs/
-    index.md                     # start here
+    index.md
     architecture/
       overview.md
       participants.md
@@ -362,34 +361,34 @@ The portal makes the org feel like a single cohesive “spec.”
       security.md
     ig/
       ev-charging/
-        overlay.md               # network deltas only
+        overlay.md
         conformance.md
-        workflows/               # diagrams you authored
+        workflows/
         faq.md
     schemas/
-      packs.md                   # links + explanation of packs
+      packs.md
     examples/
-      ev-charging.md             # links to generated examples
+      ev-charging.md
     releases/
-      index.md                   # links to profile release notes
+      index.md
 
-  mkdocs.yml (or docusaurus config)
+  mkdocs.yml
   tools/
-    fetch-upstreams/             # pull pinned upstream content at build time
+    fetch-upstreams/
 ```
 
-**Critical detail:** The portal should *render* upstream content **without copying it into your authored docs**. Two common patterns:
+### **8.4.2 Strong recommendation (expected practice)**
 
-* **Build-time fetch:** CI pulls upstream repos at pinned refs and injects pages into the build (best for “no upstream code in your git history”).  
-* **Submodules/subtrees:** portal repo includes upstream as submodules at pinned commits (simple, but noisier).
+Upstream content should be rendered without copying it into network-authored documentation. Two accepted patterns are:
 
-Both are fine if attribution is explicit and version pinning is strict.
+* build-time fetch with pinned refs, or
+* submodules/subtrees pinned to commits/tags.
 
-## 4.5 `.github` (org guardrails)
+## **8.5 `.github` (Organization Guardrails)**
 
-**Recommended contents**
+### **8.5.1 Recommended contents**
 
-```
+```text
 .github/
   CONTRIBUTING.md
   SECURITY.md
@@ -401,127 +400,136 @@ Both are fine if attribution is explicit and version pinning is strict.
     reusable-release.yml
 ```
 
-**MUST**
+### **8.5.2 Strong recommendation (expected practice)**
 
-* Standard PR checklist includes:  
-    
-  * “Does this copy upstream content?” (should be “no”)  
-  * “Is `DEPENDENCIES.yaml` pinned/updated if needed?”  
-  * “Were examples generated via patch pipeline?”  
-  * “Are NOTICE/attribution requirements met?”
+PR checklists should explicitly evaluate: absence of copied upstream content, pinned dependency updates, patch-based example generation, and NOTICE/attribution compliance.
 
-# 5. “Single home” without copying: how implementers don’t bounce around
+---
 
-## Option A (recommended): docs portal composes upstream \+ overlay
+# **9. Single Home Without Copying**
 
-* Portal navigation shows:  
-    
-  * Upstream Core/Domain sections (rendered from pinned refs)  
-  * Network overlay sections (authored here)
+## **9.1 Option A (Preferred)**
 
+The documentation portal composes upstream content and network overlays. Every upstream-derived page is expected to display the upstream source, pinned reference, and license/notice pointer.
 
-* Every upstream-derived page displays:  
-    
-  * upstream source repo  
-  * pinned ref  
-  * license/notice pointer
+## **9.2 Option B**
 
-## Option B: portal deep-links into upstream at pinned refs
+The portal provides curated indexes and deep-links to upstream content at pinned references. This approach is lower-effort but less cohesive.
 
-Lower effort, less “single home” feeling, but still compliant:
+---
 
-* Portal pages are mostly curated indexes  
-* Links go to upstream `blob/<tag-or-commit>/...` paths
+# **10. Release Mechanics Across Multiple Repositories**
 
-# 6. Release mechanics across multiple repos (so versions don’t drift)
+## **10.1 Profile as Release Coordinator**
 
-## 6.1 Release train: “profile” is the master version
+`<network>-profile` is strongly recommended to serve as the canonical release coordinator.
 
-Treat `<network>-profile` as the **release coordinator**.
+A network release (e.g., `v1.4.0`) is expected to align with corresponding tags for:
 
-A network release `v1.4.0` should correspond to:
+* `<network>-profile`
+* `<network>-schemas` (or a compatible `v1.4.x`)
+* `<network>-examples`
+* `<network>-docs` (optional but recommended)
 
-* `<network>-profile` tag: `v1.4.0`  
-* `<network>-schemas` tag: `v1.4.0` (or compatible `v1.4.x`)  
-* `<network>-examples` tag: `v1.4.0`  
-* `<network>-docs` tag: `v1.4.0` (optional but nice)
+## **10.2 Single Source of Compatibility**
 
-## 6.2 Compatibility is declared once
+`DEPENDENCIES.yaml` in `<network>-profile` is expected to serve as the canonical compatibility declaration.
 
-`DEPENDENCIES.yaml` in `<network>-profile` is canonical. Other repos may reference it or import it in CI.
+---
 
-# 7. Attribution: make “forgetting” structurally hard
+# **11. Attribution Controls**
 
-## 7.1 Org-wide `NOTICE.md` expectations
+## **11.1 Repository-Level NOTICE**
 
-Each repo MUST include a `NOTICE.md` that lists:
+Each repository is expected to include a `NOTICE.md` listing:
 
-* Upstream repos used  
-    
-* Exact refs  
-    
-* Licenses and required notices  
-    
-* A sentence like:  
-    
-  * “This repository contains network-specific overlays and extensions. Upstream specifications remain authoritative.”
+* upstream repositories used
+* exact references
+* relevant licenses and notice requirements
+* a statement that upstream specifications remain authoritative
 
-## 7.2 File-level attribution for overlays
+## **11.2 File-Level Attribution for Overlays**
 
-At the top of every overlay IG page:
+Each overlay IG page is expected to declare:
 
-* Base reference (pinned)  
-* What is authored here  
-* Copyright attribution split
+* pinned base reference
+* what is authored within the overlay
+* copyright attribution boundaries
 
-# 8. CI: automated enforcement of “no fork trap”
+---
 
-Minimum CI gates (run on PRs for relevant repos):
+# **12. CI Controls (Recommended Enforcement)**
 
-* **Schemas repo**  
-    
-  * JSON Schema validation  
-  * JSON-LD context sanity checks
+Minimum CI expectations include:
 
+* **Schemas repository:** JSON Schema validation and JSON-LD context sanity checks
+* **Examples repository:** patch application checks and validation against core/domain/network schemas
+* **Docs repository:** build integrity against pinned upstream refs and optional link checking
 
-* **Examples repo**  
-    
-  * Patch applies cleanly to pinned upstream examples  
-      
-  * Generated outputs validate against:  
-      
-    * core schema  
-    * domain schema(s)  
-    * network pack schemas
+---
 
+# **13. Anti-Patterns**
 
-* **Docs repo**  
-    
-  * Build succeeds with pinned upstream refs  
-  * Link checker (optional)  
-  * “Attribution banner required” check (optional but useful)
+The following patterns are strongly discouraged:
 
+* A repository that is effectively a fork of an upstream domain repository with only branding changes
+* Multiple repositories carrying duplicated copies of IG content
+* Hand-edited “generated” examples without a reproducible build pipeline
+* Compatibility claims such as “compatible with main” without pinned references
 
-# 9. Anti-patterns (now at org scale)
+---
 
-* A repo named “`<network>-deg`” that is literally a fork with logos swapped.  
-* A `docs/` folder inside every repo containing overlapping copies of the same IG text.  
-* Hand-edited “generated” examples committed without a reproducible pipeline.  
-* “Compatible with main” statements (that’s roulette, not compatibility).
+# **14. Minimal Starter Kit for Rapid Launch**
 
+For networks under urgent timelines, the minimum recommended set of repositories is:
 
-# 10. The “go-live in 2 weeks” org starter kit
+1. `.github`
+2. `<network>-profile`
+3. `<network>-schemas`
+4. `<network>-examples`
+5. `<network>-docs`
 
-If you’re under launch pressure, create only these repos first:
+This set is typically sufficient to support rapid launch while avoiding the long-term costs of copy-paste drift.
 
-1. `.github`  
-2. `<network>-profile` (pin dependencies \+ conformance deltas)  
-3. `<network>-schemas` (packs \+ contexts)  
-4. `<network>-examples` (patches \+ generator)  
-5. `<network>-docs` (portal that links/renders pinned upstream)
+---
 
-That’s enough to ship fast **without** falling into copy-paste debt.
+# **16. Scaffolding Script Reference**
 
-# Conclusion
+To promote consistent repository structure and reduce inadvertent divergence across network repositories, NFOs are **strongly recommended** to use the official scaffolding scripts referenced below to generate the GitHub Organization layout locally.
 
-At org level, this becomes pleasantly boring in the best way: upstream specs are **libraries**, your network is a **profile \+ overlays \+ extensions**, and your portal is a **compiled reading experience**—all versioned, attributable, and validator-friendly. The universe remains strange and delightful, but your Git history doesn’t have to be.  
+These scripts generate only the **folder structure and placeholder file names**, initialize each folder as an independent Git repository, and (where applicable) add **upstream repositories as submodule references** in the documentation portal repository.
+
+## **16.1 Full-Fledged Organization Scaffold**
+
+**Reference:** `<URL_TO_FORGE_THE_NETWORK_SH>`
+**Suggested path in project repo:** `tools/scaffold/forge-the-network.sh`
+
+## **16.2 Minimal Starter Organization Scaffold**
+
+**Reference:** `<URL_TO_SPARK_THE_NETWORK_SH>`
+**Suggested path in project repo:** `tools/scaffold/spark-the-network.sh`
+
+## **16.3 Expected Capabilities**
+
+The referenced scripts are expected to support, at minimum:
+
+* creation of the recommended repository folders for the selected scaffold profile (full or minimal),
+* `git init` for each repository folder,
+* insertion of upstream dependencies as submodules under `<network>-docs/upstream/` (e.g., `core`, `domain`),
+* generation of only file/folder names (no authored content).
+
+---
+
+# **17. Conclusion**
+
+This playbook establishes a strongly recommended operating model for NFOs to publish network-specific documentation, overlays, extensions, and examples **without** forking or duplicating upstream content, while still delivering a coherent “single front door” experience for implementers.
+
+By treating **Core** and **Domain** specifications as pinned upstream dependencies, expressing network requirements through a **profile**, **overlays**, and **machine-readable extension packs**, and generating examples through reproducible pipelines rather than manual copying, networks can:
+
+* reduce long-term drift and maintenance burden,
+* preserve clear responsibility boundaries across Core → Domain → Network layers,
+* strengthen attribution fidelity and ecosystem trust, and
+* accelerate iteration without sacrificing interoperability.
+
+The recommended organization-level structure is intended to remain lightweight in day-to-day use while being robust enough to withstand fast network evolution, regulatory change, and multi-stakeholder implementation realities.
+

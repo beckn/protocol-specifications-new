@@ -1,360 +1,244 @@
-# Beckn Protocol Governance Model (2.x)
+# Beckn Protocol Governance Documentation
 
-**Status:** Draft  
-**Applies to:** Beckn Protocol (Core), Domain Specifications, and Network Profiles built on Beckn
+## 📋 Overview
+
+This directory contains the **governance framework** for the Beckn Protocol v2.x, including constitutional principles, operational guidelines, contribution standards, and authoring conventions that govern the evolution and implementation of the protocol across its three-layer ecosystem:
+
+- **Layer 1 (Core)**: Domain-agnostic protocol specification
+- **Layer 2 (Domain)**: Domain-specific bindings and implementation guides
+- **Layer 3 (Network)**: Network-specific profiles, policies, and constraints
+
+These documents establish the rules, processes, and expectations for maintaining protocol coherence, ensuring interoperability, and supporting sustainable ecosystem growth—from core specification changes to domain extensions and network deployments.
 
 ---
 
-## 0. Notice
-
-This document is part of the **Governance Model of the Beckn Protocol** and is the **highest-precedence governance artifact** for specification evolution and interpretation.
-
-All other documents (e.g., attribution guidelines, contribution guidelines, style guide, domain charters, network publishing guides, implementation guides) are **derived artifacts**.
-
-When any derived artifact conflicts with this document, **this document prevails**.
-
-## 1. Purpose and non-goals
-
-### 1.1 Purpose
-
-Establish a governance framework that is:
-
-- **Lightweight:** minimal roles and minimal ceremony.
-- **Airtight:** unambiguous precedence, decision rules, compatibility rules, and dispute handling.
-- **Composable:** explicitly supports the reality of **Core → Domain → Network** evolution without breaking interoperability.
-
-### 1.2 Non-goals
-
-This governance model does not aim to:
-
-- create membership structures, gatekeeping, or bureaucracy;
-- force every network to move at the pace of core/domain;
-- mandate a single reference implementation as “the” Beckn.
-
-## 2. The Beckn credo (constitutional intent)
-
-Beckn is an open protocol designed to expand interoperable digital commerce and coordination across diverse actors and ecosystems—globally, across domains, and across regions—while preserving agency, choice, and competition.
-
-Governance exists to protect:
-- interoperability,
-- user and participant safety (security, privacy, consent),
-- predictable evolution,
-- and the long-term coherence of the protocol.
-
-## 3. Constitutional principles
-
-These principles are the primary basis for approving changes, resolving ambiguity, and interpreting disputes.
-
-### 3.1 Interoperability-first
-
-Any change that reduces interoperability is presumed harmful unless a compelling, globally-relevant justification and migration path exists.
-
-### 3.2 Abstraction over specificity
-
-Core remains domain-agnostic. Domain and network specificity belongs in the appropriate layer.
-
-### 3.3 Optimal ignorance
-
-If a feature is not required to achieve interoperability, it should not be standardized in the core. Prefer extension mechanisms and profiles when feasible.
-
-### 3.4 Security by design
-
-Changes must not introduce avoidable security vulnerabilities, ambiguity around trust, or unsafe defaults.
-
-### 3.5 Privacy and consent by default
-
-Changes must not weaken privacy expectations or expand data collection without explicit, scoped rationale and safeguards.
-
-### 3.6 Scalability neutrality
-
-The protocol should remain viable across scales—from small deployments to large ecosystems—without requiring centralized control.
-
-### 3.7 Reusability before novelty
-
-Prefer general patterns that can be reused across domains and regions over one-off solutions.
-
-### 3.8 Unification over forced standardization
-
-Aim to unify patterns and meaning while allowing diversity through profiles and extensions, instead of imposing rigid, premature uniformity.
-
-### 3.9 Dependency over duplication (2.x emphasis)
-
-Prefer **upstream dependencies** (versioned references, overlays, profiles) over copying, forking, and rebranding upstream content. This reduces drift and preserves interoperability.
-
-### 3.10 Automation-first governance (2.x emphasis)
-
-If a rule can be validated, it should be enforced through tooling/CI rather than social process.
-
-## 4. Scope and layering (Core → Domain → Network)
-
-### 4.1 Core
-
-The global, domain-agnostic protocol contract: verbs, baseline schemas, semantics, normative behaviors, and conformance rules.
-
-### 4.2 Domain
-
-Domain specializations: domain vocabulary bindings, domain IGs, domain-level conformance guidance, and recommended workflows.
-
-### 4.3 Network
-
-Network-specific constraints and additions: regional policy requirements, identifiers, compliance constraints, stricter validation rules, and network-specific implementation guidance.
-
-**Key constraint:** Network rules MUST NOT silently alter core semantics. Networks may constrain (be stricter than) the domain/core, but must not contradict core conformance.
-
-## 5. Artifact hierarchy and precedence
-
-### 5.1 Normative vs informative
-
-- **Normative** text uses MUST/SHOULD/MAY and defines conformance.
-- **Informative** text includes examples, diagrams, tutorials, and explanatory material unless explicitly declared normative.
-
-### 5.2 Precedence order (highest → lowest)
-
-1. **Governance Model (this document)**
-2. **Core Specification (normative sections)**
-3. **Domain Charters and Domain Specifications (normative sections)**
-4. **Network Profiles and Network Conformance Rules (normative within that network)**
-5. **Implementation Guides, examples, tutorials (informative unless declared normative)**
-
-### 5.3 Conflict handling
-
-If two artifacts conflict:
-1) follow precedence order;  
-2) if still ambiguous, apply **constitutional principles**;  
-3) final interpretation authority lies with the **Core Stewardship Council** (Section 6).
-
-## 6. Roles (minimal and accountable)
-
-### 6.1 Core Stewardship Council (CSC)
-
-**Mandate:** protect constitutional principles and decide final interpretations.
-
-**Responsibilities:**
-- approve governance amendments;
-- appoint and remove Editors;
-- arbitrate disputes escalated beyond Editors;
-- ratify major releases (as defined in Section 9);
-- publish binding interpretations when ambiguity arises.
-
-**Size:** 5 stewards (default), adjustable only by governance amendment.
-
-**Term:** 2 years, rolling/staggered when possible.
-
-**Transparency:** all decisions must be documented publicly with rationale, except sensitive disclosures (Section 11).
-
-### 6.2 Editors
-
-**Mandate:** maintain coherence and quality of the specification.
-
-**Responsibilities:**
-- merge changes that meet requirements;
-- ensure changelogs, migration notes, and conformance impact are included;
-- enforce process gates and CI requirements;
-- maintain release readiness and documentation hygiene.
-
-### 6.3 Release Captain (per release)
-
-Time-bounded role responsible for:
-- coordinating release checklist completion;
-- publishing release artifacts;
-- ensuring validation and migration material is complete.
-
-### 6.4 Domain Stewards (per domain)
-
-Domains follow this governance model, adapted through a **Domain Charter** that must remain consistent with this document.
+## 🎯 Purpose
+
+The governance framework exists to protect:
+
+- **Interoperability** across implementations and networks
+- **Security, privacy, and user consent** by design
+- **Predictable evolution** through clear versioning and compatibility rules
+- **Long-term protocol coherence** while supporting innovation
+- **Attribution and transparency** in a multi-layer specification ecosystem
 
 ---
 
-## 7. Selection, rotation, and removal (lightweight but real)
+## 📚 Folder Structure
 
-### 7.1 CSC selection (default mechanism)
-
-- A public call for nominations is opened.
-- Nominations must include:
-  - statement of intent,
-  - relevant experience,
-  - disclosure of conflicts of interest (employment, advisory roles, major commercial dependencies).
-- The CSC selects candidates via rough consensus; if contested, a 2/3 CSC vote applies.
-- A time-boxed public objection window is provided before finalizing appointments.
-
-### 7.2 Removal
-
-A steward/editor may be removed for:
-- sustained inactivity,
-- repeated bypassing of governance gates,
-- serious misconduct (as defined by the project’s Code of Conduct),
-- undisclosed conflicts of interest that materially affect trust.
-
-Removal requires:
-- documented rationale,
-- an opportunity to respond,
-- CSC vote (2/3).
+```
+governance/
+├── README.md                    # This file - navigation guide
+├── GOVERNANCE.md                # Constitutional governance model
+├── ATTRIBUTION.md               # Attribution playbook for NFOs
+├── CONTRIBUTING.md              # Contribution guidelines for schemas
+├── STYLE_GUIDE.md              # Specification authoring standards
+└── CORE_WORKING_GROUP.md       # Core working group documentation
+```
 
 ---
 
-## 8. Decision-making
+## 📖 Table of Contents
 
-### 8.1 Default: rough consensus + recorded objections
+### 🏛️ [**GOVERNANCE.md**](./GOVERNANCE.md)
+**Status:** Constitutional Document  
+**Precedence:** Highest
 
-A decision passes when:
-- objections are addressed, or
-- objections are recorded with rationale and the decision proceeds with documented tradeoffs.
+The **Beckn Protocol Governance Model** is the authoritative source for all governance matters. This document defines:
 
-### 8.2 Fallback: time-boxed vote
+- Constitutional principles and design philosophies
+- Roles and responsibilities (Core Stewardship Council, Editors, Domain Stewards)
+- Decision-making processes and dispute resolution
+- Specification change lifecycle and approval gates
+- Versioning, compatibility, and deprecation policies
+- Core → Domain → Network interaction rules
+- Enforcement mechanisms and transparency requirements
 
-If consensus stalls:
-- Editors or CSC may call a vote with a defined deadline.
-- Vote outcomes and rationale must be documented in the issue/PR.
+**📌 Key Sections:**
+- Section 2: The Beckn Credo (Constitutional Intent)
+- Section 3: Constitutional Principles
+- Section 6: Roles (CSC, Editors, Release Captain, Domain Stewards)
+- Section 9: Specification Change Lifecycle
+- Section 10: Versioning & Compatibility
+- Section 11: Core–Domain–Network Interaction Rules
 
-### 8.3 Interpretation authority
-
-When ambiguity exists in the spec:
-- Editors attempt resolution using principles;
-- unresolved disputes escalate to CSC;
-- CSC interpretations are binding until superseded by a release.
-
----
-
-## 9. Specification change lifecycle (simple, enforceable)
-
-### 9.1 Stages
-
-1. **Proposal** (issue/RFC with use case + motivation)
-2. **Draft** (PR with working text/schema + examples)
-3. **Candidate** (passes validation + includes migration notes if needed)
-4. **Release** (tagged and published)
-5. **Deprecated** (sunset clock starts)
-6. **Removed** (major versions only)
-
-### 9.2 Minimum requirements for normative changes
-
-Any normative change MUST include:
-- clear statement of **conformance impact**;
-- **compatibility classification** (patch/minor/major);
-- updated or new machine-verifiable examples when applicable;
-- security/privacy implications (even if “no impact”, explicitly stated).
-
-### 9.3 Optional maturity labels (for clarity, not ceremony)
-
-Governance tooling MAY use labels such as:
-- `proposal`, `draft`, `candidate`, `released`, `deprecated`, `removed`.
+> ⚠️ **Important:** This document has the highest precedence. All other governance documents are derived from and subordinate to this model.
 
 ---
 
-## 10. Versioning, compatibility, and deprecation
+### 🏗️ [**ATTRIBUTION.md**](./ATTRIBUTION.md)
+**Status:** Operational Playbook  
+**Derived From:** GOVERNANCE.md Section 11 & 12
 
-### 10.1 Semantic versioning (SemVer)
+The **Attribution Playbook for Network Facilitator Organizations (NFOs)** provides structured guidance for publishing network-specific specifications while treating Core + Domain as upstream dependencies.
 
-- **PATCH**: clarifications, fixes, non-breaking tightening with explicit rationale.
-- **MINOR**: backward-compatible additions.
-- **MAJOR**: breaking changes, removals, or semantic shifts.
+**Covers:**
+- GitHub organization structure for network specifications
+- Repository taxonomy and naming conventions
+- Managing network profiles, schemas, examples, and documentation
+- Attribution requirements and anti-patterns
+- Release mechanics across multiple repositories
+- CI/CD automation for maintaining consistency
 
-### 10.2 Deprecation policy (airtight rule)
+**📌 Key Sections:**
+- Section 1: Org-level Principles (Non-negotiable Seatbelts)
+- Section 2: GitHub Organization Blueprint
+- Section 4: Repository-level Information Architecture
+- Section 7: Attribution Requirements
+- Section 8: Automated Enforcement
 
-Deprecations MUST specify:
-- replacement guidance;
-- migration plan (or “no migration possible” with rationale);
-- earliest version where removal may occur (MAJOR only).
-
----
-
-## 11. Core–Domain–Network interaction rules (2.x foundation)
-
-### 11.1 Networks publish profiles, overlays, and extensions—not forks
-
-Networks SHOULD publish:
-- **Network Profile**: the subset/constraints of core+domain they adopt, plus stricter validations.
-- **Overlays/Addenda**: network-specific guidance layered atop domain IGs.
-- **Extensions**: network-specific fields using approved extension containers or namespaces.
-- **Pinned dependencies**: exact upstream versions used (core + domain).
-
-### 11.2 Upstreaming classification (fast, explicit)
-
-Changes discovered in networks/domains should be categorized as:
-- **Core-candidate** (domain-agnostic, broadly reusable),
-- **Domain-candidate** (sector-wide),
-- **Network-only** (regional/policy/operational constraints).
-
-### 11.3 Constraint rule
-
-Networks may be **stricter** than domain/core, but must not:
-- contradict core semantics,
-- redefine core meanings incompatibly,
-- claim core conformance while violating core requirements.
+> 🎯 **For:** NFOs, network architects, domain spec authors
 
 ---
 
-## 12. Attribution, licensing, and redistribution (constitutional framing)
+### 🤝 [**CONTRIBUTING.md**](./CONTRIBUTING.md)
+**Status:** Contribution Guidelines  
+**Derived From:** GOVERNANCE.md Section 9
 
-Attribution and licensing are governance concerns because they affect trust, reuse, and interoperability.
+Guidelines for **contributing domain-specific schema bundles** to the Beckn Protocol specification repository.
 
-Minimum expectations for derived works:
-- preserve upstream license notices;
-- include a `NOTICE` artifact listing upstream dependencies and versions;
-- ensure documentation sites and compiled outputs visibly credit upstream sources.
+**Covers:**
+- Schema bundle folder structure and organization
+- When to add a new schema bundle vs. extending existing ones
+- Schema extension patterns and requirements
+- File descriptions (attributes.yaml, context.jsonld, vocab.jsonld, etc.)
+- Naming conventions and versioning
+- Migration, validation, and testing requirements
 
-(Operational details live in derived “Attribution Guidelines”, which must not conflict with this model.)
+**📌 Key Topics:**
+- Adding New Schema Bundles
+- Schema Extension Guidelines
+- Regional Variations and Regulatory Compliance
+- Backward Compatibility Requirements
 
----
-
-## 13. Transparency and confidentiality
-
-The process should be transparent by default.
-
-Exceptions:
-- sensitive customer/partner information,
-- security vulnerabilities prior to coordinated disclosure,
-- legal or privacy-sensitive content.
-
-If discussion happens privately, the final decision MUST be published with an anonymized rationale.
+> 🎯 **For:** Domain contributors, schema authors, developers
 
 ---
 
-## 14. Enforcement (automation-first)
+### ✍️ [**STYLE_GUIDE.md**](./STYLE_GUIDE.md)
+**Status:** Authoring Standards  
+**Derived From:** GOVERNANCE.md Section 3 & 9
 
-To keep governance lightweight and real:
+The **Specification Authoring Style Guide** for Beckn Protocol v2.x ensures consistency across API definitions, schemas, JSON-LD contexts, and documentation.
 
-- Normative PRs MUST pass automated validation (schemas, examples, conformance rules) where applicable.
-- Editors MUST refuse merges that omit required change metadata.
-- Repeated bypassing of gates triggers escalation to CSC.
+**Covers:**
+- Naming conventions (TitleCase types, lowerCamelCase properties, SCREAMING_SNAKE_CASE enums)
+- API endpoint and action naming rules
+- Schema authoring standards (OpenAPI/JSON Schema)
+- JSON-LD conventions and semantic bindings
+- Cross-artifact consistency requirements
+- Change management and backward compatibility
+- Domain and network specification rules
 
----
+**📌 Key Sections:**
+- Section 5: Naming Conventions
+- Section 6: API Endpoint Naming
+- Section 8: Property Naming
+- Section 9: Enum Value Conventions
+- Section 10: JSON-LD Conventions
+- Section 13: Change Management
+- Section 17: Cross-Artifact Consistency Checklist
 
-## 15. Amendments to this governance model
-
-Because this document is constitutional:
-
-- Amendments require:
-  - written proposal,
-  - documented rationale tied to principles,
-  - a time-boxed public review window,
-  - CSC approval (2/3 minimum).
-- Amendment history MUST be maintained in a changelog section or linked artifact.
-
----
-
-## 16. Derived governance artifacts (registry)
-
-The following documents are derived from (and subordinate to) this model:
-
-- Attribution Guidelines
-- Contribution Guidelines
-- Style Guide
-- Release Guide / Checklist
-- Domain Charter Template
-- Network Profile Publishing Guide
-- Code of Conduct (if adopted)
-
-Each derived document MUST include the Notice statement defined in Section 0.
+> 🎯 **For:** Core maintainers, domain authors, network authors, specification editors
 
 ---
 
-## 17. Key changes from Governance 1.x (summary)
+### 👥 [**CORE_WORKING_GROUP.md**](./CORE_WORKING_GROUP.md)
+**Status:** Informational (Draft)
 
-- Governance is now explicitly **constitutional**: precedence and interpretation are formal.
-- The **Core → Domain → Network** layering is first-class and rules are explicit.
-- Roles are compressed into a minimal set (CSC, Editors, Release Captain, Domain Stewards).
-- Change lifecycle is tied to **enforceable gates** (validation + migration + conformance impact).
-- Dependency-over-duplication is elevated as a governance principle to reduce drift and preserve interoperability.
-- Deprecation and removal rules are formalized (sunset clocks; removal via major versions only).
-- Automation-first enforcement is emphasized to reduce human bureaucracy.
+Documentation for the Core Working Group structure, membership, and processes.
+
+> 📝 **Note:** This document is currently empty and under development.
+
+---
+
+## ⚖️ Legal Notice
+
+### Precedence and Authority
+
+This governance folder contains documents with **different levels of authority**:
+
+1. **GOVERNANCE.md** — Constitutional document with highest precedence
+2. **Derived documents** (ATTRIBUTION.md, CONTRIBUTING.md, STYLE_GUIDE.md) — Operational guidance derived from GOVERNANCE.md
+3. **Informational documents** (CORE_WORKING_GROUP.md) — Supplementary information
+
+When any derived artifact conflicts with GOVERNANCE.md, **GOVERNANCE.md prevails**.
+
+### Governance Intent
+
+These documents are **within scope of the Governance Model of the Beckn Protocol**. They translate governing intent into practical guidance and do not redefine core philosophies, design principles, or policies.
+
+Any conflicts, ambiguity, or gaps should be treated as **input for improving the Governance Model**, not as permission to fork governance intent.
+
+### Lineage
+
+- **Governing Source:** Governance Model of the Beckn Protocol (GOVERNANCE.md)
+- **Derived Documents:** Attribution, Contributing, Style Guide
+- **Purpose:** Operational guidance, processes, and requirements derived from constitutional principles
+
+---
+
+## 🚀 Getting Started
+
+### For Core Contributors
+1. Start with **[GOVERNANCE.md](./GOVERNANCE.md)** to understand the constitutional framework
+2. Review **[STYLE_GUIDE.md](./STYLE_GUIDE.md)** for authoring standards
+3. Follow **[CONTRIBUTING.md](./CONTRIBUTING.md)** for schema contributions
+
+### For Domain Specification Authors
+1. Read **[GOVERNANCE.md](./GOVERNANCE.md)** Section 11 (Core–Domain–Network Rules)
+2. Follow **[STYLE_GUIDE.md](./STYLE_GUIDE.md)** Section 14 (Domain-specific Rules)
+3. Use **[CONTRIBUTING.md](./CONTRIBUTING.md)** for schema bundle structure
+
+### For Network Facilitator Organizations (NFOs)
+1. Review **[GOVERNANCE.md](./GOVERNANCE.md)** Section 11 (Layer-3 Constraints)
+2. Implement **[ATTRIBUTION.md](./ATTRIBUTION.md)** for organization structure
+3. Follow **[STYLE_GUIDE.md](./STYLE_GUIDE.md)** Section 15 (Network-specific Rules)
+
+### For Implementers
+1. Understand the governance framework via **[GOVERNANCE.md](./GOVERNANCE.md)** Section 4 (Scope and Layering)
+2. Reference **[STYLE_GUIDE.md](./STYLE_GUIDE.md)** for understanding naming conventions
+3. Check domain/network specific guidelines in their respective repositories
+
+---
+
+## 🔄 Document Maintenance
+
+These governance documents are maintained by the **Core Stewardship Council (CSC)** and **Editors** as defined in GOVERNANCE.md Section 6.
+
+### Amendment Process
+
+Amendments to governance documents require:
+- Written proposal with rationale tied to constitutional principles
+- Time-boxed public review window
+- CSC approval (2/3 minimum for GOVERNANCE.md amendments)
+- Documentation of changes in version history
+
+### Feedback and Issues
+
+To provide feedback or raise issues about governance:
+1. Open an issue in the [protocol-specifications-v2](https://github.com/beckn/protocol-specifications-v2) repository
+2. Use appropriate labels: `governance`, `process`, or specific document tags
+3. Reference relevant sections and provide clear rationale
+4. Allow for community discussion and CSC review
+
+---
+
+## 📞 Questions?
+
+For questions about:
+- **Governance processes:** Review GOVERNANCE.md or raise an issue with the `governance` label
+- **Contribution guidelines:** See CONTRIBUTING.md or contact the Editors
+- **Specification style:** Reference STYLE_GUIDE.md or review recent PRs for examples
+- **Network publishing:** Follow ATTRIBUTION.md or reach out to the community
+
+---
+
+## 📄 License
+
+All governance documents in this folder are part of the Beckn Protocol specification and are governed by the repository's LICENSE terms.
+
+---
+
+**Last Updated:** January 2026  
+**Maintained By:** Beckn Protocol Core Stewardship Council & Editors
